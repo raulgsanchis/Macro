@@ -1,0 +1,141 @@
+%&latex
+\documentclass[a4paper,notitlepage]{article}
+\usepackage{beamerarticle}
+%\mode<article>{\usepackage{fullpage}}
+%\documentclass[notes=show]{beamer}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{mathpazo}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{graphicx}
+\usepackage{amssymb}
+%\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+%\usepackage{amsmath}
+\usetheme{Madrid}
+%\input{tcilatex}
+\begin{document}
+
+\title[Triola kapittel 1]{Kapittel 1: Introduksjon til statistikk}
+\author[JIH]{J\o rn I. Halvorsen \\ Handelshøyskolen BI}
+\institute[BI]{\inst{1} Handelshøyskolen BI}
+\date[Sj\o krigsskolen 2007]{Forelesningsnotat MET 3431, våren 2012}
+\maketitle
+%------------------------------
+\section{Introduksjon}
+Innenfor statistikk er det typisk at man samler data fra en liten del av en større gruppe, for å lære noe om egenskapene til den store gruppen.\footnote{Kostnadene det kan være forbundet med å samle inn data fra hele populasjonen, og det at hele populasjonen kan være vanskelig tilgjengelig, forklarer vanligvis hvorfor man gjør dette i praksis.}\bigskip\\
+
+\noindent For å karakterisere denne situasjonen noe nærmere, la oss starte med å definere noen grunnleggende begreper.
+\begin{itemize}
+  \item Populasjon\\
+  En fullstendig samling av alle de medlemmene som man ønsker å lære noe om.
+  \item Utvalget eller stikkprøve\\
+  En delsamlining av medlemmer som har blitt valgt fra populasjonen.
+  \item Data\\
+  De observasjoner som er innhentet fra utvalget eller stikkprøven.
+\end{itemize}
+I dette kurset er det sentralt å kjenne til at de tallverdier som sier noe om egenskapene til populasjonen kaller vi \textbf{parametere}, mens de tallverdier som sier noe om egenskapene til utvalget eller stikkprøven kaller vi \textbf{observatorer}.\bigskip\\
+\textbf{\emph{Eksempel}}\\
+\noindent
+\noindent Anta at vi ønsker informasjon på et bestemt tidspunkt om stemmeandelene til de politiske partiene i Norge. Disse andelene kan betraktes som en observator dersom vi får svar fra et utvalg av den stemmeberettigede befolkningen, men som en parameter dersom vi får svar fra hele den stemmeberretigede befolkningen.
+\section{Typer av data}
+Ved bruk av statistiske metoder vil det ofte være nødvendig å kunne kategorisere de innsamlede dataene i ulike datatyper. To litt forskjellige metoder er hyppig benyttet. Den ene metoden går utpå å skille mellom kvantitative og kvalitative data, mens den andre metoden deler datatypene inn i fire ulike målingsnivåer.
+\subsection*{Metode I: Kvantitative eller kvalitative data}
+\begin{itemize}
+\item Kvantitative data\\
+Består av tall som representerer målinger eller tellinger. Disse tallene kan videre grupperes inn i
+\begin{itemize}
+\item Diskrete data\\
+Heltall (hele tall på tallinjen). Eks. antall flatskjermer hengt opp på en vegg i en elektronikkforetning.
+\item Kontinuerlige  (numeriske data)\\
+Reelle tall (alle mulige verdier på tallinjen). Eks. Melkeproduksjonen til ei ku.
+\end{itemize}
+\item Kvalitative (kategoriske) data \\
+Data som kan separeres i forskjellige grupper karakterisert ved ikke kvantitative egenskaper.
+ Eks. Forskjellige varianter av smarttelefoner.  \end{itemize}
+\subsection*{Metode II: Forskjellige målingsnivåer}
+\begin{itemize}
+\item Nominalt målingsnivå \\
+Data som ikke lar seg bli arrangert i en ordnet rekkefølge (som fra høy til lav) Eks. farger.
+\item Ordinalt målingsnivå \\
+Data som kan bli arrangert i en ordnet rekkefølge, men hvor differansen mellom verdiene  ikke kan bli bestemt eller  gir noen mening. Eks. karaktersystem fra A-F.
+\item Intervall målingsnivå \\
+Som ordinalt målenivå, pluss egenskapen om at differansen mellom dataverdiene er meningsfull. Videre så utjgør  ikke $0$ et naturlig startenivå. Eks. årstall.\item Forholds(ratio) målingsnivå \\
+Som intervall målingsnivå, pluss egenskapen om at $0$ er et naturlig startpunkt. Eks. alder.
+\end{itemize}
+\textbf{\emph{Øvelse}}\\
+Se på spørsmålene som inngår i klassens spørreskjema, og avgjør ved å benytte både metode I og metode II hvilke datatyper de tilhører.
+\section{Kritisk tenkning}
+Knyttet til innsamling av data, bruk av statistiske metoder og rapportering av resultater er det et vell av feilkilder. La oss i denne omgang se på tre viktige forhold som det etter dette kurset ikke bør hærske noe usikkerhet til.
+\begin{itemize}
+\item Frivillige utvalgsundersøkelser\\
+Gjelder undersøkelser hvor respondenten (dvs. den som blir spurt) kan velge hvorvidt han eller hun ønsker å delta eller ikke.
+\item Bruk av prosent\newline
+Merk: $\%$ betyr $\frac{1}{100}$. Formelt kan vi derfor skrive
+$\%=\frac{1}{100}$. Vi kan bruke denne sammenhengen.
+\begin{itemize}
+\item Andel til prosent: $0,5= \frac{0,5\cdot100}{100}=\frac{50}{100}=50\%$
+\item Prosent til andel: $50\%=\frac{50}{100}=0,5$
+\end{itemize}
+\item Samvariasjon og årsakssammenheng\newline
+At to variabler samvarierer sterkt trenger ikke å bety at den ene variabelen forårsaker endringer i den andre variabelen.
+\end{itemize}
+\section{Utforming av statistiske studier}
+\subsection*{Datakilder}
+Statistiske metoder er som regel datadrevet. I praktiske undersøkelser mottar man data fra to distinkte kilder, dvs.
+enten ved \emph{observasjonelle} studier eller ved \emph{eksperimenter}.
+\begin{itemize}
+  \item Observasjonelle studier:\\
+  Her observerer og måler man bestemte egenskaper til medlemmene i populasjonen. Det kan gjøre i form av en:
+  \begin{itemize}
+  \item Retrospektiv studie: data blir innsamlet fra fortiden.
+  \item Tverrsnittstudie: data blir innsamlet på et bestemt tidspunkt.
+  \item Prospektstudie: data blir innsamlet ved at man følger en bestemt gruppe som deler en del felles faktorer fram i tid.
+  \end{itemize}
+  \item Eksperimenter:\\
+  Benytter en form for \emph{behandling} for deretter å forsøke observere påvirkningen dette har på medlemmet. For å unngå problemet med placebo effekt, så er det vanlig å benytte
+  \begin{itemize}
+  \item Blinding: Den som deltar i eksperimentet vet ikke om man er utsatt for behandling eller ikke.
+%  \item Blokkering: De som blir utsatt for eksperimenter avgrenses inn \%i blokker med like egenskaper.
+  \end{itemize}
+\end{itemize}
+Ved utforming av et slikt eksperiment, så kan problemet med \emph{confounding} (dvs. flere enn \'en faktor spiller inn.) oppstå. For å unngå dette bør de medlemmene som inngår i behandlingsgruppen og de som inngår i kontrollgruppen være bestemt basert på tilfeldig trekninger. 
+ 
+\subsection*{Metoder for innhenting av data}
+For at man skal kunne benytte de metoder som inngår i dette kurset på en korrekt måte, så er det viktig å forstå at data blir samlet inn på en \emph{hensiktsmessig} måte. Dersom dette ikke blir gjort, så løper man risikoen for at dataene er fullstendig verdiløse i den forstand at stikkprøven ikke kan benyttes til å gi noen troverdig informasjon om populasjonen.\bigskip\\
+\textbf{Utvalgsmetoder basert på tilfeldige trekninger}\\
+\noindent I dette kurset skal vi kun se på stikkprøver basert på tilfeldig utvalg. Vi skiller her mellom
+\begin{itemize}
+\item Et enkelt tilfeldig utvalg - vil bli  sentralt i dette kurset!!!\\
+Et utvalg med størrelse på $n$ medlemmer blir valgt på en slik måte at alle utvalg på $n$ medlemmer ifra populasjonen har lik sannsynlighet for å bli valgt. Vi kan her skille mellom
+\begin{itemize}
+\item Med tilbakelegging
+\item Uten tilbakelegging
+\end{itemize}
+\item Tilfeldig utvalg\\
+Hvert enkelt medlem i populasjonen har lik sannsynlighet for å bli valgt.
+\item  Sannsynlighetsutvalg\\
+Medlemmene i populasjonene har en kjent men muligens ulik sannsynligheter for å kunne bli valgt.
+\end{itemize}
+\textbf{Andre utvalgsmetoder}
+\begin{itemize}
+\item Systematisk utvalg\\
+Finner et startpunkt og velger så hver k-ende (eks. k=3) element i populasjonen.
+\item Bekvemmlighetsutvalg\\
+Benytter rett og slett det utvalget som er enklest å få tak i.
+\item Stratifisert utvalg\\
+Del populasjonen inn i delgrupper (dvs. strataer) med bestemte egenskaper. Foreta så en trekning fra hver delgruppe.
+\item Klyngeutvalg\\
+Del populasjonen inn i klustere (eller seksjoner). Velg så noen av klusterne basert på et tilfeldig utvalg. Velg deretter alle medlemmene fra denne gruppen.
+\end{itemize}
+\subsection*{Målefeil for en utvalgsundersøkelse}
+Tilknyttet de resultatene man får fra en utvalgsundersøkelse eller en stikkeprøve vil det kunne inntreffe målefeil. I denne sammenheng er det viktig å forstå forskjellen mellom
+\begin{itemize}
+\item Utvalgsfeil \\
+Forskjellen mellom utvalgsresultatet og populasjonsresultatet. Skyldes de tilfeldigheter som oppstår ved datainnsamling.
+\item Feil utenom utvalgsfeil\\
+Oppstår når utvalget er feilaktig innsamlet, notert eller analysert.
+\end{itemize}
+\end{document}
+

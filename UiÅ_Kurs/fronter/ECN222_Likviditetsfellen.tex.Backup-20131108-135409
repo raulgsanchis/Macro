@@ -1,0 +1,103 @@
+%&latex
+\documentclass[a4paper,notitlepage]{article}
+\usepackage{beamerarticle}
+%\mode<article>{\usepackage{fullpage}}
+%\documentclass[notes=show]{beamer}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{mathpazo}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{graphicx}
+\usepackage{amssymb}
+%\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+%\usepackage{amsmath}
+\usetheme{Madrid}
+%\input{tcilatex}
+\usepackage{color}
+
+\begin{document}
+
+\title[Triola kapittel 1]{Likviditetsfellen og privat gjeld}
+\author[JIH]{J\o rn I. Halvorsen \\ Universitet i Ås}
+\institute[BI]{\inst{1} }
+\date[Sj\o krigsskolen 2007]{Forelesningsnotat ECN 222, høsten 2013}
+\maketitle
+%------------------------------
+\section{Introduksjon}
+Likvidietsfellen. Teoretisk
+
+kvantiative lettelser ingen effekt.
+
+Krugman 1998 og Krugman og Eggertson 2013 vurdert dette spørsmålet
+
+Vi skal her se på forenklet versjon av deres modell
+
+Minsky bevegeler kan føre til tap i produksonsgapet som svekker skatteinnteken og dermed også primær balansen.
+\section{Modell}
+\subsection{IS-LM Modell med gjedstyngede husholdninger}
+\begin{equation*}
+Y=C+I+G
+\end{equation*}
+\begin{equation*}
+T=tY
+\end{equation*}
+\begin{equation*}
+C=C^{s}+C^{b}
+\end{equation*}
+\begin{equation*}
+C^{s}=\bar{C}^{s}+0,5c(tY)-D^{høy,b}i
+\end{equation*}
+\begin{equation*}
+C^{b}=\bar{C}^{b}+0,5c(tY)-b\cdot i
+\end{equation*}
+\begin{equation*}
+C=\bar{C}+c(tY)-b\cdot i-D^{høy,b}i 
+\end{equation*}
+\subsection{Minsky bevegelse (gjelds nedbygging)}
+
+$D^{høy}$ til $D^{lav}$ i løpet av en periode 
+\begin{equation*}
+\Delta C^{s}=-\Delta D\cdot i   \text{ hvor } \Delta D =-(D^{høy}-D^{lav})<0
+\end{equation*}
+Det gir
+\begin{equation*}
+\Delta Y=\frac{1}{1-c-t}\left[\Delta D^{s} \right]<0
+\end{equation*}
+\subsection{Stabiliseringspolitikk og likvidi   tetsfellen}
+Renta kan senkes, $\Delta i<0 $\ man ikke mer enn at den går til null
+\begin{equation*}
+\Delta Y=\frac{1}{1-c-t}\left[\Delta D^{s} - (D^{høy+b})\Delta i \right]<0
+\end{equation*}
+Dersom 
+\begin{equation*}
+\left[\Delta D^{s} - (D^{høy+b})\Delta i \right]<0 \Leftrightarrow \Delta D^{s} > (D^{høy+b})\Delta i% \right%   
+\end{equation*}
+Økonomien gå i nedagående spiral med produksjon under trend. Dette svekker også offentlige finanser gjennom lavere skatter siden
+\begin{equation*}
+T=tY   
+\end{equation*}
+\begin{equation*}
+\Delta T=t\Delta Y = t\frac{1}{1-c-t}\left[\Delta D^{s} - (D^{høy+b})\Delta i \right]  
+\end{equation*}
+\subsection{Gjenstående virkemidler, offentlig forbuk og investeringer}
+G er en fri lunsj
+\begin{equation*}
+\Delta Y=\frac{1}{1-c-t}\left[\Delta D^{s} - (D^{høy+b}+)\Delta i + \Delta G\right]<0
+\end{equation*}
+Settes $\Delta G$ slik at
+\begin{equation*}
+\left[\Delta D^{s} - (D^{høy+b})\Delta i \right] = \Delta G%   
+\end{equation*}
+Da blir 
+\begin{equation*}
+\Delta Y=0  
+\end{equation*}
+og
+\begin{equation*}
+\Delta T=t \Delta Y = 0
+\end{equation*}
+Produksjonsgapet er lukket. Vi har ikke tatt med priser. Men det vil bare forsterek disse resultanee (Fisher debt deflation)
+\end{document}
+

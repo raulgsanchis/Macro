@@ -1,0 +1,244 @@
+%&latex
+
+%&latex
+\documentclass[notes=show]{beamer}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{mathpazo}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{graphicx}
+\usepackage{amssymb}
+%\usecolortheme[named=black]{structure}
+%\usetheme[height=10mm]{Rochester}
+\usetheme{CambridgeUS}
+%\input{tcilatex}
+\begin{document}
+
+\title[]{ECB's Target claims and liabilities: A cause or a reflection of the current Euro crisis?}
+\author[]{J\o rn Inge Halvorsen \inst{1}}
+\institute[JIH]{Norwegian Business School (BI)}
+\date[]{28. September, 2012}
+\maketitle
+\section{Present situation}
+\begin{frame}
+\frametitle{Economics of Monetary Union}
+\begin{itemize}
+\item The policy debate about the Euro crisis seems mainly to be founded  on results  discussed in standard textbooks on the economics of monetary union (see for e.g. \cite{de2012economics}).
+\begin{itemize}
+\item Applies mainly a standard IS-LM model framework.
+\item Poorly microfounded.
+\item Relies on various shortcuts.
+\end{itemize}
+\item \cite{sinn2012target} interpet the euro crisis based on accounting data from the Target database. Their  analysis  raises a host of interesting questions in areas of:
+\begin{itemize}
+\item Democratic voting system within the Eurozone (one country one vote).\\
+\item Risk redistribution across countries and agents.
+\item Legal issues.
+\item Conventional and unconventional monetary policy tools.
+\item \textbf{Markets vs. policy of relaxed budget constraints.}
+\end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Sovereign debt}
+\includegraphics[width=\textwidth]{debtgdp.png}
+\end{frame}
+\begin{frame}
+\frametitle{Interest rate spreads over German 10-year bonds}
+\includegraphics[width=\textwidth]{spread.png}
+\end{frame}
+\begin{frame}
+\frametitle{Sovereign debt and interest rate spreads}
+\begin{itemize}
+\item Is the Euro crisis purely a sovereign debt crisis?
+\begin{itemize}
+\item Before the U.S. financial crisis,   only Greece and Portugal had a public deficit to GDP ratio that exceeded three percent.   \end{itemize}
+\item The P(I)IGS also suffer from severe external imbalances.\begin{itemize}
+\item After the start of the Euro: \\
+Capital inflow $\Rightarrow$ Trade deficit $\Rightarrow$ Credit driven boom cycle $\Rightarrow$ Misallocation of resources.
+\item After the U.S. financial crisis:\\
+Interbank market broke down. Reallocation of wealth portfolios led to that capital markets dried up.
+\item Today:\\
+Countries are too expansive. Need now for  a price realignment. But so far no signs of any real deflation?
+\end{itemize}
+\end{itemize}
+\end{frame}
+\section{Target claims and liabilities}
+\begin{frame}
+\frametitle{The Balance-of-Payments}
+\begin{itemize}
+\item The BOP for a country under different monetary policy regimes can be written as:\footnote{$\text{CUR.ACC}$ excess of import of goods and services and net interest  rate. $\text{CAP.ACC}$ is net capital import}
+\begin{itemize}
+\item Floating
+\begin{equation*}
+0 \equiv \text{CUR.ACC.} + \text{CAP.ACC.}
+\end{equation*}
+\item Fixed
+\begin{equation*}
+-\Delta\text{RES.} \equiv \text{CUR.ACC.} + \text{CAP.ACC.}
+\end{equation*}
+\item Eurozone
+\begin{equation*}
+-\Delta\text{TC} \equiv \text{CUR.ACC.} + \text{CAP.ACC.}
+\end{equation*}
+\end{itemize}
+\end{itemize}
+Target liabilities (TC) represent accumulated intra-Eurozone balance-of-payments deficits.
+\end{frame}
+\begin{frame}
+\frametitle{}
+\begin{center}
+\includegraphics{targetcl.png}
+\end{center}
+\begin{itemize}
+\item  Target claims and liabilities
+\begin{itemize}
+\item Electronic interest rate bearing assets held between the national central banks (NCBs) of the Eurozone.
+\item Earn interest rate equal to ECB's main refinancing rate.
+\item Without any formal redemption possibilities -- this is unlike the system applied by the Federal Reserve. \end{itemize}
+\item System theoretically sustainable, but politically?
+\item \cite{sinn2012target}: The Euro crisis is a balance of payment crisis.
+\end{itemize}
+\end{frame}
+\section{Bretton Woods as a parallel}
+\begin{frame}
+\frametitle{}
+\begin{itemize}
+\item Bretton Woods System: Monetary agreement between U.S. and its allies after the second world war.
+\item Main ingredients:
+\begin{itemize}
+\item U.S. dollar was kept to a fixed ratio  towards gold.
+\item Other countries kept their currencies fixed toward dollar.
+\item No direct regulations on money supply growth
+\end{itemize}
+\item First phase considered fairly successful.
+\item External imbalances within the system starting from 1958.
+\end{itemize}
+\end{frame}
+\begin{frame}
+%\frametitle{ The process of outside money creation}
+\includegraphics[width=\textwidth]{balsheetbw.png}
+\end{frame}
+\begin{frame}
+\frametitle{The collapse of the Bretton Woods system}
+\begin{itemize}
+\item The process of outside money helped to finance U.S. its huge current account deficit.
+\item With the outcome that dollar reserves piling up in various NCBs.\\
+$\Rightarrow$ no longer a credible claim on gold.
+\item 1970-1971:
+\begin{itemize}
+\item De Gaule: threatend to redeem dollar reserves for gold.
+\item Nixon : responded by making U.S. dollar non convertible towards gold.
+\end{itemize}
+\item 1971: End of Bretton Woods.
+
+\end{itemize}
+\end{frame}
+\section{Differences}
+\begin{frame}
+\frametitle{Major differences between the Bretton Woods system and the Eurozone}
+\begin{itemize}
+\item The  "currency ratio" is 1:1 between the countries.
+\item Money transactions today are mainly electronical (Target 2-system).
+\item Target claims are without formal redeemption possibilities.
+\item ECB governing council in control over money base creation (one country one vote).
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{}
+\includegraphics[width=\textwidth]{BalSheetEZ.png}
+\end{frame}
+\section{Market interventions and TC}
+\begin{frame}
+\frametitle{Monetary policy interventions through the Target system}
+\begin{itemize}
+\item Target claims and liabilities are the outcome of ECB's own interventions, and as such indirectly controllable by ECB council.
+\item Mainly a reflection of:
+\begin{enumerate}
+\item Main refinancing rate.
+\item Collateral requirement.
+\item Liquidity policy.
+\end{enumerate}
+\item The BOP equation
+\begin{equation*}
+\text{CUR.ACC.} + \text{CAP.ACC.}\equiv -\Delta\text{TC}
+\end{equation*}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Two special cases: }
+\begin{enumerate}
+\item Electronic money base growth with capital market break down
+\begin{equation*}
+\text{CUR.ACC.} \equiv \Delta\text{TC}
+\end{equation*}
+$\Rightarrow $ Finances current account deficit.
+\item Electronic money base growth with current account in balance  \begin{equation*}
+\text{CAP.ACC.} \equiv \Delta\text{TC}
+\end{equation*}
+$\Rightarrow $ Facilitate capital flow.
+\end{enumerate}
+For a country entering the bust phase of a credit driven business cycle, Target credit must either (1) postpone the necessary price realignment process or (2) transfer risk in the capital market between investors and  taxpayers.
+\end{frame}
+\begin{frame}
+\frametitle{Monetary policy by the ECB after the U.S. financial crisis}
+\begin{itemize}
+\item From October 2008 to May 2009, ECB reduces its main refinancing rate from 4,25\% to 1 \%.
+\item Full allotment policy (i.e. NCBs provide credit to banks in any amount given sufficient collateral)
+\begin{center}
+\includegraphics{ebc_creq.png}
+\end{center}
+\item From 2011 the NBCs of Ireland and Greece started to provide  Emergency liquidity assistance (ELA) to their commercial bank.
+\end{itemize}
+\end{frame}
+\section{The case for the PIIGS economies}
+\begin{frame}
+\frametitle{}
+\includegraphics[width=\textwidth]{tc_ca_cu.png}
+\end{frame}
+\begin{frame}
+\frametitle{}
+\includegraphics[width=\textwidth]{TC_CA_CU_PIIGS_I.png}
+\end{frame}
+\begin{frame}
+\frametitle{}
+\includegraphics[width=\textwidth]{TC_CA_CU_PIIGS_II.png}
+\end{frame}
+\begin{frame}
+\frametitle{The way ahead?}
+\begin{enumerate}
+\item Institutional design that inhibits relaxed budget constraints:
+\begin{itemize}
+\item Let the present Target system continue.
+\item The introduction of Eurobonds.
+\item The forming of a european bankunion,
+\end{itemize}
+\item Return to markets:
+\begin{itemize}
+\item Gradually make Target claims redeemable towards marketable assets
+(Note: This is close to Hume's specie-flow mechanism from 1752).\item Countries that find it too costly to deflate to regain competetivness  should exit the Euro.
+\end{itemize}
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\frametitle{For further reading:}
+\begin{thebibliography}{10}
+\bibitem[De Grauwe, P., 2012]{de2012economics}
+De Grauwe, P.
+\newblock Economics of monetary union
+\bibitem[Sinn, H.W. and Wollmersh{\"a}user, T., 2012]{sinn2012target}
+Sinn, H.W. and Wollmersh{\"a}user, T.
+\newblock Target loans, current account balances and capital flows: the ECB’s rescue facility.
+\end{thebibliography}
+\end{frame}
+%\caption{Target system }
+\begin{frame}
+\frametitle{Appendix:Graphs}
+\includegraphics{redemption.png}
+\end{frame}
+\begin{frame}
+\frametitle{}
+\includegraphics{targetmoney.png}
+\end{frame}
+\end{document}

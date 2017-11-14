@@ -1,0 +1,207 @@
+%&latex
+\documentclass[a4paper,notitlepage]{article}
+\usepackage{beamerarticle}
+%\mode<article>{\usepackage{fullpage}}
+%\documentclass[notes=show]{beamer}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{mathpazo}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{graphicx}
+\usepackage{amssymb}
+%\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+%\usepackage{amsmath}
+\usetheme{Madrid}
+%\input{tcilatex}
+\begin{document}
+
+\title[Triola kapittel 1]{Penger, kreditt og bankadferd}
+\author[JIH]{J\o rn I. Halvorsen \\ Universitet i Ås}
+\institute[BI]{\inst{1} }
+\date[Sj\o krigsskolen 2007]{Forelesningsnotat ECN 222, høsten 2013}
+\maketitle
+%------------------------------
+\section{Introduksjon}
+For en moderne økonomi er dype nedgangskonjunkturer, nesten uten unntak, koblet sammen med store problemer i den finansielle sektoren i økonomien. Fordi kredittlinjene som utgår fra finansektoren berører omtrent samtlige av økonomiens aktører, vil en kollaps av det finansielle systemet føre til et stort fall i produksjonsgapet som en følge av sterk nedgang i produksjonen.
+På bakgrunn av et slikt scenario, vil offentlige myndigheter vanligvis ha ønske om å spille en aktiv rolle når det gjelder å minimere skaden ved en finasiell kollaps og forhindre slike kriser fra å kunne skje igjen.
+
+Men de historisk erfaringene man har gjort, har vist at dette ikke har vært et enkelt problem å løse, og konjunkturteoriene vi til nå har lært i kurset gir knapt noen som helt innsikt i dette området. Formålet med dette notatet er å gi en grov oversikt over de avveinger myndighetene står ovenfor når det gjelder å sette opp et finansielt system og også gi et innblikk i hvordan ulike aktører kan forvente å tjene eller tape på forskjellige løsninger.
+
+Måten vi skal gå fram på, går utpå å forsøke gi klare svar på fire grunnleggende spørsmål innenfor penger, kredit og bankadferd:
+\begin{itemize}
+\item Hva er penger?
+\item Hvilken funksjoner har og hvordan fungerer bankvesenet i en økonomi?
+\item Hva er hensikten med en sentralbank?
+\item Hvorfor kan banker ha insentiver til å påtå seg unødvendig risiko?
+\end{itemize}
+\section{Penger}
+Avhengig av hvordan en økonomi er organisert, vil penger inneha alt fra en ubetydelig rolle til en helt sentral rolle i en økonoim. La oss se nærmere på fire måter å organsiere en økonomi på.
+\begin{itemize}
+\item Simpel bytteøkonomi\\
+For å oppnå varebytte, vil aktørene i økonomien inngå en frivillig avtale om å bytte det de selv eier med andre aktører i økonomien.\\
+\noindent\textbf{\emph{Eksempel}}\\\
+Agent 1 bytter varer med agent 2 ved å motta vare A i bytte for vare B\\
+\noindent\textbf{Problemer:}\\
+(1)Krever full match mellom behovene til kjøper og selger.\\
+(2)Manglende delbarhet. \\
+(3)Regneenhet.
+\item Bytteøkonomi med indirekte bytte\\
+En måte å løse det første problemet, er å bytte til seg en vare som en selv ikke trenger (indirekte bytte) for å deretter benytte den varen som byttemiddel mot andre varer.\\   
+\noindent\textbf{\emph{Eksempel}}\\\
+Agent 1 bytter varer med agent 3 ved å motta vare A i bytte for vare C. Vare C benyttes deretter av agent 1 for å bytte vare C mot vare B med agent 2.
+\item Økonomi  med penger som har en verdi i seg selv\\
+Dersom økonomien består av en rekke aktører og varer, vil en uregulert økonomi fører til at akørene klarer koordinere seg ved at et lite utvalg av varer fungerer som byttemiddel i omtrent alle transaksjoner. Det er dette utvalget av varer som vi skal definere som penger som har verdi i seg selv. Varene som blir selektert ut har vanligvis egenskaper som:  
+\begin{enumerate}
+\item Delbare 
+\item Bærbare
+\item Lang varighet 
+\item High verdi per vektenhet
+\end{enumerate} 
+Historisk har varer som gull og selv vært de to dominerende varene for penger som har verdi i seg selv. Men i mer isolerte økonomier, har også varer som sigaretter, juveler og kameler fungert som penger. At gull og sølv som oftest tidliger har vært den dominerende form for penger skyldes at de er i stand til å løse alle problemene som ble nevnt under en bytteøkonomi.
+\item Økonomi med penger som gjeld\\ 
+I dagens moderne økonomier har ikke penger lengre noen forankring til en vare som har en verdi i seg selv, men dreier seg om gjeldsbaserte penger utstedt av staen men også banker med kredittskapende evne: 
+\begin{itemize}
+\item Utvendige penger:\\ 
+Sedler, mynt pluss reserver som forretningsbankene  har på konto i sentralbanken. \item Innvendige penger:\\
+Gjeld skapt gjennom innskuddskontorer som kommer til syne på forretningsbankenes balanse. 
+\end{itemize}
+\end{itemize}
+I offentlige tilgjengelige statistikker vil beholdningen av utvendige penger i en økonomi vanligivis gå under betegnelsen $M0$ (eller M1), mens innvendige penger framkommer ved $M1-M0$ (eller M1-M2).\footnote{Høyere pengeaggregater enn M1 (M2) kan også benyttes, men vi ser bort fra dette i det her kurset.} 
+Overgangenen fra en økonomi med penger som har verdi i seg selv til en økonomi med penger som gjeld har skjedd gradvis over tid og kommet som en følge forskjellge utforminger av det finansielle systemet. Vi skal nå se nærmere på tre arktyper av dette systemet og hvordan dette er relatert til banksystemet i et land.
+\section{Bankvesentets funksjoner og utforminger}
+For en økonomi uten banker og med penger som har verdi i seg selv, vil penger primært benyttes til:  
+\begin{itemize}
+\item Lån og sparing.
+\item Byttemiddel ved økonomiske transaksjoner.
+\end{itemize}
+\noindent\textbf{Problemer:}\\
+(1) Vanskelig for låntakere og finne långivere (mangelfull informasjon).\\
+(2) Høye kostnader ved å oppbevare penger \\
+\subsection{Banksystemets funksjoner}
+Banksystemets hovedfunksjoner går utpå å løse disse de to problemene, gjennom å tilbyde spesialkompetanse for vurdering av utlån og effektive betalingssystmer for bruk ved økonomiske transaksjoner. 
+\begin{itemize}
+\item Utlånsbank.\\
+Den bankens funksjon er kun å ivareta behovet for lån og sparing.\\
+\noindent\textbf{\emph{Eksempel}}\\
+\item Transaksjonsbank\\ 
+Den bankens funksjon er kun å ivareta behovet for transaksjonstjenester.
+\noindent\textbf{\emph{Eksempel}}\\
+\item Forretningsbank \\
+Er kjennetegnet ved at den kombinerer tjenestene til både utlåns- og transaksjonsbanken \noindent \\\textbf{\emph{Eksempel}}\\
+\end{itemize}
+Men det er viktig å være klar over at hovedfunksjonene kan iveratas under forskellige utforminger av det finansielle systemet.  \\ 
+
+\subsection{System 1: Lånebasert bankøkonomi}
+
+\noindent\textbf{Problemer:}\\
+\begin{itemize}
+\item Kostnader forbundet med å flytte reserver mellom forretningsbankene.
+\item Uelastisk kredittilbud (nye investeringer kan først finne plass ved økt sparing)           
+\end{itemize}
+\subsection{System 2: Fraksjonsbasert bankøkonomi uten sentralbank}
+Dette systemet løser problemet med det uelastisk kreditttilbudet under system 1, ved at bankene kan utstede mer penger enn det de har som reserver.\\
+
+\noindent\textbf{\emph{Eksempel}}\\
+\noindent\textbf{Problemer:}\\
+\begin{itemize}
+\item Kostnader forbundet med å flytte reserver mellom forretningsbankene.
+\item Åpner for løp på bankene (bankene har utsteder mer penger enn det de har som reserver)          
+\end{itemize}
+\subsection{System 3: Fraksjonsbasert bankøkonomi med sentralbank}
+Løser mange
+
+\subsubsection{Sentralbank med reservekrav og innløsningsmuligheter}
+\noindent\textbf{Problemer:}\\
+\begin{itemize}
+\item Åpner for løp på alle bankene (systemkrise)          
+\end{itemize}
+\subsubsection{Sentralbank med reservekrav/kapitalkrav og offentlig innskudsgaranti}
+\noindent\textbf{Problemer:}\\
+\begin{itemize}
+\item Åpner for at bankene tar unødvendig risiko
+\end{itemize}
+\section{Banker og systemrisiko}
+\subsection{The bloos rule}
+
+\end{document}
+
+Test
+\end{document} 
+\end{itemize}
+\end{document}
+
+\section{Introduksjon}
+Insolvens og likvidietskrise
+\begin{quotation}
+In Minsky's theory of endogenous financial booms and busts, prosperous
+times lead to an excess availability of credit and the gradual development of credit-fuelled asset-price bubbles.  Financial crises result when those debt levels become excessive a so-called ''Minsky'' moment.  A credit crunch then ensues leading to a downturn in the real economy. 
+\end{quotation}
+La det være klart med en gang, det vi har lært til kurset til nå gir oss i svært liten grad mulighet til å forstå sitatet ovenfor. Men forhåpentligvis vil dette notat gi oss en større forståelse av hva Minsky virkelig hadde i tankene.
+
+Vi må bygge denne kunnskapen systemetisk. Mer spesielt så er dette kapitlet delt inn i fire deler
+\begin{itemize}
+\item Hva er penger?
+\item Hvilken funksjoner og hvordan fungerer bankvesenet i en økonomi?
+\item Hva er hensikten med en sentralbank?
+\item Hvorfor kan banker ha innteresse av å påtå seg unødvendig risiko?
+\end{itemize}
+\section{Penger}
+\begin{itemize}
+\item Bytteøkonomi
+\item Bytteøkonomi med indirekte bytte
+Det er fullt mulig å forestille seg en økonomi hvor penger ikke eksisterer. Aktørene i en slik økomomi kan motta ulike varer og tjenester gjennom byttehandel. Men kunne være operativt i en primitiv økonomi. Men for en avansert økonomi, vil en pengeløs økonomi by tre fundamentale utfordringer:
+\begin{enumerate}
+        \item Match mellom selger og kjøper hva gjelder varer
+\item Delbarhet
+\item Regneenhet.
+\end{enumerate} 
+En måte å unngå det første problemet på er å finne en annen varer av person 3 for person 1 og 2. som indirekte byttemiddel
+\item Pengeøkonomi hvor pengene har en verdi i seg selv
+Dersom en vare er allement akseptert blant de fleste aktører som et byttemiddel kan det defineres som penger. Penger har som egenskap at de løser alle disse tre problemene. Men hvilken vare er det som har blitt egnet som et slikt Private aktører har bestem hva som skal være penger...
+Historisk har gull og sølv være dominerende som penger. Men det finnes andre eksempler som kameler og sigaretter. I en markedsøkonomi innehar det som blir valgt som penger typisk tre egenskaper
+\item Penger i moderne tid: Penger som gjeld
+Fiat og inside penger
+Offentlige myndigheter har bestem hva som skal være penger?
+Statsgjeld (fiat) og bankkreditt
+\begin{enumerate}
+\item Heavy demand
+\item Highli devisable 
+\item Portable
+\item High value per unit of weight.
+\item Highly durable
+\end{enumerate} 
+\end{itemize}
+Hvordan ble denne reisen mulig?
+La oss forfølge en gullbeholdning på 100 enheter, fordelt på 100 innbyggere. \section{Bankvesenets funksjons og virkemåte}
+\subsection{Loanable fond economy}
+Banker tilbyr to primære tjenester
+(1) Lån.
+(2) Transaksjonstjenester.
+Tjenestene ovenfor kan overtas av to typer banker
+Utlåndsbank
+Reservebank
+Forretningsbankene er kjennetegnet ved at de kombinerer begge disse tjenestene.
+Det finnes to måter:
+Bankkvittering, Sjekker.
+Disse kan operer side om side, avhenge av transaksjonen.
+\subsection{Fractional reserve banking}
+Med fractional reserve banking menes enten har skrevet ut fler sedler enn de har gull. Enten i form av innskudd og/eller reserver.
+Historisk: shake system:
+Låner langt 
+finansier kort. 
+Insolvens vs likviditet
+\section{Formålet med en sentralbank}
+Poole reservene 
+Deal: monopol på sedler og mynt
+Banker: Fortsatt kontopenger.
+Tre måter i opere et bankvesen 
+\begin{itemize}
+\item Sentralbank med reservekrav
+\item Sentralbank med
+\item Sentralbank med innskuddsgaranti og reserve og/eller kapitalkrav 
+\end{itemize}
+\section{Banker og systemrisiko}
+\subsection{The bloos rule}
+\end{document}

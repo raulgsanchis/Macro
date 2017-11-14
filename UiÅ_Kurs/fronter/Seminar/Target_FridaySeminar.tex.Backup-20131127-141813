@@ -1,0 +1,501 @@
+%&latex
+
+%&latex
+\documentclass[notes=show]{beamer}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{mathpazo}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{graphicx}
+\usepackage{amssymb}
+%%\usepackage[utf8]{inputenc}
+%\usecolortheme[named=black]{structure}
+%\usetheme[height=10mm]{Rochester}
+\usetheme{CambridgeUS}
+%\input{tcilatex}
+\begin{document}
+
+\title[]{Del 4 - Applikasjon: Krisen i eurosonen}
+\author[]{J\o rn Inge Halvorsen \inst{1}}
+\institute[JIH]{Presentasjon: Universitetet i \AA s }
+\date[]{28. November, 2013}
+\maketitle
+\section{Bakgrunn}
+\begin{frame}
+\frametitle{Hvorfor opprettelsen av en felles valuta i europa?}
+\begin{itemize}
+\item Fjerne transaksjonskostnader
+\item Forbedre konkurransen i vare-  og tjenestemarkedet
+\item Redusere Bundesbanks innflytelse
+\item F\aa\  til en tettere integrasjon mellom europeiske land 
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Hvs skjedde under og etter innf\o ringen av euroen?}
+\begin{itemize}
+\item De forskjellige landenes rentespread mot tyske statsobligasjoner ble eliminert. 
+\begin{figure}[h]
+\caption{Lange renter p\aa \ statsobligasjoner med 10-\aa rs l\o petid}
+\begin{center}
+\includegraphics{spreadeuro.png}
+\end{center}
+\end{figure}
+\end{itemize}
+\begin{itemize}
+\item Dette ga st\o tet til en kredittfinansiert h\o ykonjunktur for landene i s\o r, spesielt for Portugal, Spania, Irland, (Italia) og Hellas (PI(I)GS-landene).
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{}
+\begin{itemize}
+\item Oppl\aa ningen skjedde b\aa de i privat (\o kt  C) og offentlig sektor (\o kt G).
+\item L\o nninger og priser steg kombinert med en sterk grad av missallokering(?) av resssurser i \o konomien
+\end{itemize}
+\begin{equation*}
+C\uparrow / G\uparrow  \Rightarrow Y \uparrow  \Rightarrow P(W)\Rightarrow P^e(W) 
+\uparrow  \Rightarrow NX \uparrow 
+\end{equation*}
+\begin{itemize}
+\item P\aa \ utenriksregnskapet mellom landene i eurosonen ga dette seg utslag ved
+\begin{equation*}
+ DRI\uparrow +KRI \downarrow=\Delta TR \approx 0
+\end{equation*}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Finanskrisen i 2008 og situasjonen i dag}
+\begin{itemize}
+\item Som en f\o lge av finanskrisen i USA\ i 2008, begynte utenlandske investorer \aa \ forlange en risikopremie for å investere i landene i s\o r.
+\item Den privare gjeldskrisen slo for mange land ogs\aa ut i en statsgjeldskrise. 
+\begin{figure}[h]
+\caption{Gjeld som andel av BNP}
+\begin{center}
+\includegraphics{gjeldbnp.png}
+\end{center}
+\end{figure}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{}
+\begin{itemize}
+\item Men forel\o pig ingen tegn til deflasjon 
+\begin{equation*}
+C\downarrow / G\downarrow  \Rightarrow Y \downarrow  \Rightarrow P(W) \approx  P^e(W) \approx 0 
+\end{equation*}
+\item Svaret er reflektert i balansen til det elektroniske betalingssystemet TARGET(2) som benyttes av alle de nasjonale sentralbanken som inng\aa r i eurosonen.
+\end{itemize}
+\end{frame}
+\begin{frame}
+Utenriksregnskapet (fast kurs)\  
+\begin{equation*}
+\Delta RES = DR+KR
+\end{equation*}
+
+\begin{figure}[h]
+\caption{Fordringer (+) og gjeld (-) p\aa \ TARGET-balansen}
+\begin{center}
+\includegraphics{targetbalanse.png}
+\end{center}
+\end{figure}
+\frametitle{}
+Innad i eurosonen \footnote{$\Delta TR = (DR-DRV)+(KR-KRV)=DRI+KRI$}
+\begin{equation*}
+\Delta TR= DRI+KRI
+\end{equation*}
+\end{frame}
+\begin{frame}
+\begin{itemize}
+\item Sinn og Wollmershausen (2011) tolker ubalansen som en klassisk betalingskrise (eks. Bretton-Woods sammarbeidet) for utenrikshandelen mellom land. 
+\end{itemize}
+\end{frame}
+\section{Bretton-Woods som paralell}
+\begin{frame}
+\frametitle{Hva var Bretton-Woods sammarbeidet? }
+\begin{itemize}
+\item Internasjonal pengepolitisk avtale i etterkant av den andre verdenskrig mellom USA og mange av dens allierte
+\item USA forpliktet seg ovenfor de andre lands sentralbankner å holde en fast innl\o sningskurs for verdien av dollar mot gull.
+\item De andre landene skulle s\o rge for at sin valuta stod i et fast forhold til dollaren (+/- persent)
+\item Ingen restriksjoner p\aa \ landenes pengemengdevekst
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{}
+\begin{figure}[h]
+\caption{: Penger utenfor landets grenser under Bretton Woods-systemet. Forårsaket her av en \o kning i basispenger.}
+\begin{center}
+\includegraphics[scale=0.70]{balanse_dr_bw.png}
+\end{center}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{Oppl\o sningen av Bretton-Woods sammarbeidet}
+\begin{itemize}
+\item Pengemengdeveksten var i en lengre periode mye sterke i USA enn blant de andre landene som inngikk  i sammarbeidet.
+\item Store dollarreserver akkumulerte seg opp i de andre landenes nasjonale sentralbanker.
+\item Det ble etterhvert klart at dollarreservene ikke lengre kunne anses som noen troverdige fordringer p\aa gull.
+\item President de Gaulle i Frankrike fremsatte derfor en trussel om å omgj\o re de franske dollarreservene til gull. 
+\item Nixon tilsvar i 1971, suspendere innl\o snings muligheten og dermed oppl\ ose  hele valutasammarbeidet.
+\end{itemize}
+\end{frame}
+\section{TARGET-ubalanser}
+\begin{frame}
+\frametitle{Forskjeller mellom Bretton-Woods og euro-sammarbeidet}
+\begin{itemize}
+\item Mellom landene i eurosonen er ”fastkursforholdet” 1:1 
+\item I dag skjer for det meste pengetransaksjoner elektronisk (TARGET 2-systemet). \item Fordringer p\aa \ TARGET-balansen er uten formelle innl\o sningsmuligheter \item \O kning i basispengemengden klareres ved at ESB endrer TARGET-balansen til de nasjonale sentralbankene.   
+\item Det er ESB styret som har ut\o vende makt til å endre basispengemengden
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{}
+\begin{figure}[h]
+\caption{Penger utenfor landets grenser i eursonen. For\aa rsaket her av en \o kning i basispengemengden.}
+\begin{center}
+\includegraphics[scale=0.70]{balanse_dr_euro.png}
+\end{center}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{}
+\begin{figure}[h]
+\caption{Penger utenfor landets grenser i eursonen. For\aa rsaket her av endrede innskuddspreferanser.}
+\begin{center}
+\includegraphics[scale=0.70]{balanse_kr_euro.png}
+\end{center}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{ESBs pengepolitkk i etterkant av finanskrisen}
+\begin{itemize}
+\item Fra oktober 2008 til mai 2009 ble rente p\aa refinansieringsl\aa redusert fra 4,25 prosent til 1 prosent
+\item Krav til sikkerhet for refinansieringsl\aa n  ble fra en rating A- til BBB
+\item Hellas, Ireland og Portugal ble tilbudt lån uten krav til sikkerhet (ELA l\aa n)   
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{}
+\begin{figure}[h]
+\caption{Utviklingen i Target-gjelden og driftsbalansen (positivt tall er underskudd) for PIGS-landene totalt. Bel\o pene er i milliarder av euro }
+\begin{center}
+\includegraphics{target_bal_piigs.png}
+\end{center}
+\end{figure}
+\begin{multline}
+\sum_{1=2008}^{T=2013} \Delta TR= \ \Delta TR_{1}+\Delta TR_{2}+...+\Delta TR_{T}=\\(DRI_{1}-KRI_{1})+(DRI_{2}-KRI_{2})+...+(DRI_{T}-KRI_{T})
+\end{multline}
+
+\end{frame}
+\begin{frame}
+\frametitle{}
+\begin{figure}[h]
+\caption{Utviklingen i Target gjelden og driftsbalansen (positivt tall er underskudd) for Portugal, Ireland, Hellas, Spania og Italia enkeltvis. Bel\o pene er i milliarder av euro}
+\begin{center}
+\includegraphics[scale=0.70]{target_bal_portugal.png}
+\includegraphics[scale=0.70]{target_bal_irland.png}
+\includegraphics[scale=0.70]{target_bal_italia.png}\\
+\includegraphics[scale=0.70]{target_bal_hellas.png}
+\includegraphics[scale=0.70]{target_bal_spania.png}
+\end{center}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{Hva ville konsekvensene v\ae rt dersom ESB ikke hadde tilbudt bankene billig refinansieringsl\\aa}
+\begin{itemize}
+\item Spesialtilfelle 1: Med uendret nettokapitalimport for perioden
+\begin{multline}
+\sum_{1}^{T} \Delta TR = \Delta TR_{1}+\Delta TR_{2}+...+\Delta TR_{T}= \\ (DRI_{1}+DRI_{2}+...+DRI_{T})
+\end{multline}
+Gitt at $\sum_{1}^{T} \Delta TR=0$ $\Rightarrow$ $(DRI_{1}+DRI_{2}+...+DRI_{T})=0$
+\end{itemize}
+Driftsbalansen v\ae rt i balanse: $\Rightarrow Y \downarrow$ $\Rightarrow P(W) \downarrow   \Rightarrow P^e(W)\downarrow$
+\end{frame}
+\begin{itemize}
+\item Spesialtilfelle 2: Med uendret dritsbalanse i perioden
+\begin{multline}
+\sum_{1}^{T} \Delta TR = \Delta TR_{1}+\Delta TR_{2}+...+\Delta TR_{T}= \\ (KRI_{1}+KRI_{2}+...+KRI_{T})
+\end{multline}
+Gitt at $\sum_{1}^{T} \Delta TR=0$ $\Rightarrow$ $(KRI_{1}+KRI_{2}+...+KRI_{T})=0$
+\end{itemize}
+Uendret kapitalflukt: $\Rightarrow$ Gjelden blitt misligholdt, private investorer vil m\aa te ta tap.\\
+\begin{frame}
+\frametitle{}
+\begin{center}
+Generelt har ECBs pengepolitikk bidratt til finansielle stabilitet, men konsekvensen av dette har v\ae rt  
+\begin{enumerate}
+\item Satt til side de selvkorrigerende mekanismene som gjelder for utenrikshandelen mellom land
+\item Storstilt grad klart å overf\o re risiko fra investorer til de nasjonale sentralbankene
+\end{enumerate}
+\end{center}
+Kan forventninger om en slik politikk forklare hvorfor rentespreaden forsvant i 2001? $\Rightarrow $ Systemet ustabilt.
+\end{frame}
+\section{Veien videre?}
+\begin{frame}
+\frametitle{Veien videre?}
+\begin{enumerate}
+\item Tilbake til markedene\\
+$\Rightarrow $ Kapitalflukt og l\o p på bankene.
+\item \O kt inflasjon i nord \\
+$\Rightarrow$ Finanspolitikken m\aa ta sv\ae r t mye av jobben siden renta allerede ligger n\ae r null. 
+\item Sosialisering av bank- og statsgjeld (Eurobonds, OMT og bankunion)
+$\Rightarrow $ Risikopremien forsvinner\\
+$\Rightarrow $ Allokering av kapital blir i stor grad en jobb utf\o rt av byr\ aakrater 
+$\Rightarrow $ Ledighetsproblemet vil st\aa ul\o st i lang, lang, tid. 
+\end{enumerate}
+
+\end{frame}
+
+\end{document}
+
+\end{frame}
+\end{document}
+
+
+
+
+
+\begin{frame}
+\frametitle{Major differences between the Bretton Woods system and the Eurozone}
+Test
+\end{frame}
+\end{document}
+
+\section{Present situation}
+\begin{frame}
+\frametitle{Bakgrunn}
+
+\end{itemize}
+
+
+\begin{frame}
+\frametitle{Economics of Monetary Union}
+\begin{itemize}
+\item The policy debate about the Euro crisis seems mainly to be founded  on results  discussed in standard textbooks on the economics of monetary union (see for e.g. \cite{de2012economics}).
+\begin{itemize}
+\item Applies mainly a standard IS-LM model framework.
+\item Poorly microfounded.
+\item Relies on various shortcuts.
+\end{itemize}
+\item \cite{sinn2012target} interpet the euro crisis based on accounting data from the Target database. Their  analysis  raises a host of interesting questions in the area of:
+\begin{itemize}
+\item Democratic voting system within the Eurozone (one country one vote).\\
+\item Risk redistribution across countries and agents.
+\item Legal issues.
+\item Conventional and unconventional monetary policy.
+\item \textbf{Markets vs. monetary policy interventions.}
+\end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Sovereign debt}
+\includegraphics[width=\textwidth]{debtgdp.png}
+\end{frame}
+\begin{frame}
+\frametitle{Interest rate spreads over German 10-year bonds}
+\includegraphics[width=\textwidth]{spread.png}
+\end{frame}
+\begin{frame}
+\frametitle{Sovereign debt and interest rate spreads}
+\begin{itemize}
+\item Is the Euro crisis purely a sovereign debt crisis?
+\begin{itemize}
+\item Before the U.S. financial crisis,   only Greece and Portugal had a public deficit to GDP ratio that exceeded three percent.   \end{itemize}
+\item The PIIGS contries also suffer from severe external imbalances.\begin{itemize}
+\item After the start of the Euro. \\
+Credit driven boom cycle: Capital inflow $\Rightarrow$ Trade deficit, inflationary bubbles combined with misallocation of real resources.
+\item After the U.S. financial crisis.\\
+Interbank market broke down. Reallocation of wealth portfolios meant that capital markets dried up.
+\item Today:\\
+Countries are too expansive. Need now for  a price realignment. But so far no signs of any real deflation?
+\end{itemize}
+\end{itemize}
+\end{frame}
+\section{Target claims and liabilities}
+\begin{frame}
+\frametitle{The Balance-of-Payments}
+\begin{itemize}
+\item The BOP for a country under different monetary policy regimes can be written as:\footnote{$\text{CUR.ACC}$ excess of import of goods and services and net interest rate payments over export. $\text{CAP.ACC}$ is net capital import.}
+\begin{itemize}
+\item Floating
+\begin{equation*}
+0 \equiv \text{CUR.ACC.} + \text{CAP.ACC.}
+\end{equation*}
+\item Fixed
+\begin{equation*}
+\Delta\text{RES.} \equiv \text{CUR.ACC.} + \text{CAP.ACC.}
+\end{equation*}
+\item Eurozone
+\begin{equation*}
+-\Delta\text{TC} \equiv \text{CUR.ACC.} + \text{CAP.ACC.}
+\end{equation*}
+\end{itemize}
+\end{itemize}
+Target liabilities (TC) represent accumulated intra-Eurozone balance-of-payments deficits.
+\end{frame}
+\begin{frame}
+\frametitle{}
+\begin{center}
+\includegraphics{targetcl.png}
+\end{center}
+\begin{itemize}
+\item  Target claims and liabilities
+\begin{itemize}
+\item Electronic interest rate bearing assets held between the national central banks (NCBs) of the Eurozone.
+\item Earn interest rate equal to ECB's main refinancing rate.
+\item Without any formal redemption possibilities -- this is unlike the system applied by the Federal Reserve. \end{itemize}
+\item System theoretically sustainable, but politically?
+\item \cite{sinn2012target}: The Euro crisis is a balance of payment crisis.
+\end{itemize}
+\end{frame}
+\section{Bretton Woods as a parallel}
+\begin{frame}
+\frametitle{}
+\begin{itemize}
+\item Bretton Woods System: Monetary agreement between U.S. and its allies after the second world war.
+\item Main ingredients:
+\begin{itemize}
+\item U.S. dollar was kept to a fixed ratio  towards gold.
+\item Other countries kept their currencies fixed toward dollar.
+\item No direct regulations on money supply growth
+\end{itemize}
+\item First phase considered fairly successful.
+\item External imbalances within the system starting from 1958.
+\end{itemize}
+\end{frame}
+\begin{frame}
+%\frametitle{ The process of outside money creation}
+\includegraphics[width=\textwidth]{balsheetbw.png}
+\end{frame}
+\begin{frame}
+\frametitle{The collapse of the Bretton Woods system}
+\begin{itemize}
+\item The process of outside money helped to finance U.S. its huge current account deficit.
+\item With the outcome that dollar reserves piling up in various NCBs.\\
+$\Rightarrow$ no longer a credible claim on gold.
+\item 1970-1971:
+\begin{itemize}
+\item De Gaule: threatend to redeem dollar reserves for gold.
+\item Nixon: responded by making U.S. dollar non convertible towards gold.
+\end{itemize}
+\item 1971: End of Bretton Woods.
+
+\end{itemize}
+\end{frame}
+\section{Differences}
+\begin{frame}
+\frametitle{Major differences between the Bretton Woods system and the Eurozone}
+\begin{itemize}
+\item The  "currency ratio" is 1:1 between the countries.
+\item Money transactions today are mainly electronical (Target 2-system).
+\item Target claims are without formal redeemption possibilities.
+\item ECB governing council in control over money base creation (one country one vote).
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{}
+\includegraphics[width=\textwidth]{BalSheetEZ.png}
+\end{frame}
+\section{Market interventions and TC}
+\begin{frame}
+\frametitle{Monetary policy interventions through the Target system}
+\begin{itemize}
+\item Target claims and liabilities are the outcome of ECB's own interventions, and as such indirectly controllable by ECB council.
+\item Mainly a reflection of:
+\begin{enumerate}
+\item Main refinancing rate.
+\item Collateral requirement.
+\item Liquidity policy.
+\end{enumerate}
+\item The BOP equation
+\begin{equation*}
+\text{CUR.ACC.} + \text{CAP.ACC.}\equiv -\Delta\text{TC}
+\end{equation*}
+\item Monetary policy intervention through the Target system must have an impact on the market prices; either in the goods and services markets or the assets market.
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Two extreme cases: }
+\begin{enumerate}
+\item Electronic money base growth with capital market break down
+\begin{equation*}
+\text{CUR.ACC.} \equiv -\Delta\text{TC}
+\end{equation*}
+$\Rightarrow $ Finances current account deficit.
+\item Electronic money base growth with current account in balance  \begin{equation*}
+\text{CAP.ACC.} \equiv -\Delta\text{TC}
+\end{equation*}
+$\Rightarrow $ Facilitate capital flow.
+\end{enumerate}
+For a country entering the bust phase of a credit driven business cycle, Target credit must either (1) postpone the necessary price realignment process or (2) transfer risk in the capital market across countries  (e.g. between investors and taxpayers).
+\end{frame}
+\begin{frame}
+\frametitle{Monetary policy by the ECB after the U.S. financial crisis}
+\begin{itemize}
+\item From October 2008 to May 2009, ECB reduces its main refinancing rate from 4,25\% to 1 \%.
+\item Full allotment policy (i.e. NCBs willing to provide credit to banks in any amount given sufficient collateral).
+\begin{center}
+\includegraphics[scale=1.5]{ebc_creq.png}
+%\includegraphics{ebc_creq.png}
+\end{center}
+\item From 2011 the NBCs of Ireland and Greece started to provide  Emergency liquidity assistance (ELA) to their commercial banks.
+\end{itemize}
+\end{frame}
+\section{The case for the PIIGS economies}
+\begin{frame}
+\frametitle{}
+\includegraphics[width=\textwidth]{tc_ca_cu.png}
+\end{frame}
+\begin{frame}
+\frametitle{}
+\includegraphics[width=\textwidth]{TC_CA_CU_PIIGS_I.png}
+\end{frame}
+\begin{frame}
+\frametitle{}
+\includegraphics[width=\textwidth]{TC_CA_CU_PIIGS_II.png}
+\end{frame}
+\section{Present policy situation}
+\begin{frame}
+\frametitle{The way ahead?}
+\begin{enumerate}
+\item Dismantling of the capital market:
+\begin{itemize}
+\item Let the present Target system continue.
+\item The European Banking Union.
+\item The introduction of Eurobonds.\\
+\item Outright Monetary Transactions
+\item European financial stability facility. 
+\end{itemize}
+\item Return to markets:
+\begin{itemize}
+\item Gradually make Target claims redeemable towards marketable assets
+\\-- Hume's specie-flow mechanism from (1752).
+\item Increased capital ratio for banks (Basel III).
+\item Countries that find it too costly to deflate in order to regain competitiveness should exit the Euro.
+\end{itemize}
+\end{enumerate}
+\end{frame}
+\section{References}
+\begin{frame}
+\frametitle{For further reading:}
+\begin{thebibliography}{10}
+\bibitem[De Grauwe, P., 2012]{de2012economics}
+De Grauwe, P.
+\newblock Economics of monetary union
+\bibitem[Sinn, H.W. and Wollmersh{\"a}user, T., 2012]{sinn2012target}
+Sinn, H.W. and Wollmersh{\"a}user, T.
+\newblock Target loans, current account balances and capital flows: the ECB’'s rescue facility.
+\end{thebibliography}
+\end{frame}
+%\caption{Target system }
+\section{Additional graphs}
+\begin{frame}
+\frametitle{Gross Target claims (Eurozone) and gross ISA claims (USA) relative to GDP}
+\includegraphics{redemption.png}
+\end{frame}
+\begin{frame}
+\frametitle{Inside money, outside money and CB credit for GIIPS}
+\includegraphics{targetmoney.png}
+\end{frame}
+\end{document}

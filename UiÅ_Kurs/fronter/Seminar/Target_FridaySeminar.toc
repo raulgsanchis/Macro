@@ -1,0 +1,7 @@
+\beamer@endinputifotherversion {3.07pt}
+\beamer@sectionintoc {1}{Present situation}{2}{0}{1}
+\beamer@sectionintoc {2}{Target claims and liabilities}{6}{0}{2}
+\beamer@sectionintoc {3}{Bretton Woods as a parallel}{8}{0}{3}
+\beamer@sectionintoc {4}{Differences}{11}{0}{4}
+\beamer@sectionintoc {5}{Market interventions and TC}{13}{0}{5}
+\beamer@sectionintoc {6}{The case for the PIIGS economies}{16}{0}{6}

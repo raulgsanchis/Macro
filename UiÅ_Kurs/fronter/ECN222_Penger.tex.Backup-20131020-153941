@@ -1,0 +1,97 @@
+%&latex
+\documentclass[a4paper,notitlepage]{article}
+\usepackage{beamerarticle}
+%\mode<article>{\usepackage{fullpage}}
+%\documentclass[notes=show]{beamer}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{mathpazo}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{graphicx}
+\usepackage{amssymb}
+%\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+%\usepackage{amsmath}
+\usetheme{Madrid}
+%\input{tcilatex}
+\begin{document}
+\title[Triola kapittel 1]{Penger, kreditt og bankadferd}
+\author[JIH]{J\o rn I. Halvorsen \\ Universitet i Ås}
+\institute[BI]{\inst{1} }
+\date[Sj\o krigsskolen 2007]{Forelesningsnotat ECN 222, høsten 2013}
+\maketitle
+%------------------------------
+\section{Introduksjon}
+\begin{quotation}
+In Minsky's theory of endogenous financial booms and busts, prosperous
+times lead to an excess availability of credit and the gradual development of credit-fuelled asset-price bubbles.  Financial crises result when those debt levels become excessive a so-called ''Minsky'' moment.  A credit crunch then ensues leading to a downturn in the real economy. 
+\end{quotation}
+La det være klart med en gang, det vi har lært til kurset til nå gir oss i svært liten grad mulighet til å forstå sitatet ovenfor. Men forhåpentligvis vil dette notat gi oss en større forståelse av hva Minsky virkelig hadde i tankene.
+
+Vi må bygge denne kunnskapen systemetisk. Mer spesielt så er dette kapitlet delt inn i fire deler
+\begin{itemize}
+\item Hva er penger?
+\item Hvilken funksjoner og hvordan fungerer bankvesenet i en økonomi?
+\item Hva er hensikten med en sentralbank?
+\item Hvorfor kan banker ha innteresse av å påtå seg unødvendig risiko?
+\end{itemize}
+\section{Penger}
+Det er fullt mulig å forestille seg en økonomi hvor penger ikke eksisterer. Aktørene i en slik økomomi kan motta ulike varer og tjenester gjennom byttehandel. Men kunne være operativt i en primitiv økonomi. Men for en avansert økonomi, vil en pengeløs økonomi by tre fundamentale utfordringer:
+\begin{enumerate}
+        \item Match mellom selger og kjøper hva gjelder varer
+\item Delbarhet
+\item Regneenhet.
+\end{enumerate} 
+En måte å unngå det første problemet på er å finne en annen varer av person 3 for person 1 og 2. som indirekte byttemiddel
+
+Dersom en vare er allement akseptert blant de fleste aktører som et byttemiddel kan det defineres som penger. Penger har som egenskap at de løser alle disse tre problemene. Men hvilken vare er det som har blitt egnet som et slikt \subsection{Penger i gammel tid}
+Private aktører har bestem hva som skal være penger...
+Historisk har gull og sølv være dominerende som penger. Men det finnes andre eksempler som kameler og sigaretter. I en markedsøkonomi innehar det som blir valgt som penger typisk tre egenskaper
+\begin{enumerate}
+\item Heavy demand
+\item Highli devisable 
+\item Portable
+\item High value per unit of weight.
+\item Highly durable
+\end{enumerate} 
+\subsection{Penger i moderne tid}
+Offentlige myndigheter har bestem hva som skal være penger?
+Statsgjeld (fiat) og bankkreditt
+Hvordan ble denne reisen mulig?
+La oss forfølge en gullbeholdning på 100 enheter, fordelt på 100 innbyggere. \section{Privat bankvesen}
+\subsection{Loanable fond economy}
+
+Banker tilbyr to primære tjenester
+(1) Lån.
+(2) Transaksjonstjenester.
+
+Tjenestene ovenfor kan overtas av to typer banker
+
+Utlåndsbank
+Reservebank
+
+Forretningsbankene er kjennetegnet ved at de kombinerer begge disse tjenestene.
+
+Det finnes to måter:
+Bankkvittering, Sjekker.
+
+Disse kan operer side om side, avhenge av transaksjonen.
+
+\subsection{Fractional reserve banking}
+Med fractional reserve banking menes enten har skrevet ut fler sedler enn de har gull. Enten i form av innskudd og/eller reserver.
+
+Historisk: shake system:
+Låner langt 
+finansier kort. 
+Insolvens vs likviditet
+\section{Opprettelsen av en sentralbank}
+Deal: monopol på sedler og mynt
+Banker: Fortsatt kontopenger.
+\subsection{Endogenous money economy}
+\subsection{Endogenous money economy with capital and  requirments}
+\section{Banker og systemrisiko}
+\subsection{The bloos rule}
+\end{document}
+
+

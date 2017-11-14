@@ -1,0 +1,23 @@
+\ifx\undefined\BySame
+\newcommand{\BySame}{\leavevmode\rule[.5ex]{3em}{.5pt}\ }
+\fi
+\ifx\undefined\textsc
+\newcommand{\textsc}[1]{{\sc #1}}
+\newcommand{\emph}[1]{{\em #1\/}}
+\let\tmpsmall\small
+\renewcommand{\small}{\tmpsmall\sc}
+\fi
+\begin{thebibliography}{}
+
+\harvarditem[Eggertsson and Krugman]{Eggertsson and
+  Krugman}{2012}{eggertsson2012debt}
+\textsc{Eggertsson, G.~B.,  {\small and} P.~Krugman}  (2012): ``Debt,
+  Deleveraging, and the Liquidity Trap: A Fisher-Minsky-Koo Approach*,''
+  \emph{The Quarterly Journal of Economics}, 127(3), 1469--1513.
+
+\harvarditem[Krugman]{Krugman}{1998}{krugman1998s}
+\textsc{Krugman, P.~R.}  (1998): ``It's baaack: Japan's slump and the return of
+  the liquidity trap,'' \emph{Brookings Papers on Economic Activity}, 1998(2),
+  137--205.
+
+\end{thebibliography}

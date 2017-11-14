@@ -1,0 +1,598 @@
+%&latex
+\documentclass[notes=show]{beamer}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{mathpazo}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{graphicx}
+\usepackage{amssymb}
+%\usecolortheme[named=black]{structure}
+%\usetheme[height=10mm]{Rochester}
+\usetheme{CambridgeUS}
+%\input{tcilatex}
+\begin{document}
+
+\title[]{ECB's Target claims and liabilities: A cause or a reflection of the current Eurocrisis?}
+\author[]{J\o rn Inge Halvorsen \inst{1}}
+\institute[]{Norwegian Business School (BI)}
+\date[]{28. September, 2012}
+\maketitle
+\section{Present situation}
+\begin{frame}
+\frametitle{Today's situation in need of a theory?}
+\begin{itemize}
+  \item The policy debate of the Eurocrisis is usually centered around classical textbook argument (e.g. )
+  \item Hans Werner and Timo Wolmershauser (2012) provide a more detailed approach to this issue.
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Sovereign debat and interest rate spreads}
+\end{frame}
+\begin{frame}
+\frametitle{Is the Eurocrisis solely a sovereign debt crisis?}
+\includegraphics[width=\textwidth]{balsheetbw.eps}
+\end{frame}
+\section{Target claims and liabilities}
+\begin{frame}
+\frametitle{}
+\end{frame}
+\section{}
+\begin{frame}
+\frametitle{}
+\end{frame}
+\section{Bretton Woods as a parallel}
+\begin{frame}
+\frametitle{}
+\end{frame}
+\section{Differences between Bretton Woods and the EBS system}
+\begin{frame}
+\frametitle{}
+\end{frame}
+\section{Markets not working?}
+\begin{frame}
+\frametitle{}
+\end{frame}
+\section{Possible solutions}
+\begin{frame}
+\frametitle{}
+\end{frame}
+\end{document}
+\section{Introduction}
+\begin{frame}
+\frametitle{Motivation}
+\begin{itemize}
+\item Medium sized new Keynesian DSGE models is today frequently used  in CBs across the world for the purpose of   forecasting and providing  monetary policy advise.\item These models typically rely on Bayesian estimation techniques.
+\item In large, is has been shown that these such models are able to fit data reasonable well. See for e.g.:
+\begin{itemize}
+\item \cite{smets2010shocks}
+\item \cite{christiano2005nominal}
+\item \cite{adolfson2011optimal}
+\end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{}
+\begin{itemize}
+\item However, in the ongoing debate about the usefulness of NK-models for monetary policy advice, \cite{chari2008new}  claim that fitness is of little relevant for these models  since:\\
+``\emph{It includes dubiously structural
+shocks and other features that handicap its usefulness for policy analysis.}'' \item For instance, they claim that in the Smets-Wouter model (estimated for the EU and US economy) includes dubious structural shocks in the form of shock to:
+\begin{itemize}
+\item Wage markups
+\item Price markups
+\item Exogenous government spending
+\item \textbf{Risk premium} (``Demand Shock'')
+\end{itemize}
+\item The exchange risk premium seems quite an important structural shock since in \cite{smets2010shocks} it explains:
+\begin{itemize}
+\item Output gap variance -- Q1: 25 percent; Q2: 20 percent; Q4: 10 percent.\\
+\item Six times the variance of short-term nominal rates
+\end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{The purpose of this paper}
+\begin{itemize}
+\item Investigate the validity that the exchange rate risk premium is a dubious structural shock
+ \item We approach this issue by
+ \begin{itemize}
+ \item Endogenize portfolio holdings and associated risk premium in a SOE NK DSGE with incomplete markets.\newline
+ \item In particular, analyze steady state equilibrium portfolio holdings and risk premium based on a solution procedure developed in \cite{devereux2010country}  \item Check the property of the of the exchange risk premium  in relation to a properly defined structural shock (se for e.g.  \cite{chari2008new})
+ \begin{enumerate}
+\item The structural
+shocks must be easily interpretable (i.e. clear whether shock should be accommodated (good shock) or
+offset (bad shock)).
+\item Invariability
+with respect to the policy interventions.
+\end{enumerate}
+\end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Model-set up}
+\begin{itemize}
+\item We apply a new Keynesian DSGE for a SOE (\cite{gali2005monetary}).
+\item Extend the model to allow for endogenous portfolio choice under incomplete asset market.
+%\item New Keynesian SOE DSGE model
+\item The world economy consists of a continuum of identical SOE on the unit interval.
+%\item The world economy consists of continuum of identical infinitesimally SOE on the unit interval.
+\item The ``home'' country is defined as one single SOE.
+%\item All countries face identical preferences, technology and market structure.
+%\item Assume that productivity shocks for ''home`` economy are uncorrelated with rest of the world.
+\end{itemize}
+\end{frame}
+\section{The SOE model}
+\begin{frame}
+\frametitle{The representative household for the home country}
+\begin{itemize}
+\item Maximizing expected discounted lifetime utility
+\begin{equation*}
+\underset{C_{t}, N_{t},\Xi_{H,t},\Xi_{F,t}}{\text{ Max }} E_{0}\sum_{t=0}^{\infty}\beta^{t}\left(\frac{C_{t}^{1-\sigma}}{1-\sigma}
+- \frac{N_{t}^{1-\varphi}}{1-\varphi}\right),
+\end{equation*}
+\item Under the budget constraint:
+\begin{equation*}
+P_{t}C_{t} +W_{t+1} \leqq w_{t}N_{t} + \Pi_{t} +
+P_{t}(r_{H,t}\Xi_{H,t-1}+r_{F,t}\Xi_{F,t-1})
+\end{equation*}
+\item Nominal wealth is defined as
+\begin{equation*}
+W_{t}=P_{t}(\Xi_{H,t-1}+\Xi_{F,t-1})
+\end{equation*}
+\item $r_{H,t}$ represents real rate of return
+on home assets and $\Xi_{H,t}$ denotes home country household's holdings of domestic assets, likewise for foreign economy
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{}
+\begin{itemize}
+\item Consumption index
+\begin{equation*}
+C_{t}=\left[(1-\alpha)^{\frac{1}{\eta}}(C_{H,t})^{\frac{\eta-1}{\eta}}+\alpha^{\frac{1}{\eta}}
+(C_{F,t})^{\frac{\eta-1}{\eta}}\right]^{\frac{\eta}{\eta-1}}
+\end{equation*}
+\item Home country consumer price index (CPI)
+\begin{equation*}
+P_{t}=\left[(1-\alpha)(P_{H,t})^{1-\eta}+\alpha
+(P_{F,t})^{1-\eta}\right]^{\frac{1}{1-\eta}}
+\end{equation*}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Optimality conditions}
+\begin{itemize}
+\item Consumption-leisure tradeoff
+\begin{equation*}
+N_{t}^{\varphi}C_{t}^{\sigma}=\frac{w_{t}}{P_{t}}.
+\end{equation*}
+\item Stochastic Euler equation \begin{equation*}\label{HIA}
+C_{t}^{-\sigma}=\beta E_{t}(C_{t+1}^{-\sigma}r_{F,t+1}).
+\end{equation*}
+\item Optimal portfolio decision implies
+\begin{equation*}
+E_{t}C^{-\sigma}_{t+1}(r_{H,t+1}-r_{F,t+1})=0.
+\end{equation*}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Firms optimization problem}
+\begin{itemize}
+\item Maximize expected discounted future profit
+\begin{equation*}
+\underset{\overline{P}_{H,t}}{\text{Max}}\sum_{k=0}^{\infty}\theta^{k}E_{t}\left\{Q_{t,t+k}
+\left[Y_{t+k}^{d}\left(\overline{P}_{H,t}-MC_{t+k}^{N}
+\right)\right] \right\}
+\end{equation*}
+\item Monopolistic competition, Calvo, producer's currency pricing, identical technology given as
+\begin{equation*}
+Y_{t}(j)=A_{t}N_{t}(j),
+\end{equation*}
+\item Productivity follows
+an AR(1) process
+\begin{equation*}
+\log A_{t}=\rho_{a} \log A_{t-1} + e_{t}
+\end{equation*}
+where $0<\rho_{a}<1$ and $e_{t}$ is a productivity
+shock i.i.d. with $E_{t-1}[e_{t}]=0$ and $Var[e_{t}]=\sigma^{2}_{e}$.
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Solution to the optimization problem}
+\begin{itemize}
+\item FOC for price setting
+\begin{equation*}
+\sum_{k=0}^{\infty}\theta^{k}E_{t}\left[Q_{t,t+k}Y_{t+k}
+\left(\overline{P}_{H,t}-\frac{\epsilon}{1-\epsilon}MC^{n}_{t+k}\right)\right]=0.
+\end{equation*}
+\item The solution for $\overline{P}_{H,t}$
+\begin{equation*}
+\overline{P}_{H,t}=\left(\frac{\epsilon}{1-\epsilon}\right)\frac{E_{t}\sum_{k=0}^{\infty}\beta^{k}Q_{t,t+k}Y_{t+k}MC^{n}_{t+k}}
+{E_{t}\sum_{k=0}^{\infty}\beta^{k}Q_{t,t+k}Y_{t+k}}
+\end{equation*}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Monetary policy}
+\begin{itemize}
+\item Inflation targeting rule
+\begin{equation*}
+R_{H,t+1}=\beta^{-1}\left(\frac{P_{H,t}}{P_{H,t-1}}\right)^{\zeta}\exp(m_{t})
+\end{equation*}
+where $m_{t}$ is i.i.d. stochastic financial market shock assumed to
+be outside the direct control of the monetary authority with
+$E_{t-1}[m_{t}]=0$ and $Var[e_{t}]=\sigma^{2}_{m}$.
+The parameter $\zeta$
+represents the stance of monetary policy.
+\end{itemize}
+\end{frame}
+\section{The SOE model}
+\begin{frame}
+\frametitle{The world economy}
+\begin{itemize}
+\item All countries that make up the world economy face the same productivity shock process.
+\item Common monetary policy (i.e. form a monetary union)
+\item No stochastic financial market shock (simplifying assumptions)
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Market clearing}
+\begin{itemize}
+\item Labor market
+\begin{equation*}
+N_{t}=\int_{0}^{1}N_{t}(j)dj
+\end{equation*}
+\item Goods market
+\begin{equation*}
+Y_{t}(j)=C_{H,t}(j)+\int_{0}^{1}C^{i}_{H,t}(j)di \text{ for all
+} j \in(0,1)
+\end{equation*}
+$\text{ where } \ Y_{t}\equiv
+\left[\int_{0}^{1}Y_{t}(j)^{\frac{\epsilon-1}{\epsilon}}dj\right]^\frac{\epsilon}{\epsilon-1}$
+\item Domestic asset market
+\begin{equation*}
+\Xi_{H,t}+\Xi_{H,t}^{*}=0
+\end{equation*}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Solving the model}
+\begin{itemize}
+\item Standard approach - 1st order log linear approximation of the equilibrium conditions around a deterministic steady state.
+\item Note: This approach does not work here (a general property for open DSGE-model with incomplete markets):
+\begin{enumerate}
+\item Equilibrium portfolio holdings is indeterminate in a 1st order linear approximation.
+\item In a deterministic steady state, all portfolio allocations can be regarded as valid equilibria.
+% \item Equilibrium portfolio is indeterminate in a 1st order linear approximation
+% \item In a deterministic steady state, all portfolio allocations can be regarded as valid equilibria
+\end{enumerate}
+\item \cite{devereux2010country} develop a two-step solution procedure for determining portfolio holdings in steady state.
+% \item Standard approach - 1st order log linear approximation of the equilibrium conditions around deterministic steady state
+% \item Does not work here! Cannot determine equilibrium portfolio holdings(general feature for DSGE models with portfolio decision under incomplete markets)
+% \item Devereux and Sutherland (2006) develop method that allows to determine equilibrium portfolio holdings
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Two steps solution procedure}
+\begin{itemize}
+\item The solution technique combines 2nd order approximation to the portfolio equilibrium conditions with a 1st order approximation to the solution of the non-portfolio equilibrium conditions.
+\begin{enumerate}
+\item Solve
+the model taking the first-order approximation of the
+non-portfolio equilibrium conditions.\newline
+\item Extract from this
+solution the cross products of the variables needed to solve the portfolio equilibrium conditions
+\end{enumerate}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{First step: solution to the first order approximation of the non-portfolio condition}
+\begin{eqnarray*}
+\sigma(E_{t}\hat{C}_{t+1}-\hat{C}_{t})=\sigma(E_{t}\hat{Y}_{t+1}^{*}-\hat{Y}_{t}^{*})+(1-\alpha)(E_{t}\hat{\chi}_{t+1}-\hat{\chi}_{t})+ O(\epsilon^{2})\\
+\hat{W}_{t+1}=\frac{1}{\beta}\hat{W}_{t} +
+\tilde{\Xi}\hat{r}_{x,t+1} -
+\alpha\hat{\chi}_{t} +\hat{Y}_{t}-\hat{C}_{t}+O(\epsilon^{2})\\
+\hat{Y}_{t}=(1-\alpha)\hat{C}_{t} + \alpha \hat{Y}_{t}^{*} + \eta(1-\alpha)\alpha\hat{\chi}_{t} + \gamma\alpha\hat{\chi}_{t}+O(\epsilon^{2})\\
+\pi_{H,t}=\beta E_{t}\pi_{H,t+1}+\lambda\left[\varphi \hat{N}_{t} + \sigma \hat{C}_{t} + \alpha\hat{\chi}_{t} - \hat{A}_{t} - \mu \right]+ O(\epsilon^{2})\\
+\sigma(E_{t}\hat{C}_{t+1}-\hat{C}_{t}) + E_{t}\pi_{H,t+1}+\alpha(E_{t}\hat{\chi}_{t+1}-\hat{\chi}_{t}) = \zeta\pi_{H,t} + m_{t} +  O(\epsilon^{2})\\
+\pi_{F,t}^{*}=\beta E_{t}\pi_{F,t+1}^{*}+\lambda\left[\varphi
+\hat{N}_{t}^{*} + \sigma \hat{Y}_{t}^{*} - \hat{A}_{t}^{*} -
+\mu \right]+ O(\epsilon^{2})\\
+\sigma(E_{t}\hat{Y}_{t+1}^{*}-\hat{Y}_{t}^{*}) +
+E_{t}\pi_{F,t+1}^{*} = \zeta^{*}\pi_{F,t}^{*} +
+O(\epsilon^{2})\\
+\hat{r}_{x,t+1}  = -(S_{t+1}-E_{t}S_{t+1})+ O(\epsilon^{2})
+\end{eqnarray*}
+\end{frame}
+\begin{frame}
+\frametitle{}
+\begin{itemize}
+\item The state space representation of the system
+\begin{align*}
+A_{1}
+\begin{bmatrix}
+s_{t+1} &  \\
+E_{t} c_{t+1} &
+\end{bmatrix}
+= A_{2}
+\begin{bmatrix}
+s_{t} &  \\
+c_{t} &
+\end{bmatrix}
++A_{3}x_{t} + B\xi_{t} + O(\epsilon^{2})
+\end{align*}
+\begin{equation*}
+x_{t}=Nx_{t-1}+\varepsilon_{t} \text{ where }
+\Sigma=E(\varepsilon_{t}\varepsilon_{t}')
+\end{equation*}
+\begin{equation*}
+s_{t}' = \left[ \hat{W}_{t} \right] % State dependent variables
+\end{equation*}
+\begin{equation*}
+c_{t}' = \left[ \hat{C}_{t}, \hat{\chi}_{t}, \hat{Y}_{t}^{*},\pi_{H,t},\pi_{F,t}^{*}, \hat{r}_{x,t} \right]  % Jump variables
+\end{equation*}
+\end{itemize}
+\begin{itemize}
+\item The state space solution of the form
+\begin{align*}
+s_{t+1} &= T_{1}x_{t} + T_{2}s_{t} + T_{3}\xi_{t}+O(\epsilon^{2}) \\
+c_{t}&= P_{1}x_{t} + P_{2}s_{t} + P_{3}\xi_{t} +O(\epsilon^{2})
+\end{align*}
+where $T_{1}$, $T_{2}$, $T_{3}$ and $P_{1}$, $P_{2}$, $P_{3}$ are coefficient matrices
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Second step:  solve for the portfolio equilibrium conditions}
+\begin{itemize}
+\item Portfolio holding
+\begin{equation*}
+\texttt{Cov}_{t}\left[(\hat{C}_{t+1}-\hat{Y}^{*}_{t+1}-\frac{\hat{Q}_{t+1}}{\sigma}),(\hat{r}_{x,t+1})
+\right]=0+O(\epsilon^{3})
+\end{equation*}
+\item Exchange rate risk premium
+\begin{equation*}
+\begin{split}
+\overline{rp}=
+\sigma\frac{1}{2}\texttt{Cov}_{t}\left[(\hat{C}_{t+1}+\hat{Y}^{*}_{t+1}+\frac{\hat{Q}_{t+1}}{\sigma}),(\hat{r}_{x,t+1})
+\right]+O(\epsilon^{3})
+\end{split}
+\end{equation*}
+\item Extract from the state space solution the following variables
+\begin{equation*}
+\hat{r}_{x,t+1}=R_{1}\xi + R_{2}\varepsilon+O(\epsilon^{2})
+\end{equation*}
+\begin{equation*}
+(\hat{C}_{t+1}-\hat{Y}^{*}_{t+1}-\hat{Q}_{t+1})=D_{1}\xi +
+D_{2}\varepsilon + D_{3}\textbf{X}+O(\epsilon^{2})
+\end{equation*}
+\begin{equation*}
+(\hat{C}_{t+1}+\hat{Y}^{*}_{t+1}+\hat{Q}_{t+1})=F_{1}\xi +
+F_{2}\varepsilon + F_{3}\textbf{X}+O(\epsilon^{2})
+\end{equation*}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\begin{itemize}
+\item Solution for steady state portfolio holding
+\begin{equation*}
+\tilde{\Xi}=\left[R_{2}\Sigma D_{2}'R_{1}'-D_{1}R_{2}\Sigma
+R_{2}'\right]^{-1}R_{2}\Sigma D_{2}' +O(\epsilon^{3})
+\end{equation*}
+\item Solution for steady state exchange rate risk premium
+\begin{equation*}
+\overline{rp}
+=\frac{1}{2}\tilde{R_{2}}\Sigma\tilde{F_{2}}'+O(\epsilon^{3})
+\end{equation*}
+Where
+\begin{equation*}
+\tilde{R_{2}}\equiv\left(1-R_{1}\tilde{\Xi}\right)^{-1}R_{2} \text{ and }
+\tilde{F}_{2}\equiv F_{1}\tilde{\Xi}\tilde{R_{2}} + F_{2}
+\end{equation*}
+\end{itemize}
+\end{frame}
+%\subsection{Partial equilibrium}
+\begin{frame}
+\frametitle{Partial equilibrium}
+\begin{itemize}
+\item Calibrate the model using:\\  $\beta=0.99$, $\sigma=1$, $\varphi=0$,
+$\alpha=0.7$, $\eta=1.5$, $\gamma=1.5$, $\theta=0.5$, $\zeta=2$.
+\item Equations:
+\begin{equation*}
+\hat{C}_{t}=  -0.25m_{t} + 0.71e_{t} + 0.29e_{t}^{*}
++0.010\tilde{\Xi}r_{x,t} + O(\epsilon^{2})
+\end{equation*}
+\begin{equation*}
+\hat{r}_{x,t}  = 0.75m_{t} -0.57e_{t} + 0.57e_{t}^{*} +
+0.020\tilde{\Xi}r_{x,t} + O(\epsilon^{2})
+\end{equation*}
+\item Initially, suppose that $\tilde{\Xi}=0$.\
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Partial equilibrium - Interest rate shock}
+\begin{itemize}
+\item Equations:
+\begin{equation*}
+\hat{C}_{t}=  -0.25m_{t} +0.010\tilde{\Xi}r_{x,t} + O(\epsilon^{2})
+\end{equation*}
+\begin{equation*}
+\hat{r}_{x,t}  = 0.75m_{t} +
+0.020\tilde{\Xi}r_{x,t} + O(\epsilon^{2})
+\end{equation*}
+\item A positive interest rate shock $\Rightarrow$ $\hat{C}_{t}$ decreases by $-0.25$.
+\item This implies that $\hat{r}_{x,t}$ increases by $0.75$,  so partial hedging can by achieved by obtaining a long position in $\tilde{\Xi}$.
+\item Note, however, that the level of bond holding also has an indirect effect on $\hat{r}_{x,t}$  \\
+\item In total then, interest rate shock can by completely hedged by letting:\\
+\begin{equation*}
+\tilde{\Xi}=\frac{1}{0.01}\frac{0.25\cdot0.75}{(2\cdot0.25\cdot 0.75+0.75^2)}
+\end{equation*}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Partial equilibrium - Domestic and productivity shock}
+\begin{itemize}
+\item Equations:
+\begin{equation*}
+\hat{C}_{t}=  0.71e_{t} +0.010\tilde{\Xi}r_{x,t} + O(\epsilon^{2})
+\end{equation*}
+\begin{equation*}
+\hat{r}_{x,t}  =-0.57e_{t} +
+0.020\tilde{\Xi}r_{x,t} + O(\epsilon^{2})
+\end{equation*}
+\item A positive domestic productivity shock $\Rightarrow$ $\hat{C}_{t}$ increases by $0.71$.
+\item Since this implies that $\hat{r}_{x,t}$ decreases by $0.57$,
+so partial hedging can by achieved by obtaining a long position in $\tilde{\Xi}$.
+\item Note, however, that the level of bond holding also has an indirect effect on $\hat{r}_{x,t}$
+\footnote{Due to this effect, the level of nominal bond will be indeterminate
+with respect to a foreign productivity  shock.} %}  \\
+\item In total then, domestic productivity shock can by fully insured by letting:\\
+\begin{equation*}
+\tilde{\Xi}=\frac{1}{0.01}\frac{0.71\cdot 0.57}{(2\cdot0.71\cdot 0.57+0.57^2)}
+\end{equation*}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Partial equilibrium - Facing all structural shocks}
+\begin{itemize}
+\item If household simultaneously faces all the uncorrelated structural shocks
+ $\Rightarrow $ optimal portfolio will be affected by the
+relative variance of each of the shocks:
+\begin{equation*}
+\tilde{\Xi}=\frac{1}{0.010}\frac{0.25\cdot
+0.75\sigma^{2}_{m}+0.71\cdot 0.57\sigma^{2}_{a}-0.29\cdot
+0.57\sigma^{2}_{a*}}{2(0.25\cdot 0.75\sigma^{2}_{m}+0.71\cdot
+0.57\sigma^{2}_{a}) + 0.75\sigma^{2}_{m}+0.57^2\sigma^{2}_{a}}
+\end{equation*}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{General equilibrium}
+\begin{itemize}
+\item If the world economy only consisted  of risk neutral agents, the demand for bonds analyzed in the partial equilibrium for the SOE would always be met (i.e. foreign agents would we willing to absorb all  risk).
+\item However, with risk aversion and asymmetric economic structure between SOE and the World economy, the negative of foreign demand  of bonds  foreign demand will in general without a exchange rate premium differ from domestic demand. \item Consequently, the risk premium clears  the market for bond holding so that one obtains an efficient allocations for the agents between risk and expected return.
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{}
+\begin{itemize}
+\item The general equilibrium portfolio holdings and risk premium then becomes
+\begin{equation*}
+\tilde{\Xi} =
+\frac{\overset{}{(0.19\sigma^{2}_{m}+0.41\sigma^{2}_{a}
++0.41\sigma^{2}_{a^{*}})}}{0.010
+\left[\underset{}{2(0.19\sigma^{2}_{m}+0.41\sigma^{2}_{a}+0.41\sigma^{2}_{a^{*}}})\underset{}{+(0.56\sigma^{2}_{m}+0.33\sigma^{2}_{a}+0.33\sigma^{2}_{a^{*}}})
+\right]}
+\end{equation*}
+\begin{equation*}
+\overline{rp} =
+0.5\left[p'\underset{}{\left(-0.19\sigma^{2}_{m}-0.41\sigma^{2}_{a}+
+0.73\sigma^{2}_{a^{*}}\right)}+
+p''\underset{}{\left(0.56\sigma^{2}_{m}+
+0.33\sigma^{2}_{a} + 0.33\sigma^{2}_{a^{*}}\right)}\right]
+\end{equation*}
+\begin{equation*}
+\text{where } p'\equiv(1-0.010\tilde{\Xi})^{-1} \text{ and }
+p''\equiv p'^{2}0.010\tilde{\Xi} \text{  represent two scaling
+factors.}
+\end{equation*}
+\item Uncovered interest rate parity (UIP) condition
+\begin{equation*}
+R_{H,t}-R_{W,t}^{*}+
+\overline{rp}=E_{t}(\hat{S}_{t+1}-\hat{S}_{t})+O(\epsilon^{3})
+\end{equation*}
+\item \textbf{Result 1}: Households can \textbf{raise expected utility} under a floating exchange rate by active participation in the foreign exchange market: Trade off between consumption variability and consumption level (through higher expected return). $\Rightarrow$ Should be modelled as ``Good shock''
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Monetary policy influence}
+\begin{itemize}
+\item By letting $\zeta \rightarrow \infty$ (i.e interest rate shock) SOE will replicate its flexible price equilibrium
+\item Equilibrium portfolio holdings and risk premium then reduces itself to
+\begin{equation*}
+\tilde{\Xi} =
+\frac{(0.41\sigma^{2}_{a}+0.41\sigma^{2}_{a^{*}})}{0.010\left[2(0.41\sigma^{2}_{a}+0.41\sigma^{2}_{a^{*}})
++(0.33\sigma^{2}_{a}+0.33\sigma^{2}_{a^{*}}) \right]}
+\end{equation*}
+\begin{equation*}
+\overline{rp} = 0.5\left[p'\left(-0.41\sigma^{2}_{a} +
+0.73\sigma^{2}_{a^{*}}\right)+ p''\left( 0.33\sigma^{2}_{a} +
+0.33\sigma^{2}_{a^{*}}\right)\right]
+\end{equation*}
+\item \textbf{Result} 2: Optimal policy implies  \textbf{a change in the  risk premium} increases $\Rightarrow$ risk premium not invariable with respect to policy interventions.
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{Conclusion}
+\begin{itemize}
+\item Medium sized NK DSGE models based on Bayesian estimation has shown to fit data reasonable well.
+\item According to some researchers, these is in large due to that these models  contain many dubious structural shocks.
+\item For  this papers, we have shown that such critique is  relevant for the case of modeling the exchange rate risk premium is a exogenous stochastic process.
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{For further reading:}
+\begin{thebibliography}{10}
+\bibitem[Chari, V.V. and Kehoe, P. and McGrattan, E., 2008]{chari2008new}
+Chari, V.V. and Kehoe, P. and McGrattan, E.
+\newblock New Keynesian models: Not yet useful for policy analysis
+%
+\bibitem[Adolfson, M. and Las{\'e}en, S. and Lind{\'e}, J. and Svensson, L.E.O., 2011]{adolfson2011optimal}
+Adolfson, M. and Las{\'e}en, S. and Lind{\'e}, J. and Svensson, L.E.O.
+\newblock Optimal Monetary Policy in an Operational Medium-Sized DSGE Model
+%
+\bibitem[Smets, F. and Wouters, R., 2010]{smets2010shocks}
+Smets, F. and Wouters, R.
+\newblock Shocks and frictions in US business cycles: A Bayesian DSGE approach
+%
+\bibitem[Christiano, L.J. and Eichenbaum, M. and Evans, C.L., 2005]{christiano2005nominal}
+Christiano, L.J. and Eichenbaum, M. and Evans, C.L.
+\newblock Nominal Rigidities and the Dynamic Effects of a Shock to Monetary Policy
+%
+\bibitem[Devereux, M.B. and Sutherland, A., 2010]{devereux2010country}
+Devereux, M.B. and Sutherland, A.
+\newblock Country portfolio dynamics
+%
+\clearpage
+\bibitem[Gali, J. and Monacelli, T., 2005]{gali2005monetary}
+Gali, J. and Monacelli, T.
+\newblock Monetary policy and exchange rate volatility in a small open economy
+%
+\end{thebibliography}
+\end{frame}
+\begin{frame}
+\frametitle{Appendix 1: Solution to the   SOE DSGE  NK model     }
+\begin{equation*}
+\begin{bmatrix}
+\hat{C}_{t} \\
+\hat{C}^{*}_{t} \\
+\hat{\tau}_{t} \\
+\pi_{H,t} \\
+\hat{r}_{x,t}
+\end{bmatrix}
+=
+\begin{bmatrix}
+0.010 \\
+0 \\
+-0.020 \\
+0 \\
+0.020 \\
+\end{bmatrix}
+\tilde{\Xi}r_{x,t}+
+\begin{bmatrix}
+-0.2488 & 0.7143 & 0.2857 & \\
+0 & 0 & 1.0000 & \\
+-0.4975 &  0.5714 & -0.5714 & \\
+-0.2512 &  0 & 0 &   \\
+0.7487 & -0.5714 & 0.5714 &
+\end{bmatrix}
+\begin{bmatrix}
+\hat{m}_{t} \\
+\hat{A}_{t} \\
+\hat{A}^{*}_{t} \\
+\end{bmatrix}
+\end{equation*}
+\end{frame}
+\end{document}
+
+
+
+

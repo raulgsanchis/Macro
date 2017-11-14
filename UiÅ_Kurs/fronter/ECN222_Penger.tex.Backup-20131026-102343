@@ -1,0 +1,420 @@
+%&latex
+\documentclass[a4paper,notitlepage]{article}
+\usepackage{beamerarticle}
+%\mode<article>{\usepackage{fullpage}}
+%\documentclass[notes=show]{beamer}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{mathpazo}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{graphicx}
+\usepackage{amssymb}
+%\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+%\usepackage{amsmath}
+\usetheme{Madrid}
+%\input{tcilatex}
+\usepackage{color}
+
+\begin{document}
+
+\title[Triola kapittel 1]{Penger, kreditt og bankadferd}
+\author[JIH]{J\o rn I. Halvorsen \\ Universitet i Ås}
+\institute[BI]{\inst{1} }
+\date[Sj\o krigsskolen 2007]{Forelesningsnotat ECN 222, høsten 2013}
+\maketitle
+%------------------------------
+\section{Introduksjon}
+I en moderne økonomi er dype nedgangskonjunkturer omtrent alltid koblet sammen med grunnleggende problemer i den finansielle sektoren i økonomien.  Siden kredittlinjene som utgår fra finanssektoren berører omtrent samtlige av økonomiens aktører, vil en kollaps av det finansielle systemet også medføre et stort fall i produksjonen som en følge av økte kostnader tilknyttet det å gjennomføre økonomiske transaksjoner. 
+
+På bakgrunn av et slikt scenario, vil offentlige myndigheter vanligvis ha interesse av å spille en aktiv rolle når det gjelder å minimere skadene ved en finansiell kollaps og forhindre slike kriser fra å skje på nytt.
+Men det eksisterer foreløpig ikke noen historiske erfaringer som kan gi oss noen klar pekepinn på hvordan disse problemene bør løses. Videre gir heller ikke konjunkturteoriene som vi til nå har lært i dette kurset noen særlig innsikt i dette problemet. 
+
+Formålet med notatet er å belyse dette problemområdet nærmere ved å gi en grov oversikt over de viktigste problemene som offentlige myndigheter møte med utformingen av det finansielle systemet samt også gi et innblikk i hvordan ulike aktører kan forvente å tjene eller tape på disse løsningene.
+Måten vi går fram på, er å forsøke gi klare svar på fire spørsmål som er knyttet til utformingen av det finansielle systemet.
+\begin{itemize}
+\item Hva er penger?
+\item Hvilken funksjoner og utforminger har bankvesenet for et land typisk hatt?
+\item Hvorfor trenger vi en sentralbank?
+\item Hvorfor kan banker ha ønske om å pådra seg unødvendig systemrisiko?
+\end{itemize}
+Avhengig av hvordan en økonomi er organisert, kan penger spille alt fra en ubetydelig til en betydelig rolle i en økonomi.  Dessuten kunne ha helt forskjellige utforminger.
+
+\begin{itemize}
+\item Simpel bytteøkonomi\\
+For å oppnå varebytte, vil aktørene inngå en avtale om å bytte det de selv eier med andre aktører i økonomien.\\
+\noindent\textbf{\emph{\\ Eksempel}}\\\
+Agent 1 bytter varer med agent 2 ved å motta vare A i bytte for vare B\\
+\noindent\textbf{\\ Problemer:}\\
+(1)Krever at aktørene har behov for hverandres varer. \\
+(2)Manglende delbarhet. \\
+(3)Regneenhet.
+\item Bytteøkonomi med indirekte bytte\\
+En måte å løse det første problemet på, er å bytte til seg en vare som en selv ikke trenger (indirekte bytte) for deretter benytte denne varen som byttemiddel mot andre varer.\\   
+\noindent\textbf{\emph{\\ Eksempel}}\\\
+Agent 1 bytter varer med agent 3 ved å motta vare A i bytte for vare C. Vare C benyttes deretter av agent 1 for å bytte vare C mot vare B med agent 2.
+\item Økonomi med penger som har en verdi i seg selv\\
+Dersom økonomien består av en rekke forskjellige aktører og varer, viser historien at en uregulert økonomi vil føre at aktørene klarer selv å koordinere seg fram til et lite utvalg av varer som fungerer som byttemiddel i omtrent alle økonomiske transaksjoner. Dette er dette selekterte utvalget av varer som vi skal benevne som penger som har verdi i seg selv. Disse varene har typisk egenskaper i form av: 
+\begin{enumerate}
+\item Delbare. 
+\item Bærbare.
+\item Lang varighet. 
+\item High verdi per vektenhet.
+\end{enumerate} 
+Historisk så er det gull og sølv som har vært de dominerende varene innenfor penger som har verd i seg selv. Men i mer isolerte økonomier, finnes også eksempler som sigaretter, juveler og kameler. At gull og sølv har hatt en slik dominerende rolle, er nok et resultat av at de er stand til effektivt løse alle de problemene som ble nevnt ved en bytteøkonomi.
+ \item Økonomi med penger som gjeld\\ 
+I dagens moderne økonomier har ikke penger lengre noen reell forankring til en vare som har en verdi i seg selv; men dreier seg om gjeldsbaserte penger utstedt av staten men også banker med kredittskapende evner. Vi kan konkretisere dette litt nærmere.
+\begin{itemize}
+\item Utvendige penger (fra staten):\\ 
+Sedler, mynt pluss reserver som forretningsbankene har på konto i sentralbanken. 
+\item Innvendige penge (fra bankene):\\
+Gjeld skapt gjennom innskuddskontorer som kommer til syne på forretningsbankenes balanse. 
+\end{itemize}
+\end{itemize}
+I offentlige tilgjengelige statistikker, vil beholdningen av utvendige penger i en økonomi gå under betegnelsen $M0$ (eller M1), mens innvendige penger framkommer ved $M1-M0$ (eller M1-M2).\footnote{Høyere pengeaggregater enn M1 (M2) kan også benyttes, men vi ser bort fra dette i det her kurset.} 
+Overgangen fra en økonomi med penger som har verdi i seg selv til en økonomi med penger som gjeld, har typisk skjedd gradvis over tid og kommet som en konsekvens av ulike utforminger av det finansielle systemet. Vi skal nå følge en slik utvikling ved å se nærmere på tre arktyper av dette systemet, og vurdere hvordan dette er relatert til banksystemet i en økonomi.
+\section{Bankvesentets funksjoner og utforminger}
+For en økonomi uten banker og med penger som har verdi i seg selv, vil penger primært benyttes til  
+\begin{itemize}
+\item Lån og sparing.
+\item Byttemiddel ved økonomiske transaksjoner.
+\end{itemize}
+\noindent\textbf{Problemer:}\\
+(1) Vanskelig for låntakere og finne långivere (pga. mangelfull informasjon).\\
+(2) Høye kostnader ved å oppbevare penger. \\
+\subsection{Banksystemets funksjoner}
+Banksystemets hovedfunksjoner går utpå å løse disse de to problemene, ved å tilby spesialkompetanse for vurdering av utlån og betalingssystemer for bruk ved økonomiske transaksjoner. Får vi går videre med å se på hvordan banksystemet kan utformes, kan det kanskje først være nyttig å kjenne til tre like typer av banker.
+\begin{itemize}
+\item Utlånsbank.\\
+Den bankens funksjon er å ivareta kundenes behov  for  å låne og spare.\\
+
+\noindent\textbf{\emph{Eksempel}}\\
+\begin{tabular}{rlrr}
+    \textbf{Eiendeler} & \textbf{} & \textbf{Gjeld og egenkapital} & \textbf{} \\
+\hline    Lån   & 50    & 25    & Egenkapital \\
+          &       & 25    & Obligasjoner \\
+\hline          & 50    & 50    &  \\
+\end{tabular}%
+\end{itemize}
+\begin{itemize}
+\item Transaksjonsbank\\ 
+Den bankens funksjon er å ivareta behovet for transaksjonstjenester.\\
+
+\noindent\textbf{\emph{Eksempel}}\
+
+\begin{tabular}{rlrr}
+ \textbf{Eiendeler} & \textbf{} & \textbf{Gjeld og egenkapital} & \textbf{}\\ 
+\hline    Gullreserver &  150   & 150   & Innskudd \\
+\hline                 & 150   & 150   &  \\
+\end{tabular}
+\end{itemize}
+\begin{itemize}
+\item Forretningsbank \\
+Denne banken ivaretar funksjonen til både utlånsbanken og forretningsbanken
+
+\noindent \\\textbf{\emph{Eksempel}}\\
+\begin{tabular}{rlrr}
+    \textbf{Eiendeler} & \textbf{} & \textbf{Gjeld og egenkapital} & \textbf{} \\
+\hline    Lån   & 50    & 25    & Egenkapital \\
+    Gullreserver  &  150   & 25    & Obligasjoner \\
+          &       & 150   & Innskudd \\
+\hline          & 200   & 200   &  \\
+\end{tabular}%
+\end{itemize}
+\subsection{System 1: Lånebasert bankøkonomi}
+I dette systemet blir bankenes utlån finansier meg egenkapital og gjeld, mens eiereandelen til gullreservene endres i takt med de økonomiske transaksjonene som foregår i økonomien  \\
+
+\noindent\textbf{\emph{Eksempel}}\\
+\textbf{Forretningsbank (konsolidert)}
+\begin{center}\begin{tabular}{rlrr}
+    \textbf{Eiendeler} & \textbf{} & \textbf{Gjeld og egenkapital} & \textbf{} \\
+\hline    Lån   & 50    & 25    & Egenkapital \\
+    Gullreserver  &  150   & 25    & Obligasjoner \\
+          &       & 150   & Innskudd \\
+\hline          & 200   & 200   &  \\
+\end{tabular}%
+\end{center}
+\noindent \textbf{Forretningsbank 1}
+\begin{center}
+\begin{tabular}{rrrr}
+    \textbf{Eiendeler} & \textbf{} & \textbf{Gjeld og egenkapital} & \textbf{} \\
+\hline    Lån   & 25    & 25    & Egenkapital \\
+    Gullreserver & 75    & 75    & Klient 1 \\
+\hline          & 100    & 100    &  \\
+\end{tabular}%
+\end{center}
+\noindent \textbf{Forretningsbank 2}
+\begin{center}
+
+\begin{tabular}{rrrr}
+    \textbf{Eiendeler} & \textbf{} & \textbf{Gjeld og egenkapital} & \textbf{} \\
+\hline    Lån   & 25    & 25    & Obligasjoner \\
+    Gullreserver & 75    & 75    & Klient 1 \\
+\hline          & 100    & 100    &  \\
+\end{tabular}%
+\end{center}
+\noindent\textbf{\emph{Eksempel}}\\
+Nedenfor vises beholdning ettter at både forretningsbank 1 og forretningsbank 2 har økt utlån og innvendige penger i systemet med 75 \\
+
+\noindent\textbf{Problemer:}\\
+\begin{itemize}
+\item Kostnader forbundet med å flytte reserver mellom konkurerrende forretningsbanker.
+\item Uelastisk kredittilbud (nye lån kan først bli tilgjengelig ved økt sparing)           
+\end{itemize}
+\subsection{System 2: Fraksjonsbasert bankøkonomi uten sentralbank}
+Denne utformingen løser problemet med det uelastisk kreditttilbudet under system 1, ved at bankene kan utstede mer penger (banksedler eller kontopenger) enn det de har som reserver. Men det gjør også banksystemet mer ustabilt, spesielt dersom utlånene er av dårlig kvalitet\\
+\noindent\textbf{\emph{\\ Eksempel}}\\
+\textbf{Forretningsbank (konsolidert)}
+\begin{center}\begin{tabular}{rlrr}
+    \textbf{Eiendeler} & \textbf{} & \textbf{Gjeld og egenkapital} & \textbf{} \\
+\hline    Lån   & \textcolor{red}{200}    & 25    & Egenkapital \\
+    Gullreserver  &  150   & 25    & Obligasjoner \\
+          &       & \textcolor{red}{300}    & Innskudd \\
+\hline          & 200   & 200   &  \\
+\end{tabular}%
+\end{center}
+\noindent \textbf{Forretningsbank 1}
+\begin{center}
+\begin{tabular}{rrrr}
+    \textbf{Eiendeler} & \textbf{} & \textbf{Gjeld og egenkapital} & \textbf{} \\
+\hline    Lån   & \textcolor{red}{100}    & 25    & Egenkapital \\
+    Gullreserver & 50    & 50    & Klient 1 \\
+  &     & \textcolor{red}{75}    & Klient 3 \\
+
+\hline          & 75    & 75    &  \\
+\end{tabular}%
+\end{center}
+\noindent \textbf{Forretningsbank 2}
+\begin{center}
+
+\begin{tabular}{rrrr}
+    \textbf{Eiendeler} & \textbf{} & \textbf{Gjeld og egenkapital} & \textbf{} \\
+\hline    Lån   &\textcolor{red}{100}   & 25    & Egenkapital \\
+    Gullreserver & 50    & 50    & Klient 1 \\
+    Gullreserver & 50    & \textcolor{red}{75}    & Klient 1 \\
+\hline          & 75    & 75    &  \\
+\end{tabular}%
+\end{center}
+Beholdning ettter at både forretningsbank 1 og forretningsbank 2 har økt utlån og innvendige penger i systemet med 75 
+\noindent\textbf{\\ Problemer:}\\
+\begin{itemize}
+\item Fortsatt kostnader forbundet med å flytte reserver mellom forretningsbankene.
+\item Åpner for løp på bankene (bank har ikke nok gullreserver dersom alle bankens klienter samtidig ønsker å trekke ut sine gullreserver)          
+\end{itemize}
+\subsection{System 3: Fraksjonsbasert bankøkonomi med sentralbank}
+Ved opprettelsen av en sentralbank, vil kostnadene ved å flytte reservene bli sterkt redusert siden gullreservene kan sentraliseres til et sikkert sted. Videre vil sentralbanken ha mulighet til å tre støttende til ved en evenutell finansiell kollaps. Sentralbanken som offentlig institusjon har trolig blitt muliggjort som en følge av at flere sterke interessegrupper har hatt mye å tjene på det:
+\begin{itemize}
+\item Banksektoren vil i større grad kunne forsikre seg mot løp på bankene.
+\item Husholdningen vil oppnå større sikkerhet for sine innskudd.
+\item Myndigheten vil ha mulighet til å finansiere sine budsjettunderskudd nå også ved å trykke penger (monetarisering av gjeld) i tilegg til å ta opp gjeld.  \end{itemize}  
+Sammenliknet med system 2, vil bankene under dette systemet ikke lengre ha mulighet til å utstede sedler. Denne retten gis ene og alene til myndighetene, som nå har monopol til å definere og utstede utvendige penger. Men har   fortsatt har mulighet til å tilføre systemet likviditet gjennom innvendige penger ved opprettelse av innskudskontoer og lån.\footnote{(Egen)kapitalkrav og reservekrav er to instrumenter som myndigheten kan benytte til å redusere bankenes kredittskapende evner.}\\
+\noindent\textbf{\emph{\\ Eksempel}}\\
+\textbf{Forretningsbank (konsolidert)}
+\begin{center}\begin{tabular}{rlrr}
+    \textbf{Eiendeler} & \textbf{} & \textbf{Gjeld og egenkapital} & \textbf{} \\
+\hline    Lån   & {200}    & 25    & Egenkapital \\
+    Reserver  &  150+Y   & 25    & Obligasjoner \\
+          &       & {300}    & Innskudd \\
+          &       & \textcolor{red}{Y}    & Lån SB \\
+\hline          & 350+Y   & 350+Y   &  \\
+\end{tabular}%
+\end{center}
+\noindent \textbf{Forretningsbank 1}
+\begin{center}
+\begin{tabular}{rrrr}
+    \textbf{Eiendeler} & \textbf{} & \textbf{Gjeld og egenkapital} & \textbf{} \\
+\hline    Lån   & \textcolor{red}{100}    & 25    & Egenkapital \\
+    Reserver & 75+Y1+Z    & 50    & Klient 1 og 3 \\
+  &     & \textcolor{red}{Z}    & Lån bank 2(interbank) \\
+  &     & \textcolor{red}{Y1}    & Lån SB \\
+
+\hline          & 75+Y1+Z    & 75+Y1+Z    &  \\
+\end{tabular}%
+\end{center}
+\noindent \textbf{Forretningsbank 2}
+\begin{center}
+\begin{tabular}{rrrr}
+    \textbf{Eiendeler} & \textbf{} & \textbf{Gjeld og egenkapital} & \textbf{} \\
+\hline    Lån   & \textcolor{red}{100}    & 25    & Obligasjoner \\
+    Reserver & 75+Y2    & 50    & Klient 1 og 3 \\
+  &     & \textcolor{red}{-Z}    & Lån bank 2(interbank) \\
+  &     & \textcolor{red}{Y2}    & Lån SB \\
+
+\hline          & 75+Y1-Z    & 75+Y1-Z    &  \\
+\end{tabular}%
+\end{center}
+
+\noindent \textbf{Sentralbank}
+\begin{center}
+
+\begin{tabular}{rrrr}
+    \textbf{Eiendeler} & \textbf{} & \textbf{Gjeld og egenkapital} & \textbf{} \\
+\hline    Gull   &\textcolor{red}{200}   & 50+X+T    & Sedler og mynt \\
+    Statsobligasjoner & X    & 75+Y1+Z           & Reserver bank 1 \\
+    Andre papirer  & T    & \textcolor{red}{75+Y2-Z}    & Reserver bank 2 \\
+    Lån til banker  & Y=Y1+Y2    &     &  \\
+
+\hline          & 200+X+T+Y    & 200+X+T+Y    &  \\
+\end{tabular}%
+\end{center}
+Innenfor dette systemet, har det også vært prøvd ulike varianter
+\subsubsection{Sentralbank med reservekrav og innløsningsmuligheter}
+Myndigheten beholder innløsningsmuligheten mot gull og stiller et reservekrav til bankene for å forhindre bankløp.\\
+\noindent\textbf{Problemer:}\\
+\begin{itemize}
+\item For lavt reservekrav kan her føre til løp på \emph{alle} bankene i økonomien (systemkrise)          
+\end{itemize}
+\subsubsection{Sentralbank med reservekrav/kapitalkrav og offentlig innskudsgaranti}
+I dag har penger ikke lengre innløsningsmuligheter mot gull, men bevarer sin kjøpekraft fordi myndighetene gjennom lov har vedtatt at det er det eneste gylidge betalingsmiddelet for å betale skatter. Frykten som innskyterne har for at det kan miste de pengene de har på konto i sine banker er i stor grad redusert gjennom at myndighetene stiller med en innskuddsgaranti\\
+\noindent\textbf{\\ Problemer:}\\
+\begin{itemize}
+\item Åpner for at bankene tar unødvendig stor risiko.
+\item Føre til vilkårlig store omfordelinger av formue. 
+\end{itemize}
+Ved skal nå dvele litt nærmere ved de to siste punktene i neste avsnitt, ved å studere i detalj et talleksempel som går under navnet "The BLOOS rule."
+\section{Banker og systemrisiko}
+\begin{quotation}
+In Minsky's theory of endogenous financial booms and busts, prosperous
+times lead to an excess availability of credit and the gradual development of credit-fuelled asset-price bubbles.  Financial crises result when those debt levels become excessive a so-called ''Minsky'' moment.  A credit crunch then ensues leading to a downturn in the real economy. 
+\end{quotation}
+
+I dette avsnittet skal vi forsøke å gi skissere en model med banker som er egnet til å støtte opp under dette sitatet.
+\subsection{The BLOOS rule}
+\textbf{Bedriftene}\\
+Bedriftene i økonomien er avhengig av finansiering fra bankene for å kunne operere. De kan velge mellom to litt forskjellige forretningsmodeller:
+\bigskip\\
+\noindent Forretningsmodell 1:\\
+\begin{center}
+\begin{tabular}{lrr}
+\hline
+Avkastning     &  Tilstand & Sannsynlighet \\
+\hline
+$0,05$ &          1 & 0,99 \\
+$0,05$ &          2 & 0,01 \\
+\end{tabular}
+\end{center}
+Den forventede avkasningen ved forretningsmodell 1 (FM1) vil derfor være gitt ved $E(\text{FM1}_{1})=0,05*0,99+0,05*0,01=0,05$
+\bigskip\\
+Forretningsmodell 2:\\
+\begin{center}
+\begin{tabular}{lrr}
+\hline
+Avkastning     &  Tilstand & Sannsynlighet \\
+\hline
+$0,06$ &          1 & 0,99 \\
+$-1$ &          2 & 0,01 \\
+\end{tabular}
+\end{center}
+Den forventede avkasningen ved forretningsmodell 2 (FM2) vil være gitt ved $E(\text{FM2}_{1})=0,06*0,99-1*0,01=0,05$\bigskip\\
+
+Som vi ser har de to forretningsmodellen har tilnæmret lik forventingsverdi, men forretningsmodell 1 uten usikkerhet mens forretningsmodell 2 inneholder risiko.\bigskip\\
+\textbf{Husholdningene}\\
+Type 1: Valg mellom bankobligasjoner
+Type 2: Kjøpe obligasjoner i bankeTest\\
+
+\noindent\textbf{Banksystemet}\\
+Vi har to banker i økonomien. Vi tenker oss at bank 1 finansierer forretningsmodell 1 og bank 2 finansierer forretningsmodell 2. Bankene finanserer seg selv gjennom egenkapital og gjeld.\\
+
+\noindent\textbf{Sentralbanken}\\
+Sentralbanken bestemmer rente på statsobligasjoner i økonomien som er lik den risikofri avkastnignen i økonomien.\\
+
+\noindent\textbf{Myndighetene}\\
+Mulighet til å regulere egenkapitalkravnivået som bankene må innfri.\\
+
+Basert på opplysingnene ovenfor vil bedriftne og bankene oppnå følgende fordeling når det gjelder inntekt:
+\begin{center}
+\begin{tabular}{lrrr}
+\hline
+      & Forventet verdi & Tilstand 1 & Tilstand 2 \\
+\hline
+$\text{Bedrift 1}$ &       105 & 105 & 105 \\
+$\text{Bedrift 2}$ &       105 & 106 & 0 \\
+$\text{Bank 1}$    &       105 & 105 & 105 \\
+$\text{Bank 2}$    &       105 & 106 & 0 \\
+
+\end{tabular}
+\end{center}
+Hvor mye som tilfaller aksjonæene, obligasjonseierne og hvor mye overføringer som tilfaller bankssektoren vil avhenge av egenkapitalkravet og myndighetenes reguleringer. La oss se nærmere på none tilfeller.
+ \subsubsection{Case 1: Ingen bailout guarantee}
+
+\subsubsection{Case 2: 100 prosent bailout guarantee}
+Test
+
+\end{document}
+\end{document}
+
+
+\section{Introduksjon}
+Insolvens og likvidietskrise
+\begin{quotation}
+In Minsky's theory of endogenous financial booms and busts, prosperous
+times lead to an excess availability of credit and the gradual development of credit-fuelled asset-price bubbles.  Financial crises result when those debt levels become excessive a so-called ''Minsky'' moment.  A credit crunch then ensues leading to a downturn in the real economy. 
+\end{quotation}
+La det være klart med en gang, det vi har lært til kurset til nå gir oss i svært liten grad mulighet til å forstå sitatet ovenfor. Men forhåpentligvis vil dette notat gi oss en større forståelse av hva Minsky virkelig hadde i tankene.
+
+Vi må bygge denne kunnskapen systemetisk. Mer spesielt så er dette kapitlet delt inn i fire deler
+\begin{itemize}
+\item Hva er penger?
+\item Hvilken funksjoner og hvordan fungerer bankvesenet i en økonomi?
+\item Hva er hensikten med en sentralbank?
+\item Hvorfor kan banker ha innteresse av å påtå seg unødvendig risiko?
+\end{itemize}
+\section{Penger}
+\begin{itemize}
+\item Bytteøkonomi
+\item Bytteøkonomi med indirekte bytte
+Det er fullt mulig å forestille seg en økonomi hvor penger ikke eksisterer. Aktørene i en slik økomomi kan motta ulike varer og tjenester gjennom byttehandel. Men kunne være operativt i en primitiv økonomi. Men for en avansert økonomi, vil en pengeløs økonomi by tre fundamentale utfordringer:
+\begin{enumerate}
+        \item Match mellom selger og kjøper hva gjelder varer
+\item Delbarhet
+\item Regneenhet.
+\end{enumerate} 
+En måte å unngå det første problemet på er å finne en annen varer av person 3 for person 1 og 2. som indirekte byttemiddel
+\item Pengeøkonomi hvor pengene har en verdi i seg selv
+Dersom en vare er allement akseptert blant de fleste aktører som et byttemiddel kan det defineres som penger. Penger har som egenskap at de løser alle disse tre problemene. Men hvilken vare er det som har blitt egnet som et slikt Private aktører har bestem hva som skal være penger...
+Historisk har gull og sølv være dominerende som penger. Men det finnes andre eksempler som kameler og sigaretter. I en markedsøkonomi innehar det som blir valgt som penger typisk tre egenskaper
+\item Penger i moderne tid: Penger som gjeld
+Fiat og inside penger
+Offentlige myndigheter har bestem hva som skal være penger?
+Statsgjeld (fiat) og bankkreditt
+\begin{enumerate}
+\item Heavy demand
+\item Highli devisable 
+\item Portable
+\item High value per unit of weight.
+\item Highly durable
+\end{enumerate} 
+\end{itemize}
+Hvordan ble denne reisen mulig?
+La oss forfølge en gullbeholdning på 100 enheter, fordelt på 100 innbyggere. \section{Bankvesenets funksjons og virkemåte}
+\subsection{Loanable fond economy}
+Banker tilbyr to primære tjenester
+(1) Lån.
+(2) Transaksjonstjenester.
+Tjenestene ovenfor kan overtas av to typer banker
+Utlåndsbank
+Reservebank
+Forretningsbankene er kjennetegnet ved at de kombinerer begge disse tjenestene.
+Det finnes to måter:
+Bankkvittering, Sjekker.
+Disse kan operer side om side, avhenge av transaksjonen.
+\subsection{Fractional reserve banking}
+Med fractional reserve banking menes enten har skrevet ut fler sedler enn de har gull. Enten i form av innskudd og/eller reserver.
+Historisk: shake system:
+Låner langt 
+finansier kort. 
+Insolvens vs likviditet
+\section{Formålet med en sentralbank}
+Poole reservene 
+Deal: monopol på sedler og mynt
+Banker: Fortsatt kontopenger.
+Tre måter i opere et bankvesen 
+\begin{itemize}
+\item Sentralbank med reservekrav
+\item Sentralbank med
+\item Sentralbank med innskuddsgaranti og reserve og/eller kapitalkrav 
+\end{itemize}
+\section{Banker og systemrisiko}
+\subsection{The bloos rule}
+\end{document}
