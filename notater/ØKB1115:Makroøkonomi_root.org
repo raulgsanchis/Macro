@@ -1,0 +1,24 @@
+#+TITLE: ØKB1115 Makroøkonomi
+#+SUBTITLE: Kursoversikt
+#+AUTHOR: Jørn I. Halvorsen
+#+EMAIL: jorn.inge.halvorsen@hvl.no
+#+OPTIONS: toc:nil
+#+OPTIONS: H:1 num:0
+#+INCLUDE: "~/Dropbox/Jobb/Undervisning/2018/MakroOESO002/notater/forelsningsplanH2018.org"
+
+* [[~/Dropbox/Jobb/Undervisning/2018/MakroOESO002/notater/forelsningsplanH2018.org%0A][Forelesningsplan]]
+* Forelesninger
+** [[~/Dropbox/Jobb/Undervisning/2018/MakroOESO002/notater/innledning.org][Innledning]]
+** [[~/Dropbox/Jobb/Undervisning/2018/MakroOESO002/notater/del1_konjunkturer.org][Del 1: Kortsiktige konjunktursvingninger]]
+** [[~/Dropbox/Jobb/Undervisning/2018/MakroOESO002/notater/del2_vekst.org][Del 2: Økonomisk vekst på lang sikt]]
+** [[~/Dropbox/Jobb/Undervisning/2018/MakroOESO002/notater/del3_kriser.org][Del 3: Økonomiske kriser]]
+** [[~/Dropbox/Jobb/Undervisning/2018/MakroOESO002/notater/laeringsmaal.org][Læringsmål]]
+* [[~/Dropbox/Jobb/Undervisning/2018/MakroOESO002/oppgaver/oppgaver2018.org][Oppgaver]]
+* Pensumlitteratur
+[[https://www.amazon.co.uk/Macroeconomics-Manfred-Gartner/dp/1292115203/ref%3Dsr_1_1?s%3Dbooks&ie%3DUTF8&qid%3D1507287751&sr%3D1-1&keywords%3Dgartner%2Bmacroeconomics][Gartner]]
+
+* Nyttige lenker:
+- [[http://www.norges-bank.no/][Norges Bank]] 
+- [[http://www.ssb.no/][SSB]]
+
+# [[-%20%5B%5Bhttps://www.hvl.no/studier/studieprogram/emne/%2525C3%2525B8kb1115%5D%5B%C3%98KB1115%20Makro%C3%B8konomi%5D%5D%0A][NettetLæringsmål]]

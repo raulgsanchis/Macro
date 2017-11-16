@@ -5,18 +5,11 @@
 # Forelesningsplan
 ## Groversikt
 |                                            | Uke | Timer | Tema |
-| Innledning                                 |     |       |      |
-| Del 1: Økonomiske svingninger på kort sikt |     |       |      |
-| Del 2: Økonomisk vekst                     |     |       |      |
+| Innledning                                 | 1-2 |       |      |
+| Del 1: Økonomiske svingninger på kort sikt |   1 |       |      |
+| Del 2: Økonomisk vekst                     |   2 |       |      |
 | Del 3: Økonomiske kriser                   |     |       |      |
 
-## Del 1
-
-
-## Del 2
-
-
-## Del 3
 
 # Linker
 [[https://www.amazon.co.uk/Macroeconomics-Manfred-Gartner/dp/1292115203/ref%3Dsr_1_1?s%3Dbooks&ie%3DUTF8&qid%3D1507287751&sr%3D1-1&keywords%3Dgartner%2Bmacroeconomics][Gartner]]
