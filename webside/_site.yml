@@ -1,0 +1,26 @@
+navbar:
+  title: ØKB1115 Makroøkonomi
+  left:
+  - text: Forelesningsplan
+    menu:
+    - text: Oversikt
+  - text: Forelesningsnotater
+    menu:
+    - text: Introduksjon
+    - text: 'Del 1: Kortsiktige konjunktursvingninger'
+    - text: 'Del 2: Langsiktig økonomisk vekst'
+    - text: 'Del 3: Økonomiske kriser'
+  - text: Oppgaver
+    menu:
+    - text: Oppgaver
+    - text: Løsningsforslag
+  - text: Pensumliste
+    menu:
+    - text: Pensumliste
+name: webside
+output_dir: _site
+output:
+  html_document:
+    lib_dir: site_libs
+    self_contained: no
+

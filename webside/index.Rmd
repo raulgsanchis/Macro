@@ -1,0 +1,15 @@
+---
+title: ""
+---
+
+# Del 1: Korsiktige konjunktursvingninger
+<img id='grede' src="bilder/cycles.jpg" height="75px" width="300px" />
+<img id='grere' src="bilder/money.jpg" height="75px" width="300px" />
+
+# Del 2: Langsiktig økonomisk vekst
+<img id='grede' src="bilder/growth.jpg" height="75px" width="300px" />
+<img id='grere' src="bilder/poverty.jpg" height="75px" width="300px" />
+
+# Del 3: Økonomiske kriser
+<img id='grede' src="bilder/depression.jpg" height="75px" width="300px" />
+<img id='grere' src="bilder/recession.jpg" height="75px" width="300px" />
