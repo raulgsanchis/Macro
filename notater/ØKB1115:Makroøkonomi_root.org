@@ -4,7 +4,8 @@
 #+EMAIL: jorn.inge.halvorsen@hvl.no
 #+OPTIONS: toc:nil
 #+OPTIONS: H:1 num:0
-#+INCLUDE: "~/Dropbox/Jobb/Undervisning/2018/MakroOESO002/notater/forelsningsplanH2018.org"
+#+INCLUDE: "~/Dropbox/Jobb/Undervisning/2018/MakroOESO002/notater/forelsningsplanH2018.org
+#+bind: org-export-publishing-directory "./exports"
 
 * [[~/Dropbox/Jobb/Undervisning/2018/MakroOESO002/notater/forelsningsplanH2018.org%0A][Forelesningsplan]]
 * Forelesninger
@@ -22,3 +23,11 @@
 - [[http://www.ssb.no/][SSB]]
 
 # [[-%20%5B%5Bhttps://www.hvl.no/studier/studieprogram/emne/%2525C3%2525B8kb1115%5D%5B%C3%98KB1115%20Makro%C3%B8konomi%5D%5D%0A][NettetLæringsmål]]
+
+
+
+
+
+
+
+

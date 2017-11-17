@@ -8,15 +8,4 @@
 | Innledning                                 | 1-2 |       |      |
 | Del 1: Økonomiske svingninger på kort sikt |   1 |       |      |
 | Del 2: Økonomisk vekst                     |   2 |       |      |
-| Del 3: Økonomiske kriser                   |     |       |      |
-
-
-# Linker
-[[https://www.amazon.co.uk/Macroeconomics-Manfred-Gartner/dp/1292115203/ref%3Dsr_1_1?s%3Dbooks&ie%3DUTF8&qid%3D1507287751&sr%3D1-1&keywords%3Dgartner%2Bmacroeconomics][Gartner]]
-
-# Abc
-[[https://www.hvl.no/studier/studieprogram/emne/%25C3%25B8kb1115][ØKB1115 Makroøkonomi]]
-# Def
-
-
-
+| Del 3: Økonomiske kriser                   |   3 |       |      |
