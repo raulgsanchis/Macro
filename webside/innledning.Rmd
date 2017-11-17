@@ -1,0 +1,25 @@
+
+# Oversikt over faget
+
+## Tre hovedtemaer
+- Svingninger
+- Økonomiske vekst
+- Dype økonomiske kriser
+
+
+
+
+
+<img id='grede' src="bilder/keynes.jpg" height="75px" width="300px" />
+<img id='grede' src="bilder/friedman.jpg" height="75px" width="300px" />
+<img id='grede' src="bilder/minsky.jpg" height="75px" width="300px" />
+<img id='grede' src="bilder/krugman.jpg" height="75px" width="300px" />
+<img id='grede' src="bilder/marx.jpg" height="75px" width="300px" />
+<img id='grede' src="bilder/hayek.jpg" height="75px" width="300px" />
+
+
+```{r eval=FALSE, include=FALSE}
+# Oppgave tilknyttet bildene
+# Tabell
+```
+

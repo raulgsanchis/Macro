@@ -1,7 +1,11 @@
+
+# Del 2: Langsiktig økonomisk vekst
+<img id='grede' src="bilder/growth.jpg" height="75px" width="300px" />
+<img id='grere' src="bilder/poverty.jpg" height="75px" width="300px" />
+
+
+```{r eval=FALSE, include=FALSE}
 # Innledning
-
-
-
 Tre hovedtemaer: (1) Svingninger, (2) økonomiske vekst og (3) dype økonomiske kriser.
 To typer spørsmål blir forsøkt besvart: 
 Hva forårsaker konjunktursvingninger og langsiktig vekst (positivistisk)?: 
@@ -20,4 +24,6 @@ Markedene: Vare- og tjenestemarkedet, pengemarkedet, arbeidsmarkedet, bankkredit
 
 ## GHI
 
+
+```
 

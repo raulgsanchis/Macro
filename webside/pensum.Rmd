@@ -1,0 +1,7 @@
+---
+title: 'My Title'
+bibliography: pensum.bib
+---
+
+<font color="white">Smith cited [@gartner2016macroeconomics]</font>
+

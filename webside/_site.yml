@@ -3,13 +3,18 @@ navbar:
   left:
   - text: Forelesningsplan
     menu:
-    - text: Oversikt
+    - text: 'Oversikt'
+      href: forelesningsplan.html
   - text: Forelesningsnotater
     menu:
-    - text: Introduksjon
+    - text: 'Introduksjon'
+      href: innledning.html
     - text: 'Del 1: Kortsiktige konjunktursvingninger'
+      href: del1_konjunkturer.html
     - text: 'Del 2: Langsiktig økonomisk vekst'
+      href: del2_vekst.html
     - text: 'Del 3: Økonomiske kriser'
+      href: del3_kriser.html
   - text: Oppgaver
     menu:
     - text: Oppgaver
@@ -17,6 +22,10 @@ navbar:
   - text: Pensumliste
     menu:
     - text: Pensumliste
+  - text: Nyhetsarkiv
+    menu:
+    - text: Nyheter
+      href: nyhetslinker.html
 name: webside
 output_dir: _site
 output:

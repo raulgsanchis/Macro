@@ -1,15 +1,11 @@
 ---
-title: ""
+title: "Kursinformasjon: ØKB1115 Makroøkonomi"
 ---
 
-# Del 1: Korsiktige konjunktursvingninger
-<img id='grede' src="bilder/cycles.jpg" height="75px" width="300px" />
-<img id='grere' src="bilder/money.jpg" height="75px" width="300px" />
 
-# Del 2: Langsiktig økonomisk vekst
-<img id='grede' src="bilder/growth.jpg" height="75px" width="300px" />
-<img id='grere' src="bilder/poverty.jpg" height="75px" width="300px" />
+[Kursveskrivelse](https://www.hvl.no/studier/studieprogram/emne/%C3%B8kb1115)
 
-# Del 3: Økonomiske kriser
-<img id='grede' src="bilder/depression.jpg" height="75px" width="300px" />
-<img id='grere' src="bilder/recession.jpg" height="75px" width="300px" />
+<span style="color:red"> Status: Under utvikling </span>
+
+Siste gang oppdatert ``r base::Sys.time()`` av jorn.inge.halvorsen@hvl.no. 
+
