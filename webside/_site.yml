@@ -14,7 +14,7 @@ navbar:
   - text: Forelesningsnotater
     menu:
     - text: Introduksjon
-      href: innledning.html
+      href: innledning.nb.html
     - text: 'Del 1: Kortsiktige konjunktursvingninger'
       href: del1_konjunkturer.html
     - text: 'Del 2: Langsiktig økonomisk vekst'
@@ -26,7 +26,9 @@ navbar:
   - text: Oppgaver
     menu:
     - text: Oppgaver
+      href: losningsforslag.html
     - text: Løsningsforslag
+      href: oppgaver.html
   - text: Pensumliste
     menu:
     - text: Pensumliste
@@ -39,4 +41,3 @@ navbar:
   - text: Source Code on GitHub
   - icon: fa-github fa-lg
     href: https://github.com/joernih/MakroOESO002
-
