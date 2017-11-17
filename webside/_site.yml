@@ -1,13 +1,19 @@
+name: webside
+output_dir: _site
+output:
+  html_document:
+    lib_dir: site_libs
+    self_contained: no
 navbar:
   title: ØKB1115 Makroøkonomi
   left:
   - text: Forelesningsplan
     menu:
-    - text: 'Oversikt'
+    - text: Oversikt
       href: forelesningsplan.html
   - text: Forelesningsnotater
     menu:
-    - text: 'Introduksjon'
+    - text: Introduksjon
       href: innledning.html
     - text: 'Del 1: Kortsiktige konjunktursvingninger'
       href: del1_konjunkturer.html
@@ -15,7 +21,7 @@ navbar:
       href: del2_vekst.html
     - text: 'Del 3: Økonomiske kriser'
       href: del3_kriser.html
-    - text: 'Symbolliste'
+    - text: Symbolliste
       href: symbolliste.html
   - text: Oppgaver
     menu:
@@ -29,10 +35,8 @@ navbar:
     menu:
     - text: Nyheter
       href: nyhetslinker.html
-name: webside
-output_dir: _site
-output:
-  html_document:
-    lib_dir: site_libs
-    self_contained: no
+  right:
+  - text: Source Code on GitHub
+  - icon: fa-github fa-lg
+    href: https://github.com/joernih/MakroOESO002
 

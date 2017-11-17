@@ -1,12 +1,21 @@
-
-# Oversikt over faget
+---
+title: "Untitled"
+output: ioslides_presentation
+#title: "Oversikt over faget"
+#output:
+#  ioslides_presentation: default
+#  html_notebook: default
+#  html_document: default
+---
 
 ## Tre hovedtemaer
 - Svingninger
 - Økonomiske vekst
 - Dype økonomiske kriser
 
+---
 
+## Kjente økonomer
 
 
 
