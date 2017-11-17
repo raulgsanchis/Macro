@@ -15,6 +15,8 @@ navbar:
       href: del2_vekst.html
     - text: 'Del 3: Økonomiske kriser'
       href: del3_kriser.html
+    - text: 'Symbolliste'
+      href: symbolliste.html
   - text: Oppgaver
     menu:
     - text: Oppgaver
@@ -22,6 +24,7 @@ navbar:
   - text: Pensumliste
     menu:
     - text: Pensumliste
+      href: pensum.html
   - text: Nyhetsarkiv
     menu:
     - text: Nyheter

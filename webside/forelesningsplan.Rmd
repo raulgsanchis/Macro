@@ -2,12 +2,16 @@
 title: ""
 ---
 
+```{r echo=FALSE}
+uke <- c(1,2,3,4)
+
+foreltabell <- data.frame(uke=uke, tema=1)
+  
+htmlTable::htmlTable(foreltabell)
+```
 
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+
+
 
 

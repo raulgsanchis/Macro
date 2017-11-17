@@ -1,0 +1,30 @@
+
+
+# Test
+
+```{r eval=FALSE, include=FALSE}
+---
+title: "The bank-lending channel empirically revisited"
+subtitle: "[**Journal of Financial Stability 27 (2016) 95-105**](http://www.sciencedirect.com/science/article/pii/S1572308916301255)"  
+author: |
+  | `r paste("Jørn I. Halvorsen (SPK) og Dag Henning Jacobsen (Finans Norge)") `
+  |
+  | 
+output:
+  ioslides_presentation: default
+bibliography: referanser.bib
+---
+  
+---
+title: "Version controll system"
+---
+
+```{r, echo=FALSE, eval=TRUE}
+gitinfo <- list(base::system('git log --oneline', intern=TRUE),base::system('git rev-list --count HEAD', intern=TRUE))
+#devtools::use_data(gitinfo, overwrite = TRUE)
+print(gitinfo)
+```
+  
+
+```
+
