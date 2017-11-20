@@ -1,0 +1,28 @@
+---
+title: "Oversikt over faget"
+output:
+  html_notebook: default
+---
+
+# Tre hovedtemaer: 
+- Svingninger
+- Økonomiske vekst 
+- Dype økonomiske kriser.
+
+# Kjente makroøkonomer 
+<img id='grede' src="../bilder/keynes.jpg" height="75px" width="300px" />
+
+# Abstraksjon
+## Sentrale aktører i makroøkonomien
+### Husholdninger (del 1, 2 og 3)
+### Bedrifter (del 1, 2 og 3)
+### Banker og fininstitusjoner (del 3) 
+### Sentralbanken (del 1 og 3)
+### Offentlige myndigheter (del 1 og 3) 
+
+## Markedene vi studerer
+### Vare- og tjenestemarkedet 
+### Pengemarkedet 
+### Arbeidsmarkedet 
+### Bankkreditt 
+### valutakursmarkedet

@@ -198,19 +198,14 @@ $(document).ready(function () {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="innledning.nb.html">Introduksjon</a>
+      <a href="http://adasextended.gleeze.com:8787/files/gitclones/teaching/MakroOESO002/webside/slidegen/slides_intro.html">Introduksjon</a>
     </li>
-    <li>
-      <a href="del1_konjunkturer.html">Del 1: Kortsiktige konjunktursvingninger</a>
-    </li>
+    <li class="dropdown-header">Del 1: Kortsiktige konjunktursvingninger</li>
     <li>
       <a href="del2_vekst.html">Del 2: Langsiktig økonomisk vekst</a>
     </li>
     <li>
       <a href="del3_kriser.html">Del 3: Økonomiske kriser</a>
-    </li>
-    <li>
-      <a href="symbolliste.html">Symbolliste</a>
     </li>
   </ul>
 </li>
@@ -231,18 +226,6 @@ $(document).ready(function () {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Pensumliste
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="pensum.html">Pensumliste</a>
-    </li>
-  </ul>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     Nyhetsarkiv
      
     <span class="caret"></span>
@@ -250,6 +233,18 @@ $(document).ready(function () {
   <ul class="dropdown-menu" role="menu">
     <li>
       <a href="nyhetslinker.html">Nyheter</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Symbolliste
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="symbolliste.html">Symbolliste</a>
     </li>
   </ul>
 </li>
@@ -275,9 +270,22 @@ $(document).ready(function () {
 </div>
 
 
+<!--
+
+---
+title: "Oversikt"
+output:
+  html_notebook: default
+---
+
+
+-->
 <div id="del-1-kortsiktige-konjunktursvingninger" class="section level1">
 <h1>Del 1: Kortsiktige konjunktursvingninger</h1>
 <p><img id='grede' src="bilder/cycles.jpg" height="75px" width="300px" /> <img id='grere' src="bilder/money.jpg" height="75px" width="300px" /></p>
+<!--
+
+-->
 <p>Del 1: Økonomiske svingninger på kort sikt Grunnleggende bakgrunnskunnskap Mål på aggregert produksjon: BNP (1) Verdien til alle sluttgodene (varer og tjenester) som blir produsert i en bestemt tidsperiode. (2) Summen av all merverdi for en bestemte tidsperiode. (3) Summen av all inntekt for en bestemte tidsperiode. Nominell BNP (LY) LY=PY Reel BNP (Y) Y=LY/P Ledighet (U) og ledighetsrate (u) U=L-N hvor N antall i arbeid og U antall utenfor arbeid u=U/L=(N-L)/L=N/L-1 Inflasjon (π) π=ΔP/P=(P_t-P_(t-1))/P_(t-1) Okuns lov: Negativ korrelasjon mellom vekst i produksjonen (BNP) og endring i ledighetsraten. Phillips-kuven: Negativ korrelasjon mellom endring i inflasjon og ledighetsraten. Hva bestemmer aggregert BNP? Kort sikt: Etterspørsel bestemmer produksjonen (pga. stive stive priser) Mellomlang sikt: Tilgangen på innsatsfaktorer (arbeidskraft, teknologi og kapital) bestemmer etterspørselen. Lang sikt: Teknologisk framgang og kapital akkumulasjon (avhenger av sparing, befolkningsvekst (fødselsrater + nettoinnvandring)). Likevekt i vare- og tjenestemarkedet Aggregert etterspørsel (Z) i en lukket økonomi<br />
 Z ≡ C+I+G Hvor vi postulerer følgene adferdlikninger C= C ̅-c(Y-T) I =I ̅-b∙i og likevektsbetingelsen Y=Z Løser denne mhp på Y gir oss IS-likningen (kombinasjoner av i og Y som er forenlig med likevekt i varemarkedet) Y=1/(1-c) [C ̅+cT+I ̅-b∙i+G] Skiftanalyse (matematisk, figur, og verbalt): Endring i ΔY som følge av en økning i Δ ̅I Matematisk ΔY= 1/(1-c) Δ I ̅&gt;0 eller (Δ Y)/(Δ I ̅ )= 1/(1-c) &gt;0 Verbalt (skisse – utenfor modellen) Økte investeringer  økt produksjon  multiplikatoreffekt:  økt disponibel inntekt  økt konsum  økt produkson etc. Stabiliseringspolitikk: ∆G&lt;0 ΔY=1/(1-c) [Δ I ̅+ΔG] Hvor vi sørger for at ΔG=Δ ̅I □(⇒) ΔY=0</p>
 <p>Likevekt i pengemarkedet Ser foreløpig kun på utvendige penger M=M_0 (M_1): Sedler og mynt pluss bankenes innskuddskontoer i sentralbanken. Dette nivået blir bestemt av sentralbanken. Etterspørsel etter penger. M^D (Y┬((∓)),i┬((-)))<br />
@@ -298,7 +306,7 @@ Fast: (troverdig ⇒E=E^e):</p>
 <p>E=(1+i*)/(1+i) E^e: Flytende-kursregime.</p>
 <p>i=i^*: Fast-kursregime.</p>
 <pre><code>IS-kurven under fast og flytende kurs</code></pre>
-<p>Generelt fører lavere rente til høyere produksjon. Men multiplikatoren blir mindre ved en åpen økonomi, grunnet importlekkasje. Helningen på kurven er slakere under flytende kurs enn med fast kurs. Det skyldes at lavere rente under fast kurs fører til en depresiering av den nominelle og realvalutakursen, noe som forbedrer landets konkurranse evne og dermed fører til økt etterspørsel gjennom økt nettoeksport. LM modellen samme som tidligere. Skiftanalyse (grafisk og verbalt) Merk: P gir AS-kurven. Stabiliseringspolitikk (grafisk og verbalt) Virkemidler: G,T og M/i (Flytende) og G,T og (E) (Fast kurs) AD-AS modellen for en åpen økonomi AS-kurven samme som under en lukket økonomi. AD-kurven er fallende ved at økt priser fører til lavere etterspørsel. Sentral poeng med modellen – Selvkorrigerende mekanismer: Fleksibilitet i P og korrekte prisforventninger P^e på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.</p>
+<p>Generelt fører lavere rente til høyere produksjon. Men multiplikatoren blir mindre ved en åpen økonomi, grunnet importlekkasje. Helningen på kurven er slakere under flytende kurs enn med fast kurs. Det skyldes at lavere rente under fast kurs fører til en depresiering av den nominelle og realvalutakursen, noe som forbedrer landets konkurranse evne og dermed fører til økt etterspørsel gjennom økt nettoeksport. LM modellen samme som tidligere. Skiftanalyse (grafisk og verbalt) Merk: P gir AS-kurven. Stabiliseringspolitikk (grafisk og verbalt) Virkemidler: G,T og M/i (Flytende) og G,T og (E) (Fast kurs) AD-AS modellen for en åpen økonomi AS-kurven samme som under en lukket økonomi. AD-kurven er fallende ved at økt priser fører til lavere etterspørsel. Sentral poeng med modellen – Selvkorrigerende mekanismer: Fleksibilitet i P og korrekte prisforventninger P^e på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå. –&gt;</p>
 </div>
 
 

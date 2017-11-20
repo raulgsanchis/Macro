@@ -1,0 +1,22 @@
+---
+title: "Untitled"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r child = '../innledning.Rmd'}
+```
+
+```{r }
+#child = '../del1_konjunkturer.Rmd'
+```
+
+```{r }
+#child = '../del1_konjunkturer.Rmd'
+```
+
+```{r }
+#child = '../del1_konjunkturer.Rmd'
+```

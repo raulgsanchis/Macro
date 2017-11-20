@@ -1,17 +1,10 @@
 ---
-title: ""
+bibliography: pensum.bib
 ---
 
-```{r echo=FALSE}
-uke <- c(1,2,3,4)
-
-foreltabell <- data.frame(uke=uke, tema=1)
-  
-htmlTable::htmlTable(foreltabell)
+```{r child = 'Forelesningsplan.html'}
 ```
 
 
-
-
-
+<font color="white">Smith cited [@gartner2016macroeconomics]</font>
 

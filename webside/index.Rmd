@@ -15,3 +15,7 @@ gitinfo <- list(base::system('git log --oneline', intern=TRUE),base::system('git
 #devtools::use_data(gitinfo, overwrite = TRUE)
 print(gitinfo)
 ```
+
+```{r eval=FALSE, include=FALSE}
+ rmarkdown::render("about.Rmd", rmarkdown::pdf_document())
+```

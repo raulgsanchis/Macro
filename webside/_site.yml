@@ -14,29 +14,26 @@ navbar:
   - text: Forelesningsnotater
     menu:
     - text: Introduksjon
-      href: innledning.nb.html
+      href: http://adasextended.gleeze.com:8787/files/gitclones/teaching/MakroOESO002/webside/slidegen/slides_intro.html
     - text: 'Del 1: Kortsiktige konjunktursvingninger'
-      href: del1_konjunkturer.html
     - text: 'Del 2: Langsiktig økonomisk vekst'
       href: del2_vekst.html
     - text: 'Del 3: Økonomiske kriser'
       href: del3_kriser.html
-    - text: Symbolliste
-      href: symbolliste.html
   - text: Oppgaver
     menu:
     - text: Oppgaver
       href: losningsforslag.html
     - text: Løsningsforslag
       href: oppgaver.html
-  - text: Pensumliste
-    menu:
-    - text: Pensumliste
-      href: pensum.html
   - text: Nyhetsarkiv
     menu:
     - text: Nyheter
       href: nyhetslinker.html
+  - text: Symbolliste
+    menu:
+    - text: Symbolliste
+      href: symbolliste.html
   right:
   - text: Source Code on GitHub
   - icon: fa-github fa-lg
