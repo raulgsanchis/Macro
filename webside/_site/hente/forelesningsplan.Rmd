@@ -1,0 +1,10 @@
+---
+bibliography: pensum.bib
+---
+
+```{r child = 'Forelesningsplan.html'}
+```
+
+
+<font color="white">Smith cited [@gartner2016macroeconomics]</font>
+

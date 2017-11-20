@@ -1,14 +1,31 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
+
+# Konjunktursvingninger
+
+```{r eval=FALSE, include=FALSE}
+# library(dplyr)
+# library(ggplot2)
+# usaunem <- get(load(paste0(devtools::as.package(".")$path,'/data/usaunem.rda')))
+# usagdp <- get(load(paste0(devtools::as.package(".")$path,'/data/usagdp.rda')))
+# 
+# 
+# # Data transformation
+# ## unem
+# tusaunem <- usaunem %>% dplyr::select(date, value) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
+# ## gdp
+# tusagdp <- usagdp %>% dplyr::select(date, value) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
+# 
+# # ggplot
+# gobjusaunem <- ggplot(data = tusaunem, aes(date, value)) + geom_line()  + geom_smooth(method = 'loess')
+# 
+# gobjusatusagdp <- ggplot(data = tusagdp, aes(date, value)) + geom_line() +
+#   geom_smooth(method = 'loess')
+```
 
 
 # Tre hovedtemaer: 
-- Svingninger
-- Økonomiske vekst 
-- Dype økonomiske kriser.
+- Svingninger (del I)
+- Økonomisk vekst (del II) 
+- Dype økonomiske kriser (del III)
 
 # Kjente makroøkonomer 
 <img id='grede' src="bilder/keynes.jpg" height="75px" width="300px" />
@@ -33,103 +50,3 @@ output:
 ### Bankkreditt 
 ### valutakursmarkedet
 
-# Tre hovedtemaer: 
-- Svingninger
-- Økonomiske vekst 
-- Dype økonomiske kriser.
-- sdfds
-# Sentrale økonomer
-
-# Sentrale aktører i makroøkonomien
-
-
-<!--
-
-## Undertema 1
-
-side 1
----
-
-side 2
----
-
-## Undertema 2
-
-<!--# Neste hovedtema goes here
-
-## Undertema 1
-
-## Undertema 2
-
--->
-
-<!-- 
-* Notebook
-* Slides
-* Pdf
-* Html
--->
-
--->
-<!--
-Oversikt over faget
-•	Tre hoved temaer: (1) Svingninger, (2) økonomiske vekst og (3) dype økonomiske kriser.
-•	To typer spørsmål blir forsøkt besvart: 
-•	Hva forårsaker konjunktursvingninger og langsiktig vekst (positivistisk)?: 
-•	Hvilken rolle bør offentlige myndigheter spille (normativt: stabiliseringspolitikk og vekstpolitikk)?
-•	Sentral økonomer stiftet bekjentskap med i dette kurset:
-•	(Marx(1818-1883)), Keynes(1883-1946)/Hicks(1904-1989)/Krugman(1953-),Friedman(1912-2006),Hayek(1899-1992)(Mises)/Minsky(1919-1996)
-•	Aktørene i økonomien: Husholdninger, bedrifter, finansinstitusjoner, sentralbanken og offentlige myndigheter
-•	Markedene: Vare- og tjenestemarkedet, pengemarkedet, arbeidsmarkedet, bankkreditt og valutakursmarkedet.
--->
-
-<!--
----
-title: "The bank-lending channel empirically revisited"
-author: |
-  | `r paste("Jørn I. Halvorsen (SPK) og Dag Henning Jacobsen (Finans Norge)") `
-  |
-  |
-  | [**Journal of Financial Stability 27 (2016) 95-105**](http://www.sciencedirect.com/science/article/pii/S1572308916301255)
-output:
-  html_notebook: default
-  html_document: default
-bibliography: referanser.bib
----
--->
-
-<!--
----
-title: "The bank-lending channel empirically revisited"
-subtitle: "[**Journal of Financial Stability 27 (2016) 95-105**](http://www.sciencedirect.com/science/article/pii/S1572308916301255)"  
-author: |
-  | `r paste("Jørn I. Halvorsen (SPK) og Dag Henning Jacobsen (Finans Norge)") `
-  |
-  | 
-output:
-  ioslides_presentation: default
-bibliography: referanser.bib
--->
-
-<!--
-
-
-## Tre hovedtemaer
-- Svingninger
-- Økonomiske vekst
-- Dype økonomiske kriser
-
----
-## Kjente økonomer
-<img id='grede' src="bilder/keynes.jpg" height="75px" width="300px" />
-<img id='grede' src="bilder/friedman.jpg" height="75px" width="300px" />
-<img id='grede' src="bilder/minsky.jpg" height="75px" width="300px" />
-<img id='grede' src="bilder/krugman.jpg" height="75px" width="300px" />
-<img id='grede' src="bilder/marx.jpg" height="75px" width="300px" />
-<img id='grede' src="bilder/hayek.jpg" height="75px" width="300px" />
-
-```{r eval=FALSE, include=FALSE}
-# Oppgave tilknyttet bildene
-# Tabell
-```
--->

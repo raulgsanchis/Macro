@@ -4,6 +4,12 @@ output:
   html_notebook: default
 ---
 
+
+```{r child = '../innledning.Rmd'}
+```
+
+
+<!--
 # Tre hovedtemaer: 
 - Svingninger
 - Økonomiske vekst 
@@ -26,3 +32,4 @@ output:
 ### Arbeidsmarkedet 
 ### Bankkreditt 
 ### valutakursmarkedet
+-->

@@ -1,0 +1,4 @@
+
+# Symboliste
+
+- $\theta = \text{den marginale konsumtilbøyeligheten}$

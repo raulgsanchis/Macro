@@ -1,40 +1,36 @@
 name: webside
 output_dir: _site
-output:
-  html_document:
-    lib_dir: site_libs
-    self_contained: no
 navbar:
   title: ØKB1115 Makroøkonomi
   left:
-  - text: Forelesningsplan
-    menu:
-    - text: Oversikt
-      href: forelesningsplan.html
+#  - text: Forelesningsplan
+#    menu:
+#    - text: Oversikt
+#      href: forelesningsplan.html
   - text: Forelesningsnotater
     menu:
     - text: Introduksjon
-      href: http://adasextended.gleeze.com:8787/files/gitclones/teaching/MakroOESO002/webside/slidegen/slides_intro.html
-    - text: 'Del 1: Kortsiktige konjunktursvingninger'
-    - text: 'Del 2: Langsiktig økonomisk vekst'
-      href: del2_vekst.html
-    - text: 'Del 3: Økonomiske kriser'
-      href: del3_kriser.html
-  - text: Oppgaver
-    menu:
-    - text: Oppgaver
-      href: losningsforslag.html
-    - text: Løsningsforslag
-      href: oppgaver.html
-  - text: Nyhetsarkiv
-    menu:
-    - text: Nyheter
-      href: nyhetslinker.html
-  - text: Symbolliste
-    menu:
-    - text: Symbolliste
-      href: symbolliste.html
-  right:
-  - text: Source Code on GitHub
-  - icon: fa-github fa-lg
-    href: https://github.com/joernih/MakroOESO002
+      href: innledning.html
+#   - text: 'Del 1: Kortsiktige konjunktursvingninger'
+#   - text: 'Del 2: Langsiktig økonomisk vekst'
+#      href: del2_vekst.html
+#    - text: 'Del 3: Økonomiske kriser'
+#      href: del3_kriser.html
+#  - text: Oppgaver
+#    menu:
+#    - text: Oppgaver
+#      href: losningsforslag.html
+#    - text: Løsningsforslag
+#      href: oppgaver.html
+#  - text: Nyhetsarkiv
+#    menu:
+#    - text: Nyheter
+#      href: nyhetslinker.html
+#  - text: Symbolliste
+#    menu:
+#    - text: Symbolliste
+#      href: symbolliste.html
+#  right:
+#  - text: Source Code on GitHub
+#  - icon: fa-github fa-lg
+#    href: https://github.com/joernih/MakroOESO002

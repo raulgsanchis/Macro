@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Oppgaver ØKB1115 Makroøkonomi</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">ØKB1115 Makroøkonomi</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Forelesningsplan
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Oversikt</li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Oppgaver ØKB1115 Makroøkonomi</h1>
+
+</div>
+
+
+<div id="oppgaver-fra-1.-forelesning" class="section level1">
+<h1>Oppgaver fra 1. forelesning</h1>
+<div id="datainnhenting" class="section level2">
+<h2>Datainnhenting</h2>
+<ul>
+<li>Installer applikasjonen <a href="http://research.stlouisfed.org/fred2/">Fred</a> i ditt Excel regneark. Trykk på lenken <a href="http://www.youtube.com/watch?v=OAH-wGtP_k8">Hjelp</a> for en kort demonstrasjon på hvordan du benytter denne applikasjonen.</li>
+</ul>
+<!--
+
+
+
+ 
+
+
+Gjør følgende oppgaver for USA, Japan, Norge og (dersom du har tid) minst ett europeisk land.
+Installer applikasjonen FRED i ditt Excel regneark 
+http://research.stlouisfed.org/fred2/
+Hjelp til hvordan bruke programmet finnes her:
+    Finn tidsserien til bruttonasjonalproduktet i reelle størrelser.
+    Finn tidsserien antall innbyggere 
+    Konstruer tidsserien bruttonasjonalprodukt per innbygger.
+    Transformer serien ved å ta logaritmen.
+    Vis serien grafisk.
+    Gir serien noen tegn på dype økonomiske kriser?  Hvis ja, se om du kan finne (søk på internett) noen kortfattede forklaringer bak disse krisene.
+    Finn et mål på inflasjon.
+    Finn et mål på ledighet.
+    Lag et scatterplot for ledighet og inflasjon (Phillips-kurven).
+    Lag et scatterplot for vekst og endring i inflasjon (Okuns lov).
+Oppgaver gitt til 2. forelesning 
+Kapittel 2, Blanchard, Amighini og Giavazzi
+    Question 3.
+    Question 4.
+Oppgaver gitt til 3. forelesning 
+Ta utgangspunkt i følgende makroøkonomisk modell:
+Z=C+I+G
+Hvor Z er aggregert etterspørsel. C er konsum. I er private realinvesteringer og G er offentlig kjøp av varer og tjenester.
+I tillegg postulerer vi følgende adferdssammenhenger:
+C=c_0+c_1 (Y-T)-c_2 i
+I=I-b_1 i
+Hvor T er nettoskatter, i det nominelle rentenivået, og små bokstaver betegner positive parametere.
+Likvektsbetingelsen for varmarkedet er gitt ved 
+Y=Z 
+
+Hvor Y betegner produksjonen.
+    Nevn tre sentrale forutsetninger som ligger bak en slik modell.
+    Finn løsningen til modellen med hensyn på Y.
+    Hva skjer når i øker (vis formelt, verbalt og grafisk)?
+    Anta at sentralbanken innfører en renteregel som tilsier at i=m_0 Y
+    Sammenlikn multiplikatoren i modellen før og etter innføringen av en slik regel. Hvilken er høyest?
+    Gi en verbal på forklaring på hvordan innførselen av en regel virker inn ved en positiv økning i investeringen I.   
+    Hva menes med the paradox of thrift?
+Oppgaver gitt til 4. forelesning 
+    Ta utgangspunkt i samme modell som i forrige oppgavesett. Anta i tillegg nå at pengemarkedet er operativt. Pengetilbudet er derfor gitt ved M^s=M/P og penge etterspørselen M^d=M(LY,i).  Vis likevekten i pengemarkedet under forutsetning om at sentralbanken (a) setter rentenivået, (b) bestemmer pengetilbudet. 
+    Bestem Y grafisk under (a) og (b) under forutsetning om at både vare- og pengemarkedet er i likevekt (IS-LM modellen).
+    Under (a), hva skjer dersom konsumet øker? Vis grafisk og verbalt.
+    Under (b), ha skjer dersom prisnivået P øker? Vis grafisk og verbalt.
+    Diskuter fordeler og ulemper ved pengepolitikk vs. finanspolitikk som stabiliseringspolitiske verktøy. 
+Oppgaver gitt til 5. forelesning 
+    Vi tar først utgangspunkt i samme modell som ble satt opp under oppgave gitt til 3. forelesning. Videre tenker vi oss at økonomien er åpen for handel og kapitalbevegelser med utlandet. Dette betyr nå at 
+Z=C+I+G+NX
+Y=Z
+                    NX≡X-R*IM
+E_ =((1+i))/((1+i_^* ) ) E_^e   
+I tillegg postulerer vi at følgende sammenhenger for import og eksport:
+X(R,Y^* )=A ̅+/-a_1 R+/-a_2 Y^*
+IM(R,Y)=B ̅+/-s_1 R+/-s_2 Y
+                R=(EP^*)/P
+Anta at parameterne a_1,a_2,s_1  og s_2 er positive Bestem og forklar hvilke fortegn (+/-) som bør gjelde for eksport og import likningene ovenfor.
+    Finn et uttrykk for ∆NX/∆Y , ∆NX/∆R og om mulig avgjør fortegnene.
+    Finn et eksplisitt utrykk for IS likningen under faste kurs (enklest).
+    Finn et eksplisitt utrykk for IS likningen under flytende kurs (litt mer vanskelig).
+    I løpet av forelesningen ble det hevdet at importlekkasje gjør multiplikatoren mindre. I tillegg til dette, vil helningen på IS-kurven (likevekt i vare- og valutakursmarkedet) være brattere i et under fast kurs sammenliknet flytene kurs. Er dette overens med løsningen du fant i de to oppgavene ovenfor?
+    Hvilke virkemidler har myndighetene for å stabilisere konjunkturene under henholdsvis et fast og flytende kurs regime?
+    Hva menes med intern og ekstern balanse?
+
+Oppgaver gitt til 6. forelesning 
+    Basert på de forutsetningene som har blitt gjort i oppgaver gitt til 5. forelesning, finn  ∆NX/∆P og avgjør fortegnet.  
+    Finn deretter  ∆Y/∆P og tegn AD-kurven inn i to diagrammer, et for fast og et for flytende kurs.
+    Tegn til slutt AS-kurven inn i de to diagrammene. 
+    Anta at vi får en sterk økning i C ̅. 
+    Hva skjer med handelsbalansen?
+    Hva skjer med utenriksregnskapet?
+    Hvorfor vil det under en slik endring være enklere å føre en stabiliseringspolitikk i et flytende vs. et fast kurs regime?
+
+Oppgaver gitt til 7. forelesning
+    y=f()  Y/N=F(K,N)
+    Tre komponenter:
+    Redusert sparerate
+    Reduser befolkningsvekst
+    Lsninger og realavkastning
+    Sjekk spareraten i kina
+    Hva kan man gjøre for å få opp teknologiske veksten
+    Blanchard oppgaver
+    Vekst i norge
+    Produktivitetsveksten
+
+
+-->
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
