@@ -1,20 +1,32 @@
 ---
-title: "Kursinformasjon"
+title: ''
+output: pdf_document
 ---
 
-[Kursveskrivelse](https://www.hvl.no/studier/studieprogram/emne/%C3%B8kb1115)
+### Del I: Kortsiktige konjunktursvingninger
+<img id='grede' src="bilder/cycles.jpg" height="75px" width="300px" />
+<img id='grere' src="bilder/money.jpg" height="75px" width="300px" />
+
+### Del II: Langsiktig økonomisk vekst
+<img id='grere' src="bilder/poverty.jpg" height="75px" width="300px" />
+<img id='grede' src="bilder/growth.jpg" height="75px" width="300px" />
+
+### Del III: Økonomiske kriser
+<img id='grede' src="bilder/depression.jpg" height="75px" width="300px" />
+<img id='grere' src="bilder/recession.jpg" height="75px" width="300px" />
+
+[Kursbeskrivelse](https://www.hvl.no/studier/studieprogram/emne/%C3%B8kb1115)
 
 <span style="color:red"> Status: Under utvikling </span>
 
 Siste gang oppdatert ``r base::Sys.time()`` av jorn.inge.halvorsen@hvl.no. 
 
-```{r, echo=FALSE, eval=TRUE}
+```{r eval=FALSE, include=FALSE}
 gitinfo <- list(base::system('git log --oneline', intern=TRUE),base::system('git rev-list --count HEAD', intern=TRUE))
 #devtools::use_data(gitinfo, overwrite = TRUE)
 print(gitinfo)
 ```
 
-
 ```{r eval=FALSE, include=FALSE}
- rmarkdown::render("about.Rmd", rmarkdown::pdf_document())
+ rmarkdown::render("index.Rmd", rmarkdown::pdf_document())
 ```

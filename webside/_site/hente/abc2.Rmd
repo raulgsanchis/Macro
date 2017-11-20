@@ -1,26 +1,25 @@
+---
+title: "Kursinformasjon"
+---
 
-# Konjunktursvingninger
-
-```{r echo=FALSE}
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
 library(dplyr)
 library(ggplot2)
 usaunem <- get(load(paste0(devtools::as.package(".")$path,'/data/usaunem.rda')))
 usagdp <- get(load(paste0(devtools::as.package(".")$path,'/data/usagdp.rda')))
 
+
 # Data transformation
 ## unem
 tusaunem <- usaunem %>% dplyr::select(date, value) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
 ## gdp
-tusagdp <- usagdp %>% dplyr::select(date, value) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date) 
-# ggplot
-gobjusaunem <- ggplot(data = tusaunem, aes(date, value)) + geom_line()  + 
-  geom_smooth(method = 'loess', color = 'black' ) + theme_classic() + 
-  labs(x = "Dato", y = 'Arbeidsledighetsrate')
+tusagdp <- usagdp %>% dplyr::select(date, value) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
 
+# ggplot
+gobjusaunem <- ggplot(data = tusaunem, aes(date, value)) + geom_line()  + geom_smooth(method = 'loess')
 
 gobjusatusagdp <- ggplot(data = tusagdp, aes(date, value)) + geom_line() +
-  geom_smooth(method = 'loess') + labs(x = "Dato") + labs(x = "Dato", y = 'Arbeidsledighetsrate')
-
+  geom_smooth(method = 'loess')
 
 gobjusaunem
 ```
@@ -53,3 +52,4 @@ gobjusaunem
 ### Arbeidsmarkedet 
 ### Bankkreditt 
 ### valutakursmarkedet
+

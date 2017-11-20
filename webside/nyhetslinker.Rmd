@@ -1,6 +1,4 @@
-# Oversikt
-
-## Dagsakutelle temaer
+## Artikler
 
 [Fed’s Williams: Time For Central Bankers to Weigh New Policy Toolkit](artikler/a.pdf)
 
@@ -10,8 +8,9 @@
 
 ## Blogger
 
-[https://www.nytimes.com/column/paul-krugman](Paul Krugman)
-[https://johnhcochrane.blogspot.no/](John Cochrane)
+- [https://www.nytimes.com/column/paul-krugman](Paul Krugman)
+
+- [https://johnhcochrane.blogspot.no/](John Cochrane)
 
 
 

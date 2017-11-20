@@ -1,0 +1,70 @@
+<!--
+---
+output: html_notebook
+---
+-->
+
+# Del 2: Langsiktig økonomisk vekst
+<img id='grere' src="bilder/poverty.jpg" height="75px" width="300px" />
+<img id='grede' src="bilder/growth.jpg" height="75px" width="300px" />
+
+## Introduksjon
+Y/L↑⇒"Høyere levestendard ⇒" "Lykke(?)" 
+Empiriske observasjoner:
+Rike land: Har vokst og BNP per innbygger har konvergert. 
+Fattige land: Ingen slik klar sammenheng.
+	Forklaringer: 
+Institusjoner, korrupsjon, sterk befolkningsvekst etc.
+
+## Solow-modellen for økonomisk vekst
+Hvordan forstå vekst?  Benytte Solow modellen som består av tre komponenter:
+
+**(1) Produktfunksjonen på intensiv form**
+$$Y=F(K,AL)$$
+
+**(2) Sparing **
+$$y=f(k) \text{ hvor } f’k>0, f’’k<0$$
+
+**(3) Kapitalakkumulasjon (ekel utgave, uten teknologisk framgang og befolkningsvekst) **
+
+## Modellens prediksjon
+
+## Skiftanalyse 
+**Økt sparing**
+
+**Befolkningsvekst**
+
+
+<!--
+
+
+
+
+Y=F(K,AL)   F_k^'>0,F_kk^'<0,F_L^'>0, F_LL^'<0 
+Konstant skalautbytte 
+y=f(k) f’k>0,f’’k<0
+	(2) Sparing
+Lukket økonomi (uten offentlig sektor)
+I=S
+I=S=sY⇔I/N=sY/N=sf(k)
+	(3) Kapitalakkumulasjon
+Enkel utgave (uten teknologisk framgang og befolkningsvekst):
+ΔK=-δ K+I 
+ΔK/N=-δ K/N +I/N  
+Δk=sf(k)-δk
+Vanlig utgave (med teknologisk framgang, a, og befolkningsvekst, n,):
+Δk=sf(k)-(δ+n+a)k
+
+	Modellens prediksjon (bør også kunne vises grafisk):
+Uavhengig av det initiale kapitalnivået vil økonomien på sikt konvergere mot en steady state:
+sf(k^ss )=(δ+n+a) k^ss
+y^ss=f(k^ss)
+I den enkle versjonen vil veksten i produksjonen (BNP) våre lik null.
+I den vanlige versjonen vil veksten i produksjonen (BNP) våre lik befolkningsveksten pluss teknologiveksten. 
+
+Skiftanalyse (bør også kunne vises grafisk)
+Økt sparing vil gi en ny og høyere steady state.
+Befolkningsvekst (fødselsrater + nettoinnvandring)) vil gi en ny og lavere steady state.
+
+
+-->

@@ -1,12 +1,9 @@
 <!--
-
 ---
 title: "Oversikt"
 output:
   html_notebook: default
 ---
-
-
 -->
 # Del 1: Kortsiktige konjunktursvingninger
 <img id='grede' src="bilder/cycles.jpg" height="75px" width="300px" />

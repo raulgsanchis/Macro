@@ -15,7 +15,7 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -179,12 +179,35 @@ $(document).ready(function () {
       <ul class="nav navbar-nav">
         <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Forelesningsplan
+    Forelesningsnotater
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li class="dropdown-header">Oversikt</li>
+    <li>
+      <a href="innledning.html">Introduksjon</a>
+    </li>
+    <li>
+      <a href="del1_konjunkturer.html">Del 1: Kortsiktige konjunktursvingninger</a>
+    </li>
+    <li>
+      <a href="del2_vekst.html">Del 2: Langsiktig økonomisk vekst</a>
+    </li>
+    <li>
+      <a href="del3_kriser.html">Del 3: Økonomiske kriser</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Nyhetsarkiv
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="nyhetslinker.html">Nyheter</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -203,16 +226,65 @@ $(document).ready(function () {
 </div>
 
 
-<div id="oversikt" class="section level1">
-<h1>Oversikt</h1>
-<div id="dagsakutelle-temaer" class="section level2">
-<h2>Dagsakutelle temaer</h2>
-<p><a href="artikler/a.pdf">Fed’s Williams: Time For Central Bankers to Weigh New Policy Toolkit</a></p>
-<p><a href="artikler/The%20Market’s%20Big%20Puzzle_%20What%20Is%20Happening%20to%20Growth%20and%20Inflation_%20-%20WSJ.pdf">The Market’s Big Puzzle_ What Is Happening to Growth and Inflation</a></p>
+<!--
+---
+output: html_notebook
+---
+-->
+<div id="del-2-langsiktig-konomisk-vekst" class="section level1">
+<h1>Del 2: Langsiktig økonomisk vekst</h1>
+<p><img id='grere' src="bilder/poverty.jpg" height="75px" width="300px" /> <img id='grede' src="bilder/growth.jpg" height="75px" width="300px" /></p>
+<div id="introduksjon" class="section level2">
+<h2>Introduksjon</h2>
+<p>Y/L↑⇒“Høyere levestendard ⇒” “Lykke(?)” Empiriske observasjoner: Rike land: Har vokst og BNP per innbygger har konvergert. Fattige land: Ingen slik klar sammenheng. Forklaringer: Institusjoner, korrupsjon, sterk befolkningsvekst etc.</p>
 </div>
-<div id="blogger" class="section level2">
-<h2>Blogger</h2>
-<p><a href="Paul%20Krugman">https://www.nytimes.com/column/paul-krugman</a> <a href="John%20Cochrane">https://johnhcochrane.blogspot.no/</a></p>
+<div id="solow-modellen-for-konomisk-vekst" class="section level2">
+<h2>Solow-modellen for økonomisk vekst</h2>
+<p>Hvordan forstå vekst? Benytte Solow modellen som består av tre komponenter:</p>
+<p><strong>(1) Produktfunksjonen på intensiv form</strong> <span class="math display">\[Y=F(K,AL)\]</span></p>
+<p><strong>(2) Sparing </strong> <span class="math display">\[y=f(k) \text{ hvor } f’k&gt;0, f’’k&lt;0\]</span></p>
+<p><strong>(3) Kapitalakkumulasjon (ekel utgave, uten teknologisk framgang og befolkningsvekst) </strong></p>
+</div>
+<div id="modellens-prediksjon" class="section level2">
+<h2>Modellens prediksjon</h2>
+</div>
+<div id="skiftanalyse" class="section level2">
+<h2>Skiftanalyse</h2>
+<p><strong>Økt sparing</strong></p>
+<p><strong>Befolkningsvekst</strong></p>
+<!--
+
+
+
+
+Y=F(K,AL)   F_k^'>0,F_kk^'<0,F_L^'>0, F_LL^'<0 
+Konstant skalautbytte 
+y=f(k) f’k>0,f’’k<0
+    (2) Sparing
+Lukket økonomi (uten offentlig sektor)
+I=S
+I=S=sY⇔I/N=sY/N=sf(k)
+    (3) Kapitalakkumulasjon
+Enkel utgave (uten teknologisk framgang og befolkningsvekst):
+ΔK=-δ K+I 
+ΔK/N=-δ K/N +I/N  
+Δk=sf(k)-δk
+Vanlig utgave (med teknologisk framgang, a, og befolkningsvekst, n,):
+Δk=sf(k)-(δ+n+a)k
+
+    Modellens prediksjon (bør også kunne vises grafisk):
+Uavhengig av det initiale kapitalnivået vil økonomien på sikt konvergere mot en steady state:
+sf(k^ss )=(δ+n+a) k^ss
+y^ss=f(k^ss)
+I den enkle versjonen vil veksten i produksjonen (BNP) våre lik null.
+I den vanlige versjonen vil veksten i produksjonen (BNP) våre lik befolkningsveksten pluss teknologiveksten. 
+
+Skiftanalyse (bør også kunne vises grafisk)
+Økt sparing vil gi en ny og høyere steady state.
+Befolkningsvekst (fødselsrater + nettoinnvandring)) vil gi en ny og lavere steady state.
+
+
+-->
 </div>
 </div>
 
