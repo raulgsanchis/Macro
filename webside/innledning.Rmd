@@ -11,6 +11,9 @@ output: html_notebook
 ```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
 library(dplyr)
 library(ggplot2)
+library(gridExtra)
+library(grid)
+
 usaunem <- get(load(paste0(devtools::as.package(".")$path,'/data/usaunem.rda')))
 usagdp <- get(load(paste0(devtools::as.package(".")$path,'/data/usagdp.rda')))
 
@@ -25,13 +28,42 @@ gobjusaunem <- ggplot(data = tusaunem, aes(date, value)) + geom_line()  +
   labs(x = "År", y = 'Arbeidsledighetsrate')
 
 gobjusatusagdp <- ggplot(data = tusagdp, aes(date, value)) + geom_line() + 
-  geom_smooth(method = 'loess', color = 'black') + theme_classic() + labs(x = "Dato") + labs(x = "Dato", y = 'BNP (realpriser)')
+  geom_smooth(method = 'loess', color = 'black') + theme_classic() + labs(x = "Dato") + labs(x = "År", y = 'BNP (realpriser)')
 
-gobjusaunem
-gobjusatusagdp
+grid.arrange(gobjusatusagdp, gobjusaunem, ncol=2, top="USA")
 ```
 
-## Hvilken rolle bør offentlige myndigheter spille (normativt: stabiliseringspolitikk og vekstpolitikk)?
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+library(dplyr)
+library(ggplot2)
+library(gridExtra)
+library(grid)
+
+usaunem <- get(load(paste0(devtools::as.package(".")$path,'/data/usaunem.rda')))
+usagdp <- get(load(paste0(devtools::as.package(".")$path,'/data/usagdp.rda')))
+
+# Data transformation
+## unem
+tusaunem <- usaunem %>% dplyr::select(date, value) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
+## gdp
+tusagdp <- usagdp %>% dplyr::select(date, value) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date) 
+# ggplot
+gobjusaunem <- ggplot(data = tusaunem, aes(date, value)) + geom_line()  + 
+  geom_smooth(method = 'loess', color = 'black' ) + theme_classic() + 
+  labs(x = "År", y = 'Arbeidsledighetsrate')
+
+gobjusatusagdp <- ggplot(data = tusagdp, aes(date, value)) + geom_line() + 
+  geom_smooth(method = 'loess', color = 'black') + theme_classic() + labs(x = "Dato") + labs(x = "År", y = 'BNP (realpriser)')
+
+grid.arrange(gobjusatusagdp, gobjusaunem, ncol=2, top="Norge")
+```
+
+## Hvilken rolle bør offentlige myndigheter spille?
+- Stabiliseringspolitikk (aktiv/passiv)
+- Vekstpolitikk (kapitalisme/offentlig sektor)
+- Økonomiske kriser (stabiliserende/likvidierende)
 
 ## Kjente makroøkonomer
 <figure>
@@ -67,4 +99,3 @@ The most effective way to understand how an operating system works is through ab
 #### Arbeidsmarkedet (del I, del III)
 #### Bankkreditt (del III)
 #### Valutakursmarkedet (del I)
-*Øvelse:*
