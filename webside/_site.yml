@@ -3,6 +3,10 @@ output_dir: _site
 navbar:
   title: ØKB1115 Makroøkonomi
   left:
+  - text: Forelesningsplan
+    menu:
+    - text: Forelesningsplan
+      href: forelesningsplan.html
   - text: Forelesningsnotater
     menu:
     - text: Introduksjon
@@ -16,9 +20,9 @@ navbar:
   - text: Oppgaver
     menu:
     - text: Oppgaver
-#      href: losningsforslag.html
+      href: oppgaver.html
     - text: Løsningsforslag
-#      href: oppgaver.html
+      href: losningsforslag.html
   - text: Nyhetsarkiv
     menu:
     - text: Nyheter
@@ -26,7 +30,7 @@ navbar:
   - text: Symbolliste
     menu:
     - text: Symbolliste
-#      href: symbolliste.html
+      href: symbolliste.html
   - text: Utskrifter
     menu:
     - text: Utskrifter

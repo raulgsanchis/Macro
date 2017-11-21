@@ -11,7 +11,7 @@
 
 
 
-<title></title>
+<title>Oppgaver ØKB1115 Makroøkonomi</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -280,62 +280,109 @@ $(document).ready(function () {
 
 
 
+<h1 class="title toc-ignore">Oppgaver ØKB1115 Makroøkonomi</h1>
 
 </div>
 
 
+<div id="oppgaver-fra-1.-forelesning" class="section level1">
+<h1>Oppgaver fra 1. forelesning</h1>
+<div id="datainnhenting" class="section level2">
+<h2>Datainnhenting</h2>
+<ul>
+<li>Installer applikasjonen <a href="http://research.stlouisfed.org/fred2/">Fred</a> i ditt Excel regneark. Trykk på lenken <a href="http://www.youtube.com/watch?v=OAH-wGtP_k8">Hjelp</a> for en kort demonstrasjon på hvordan du benytter denne applikasjonen.</li>
+</ul>
 <!--
----
-title: "Oversikt"
-output:
-  html_notebook: default
----
--->
-<div id="del-3-dype-konomiske-kriser" class="section level1">
-<h1>Del 3: Dype økonomiske kriser</h1>
-<p><img id='grede' src="bilder/depression.jpg" height="75px" width="300px" /> <img id='grere' src="bilder/recession.jpg" height="75px" width="300px" /></p>
-<blockquote>
-<p>In a world of businessmen and financial intermediaries who aggressively seek profit, innovators will always outpace regulators; the authorities cannot prevent changes in the structure of portfolios from occurring. What they can do is keep the asset-equity ratio of banks within bounds by setting equity-absorption ratios for various types of assets. - Minsky</p>
-</blockquote>
-<!--
-> To combat depression by a forced credit expansion is to attempt to cure the evil by the very means which brought it about; because we are suffering from a misdirection of production, we want to create further misdirection -- a procedure which can only lead to a much more severe crisis as soon as the credit expansion comes to an end.
-- Hayek
 
-> Can 'It' - a Great Depression - happen again? And if 'It' can happen why didn't 'It' occur in the years since World War II? These are questions that naturally follow from both the historical record and the comparative success of the past thirty-five years. To answer these questions it is necessary to have an economic theory which makes great depressions one of the possible states in which our type of capitalist economy can find itself.
-- Minsky
+
+
+ 
+
+
+Gjør følgende oppgaver for USA, Japan, Norge og (dersom du har tid) minst ett europeisk land.
+Installer applikasjonen FRED i ditt Excel regneark 
+http://research.stlouisfed.org/fred2/
+Hjelp til hvordan bruke programmet finnes her:
+    Finn tidsserien til bruttonasjonalproduktet i reelle størrelser.
+    Finn tidsserien antall innbyggere 
+    Konstruer tidsserien bruttonasjonalprodukt per innbygger.
+    Transformer serien ved å ta logaritmen.
+    Vis serien grafisk.
+    Gir serien noen tegn på dype økonomiske kriser?  Hvis ja, se om du kan finne (søk på internett) noen kortfattede forklaringer bak disse krisene.
+    Finn et mål på inflasjon.
+    Finn et mål på ledighet.
+    Lag et scatterplot for ledighet og inflasjon (Phillips-kurven).
+    Lag et scatterplot for vekst og endring i inflasjon (Okuns lov).
+Oppgaver gitt til 2. forelesning 
+Kapittel 2, Blanchard, Amighini og Giavazzi
+    Question 3.
+    Question 4.
+Oppgaver gitt til 3. forelesning 
+Ta utgangspunkt i følgende makroøkonomisk modell:
+Z=C+I+G
+Hvor Z er aggregert etterspørsel. C er konsum. I er private realinvesteringer og G er offentlig kjøp av varer og tjenester.
+I tillegg postulerer vi følgende adferdssammenhenger:
+C=c_0+c_1 (Y-T)-c_2 i
+I=I-b_1 i
+Hvor T er nettoskatter, i det nominelle rentenivået, og små bokstaver betegner positive parametere.
+Likvektsbetingelsen for varmarkedet er gitt ved 
+Y=Z 
+
+Hvor Y betegner produksjonen.
+    Nevn tre sentrale forutsetninger som ligger bak en slik modell.
+    Finn løsningen til modellen med hensyn på Y.
+    Hva skjer når i øker (vis formelt, verbalt og grafisk)?
+    Anta at sentralbanken innfører en renteregel som tilsier at i=m_0 Y
+    Sammenlikn multiplikatoren i modellen før og etter innføringen av en slik regel. Hvilken er høyest?
+    Gi en verbal på forklaring på hvordan innførselen av en regel virker inn ved en positiv økning i investeringen I.   
+    Hva menes med the paradox of thrift?
+Oppgaver gitt til 4. forelesning 
+    Ta utgangspunkt i samme modell som i forrige oppgavesett. Anta i tillegg nå at pengemarkedet er operativt. Pengetilbudet er derfor gitt ved M^s=M/P og penge etterspørselen M^d=M(LY,i).  Vis likevekten i pengemarkedet under forutsetning om at sentralbanken (a) setter rentenivået, (b) bestemmer pengetilbudet. 
+    Bestem Y grafisk under (a) og (b) under forutsetning om at både vare- og pengemarkedet er i likevekt (IS-LM modellen).
+    Under (a), hva skjer dersom konsumet øker? Vis grafisk og verbalt.
+    Under (b), ha skjer dersom prisnivået P øker? Vis grafisk og verbalt.
+    Diskuter fordeler og ulemper ved pengepolitikk vs. finanspolitikk som stabiliseringspolitiske verktøy. 
+Oppgaver gitt til 5. forelesning 
+    Vi tar først utgangspunkt i samme modell som ble satt opp under oppgave gitt til 3. forelesning. Videre tenker vi oss at økonomien er åpen for handel og kapitalbevegelser med utlandet. Dette betyr nå at 
+Z=C+I+G+NX
+Y=Z
+                    NX≡X-R*IM
+E_ =((1+i))/((1+i_^* ) ) E_^e   
+I tillegg postulerer vi at følgende sammenhenger for import og eksport:
+X(R,Y^* )=A ̅+/-a_1 R+/-a_2 Y^*
+IM(R,Y)=B ̅+/-s_1 R+/-s_2 Y
+                R=(EP^*)/P
+Anta at parameterne a_1,a_2,s_1  og s_2 er positive Bestem og forklar hvilke fortegn (+/-) som bør gjelde for eksport og import likningene ovenfor.
+    Finn et uttrykk for ∆NX/∆Y , ∆NX/∆R og om mulig avgjør fortegnene.
+    Finn et eksplisitt utrykk for IS likningen under faste kurs (enklest).
+    Finn et eksplisitt utrykk for IS likningen under flytende kurs (litt mer vanskelig).
+    I løpet av forelesningen ble det hevdet at importlekkasje gjør multiplikatoren mindre. I tillegg til dette, vil helningen på IS-kurven (likevekt i vare- og valutakursmarkedet) være brattere i et under fast kurs sammenliknet flytene kurs. Er dette overens med løsningen du fant i de to oppgavene ovenfor?
+    Hvilke virkemidler har myndighetene for å stabilisere konjunkturene under henholdsvis et fast og flytende kurs regime?
+    Hva menes med intern og ekstern balanse?
+
+Oppgaver gitt til 6. forelesning 
+    Basert på de forutsetningene som har blitt gjort i oppgaver gitt til 5. forelesning, finn  ∆NX/∆P og avgjør fortegnet.  
+    Finn deretter  ∆Y/∆P og tegn AD-kurven inn i to diagrammer, et for fast og et for flytende kurs.
+    Tegn til slutt AS-kurven inn i de to diagrammene. 
+    Anta at vi får en sterk økning i C ̅. 
+    Hva skjer med handelsbalansen?
+    Hva skjer med utenriksregnskapet?
+    Hvorfor vil det under en slik endring være enklere å føre en stabiliseringspolitikk i et flytende vs. et fast kurs regime?
+
+Oppgaver gitt til 7. forelesning
+    y=f()  Y/N=F(K,N)
+    Tre komponenter:
+    Redusert sparerate
+    Reduser befolkningsvekst
+    Lsninger og realavkastning
+    Sjekk spareraten i kina
+    Hva kan man gjøre for å få opp teknologiske veksten
+    Blanchard oppgaver
+    Vekst i norge
+    Produktivitetsveksten
+
+
 -->
-<div id="penger" class="section level2">
-<h2>Penger</h2>
-<p>Del 3: Økonomiske kriser Tema 1: Penger, kreditt og bankadferd Pengens funksjoner Penger som gjeld Utvendige penger (M0(M1)): Skapt av sentralbanken og består av sedler, mynt pluss forretningsbankenes innskuddskontoer i sentralbanken.</p>
-<p>Innvendige penger(M1(M2)-M0(M1)) : Skapt av bankene ved at de krediterer sine innskuddskontoer. Tre arketyper for banksystemets forskjellige utforminger System 1: Lånebasert økonomi Problemer: Uelastisk kredittilbud. Kostnader ved å flytte reserver mellom forretningsbankene.</p>
-<pre><code>System 2: Fraksjonsbasert bankvirksomhet uten sentralbank</code></pre>
-<p>Problemer: Åpne for løp på bankene. Kostnader ved å flytte reserver mellom forretningsbankene.</p>
-<pre><code>System 3: Fraksjonsbasert bankvirksomhet med sentralbank og fiat penger</code></pre>
-<p>Problemer:</p>
-</div>
-<div id="banker-og-systemrisiko" class="section level2">
-<h2>Banker og systemrisiko</h2>
-<p>Vilkårlig omfordeling av formue. Banker og systemrisiko<br />
-Bloos rule: Innskuddsgaranti gjør det mer lønnsomt å velge prosjekter med unødvendig Dersom alle banker går får en slik løsning  Systemrisiko. Høyere egenkapitalkrav til bankene vil føre (1)Lavere forventede utbetalinger ved systemrisiko (2) Gradvis substitusjon over fra forretningsmodeller med overdreven risiko.</p>
-</div>
-<div id="statsgjeldskrise" class="section level2">
-<h2>Statsgjeldskrise</h2>
-<p>Konsolidert budsjettbetingelse for offentlig sektor Offentlig sektor B_t^f=(1+i_(t-1) ) B_(t-1)^f+(G_t-T_t )-SNG_t<br />
-Sentralbanken i_(t-1) B_(t-1)^m +∆B_t<sup>m=∆M_t+SNG_t Statsgjeld B_t=B_t</sup>f-B_t^m Ved å kombinere uttrykkene ovenfor får vi den konsoliderte budsjettbetingelsen for offentlig sektor</p>
-<p>B_t=(1+i_(t-1 ) ) B_t+(G_t-T_t )-ΔM_t</p>
-<p>Dynamikken i statsgjelden over tid Ved null inflasjon og i_t=r_t og ΔM_t=0, kan uttrykket ovenfor skrives som</p>
-<p>B_t/Y_t =((G_t-T_t))/Y_t + B_(t-1)/Y_(t-1) (1+r-g) Grafisk analyse for fire tifeller: Viktigst:<br />
-(1+r-g)&gt;1 og (i) (G_t-T_t)&gt;0 og (ii) (G_t-T_t)&lt;0 Mindre viktig: (1+r-g)&lt;1 og (iii) (G_t-T_t)&gt;0 og (iv) (G_t-T_t)&lt;0 Mulig tiltak for å forhindre en statsgjeldskrise Kutte i primærbudsjettet (øke T eller redusere G) Mislighold Inflasjon ( man må gjøre sentralbanken mindre uavhengig)</p>
-</div>
-<div id="likviditetsfellen-og-privat-gjeld" class="section level2">
-<h2>Likviditetsfellen og privat gjeld</h2>
-<p>Hva er likviditetsfellen? Sitasjon hvor pengepolitikken ikke lengre kan påvirke realøkonomien på en ekspansiv måte: Kortsiktig nominell rente er (nær) lik null. Beskrevet først av Keynes i “General Theory” på 1930-tallet. Men blitt aktualisert etter den globale finanskrisen</p>
-<p>Hvordan havner man i en likviditetsfelle? Case 1: Demografiske endringer (Krugman, 1998) ⇒Δ ̅C&lt;0 (eks. spare mere til alderdommen)</p>
-<p>ΔY=1/((1-c(1-t)) (Δ ̅C)&lt;0 Likviditetsfelle dersom rentereduksjonen ikke klarer å veie opp for nedgangen i konsumet som er en følge av de demografiske endringene: (Δ C ̅-b∙Δ i^0)&lt;0 ⇒ΔY=1/((1-c(1-t))(Δ C ̅-b∙Δ i^0)&lt;0</p>
-<pre><code>Case 2: Privat gjeldsreduksjon (Krugman og EggertsSon, 2012)⇒ΔD^b&lt;0 (Minsky moment)</code></pre>
-<p>ΔY=1/((1-¯c(1-t)) (θ∙Δ ̅D^b )&lt;0 Likviditetsfelle dersom rentereduksjonen ikke klarer å veie opp for nedgangen i konsumet som er en følge av gjeldsreduksjonen: (θ∙Δ D^b-¯b ∙Δ i^0)&lt;0 ⇒ΔY=1/((1-¯c (1-t))(θ∙Δ D^b-b∙Δ i^0)&lt;0</p>
-<pre><code>Likviditetsfelle  Y&lt;Y^n T=tY   går ned. Redusert BNP og redusert skatter  B_t/Y_t øker. Gitt at sentralbanken ikke gis muligheten til å øke pengemengden for å kjøpe statsobligasjoner, vil en overgang til en likviditetsfelle lett kunne smitte over i en statsgjeldskrise.  </code></pre>
-<p>Hvordan komme ut av en likviditetsfelle? Den lukkede økonomi modellen forteller oss at finanspolitikken kan betraktes som en gratis lunsj: Vil kunne lukke produksjonsgapet. Vil stabilisere prisene Rentekostnader ved å gjøre dette vil være (tilnærmet) lik null. For en åpen økonomi er ikke situasjonen like enkel. Dette vil bli forklart nærmere under forelesningen om krisen i eurosonen.</p>
 </div>
 </div>
 

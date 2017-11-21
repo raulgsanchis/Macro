@@ -2,8 +2,8 @@
 bibliography: pensum.bib
 ---
 
-```{r child = 'hente/Forelesningsplan.html'}
+```{r child = 'hente/forelesningsplan.html'}
 ```
 
+## Pensum
 <font color="white">Smith cited [@gartner2016macroeconomics]</font>
-

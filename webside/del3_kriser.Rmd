@@ -1,3 +1,10 @@
+<!--
+---
+title: "Oversikt"
+output:
+  html_notebook: default
+---
+-->
 # Del 3: Dype økonomiske kriser
 <img id='grede' src="bilder/depression.jpg" height="75px" width="300px" />
 <img id='grere' src="bilder/recession.jpg" height="75px" width="300px" />
