@@ -1,5 +1,4 @@
 ---
-title: "Oversikt over faget"
 output:
   html_notebook: default
 ---

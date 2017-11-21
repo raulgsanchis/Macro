@@ -1,0 +1,19 @@
+---
+output:
+  html_notebook: default
+---
+
+```{r child = '../innledning.Rmd'}
+```
+
+```{r child = '../del1_konjunkturer.Rmd'}
+#child = '../del1_konjunkturer.Rmd'
+```
+
+```{r child = '../del2_vekst.Rmd'}
+#child = '../del2_vekst.Rmd'
+```
+
+```{r child = '../del3_kriser.Rmd'}
+#child = '../del2_vekst.Rmd'
+```

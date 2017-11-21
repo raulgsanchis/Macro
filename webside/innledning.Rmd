@@ -1,7 +1,9 @@
+# Tre hovedtemaer: 
+- Svingninger (del I)
+- Økonomisk vekst (del II) 
+- Dype økonomiske kriser (del III)
 
-# Konjunktursvingninger
-
-```{r echo=FALSE}
+```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
 library(dplyr)
 library(ggplot2)
 usaunem <- get(load(paste0(devtools::as.package(".")$path,'/data/usaunem.rda')))
@@ -25,12 +27,6 @@ gobjusatusagdp <- ggplot(data = tusagdp, aes(date, value)) + geom_line() +
 gobjusaunem
 ```
 
-
-# Tre hovedtemaer: 
-- Svingninger (del I)
-- Økonomisk vekst (del II) 
-- Dype økonomiske kriser (del III)
-
 # Kjente makroøkonomer 
 <img id='grede' src="bilder/keynes.jpg" height="75px" width="300px" />
 <img id='grede' src="bilder/friedman.jpg" height="75px" width="300px" />
@@ -41,15 +37,17 @@ gobjusaunem
 
 # Abstraksjon
 ## Sentrale aktører i makroøkonomien
-### Husholdninger (del 1, 2 og 3)
-### Bedrifter (del 1, 2 og 3)
-### Banker og fininstitusjoner (del 3) 
-### Sentralbanken (del 1 og 3)
-### Offentlige myndigheter (del 1 og 3) 
+### Husholdninger (del I, del II og del III)
+### Bedrifter (del I, del II og del III)
+### Banker og fininstitusjoner (del III) 
+### Sentralbanken (del I og III)
+### Offentlige myndigheter (del I og III) 
 
 ## Markedene vi studerer
-### Vare- og tjenestemarkedet 
-### Pengemarkedet 
-### Arbeidsmarkedet 
-### Bankkreditt 
-### valutakursmarkedet
+### Vare- og tjenestemarkedet (del I, del II og del III)
+### Pengemarkedet (del I, del III)
+### Arbeidsmarkedet (del I, del III)
+### Bankkreditt (del III)
+### Valutakursmarkedet (del I)
+
+*Øvelse:*

@@ -7,16 +7,34 @@ navbar:
     menu:
     - text: Introduksjon
       href: innledning.html
-    - text: 'Del 1: Kortsiktige konjunktursvingninger'
+    - text: 'Del I: Kortsiktige konjunktursvingninger'
       href: del1_konjunkturer.html
-    - text: 'Del 2: Langsiktig økonomisk vekst'
+    - text: 'Del II: Langsiktig økonomisk vekst'
       href: del2_vekst.html
-    - text: 'Del 3: Økonomiske kriser'
+    - text: 'Del III: Økonomiske kriser'
       href: del3_kriser.html
+  - text: Oppgaver
+    menu:
+    - text: Oppgaver
+#      href: losningsforslag.html
+    - text: Løsningsforslag
+#      href: oppgaver.html
   - text: Nyhetsarkiv
     menu:
     - text: Nyheter
       href: nyhetslinker.html
+  - text: Symbolliste
+    menu:
+    - text: Symbolliste
+#      href: symbolliste.html
+  - text: Utskrifter
+    menu:
+    - text: Utskrifter
+      href: slidegen/notebookagg.nb.html
+  right:
+  - text: Source Code on GitHub
+  - icon: fa-github fa-lg
+    href: https://github.com/joernih/MakroOESO002
 output:
   html_document:
     theme: cosmo

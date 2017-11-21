@@ -1,20 +1,19 @@
-
-# Del 3: Økonomiske kriser
+# Del 3: Dype økonomiske kriser
 <img id='grede' src="bilder/depression.jpg" height="75px" width="300px" />
 <img id='grere' src="bilder/recession.jpg" height="75px" width="300px" />
 
-```{r eval=FALSE, include=FALSE}
-# Innledning
-Tre hoved temaer: (1) Svingninger, (2) økonomiske vekst og (3) dype økonomiske kriser.
-To typer spørsmål blir forsøkt besvart: 
-Hva forårsaker konjunktursvingninger og langsiktig vekst (positivistisk)?: 
-Hvilken rolle bør offentlige myndigheter spille (normativt: stabiliseringspolitikk og vekstpolitikk)?
-Sentral økonomer stiftet bekjentskap med i dette kurset:
-(Marx(1818-1883)), Keynes(1883-1946)/Hicks(1904-1989)/Krugman(1953-),Friedman(1912-2006),Hayek(1899-1992)(Mises)/Minsky(1919-1996)
-Aktørene i økonomien: Husholdninger, bedrifter, finansinstitusjoner, sentralbanken og offentlige myndigheter
-Markedene: Vare- og tjenestemarkedet, pengemarkedet, arbeidsmarkedet, bankkreditt og valutakursmarkedet.
-```
+> In a world of businessmen and financial intermediaries who aggressively seek profit, innovators will always outpace regulators; the authorities cannot prevent changes in the structure of portfolios from occurring. What they can do is keep the asset-equity ratio of banks within bounds by setting equity-absorption ratios for various types of assets. 
+- Minsky
 
+<!--
+> To combat depression by a forced credit expansion is to attempt to cure the evil by the very means which brought it about; because we are suffering from a misdirection of production, we want to create further misdirection -- a procedure which can only lead to a much more severe crisis as soon as the credit expansion comes to an end.
+- Hayek
+
+> Can 'It' - a Great Depression - happen again? And if 'It' can happen why didn't 'It' occur in the years since World War II? These are questions that naturally follow from both the historical record and the comparative success of the past thirty-five years. To answer these questions it is necessary to have an economic theory which makes great depressions one of the possible states in which our type of capitalist economy can find itself.
+- Minsky
+-->
+
+## Penger
 Del 3: Økonomiske kriser
 Tema 1: Penger, kreditt og bankadferd
 Pengens funksjoner 
@@ -37,13 +36,17 @@ Kostnader ved å flytte reserver mellom forretningsbankene.
 
 	System 3: Fraksjonsbasert bankvirksomhet med sentralbank og fiat penger
 Problemer:
-Systemrisiko.
+
+## Banker og systemrisiko
+
 Vilkårlig omfordeling av formue.
 Banker og systemrisiko  
 	Bloos rule: Innskuddsgaranti gjør det mer lønnsomt å velge prosjekter med unødvendig 
 Dersom alle banker går får en slik løsning  Systemrisiko.
 	Høyere egenkapitalkrav til bankene vil føre (1)Lavere forventede utbetalinger ved systemrisiko (2) Gradvis substitusjon over fra forretningsmodeller med overdreven risiko. 
-Tema 2: Statsgjeld
+
+## Statsgjeldskrise
+
 Konsolidert budsjettbetingelse for offentlig sektor
 Offentlig sektor
 B_t^f=(1+i_(t-1) ) B_(t-1)^f+(G_t-T_t )-SNG_t    
@@ -68,7 +71,8 @@ Mulig tiltak for å forhindre en statsgjeldskrise
 	Kutte i primærbudsjettet (øke T eller redusere G)
 	Mislighold
 	Inflasjon ( man må gjøre sentralbanken mindre uavhengig)
-Tema 3: Likviditetsfellen og privat gjeld
+
+## Likviditetsfellen og privat gjeld
 Hva er likviditetsfellen?
 	Sitasjon hvor pengepolitikken ikke lengre kan påvirke realøkonomien på en ekspansiv måte: Kortsiktig nominell rente er (nær) lik null.
 	Beskrevet først av Keynes i “General Theory” på 1930-tallet. Men blitt aktualisert etter den globale finanskrisen

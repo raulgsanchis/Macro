@@ -9,6 +9,10 @@ output:
 <img id='grede' src="bilder/cycles.jpg" height="75px" width="300px" />
 <img id='grere' src="bilder/money.jpg" height="75px" width="300px" />
 
+> Long run is a misleading guide to current affairs. In the long run we are all dead.
+- KeynesLong run is a misleading guide to current affairs. In the long run we are all dead.
+Read more at: https://www.brainyquote.com/authors/john_maynard_keynes
+
 <!--
 
 -->

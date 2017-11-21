@@ -1,3 +1,4 @@
+
 <!--
 ---
 output: html_notebook
@@ -7,6 +8,9 @@ output: html_notebook
 # Del 2: Langsiktig økonomisk vekst
 <img id='grere' src="bilder/poverty.jpg" height="75px" width="300px" />
 <img id='grede' src="bilder/growth.jpg" height="75px" width="300px" />
+
+> A society that puts equality before freedom will get neither. A society that puts freedom before equality will get a high degree of both.” 
+― Milton Friedman
 
 ## Introduksjon
 Y/L↑⇒"Høyere levestendard ⇒" "Lykke(?)" 
@@ -68,3 +72,5 @@ Befolkningsvekst (fødselsrater + nettoinnvandring)) vil gi en ny og lavere stea
 
 
 -->
+
+
