@@ -1,3 +1,9 @@
+
+```{r eval=FALSE, include=FALSE}
+# Fødselstall økonomer 
+# Læringsmål
+```
+
 ---
 title: ''
 output: pdf_document

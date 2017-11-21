@@ -1,5 +1,5 @@
 ---
-bibliography: pensum.bib
+bibliography: slidegen/pensum.bib
 ---
 
 ```{r child = 'hente/forelesningsplan.html'}

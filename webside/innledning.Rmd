@@ -1,4 +1,9 @@
-# Tre hovedtemaer: 
+---
+output: html_notebook
+---
+# Introduksjon
+
+## Tre hovedtemaer: 
 - Svingninger (del I)
 - Økonomisk vekst (del II) 
 - Dype økonomiske kriser (del III)
@@ -17,37 +22,49 @@ tusagdp <- usagdp %>% dplyr::select(date, value) %>% dplyr::mutate(date = as.Dat
 # ggplot
 gobjusaunem <- ggplot(data = tusaunem, aes(date, value)) + geom_line()  + 
   geom_smooth(method = 'loess', color = 'black' ) + theme_classic() + 
-  labs(x = "Dato", y = 'Arbeidsledighetsrate')
+  labs(x = "År", y = 'Arbeidsledighetsrate')
 
-
-gobjusatusagdp <- ggplot(data = tusagdp, aes(date, value)) + geom_line() +
-  geom_smooth(method = 'loess') + labs(x = "Dato") + labs(x = "Dato", y = 'Arbeidsledighetsrate')
-
+gobjusatusagdp <- ggplot(data = tusagdp, aes(date, value)) + geom_line() + 
+  geom_smooth(method = 'loess', color = 'black') + theme_classic() + labs(x = "Dato") + labs(x = "Dato", y = 'BNP (realpriser)')
 
 gobjusaunem
+gobjusatusagdp
 ```
 
-# Kjente makroøkonomer 
+## Hvilken rolle bør offentlige myndigheter spille (normativt: stabiliseringspolitikk og vekstpolitikk)?
+
+## Kjente makroøkonomer
+<figure>
 <img id='grede' src="bilder/keynes.jpg" height="75px" width="300px" />
+<figcaption>John M. Keynes (1883-1946)</figcaption>
 <img id='grede' src="bilder/friedman.jpg" height="75px" width="300px" />
+<figcaption>Milton Friedman (1912-2006)</figcaption>
+<figure>
+<figure>
 <img id='grede' src="bilder/minsky.jpg" height="75px" width="300px" />
+<figcaption>Hyman Minsky (1919-1996)</figcaption>
 <img id='grede' src="bilder/krugman.jpg" height="75px" width="300px" />
-<img id='grede' src="bilder/marx.jpg" height="75px" width="300px" />
+<figcaption>Paul Krugman(1953-)</figcaption>
+<figure>
+<figure>
 <img id='grede' src="bilder/hayek.jpg" height="75px" width="300px" />
+<figcaption>Friedrich Hayek (1899-1992)</figcaption>
+<figure>
 
-# Abstraksjon
-## Sentrale aktører i makroøkonomien
-### Husholdninger (del I, del II og del III)
-### Bedrifter (del I, del II og del III)
-### Banker og fininstitusjoner (del III) 
-### Sentralbanken (del I og III)
-### Offentlige myndigheter (del I og III) 
+## Abstraksjon
+The most effective way to understand how an operating system works is through abstraction — a fancy way of saying that you can ignore most of the details.
 
-## Markedene vi studerer
-### Vare- og tjenestemarkedet (del I, del II og del III)
-### Pengemarkedet (del I, del III)
-### Arbeidsmarkedet (del I, del III)
-### Bankkreditt (del III)
-### Valutakursmarkedet (del I)
+### Sentrale aktører i makroøkonomien
+#### Husholdninger (del I, del II og del III)
+#### Bedrifter (del I, del II og del III)
+#### Banker og fininstitusjoner (del III) 
+#### Sentralbanken (del I og III)
+#### Offentlige myndigheter (del I og III) 
 
+### Markedene vi studerer
+#### Vare- og tjenestemarkedet (del I, del II og del III)
+#### Pengemarkedet (del I, del III)
+#### Arbeidsmarkedet (del I, del III)
+#### Bankkreditt (del III)
+#### Valutakursmarkedet (del I)
 *Øvelse:*

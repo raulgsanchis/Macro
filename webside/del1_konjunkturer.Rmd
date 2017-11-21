@@ -1,8 +1,6 @@
 <!--
 ---
-title: "Oversikt"
-output:
-  html_notebook: default
+output: html_notebook
 ---
 -->
 # Del 1: Kortsiktige konjunktursvingninger
@@ -10,27 +8,19 @@ output:
 <img id='grere' src="bilder/money.jpg" height="75px" width="300px" />
 
 > Long run is a misleading guide to current affairs. In the long run we are all dead.
-- KeynesLong run is a misleading guide to current affairs. In the long run we are all dead.
-Read more at: https://www.brainyquote.com/authors/john_maynard_keynes
+- Keynes
 
+## Grunnleggende bakgrunnskunnskap 
+## Likevekt i godemarkedet (varer og tjenester)
+## Likevekt i pengemarkedet
+## IS-LM modellen for en lukket økonomi: gode- og pengemarkedet i likevekt
+## AD-AS modellen for en lukket økonomi: gode-, penge- og arbeidsmarkedet i likevekt
+## IS-LM modellen for en åpen økonomi: gode-, penge- og valutakursmarkedet i likevekt
+## AD-AS modellen for en åpen økonomi: gode-, penge-, arbeids- og valutakursmarkedet i likevekt
+
+
+  
 <!--
-
--->
-
-
-```{r eval=FALSE, include=FALSE}
-Tre hoved temaer: (1) Svingninger, (2) økonomiske vekst og (3) dype økonomiske kriser.
-To typer spørsmål blir forsøkt besvart: 
-Hva forårsaker konjunktursvingninger og langsiktig vekst (positivistisk)?: 
-Hvilken rolle bør offentlige myndigheter spille (normativt: stabiliseringspolitikk og vekstpolitikk)?
-Sentral økonomer stiftet bekjentskap med i dette kurset:
-(Marx(1818-1883)), Keynes(1883-1946)/Hicks(1904-1989)/Krugman(1953-),Friedman(1912-2006),Hayek(1899-1992)(Mises)/Minsky(1919-1996)
-Aktørene i økonomien: Husholdninger, bedrifter, finansinstitusjoner, sentralbanken og offentlige myndigheter
-Markedene: Vare- og tjenestemarkedet, pengemarkedet, arbeidsmarkedet, bankkreditt og valutakursmarkedet.
-
-```
-
-
 Del 1: Økonomiske svingninger på kort sikt
 Grunnleggende bakgrunnskunnskap 
 	Mål på aggregert produksjon: BNP

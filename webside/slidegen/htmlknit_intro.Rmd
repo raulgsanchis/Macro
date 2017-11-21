@@ -1,0 +1,26 @@
+---
+title: "Innhold"
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+bibliography: pensum.bib
+---
+
+```{r child = '../innledning.Rmd'}
+```
+
+```{r child = '../del1_konjunkturer.Rmd'}
+```
+
+```{r child = '../del2_vekst.Rmd'}
+```
+
+```{r child = '../del3_kriser.Rmd'}
+```
+
+```{r child = '../case_euro.Rmd'}
+```
+
+<font color="white">Smith cited [@gartner2016macroeconomics]</font>
+

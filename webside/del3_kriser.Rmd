@@ -1,23 +1,20 @@
 <!--
 ---
-title: "Oversikt"
-output:
-  html_notebook: default
+output: html_notebook
 ---
 -->
 # Del 3: Dype økonomiske kriser
 <img id='grede' src="bilder/depression.jpg" height="75px" width="300px" />
 <img id='grere' src="bilder/recession.jpg" height="75px" width="300px" />
 
-> In a world of businessmen and financial intermediaries who aggressively seek profit, innovators will always outpace regulators; the authorities cannot prevent changes in the structure of portfolios from occurring. What they can do is keep the asset-equity ratio of banks within bounds by setting equity-absorption ratios for various types of assets. 
+> Can 'It' - a Great Depression - happen again? And if 'It' can happen why didn't 'It' occur in the years since World War II? These are questions that naturally follow from both the historical record and the comparative success of the past thirty-five years. To answer these questions it is necessary to have an economic theory which makes great depressions one of the possible states in which our type of capitalist economy can find itself.
 - Minsky
+
 
 <!--
 > To combat depression by a forced credit expansion is to attempt to cure the evil by the very means which brought it about; because we are suffering from a misdirection of production, we want to create further misdirection -- a procedure which can only lead to a much more severe crisis as soon as the credit expansion comes to an end.
 - Hayek
 
-> Can 'It' - a Great Depression - happen again? And if 'It' can happen why didn't 'It' occur in the years since World War II? These are questions that naturally follow from both the historical record and the comparative success of the past thirty-five years. To answer these questions it is necessary to have an economic theory which makes great depressions one of the possible states in which our type of capitalist economy can find itself.
-- Minsky
 -->
 
 ## Penger
@@ -44,7 +41,9 @@ Kostnader ved å flytte reserver mellom forretningsbankene.
 	System 3: Fraksjonsbasert bankvirksomhet med sentralbank og fiat penger
 Problemer:
 
-## Banker og systemrisiko
+## Banker, systemrisiko og kapitalkrav
+> In a world of businessmen and financial intermediaries who aggressively seek profit, innovators will always outpace regulators; the authorities cannot prevent changes in the structure of portfolios from occurring. What they can do is keep the asset-equity ratio of banks within bounds by setting equity-absorption ratios for various types of assets. 
+- Minsky
 
 Vilkårlig omfordeling av formue.
 Banker og systemrisiko  
@@ -79,7 +78,7 @@ Mulig tiltak for å forhindre en statsgjeldskrise
 	Mislighold
 	Inflasjon ( man må gjøre sentralbanken mindre uavhengig)
 
-## Likviditetsfellen og privat gjeld
+## Likviditetsfellen
 Hva er likviditetsfellen?
 	Sitasjon hvor pengepolitikken ikke lengre kan påvirke realøkonomien på en ekspansiv måte: Kortsiktig nominell rente er (nær) lik null.
 	Beskrevet først av Keynes i “General Theory” på 1930-tallet. Men blitt aktualisert etter den globale finanskrisen

@@ -1,13 +1,16 @@
 ---
+title: "Oversikt"
 output:
-  html_notebook: default
+  html_document:
+    toc: true
+    toc_depth: 2
 ---
 
-```{r child = '../innledning.Rmd'}
+```{r child = '../del1_konjunkturer.Rmd'}
 ```
 
-```{r child = '../del1_konjunkturer.Rmd'}
-#child = '../del1_konjunkturer.Rmd'
+
+```{r child = '../innledning.Rmd'}
 ```
 
 ```{r child = '../del2_vekst.Rmd'}
