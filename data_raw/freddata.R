@@ -12,21 +12,32 @@ fred <- FredR(api.key)
 str(fred,1)
 macro.series <- fred$series.search("GDP")
 macro.series2 <- fred$series.search("unemployment")
+macro.series3 <- fred$series.search("money")
+macro.series4 <- fred$series.search("inflation")
 
 #Civilian Unemployment Rate
+usainf <- fred$series.observations(series_id = c('CPIAUCSL', 'CPILFESL')[1])
+usamone <- fred$series.observations(series_id = c('M1')) %>% dplyr::select(date, value) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
 usagdp <- fred$series.observations(series_id = c('GDPCA')) %>% dplyr::select(date, value)
 usaunem <- rbind(fred$series.observations(series_id = c('M0892AUSM156SNBR')), fred$series.observations(series_id = c('UNRATE')))
 
+
 devtools::use_data(usagdp, overwrite = TRUE)
 devtools::use_data(usaunem, overwrite = TRUE)
+devtools::use_data(usainf, overwrite = TRUE)
+devtools::use_data(usamone, overwrite = TRUE)
 
-# dt <- ma %>%
-#   select(
-#     date,
-#     value
-#   ) %>%
-#   mutate(
-#     date = as.Date(date),
-#     value = as.numeric(value)) %>% arrange(date)
-#
-# qplot(data = dt, x = date, y = value, geom = 'line')
+dt <- usamone %>%
+  select(
+    date,
+    value
+  ) %>%
+  mutate(
+    date = as.Date(date),
+    value = as.numeric(value)) %>% arrange(date)
+
+qplot(data = dt, x = date, y = value, geom = 'line')
+
+library(ggplot2)
+a <- ggplot2::ggplot(data = dt, x = date, y = value) + geom_abline(aes(intercept=0, slope = 1, size = 10)) +
+  labs(title='abc', subtitle = 'def', caption ='123', x='x', y = 'y', AES = 'AES')
