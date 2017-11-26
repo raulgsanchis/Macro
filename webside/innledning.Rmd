@@ -24,14 +24,14 @@ tusaunem <- usaunem %>% dplyr::select(date, value) %>% dplyr::mutate(date = as.D
 tusagdp <- usagdp %>% dplyr::select(date, value) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date) 
 # ggplot
 gobjusaunem <- ggplot(data = tusaunem, aes(date, value)) + geom_line()  + 
-  geom_smooth(method = 'loess', color = 'black' ) + theme_classic() + 
+  geom_smooth(method = 'auto', color = 'red', size = 0.5, se = FALSE) + theme_classic() + 
   labs(x = "År", y = 'Arbeidsledighetsrate')
 
 gobjusatusagdp <- ggplot(data = tusagdp, aes(date, value)) + geom_line() + 
-  geom_smooth(method = 'loess', color = 'black') + theme_classic() + labs(x = "Dato") + labs(x = "År", y = 'BNP (realpriser)')
+  geom_smooth(method = 'loess', color = 'red',se = FALSE, size = 0.5) + theme_classic() + labs(x = "Dato") + labs(x = "År", y = 'BNP (realpriser)')
 
 grid.arrange(gobjusatusagdp, gobjusaunem, ncol=2, top="USA")
-```
+  ```
 
 
 
@@ -46,16 +46,20 @@ usagdp <- get(load(paste0(devtools::as.package(".")$path,'/data/usagdp.rda')))
 
 # Data transformation
 ## unem
-tusaunem <- usaunem %>% dplyr::select(date, value) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
+tusaunem <- usaunem %>% dplyr::select(date, value) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date) 
+
 ## gdp
 tusagdp <- usagdp %>% dplyr::select(date, value) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date) 
 # ggplot
 gobjusaunem <- ggplot(data = tusaunem, aes(date, value)) + geom_line()  + 
   geom_smooth(method = 'loess', color = 'black' ) + theme_classic() + 
-  labs(x = "År", y = 'Arbeidsledighetsrate')
+  labs(x = "År", y = 'Arbeidsledighetsrate') 
+#+ scale_x_continuous()
 
 gobjusatusagdp <- ggplot(data = tusagdp, aes(date, value)) + geom_line() + 
   geom_smooth(method = 'loess', color = 'black') + theme_classic() + labs(x = "Dato") + labs(x = "År", y = 'BNP (realpriser)')
+#+ scale_y_continuous()
+
 
 grid.arrange(gobjusatusagdp, gobjusaunem, ncol=2, top="Norge")
 ```
