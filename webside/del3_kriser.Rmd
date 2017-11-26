@@ -3,7 +3,7 @@
 output: html_notebook
 ---
 -->
-# Del 3: Dype økonomiske kriser
+# Del 3: Økonomiske kriser
 <img id='grede' src="bilder/depression.jpg" height="75px" width="300px" />
 <img id='grere' src="bilder/recession.jpg" height="75px" width="300px" />
 

@@ -1,8 +1,7 @@
-<!--
 ---
 output: html_notebook
 ---
--->
+
 # Del 1: Kortsiktige konjunktursvingninger
 <img id='grede' src="bilder/cycles.jpg" height="75px" width="300px" />
 <img id='grere' src="bilder/money.jpg" height="75px" width="300px" />
@@ -10,7 +9,17 @@ output: html_notebook
 > Long run is a misleading guide to current affairs. In the long run we are all dead.
 - Keynes
 
-## Grunnleggende bakgrunnskunnskap 
+## Grunnleggende bakgrunnkunnskap 
+### Sentrale begreper
+- BNP
+
+### Sentral empiriske resultater
+
+### Hva bestemmer aggregert BNP?
+#### Kort sikt:
+#### Mellomlang sikt:
+#### Lang sikt:
+
 ## Likevekt i godemarkedet (varer og tjenester)
 ## Likevekt i pengemarkedet
 ## IS-LM modellen for en lukket økonomi: gode- og pengemarkedet i likevekt

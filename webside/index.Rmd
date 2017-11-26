@@ -9,19 +9,17 @@ title: ''
 output: pdf_document
 ---
 
-### Del I: Kortsiktige konjunktursvingninger
+### Del I: Konjunktursvingninger
 <img id='grede' src="bilder/cycles.jpg" height="75px" width="300px" />
 <img id='grere' src="bilder/money.jpg" height="75px" width="300px" />
 
-### Del II: Langsiktig økonomisk vekst
+### Del II: Økonomisk vekst
 <img id='grere' src="bilder/poverty.jpg" height="75px" width="300px" />
 <img id='grede' src="bilder/growth.jpg" height="75px" width="300px" />
 
 ### Del III: Økonomiske kriser
 <img id='grede' src="bilder/depression.jpg" height="75px" width="300px" />
 <img id='grere' src="bilder/recession.jpg" height="75px" width="300px" />
-
-[Kursbeskrivelse](https://www.hvl.no/studier/studieprogram/emne/%C3%B8kb1115)
 
 <span style="color:red"> Status: Under utvikling </span>
 

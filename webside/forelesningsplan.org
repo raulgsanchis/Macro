@@ -1,0 +1,52 @@
+#+OPTIONS: html-postamble:nil
+#+OPTIONS: num:nil
+#+OPTIONS: toc:nil
+#+TITLE: 
+
+* ØKB1115 Makroøkonomi våren 2018
+** Undervisning
+|    | Dato | Del                   | Tema                                 | Timer | Rom | Pensum              | Ansvarlig |
+|----+------+-----------------------+--------------------------------------+-------+-----+---------------------+-----------|
+|  1 |      | Intro:                | Oversikt over faget                  |     3 |     | Forelesningsnotater | JIH       |
+|    |      |                       | Grunnleggende basiskunnskaper        |       |     |                     |           |
+|----+------+-----------------------+--------------------------------------+-------+-----+---------------------+-----------|
+|  2 |      | Del I:                | IS-LM for en lukket økonomi          |     3 |     | Forelesningsnotater | JIH       |
+|  3 |      | Konjunktursvingninger | IS-LM og AD-AS for en lukket økonomi |     3 |     |                     | JIH       |
+|  4 |      |                       | AD-AS for en lukket økonomi          |     3 |     |                     | JIH       |
+|  5 |      |                       | IS-LM og AD-AS for en åpen økonomi   |     3 |     |                     | JIH       |
+|----+------+-----------------------+--------------------------------------+-------+-----+---------------------+-----------|
+|  6 |      | Del II:               | Stiliserte fakta om økonomisk vekst  |       |     | Forelesningsnotater | JIH       |
+|  7 |      | Økonomisk vekst       | Solows vekstmodell                   |     3 |     |                     | JIH       |
+|----+------+-----------------------+--------------------------------------+-------+-----+---------------------+-----------|
+|  8 |      | Del III:              | Penger (innvendige og utvendige)     |       |     | Forelesningsnotater | JIH       |
+|  9 |      | Økonomiske kriser     | Banker, systemrisiko og kapitalkrav  |     3 |     | Notater             | JIH       |
+| 10 |      |                       | Statsgjeldskrise                     |     3 |     |                     | JIH       |
+| 11 |      |                       | Likviditetsfellen                    |       |     |                     | JIH       |
+|----+------+-----------------------+--------------------------------------+-------+-----+---------------------+-----------|
+| 12 |      | Oppsumering:          | Del I-III                            |     3 |     |                     | JIH       |
+|----+------+-----------------------+--------------------------------------+-------+-----+---------------------+-----------|
+| 13 |      | Case:                 | Krisen i Eurosonen                   |     3 |     | Halvorsen 2013      | JIH       |
+|    |      |                       |                                      |       |     | Gartner 2015        |           |
+|----+------+-----------------------+--------------------------------------+-------+-----+---------------------+-----------|
+
+** Oppgaveseminar
+|   | Dato | Del                   | Oppgaver | Timer | Rom | Ansvarlig |
+|---+------+-----------------------+----------+-------+-----+-----------|
+|   |      | Del I:                |          |       |     |           |
+| 1 |      | Konjunktursvingninger |          |     2 |     |           |
+| 2 |      |                       |          |     2 |     |           |
+| 3 |      |                       |          |     2 |     |           |
+|---+------+-----------------------+----------+-------+-----+-----------|
+| 4 |      | Del II:               |          |     2 |     |           |
+|   |      | Økonomisk vekst       |          |       |     |           |
+|---+------+-----------------------+----------+-------+-----+-----------|
+| 5 |      | Del III:              |          |     2 |     |           |
+| 6 |      | Økonomiske kriser     |          |     2 |     |           |
+|---+------+-----------------------+----------+-------+-----+-----------|
+
+** 
+*Kursansvarlig*
+Jørn I. Halvorsen (jorn.inge.halvorsen@hvl.no)
+
+*Seminaransvarlig*
+aaa (aaa@hvl.no)
