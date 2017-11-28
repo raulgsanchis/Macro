@@ -1,0 +1,24 @@
+#+OPTIONS: html-postamble:nil
+#+OPTIONS: num:nil
+#+OPTIONS: toc:nil
+#+TITLE: 
+
+
+
+| Økonom   | Konjunktursvingninger | Kriser | Politikk |
+|----------+-----------------------+--------+----------|
+| Keynes   |                       |        |          |
+| Krugman  |                       |        |          |
+| Friedman |                       |        |          |
+| Hayek    |                       |        |          |
+| Minsky   |                       |        |          |
+
+
+
+
+  
+
+
+
+
+

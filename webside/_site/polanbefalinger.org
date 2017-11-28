@@ -1,0 +1,19 @@
+#+OPTIONS: html-postamble:nil
+#+OPTIONS: num:nil
+#+OPTIONS: toc:nil
+#+TITLE: 
+
+* Symbolliste for ØKB1115
+
+| Del | Symbol | Betydning                             |
+|-----+--------+---------------------------------------|
+| I   | G      | offentlig konsum og realinvestiringer |
+|     | c      | den marginale konsumtilbøyeligheten   |
+
+
+
+
+
+
+
+
