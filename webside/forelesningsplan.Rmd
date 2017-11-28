@@ -2,7 +2,8 @@
 bibliography: slidegen/pensum.bib
 ---
 
-```{r child = 'forelesningsplan.html'}
+```{r }
+#child = 'forelesningsplan.html'
 ```
 
 [Kursbeskrivelse](https://www.hvl.no/studier/studieprogram/emne/%C3%B8kb1115)

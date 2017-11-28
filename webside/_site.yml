@@ -6,11 +6,11 @@ navbar:
   - text: Forelesningsplan
     menu:
     - text: Forelesningsplan
-      href: forelesningsplan.html
+#      href: forelesningsplan.html
   - text: Forelesningsnotater
     menu:
     - text: Introduksjon
-      href: innledning.html
+#      href: innledning.html
     - text: 'Del I: Kortsiktige konjunktursvingninger'
       href: del1_konjunkturer.html
     - text: 'Del II: Langsiktig økonomisk vekst'
