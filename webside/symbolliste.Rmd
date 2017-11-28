@@ -1,4 +1,11 @@
 
-# Symboliste
 
+```{r child = 'symbolliste.html'}
+```
+
+
+
+
+<!--
 - $\theta = \text{den marginale konsumtilbøyeligheten}$
+-->

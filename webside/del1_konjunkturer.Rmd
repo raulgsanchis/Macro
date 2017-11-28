@@ -2,6 +2,9 @@
 output: html_notebook
 ---
 
+# Huskeliste
+1. Navn overskrift Mundell-Flemming
+
 # Del 1: Kortsiktige konjunktursvingninger
 <img id='grede' src="bilder/cycles.jpg" height="75px" width="300px" />
 <img id='grere' src="bilder/money.jpg" height="75px" width="300px" />
@@ -12,23 +15,27 @@ output: html_notebook
 ## Grunnleggende bakgrunnkunnskap 
 ### Sentrale begreper
 - BNP
+- Ledighet
+- Inflasjon
 
 ### Sentral empiriske resultater
+- Okuns lov
+- Phillips-kurven
 
 ### Hva bestemmer aggregert BNP?
+<!-- likvekt -->
 #### Kort sikt:
 #### Mellomlang sikt:
 #### Lang sikt:
 
 ## Likevekt i godemarkedet (varer og tjenester)
+
 ## Likevekt i pengemarkedet
 ## IS-LM modellen for en lukket økonomi: gode- og pengemarkedet i likevekt
 ## AD-AS modellen for en lukket økonomi: gode-, penge- og arbeidsmarkedet i likevekt
 ## IS-LM modellen for en åpen økonomi: gode-, penge- og valutakursmarkedet i likevekt
 ## AD-AS modellen for en åpen økonomi: gode-, penge-, arbeids- og valutakursmarkedet i likevekt
 
-
-  
 <!--
 Del 1: Økonomiske svingninger på kort sikt
 Grunnleggende bakgrunnskunnskap 

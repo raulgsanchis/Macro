@@ -1,0 +1,19 @@
+#+OPTIONS: html-postamble:nil
+#+OPTIONS: num:nil
+#+OPTIONS: toc:nil
+#+TITLE: 
+
+* Symbolliste
+
+| Symbol | Betydning                             |
+|--------+---------------------------------------|
+| G      | offentlig konsum og realinvestiringer |
+| c      | den marginale konsumtilbøyeligheten   |
+
+
+
+
+
+
+
+
