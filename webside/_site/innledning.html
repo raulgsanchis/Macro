@@ -20,8 +20,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
 <link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -31,12 +31,10 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
 }
 </script>
 
@@ -185,9 +183,7 @@ $(document).ready(function () {
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="forelesningsplan.html">Forelesningsplan</a>
-    </li>
+    <li class="dropdown-header">Forelesningsplan</li>
   </ul>
 </li>
 <li class="dropdown">
@@ -197,9 +193,7 @@ $(document).ready(function () {
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="innledning.html">Introduksjon</a>
-    </li>
+    <li class="dropdown-header">Introduksjon</li>
     <li>
       <a href="del1_konjunkturer.html">Del I: Kortsiktige konjunktursvingninger</a>
     </li>
@@ -298,50 +292,66 @@ output: html_notebook
 <li>Økonomisk vekst (del II)</li>
 <li>Dype økonomiske kriser (del III)</li>
 </ul>
-<p><img src="innledning_files/figure-html/unnamed-chunk-1-1.png" width="672" /><img src="innledning_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
+<p><img src="innledning_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><img src="innledning_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>
+<div id="tre-grunnleggende-sprsmal-blir-forskt-besvart" class="section level2">
+<h2>Tre grunnleggende spørsmål blir forsøkt besvart?</h2>
+<ul>
+<li>Hva skaper konjunktursvingninger?</li>
+<li>Økonomisk vekst?</li>
+<li>Økonomiske kriser?</li>
+</ul>
+</div>
+<div id="hvilken-rolle-br-offentlige-myndigheter-spille" class="section level2">
+<h2>Hvilken rolle bør offentlige myndigheter spille?</h2>
+<ul>
+<li>Stabiliseringspolitikk (aktiv/passiv)</li>
+<li>Vekstpolitikk (kapitalisme/offentlig sektor)</li>
+<li>Økonomiske kriser (stabiliserende/likvidierende)</li>
+</ul>
 </div>
 <div id="kjente-makrokonomer" class="section level2">
 <h2>Kjente makroøkonomer</h2>
-<p><img id='grede' src="bilder/keynes.jpg" height="75px" width="300px" /> <img id='grede' src="bilder/friedman.jpg" height="75px" width="300px" /> <img id='grede' src="bilder/minsky.jpg" height="75px" width="300px" /> <img id='grede' src="bilder/krugman.jpg" height="75px" width="300px" /> <img id='grede' src="bilder/marx.jpg" height="75px" width="300px" /> <img id='grede' src="bilder/hayek.jpg" height="75px" width="300px" /></p>
+<figure>
+<img id='grede' src="bilder/keynes.jpg" height="75px" width="300px" />
+<figcaption>
+John M. Keynes (1883-1946)
+</figcaption>
+<figure>
+<figure>
+<img id='grede' src="bilder/krugman.jpg" height="75px" width="300px" />
+<figcaption>
+Paul Krugman(1953-)
+</figcaption>
+<img id='grede' src="bilder/minsky.jpg" height="75px" width="300px" />
+<figcaption>
+Hyman Minsky (1919-1996)
+</figcaption>
+<figure>
+<figure>
+<img id='grede' src="bilder/friedman.jpg" height="75px" width="300px" />
+<figcaption>
+Milton Friedman (1912-2006)
+</figcaption>
+<img id='grede' src="bilder/hayek.jpg" height="75px" width="300px" />
+<figcaption>
+Friedrich Hayek (1899-1992)
+</figcaption>
+<figure>
 </div>
 <div id="abstraksjon" class="section level2">
 <h2>Abstraksjon</h2>
-<p>The most effective way to understand how an operating system works is through abstraction — a fancy way of saying that you can ignore most of the details.</p>
+<!--The most effective way to understand how an operating system works is through abstraction — a fancy way of saying that you can ignore most of the details.-->
 <div id="sentrale-aktrer-i-makrokonomien" class="section level3">
 <h3>Sentrale aktører i makroøkonomien</h3>
 <div id="husholdninger-del-i-del-ii-og-del-iii" class="section level4">
 <h4>Husholdninger (del I, del II og del III)</h4>
-</div>
-<div id="bedrifter-del-i-del-ii-og-del-iii" class="section level4">
-<h4>Bedrifter (del I, del II og del III)</h4>
-</div>
-<div id="banker-og-fininstitusjoner-del-iii" class="section level4">
-<h4>Banker og fininstitusjoner (del III)</h4>
+<p>Konsumerer og sparer #### Bedrifter (del I, del II og del III) Produserer og investerer #### Banker og fininstitusjoner (del III)</p>
 </div>
 <div id="sentralbanken-del-i-og-iii" class="section level4">
 <h4>Sentralbanken (del I og III)</h4>
-</div>
-<div id="offentlige-myndigheter-del-i-og-iii" class="section level4">
-<h4>Offentlige myndigheter (del I og III)</h4>
-</div>
-</div>
-<div id="markedene-vi-studerer" class="section level3">
-<h3>Markedene vi studerer</h3>
-<div id="vare--og-tjenestemarkedet-del-i-del-ii-og-del-iii" class="section level4">
-<h4>Vare- og tjenestemarkedet (del I, del II og del III)</h4>
-</div>
-<div id="pengemarkedet-del-i-del-iii" class="section level4">
-<h4>Pengemarkedet (del I, del III)</h4>
-</div>
-<div id="arbeidsmarkedet-del-i-del-iii" class="section level4">
-<h4>Arbeidsmarkedet (del I, del III)</h4>
-</div>
-<div id="bankkreditt-del-iii" class="section level4">
-<h4>Bankkreditt (del III)</h4>
-</div>
-<div id="valutakursmarkedet-del-i" class="section level4">
-<h4>Valutakursmarkedet (del I)</h4>
-<p><em>Øvelse:</em></p>
+<p>Setter rentenivå #### Offentlige myndigheter (del I og III) Finanspolitikk ### Markedene vi studerer #### Vare- og tjenestemarkedet (del I, del II og del III) #### Pengemarkedet (del I, del III) #### Arbeidsmarkedet (del I, del III) #### Bankkreditt (del III) #### Valutakursmarkedet (del I)</p>
 </div>
 </div>
 </div>
