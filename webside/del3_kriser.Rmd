@@ -8,14 +8,13 @@ output: html_notebook
 <img id='grere' src="bilder/recession.jpg" height="75px" width="300px" />
 
 > Can 'It' - a Great Depression - happen again? And if 'It' can happen why didn't 'It' occur in the years since World War II? These are questions that naturally follow from both the historical record and the comparative success of the past thirty-five years. To answer these questions it is necessary to have an economic theory which makes great depressions one of the possible states in which our type of capitalist economy can find itself.
+- Minsky  (1982)
+
+> In a world of businessmen and financial intermediaries who aggressively seek profit, innovators will always outpace regulators; the authorities cannot prevent changes in the structure of portfolios from occurring. What they can do is keep the asset-equity ratio of banks within bounds by setting equity-absorption ratios for various types of assets. 
 - Minsky
 
-
-<!--
 > To combat depression by a forced credit expansion is to attempt to cure the evil by the very means which brought it about; because we are suffering from a misdirection of production, we want to create further misdirection -- a procedure which can only lead to a much more severe crisis as soon as the credit expansion comes to an end.
 - Hayek
-
--->
 
 ## Penger
 Del 3: Økonomiske kriser
@@ -43,7 +42,7 @@ Problemer:
 
 ## Banker, systemrisiko og kapitalkrav
 > In a world of businessmen and financial intermediaries who aggressively seek profit, innovators will always outpace regulators; the authorities cannot prevent changes in the structure of portfolios from occurring. What they can do is keep the asset-equity ratio of banks within bounds by setting equity-absorption ratios for various types of assets. 
-- Minsky
+- Minsky (1982)
 
 Vilkårlig omfordeling av formue.
 Banker og systemrisiko  

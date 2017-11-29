@@ -5,10 +5,10 @@
 
 * Symbolliste for ØKB1115
 
-| Del | Symbol | Betydning                             |
-|-----+--------+---------------------------------------|
-| I   | G      | offentlig konsum og realinvestiringer |
-|     | c      | den marginale konsumtilbøyeligheten   |
+| Del | Matematiske symbol | Betydning                             |
+|-----+--------------------+---------------------------------------|
+| I   | G                  | offentlig konsum og realinvestiringer |
+|     | c                  | den marginale konsumtilbøyeligheten   |
 
 
 

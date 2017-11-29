@@ -3,17 +3,11 @@
 #+OPTIONS: toc:nil
 #+TITLE: 
 
-* Symbolliste for ØKB1115
-
-| Del | Symbol | Betydning                             |
-|-----+--------+---------------------------------------|
-| I   | G      | offentlig konsum og realinvestiringer |
-|     | c      | den marginale konsumtilbøyeligheten   |
-
-
-
-
-
-
+| Økonom         | Konjunktursvingninger                      | Stabiliseringspolitikk                                    | Krisepolitikk                      |
+|----------------+--------------------------------------------+-----------------------------------------------------------+------------------------------------|
+| Keynes/Krugman | Autonome endringer i investeringer         | Finanspolitikk                                            | Ekspansiv finans- og pengepolitikk |
+| Friedman       | Eksogende endringer i pengemengden         | Konstant vekst i pengemengden                             | Ekspaniv pengepolitikk             |
+| Minsky         | Økonmisk stabilitiet fører til ustabilitet | Finansreguleringer og sentralbank                         | Bail-out                           |
+| Hayek          | Kredittvekst i banksektoren                | Avskaffelse av sentralbanken og fri konkur i banksektoren | Likvidiering                       |
 
 

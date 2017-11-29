@@ -1,13 +1,15 @@
+<!--
 ---
 output: html_notebook
 ---
+-->
 
 # Introduksjon
 
 ## Tre hovedtemaer: 
 - Svingninger (del I)
 - Økonomisk vekst (del II) 
-- Dype økonomiske kriser (del III)
+- Økonomiske kriser (del III)
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
 library(dplyr)
@@ -99,10 +101,8 @@ grid.arrange(gobjusatusagdp, gobjusaunem, ncol=2, top="Norge")
 
 
 ## Abstraksjon
-
-
-<!--The most effective way to understand how an operating system works is through abstraction — a fancy way of saying that you can ignore most of the details.-->
-
+### (Razor's law)[https://simple.wikipedia.org/wiki/Occam%27s_razor]
+> Entia non sunt multiplicanda praeter necessitatem (More things should not be used than are necessary).
 
 ### Sentrale aktører i makroøkonomien
 #### Husholdninger (del I, del II og del III)
@@ -113,7 +113,7 @@ Produserer og investerer
 
 #### Sentralbanken (del I og III)
 Setter rentenivå
-#### Offentlige myndigheter (del I og III) 
+#### Finansdepartementet (del I og III) 
 Finanspolitikk
 ### Markedene vi studerer
 #### Vare- og tjenestemarkedet (del I, del II og del III)
@@ -121,4 +121,3 @@ Finanspolitikk
 #### Arbeidsmarkedet (del I, del III)
 #### Bankkreditt (del III)
 #### Valutakursmarkedet (del I)
-

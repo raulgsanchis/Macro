@@ -33,7 +33,7 @@ output: html_notebook
 ## Likevekt i pengemarkedet
 ## IS-LM modellen for en lukket økonomi: gode- og pengemarkedet i likevekt
 ## AD-AS modellen for en lukket økonomi: gode-, penge- og arbeidsmarkedet i likevekt
-## IS-LM modellen for en åpen økonomi: gode-, penge- og valutakursmarkedet i likevekt
+## IS-LM modellen (Mundell-Flemming) for en åpen økonomi: gode-, penge- og valutakursmarkedet i likevekt
 ## AD-AS modellen for en åpen økonomi: gode-, penge-, arbeids- og valutakursmarkedet i likevekt
 
 <!--

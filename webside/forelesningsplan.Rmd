@@ -2,6 +2,7 @@
 bibliography: slidegen/pensum.bib
 ---
 
+
 ```{r child = 'forelesningsplan.html'}
 #child = 'forelesningsplan.html'
 ```
