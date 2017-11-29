@@ -185,9 +185,7 @@ $(document).ready(function () {
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="forelesningsplan.html">Forelesningsplan</a>
-    </li>
+    <li class="dropdown-header">Forelesningsplan</li>
   </ul>
 </li>
 <li class="dropdown">
@@ -197,9 +195,7 @@ $(document).ready(function () {
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="innledning.html">Introduksjon</a>
-    </li>
+    <li class="dropdown-header">Introduksjon</li>
     <li class="dropdown-header">Del I: Kortsiktige konjunktursvingninger</li>
     <li class="dropdown-header">Del II: Langsiktig økonomisk vekst</li>
     <li class="dropdown-header">Del III: Økonomiske kriser</li>
@@ -243,9 +239,7 @@ $(document).ready(function () {
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="htmrapport.html">Utskrifter</a>
-    </li>
+    <li class="dropdown-header">Utskrifter</li>
   </ul>
 </li>
       </ul>
@@ -271,11 +265,59 @@ $(document).ready(function () {
 
 
 <!--
-{r abc, child = 'symbolliste.html'}
-
-```
-
+---
+output: html_notebook
+---
 -->
+<div id="del-3-konomiske-kriser" class="section level1">
+<h1>Del 3: Økonomiske kriser</h1>
+<p><img id='grede' src="bilder/depression.jpg" height="75px" width="300px" /> <img id='grere' src="bilder/recession.jpg" height="75px" width="300px" /></p>
+<blockquote>
+<p>Can ‘It’ - a Great Depression - happen again? And if ‘It’ can happen why didn’t ‘It’ occur in the years since World War II? These are questions that naturally follow from both the historical record and the comparative success of the past thirty-five years. To answer these questions it is necessary to have an economic theory which makes great depressions one of the possible states in which our type of capitalist economy can find itself. - Minsky (1982)</p>
+</blockquote>
+<blockquote>
+<p>In a world of businessmen and financial intermediaries who aggressively seek profit, innovators will always outpace regulators; the authorities cannot prevent changes in the structure of portfolios from occurring. What they can do is keep the asset-equity ratio of banks within bounds by setting equity-absorption ratios for various types of assets. - Minsky</p>
+</blockquote>
+<blockquote>
+<p>To combat depression by a forced credit expansion is to attempt to cure the evil by the very means which brought it about; because we are suffering from a misdirection of production, we want to create further misdirection – a procedure which can only lead to a much more severe crisis as soon as the credit expansion comes to an end. - Hayek</p>
+</blockquote>
+<div id="penger" class="section level2">
+<h2>Penger</h2>
+<p>Del 3: Økonomiske kriser Tema 1: Penger, kreditt og bankadferd Pengens funksjoner Penger som gjeld Utvendige penger (M0(M1)): Skapt av sentralbanken og består av sedler, mynt pluss forretningsbankenes innskuddskontoer i sentralbanken.</p>
+<p>Innvendige penger(M1(M2)-M0(M1)) : Skapt av bankene ved at de krediterer sine innskuddskontoer. Tre arketyper for banksystemets forskjellige utforminger System 1: Lånebasert økonomi Problemer: Uelastisk kredittilbud. Kostnader ved å flytte reserver mellom forretningsbankene.</p>
+<pre><code>System 2: Fraksjonsbasert bankvirksomhet uten sentralbank</code></pre>
+<p>Problemer: Åpne for løp på bankene. Kostnader ved å flytte reserver mellom forretningsbankene.</p>
+<pre><code>System 3: Fraksjonsbasert bankvirksomhet med sentralbank og fiat penger</code></pre>
+<p>Problemer:</p>
+</div>
+<div id="banker-systemrisiko-og-kapitalkrav" class="section level2">
+<h2>Banker, systemrisiko og kapitalkrav</h2>
+<blockquote>
+<p>In a world of businessmen and financial intermediaries who aggressively seek profit, innovators will always outpace regulators; the authorities cannot prevent changes in the structure of portfolios from occurring. What they can do is keep the asset-equity ratio of banks within bounds by setting equity-absorption ratios for various types of assets. - Minsky (1982)</p>
+</blockquote>
+<p>Vilkårlig omfordeling av formue. Banker og systemrisiko<br />
+Bloos rule: Innskuddsgaranti gjør det mer lønnsomt å velge prosjekter med unødvendig Dersom alle banker går får en slik løsning  Systemrisiko. Høyere egenkapitalkrav til bankene vil føre (1)Lavere forventede utbetalinger ved systemrisiko (2) Gradvis substitusjon over fra forretningsmodeller med overdreven risiko.</p>
+</div>
+<div id="statsgjeldskrise" class="section level2">
+<h2>Statsgjeldskrise</h2>
+<p>Konsolidert budsjettbetingelse for offentlig sektor Offentlig sektor B_t^f=(1+i_(t-1) ) B_(t-1)^f+(G_t-T_t )-SNG_t<br />
+Sentralbanken i_(t-1) B_(t-1)^m +∆B_t<sup>m=∆M_t+SNG_t Statsgjeld B_t=B_t</sup>f-B_t^m Ved å kombinere uttrykkene ovenfor får vi den konsoliderte budsjettbetingelsen for offentlig sektor</p>
+<p>B_t=(1+i_(t-1 ) ) B_t+(G_t-T_t )-ΔM_t</p>
+<p>Dynamikken i statsgjelden over tid Ved null inflasjon og i_t=r_t og ΔM_t=0, kan uttrykket ovenfor skrives som</p>
+<p>B_t/Y_t =((G_t-T_t))/Y_t + B_(t-1)/Y_(t-1) (1+r-g) Grafisk analyse for fire tifeller: Viktigst:<br />
+(1+r-g)&gt;1 og (i) (G_t-T_t)&gt;0 og (ii) (G_t-T_t)&lt;0 Mindre viktig: (1+r-g)&lt;1 og (iii) (G_t-T_t)&gt;0 og (iv) (G_t-T_t)&lt;0 Mulig tiltak for å forhindre en statsgjeldskrise Kutte i primærbudsjettet (øke T eller redusere G) Mislighold Inflasjon ( man må gjøre sentralbanken mindre uavhengig)</p>
+</div>
+<div id="likviditetsfellen" class="section level2">
+<h2>Likviditetsfellen</h2>
+<p>Hva er likviditetsfellen? Sitasjon hvor pengepolitikken ikke lengre kan påvirke realøkonomien på en ekspansiv måte: Kortsiktig nominell rente er (nær) lik null. Beskrevet først av Keynes i “General Theory” på 1930-tallet. Men blitt aktualisert etter den globale finanskrisen</p>
+<p>Hvordan havner man i en likviditetsfelle? Case 1: Demografiske endringer (Krugman, 1998) ⇒Δ ̅C&lt;0 (eks. spare mere til alderdommen)</p>
+<p>ΔY=1/((1-c(1-t)) (Δ ̅C)&lt;0 Likviditetsfelle dersom rentereduksjonen ikke klarer å veie opp for nedgangen i konsumet som er en følge av de demografiske endringene: (Δ C ̅-b∙Δ i^0)&lt;0 ⇒ΔY=1/((1-c(1-t))(Δ C ̅-b∙Δ i^0)&lt;0</p>
+<pre><code>Case 2: Privat gjeldsreduksjon (Krugman og EggertsSon, 2012)⇒ΔD^b&lt;0 (Minsky moment)</code></pre>
+<p>ΔY=1/((1-¯c(1-t)) (θ∙Δ ̅D^b )&lt;0 Likviditetsfelle dersom rentereduksjonen ikke klarer å veie opp for nedgangen i konsumet som er en følge av gjeldsreduksjonen: (θ∙Δ D^b-¯b ∙Δ i^0)&lt;0 ⇒ΔY=1/((1-¯c (1-t))(θ∙Δ D^b-b∙Δ i^0)&lt;0</p>
+<pre><code>Likviditetsfelle  Y&lt;Y^n T=tY   går ned. Redusert BNP og redusert skatter  B_t/Y_t øker. Gitt at sentralbanken ikke gis muligheten til å øke pengemengden for å kjøpe statsobligasjoner, vil en overgang til en likviditetsfelle lett kunne smitte over i en statsgjeldskrise.  </code></pre>
+<p>Hvordan komme ut av en likviditetsfelle? Den lukkede økonomi modellen forteller oss at finanspolitikken kan betraktes som en gratis lunsj: Vil kunne lukke produksjonsgapet. Vil stabilisere prisene Rentekostnader ved å gjøre dette vil være (tilnærmet) lik null. For en åpen økonomi er ikke situasjonen like enkel. Dette vil bli forklart nærmere under forelesningen om krisen i eurosonen.</p>
+</div>
+</div>
 
 
 

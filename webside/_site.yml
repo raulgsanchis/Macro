@@ -6,35 +6,35 @@ navbar:
   - text: Forelesningsplan
     menu:
     - text: Forelesningsplan
-#      href: forelesningsplan.html
+      href: forelesningsplan.html
   - text: Forelesningsnotater
     menu:
     - text: Introduksjon
-#      href: innledning.html
+      href: innledning.html
     - text: 'Del I: Kortsiktige konjunktursvingninger'
-      href: del1_konjunkturer.html
+#      href: del1_konjunkturer.html
     - text: 'Del II: Langsiktig økonomisk vekst'
-      href: del2_vekst.html
+#      href: del2_vekst.html
     - text: 'Del III: Økonomiske kriser'
-      href: del3_kriser.html
+#      href: del3_kriser.html
   - text: Oppgaver
     menu:
     - text: Oppgaver
-      href: oppgaver.html
+#      href: oppgaver.html
     - text: Løsningsforslag
-      href: losningsforslag.html
+#      href: losningsforslag.html
   - text: Nyhetsarkiv
     menu:
     - text: Nyheter
-      href: nyhetslinker.html
+#      href: nyhetslinker.html
   - text: Symbolliste
     menu:
     - text: Symbolliste
-      href: symbolliste.html
+#      href: symbolliste.html
   - text: Utskrifter
     menu:
     - text: Utskrifter
-      href: slidegen/htmlknit_intro.html
+      href: htmrapport.html
   right:
   - text: Source Code on GitHub
   - icon: fa-github fa-lg
@@ -44,4 +44,3 @@ output:
     theme: cosmo
     lib_dir: site_libs
     self_contained: no
-

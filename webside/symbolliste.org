@@ -1,7 +1,9 @@
 #+OPTIONS: html-postamble:nil
 #+OPTIONS: num:nil
 #+OPTIONS: toc:nil
-#+TITLE: 
+:PROPERTIES:
+:EXPORT_FILE_NAME: html/abc.org
+:END:
 
 * Symbolliste for ØKB1115
 

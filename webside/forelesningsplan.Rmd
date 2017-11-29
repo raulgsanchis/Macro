@@ -1,16 +1,15 @@
 ---
-bibliography: slidegen/pensum.bib
+bibliography: pensum.bib
 ---
 
+<!--
+{r plan, child = 'forelesningsplan.html'}
 
-```{r child = 'forelesningsplan.html'}
-#child = 'forelesningsplan.html'
 ```
 
 [Kursbeskrivelse](https://www.hvl.no/studier/studieprogram/emne/%C3%B8kb1115)
-
+<!--
 ## Pensum
-<font color="white">Smith cited [@gartner2016mac
-roeconomics]</font>
-
+<font color="white">Smith cited [@gartner2016macroeconomics]</font>
+-->
 

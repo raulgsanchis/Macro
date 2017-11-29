@@ -1,8 +1,7 @@
-<!--
 ---
-output: html_notebook
+title: "abc"
+output: html_document
 ---
--->
 
 # Introduksjon
 
@@ -34,7 +33,7 @@ gobjusatusagdp <- ggplot(data = tusagdp, aes(date, value)) + geom_line() +
   geom_smooth(method = 'loess', color = 'red',se = FALSE, size = 0.5) + theme_classic() + labs(x = "Dato") + labs(x = "År", y = 'BNP (realpriser)')
 
 grid.arrange(gobjusatusagdp, gobjusaunem, ncol=2, top="USA")
-  ```
+```
 
 
 
@@ -95,8 +94,8 @@ grid.arrange(gobjusatusagdp, gobjusaunem, ncol=2, top="Norge")
 <figcaption>Friedrich Hayek (1899-1992)</figcaption>
 <figure>
 
-```{r child = 'polanbefalinger.html'}
-
+```{r }
+#child = 'polanbefalinger.html'
 ```
 
 
@@ -121,3 +120,4 @@ Finanspolitikk
 #### Arbeidsmarkedet (del I, del III)
 #### Bankkreditt (del III)
 #### Valutakursmarkedet (del I)
+-->

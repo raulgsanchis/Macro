@@ -3,45 +3,49 @@
 #+OPTIONS: toc:nil
 #+TITLE: 
 
+
 * ØKB1115 Makroøkonomi våren 2018
 ** Undervisning
-| Uke | Dato | Del                   | Tema                                 | Timer | Rom | Pensum              | Ansvarlig |
-|-----+------+-----------------------+--------------------------------------+-------+-----+---------------------+-----------|
-|   2 |      | Intro:                | Oversikt over faget                  |     3 |     | Forelesningsnotater | JIH       |
-|     |      |                       | Grunnleggende basiskunnskaper        |       |     |                     |           |
-|-----+------+-----------------------+--------------------------------------+-------+-----+---------------------+-----------|
-|   3 |      | Del I:                | IS-LM for en lukket økonomi          |     3 |     | Forelesningsnotater | JIH       |
-|   4 |      | Konjunktursvingninger | IS-LM og AD-AS for en lukket økonomi |     3 |     |                     | JIH       |
-|   5 |      |                       | AD-AS for en lukket økonomi          |     3 |     |                     | JIH       |
-|   6 |      |                       | IS-LM og AD-AS for en åpen økonomi   |     3 |     |                     | JIH       |
-|-----+------+-----------------------+--------------------------------------+-------+-----+---------------------+-----------|
-|   7 |      | Del II:               | Stiliserte fakta om økonomisk vekst  |       |     | Forelesningsnotater | JIH       |
-|   8 |      | Økonomisk vekst       | Solows vekstmodell                   |     3 |     |                     | JIH       |
-|-----+------+-----------------------+--------------------------------------+-------+-----+---------------------+-----------|
-|  10 |      | Del III:              | Penger (innvendige og utvendige)     |       |     | Forelesningsnotater | JIH       |
-|  11 |      | Økonomiske kriser     | Banker, systemrisiko og kapitalkrav  |     3 |     | Notater             | JIH       |
-|  12 |      |                       | Statsgjeldskrise                     |     3 |     |                     | JIH       |
-|  14 |      |                       | Likviditetsfellen                    |       |     |                     | JIH       |
-|-----+------+-----------------------+--------------------------------------+-------+-----+---------------------+-----------|
-|  15 |      | Oppsumering:          | Del I-III                            |     3 |     |                     | JIH       |
-|-----+------+-----------------------+--------------------------------------+-------+-----+---------------------+-----------|
-|  16 |      | Case:                 | Krisen i Eurosonen                   |     3 |     | Halvorsen 2013      | JIH       |
-|     |      |                       |                                      |       |     | Gartner 2015        |           |
-|-----+------+-----------------------+--------------------------------------+-------+-----+---------------------+-----------|
+| Uke | Dato | Del                   | Tema                                                       | Timer | Rom | Pensum                    | Ansvarlig |
+|-----+------+-----------------------+------------------------------------------------------------+-------+-----+---------------------------+-----------|
+|   1 |      | Intro:                | Oversikt over faget                                        |     3 |     |                           | JIH       |
+|     |      |                       | Grunnleggende basiskunnskaper                              |       |     | Gartner kap xx            | JIH       |
+|-----+------+-----------------------+------------------------------------------------------------+-------+-----+---------------------------+-----------|
+|   2 |      | Del I:                | IS-LM for en lukket økonomi                                |     3 |     | Gartner kap xx            | JIH       |
+|   3 |      | Konjunktursvingninger | IS-LM og AD-AS for en lukket økonomi                       |     3 |     | Gartner kap xx            | JIH       |
+|   4 |      |                       | AD-AS for en lukket økonomi                                |     3 |     | Gartner kap xx            | JIH       |
+|   5 |      |                       | IS-LM og AD-AS for en åpen økonomi med fast valutakurs     |     3 |     | Gartner kap xx            | JIH       |
+|   6 |      |                       | IS-LM og AD-AS for en åpen økonomi med flytende valutakurs |     3 |     | Gartner kap xx            |           |
+|-----+------+-----------------------+------------------------------------------------------------+-------+-----+---------------------------+-----------|
+|   7 |      | Del II:               | Stiliserte fakta om økonomisk vekst                        |       |     | Gartner kap xx            | JIH       |
+|   8 |      | Økonomisk vekst       | Solows vekstmodell                                         |     3 |     | Gartner kap xx            | JIH       |
+|-----+------+-----------------------+------------------------------------------------------------+-------+-----+---------------------------+-----------|
+|   9 |      | Del III:              | Penger (innvendige og utvendige)                           |       |     | Notat om penger           | JIH       |
+|  10 |      | Økonomiske kriser     | Banker, systemrisiko og kapitalkrav                        |     3 |     | Notat om systemkrise      | JIH       |
+|  11 |      |                       | Statsgjeldskrise                                           |     3 |     | Gartner kap xx            | JIH       |
+|  12 |      |                       | Likviditetsfellen                                          |       |     | Notat om likvidietsfellen | JIH       |
+|-----+------+-----------------------+------------------------------------------------------------+-------+-----+---------------------------+-----------|
+|  13 |      | Case:                 | Krisen i Eurosonen                                         |     3 |     | Halvorsen 2014            | JIH       |
+|-----+------+-----------------------+------------------------------------------------------------+-------+-----+---------------------------+-----------|
+|  14 |      | Repitisjon:           | Del I-III                                                  |     3 |     | Læringsmål                | JIH       |
+|     |      |                       |                                                            |       |     | Gartner 2015              |           |
+|-----+------+-----------------------+------------------------------------------------------------+-------+-----+---------------------------+-----------|
 
 ** Oppgaveseminar
 | Uke | Dato | Del                   | Oppgaver | Timer | Rom | Ansvarlig |
 |-----+------+-----------------------+----------+-------+-----+-----------|
 |     |      | Del I:                |          |       |     |           |
-|   4 |      | Konjunktursvingninger |          |     2 |     |           |
-|   6 |      |                       |          |     2 |     |           |
-|   8 |      |                       |          |     2 |     |           |
+|   1 |      | Konjunktursvingninger |          |     2 |     |           |
+|   2 |      |                       |          |     2 |     |           |
+|   3 |      |                       |          |     2 |     |           |
 |-----+------+-----------------------+----------+-------+-----+-----------|
-|  10 |      | Del II:               |          |     2 |     |           |
+|   4 |      | Del II:               |          |     2 |     |           |
 |     |      | Økonomisk vekst       |          |       |     |           |
 |-----+------+-----------------------+----------+-------+-----+-----------|
-|  12 |      | Del III:              |          |     2 |     |           |
-|  14 |      | Økonomiske kriser     |          |     2 |     |           |
+|   5 |      | Del III:              |          |     2 |     |           |
+|   6 |      | Økonomiske kriser     |          |     2 |     |           |
+|-----+------+-----------------------+----------+-------+-----+-----------|
+|   7 |      | Prøveeksamen          |          |     3 |     |           |
 |-----+------+-----------------------+----------+-------+-----+-----------|
 
 ** 
