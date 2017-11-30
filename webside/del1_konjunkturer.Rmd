@@ -1,6 +1,8 @@
+<!--
 ---
 output: html_notebook
 ---
+-->
 
 # Huskeliste
 1. Navn overskrift Mundell-Flemming

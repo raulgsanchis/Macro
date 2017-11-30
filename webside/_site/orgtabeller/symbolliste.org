@@ -2,7 +2,7 @@
 #+OPTIONS: num:nil
 #+OPTIONS: toc:nil
 :PROPERTIES:
-:EXPORT_FILE_NAME: html/abc.org
+:EXPORT_FILE_NAME: html/abc.orgss
 :END:
 
 * Symbolliste for ØKB1115
