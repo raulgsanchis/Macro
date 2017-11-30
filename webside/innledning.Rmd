@@ -62,7 +62,6 @@ gobjusatusagdp <- ggplot(data = tusagdp, aes(date, value)) + geom_line() +
   geom_smooth(method = 'loess', color = 'black') + theme_classic() + labs(x = "Dato") + labs(x = "År", y = 'BNP (realpriser)')
 #+ scale_y_continuous()
 
-
 grid.arrange(gobjusatusagdp, gobjusaunem, ncol=2, top="Norge")
 ```
 
@@ -121,12 +120,22 @@ Finanspolitikk
 
 ### Markedene vi studerer
 
-#### Vare- og tjenestemarkedet (del I, del II og del III)
+#### Godemarkedet (varer og tjenester) - del I, del II og del III
 
-#### Pengemarkedet (del I, del III)
+#### Pengemarkedet - del I, del III
 
-#### Arbeidsmarkedet (del I, del III)
+#### Arbeidsmarkedet - del I, del III
 
-#### Bankkreditt (del III)
+#### Bankkreditt - del III
 
-#### Valutakursmarkedet (del I)
+#### Valutakursmarkedet - del I
+
+### Størrelsen på en økonomi
+
+#### Lukket (global økonomi) økonomi 
+Påvirkes ikke av omverden
+Tilnærming: USA
+
+#### Liten åpen økonomi
+Påvirkes av, men påvirker ikke selv, omverden
+Tilnærming:  Norge

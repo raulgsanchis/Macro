@@ -1,7 +1,9 @@
+<!--
 ---
 title: "Oppgaver ØKB1115 Makroøkonomi"
 output: html_output
 ---
+-->
 
 # Oppgaver fra 1. forelesning 
 

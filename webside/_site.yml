@@ -7,33 +7,31 @@ navbar:
     menu:
     - text: Forelesningsplan
       href: forelesningsplan.html
-  - text: Forelesningsnotater
+  - text: Forelesninger
     menu:
     - text: Introduksjon
       href: innledning.html
-    - text: 'Del I: Kortsiktige konjunktursvingninger'
-#      href: del1_konjunkturer.html
-    - text: 'Del II: Langsiktig økonomisk vekst'
-#      href: del2_vekst.html
+    - text: 'Del I: Konjunktursvingninger'
+      href: del1_konjunkturer.html
+    - text: 'Del II: Økonomisk vekst'
+      href: del2_vekst.html
     - text: 'Del III: Økonomiske kriser'
-#      href: del3_kriser.html
+      href: del3_kriser.html
   - text: Oppgaver
     menu:
     - text: Oppgaver
-#      href: oppgaver.html
     - text: Løsningsforslag
-#      href: losningsforslag.html
   - text: Nyhetsarkiv
     menu:
     - text: Nyheter
-#      href: nyhetslinker.html
   - text: Symbolliste
     menu:
     - text: Symbolliste
-#      href: symbolliste.html
   - text: Utskrifter
     menu:
-    - text: Utskrifter
+    - text: Forelesningsnotater
+      href: htmrapport.html
+    - text: Læringsmål
       href: htmrapport.html
   right:
   - text: Source Code on GitHub
@@ -44,3 +42,4 @@ output:
     theme: cosmo
     lib_dir: site_libs
     self_contained: no
+

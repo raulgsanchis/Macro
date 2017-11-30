@@ -3,6 +3,8 @@ title: "Oppgaver med løsningsforslag"
 output: html_document
 ---
 
+<!--
+
 ECN222: Anbefalte oppgaver med løsningsforslag
 Oppgaver gitt til 1. forelesning (4. september)
 Gjør følgende oppgaver for USA, Japan, Norge og (dersom du har tid) minst ett europeisk land.
@@ -399,3 +401,5 @@ Regneregler for differensiering til bruk i dette kurset
 ∆/∆x(αX)=α∆x
 ∆/∆x (f(x)g(x))=f^' (x)g(x)Δx+f(x)g'(x)Δx
 ∆/∆x ((f(x))/(g(x)))=(f'(x))/g(x)  Δx-f(x)/(g(x)^2 ) g'(x)∆x
+
+-->

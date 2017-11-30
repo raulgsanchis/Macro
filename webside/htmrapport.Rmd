@@ -10,19 +10,16 @@ output:
 ```{r child = 'innledning.Rmd'}
 ```
 
-<!--
-{r child = 'del1_konjunkturer.Rmd'}
+```{r child = 'del1_konjunkturer.Rmd'}
 ```
 
-r child = 'del2_vekst.Rmd'}
+```{r child = 'del2_vekst.Rmd'}
 ```
 
-r child = 'del3_kriser.Rmd'}
+```{r child = 'del3_kriser.Rmd'}
 ```
 
-r child = 'case_euro.Rmd'}
+```{r child = 'case_euro.Rmd'}
 ```
+
 <font color="white">Smith cited [@gartner2016macroeconomics]</font>
-
--->
-

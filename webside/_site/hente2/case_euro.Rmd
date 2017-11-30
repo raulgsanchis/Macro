@@ -1,8 +1,0 @@
-<!--
----
-output: html_notebook
----
--->
-# Case-studie: Krisen i Eurosonen: 
-
-[Krisen_i_eurosonen_JIH_2014.pdf](http://adasextended.gleeze.com:8787/files/gitclones/teaching/MakroOESO002/webside/artikler/Krisen_i_eurosonen_JIH_2014.pdf)

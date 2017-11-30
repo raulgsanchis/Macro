@@ -32,9 +32,8 @@ print(gitinfo)
 ```
 
 ```{r eval=FALSE, include=FALSE}
- rmarkdown::render("index.Rmd", rmarkdown::pdf_document())
+rmarkdown::render("index.Rmd", rmarkdown::pdf_document())
 ```
-
 
 ```{r eval=FALSE, include=FALSE}
 keyneslatex <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/webside/jupyter/keynestex.json'))

@@ -30,13 +30,11 @@ output: html_notebook
 #### Mellomlang sikt:
 #### Lang sikt:
 
-## Likevekt i godemarkedet (varer og tjenester)
-
-## Likevekt i pengemarkedet
-## IS-LM modellen for en lukket økonomi: gode- og pengemarkedet i likevekt
-## AD-AS modellen for en lukket økonomi: gode-, penge- og arbeidsmarkedet i likevekt
-## IS-LM modellen (Mundell-Flemming) for en åpen økonomi: gode-, penge- og valutakursmarkedet i likevekt
-## AD-AS modellen for en åpen økonomi: gode-, penge-, arbeids- og valutakursmarkedet i likevekt
+## Enkel Keynes-modell: likevekt i godemarkedet (varer og tjenester)
+## IS-LM modellen for en lukket økonomi: likevekt i gode- og pengemarkedet 
+## AD-AS modellen for en lukket økonomi: likevekt i gode-, penge- og arbeidsmarkedet 
+## IS-LM og AD-AS modellen for en åpen økonomi (Mundell-Flemming) med fast valutakurs: 
+## IS-LM og AD-AS modellen for en åpen økonomi (Mundell-Flemming) med flytende valutakurs: 
 
 <!--
 Del 1: Økonomiske svingninger på kort sikt
