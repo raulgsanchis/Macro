@@ -2,8 +2,8 @@
 bibliography: pensum.bib
 ---
 
-<!--
-{r plan, child = 'forelesningsplan.html'}
+
+```{r plan, child = 'orgtabeller/forelesningsplan.html'}
 
 ```
 

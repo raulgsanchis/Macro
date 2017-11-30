@@ -17,22 +17,28 @@ navbar:
       href: del2_vekst.html
     - text: 'Del III: Økonomiske kriser'
       href: del3_kriser.html
+    - text: 'Applikasjon: Krisen i Eurosonen'
+      href: case_euro.html
   - text: Oppgaver
     menu:
     - text: Oppgaver
+      href: oppgaver.html
     - text: Løsningsforslag
+      href: losningsforslag.html
   - text: Nyhetsarkiv
     menu:
     - text: Nyheter
+      href: nyhetslinker.html
   - text: Symbolliste
     menu:
     - text: Symbolliste
+      href: symbolliste.html
   - text: Utskrifter
     menu:
     - text: Forelesningsnotater
       href: htmrapport.html
     - text: Læringsmål
-      href: htmrapport.html
+      href: laeringsmaal.html
   right:
   - text: Source Code on GitHub
   - icon: fa-github fa-lg

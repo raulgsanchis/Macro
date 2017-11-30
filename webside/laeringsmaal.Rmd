@@ -1,0 +1,270 @@
+#ABC
+
+Oversikt over faget
+	Tre hoved temaer: (1) Svingninger, (2) økonomiske vekst og (3) dype økonomiske kriser.
+	To typer spørsmål blir forsøkt besvart: 
+	Hva forårsaker konjunktursvingninger og langsiktig vekst (positivistisk)?: 
+	Hvilken rolle bør offentlige myndigheter spille (normativt: stabiliseringspolitikk og vekstpolitikk)?
+	Sentral økonomer stiftet bekjentskap med i dette kurset:
+	(Marx(1818-1883)), Keynes(1883-1946)/Hicks(1904-1989)/Krugman(1953-),Friedman(1912-2006),Hayek(1899-1992)(Mises)/Minsky(1919-1996)
+	Aktørene i økonomien: Husholdninger, bedrifter, finansinstitusjoner, sentralbanken og offentlige myndigheter
+	Markedene: Vare- og tjenestemarkedet, pengemarkedet, arbeidsmarkedet, bankkreditt og valutakursmarkedet.
+Del 1: Økonomiske svingninger på kort sikt
+Grunnleggende bakgrunnskunnskap 
+	Mål på aggregert produksjon: BNP
+(1) Verdien til alle sluttgodene (varer og tjenester) som blir produsert i en bestemt tidsperiode.
+(2) Summen av all merverdi for en bestemte tidsperiode.
+(3) Summen av all inntekt for en bestemte tidsperiode.
+	Nominell BNP (LY)
+LY=PY
+	Reel BNP (Y)
+   Y=LY/P
+	Ledighet (U) og ledighetsrate (u)
+U=L-N hvor N antall i arbeid og U antall utenfor arbeid
+u=U/L=(N-L)/L=N/L-1
+	Inflasjon (π)
+ π=ΔP/P=(P_t-P_(t-1))/P_(t-1) 
+	Okuns lov:
+Negativ korrelasjon mellom vekst i produksjonen (BNP) og endring i ledighetsraten. 
+	Phillips-kuven:	
+Negativ korrelasjon mellom endring i inflasjon og ledighetsraten.
+	Hva bestemmer aggregert BNP?
+	Kort sikt: Etterspørsel bestemmer produksjonen (pga. stive stive priser)
+Mellomlang sikt: Tilgangen på innsatsfaktorer (arbeidskraft, teknologi og kapital) bestemmer etterspørselen.
+	Lang sikt: Teknologisk framgang og kapital akkumulasjon (avhenger av sparing, befolkningsvekst (fødselsrater + nettoinnvandring)).
+Likevekt i vare-  og tjenestemarkedet 
+	 Aggregert etterspørsel (Z) i en lukket økonomi    
+Z ≡ C+I+G 
+	Hvor vi postulerer følgene adferdlikninger
+C= C ̅-c(Y-T)
+I =I ̅-b∙i
+og likevektsbetingelsen
+Y=Z
+	Løser denne mhp på Y gir oss IS-likningen (kombinasjoner av i og Y som er forenlig med likevekt i varemarkedet)
+Y=1/(1-c) [C ̅+cT+I ̅-b∙i+G]
+	Skiftanalyse (matematisk, figur, og verbalt): Endring i ΔY som følge av en økning i  Δ ̅I 
+	Matematisk 
+ΔY=  1/(1-c)  Δ I ̅>0 eller (Δ Y)/(Δ I ̅ )=  1/(1-c)  >0
+	Verbalt  (skisse – utenfor modellen)
+Økte investeringer  økt produksjon  multiplikatoreffekt:    økt disponibel inntekt 
+ økt konsum  økt produkson etc.
+	Stabiliseringspolitikk: ∆G<0 
+ΔY=1/(1-c) [Δ I ̅+ΔG]
+Hvor vi sørger for at ΔG=Δ ̅I □(⇒)  ΔY=0 
+
+Likevekt i pengemarkedet 
+	Ser foreløpig kun på utvendige penger M=M_0 (M_1): Sedler og mynt pluss bankenes innskuddskontoer i sentralbanken. Dette nivået blir bestemt av sentralbanken.
+	Etterspørsel etter penger.
+M^D (Y┬((∓)),i┬((-)))  
+	Likevekt i pengemarkedet: 
+M/P=M^D (Y,i)
+	Sentralbanken bestemmer hva som skjer i pengemarkedet ved
+	Endre tilbudet av penger (vanlig tidligere) eller (2) å endre rentenivået (vanlig i dag).
+IS-LM modellen for en lukket økonomi: Gode- og pengemarkedet i likevekt
+	Modellen 
+Y=1/(1-c) [C ̅+cT+I ̅-b∙i+G] ∶Varemarkedet
+M/P=M^D (Y,i):Pengemarkedet
+Grafisk tegning bestemmer her Yog i samtidig 
+	Skiftanalyse (grafisk og verbalt)
+Merk: P gir AS-kurven.
+	Stabiliseringspolitikk (grafisk og verbalt)
+Virkemidler: G,T og M/i
+
+
+AD-AS modellen for en lukket økonomi: Gode, penge og arbeidsmarkedet i likevekt
+	Husholdningene: Tilbyr arbeid
+W=P^e F(u┬((-)),z┬((+)))
+	Bedrifter: Etterspør arbeidskraft og tilbyr produktet i et marked med monopolistisk konkurranse
+ Y=AN
+	
+P=(1+μ)W
+	Ledighet
+u =U/L=(L-N)/L  =1-N/L=1-Y/AL
+	Kombinere dett gir oss AS-kurven (verdier av P og Y som gir likevekt i arbeidsmarkedet)
+P=(1+μ) P^e F(1-Y/AL,z)
+	AD-AS-modellen  
+Y=1/(1-c) [C ̅+cT+I ̅-b∙i+G] ∶Varemarkedet
+M/P=M^D (Y,L):Pengemarkedet
+P=(1+μ) P^e F(1-Y/AL,z):Arbeidsmarkedet
+Merk: P=P^e⇒Y=Y^n=u=u^n Naturlige produksjons- og ledighetsnivået,
+Grafisk tegning bestemmer her P, Yog i samtidig 
+	Skiftanalyse (grafisk og verbalt)
+	Stabiliseringspolitikk (grafisk og verbalt)
+Virkemidler: G,T og M/i
+	Sentral poeng med modellen – Selvkorrigerende mekanismer:
+Fleksibilitet i P og korrekte prisforventninger P^e på mellomlang sikt, fører til at økonomien går tilbake til sitt naturlige produksjons- og ledighetsnivå.  
+IS-LM modellen for en åpen økonomi: Gode-, penge- og valutakursmarkedet i likevekt 
+	Tre fundamentale endringer:
+(1) Handel med utlandet. 
+(2) Internasjonale finansmarkeder. 
+(3) Fast eller flytende kurs.
+
+Z=C+I+G+NX; 
+NX = X-R*IM
+CU+CA=0
+CU=Driftsregnskapet: Nettoeksport, Nettofinansinntekter(aksjer og obligasjoner), Nettoverføringer
+CA=Kapitalregnskapet: Nettoendringer i fordringer og gjeld ovenfor utlandet
+	To stabiliseringsmål: 
+(I) Intern balanse (produksjon lik naturlig produksjonsnivå).
+(II) Ekstern balanse (rimelig nivå på utenlandsgjelden).
+	(1) Handel med utlandet (avhenger blant annet av relative prisnivået mellom innenlandske og utenlandske varer)
+Realvalutakursen: R=(EP^*)/P  
+	E: Pris per enhet av utenlandsk (innenlandsk) valuta E  (1/E)
+	Postulerer følgende sammenhenger for handelsbalansen
+X=X(R┬((∓)),(Y^*)┬((∓)))
+IM = IM(R┬((-)),Y┬((∓)))
+	NX(R,Y,Y*)= X(R,Y*)-R∙IM(R,Y)
+Antar at dNX/dR > 0 (men dette kan ta litt tid)
+
+	(2) internasjonale finansmarkeder (renteparitetsbetingelsen)
+
+(1+i_(t+1))=((1+i_(t+1)^* ) E_(t+1)^e)/(E_t)
+	(3) Fast eller flytende kurs
+Flytende:
+
+E=(1+i*)/(1+i) E^e  
+Fast: (troverdig  ⇒E=E^e):
+
+	
+i=i^*
+
+	Modellen 
+Y=1/(1-c+Rb_2 ) [C ̅+cT+I ̅-b∙i+G] ∶Varemarkedet.
+M/P=M^D (Y,L):Pengemarkedet.
+
+E=(1+i*)/(1+i) E^e: Flytende-kursregime.
+
+i=i^*: Fast-kursregime.
+
+	IS-kurven under fast og flytende kurs
+Generelt fører lavere rente til høyere produksjon.
+Men multiplikatoren blir mindre ved en åpen økonomi, grunnet importlekkasje.
+Helningen på kurven er slakere under flytende kurs enn med fast kurs. Det skyldes at lavere rente under fast kurs fører til en depresiering av den nominelle og realvalutakursen, noe som forbedrer landets konkurranse evne og dermed fører til økt etterspørsel gjennom økt nettoeksport.
+	LM modellen samme som tidligere.
+	Skiftanalyse (grafisk og verbalt)
+Merk: P gir AS-kurven.
+	Stabiliseringspolitikk (grafisk og verbalt)
+Virkemidler: G,T og M/i (Flytende) og G,T og (E) (Fast kurs)
+AD-AS modellen for en åpen økonomi
+	AS-kurven samme som under en lukket økonomi.
+	AD-kurven er fallende ved at økt priser fører til lavere etterspørsel.
+	Sentral poeng med modellen – Selvkorrigerende mekanismer:
+Fleksibilitet i P og korrekte prisforventninger P^e på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.  
+Del 2: Økonomisk vekst 
+Introduksjon økonomisk vekst
+	Y/L↑⇒"Høyere levestendard ⇒" "Lykke(?)" 
+	Empiriske observasjoner:
+Rike land: Har vokst og BNP per innbygger har konvergert. 
+Fattige land: Ingen slik klar sammenheng.
+	Forklaringer: 
+Institusjoner, korrupsjon, sterk befolkningsvekst etc.
+Solow model for økonomisk vekst 
+	Hvordan forstå vekst?  Benytte Solow modellen som består av tre komponenter:
+	(1)Produktfunksjonen på intensiv form
+Y=F(K,AL)   F_k^'>0,F_kk^'<0,F_L^'>0, F_LL^'<0 
+Konstant skalautbytte 
+y=f(k) f’k>0,f’’k<0
+	(2) Sparing
+Lukket økonomi (uten offentlig sektor)
+I=S
+I=S=sY⇔I/N=sY/N=sf(k)
+	(3) Kapitalakkumulasjon
+Enkel utgave (uten teknologisk framgang og befolkningsvekst):
+ΔK=-δ K+I 
+ΔK/N=-δ K/N +I/N  
+Δk=sf(k)-δk
+Vanlig utgave (med teknologisk framgang, a, og befolkningsvekst, n,):
+Δk=sf(k)-(δ+n+a)k
+	Modellens prediksjon (bør også kunne vises grafisk):
+Uavhengig av det initiale kapitalnivået vil økonomien på sikt konvergere mot en steady state:
+sf(k^ss )=(δ+n+a) k^ss
+y^ss=f(k^ss)
+I den enkle versjonen vil veksten i produksjonen (BNP) våre lik null.
+I den vanlige versjonen vil veksten i produksjonen (BNP) våre lik befolkningsveksten pluss teknologiveksten. 
+
+	Skiftanalyse (bør også kunne vises grafisk)
+Økt sparing vil gi en ny og høyere steady state.
+Befolkningsvekst (fødselsrater + nettoinnvandring)) vil gi en ny og lavere steady state.
+Del 3: Økonomiske kriser
+Tema 1: Penger, kreditt og bankadferd
+Pengens funksjoner 
+	Penger som gjeld
+Utvendige penger (M0(M1)): 
+Skapt av sentralbanken og består av sedler, mynt pluss forretningsbankenes innskuddskontoer i sentralbanken. 
+
+Innvendige penger(M1(M2)-M0(M1)) : 
+Skapt av bankene ved at de krediterer sine innskuddskontoer.
+Tre arketyper for banksystemets forskjellige utforminger 
+	System 1: Lånebasert økonomi 
+Problemer:
+Uelastisk kredittilbud.
+Kostnader ved å flytte reserver mellom forretningsbankene.
+
+	System 2: Fraksjonsbasert bankvirksomhet uten sentralbank
+Problemer:
+Åpne for løp på bankene.
+Kostnader ved å flytte reserver mellom forretningsbankene.
+
+	System 3: Fraksjonsbasert bankvirksomhet med sentralbank og fiat penger
+Problemer:
+Systemrisiko.
+Vilkårlig omfordeling av formue.
+Banker og systemrisiko  
+	Bloos rule: Innskuddsgaranti gjør det mer lønnsomt å velge prosjekter med unødvendig 
+Dersom alle banker går får en slik løsning  Systemrisiko.
+	Høyere egenkapitalkrav til bankene vil føre (1)Lavere forventede utbetalinger ved systemrisiko (2) Gradvis substitusjon over fra forretningsmodeller med overdreven risiko. 
+Tema 2: Statsgjeld
+Konsolidert budsjettbetingelse for offentlig sektor
+Offentlig sektor
+B_t^f=(1+i_(t-1) ) B_(t-1)^f+(G_t-T_t )-SNG_t    
+Sentralbanken
+i_(t-1) B_(t-1)^m  +∆B_t^m=∆M_t+SNG_t
+Statsgjeld
+B_t=B_t^f-B_t^m
+	Ved å kombinere uttrykkene ovenfor får vi den konsoliderte budsjettbetingelsen for offentlig sektor
+
+B_t=(1+i_(t-1 ) ) B_t+(G_t-T_t )-ΔM_t
+
+Dynamikken i statsgjelden over tid
+	Ved null inflasjon og  i_t=r_t og ΔM_t=0, kan uttrykket ovenfor skrives som 
+
+B_t/Y_t =((G_t-T_t))/Y_t +  B_(t-1)/Y_(t-1) (1+r-g)
+	Grafisk analyse for fire tifeller:
+Viktigst:  
+(1+r-g)>1 og  (i) (G_t-T_t)>0  og (ii) (G_t-T_t)<0 
+Mindre viktig:
+ (1+r-g)<1 og  (iii) (G_t-T_t)>0  og (iv) (G_t-T_t)<0
+Mulig tiltak for å forhindre en statsgjeldskrise
+	Kutte i primærbudsjettet (øke T eller redusere G)
+	Mislighold
+	Inflasjon ( man må gjøre sentralbanken mindre uavhengig)
+Tema 3: Likviditetsfellen og privat gjeld
+Hva er likviditetsfellen?
+	Sitasjon hvor pengepolitikken ikke lengre kan påvirke realøkonomien på en ekspansiv måte: Kortsiktig nominell rente er (nær) lik null.
+	Beskrevet først av Keynes i “General Theory” på 1930-tallet. Men blitt aktualisert etter den globale finanskrisen
+
+Hvordan havner man i en likviditetsfelle?
+	Case 1: Demografiske endringer (Krugman, 1998) ⇒Δ ̅C<0 (eks. spare mere til alderdommen)
+
+ΔY=1/((1-c(1-t)) (Δ ̅C)<0
+Likviditetsfelle dersom rentereduksjonen ikke klarer å veie opp for nedgangen i konsumet som er en følge av de demografiske endringene: 
+(Δ C ̅-b∙Δ i^0)<0
+⇒ΔY=1/((1-c(1-t))(Δ C ̅-b∙Δ i^0)<0
+
+
+	Case 2: Privat gjeldsreduksjon (Krugman og EggertsSon, 2012)⇒ΔD^b<0 (Minsky moment)
+
+
+ΔY=1/((1-¯c(1-t)) (θ∙Δ ̅D^b )<0
+Likviditetsfelle dersom rentereduksjonen ikke klarer å veie opp for nedgangen i konsumet som er en følge av gjeldsreduksjonen:
+ (θ∙Δ D^b-¯b  ∙Δ i^0)<0
+⇒ΔY=1/((1-¯c  (1-t))(θ∙Δ D^b-b∙Δ i^0)<0
+
+	Likviditetsfelle  Y<Y^n T=tY   går ned. Redusert BNP og redusert skatter  B_t/Y_t øker. Gitt at sentralbanken ikke gis muligheten til å øke pengemengden for å kjøpe statsobligasjoner, vil en overgang til en likviditetsfelle lett kunne smitte over i en statsgjeldskrise.  
+Hvordan komme ut av en likviditetsfelle?
+	Den lukkede økonomi modellen forteller oss at finanspolitikken kan betraktes som en gratis lunsj:
+	Vil kunne lukke produksjonsgapet.
+	Vil stabilisere prisene
+	Rentekostnader ved å gjøre dette vil være (tilnærmet) lik null. 
+	For en åpen økonomi er ikke situasjonen like enkel.  Dette vil bli forklart nærmere under forelesningen om krisen i eurosonen. 
+

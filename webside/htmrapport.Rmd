@@ -4,7 +4,7 @@ output:
   html_document:
     toc: true
     toc_depth: 2
-#bibliography: pensum.bib
+bibliography: pensum.bib
 ---
 
 ```{r child = 'innledning.Rmd'}
@@ -21,5 +21,7 @@ output:
 
 ```{r child = 'case_euro.Rmd'}
 ```
+
+# Referanser
 
 <font color="white">Smith cited [@gartner2016macroeconomics]</font>
