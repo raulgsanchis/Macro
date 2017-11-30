@@ -25,3 +25,4 @@ bibliography: pensum.bib
 # Referanser
 
 <font color="white">Smith cited [@gartner2016macroeconomics]</font>
+<font color="white">Smith cited [@halvorsen2014]</font>
