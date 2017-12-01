@@ -6,12 +6,12 @@
 
 
 ## Videoer
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=qtAeINU3FKM
-" target="_blank"><img src="http://img.youtube.com/vi/qtAeINU3FKM/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=SHsCkinrCPE
-" target="_blank"><img src="http://img.youtube.com/vi/SHsCkinrCPE/0.jpg" 
-alt="Keynes" width="240" height="180" border="10" /></a>
+<iframe width="200" height="200" src="https://www.youtube.com/embed/qtAeINU3FKM">
+</iframe>
+<iframe width="200" height="200" src="https://www.youtube.com/embed/SHsCkinrCPE">
+</iframe>
+
+
 
 ## Debattsider
 
@@ -24,3 +24,10 @@ alt="Keynes" width="240" height="180" border="10" /></a>
 - [Paul Krugman](https://www.nytimes.com/column/paul-krugman)
 
 - [John Cochrane](https://johnhcochrane.blogspot.no/)
+
+## Musikk
+
+<iframe width="200" height="200" src="https://www.youtube.com/embed/QssPdmYuL-A">
+</iframe>
+
+

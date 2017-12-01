@@ -1,16 +1,19 @@
 #+OPTIONS: html-postamble:nil
 #+OPTIONS: num:nil
 #+OPTIONS: toc:nil
-:PROPERTIES:
-:EXPORT_FILE_NAME: html/abc.orgss
-:END:
+#+TITLE:
 
 * Symbolliste for ØKB1115
 
 | Del | Matematiske symbol | Betydning                             |
 |-----+--------------------+---------------------------------------|
-| I   | G                  | offentlig konsum og realinvestiringer |
-|     | c                  | den marginale konsumtilbøyeligheten   |
+| I   | G                  | Offentlig konsum og realinvestiringer |
+|     | c                  | Den marginale konsumtilbøyeligheten   |
+|     | Y                  | Bruttonasjonalprodukt                 |
+|     |                    |                                       |
+
+
+
 
 
 

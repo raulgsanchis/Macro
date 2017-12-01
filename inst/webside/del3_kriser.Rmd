@@ -76,10 +76,13 @@ Mulig tiltak for å forhindre en statsgjeldskrise
 	Inflasjon ( man må gjøre sentralbanken mindre uavhengig)
 
 ## Tema 3: Likviditetsfellen og privat gjeld
+<iframe width="420" height="345" src="http://www.youtube.com/watch?feature=player_embedded&v=2ZgQ-7uNmSU">
+</iframe>
+<!--
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=2ZgQ-7uNmSU
 " target="_blank"><img src="http://img.youtube.com/vi/2ZgQ-7uNmSU/0.jpg" 
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
-
+-->
 Hva er likviditetsfellen?
 	Sitasjon hvor pengepolitikken ikke lengre kan påvirke realøkonomien på en ekspansiv måte: Kortsiktig nominell rente er (nær) lik null.
 	Beskrevet først av Keynes i “General Theory” på 1930-tallet. Men blitt aktualisert etter den globale finanskrisen

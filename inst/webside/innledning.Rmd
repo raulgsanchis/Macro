@@ -102,6 +102,8 @@ grid.arrange(gobjusatusagdp, gobjusaunem, ncol=2, top="Norge")
 > Entia non sunt multiplicanda praeter necessitatem (More things should not be used than are necessary).
 1. Benytter matematikk
 
+Bruker mattematikk
+
 ### Sentrale aktører i makroøkonomien
 #### Husholdninger (del I, del II og del III)
 Konsumerer og sparer

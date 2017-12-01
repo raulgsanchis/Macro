@@ -1,3 +1,12 @@
+<!--
+---
+output:
+  html_notebook:
+    toc: true
+    toc_depth: 3
+---
+
+-->
 #Oversikt over faget
 - Tre hovedtemaer: 
     1. Konjunktursvingninger
@@ -9,16 +18,16 @@
     + Hvilken rolle bør offentlige myndigheter spille
     
 - Sentral økonomer i makroøkonomi som har gitt vesentlige bidrag til å besvare disse spørsmålene:
-    + Keynes(1883-1946) / Krugman(1953-)
-    + Friedman(1912-2006)
-    + Minsky(1919-1996)
-    + Hayek(1899-1992) 
+    + Keynes (1883-1946) / Krugman(1953-)
+    + Friedman (1912-2006)
+    + Minsky (1919-1996)
+    + Hayek (1899-1992) 
     
 - Aktørene i økonomien:
     + Husholdninger 
     + Bedrifter 
     + Finansinstitusjoner 
-    + Sntralbanken 
+    + Sentralbanken 
     + Offentlige myndigheter
 
 - Markedene: 
@@ -33,10 +42,37 @@
     + Åpen økonomi
 
 #Del 1
-#Grunnleggende bakgrunnskunnskap
-#Enkel Keynes-modell
-# Lukket økonomi
-# Åpen Økonomi
+##Grunnleggende bakgrunnskunnskap
+- Mål på aggregert produksjon: BNP (Bruttonasjonalprodukt) $Y$
+    + Sluttgoder
+    + Merverdi
+    + Inntekt
+
+- Nominell BNP
+
+- Reel BNP
+
+- Ledighet og ledighetsrate
+
+- Inflasjon
+
+- Okuns lov
+
+- Phillips-kurven
+
+- Hvordan bestemmes aggregert BNP?
+    + Kort sikt
+    + Mellomlang sikt
+    + Lang sikt
+
+## Lukket økonomi
+### Enkel Keynes-modell
+### IS-LM modellen
+### AD-AS modellen
+## Åpen Økonomi
+### Mundell-Flemming modellen
+### AD-AS
+
 <!--
 Del 1: Økonomiske svingninger på kort sikt
 Grunnleggende bakgrunnskunnskap 
@@ -316,3 +352,7 @@ Hvordan komme ut av en likviditetsfelle?
 <!--
 [![Alt text](https://img.youtube.com/vi/XZ7hE4lQAYs/0.jpg)](https://www.youtube.com/watch?v=XZ7hE4lQAYs)
 -->
+
+
+
+
