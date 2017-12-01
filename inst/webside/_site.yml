@@ -1,4 +1,4 @@
-name: webside
+name: Makro
 output_dir: _site
 navbar:
   title: ØKB1115 Makroøkonomi
@@ -46,6 +46,7 @@ navbar:
 output:
   html_document:
     theme: cosmo
+    after_body: a.html
     lib_dir: site_libs
     self_contained: no
-
+    css: abc.css

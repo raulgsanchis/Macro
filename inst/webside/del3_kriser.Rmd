@@ -10,13 +10,11 @@ output: html_notebook
 > Can 'It' - a Great Depression - happen again? And if 'It' can happen why didn't 'It' occur in the years since World War II? These are questions that naturally follow from both the historical record and the comparative success of the past thirty-five years. To answer these questions it is necessary to have an economic theory which makes great depressions one of the possible states in which our type of capitalist economy can find itself.
 - Minsky  (1982)
 
-> In a world of businessmen and financial intermediaries who aggressively seek profit, innovators will always outpace regulators; the authorities cannot prevent changes in the structure of portfolios from occurring. What they can do is keep the asset-equity ratio of banks within bounds by setting equity-absorption ratios for various types of assets. 
-- Minsky
+## Tema 1: Penger, kreditt og bankadferd
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=O7pnjzCuSv8
+" target="_blank"><img src="http://img.youtube.com/vi/O7pnjzCuSv8/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
-> To combat depression by a forced credit expansion is to attempt to cure the evil by the very means which brought it about; because we are suffering from a misdirection of production, we want to create further misdirection -- a procedure which can only lead to a much more severe crisis as soon as the credit expansion comes to an end.
-- Hayek
-
-## Penger
 Del 3: Økonomiske kriser
 Tema 1: Penger, kreditt og bankadferd
 Pengens funksjoner 
@@ -50,8 +48,8 @@ Banker og systemrisiko
 Dersom alle banker går får en slik løsning  Systemrisiko.
 	Høyere egenkapitalkrav til bankene vil føre (1)Lavere forventede utbetalinger ved systemrisiko (2) Gradvis substitusjon over fra forretningsmodeller med overdreven risiko. 
 
-## Statsgjeldskrise
 
+## Tema 2: Statsgjeld
 Konsolidert budsjettbetingelse for offentlig sektor
 Offentlig sektor
 B_t^f=(1+i_(t-1) ) B_(t-1)^f+(G_t-T_t )-SNG_t    
@@ -77,7 +75,11 @@ Mulig tiltak for å forhindre en statsgjeldskrise
 	Mislighold
 	Inflasjon ( man må gjøre sentralbanken mindre uavhengig)
 
-## Likviditetsfellen
+## Tema 3: Likviditetsfellen og privat gjeld
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=2ZgQ-7uNmSU
+" target="_blank"><img src="http://img.youtube.com/vi/2ZgQ-7uNmSU/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+
 Hva er likviditetsfellen?
 	Sitasjon hvor pengepolitikken ikke lengre kan påvirke realøkonomien på en ekspansiv måte: Kortsiktig nominell rente er (nær) lik null.
 	Beskrevet først av Keynes i “General Theory” på 1930-tallet. Men blitt aktualisert etter den globale finanskrisen

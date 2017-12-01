@@ -1,7 +1,3 @@
----
-output: html_notebook
----
-
 #Oversikt over faget
 - Tre hovedtemaer: 
     1. Konjunktursvingninger
@@ -33,7 +29,7 @@ output: html_notebook
     + Valutakursmarkedet.
 
 - To typer økonomier:
-    + Lukket (globalisert) økonomi
+    + Lukket (eller globalisert) økonomi
     + Åpen økonomi
 
 #Del 1

@@ -10,15 +10,15 @@ title: ''
 output: pdf_document
 ---
 
-### Del I: Konjunktursvingninger
+# Del I: Konjunktursvingninger
 <img id='grede' src="bilder/cycles.jpg" height="75px" width="300px" />
 <img id='grere' src="bilder/money.jpg" height="75px" width="300px" />
 
-### Del II: Økonomisk vekst
+# Del II: Økonomisk vekst
 <img id='grere' src="bilder/poverty.jpg" height="75px" width="300px" />
 <img id='grede' src="bilder/growth.jpg" height="75px" width="300px" />
 
-### Del III: Økonomiske kriser
+# Del III: Økonomiske kriser
 <img id='grede' src="bilder/depression.jpg" height="75px" width="300px" />
 <img id='grere' src="bilder/recession.jpg" height="75px" width="300px" />
 
