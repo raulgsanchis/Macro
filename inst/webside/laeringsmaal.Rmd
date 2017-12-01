@@ -1,6 +1,6 @@
-#ABC
-
-Oversikt over faget
+#Oversikt over faget
+- Tre hovedtemaer: (1) Svingninger, (2) økonomiske vekst og (3) dype økonomiske kriser.
+<!--Oversikt over faget
 	Tre hoved temaer: (1) Svingninger, (2) økonomiske vekst og (3) dype økonomiske kriser.
 	To typer spørsmål blir forsøkt besvart: 
 	Hva forårsaker konjunktursvingninger og langsiktig vekst (positivistisk)?: 
@@ -9,6 +9,9 @@ Oversikt over faget
 	(Marx(1818-1883)), Keynes(1883-1946)/Hicks(1904-1989)/Krugman(1953-),Friedman(1912-2006),Hayek(1899-1992)(Mises)/Minsky(1919-1996)
 	Aktørene i økonomien: Husholdninger, bedrifter, finansinstitusjoner, sentralbanken og offentlige myndigheter
 	Markedene: Vare- og tjenestemarkedet, pengemarkedet, arbeidsmarkedet, bankkreditt og valutakursmarkedet.
+-->
+#Del 1
+<!--
 Del 1: Økonomiske svingninger på kort sikt
 Grunnleggende bakgrunnskunnskap 
 	Mål på aggregert produksjon: BNP
@@ -115,7 +118,6 @@ X=X(R┬((∓)),(Y^*)┬((∓)))
 IM = IM(R┬((-)),Y┬((∓)))
 	NX(R,Y,Y*)= X(R,Y*)-R∙IM(R,Y)
 Antar at dNX/dR > 0 (men dette kan ta litt tid)
-
 	(2) internasjonale finansmarkeder (renteparitetsbetingelsen)
 
 (1+i_(t+1))=((1+i_(t+1)^* ) E_(t+1)^e)/(E_t)
@@ -150,6 +152,9 @@ AD-AS modellen for en åpen økonomi
 	AD-kurven er fallende ved at økt priser fører til lavere etterspørsel.
 	Sentral poeng med modellen – Selvkorrigerende mekanismer:
 Fleksibilitet i P og korrekte prisforventninger P^e på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.  
+-->
+#Del 2
+<!--
 Del 2: Økonomisk vekst 
 Introduksjon økonomisk vekst
 	Y/L↑⇒"Høyere levestendard ⇒" "Lykke(?)" 
@@ -185,6 +190,9 @@ I den vanlige versjonen vil veksten i produksjonen (BNP) våre lik befolkningsve
 	Skiftanalyse (bør også kunne vises grafisk)
 Økt sparing vil gi en ny og høyere steady state.
 Befolkningsvekst (fødselsrater + nettoinnvandring)) vil gi en ny og lavere steady state.
+-->
+#Del 3
+<!--
 Del 3: Økonomiske kriser
 Tema 1: Penger, kreditt og bankadferd
 Pengens funksjoner 
@@ -267,4 +275,8 @@ Hvordan komme ut av en likviditetsfelle?
 	Vil stabilisere prisene
 	Rentekostnader ved å gjøre dette vil være (tilnærmet) lik null. 
 	For en åpen økonomi er ikke situasjonen like enkel.  Dette vil bli forklart nærmere under forelesningen om krisen i eurosonen. 
+
+#Krisen i Eurosonen 
+-->
+
 
