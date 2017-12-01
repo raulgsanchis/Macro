@@ -2,6 +2,7 @@
 ```{r eval=FALSE, include=FALSE}
 # Fødselstall økonomer 
 # Læringsmål
+#Jeg legger merke til at du ikke har satt såkalt HTML "Title" på hovedsiden.... derfor kommer den opp med "Redirecting" som title... I Chrome så blir dette vist i TAB'en (Arkfanen) ... så det ser litt rart ut.
 ```
 
 ---

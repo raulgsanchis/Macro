@@ -1,16 +1,46 @@
+---
+output: html_notebook
+---
+
 #Oversikt over faget
-- Tre hovedtemaer: (1) Svingninger, (2) økonomiske vekst og (3) dype økonomiske kriser.
-<!--Oversikt over faget
-	Tre hoved temaer: (1) Svingninger, (2) økonomiske vekst og (3) dype økonomiske kriser.
-	To typer spørsmål blir forsøkt besvart: 
-	Hva forårsaker konjunktursvingninger og langsiktig vekst (positivistisk)?: 
-	Hvilken rolle bør offentlige myndigheter spille (normativt: stabiliseringspolitikk og vekstpolitikk)?
-	Sentral økonomer stiftet bekjentskap med i dette kurset:
-	(Marx(1818-1883)), Keynes(1883-1946)/Hicks(1904-1989)/Krugman(1953-),Friedman(1912-2006),Hayek(1899-1992)(Mises)/Minsky(1919-1996)
-	Aktørene i økonomien: Husholdninger, bedrifter, finansinstitusjoner, sentralbanken og offentlige myndigheter
-	Markedene: Vare- og tjenestemarkedet, pengemarkedet, arbeidsmarkedet, bankkreditt og valutakursmarkedet.
--->
+- Tre hovedtemaer: 
+    1. Konjunktursvingninger
+    1. Økonomiske vekst
+    1. Økonomiske kriser
+
+- Tilknyttet dette ønsker vi å undersøke
+    + Hva forårsaker konjunktursvingninger, økonomiske vekst og økonomiske kriser
+    + Hvilken rolle bør offentlige myndigheter spille
+    
+- Sentral økonomer i makroøkonomi som har gitt vesentlige bidrag til å besvare disse spørsmålene:
+    + Keynes(1883-1946) / Krugman(1953-)
+    + Friedman(1912-2006)
+    + Minsky(1919-1996)
+    + Hayek(1899-1992) 
+    
+- Aktørene i økonomien:
+    + Husholdninger 
+    + Bedrifter 
+    + Finansinstitusjoner 
+    + Sntralbanken 
+    + Offentlige myndigheter
+
+- Markedene: 
+    + Vare- og tjenestemarkedet
+    + Pengemarkedet 
+    + Arbeidsmarkedet
+    + Bankkreditt 
+    + Valutakursmarkedet.
+
+- To typer økonomier:
+    + Lukket (globalisert) økonomi
+    + Åpen økonomi
+
 #Del 1
+#Grunnleggende bakgrunnskunnskap
+#Enkel Keynes-modell
+# Lukket økonomi
+# Åpen Økonomi
 <!--
 Del 1: Økonomiske svingninger på kort sikt
 Grunnleggende bakgrunnskunnskap 
@@ -191,6 +221,8 @@ I den vanlige versjonen vil veksten i produksjonen (BNP) våre lik befolkningsve
 Økt sparing vil gi en ny og høyere steady state.
 Befolkningsvekst (fødselsrater + nettoinnvandring)) vil gi en ny og lavere steady state.
 -->
+## Introduksjon
+## Solow-modellen for økonomisk vekst
 #Del 3
 <!--
 Del 3: Økonomiske kriser
@@ -280,3 +312,11 @@ Hvordan komme ut av en likviditetsfelle?
 -->
 
 
+
+## Tema 1: Penger, kreditt og bankadferd
+## Tema 2: Statsgjeld
+## Tema 3: Likviditetsfellen og privat gjeld
+
+<!--
+[![Alt text](https://img.youtube.com/vi/XZ7hE4lQAYs/0.jpg)](https://www.youtube.com/watch?v=XZ7hE4lQAYs)
+-->
