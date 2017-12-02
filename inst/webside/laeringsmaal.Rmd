@@ -1,12 +1,10 @@
-<!--
 ---
 output:
   html_notebook:
     toc: true
-    toc_depth: 3
+    toc_depth: 4
 ---
 
--->
 #Oversikt over faget
 - Tre hovedtemaer: 
     1. Konjunktursvingninger
@@ -66,12 +64,36 @@ output:
     + Lang sikt
 
 ## Lukket økonomi
-### Enkel Keynes-modell
-### IS-LM modellen
-### AD-AS modellen
+$Z \equiv C + I + G$
+
+### Enkel Keynes-modell:
+- Adferdslikninger
+- Likevekt
+- Skiftanalyse
+- Stabiliseringspolitikk
+
+### IS-LM modellen:
+
+### AD-AS modellen:
+
 ## Åpen Økonomi
-### Mundell-Flemming modellen
+- Tre fundamentale endringer:
+    1. Handel med utlandet
+    1. Internasjonale finansmarkeder
+    1. Fast eller flytende kurs
+    
+- To stabiliseringsmål
+    
+$Z \equiv C + I + G + NX \\
+NX \equiv X - R\cdot IM \\
+CU + CA \equiv 0 \\$
+
+### Mundell-Flemming modellen (IS-LM for en åpen øonomi)
+- Fast kurs 
+- Flytende kurs
 ### AD-AS
+- Fast kurs 
+- Flytende kurs
 
 <!--
 Del 1: Økonomiske svingninger på kort sikt

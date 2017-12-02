@@ -11,8 +11,6 @@
 <iframe width="200" height="200" src="https://www.youtube.com/embed/SHsCkinrCPE">
 </iframe>
 
-
-
 ## Debattsider
 
 [Project Syndicate](https://www.project-syndicate.org/)
@@ -30,4 +28,5 @@
 <iframe width="200" height="200" src="https://www.youtube.com/embed/QssPdmYuL-A">
 </iframe>
 
-
+<iframe width="200" height="200" src="https://www.youtube.com/embed/Nu9MDqGhIak&t=3368s">
+</iframe>
