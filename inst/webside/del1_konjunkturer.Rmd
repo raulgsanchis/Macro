@@ -1,9 +1,3 @@
-<!--
----
-output: html_notebook
----
--->
-
 # Huskeliste
 1. Navn overskrift Mundell-Flemming
 
@@ -15,6 +9,7 @@ output: html_notebook
 - Keynes
 
 ## Grunnleggende bakgrunnkunnskap 
+
 ### Sentrale begreper
 - BNP
 - Ledighet
@@ -26,15 +21,24 @@ output: html_notebook
 
 ### Hva bestemmer aggregert BNP?
 <!-- likvekt -->
+
 #### Kort sikt:
+
 #### Mellomlang sikt:
+
 #### Lang sikt:
 
-## Enkel Keynes-modell: likevekt i godemarkedet (varer og tjenester)
-## IS-LM modellen for en lukket økonomi: likevekt i gode- og pengemarkedet 
-## AD-AS modellen for en lukket økonomi: likevekt i gode-, penge- og arbeidsmarkedet 
-## IS-LM og AD-AS modellen for en åpen økonomi (Mundell-Flemming) med fast valutakurs: 
-## IS-LM og AD-AS modellen for en åpen økonomi (Mundell-Flemming) med flytende valutakurs: 
+### Enkel Keynes-modell: likevekt i godemarkedet (varer og tjenester)
+
+### IS-LM modellen: likevekt i gode- og pengemarkedet
+
+### AD-AS modellen: likevekt i gode-, penge- og arbeidsmarkedet
+
+## Åpen Økonomi
+
+### Mundell-Flemming modellen (IS-LM for en åpen økonomi): likevekt i gode, penge- og valutakursmarkedet
+
+### AD-AS: likevekt i gode, penge, valuta- og arbeidsmarkedet
 
 <!--
 Del 1: Økonomiske svingninger på kort sikt

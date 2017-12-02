@@ -97,12 +97,14 @@ grid.arrange(gobjusatusagdp, gobjusaunem, ncol=2, top="Norge")
 
 ```
 
-## Abstraksjon
-### (Razor's law)[https://simple.wikipedia.org/wiki/Occam%27s_razor]
+## Abstraksjon [(Ockhams barberkniv)](https://no.wikipedia.org/wiki/Ockhams_barberkniv)
 > Entia non sunt multiplicanda praeter necessitatem (More things should not be used than are necessary).
 1. Benytter matematikk
 
-Bruker mattematikk
+Prinsippet slår fast at man skal ikke anta flere foreteelser eller ting enn hva som trengs for å forklare de observasjoner man gjør
+
+
+-- Bruker mattematikk
 
 ### Sentrale aktører i makroøkonomien
 #### Husholdninger (del I, del II og del III)

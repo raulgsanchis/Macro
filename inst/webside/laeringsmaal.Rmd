@@ -1,9 +1,11 @@
+<!--
 ---
 output:
   html_notebook:
     toc: true
     toc_depth: 4
 ---
+-->
 
 #Oversikt over faget
 - Tre hovedtemaer: 
