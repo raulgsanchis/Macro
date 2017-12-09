@@ -1,22 +1,37 @@
 <!--
 ---
 title: "Oppgaver ØKB1115 Makroøkonomi"
-output: html_output
+output: html_notebook
 ---
 -->
 
-# Oppgaver fra 1. forelesning 
-
-## Datainnhenting
-
+# Del I: Konjunktursvingninger
+## Innledning
 - Installer applikasjonen [Fred](http://research.stlouisfed.org/fred2/) i ditt Excel regneark. Trykk på lenken [Hjelp](http://www.youtube.com/watch?v=OAH-wGtP_k8) for en kort demonstrasjon på hvordan du benytter denne applikasjonen.
 
+## AD-AS lukket økonomi
+## AD-AS modellen åpen økonomi
+
+# Del II: Økonomisk vekst
+## abc
+
+
+# Del III: Økonomiske kriser
+## Penger
+## Statsgjeldskrise og likvidetsfellen
+
+
+# Prøveeksamen
+
+
+
+<!--
+# bitcoin pay for itself
+-->
 
 <!--
 
 
-
- 
 
 
 Gjør følgende oppgaver for USA, Japan, Norge og (dersom du har tid) minst ett europeisk land.
@@ -33,6 +48,7 @@ Hjelp til hvordan bruke programmet finnes her:
 	Finn et mål på ledighet.
 	Lag et scatterplot for ledighet og inflasjon (Phillips-kurven).
 	Lag et scatterplot for vekst og endring i inflasjon (Okuns lov).
+
 Oppgaver gitt til 2. forelesning 
 Kapittel 2, Blanchard, Amighini og Giavazzi
 	Question 3.
@@ -55,7 +71,8 @@ Hvor Y betegner produksjonen.
 	Anta at sentralbanken innfører en renteregel som tilsier at i=m_0 Y
 	Sammenlikn multiplikatoren i modellen før og etter innføringen av en slik regel. Hvilken er høyest?
 	Gi en verbal på forklaring på hvordan innførselen av en regel virker inn ved en positiv økning i investeringen I.   
-	Hva menes med the paradox of thrift?
+Hva menes med the paradox of thrift?
+
 Oppgaver gitt til 4. forelesning 
 	Ta utgangspunkt i samme modell som i forrige oppgavesett. Anta i tillegg nå at pengemarkedet er operativt. Pengetilbudet er derfor gitt ved M^s=M/P og penge etterspørselen M^d=M(LY,i).  Vis likevekten i pengemarkedet under forutsetning om at sentralbanken (a) setter rentenivået, (b) bestemmer pengetilbudet. 
 	Bestem Y grafisk under (a) og (b) under forutsetning om at både vare- og pengemarkedet er i likevekt (IS-LM modellen).

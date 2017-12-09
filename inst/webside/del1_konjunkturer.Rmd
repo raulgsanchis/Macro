@@ -1,6 +1,3 @@
-# Huskeliste
-1. Navn overskrift Mundell-Flemming
-
 # Del 1: Kortsiktige konjunktursvingninger
 <img id='grede' src="bilder/cycles.jpg" height="75px" width="300px" />
 <img id='grere' src="bilder/money.jpg" height="75px" width="300px" />

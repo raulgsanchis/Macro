@@ -11,9 +11,8 @@ output: html_notebook
 - Minsky  (1982)
 
 ## Tema 1: Penger, kreditt og bankadferd
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=O7pnjzCuSv8
-" target="_blank"><img src="http://img.youtube.com/vi/O7pnjzCuSv8/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+<iframe width="200" height="200" src="https://www.youtube.com/embed/O7pnjzCuSv8">
+</iframe>
 
 Del 3: Økonomiske kriser
 Tema 1: Penger, kreditt og bankadferd

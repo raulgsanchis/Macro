@@ -1,0 +1,13 @@
+#+OPTIONS: html-postamble:nil
+#+OPTIONS: num:nil
+#+OPTIONS: toc:nil
+#+TITLE: 
+
+| Økonom         | Konjunktursvingninger                      | Stabiliseringspolitikk                                    | Krisepolitikk                      |
+|----------------+--------------------------------------------+-----------------------------------------------------------+------------------------------------|
+| Keynes/Krugman | Autonome endringer i investeringer         | Finanspolitikk                                            | Ekspansiv finans- og pengepolitikk |
+| Friedman       | Eksogende endringer i pengemengden         | Konstant vekst i pengemengden                             | Ekspaniv pengepolitikk             |
+| Minsky         | Økonmisk stabilitiet fører til ustabilitet | Finansreguleringer og sentralbank                         | Bail-out                           |
+| Hayek          | Kredittvekst i banksektoren                | Avskaffelse av sentralbanken og fri konkur i banksektoren | Likvidiering                       |
+
+
