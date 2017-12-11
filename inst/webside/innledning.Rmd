@@ -89,7 +89,7 @@ grid.arrange(gobjusatusagdp, gobjusaunem, ncol=2, top="Norge")
 <figure>
 
 ### Politikkanbefalinger
-```{r pol, child = 'orgtabeller/polanbefalinger.html'}
+```{r pol, child = 'tabeller/polanbefalinger.html'}
 
 ```
 
@@ -129,7 +129,7 @@ Finanspolitikk
 
 #### Arbeidsmarkedet - del I, del III
 
-#### Bankkreditt - del III
+#### Finansmarkeder (kapital- og lånemarkedet) - del II, III
 
 #### Valutakursmarkedet - del I
 

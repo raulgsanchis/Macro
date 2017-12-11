@@ -14,12 +14,13 @@
 *** Definere økoniske kriser
 * Del 1: Konjunktursvingninger
 ** Oversikt 
+
+**
 *** Sentrale aktører
-    - [X] Husholdninger
-    - [X] Bedrifter
-    - [X] Sentralbanken
-    - [X] Offentlig myndigheter
-    - [ ] Finansinstitusjoner (forretningsbanker)
+    - [ ] Husholdninger
+    - [ ] Bedrifter
+    - [ ] Sentralbanken
+    - [ ] Offentlig myndigheter
 ** Enkel Keynes (IS)-modell
 *** Operasjonelle markeder? 
 + godemarkedet
@@ -56,21 +57,28 @@
 ** Oversikt
 
 *** Sentrale aktører
-    - [X] Husholdninger
-    - [X] Bedrifter
-    - [X] Finansinstitusjoner (kapitalmarked)
+    - [ ] Husholdninger
+    - [ ] Bedrifter
     - [ ] Sentralbanken
     - [ ] Offentlig myndigheter
+    - [ ] Husholdninger
+    - [ ] Bedrifter
 ** Solows vekstmodell
 * Del 3: Økonomiske kriser
 ** Oversikt 
 
 *** Sentrale aktører
-    - [X] Husholdninger (to typer)
-    - [X] Bedrifter
-    - [X] Finansinstitusjoner (forretningsbanker)
-    - [X] Sentralbanken
-    - [X] Offentlig myndigheter
+    - [ ] Husholdninger
+    - [ ] Bedrifter
+    - [ ] Sentralbanken
+    - [ ] Offentlig myndigheter
+    - [ ] Husholdninger
+    - [ ] Bedrifter
+    - [ ] Husholdninger
+    - [ ] Bedrifter
+    - [ ] Finansinstitusjoner (herunder forretningsbanker)
+    - [ ] Sentralbanken
+    - [ ] Offentlig myndigheter
 ** Tema 1: Penger, kreditt og bankadferd
 ** Tema 2: Statsgjeld
 ** Tema 3: Likvidietsgjelden og privat gjeld

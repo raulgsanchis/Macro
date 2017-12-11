@@ -11,6 +11,7 @@ output: html_notebook
 - Minsky  (1982)
 
 ## Tema 1: Penger, kreditt og bankadferd
+### Innvendige og utvendige penger
 <iframe width="200" height="200" src="https://www.youtube.com/embed/O7pnjzCuSv8">
 </iframe>
 
@@ -37,7 +38,7 @@ Kostnader ved å flytte reserver mellom forretningsbankene.
 	System 3: Fraksjonsbasert bankvirksomhet med sentralbank og fiat penger
 Problemer:
 
-## Banker, systemrisiko og kapitalkrav
+### Banker, systemrisiko og kapitalkrav
 > In a world of businessmen and financial intermediaries who aggressively seek profit, innovators will always outpace regulators; the authorities cannot prevent changes in the structure of portfolios from occurring. What they can do is keep the asset-equity ratio of banks within bounds by setting equity-absorption ratios for various types of assets. 
 - Minsky (1982)
 

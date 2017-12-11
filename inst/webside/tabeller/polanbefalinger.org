@@ -3,11 +3,21 @@
 #+OPTIONS: toc:nil
 #+TITLE: 
 
-| Økonom         | Konjunktursvingninger                      | Stabiliseringspolitikk                                    | Krisepolitikk                      |
-|----------------+--------------------------------------------+-----------------------------------------------------------+------------------------------------|
-| Keynes/Krugman | Autonome endringer i investeringer         | Finanspolitikk                                            | Ekspansiv finans- og pengepolitikk |
-| Friedman       | Eksogende endringer i pengemengden         | Konstant vekst i pengemengden                             | Ekspaniv pengepolitikk             |
-| Minsky         | Økonmisk stabilitiet fører til ustabilitet | Finansreguleringer og sentralbank                         | Bail-out                           |
-| Hayek          | Kredittvekst i banksektoren                | Avskaffelse av sentralbanken og fri konkur i banksektoren | Likvidiering                       |
+| Økonom         | Konjunktursvingninger                      | Stabiliseringspolitikk                            | Krisepolitikk                      |
+|----------------+--------------------------------------------+---------------------------------------------------+------------------------------------|
+| Keynes/Krugman | Investeringer ('animal spirit')            | Finanspolitikk                                    | Ekspansiv finans- og pengepolitikk |
+| Friedman       | Endringer i pengemengden                   | Konstant pengemengdevekst                         | Ekspaniv pengepolitikk             |
+| Minsky         | Økonmisk stabilitiet fører til ustabilitet | Finansreguleringer og sentralbank                 | Bail-out (redningspakker)          |
+|                | Kredittvekst                               | Fri konkurrane i banksektoren (ingen sentralbank) | Likvididering (Bail-In)            |
+|                |                                            |                                                   |                                    |
+
+
+
+
+
+
+
+
+
 
 
