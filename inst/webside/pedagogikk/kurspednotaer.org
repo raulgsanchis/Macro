@@ -72,6 +72,7 @@
     - [X] Sentralbanken
     - [X] Offentlig myndigheter
 ** Tema 1: Penger, kreditt og bankadferd
+*** 
 ** Tema 2: Statsgjeld
 ** Tema 3: Likvidietsgjelden og privat gjeld
 * Krisen i Eurosonen
@@ -83,38 +84,10 @@
 
 #+BEGIN_COMMENT
 # Herskin
-* Planmodellen
-** Analysefasen
-- [ ] Sitasjon(er) hvor studenten kan få bruk for teorien?
-- [ ] Hva skal man gjøre?
-- [ ] Punkter fortrenge fordommer
-- [ ] Punkter tilstrekkelig forståelse
-- [ ] Set av verktøy
-- [ ] Set av komponenter
-** Grovindeling
-- [ ] Deltakerlogisk
-- [ ] Hvilken forståelsesverktøy
-- [ ] Hvilken faser
-- [ ] Hvilken undervisningsform innenfor hver enkelt fase
-** Detaljplanlegging
-- [ ] Verktøy
-- [ ] Basisteknikker
-- [ ] Dokumentasjon
-* Verktøy
-** Eksempel
-** Visualisering
-** Dialog
-** Metaforer
-* Undervisningsform
-** IT-støttet
-** Dialog
-** Gruppearbeide
-** Case-undervisning
-#+END_COMMENT
 
 
-* Kladd
 #+BEGIN_COMMENT
+
 Grunnleggende info
 •Om meg selv.
 •Forsket og undervist (ferdiglagde kurs) makro tidligere
@@ -360,7 +333,6 @@ Statsgjeld
 Likviditetsfellen
 •Gjeld
 #+END_COMMENT
-** Metaforer
 
 
 

@@ -34,7 +34,7 @@ output:
     + Vare- og tjenestemarkedet
     + Pengemarkedet 
     + Arbeidsmarkedet
-    + Bankkreditt 
+    + Finansinstitusjoner (investering og forretningbanker) 
     + Valutakursmarkedet.
 
 - To typer økonomier:

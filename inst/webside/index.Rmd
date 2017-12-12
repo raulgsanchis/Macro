@@ -7,10 +7,6 @@
 
 ```
 
----
-title: ''
-output: pdf_document
----
 
 # Del I: Konjunktursvingninger
 <img id='grede' src="bilder/cycles.jpg" height="75px" width="300px" />
