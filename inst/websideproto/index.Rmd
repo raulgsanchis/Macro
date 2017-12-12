@@ -1,7 +1,8 @@
----
+  ---
 title: "My Website"
 ---
 
 Hello, Website 123!
 
-writing from Ubuntu
+writing from Ubuntu and write from nucserver
+
