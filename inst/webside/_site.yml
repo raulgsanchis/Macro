@@ -41,12 +41,16 @@ navbar:
       href: laeringsmaal.html
   right:
   - text: Source Code on GitHub
-  - icon: fa-github fa-lg
+  - icon: ion-android-mail
     href: https://github.com/joernih/MakroOESO002
 output:
   html_document:
     theme: cosmo
-    after_body: a.html
+    after_body: footer.html
     lib_dir: site_libs
     self_contained: no
     css: abc.css
+
+
+
+

@@ -1,6 +1,3 @@
----
-bibliography: pensum.bib
----
 
 
 ```{r plan, child = 'orgtabeller/forelesningsplan.html'}
