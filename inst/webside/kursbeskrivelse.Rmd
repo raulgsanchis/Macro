@@ -52,7 +52,7 @@ Anbefalte forkunnskaper
 Grunnleggende matematikk
 
 Obligatoriske arbeidskrav
- Ja, spesifiseres i semesterplan ved semesterstart
+Ja, spesifiseres i semesterplan ved semesterstart
 
 Vurdering
 Skriftlig skoleeksamen, 4 timer, 100%.
@@ -61,3 +61,105 @@ Karakterskala A-F, der F tilsvarer ikke bestått.
 
 Hjelpemidler ved eksamen
 Skolens kalkulator
+
+
+
+```{r eval=FALSE, include=FALSE}
+
+Medvirkende lærere
+Jørn Inge Halvorsen 
+Strukturert undervisningstid
+2*2 timer forelesninger og øvinger per uke 
+Obligatoriske undervisningsaktiviteter
+-
+Overlapping og studiepoengreduksjon
+ECN220 - 5 stp 
+Forutsatte forkunnskaper
+ECN 120 og ECN122 eller tilsvarende emne. 
+Anbefalte forkunnskaper
+
+
+Eksamensform
+S
+Eksamen
+-
+Karakterregel
+A-F
+Hjelpemidler ved skriftlig eksamen
+B1: utdelt kalkulator, ingen andre hjelpemidler
+Normert arbeidsmengde
+300 timer 
+Emnefrekvens
+Årlig
+Frekvenskommentar
+-
+Læringsmåter
+Emnet kombinerer forelesninger, øvingsoppgaver, obligatorisk gruppeoppgave, klassediskusjoner, samt omfattende nettside med bl.a. linker til økonomisk litteratur, økonomiske institusjoner. 
+Læringsstøtte
+-
+Sensor
+Ekstern sensor kvalitetssikrer pensum, eksamensoppgaver og prinsipper for evaluering og besvarelser. 
+Opptakskrav
+GSK
+Fortrinnsrett
+-
+Emnet tilbys første gang
+2013 høst
+
+
+
+Eksamen: 
+Midtveis i kurset vil det bli gitt en obligatorisk innleveringsoppgave. Denne må bli godkjent for at kandidaten skal kunne gå opp til skriftlig eksamen.
+
+ 
+ 
+Merknad
+ 
+Et tilsvarende emne i makroøkonomi undervises ved mange andre universiteter og høgskoler i Norge og andre land. Men dette kurset inkluderer også nyere og mer dagsaktuelle temaer som finansiell ustabilitet, reguleringer av banker og om bruk av ukonvensjonelle pengepolitikk.
+
+
+
+
+ 
+Mål
+ 
+Kandidater fra emnet skal ha kunnskaper og innsyn i sentrale makroøkonomiske modeller og temaer som: 
+* Enkel keynesianske multiplikator-modeller. 
+* IS-LM for lukket og åpen økonomi. 
+* AD-AS for lukket og åpen økonomi. 
+* Stabiliseringspolitikk.
+* Stilisert fakta om økonomisk vekst  og Solows vekstmodell.
+* Årsaker til finansiell ustabilitet og dype økonomiske kriser. 
+* Ukonvensjonelle pengepolitikk: Bruka av kvantitative lettelser og refinansierngslån.
+* Budsjettbetingelsen for offentlig sektor.
+* Formålet med bankreguleringer. 
+* Sammenheng mellom statlig og privat gjeldskrise.
+Med kunnskaper om disse modellene og temaene skal kandidatene kunne: 
+- foreta begrensede utredninger av makroøkonomiske spørsmål, og konsekvenser av makroøkonomiske endringer for næringslivet, bedriftene og enkeltmennesker. 
+- vurdere økonomiske utredninger, f.eks. stortingsmeldinger, NOU-utredninger m.m. 
+
+Emnet skal, som andre økonomiemner, øke kandidatenes: 
+- samfunnsengasjement.
+- forstå egeninteressen til ulike økonomiske agenter.
+- analytisk holdning med vekt på saklighet og objektivitet.
+ 
+ 
+Innhold
+ 
+Del 1: Kortsiktig makro: Konjunkturanalyse og stabiliseringspolitikk. 
+Del 2: Økonomisk vekst: Stilisert fakta og Solows vekstmodell. 
+Del 3: Spesialtemaer: (1) Penger, kreditt og bankadferd (2) Statsgjeld (3) Likvidietsfellen og privat gjeld 
+Del 4: Appliasjon: Krisen i eurosonen.
+
+
+
+
+ 
+Pensum
+ 
+Utvalgte deler av: Blanchard, Olivier: "Macroeconomics" (siste utgave). 
+Forelesningsnotater .
+
+
+```
+
