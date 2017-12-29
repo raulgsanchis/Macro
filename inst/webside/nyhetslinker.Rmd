@@ -30,6 +30,14 @@
 
 - [John Cochrane](https://johnhcochrane.blogspot.no/)
 
+- [Hans-Werner Sinn](https://www.project-syndicate.org/columnist/hans-werner-sinn)
+
+<!--
+<p>
+This is an email link:
+<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">Send Mail</a>
+</p>
+
 ## Musikk
 
 <iframe width="200" height="200" src="https://www.youtube.com/embed/QssPdmYuL-A">
@@ -37,3 +45,4 @@
 
 <iframe width="200" height="200" src="https://www.youtube.com/embed/Nu9MDqGhIak&t=3368s">
 </iframe>
+-->

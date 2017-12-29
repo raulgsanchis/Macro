@@ -3,7 +3,6 @@
 #+OPTIONS: toc:nil
 #+TITLE: 
 
-
 * ØKB1115 Makroøkonomi våren 2018
 
 ** Undervisning
@@ -11,7 +10,7 @@
 | Uke | Dato | Del                   | Tema                                                       | Timer | Rom | Pensum                    | Ansvarlig |
 |-----+------+-----------------------+------------------------------------------------------------+-------+-----+---------------------------+-----------|
 |   1 |      | Introduksjon          | Oversikt over faget                                        |     3 |     |                           | JIH       |
-|   1 |      |                       | Grunnleggende basiskunnskaper                              |       |     | Gartner kap xx            | JIH       |
+|   1 |      |                       | Noen grunnleggende basiskunnskaper                         |       |     | Gartner kap xx            | JIH       |
 |-----+------+-----------------------+------------------------------------------------------------+-------+-----+---------------------------+-----------|
 |   2 |      | Del I:                | IS-LM for en lukket økonomi                                |     3 |     | Gartner kap xx            | JIH       |
 |   3 |      | Konjunktursvingninger | IS-LM og AD-AS for en lukket økonomi                       |     3 |     | Gartner kap xx            | JIH       |
@@ -56,8 +55,8 @@
 
 ** 
 
-*Kursansvarlig*
+*Kursansvarlig:*
 Jørn I. Halvorsen (jorn.inge.halvorsen@hvl.no)
 
-*Seminaransvarlig*
+*Seminaransvarlig:*
 ??? (???@hvl.no)

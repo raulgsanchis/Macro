@@ -1,6 +1,6 @@
 
 
-```{r plan, child = 'orgtabeller/forelesningsplan.html'}
+```{r plan, child = 'tabeller/forelesningsplan.html'}
 
 ```
 

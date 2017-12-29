@@ -5,13 +5,26 @@
 
 * Introduksjon
 ** Kursinfo
+*** Administrativt
 *** Definere makro
-*** Eksamen
-
+VIS: 
+*** Introdouksjon
+**** Tre grunnluggende spørsmål forsøkt besvart
+1. Konjunktursvingninger
+1. Vekst
+1. Økonomiske kriser
+EKS: USA
+**** Hvilken rolle bør offentlige myndigheter spille
+1. Konjunktursvingninger: Aktiv eller passiv
+1. Vekst: Kapitalisme vs. offentlig sektor !!
+1. Økonomiske kriser: Stabiliseringspolitikk (bail-out)
+EKS: Hjelpepakker
+ 
 ** Oversikt over kurset
 *** Definere konjunktursvingninger
 *** Definere økonomisk vekst
 *** Definere økoniske kriser
+
 * Del 1: Konjunktursvingninger
 ** Oversikt 
 *** Sentrale aktører
@@ -20,7 +33,7 @@
     - [X] Sentralbanken
     - [X] Offentlig myndigheter
     - [ ] Finansinstitusjoner (forretningsbanker)
-** Enkel Keynes (IS)-modell
+** Enkel Keynes-modell
 *** Operasjonelle markeder? 
 + godemarkedet
 ** IS-LM modellen for en lukket økonomi
@@ -41,17 +54,13 @@
 + Pengemarkedet
 + Valutakursmarkedet
 ** AD-AS modellen for en åpen økonomi med flytende og fast valutakurs
-
-
-
-*** Operasjonelle markeder og når gjelder modellen
 *** Mellomlang sikt
 *** Operasjonelle markeder:
-
 + Godemarkedet
 + Pengemarkedet
 + Valutakursmarkedet
 + Arbeidsmarkedet
+
 * Del 2: Økonomisk vekst
 ** Oversikt
 
@@ -62,6 +71,7 @@
     - [ ] Sentralbanken
     - [ ] Offentlig myndigheter
 ** Solows vekstmodell
+
 * Del 3: Økonomiske kriser
 ** Oversikt 
 
@@ -75,7 +85,8 @@
 *** 
 ** Tema 2: Statsgjeld
 ** Tema 3: Likvidietsgjelden og privat gjeld
-* Krisen i Eurosonen
+
+* Applikasjon: Krisen i Eurosonen
 ** Innledning
 
 * Repitsjon
@@ -337,3 +348,5 @@ Likviditetsfellen
 
 
   
+
+

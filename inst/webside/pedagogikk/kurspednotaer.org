@@ -5,13 +5,37 @@
 
 * Introduksjon
 ** Kursinfo
+** Administrativt
 *** Definere makro
-*** Eksamen
+VIS: 
+*** Introdouksjon
+**** Tre grunnluggende spørsmål forsøkt besvart
+1. Konjunktursvingninger EKS: USA
+1. Vekst 
+1. Økonomiske kriser EKS: USA
+**** Hvilken rolle bør offentlige myndigheter spille
+1. Offentlig myndigheter
+1. Konjunktursvingninger: Aktiv eller passiv
+1. Vekst: Kapitalisme vs. offentlig sektor !!
+1. Økonomiske kriser: Stabiliseringspolitikk (bail-out) EKS: Hjelpepakker
 
-** Oversikt over kurset
-*** Definere konjunktursvingninger
-*** Definere økonomisk vekst
-*** Definere økoniske kriser
+*** Keynes/Krugman, Minsky og Hayesk forståelse av de tre grunnleggende spørsmålene og offentlige myndighetene rolle
+1. Hørt om noen av disse?
+EKS: Dialog
+1. Hva forårsaker konjunktursvigninger
+1. Hva forårsaker kriser
+1. Krisepolitikk
+1. Stabiliseringspolitikk
+
+*** Modellering
+1. Ockhams barberkniv
+1. Benytter matematikk
+1. Aktører VIS
+1. Markedene VIS
+1. Størrelsen på økonomien VIS
+1. Av og på i del I, del II og del III VIS:Oversiktskart
+ 
+ 
 * Del 1: Konjunktursvingninger
 ** Oversikt 
 *** Sentrale aktører
@@ -20,7 +44,7 @@
     - [X] Sentralbanken
     - [X] Offentlig myndigheter
     - [ ] Finansinstitusjoner (forretningsbanker)
-** Enkel Keynes (IS)-modell
+** Enkel Keynes-modell
 *** Operasjonelle markeder? 
 + godemarkedet
 ** IS-LM modellen for en lukket økonomi
@@ -41,17 +65,13 @@
 + Pengemarkedet
 + Valutakursmarkedet
 ** AD-AS modellen for en åpen økonomi med flytende og fast valutakurs
-
-
-
-*** Operasjonelle markeder og når gjelder modellen
 *** Mellomlang sikt
 *** Operasjonelle markeder:
-
 + Godemarkedet
 + Pengemarkedet
 + Valutakursmarkedet
 + Arbeidsmarkedet
+
 * Del 2: Økonomisk vekst
 ** Oversikt
 
@@ -62,6 +82,7 @@
     - [ ] Sentralbanken
     - [ ] Offentlig myndigheter
 ** Solows vekstmodell
+
 * Del 3: Økonomiske kriser
 ** Oversikt 
 
@@ -75,7 +96,8 @@
 *** 
 ** Tema 2: Statsgjeld
 ** Tema 3: Likvidietsgjelden og privat gjeld
-* Krisen i Eurosonen
+
+* Applikasjon: Krisen i Eurosonen
 ** Innledning
 
 * Repitsjon
@@ -337,3 +359,5 @@ Likviditetsfellen
 
 
   
+
+

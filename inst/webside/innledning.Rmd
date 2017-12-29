@@ -51,10 +51,11 @@ grid.arrange(gdu, gru, gdg, grg,top = 'USA' )
 ```
 
 
-## Tre grunnleggende spørsmål blir forsøkt besvart?
-- Hva skaper konjunktursvingninger?
-- Økonomisk vekst?
-- Økonomiske kriser?
+## Tre grunnleggende spørsmål forsøkt besvart
+Hva forårsaker
+- konjunktursvingninger?
+- økonomisk vekst?
+- økonomiske kriser?
 
 ## Hvilken rolle bør offentlige myndigheter spille?
 - Stabiliseringspolitikk (aktiv/passiv)
