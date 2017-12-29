@@ -1,6 +1,7 @@
+#+STARTUP: content
 #+OPTIONS: html-postamble:nil
 #+OPTIONS: num:nil
-#+OPTIONS: toc:nil
+#+OPTIONS: toc:2
 #+TITLE: Pednotater
 
 * Introduksjon
@@ -41,30 +42,48 @@ EKS: Dialog
 *** Sentrale aktører
     - [X] Husholdninger
     - [X] Bedrifter
+    - [ ] Finansinstitusjoner (investerings og forretningsbanker) 
     - [X] Sentralbanken
+<<<<<<< HEAD
     - [X] Offentlig myndigheter
     - [ ] Finansinstitusjoner (forretningsbanker)
 ** Enkel Keynes-modell
 *** Operasjonelle markeder? 
 + godemarkedet
+=======
+    - [X] Offentlig myndigheter  
+
+** Enkel Keynes (IS)-modell
+*** Motivasjon: Grunnleggende mekanisme hvordan faktisk produksjon avviker fra potensiell produksjon
+    - [ ] Bilmetafor
+*** Operasjonelle markeder
+    - [X] Godemarkedet (varer og tjenester)
+    - [ ] Pengemarkedet
+    - [ ] Arbeidsmarkedet
+    - [ ] Kredittmarkedet
+    - [ ] Valutakursmarkedet
+
+>>>>>>> 614b3f8971171a9b28f2025e0094ecae224a1b17
 ** IS-LM modellen for en lukket økonomi
-*** Kort sikt
+*** Motivasjon: Modell som på kort sikt forklare hvordan faktisk produksjon avviker fra potensiell produksjon i en lukket økonomi  
 *** Operasjonelle markeder:
-+ Godemarkedet
-+ Pengemarkedet
+    - [X] Godemarkedet (varer og tjenester)
+    - [X] Pengemarkedet
+    - [ ] Arbeidsmarkedet
+    - [ ] Kredittmarkedet
+    - [ ] Valutakursmarkedet
 ** AD-AS modellen for en lukket økonomi
-*** Mellomlang sikt
+*** Motivasjon: Modell som på mellomlang sikt forklarer de selvregulerende mekanismene i en lukket økonomi  
 *** Operasjonelle markeder:
-+ Godemarkedet
-+ Pengemarkedet
-+ Arbeidsmarkedet
+    - [X] Godemarkedet (varer og tjenester)
+    - [X] Pengemarkedet
+    - [X] Arbeidsmarkedet
+    - [ ] Kredittmarkedet
+    - [ ] Valutakursmarkedet
 ** IS-LM modellen for en åpen økonomi med flytende og fast valutakurs
-*** Kort sikt:
-*** Operasjonelle markeder:
-+ Godemarkedet
-+ Pengemarkedet
-+ Valutakursmarkedet
+*** Motivasjon: Modell som på kort sikt forklare hvordan faktisk produksjon avviker fra potensiell produksjon i en åpen økonomi under fast og flytende
 ** AD-AS modellen for en åpen økonomi med flytende og fast valutakurs
+<<<<<<< HEAD
 *** Mellomlang sikt
 *** Operasjonelle markeder:
 + Godemarkedet
@@ -72,24 +91,26 @@ EKS: Dialog
 + Valutakursmarkedet
 + Arbeidsmarkedet
 
+=======
+*** Motivasjon: Modell som på mellomlang sikt forklarer de selvregulerende mekanismene i en åpen økonomi under fast og flytende  
+*** Mellomlang sikt
+>>>>>>> 614b3f8971171a9b28f2025e0094ecae224a1b17
 * Del 2: Økonomisk vekst
 ** Oversikt
-
 *** Sentrale aktører
     - [X] Husholdninger
     - [X] Bedrifter
-    - [X] Finansinstitusjoner (kapitalmarked)
+    - [X] Finansinstitusjoner (investeringsbank) 
     - [ ] Sentralbanken
     - [ ] Offentlig myndigheter
 ** Solows vekstmodell
 
 * Del 3: Økonomiske kriser
 ** Oversikt 
-
 *** Sentrale aktører
-    - [X] Husholdninger (to typer)
+    - [X] Husholdninger
     - [X] Bedrifter
-    - [X] Finansinstitusjoner (forretningsbanker)
+    - [X] Finansinstitusjoner (forretningsbanker) 
     - [X] Sentralbanken
     - [X] Offentlig myndigheter
 ** Tema 1: Penger, kreditt og bankadferd
@@ -99,8 +120,7 @@ EKS: Dialog
 
 * Applikasjon: Krisen i Eurosonen
 ** Innledning
-
-* Repitsjon
+* Repetisjon
 
 
 
@@ -361,3 +381,12 @@ Likviditetsfellen
   
 
 
+<<<<<<< HEAD
+=======
+*** Operasjonelle markeder
+    - [X] Godemarkedet (varer og tjenester)
+    - [X] Pengemarkedet
+    - [X] Arbeidsmarkedet
+    - [X] Finansmarkedet
+    - [X] Valutakursmarkedet
+>>>>>>> 614b3f8971171a9b28f2025e0094ecae224a1b17

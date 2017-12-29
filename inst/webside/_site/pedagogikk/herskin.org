@@ -1,3 +1,4 @@
+#+STARTUP: content
 #+OPTIONS: html-postamble:nil
 #+OPTIONS: num:nil
 #+OPTIONS: toc:nil
@@ -14,23 +15,24 @@
 - [ ] Set av komponenter
 *** Grovindeling
 - [ ] Deltakerlogisk
-- [ ] Hvilken forståelsesverktøy
-- [ ] Hvilken faser
-- [ ] Hvilken undervisningsform innenfor hver enkelt fase
-** Detaljplanlegging
+- [ ] Hvilken forståelsesverktøy tilskrives de ulike poengene?
+- [ ] Hvilken faser?
+- [ ] Hvilken undervisningsform innenfor hver enkelt fase?
+*** Detaljplanlegging
 - [ ] Verktøy
 - [ ] Basisteknikker
 - [ ] Dokumentasjon
 *** Verktøy
-** Eksempel
-** Visualisering
-** Dialog
-** Metaforer
-** Undervisningsform
-*** IT-støttet
-*** Dialog
-*** Gruppearbeide
-*** Case-undervisning
+**** Eksempel
+**** Visualisering
+**** Dialog
+**** Metaforer
+*** Undervisningsform
+**** IT-støttet
+**** Dialog
+**** Gruppearbeide
+**** Case-undervisning
+*** Evaluering
 
 
 

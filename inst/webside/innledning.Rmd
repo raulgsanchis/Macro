@@ -101,7 +101,7 @@ Konsumerer og sparer
 #### Bedrifter (del I, del II og del III)
 Produserer og investerer
 
-#### Banker og fininstitusjoner (del III) 
+#### Finansinstitusjoner (investerings- og forretningsbanker) (del III) 
 
 <!--
 The argument that banks originate loans and thereby create money and additional demand was once a commonplace position. But in the 1950s, American Neoclassicals in particular began to push the view that banks are effectively just intermediaries between savers and investors; the view that banks were uniquely important in capitalism became a fringe view. I cover this history and the revival of the endogenous money approach by Basil Moore, Augusto Graziani and others
