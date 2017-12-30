@@ -12,7 +12,7 @@
 - Ledighet
 - Inflasjon
 
-### Sentral empiriske resultater
+### Sentrale empiriske resultater
 - Okuns lov
 - Phillips-kurven
 

@@ -11,8 +11,8 @@
 - [ ] Hva skal man gjøre?
 - [ ] Punkter fortrenge fordommer
 - [ ] Punkter tilstrekkelig forståelse
-- [ ] Set av verktøy
-- [ ] Set av komponenter
+- [ ] Mengden av verktøy
+- [ ] Mengden av komponenter
 *** Grovindeling
 - [ ] Deltakerlogisk
 - [ ] Hvilken forståelsesverktøy tilskrives de ulike poengene?

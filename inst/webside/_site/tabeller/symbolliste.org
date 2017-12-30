@@ -11,6 +11,13 @@
 |     | c                  | Den marginale konsumtilbøyeligheten   |
 |     | Y                  | Bruttonasjonalprodukt                 |
 |     |                    |                                       |
+|     |                    |                                       |
+|     |                    |                                       |
+|     |                    |                                       |
+|     | L                  | Etterspørsel etter penger (real)      |
+|     | M                  | Tilbud av penger (nominell)           |
+|     | P                  | Prisnivå                              |
+  
 
 
 

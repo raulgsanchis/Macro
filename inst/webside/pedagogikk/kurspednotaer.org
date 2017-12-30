@@ -1,9 +1,11 @@
-#+STARTUP: content
 #+OPTIONS: html-postamble:nil
 #+OPTIONS: num:nil
-#+OPTIONS: toc:2
+#+OPTIONS: toc:nil
 #+TITLE: Pednotater
-
+* Globale parametre
+1. Politisk
+1. Eksamen og MAGS   
+1. Tavla
 * Introduksjon
 ** Kursinfo
 ** Administrativt
@@ -20,7 +22,7 @@ VIS:
 1. Vekst: Kapitalisme vs. offentlig sektor !!
 1. Økonomiske kriser: Stabiliseringspolitikk (bail-out) EKS: Hjelpepakker
 
-*** Keynes/Krugman, Minsky og Hayesk forståelse av de tre grunnleggende spørsmålene og offentlige myndighetene rolle
+**** Keynes/Krugman, Minsky og Hayesk forståelse av de tre grunnleggende spørsmålene og offentlige myndighetene rolle
 1. Hørt om noen av disse?
 EKS: Dialog
 1. Hva forårsaker konjunktursvigninger
@@ -34,73 +36,105 @@ EKS: Dialog
 1. Aktører VIS
 1. Markedene VIS
 1. Størrelsen på økonomien VIS
-1. Av og på i del I, del II og del III VIS:Oversiktskart
- 
- 
+1. Av og på i del I, del II og del III VIS:Oversiktskart  
+
 * Del 1: Konjunktursvingninger
+** Nasjonalregnsaksbegreper og empiri lukket økonomi
+1. Hva er BNP?
+1. Hvordan bestemmes BNP?
+Kort sikt: Etterspørsel -> Produksjon pga stive priser 
+Mellomlang: Tilbud  
+Lang sikt:   
+1. Ledighet
+1. Inflasjon
+1. Okuns lov
+1. Phillips-kurven
 ** Oversikt 
-*** Sentrale aktører
-    - [X] Husholdninger
-    - [X] Bedrifter
-    - [ ] Finansinstitusjoner (investerings og forretningsbanker) 
-    - [X] Sentralbanken
-<<<<<<< HEAD
-    - [X] Offentlig myndigheter
-    - [ ] Finansinstitusjoner (forretningsbanker)
 ** Enkel Keynes-modell
-*** Operasjonelle markeder? 
-+ godemarkedet
-=======
-    - [X] Offentlig myndigheter  
+*** Oversikt
+**** Aktører
++ Husholdninger
++ Bedrifter
++ Sentralbanken
++ Offentlig myndigheter
++ Finansinstitusjoner (forretningsbanker)
+**** Markeder
++ Vare og 
+*** Modellering
+****
 
-** Enkel Keynes (IS)-modell
-*** Motivasjon: Grunnleggende mekanisme hvordan faktisk produksjon avviker fra potensiell produksjon
-    - [ ] Bilmetafor
-*** Operasjonelle markeder
-    - [X] Godemarkedet (varer og tjenester)
-    - [ ] Pengemarkedet
-    - [ ] Arbeidsmarkedet
-    - [ ] Kredittmarkedet
-    - [ ] Valutakursmarkedet
-
->>>>>>> 614b3f8971171a9b28f2025e0094ecae224a1b17
 ** IS-LM modellen for en lukket økonomi
-*** Motivasjon: Modell som på kort sikt forklare hvordan faktisk produksjon avviker fra potensiell produksjon i en lukket økonomi  
-*** Operasjonelle markeder:
-    - [X] Godemarkedet (varer og tjenester)
-    - [X] Pengemarkedet
-    - [ ] Arbeidsmarkedet
-    - [ ] Kredittmarkedet
-    - [ ] Valutakursmarkedet
-** AD-AS modellen for en lukket økonomi
-*** Motivasjon: Modell som på mellomlang sikt forklarer de selvregulerende mekanismene i en lukket økonomi  
-*** Operasjonelle markeder:
-    - [X] Godemarkedet (varer og tjenester)
-    - [X] Pengemarkedet
-    - [X] Arbeidsmarkedet
-    - [ ] Kredittmarkedet
-    - [ ] Valutakursmarkedet
-** IS-LM modellen for en åpen økonomi med flytende og fast valutakurs
-*** Motivasjon: Modell som på kort sikt forklare hvordan faktisk produksjon avviker fra potensiell produksjon i en åpen økonomi under fast og flytende
-** AD-AS modellen for en åpen økonomi med flytende og fast valutakurs
-<<<<<<< HEAD
-*** Mellomlang sikt
-*** Operasjonelle markeder:
-+ Godemarkedet
-+ Pengemarkedet
-+ Valutakursmarkedet
-+ Arbeidsmarkedet
+*** Oversikt
+**** Aktører
++ Husholdninger
++ Bedrifter
++ Sentralbanken
++ Offentlig myndigheter
++ Finansinstitusjoner (forretningsbanker)
+**** Markeder
++ Vare og 
 
-=======
-*** Motivasjon: Modell som på mellomlang sikt forklarer de selvregulerende mekanismene i en åpen økonomi under fast og flytende  
-*** Mellomlang sikt
->>>>>>> 614b3f8971171a9b28f2025e0094ecae224a1b17
+*** Modellering
+
+** AD-AS modellen for en lukket økonomi
+*** Oversikt
+**** Aktører
++ Husholdninger
++ Bedrifter
++ Sentralbanken
++ Offentlig myndigheter
++ Finansinstitusjoner (forretningsbanker)
+**** Markeder
++ Vare og 
+
+*** Nasjonalregnskapsbegreper
+*** Modellering
+** IS-LM modellen for en åpen økonomi med flytende og fast valutakurs
+*** Oversikt
+**** Aktører
++ Husholdninger
++ Bedrifter
++ Sentralbanken
++ Offentlig myndigheter
++ Finansinstitusjoner (forretningsbanker)
+**** Markeder
++ Vare og 
+
+*** Oversikt
+**** Aktører
++ Husholdninger
++ Bedrifter
++ Sentralbanken
++ Offentlig myndigheter
++ Finansinstitusjoner (forretningsbanker)
+**** Markeder
++ Vare og 
+
+*** Modellering
+
+** AD-AS modellen for en åpen økonomi med flytende og fast valutakurs
+*** Oversikt
+**** Aktører
++ Husholdninger
++ Bedrifter
++ Sentralbanken
++ Offentlig myndigheter
++ Finansinstitusjoner (forretningsbanker)
+**** Markeder
++ Vare og 
+
+*** Modellering
 * Del 2: Økonomisk vekst
 ** Oversikt
+1. Forstå Friedman sitat Met: Veien til helvete brolagt med gode intensjoner
+1. Mises-Hayek-Friedman: Markedsøkonomi 
+1. MET:Kake
+1. Konkretisert: Ekskluderende og inkluderende institusjoner
+1. Forutsetninger funger som bakteppe for Solows vekstmodell
 *** Sentrale aktører
     - [X] Husholdninger
     - [X] Bedrifter
-    - [X] Finansinstitusjoner (investeringsbank) 
+    - [X] Finansinstitusjoner (kapitalmarked)
     - [ ] Sentralbanken
     - [ ] Offentlig myndigheter
 ** Solows vekstmodell
@@ -108,18 +142,24 @@ EKS: Dialog
 * Del 3: Økonomiske kriser
 ** Oversikt 
 *** Sentrale aktører
-    - [X] Husholdninger
+    - [X] Husholdninger (to typer)
     - [X] Bedrifter
-    - [X] Finansinstitusjoner (forretningsbanker) 
+    - [X] Finansinstitusjoner (forretningsbanker)
     - [X] Sentralbanken
     - [X] Offentlig myndigheter
 ** Tema 1: Penger, kreditt og bankadferd
-*** 
+*** Penger og kreditt DIA: Hva er kreditt? -> Gjeld 
+**** Behovet for finansiering
+***** Egenskaper ved penger
+***** To typer penger
+***** Finansiering
 ** Tema 2: Statsgjeld
-** Tema 3: Likvidietsgjelden og privat gjeld
+** Tema 3: Likviditetsfellen og privat gjeld
 
 * Applikasjon: Krisen i Eurosonen
 ** Innledning
+
+
 * Repetisjon
 
 
@@ -381,12 +421,3 @@ Likviditetsfellen
   
 
 
-<<<<<<< HEAD
-=======
-*** Operasjonelle markeder
-    - [X] Godemarkedet (varer og tjenester)
-    - [X] Pengemarkedet
-    - [X] Arbeidsmarkedet
-    - [X] Finansmarkedet
-    - [X] Valutakursmarkedet
->>>>>>> 614b3f8971171a9b28f2025e0094ecae224a1b17
