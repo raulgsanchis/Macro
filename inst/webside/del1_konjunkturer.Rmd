@@ -82,7 +82,7 @@ Y=1/(1-c) [C ̅+cT+I ̅-b∙i+G]
 Hvor vi sørger for at ΔG=Δ ̅I □(⇒)  ΔY=0 
 
 Likevekt i pengemarkedet 
-	Ser foreløpig kun på utvendige penger M=M_0 (M_1): Sedler og mynt pluss bankenes innskuddskontoer i sentralbanken. Dette nivået blir bestemt av sentralbanken.
+Ser foreløpig kun på utvendige penger M=M_0 (M_1): Sedler og mynt pluss bankenes innskuddskontoer i sentralbanken. Dette nivået blir bestemt av sentralbanken.
 	Etterspørsel etter penger.
 M^D (Y┬((∓)),i┬((-)))  
 	Likevekt i pengemarkedet: 
