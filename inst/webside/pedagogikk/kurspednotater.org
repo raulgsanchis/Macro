@@ -6,6 +6,8 @@
 1. Politisk
 1. Eksamen og MAGS   
 1. Tavla
+1. Læreboka
+
 * Introduksjon
 ** Kursinfo
 ** Administrativt
@@ -37,6 +39,7 @@ EKS: Dialog
 1. Markedene VIS
 1. Størrelsen på økonomien VIS
 1. Av og på i del I, del II og del III VIS:Oversiktskart  
+
 
 * Del 1: Konjunktursvingninger
 ** Nasjonalregnsaksbegreper og empiri lukket økonomi
@@ -124,6 +127,7 @@ Lang sikt:
 + Vare og 
 
 *** Modellering
+
 * Del 2: Økonomisk vekst
 ** Oversikt
 1. Forstå Friedman sitat Met: Veien til helvete brolagt med gode intensjoner
@@ -138,6 +142,7 @@ Lang sikt:
     - [ ] Sentralbanken
     - [ ] Offentlig myndigheter
 ** Solows vekstmodell
+
 
 * Del 3: Økonomiske kriser
 ** Oversikt 
@@ -155,6 +160,7 @@ Lang sikt:
 ***** Finansiering
 ** Tema 2: Statsgjeld
 ** Tema 3: Likviditetsfellen og privat gjeld
+
 
 * Applikasjon: Krisen i Eurosonen
 ** Innledning

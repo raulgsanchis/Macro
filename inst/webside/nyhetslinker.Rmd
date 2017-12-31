@@ -1,15 +1,14 @@
 ## Artikler
 
-[Fed’s Williams: Time For Central Bankers to Weigh New Policy Toolkit](artikler/a.pdf)
-
-[The Market’s Big Puzzle_ What Is Happening to Growth and Inflation](artikler/The Market’s Big Puzzle_ What Is Happening to Growth and Inflation_ - WSJ.pdf)
-
+[U.S. Economy Notches Solid 3% Growth,
+Despite Hurricane](artikler/u-s-gdp-grew-3-in-third-quarter.pdf)
 
 ## Videoer
 <iframe width="200" height="200" src="https://www.youtube.com/embed/qtAeINU3FKM">
 </iframe>
 <iframe width="200" height="200" src="https://www.youtube.com/embed/SHsCkinrCPE">
 </iframe>
+<!--
 <iframe width="200" height="200" src="https://www.youtube.com/embed/15idnfuyqXs">
 </iframe>
 <iframe width="200" height="200" src="https://www.youtube.com/embed/DGmUtJkTaqc">
@@ -18,6 +17,7 @@
 </iframe>
 <iframe width="200" height="200" src="https://www.youtube.com/embed/Ta2m3D9Ig0g">
 </iframe>
+-->
 ## Debattsider
 
 [Project Syndicate](https://www.project-syndicate.org/)

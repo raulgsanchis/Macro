@@ -1,0 +1,13 @@
+<html>
+<body>
+
+<footer>
+  <p>Publisert av: Jørn I. Halvorsen</p>
+  <p>Kontakt informasjon: <a href="mailto:jorn.inge.halvorsen@hvl.no">jorn.inge.halvorsen@hvl.no</a>.</p>
+</footer>
+
+<!--<p><strong>Note:</strong> The footer tag is not supported in Internet Explorer 8 and earlier versions.</p>-->
+
+</body>
+</html>
+
