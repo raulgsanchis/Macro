@@ -3,62 +3,59 @@
 #+OPTIONS: toc:nil
 #+TITLE: 
 
-* ØKB1115 Makroøkonomi våren 2018
-
+* ØKB1115 Makroøkonomi våren 2018 (foreløpig)
 ** Undervisning
 
-| Uke | Dato | Del                   | Tema                                                       | Timer | Rom | Pensum                    | Ansvarlig |
-|-----+------+-----------------------+------------------------------------------------------------+-------+-----+---------------------------+-----------|
-|   1 |      | Introduksjon          | Oversikt over faget                                        |     3 |     |                           | JIH       |
-|   1 |      |                       | Noen grunnleggende basiskunnskaper                         |       |     | Gartner kap xx            | JIH       |
-|-----+------+-----------------------+------------------------------------------------------------+-------+-----+---------------------------+-----------|
-|   2 |      | Del I:                | IS-LM for en lukket økonomi                                |     3 |     | Gartner kap xx            | JIH       |
-|   3 |      | Konjunktursvingninger | IS-LM og AD-AS for en lukket økonomi                       |     3 |     | Gartner kap xx            | JIH       |
-|   4 |      |                       | AD-AS for en lukket økonomi                                |     3 |     | Gartner kap xx            | JIH       |
-|   5 |      |                       | IS-LM og AD-AS for en åpen økonomi med fast valutakurs     |     3 |     | Gartner kap xx            | JIH       |
-|   6 |      |                       | IS-LM og AD-AS for en åpen økonomi med flytende valutakurs |     3 |     | Gartner kap xx            |           |
-|-----+------+-----------------------+------------------------------------------------------------+-------+-----+---------------------------+-----------|
-|   7 |      | Del II:               | Stiliserte fakta om økonomisk vekst                        |       |     | Gartner kap xx            | JIH       |
-|   8 |      | Økonomisk vekst       | Solows vekstmodell                                         |     3 |     | Gartner kap xx            | JIH       |
-|-----+------+-----------------------+------------------------------------------------------------+-------+-----+---------------------------+-----------|
-|   9 |      | Del III:              | Penger (innvendige og utvendige)                           |       |     | [[http://adasextended.gleeze.com:8787/files/gitclones/teaching/MakroOEKB1115/inst/webside/texnotater/Penger.pdf][Notat om penger]]           | JIH       |
-|  10 |      | Økonomiske kriser     | Banker, systemrisiko og kapitalkrav                        |     3 |     | Notat om systemkrise      | JIH       |
-|  11 |      |                       | Statsgjeldskrise                                           |     3 |     | Gartner kap xx            | JIH       |
-|  12 |      |                       | Likviditetsfellen                                          |       |     | [[http://adasextended.gleeze.com:8787/files/gitclones/teaching/MakroOEKB1115/inst/webside/texnotater/Likviditetsfellen.pdf][Notat om likvidietsfellen]] | JIH       |
-|-----+------+-----------------------+------------------------------------------------------------+-------+-----+---------------------------+-----------|
-|  13 |      | Case:                 | Krisen i Eurosonen                                         |     3 |     | Halvorsen 2014            | JIH       |
-|-----+------+-----------------------+------------------------------------------------------------+-------+-----+---------------------------+-----------|
-|  14 |      | Repitisjon:           | Del I-III                                                  |     3 |     | Læringsmål                | JIH       |
-|     |      |                       |                                                            |       |     | Gartner 2015              |           |
-|-----+------+-----------------------+------------------------------------------------------------+-------+-----+---------------------------+-----------|
+| Uke | Dato | Del                   | Tema                                                                                  | Timer | Rom | Pensum                                      | Ansvarlig |
+|-----+------+-----------------------+---------------------------------------------------------------------------------------+-------+-----+---------------------------------------------+-----------|
+|     |      | Introduksjon          | Oversikt over faget                                                                   |     3 |     |                                             | JIH       |
+|   2 |      |                       | Grunnleggende basiskunnskaper                                                         |       |     | Forelesningsnotater + Gärtner kap 1         | JIH       |
+|-----+------+-----------------------+---------------------------------------------------------------------------------------+-------+-----+---------------------------------------------+-----------|
+|   3 |      | Del I:                | Enkel Keynes modell                                                                   |     3 |     | Forelesningsnotater + Gärtner kap 2 og 3    | JIH       |
+|   4 |      | Konjunktursvingninger | IS-LM for en lukket økonomi                                                           |       |     | Forelesningsnotater + Gärtner kap 3         | JIH       |
+|   5 |      |                       | Arbeidsmarkedet (AS-kurven)                                                           |     3 |     | Forelesningsnotater                         | JIH       |
+|   6 |      |                       | AD-AS for en lukket økonomi                                                           |     3 |     | Forelesningsnotater + Gärtner kap 7         | JIH       |
+|   7 |      |                       | Mundell-Fleming (IS-LM åpen økonomi) og AD-AS for en åpen økonomi med fast valutakurs |     3 |     | Forelesningsnotater + Gärtner kap 4, 5 og 7 | JIH       |
+|   8 |      |                       | Mundell-Fleming (IS-LM åpen økonomi) og AD-AS for en åpen økonomi med fast valutakurs |       |     | Forelesningsnotater + Gärtner kap 4, 6 og 7 | JIH       |
+|-----+------+-----------------------+---------------------------------------------------------------------------------------+-------+-----+---------------------------------------------+-----------|
+|   9 |      | Del II:               | Stiliserte fakta om økonomisk vekst                                                   |       |     | Forelesningsnotater + Gärtner kap 9         | JIH       |
+|  10 |      | Økonomisk vekst       | Solows vekstmodell                                                                    |     3 |     | Forelesningsnotater + Gärtner kap 9         | JIH       |
+|-----+------+-----------------------+---------------------------------------------------------------------------------------+-------+-----+---------------------------------------------+-----------|
+|  11 |      | Del III:              | Penger (innvendige og utvendige)                                                      |       |     | [[http://adasextended.gleeze.com:8787/files/gitclones/teaching/MakroOEKB1115/inst/webside/texnotater/Penger.pdf][Notat om penger]]                             | JIH       |
+|  12 |      | Økonomiske kriser     | Banker, systemrisiko og kapitalkrav                                                   |     3 |     | Notat om penger                             | JIH       |
+|  13 |      |                       | Statsgjeldskrise                                                                      |     3 |     | Forelesningsnotater + Gärtner kap 14        | JIH       |
+|  14 |      |                       | Likviditetsfellen                                                                     |       |     | [[http://adasextended.gleeze.com:8787/files/gitclones/teaching/MakroOEKB1115/inst/webside/texnotater/Likviditetsfellen.pdf][Notat om likvidietsfellen]]                   | JIH       |
+|-----+------+-----------------------+---------------------------------------------------------------------------------------+-------+-----+---------------------------------------------+-----------|
+|  15 |      | Applikasjon           | Krisen i Eurosonen                                                                    |     3 |     | Forelesningsnotater + Halvorsen 2014        | JIH       |
+|-----+------+-----------------------+---------------------------------------------------------------------------------------+-------+-----+---------------------------------------------+-----------|
+|  16 |      | Repitisjon            | Del I-III                                                                             |     3 |     | Læringsmål                                  | JIH       |
+|     |      |                       |                                                                                       |       |     |                                             |           |
+|-----+------+-----------------------+---------------------------------------------------------------------------------------+-------+-----+---------------------------------------------+-----------|
 
 ** Oppgaveseminar
-
 | Uke | Dato | Del                                | Oppgaver | Timer | Rom | Ansvarlig |
 |-----+------+------------------------------------+----------+-------+-----+-----------|
 |     |      | Del I: Konjunktursvingninger       |          |       |     |           |
-|   1 |      | Datatransformering                 |          |     2 |     |           |
-|   2 |      | IS-LM modellen                     |          |     2 |     |           |
-|   3 |      | Mundell-Flemming og AD-AS modellen |          |     2 |     |           |
+|   1 |      | Datatransformering                 |          |     2 |     | SMU       |
+|   2 |      | IS-LM modellen                     |          |     2 |     | SMU       |
+|   3 |      | Mundell-Flemming og AD-AS modellen |          |     2 |     | SMU       |
 |-----+------+------------------------------------+----------+-------+-----+-----------|
 |     |      | Del II:                            |          |     2 |     |           |
-|   4 |      | Økonomisk vekst                    |          |       |     |           |
+|   4 |      | Økonomisk vekst                    |          |       |     | SMU       |
 |-----+------+------------------------------------+----------+-------+-----+-----------|
 |     |      | Del III: Økonomiske kriser         |          |     2 |     |           |
-|   5 |      | Penger                             |          |     2 |     |           |
-|   6 |      | Statsgjeldskrise                   |          |       |     |           |
+|   5 |      | Penger                             |          |     2 |     | JIH       |
+|   6 |      | Statsgjeldskrise                   |          |       |     | SMU       |
 |-----+------+------------------------------------+----------+-------+-----+-----------|
-|     |      | Prøveeksamen                       |          |     3 |     |           |
+|     |      | Prøveeksamen                       |          |     3 |     | JIH       |
 |   7 |      |                                    |          |       |     |           |
 |-----+------+------------------------------------+----------+-------+-----+-----------|
-
 
 ** 
 
 *Kursansvarlig:*
-Jørn I. Halvorsen (jorn.inge.halvorsen@hvl.no)
+Førsteamanuensis, Jørn I. Halvorsen ([[https://www.hvl.no/person/?user=3601450][JIH]])
 
-*Seminaransvarlig:*
-??? (???@hvl.no)
-
-#https://www.hvl.no/person/?user=3601450
+*Kursassistent:*
+Susanna Murati (SMU) 
+170729@stud.hvl.no

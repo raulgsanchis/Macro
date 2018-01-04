@@ -22,13 +22,28 @@
 <img id='grede' src="bilder/depression.jpg" height="75px" width="300px" />
 <img id='grere' src="bilder/recession.jpg" height="75px" width="300px" />
 
+**Kursansvarlig:**
+Førsteamanuensis, Jørn I. Halvorsen [JIH](https://www.hvl.no/person/?user=3601450)
+
+**Kursassistent:**
+Susanna Murati (SMU) 
+170729@stud.hvl.no
+
+
 <!--
 <span style="color:red"> Status: Under utvikling </span>
 -->
 Siste gang oppdatert ``r base::Sys.time()`` 
 
 ```{r eval=FALSE, include=FALSE}
-gitinfo <- list(base::system('git log --oneline', intern=TRUE),base::system('git rev-list --count HEAD', intern=TRUE))
+gitinfo <- list(base::system('git log --oneline', intern=TRUE),base::system('git rev-list --count HEAD'
+*Kursansvarlig:*
+Førsteamanuensis, Jørn I. Halvorsen ([[https://www.hvl.no/person/?user=3601450][JIH]])
+
+*Kursassistent:*
+Susanna Murati (SMU) 
+170729@stud.hvl.no
+, intern=TRUE))
 #devtools::use_data(gitinfo, overwrite = TRUE)
 print(gitinfo)
 ```
@@ -41,4 +56,3 @@ rmarkdown::render("index.Rmd", rmarkdown::pdf_document())
 keyneslatex <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/webside/jupyter/keynestex.json'))
 keynesequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/webside/jupyter/keynesequ.json'))
 ```
-

@@ -4,9 +4,20 @@
 #+TITLE: 
 
 
+* Lukket økonomi
+| Modell                   | Godemarkedet | Pengemarkede | Arbeidsmarkedet | Valutamarkedet |
+| Enkel Keynes uten handel | V            |              |                 |                |
+| IS-LM                    | V            | V            |                 |                |
+| AD-AS                    | V            | V            | V               |                |
 
-| abc | def |
-|     |     |
+* Åpen økonomi
+| Modell                               | Godemarkedet | Pengemarkede | Arbeidsmarkedet | Valutamarkedet |
+| Enkel Keynes med handel              | V            |              |                 |                |
+| Mundell-Fleming (IS-LM åpen økonomi) | V            | V            |                 | V              |
+| AD-AS                                | V            | V            | V               | V              |
+
+
+
 
 
 
