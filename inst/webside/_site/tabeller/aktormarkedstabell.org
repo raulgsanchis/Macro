@@ -5,18 +5,18 @@
 
 
 * Lukket økonomi
-| Modell                   | Godemarkedet | Pengemarkede | Arbeidsmarkedet | Valutamarkedet |
-| Enkel Keynes uten handel | V            |              |                 |                |
-| IS-LM                    | V            | V            |                 |                |
-| AD-AS                    | V            | V            | V               |                |
+| Modell                   | Godemarkedet | Pengemarkedet | Arbeidsmarkedet | Valutamarkedet |
+| Enkel Keynes uten handel | V            |               |                 |                |
+| IS-LM                    | V            | V             |                 |                |
+| AD-AS                    | V            | V             | V               |                |
 
 * Åpen økonomi
-| Modell                               | Godemarkedet | Pengemarkede | Arbeidsmarkedet | Valutamarkedet |
-| Enkel Keynes med handel              | V            |              |                 |                |
-| Mundell-Fleming (IS-LM åpen økonomi) | V            | V            |                 | V              |
-| AD-AS                                | V            | V            | V               | V              |
+| Modell                                | Godemarkedet | Pengemarkedet | Arbeidsmarkedet | Valutamarkedet |
+| Enkel Keynes med internasjonal handel | V            |               |                 |                |
+| Mundell-Fleming (IS-LM åpen økonomi)  | V            | V             |                 | V              |
+| AD-AS                                 | V            | V             | V               | V              |
 
-
+# Likvekt i flere enn et marked
 
 
 

@@ -1,7 +1,7 @@
 ## Artikler
 
 [U.S. Economy Notches Solid 3% Growth,
-Despite Hurricane](artikler/u-s-gdp-grew-3-in-third-quarter.pdf)
+Despite Hurricane](artikler/del1_growthusa3.pdf)
 
 ## Videoer
 <iframe width="200" height="200" src="https://www.youtube.com/embed/qtAeINU3FKM">
