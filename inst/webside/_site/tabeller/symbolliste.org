@@ -8,7 +8,7 @@
 | Del | Matematiske symbol | Betydning                             |
 |-----+--------------------+---------------------------------------|
 | I   | G                  | Offentlig konsum og realinvestiringer |
-|     | c                  | Den marginale konsumtilbøyeligheten   |
+|     | C                  | Aggregert konsum                      |
 |     | Y                  | Bruttonasjonalprodukt                 |
 |     |                    |                                       |
 |     |                    |                                       |
@@ -16,8 +16,8 @@
 |     |                    |                                       |
 |     | L                  | Etterspørsel etter penger (real)      |
 |     | M                  | Tilbud av penger (nominell)           |
-|     | P                  | Prisnivå                              |
-  
+|-----+--------------------+---------------------------------------|
+| II  |                    |                                       |
 
 
 
