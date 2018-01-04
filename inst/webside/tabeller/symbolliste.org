@@ -3,25 +3,40 @@
 #+OPTIONS: toc:nil
 #+TITLE:
 
-* Symbolliste for ØKB1115
+* Symboldefinisjoner til bruk i ØKB1115
 
-| Del | Matematiske symbol | Betydning                             |
-|-----+--------------------+---------------------------------------|
-| I   | G                  | Offentlig konsum og realinvestiringer |
-|     | C                  | Aggregert konsum                      |
-|     | Y                  | Bruttonasjonalprodukt                 |
-|     |                    |                                       |
-|     |                    |                                       |
-|     |                    |                                       |
-|     |                    |                                       |
-|     | L                  | Etterspørsel etter penger (real)      |
-|     | M                  | Tilbud av penger (nominell)           |
-|-----+--------------------+---------------------------------------|
-| II  |                    |                                       |
-
-
-
-
+| Del | Variabel           | Betydning                                  |
+|-----+--------------------+--------------------------------------------|
+| I   |                    |                                            |
+|     | Z                  | Aggregert etterspørsel/utgifter            |
+|     | Y                  | Bruttonasjonalprodukt                      |
+|     | C                  | Aggregert konsum                           |
+|     | $\overline{C}$     | Innteksuavhengig konsum                    |
+|     | c                  | Den marginale konsumtilbøyeligheten        |
+|     | I                  | Private realinvesteringer                  |
+|     | $\overline{I}$     | Konstantledd                               |
+|     | b                  | Rentefølsomheten tilknyttet investeringene |
+|     | i                  | Det nominelle rentenivået                  |
+|     | G                  | Offentlig konsum og realinvestiringer      |
+|     | M                  | Tilbud av penger (nominelt)                |
+|     | P                  | Aggregerte prisnivået                      |
+|     | L                  | Etterspørsel etter penger (real)           |
+|     |                    |                                            |
+|     |                    |                                            |
+|-----+--------------------+--------------------------------------------|
+| II  |                    |                                            |
+|     |                    |                                            |
+|     |                    |                                            |
+|     |                    |                                            |
+|     |                    |                                            |
+|     |                    |                                            |
+|-----+--------------------+--------------------------------------------|
+| III |                    |                                            |
+|     |                    |                                            |
+|     |                    |                                            |
+|     |                    |                                            |
+|     |                    |                                            |
+|-----+--------------------+--------------------------------------------|
 
 
 

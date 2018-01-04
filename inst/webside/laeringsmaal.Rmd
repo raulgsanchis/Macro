@@ -43,20 +43,25 @@ output:
 
 #Del 1
 ##Grunnleggende bakgrunnskunnskap
-- Mål på aggregert produksjon: BNP (Bruttonasjonalprodukt) $Y$
+- Mål på aggregert produksjon: BNP ($Y$) (Bruttonasjonalprodukt) $Y$
     + Sluttgoder
     + Merverdi
     + Inntekt
 
-- Nominell BNP
+- Nominell BNP ($LY$)
+$LY = PY$
 
 - Reel BNP
+$Y = \frac{LY}{P}$
 
-- Ledighet og ledighetsrate
+- Ledighet ($U$) og ledighetsrate ($u$)
+$U \equiv L - N$, hvor $N$ er antall personer i arbeid
 
-- Inflasjon
+- Inflasjon ($\pi$)
+
 
 - Okuns lov
+Negativ korrelasjon mellom vekst i produksjonen (BNP) og endring i ledighetsraten. 
 
 - Phillips-kurven
 
