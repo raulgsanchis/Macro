@@ -11,12 +11,10 @@
 | AD-AS                    | V            | V             | V               |                |
 
 * Åpen økonomi
-| Modell                               | Godemarkedet | Pengemarkedet | Arbeidsmarkedet | Valutamarkedet |
-| Enkel Keynes med handel              | V            |              |                 |                |
-| Mundell-Fleming (IS-LM åpen økonomi) | V            | V            |                 | V              |
-| AD-AS                                | V            | V            | V               | V              |
-
-
+| Modell                                | Godemarkedet | Pengemarkedet | Arbeidsmarkedet | Valutamarkedet |
+| Enkel Keynes med internasjonal handel | V            |               |                 |                |
+| Mundell-Fleming (IS-LM åpen økonomi)  | V            | V             |                 | V              |
+| AD-AS                                 | V            | V             | V               | V              |
 
 # Likvekt i flere enn et marked
 
