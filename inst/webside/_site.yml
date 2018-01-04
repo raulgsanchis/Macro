@@ -9,10 +9,6 @@ navbar:
       href: forelesningsplan.html
     - text: Kursbeskrivelse
       href: kursbeskrivelse.html
-    - text: Læringsmål
-      href: laeringsmaal.html
-    - text: Symbolliste
-      href: symbolliste.html
   - text: Forelesninger
     menu:
     - text: Introduksjon
@@ -39,6 +35,10 @@ navbar:
     menu:
     - text: Forelesningsnotater
       href: htmrapport.html
+    - text: Læringsmål
+      href: laeringsmaal.html
+    - text: Symbolliste
+      href: symbolliste.html
   right:
   - text: ~
   - icon: ion-android-mail
