@@ -1,13 +1,54 @@
-
+---
 # ØKB1115 Makroøkonomi
 
 ## Gjelder for studieåret 2017/2018
 
-Innhold
+### Innhold
+    
+### Læringsutbytte
+#### Kunnskaper
+- Enkel Keynes-modell med og uten internasjonal handel  
+- IS-LM og Mundell-Fleming modellen  
+- AD-AS modell under lukket og åpen økonomi (fast og flytende valutakurs) 
+- Stabiliseringspolitikk
+- Solows vekstmodell.
+- Pengesystemet (innvendige og utvendige penger)
+- Formålet med bankreguleringer 
+- Statsgjeldskrise
+- Likviditetsfellen som en konsekvens av demografiske endringer og privat gjeldsreduksjon
+
+#### Ferdigheter
+- Være i stand til å lese avanserte avisartiker (eks. Wall Street Journal) om makroøkonomiske spørsmål 
+- Foreta begrensede utredninger av makroøkonomiske spørsmål, og konsekvenser av makroøkonomiske endringer for næringslivet, bedriftene og enkeltmennesker. 
+- Vurdere økonomiske utredninger, f.eks. stortingsmeldinger, NOU-utredninger m.m. 
+
+#### Generell kompetanse
+- Samfunnsengasjement.
+- Forstå egeninteressen til ulike økonomiske agenter.
+- Analytisk holdning med vekt på saklighet og objektivitet.
+
+### Arbeidsformer
+Forelesning og oppgaveløsning
+ 
+### Forkunnskaper
+Ingen
+
+### Anbefalte forkunnskaper
+Grunnleggende matematikk
+
+### Obligatoriske arbeidskrav
+Ja, spesifiseres i semesterplan ved semesterstart
+
+### Vurdering
+Skriftlig skoleeksamen, 4 timer, 100%.
+
+Karakterskala A-F, der F tilsvarer ikke bestått.
+
+### Hjelpemidler ved eksamen
+Skolens kalkulator
+<!--
 
 
-Innhold
-Sentrale temaer er
 
 Nasjonalregnskap og makroøkonomiske data
 Mundell-Fleming for en åpen økonomi
@@ -134,6 +175,8 @@ Kandidater fra emnet skal ha kunnskaper og innsyn i sentrale makroøkonomiske mo
 * Budsjettbetingelsen for offentlig sektor.
 * Formålet med bankreguleringer. 
 * Sammenheng mellom statlig og privat gjeldskrise.
+
+
 Med kunnskaper om disse modellene og temaene skal kandidatene kunne: 
 - foreta begrensede utredninger av makroøkonomiske spørsmål, og konsekvenser av makroøkonomiske endringer for næringslivet, bedriftene og enkeltmennesker. 
 - vurdere økonomiske utredninger, f.eks. stortingsmeldinger, NOU-utredninger m.m. 
@@ -163,3 +206,4 @@ Forelesningsnotater .
 
 ```
 
+-->
