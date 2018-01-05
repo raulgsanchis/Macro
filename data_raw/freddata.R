@@ -7,6 +7,7 @@ library(FredR)
 library(pipeR)
 library(ggplot2)
 library(dplyr)
+library(mFilter)
 
 api.key = 'd62b9d8d4ce53e56ea04049dc463ac51'  # substitute ... with your API key
 fred <- FredR(api.key)
@@ -23,86 +24,30 @@ usamone <- fred$series.observations(series_id = c('M1'))
 usaunem <- rbind(fred$series.observations(series_id = c('M0892AUSM156SNBR')), fred$series.observations(series_id = c('UNRATE')))
 
 # 2. Cleaning up data
-tusagdp  <- usagdp %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
+tusagdp  <- usagdp %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
 tusainf <- usainf %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
 tusamone <- usamone %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
 tusaunem <- usaunem %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
 
-# 3. Transforming data
-tusagdp$lngdp <- ts(log(tusagdp$value), start = c(1929,1), end = c(2016,1), freq = 1)
-tusagdp$hptrend <- hpfilter(tusagdp$lngdp)$trend
-plot(tusagdp$lngdp)
+# 3. Manipulation data
+tusagdp$gdp <- ts(tusagdp$value, start = c(1929,1), end = c(2016,1), freq = 1)
+tusagdp$lngdp <- log(tusagdp$gdp)
+tusagdp$hptrend <- hpfilter(tusagdp$lngdp, freq = 100)$trend
 
-qplot(data = tusagdp, y=lngdp, x = date) + geom_line(method= 'loess')
+# 4. Transforming data
+#melttusagdp <- reshape2::melt(select(tusagdp, -value, -gdp), id.vars = c("date"))
 
-
-# 3. Storing data
+# 5. Saving data in Rda-format
 devtools::use_data(tusagdp, overwrite = TRUE)
 devtools::use_data(tusaunem, overwrite = TRUE)
 devtools::use_data(tusainf, overwrite = TRUE)
 devtools::use_data(tusamone, overwrite = TRUE)
 
-# A. Testing data
-data(unemp)
-opar <- par(no.readonly=TRUE)
-unemp.hp <- hpfilter(unemp)
-str(unemp.hp)
-plot(str)
-
-tusagdp
+# A. Testing
+melttusagdp <- reshape2::melt(select(tusagdp, -value, -gdp), id.vars = c("date"))
+## qplot
+qplot(data = melttusagdp, date, value, color = variable, geom = 'point')
+## ggplot2
+ggplot(data = melttusagdp, aes(date, value, color= variable)) + geom_point()
 
 
-library(Quandl)
-library(reshape)
-gdp <- Quandl("FRED/GDPC1",order="asc") # Download data via Quandl
-names(gdp) <- c("Time","GDP") # Rename variables
-gdp[,"GDP"] <- log(gdp[,"GDP"]) # Take logs
-str(gdp)
-dat <- cbind(dat,data.frame("Hodrick.Prescott"=hp))
-time.detrend <- residuals(lm(GDP ~ Time, data=gdp)) # Regress GDP on Time and obtain residuals
-dat <- data.frame("Time"=gdp[,"Time"],"Linearly.Detrended"=time.detrend)
-
-hp <- hpfilter(gdp[,2],freq=1600)$cycle # Apply filter and obtain data of the cycle compontent
-dat <- cbind(dat,data.frame("Hodrick.Prescott"=hp))
-g <-reshape::melt(dat[,c(1,4,3)],id.vars="Time",na.rm=TRUE)
-levels(g[,2]) <- c("Hodrick Prescott","Linearly Detrended")
-plot.cycles(g,"Hodrick Prescott vs. Linearly Detrended")
-g <- reshape::melt(dat[,c(1,4,3)],id.vars="Time",na.rm=TRUE)
-
-
-# Plot
-dat <- cbind(dat,data.frame("Hodrick.Prescott"=hp))
-g <- melt(dat[,c(1,4,3)],id.vars="Time",na.rm=TRUE)
-levels(g[,2]) <- c("Hodrick Prescott","Linearly Detrended"
-
-hpbnp <- mFilter::hpfilter(ts(tusagdp$value, start = c(1929), frequency = 12), freq = 1600)$cycle
-
-tusagdp$hp <- hpbnp
-
-a <- gpmakro(tusaunem)
-
-
-gpmakro <- function(data=tusaunem, startp="1975-07-01", endp =" 2017-12-12", labt = list(x=NULL, y=NULL)){
-  datainp <- dplyr::filter(data, date > startp & date < endp)
-  ggplot(data = datainp, aes(date, value)) + geom_line() + theme_classic() +
-  geom_smooth(method = 'loess', color = 'red', size = 0.5, se = FALSE) +
-  labs(x = labt$x, y = labt$y)
-}
-
-
-
-
-dt <- tusaunem %>%
-  select(
-    date,
-    value
-  ) %>%
-  mutate(
-    date = as.Date(date),
-    value = as.numeric(value)) %>% arrange(date)
-
-qplot(data = dt, x = date, y = value, geom = 'line')
-
-library(ggplot2)
-a <- ggplot2::ggplot(data = dt, x = date, y = value) + geom_abline(aes(intercept=0, slope = 1, size = 10)) +
-  labs(title='abc', subtitle = 'def', caption ='123', x='x', y = 'y', AES = 'AES')
