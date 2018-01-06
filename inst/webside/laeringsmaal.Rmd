@@ -41,6 +41,8 @@ output:
     + Lukket (eller globalisert) økonomi
     + Åpen økonomi
 
+<!--
+
 #Del 1
 ##Grunnleggende bakgrunnskunnskap
 - Mål på aggregert produksjon: BNP ($Y$) (Bruttonasjonalprodukt) $Y$
@@ -243,7 +245,7 @@ AD-AS modellen for en åpen økonomi
 	AD-kurven er fallende ved at økt priser fører til lavere etterspørsel.
 	Sentral poeng med modellen – Selvkorrigerende mekanismer:
 Fleksibilitet i P og korrekte prisforventninger P^e på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.  
--->
+
 #Del 2
 <!--
 Del 2: Økonomisk vekst 
@@ -281,7 +283,6 @@ I den vanlige versjonen vil veksten i produksjonen (BNP) våre lik befolkningsve
 	Skiftanalyse (bør også kunne vises grafisk)
 Økt sparing vil gi en ny og høyere steady state.
 Befolkningsvekst (fødselsrater + nettoinnvandring)) vil gi en ny og lavere steady state.
--->
 ## Introduksjon
 ## Solow-modellen for økonomisk vekst
 #Del 3
@@ -371,6 +372,7 @@ Hvordan komme ut av en likviditetsfelle?
 
 #Krisen i Eurosonen 
 -->
+<!--
 
 
 
@@ -378,7 +380,6 @@ Hvordan komme ut av en likviditetsfelle?
 ## Tema 2: Statsgjeld
 ## Tema 3: Likviditetsfellen og privat gjeld
 
-<!--
 [![Alt text](https://img.youtube.com/vi/XZ7hE4lQAYs/0.jpg)](https://www.youtube.com/watch?v=XZ7hE4lQAYs)
 -->
 

@@ -8,5 +8,6 @@
 [Kursbeskrivelse](https://www.hvl.no/studier/studieprogram/emne/%C3%B8kb1115)
 ## Pensum
 <font color="white">Smith cited [@gartner2016macroeconomics]</font>
--->
 
+Siste gang oppdatert ``r base::Sys.time()`` 
+-->

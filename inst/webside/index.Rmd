@@ -9,7 +9,6 @@
 
 ```
 
-
 # Del I: Konjunktursvingninger
 <img id='grede' src="bilder/cycles.jpg" height="75px" width="300px" />
 <img id='grere' src="bilder/money.jpg" height="75px" width="300px" />
@@ -22,13 +21,9 @@
 <img id='grede' src="bilder/depression.jpg" height="75px" width="300px" />
 <img id='grere' src="bilder/recession.jpg" height="75px" width="300px" />
 
-**Kursansvarlig:**
-Førsteamanuensis, Jørn I. Halvorsen [JIH](https://www.hvl.no/person/?user=3601450)
+**Kursansvarlig:** Jørn I. Halvorsen (jiha@hvl)
 
-**Kursassistent:**
-Susanna Murati (SMU) 
-170729@stud.hvl.no
-
+**Kursassistent:** Susanna Murati (170729@stud.hvl.no)
 
 <!--
 <span style="color:red"> Status: Under utvikling </span>

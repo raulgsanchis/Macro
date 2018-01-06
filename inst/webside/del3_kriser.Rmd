@@ -10,6 +10,8 @@ output: html_notebook
 > Can 'It' - a Great Depression - happen again? And if 'It' can happen why didn't 'It' occur in the years since World War II? These are questions that naturally follow from both the historical record and the comparative success of the past thirty-five years. To answer these questions it is necessary to have an economic theory which makes great depressions one of the possible states in which our type of capitalist economy can find itself.
 - Minsky  (1982)
 
+<!--
+
 ## Tema 1: Penger, kreditt og bankadferd
 ### Innvendige og utvendige penger
 <iframe width="200" height="200" src="https://www.youtube.com/embed/O7pnjzCuSv8">
@@ -83,6 +85,7 @@ Mulig tiltak for å forhindre en statsgjeldskrise
 " target="_blank"><img src="http://img.youtube.com/vi/2ZgQ-7uNmSU/0.jpg" 
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 -->
+<!--
 Hva er likviditetsfellen?
 	Sitasjon hvor pengepolitikken ikke lengre kan påvirke realøkonomien på en ekspansiv måte: Kortsiktig nominell rente er (nær) lik null.
 	Beskrevet først av Keynes i “General Theory” på 1930-tallet. Men blitt aktualisert etter den globale finanskrisen
@@ -111,3 +114,5 @@ Hvordan komme ut av en likviditetsfelle?
 	Vil stabilisere prisene
 	Rentekostnader ved å gjøre dette vil være (tilnærmet) lik null. 
 	For en åpen økonomi er ikke situasjonen like enkel.  Dette vil bli forklart nærmere under forelesningen om krisen i eurosonen. 
+
+-->

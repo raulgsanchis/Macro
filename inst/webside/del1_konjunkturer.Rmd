@@ -5,6 +5,8 @@
 > Long run is a misleading guide to current affairs. In the long run we are all dead.
 - Keynes
 
+<!--
+
 ## Grunnleggende bakgrunnkunnskap 
 
 ### Sentrale begreper
@@ -18,7 +20,7 @@
 
 ### Hva bestemmer aggregert BNP?
 <!-- likvekt -->
-
+<!--
 #### Kort sikt:
 
 #### Mellomlang sikt:

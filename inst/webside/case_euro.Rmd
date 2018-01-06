@@ -5,4 +5,7 @@ output: html_notebook
 -->
 # Case-studie: Krisen i Eurosonen: 
 
-[Krisen_i_eurosonen_JIH_2014.pdf](artikler/Krisen_i_eurosonen_JIH_2014.pdf)
+<img id='grere' src="bilder/eurozone.jpg" height="75px" width="300px" />
+
+
+[Halvorsen (2014)](artikler/Krisen_i_eurosonen_JIH_2014.pdf)

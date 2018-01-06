@@ -6,13 +6,19 @@ output: html_notebook
 -->
 
 # Del I: Konjunktursvingninger
+# Del II: Økonomisk vekst
+# Del III: Økonomiske kriser
+# Prøveeksamen
+
+<!--
+
 ## Innledning
 - Installer applikasjonen [Fred](http://research.stlouisfed.org/fred2/) i ditt Excel regneark. Trykk på lenken [Hjelp](http://www.youtube.com/watch?v=OAH-wGtP_k8) for en kort demonstrasjon på hvordan du benytter denne applikasjonen.
 
 ## AD-AS lukket økonomi
 ## AD-AS modellen åpen økonomi
 
-# Del II: Økonomisk vekst
+Del II: Økonomisk vekst
 ## abc
 
 

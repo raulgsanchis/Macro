@@ -5,10 +5,12 @@ navbar:
   left:
   - text: Kursinformasjon
     menu:
-    - text: Forelesningsplan
-      href: forelesningsplan.html
     - text: Kursbeskrivelse
       href: kursbeskrivelse.html
+    - text: Forelesningsplan
+      href: forelesningsplan.html
+    - text: Læringsmål
+      href: laeringsmaal.html
   - text: Forelesninger
     menu:
     - text: Introduksjon
@@ -35,8 +37,6 @@ navbar:
     menu:
     - text: Forelesningsnotater
       href: htmrapport.html
-    - text: Læringsmål
-      href: laeringsmaal.html
     - text: Variabeldefinisjoner
       href: symbolliste.html
   right:
