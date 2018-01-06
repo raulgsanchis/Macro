@@ -8,6 +8,7 @@ library(pipeR)
 library(ggplot2)
 library(dplyr)
 library(mFilter)
+library(MASS)
 
 api.key = 'd62b9d8d4ce53e56ea04049dc463ac51'  # substitute ... with your API key
 fred <- FredR(api.key)
@@ -33,7 +34,7 @@ tusamone <- usamone %>% dplyr::mutate(date = as.Date(date), value = as.numeric(v
 tusagdp <- tusagdp %>% dplyr::mutate(gdp = ts(value, start = c(1929,1), end = c(2016,1), freq = 1)) %>%
   dplyr::mutate(lngdp = log(gdp)) %>%
   dplyr::mutate(hpcycle = hpfilter(lngdp, freq = 100)$cycle) %>%
-  dplyr::mutate(hptrend = hpfilter(lngdp, freq = 100)$trend) %>%
+  dplyr::mutate(hptrend = hpfilter(lngdp, freq = 100)$trend)
 
 tusaunem <- tusaunem %>% dplyr::mutate(unem = ts (value)) %>%
   dplyr::mutate(hptrend = hpfilter(unem, freq = 14400)$cycle) %>%
@@ -46,6 +47,28 @@ devtools::use_data(tusainf, overwrite = TRUE)
 devtools::use_data(tusamone, overwrite = TRUE)
 
 # A. Testing
-names(iris)
-qplot(data = mpg, cty, hwy, geom = 'point')
+# names(mpg)
+# qplot(data = mpg, cty, hwy, geom = 'point')
+
+melttusagdp <- reshape2::melt(tusagdp, id.vars = c("date"))
+
+## Time-series
+qplot(data = tusagdp, date, lngdp, geom = c('point', 'smooth'), method = 'lm')
+## Melted
+qplot(data = melttusagdp, date, value, geom = 'point', color =  variable)
+
+## Time-series
+ggplot(data = tusagdp, aes(x = date, y = lngdp)) + geom_point() + geom_smooth( method = rlm, color = 'red',
+                                                                               size = 0.5, se = FALSE)
+##
+ggplot(data = melttusagdp, aes(x = date, y =  value)) + geom_point(aes(color = variable))
+
+
+
+
+## Facets
+t <- ggplot(mpg, aes(cty, hwy)) + geom_point()
+a <- t + facet_grid(. ~ fl)
+b <- t + facet_grid( ~ fl)
+
 
