@@ -12,22 +12,30 @@ library(ggplot2)
 library(gridExtra)
 library(grid)
 
-unemdata <- MakroOEKB1115::melttusagdp
-gpddata <- MakroOEKB1115::tusagdp
-#MakroOEKB1115:: %>% dplyr::mutate(value=log(value))
+moltmacrousa <- MakroOEKB1115::moltmacrousa
+
+gpmakro <- function(data=moltmacrousa, variables = c('lngdp', 'hptrend'), katv = c('gdp'), startp="929-04-01", endp =" 2017-12-12", labt = list(x=NULL, y=NULL)){
+  datainp <- dplyr::filter(data, variable %in% variables, kat %in% katv, date >= startp & date <= endp)
+  ggplot(data = datainp, aes(date, value)) + geom_line() + theme_classic() +
+  geom_smooth(method = 'loess', color = 'red', size = 0.5, se = FALSE) +
+  labs(x = labt$x, y = labt$y)
+}
+
+hpu <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendu'), katv = c('unem')
+, startp = "1929-04-01", endp =" 2017-12-12", labt = list(y='Ledighetsrate', x = 'År'))
+gdu <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendu'), katv = c('unem')
+, startp = "1929-04-01", endp =" 1941-01-01", labt = list(y='Ledighetsrate', x = 'År'))
+gru <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendu'), katv = c('unem')
+, startp = "2007-01-01", endp =" 2017-12-12", labt = list(y='Ledighetsrate', x = 'År'))
+mpu <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendu'), katv = c('unem')
+,startp = "1945-01-01", endp =" 2007-01-01", labt = list(y='Ledighetsrate', x = 'År'))
 
 
-hpu <- gpmakro(unemdata, startp = "1929-04-01", endp =" 2017-12-12", labt = list(y='Ledighetsrate', x = 'År'))
-gdu <- gpmakro(unemdata, startp = "1929-04-01", endp =" 1941-01-01", labt = list(y='Ledighetsrate', x = 'År'))
-gru <- gpmakro(unemdata, startp = "2007-01-01", endp =" 2017-12-12", labt = list(y='Ledighetsrate', x = 'År'))
-mpu <- gpmakro(unemdata, startp = "1945-01-01", endp =" 2007-01-01", labt = list(y='Ledighetsrate', x = 'År'))
 
-
-hpg <- gpmakro(gpddata, startp = "1929-04-01", endp =" 2017-12-12", labt = list(y='log BNP (realpriser)', x = 'År'))
-gdg <- gpmakro(gpddata, startp = "1929-04-01", endp =" 1941-01-01", labt = list(y='log BNP (realpriser)', x = 'År'))
-grg <- gpmakro(gpddata, startp = "2007-01-01", endp =" 2017-12-12", labt = list(y='log BNP (realpriser)', x = 'År'))
-mpg <- gpmakro(gpddata, startp = "1945-01-01", endp =" 2007-01-01", labt = list(y='log BNP (realpriser)', x = 'År'))
-
+hpg <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendg'), katv = c('gdp'), startp = "1929-04-01", endp =" 2017-12-12", labt = list(y='BNP realpriser (log)', x = 'År'))
+gdg <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendg'), katv = c('gdp'), startp = "1929-04-01", endp =" 1941-01-01", labt = list(y='BNP realpriser (log)', x = 'År'))
+grg <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendg'), katv = c('gdp'), startp = "2007-01-01", endp =" 2017-12-12", labt = list(y='BNP realpriser (log)', x = 'År'))
+mpg <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendg'), katv = c('gdp'), startp = "1945-01-01", endp =" 2017-12-12", labt = list(y='BNP realpriser (log)', x = 'År'))
 ```
 
 ### USA fra 1929-2017
@@ -40,7 +48,6 @@ grid.arrange(hpu, hpg, ncol = 2, top = 'USA' )
 
 ```{r echo=FALSE}
 grid.arrange(mpu, mpg, ncol = 2, top = 'USA' )
-
 ```
 
 

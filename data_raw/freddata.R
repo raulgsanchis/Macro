@@ -30,17 +30,17 @@ tusaunem <- usaunem %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(d
 tusainf <- usainf %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
 tusamone <- usamone %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
 
-# 3. Manipulating the data
+# 3. Manipulating og transformerer dataene
 molttusagdp <- tusagdp %>% dplyr::mutate(gdp = ts(value, start = c(1929,1), end = c(2016,1), freq = 1)) %>%
   dplyr::mutate(lngdp = log(gdp)) %>%
-  dplyr::mutate(hpcycle = hpfilter(lngdp, freq = 100)$cycle) %>%
-  dplyr::mutate(hptrend = hpfilter(lngdp, freq = 100)$trend) %>%
+  dplyr::mutate(hpcycleg = hpfilter(lngdp, freq = 100)$cycle) %>%
+  dplyr::mutate(hptrendg = hpfilter(lngdp, freq = 100)$trend) %>%
   reshape2::melt(id.vars = c("date")) %>%
   dplyr::mutate(kat=c('gdp'))
 
 molttusaunem <- tusaunem %>% dplyr::mutate(unem = ts (value)) %>%
-  dplyr::mutate(hptrend = hpfilter(unem, freq = 14400)$cycle) %>%
-  dplyr::mutate(hptrend = hpfilter(unem, freq = 14400)$trend) %>%
+  dplyr::mutate(hpcycleu = hpfilter(unem, freq = 14400)$cycle) %>%
+  dplyr::mutate(hptrendu = hpfilter(unem, freq = 14400)$trend) %>%
   reshape2::melt(id.vars = c("date")) %>%
   dplyr::mutate(kat = 'unem')
 
@@ -53,49 +53,6 @@ molttusamone <- tusamone %>% reshape2::melt(id.vars = c("date")) %>%
 ## Samler alle dataene for USA
 moltmacrousa <- rbind(molttusaunem, molttusagdp, molttusainf, molttusamone)
 
-
-# 5. Saving data in Rda-format
+# 4. Saving data in Rda-format
 devtools::use_data(moltmacrousa, overwrite = TRUE)
-
-devtools::use_data(molttusagdp, overwrite = TRUE)
-devtools::use_data(tusaunem, overwrite = TRUE)
-devtools::use_data(tusainf, overwrite = TRUE)
-devtools::use_data(tusamone, overwrite = TRUE)
-
-# A. Testing
-# names(mpg)
-# qplot(data = mpg, cty, hwy, geom = 'point')
-
-melttusagdp <-
-
-
-
-
-## Time-series
-qplot(data = tusagdp, date, lngdp, geom = c('point', 'smooth'), method = 'lm')
-## Melted
-qplot(data = melttusagdp, date, value, geom = 'point', color =  variable)
-
-## Time-series
-ggplot(data = tusagdp, aes(x = date, y = lngdp)) + geom_point() + geom_smooth( method = rlm, color = 'red',
-                                                                               size = 0.5, se = FALSE)
-##
-ggplot(data = melttusagdp, aes(x = date, y =  value)) + geom_point(aes(color = variable))
-
-
-View(melttusagdp)
-
-
-
-## Facets
-data("economics")
-emp <- reshape2::melt(economics, id = 'date', measure = c('unemploy', 'uempmed'))
-
-
-qplot(date, value, data = emp, geom = 'line') + facet_grid(variable ~ ., scales = 'free_y')
-
-t <- ggplot(mpg, aes(cty, hwy)) + geom_point()
-a <- t + facet_grid(. ~ fl)
-b <- t + facet_grid( ~ fl)
-
 
