@@ -3,7 +3,7 @@
 #+OPTIONS: toc:nil
 #+TITLE:
 
-* Variabeldefinisjoner til bruk i ØKB1115
+* Variabeldefinisjoner benyttet i ØKB1115
 
 | Variabel       | Betydning                                                                            |
 |----------------+--------------------------------------------------------------------------------------|
@@ -19,7 +19,7 @@
 | $\overline{C}$ | Innteksuavhengig konsum                                                              |
 | c              | Den marginale konsumtilbøyeligheten                                                  |
 | I              | Private realinvesteringer                                                            |
-| $\overline{I}$ | Konstantledd                                                                         |
+| $\overline{I}$ | Konstantledd tilhørende private realinvesteringer                                    |
 | b              | Rentefølsomheten tilknyttet investeringer                                            |
 | i              | Det nominelle rentenivået                                                            |
 | G              | Offentlig konsum og realinvestiringer                                                |
@@ -39,7 +39,7 @@
 | $\delta$       | Depresieringsrate på kapital                                                         |
 | a              | Teknologisk vekst                                                                    |
 | n              | Befolkningsvekst                                                                     |
-| B              | Nominelt nivå på statsoblisjoner eid av private aktører                              |
-| $B^{t}$        | Nominelt nivå på statsoblisjoner utstedt av finansmyndighetene                       |
+| B              | Nominelt nivå på statsobligasjoner eid av private aktører                            |
+| $B^{t}$        | Nominelt nivå på statsobligasjoner utstedt av finansmyndighetene                     |
 | $B^{m}$        | Nominelt nivå på statsobligasjoner på sentralbankens regnskapsbalanse                |
 |----------------+--------------------------------------------------------------------------------------|

@@ -38,12 +38,12 @@
 | Uke | Dato | Tema                                                | Oppgaver | Ansvarlig |
 |-----+------+-----------------------------------------------------+----------+-----------|
 |     |      | Del I: Konjunktursvingninger                        |          |           |
-|   1 | 22.1 | Datatransformering og grunnleggende basiskunnskaper |          | SMU       |
-|   2 |  5.2 | IS-LM modellen                                      |          | SMU       |
-|   3 | 19.2 | Mundell-Flemming og AD-AS modellen                  |          | SMU       |
+|   4 | 22.1 | Datatransformering                                  |          | SMU       |
+|   5 |  5.2 | IS-LM modellen                                      |          | SMU       |
+|   6 | 19.2 | Mundell-Flemming og AD-AS modellen                  |          | SMU       |
 |-----+------+-----------------------------------------------------+----------+-----------|
 |     |      | Del II: Økonomisk vekst                             |          |           |
-|   4 |  5.3 | Solow-modellen                                      |          | SMU       |
+|   7 |  5.3 | Solow-modellen                                      |          | SMU       |
 |-----+------+-----------------------------------------------------+----------+-----------|
 |     |      | Del III: Økonomiske kriser                          |          |           |
 |   5 | 19.3 | Penger, banker og kapitalkrav                       |          | SMU/JIH   |

@@ -6,66 +6,29 @@ output: html_notebook
 -->
 
 # Del I: Konjunktursvingninger
-# Del II: Økonomisk vekst
-# Del III: Økonomiske kriser
-# Prøveeksamen
-
-<!--
-
-## Innledning
-- Installer applikasjonen [Fred](http://research.stlouisfed.org/fred2/) i ditt Excel regneark. Trykk på lenken [Hjelp](http://www.youtube.com/watch?v=OAH-wGtP_k8) for en kort demonstrasjon på hvordan du benytter denne applikasjonen.
-
-## AD-AS lukket økonomi
-## AD-AS modellen åpen økonomi
-
-Del II: Økonomisk vekst
-## abc
-
-
-# Del III: Økonomiske kriser
-## Penger
-## Statsgjeldskrise og likvidetsfellen
-
-
-# Prøveeksamen
-
-
-
-<!--
-# bitcoin pay for itself
--->
-
-<!--
-
-
-
-
-Gjør følgende oppgaver for USA, Japan, Norge og (dersom du har tid) minst ett europeisk land.
-Installer applikasjonen FRED i ditt Excel regneark 
-http://research.stlouisfed.org/fred2/
-Hjelp til hvordan bruke programmet finnes her:
-	Finn tidsserien til bruttonasjonalproduktet i reelle størrelser.
-	Finn tidsserien antall innbyggere 
-	Konstruer tidsserien bruttonasjonalprodukt per innbygger.
-	Transformer serien ved å ta logaritmen.
-	Vis serien grafisk.
-	Gir serien noen tegn på dype økonomiske kriser?  Hvis ja, se om du kan finne (søk på internett) noen kortfattede forklaringer bak disse krisene.
-	Finn et mål på inflasjon.
-	Finn et mål på ledighet.
-	Lag et scatterplot for ledighet og inflasjon (Phillips-kurven).
-	Lag et scatterplot for vekst og endring i inflasjon (Okuns lov).
-
-Oppgaver gitt til 2. forelesning 
-Kapittel 2, Blanchard, Amighini og Giavazzi
-	Question 3.
-	Question 4.
-Oppgaver gitt til 3. forelesning 
+## 1. 
+- Installer applikasjonen FRED i ditt Excel regneark
+<iframe width="200" height="200" src="https://research.stlouisfed.org/fred-addin/">
+</iframe>
+- Gjør følgende oppgave for Norge, Tyskland og Hellas:
+1.	Finn tidsserien til bruttonasjonalproduktet i reelle størrelser.
+1.	Finn tidsserien antall innbyggere
+1.	Konstruer tidsserien bruttonasjonalprodukt per innbygger.
+1.	Transformer serien ved å ta logaritmen.
+1.	Vis serien grafisk.
+1.	Gir serien noen tegn på dype økonomiske kriser?  Hvis ja, se om du kan finne (søk på internett) noen ortfattede forklaringer bak disse krisene.
+1.	Finn et mål på inflasjon.
+1.	Finn et mål på ledighet.
+1.	Lag et scatterplot for ledighet og inflasjon (Phillips-kurven).
+1.	Lag et scatterplot for vekst og endring i inflasjon (Okuns lov).
+## 2. 
+### I:
 Ta utgangspunkt i følgende makroøkonomisk modell:
-Z=C+I+G
+$Z=C+I+G$
 Hvor Z er aggregert etterspørsel. C er konsum. I er private realinvesteringer og G er offentlig kjøp av varer og tjenester.
 I tillegg postulerer vi følgende adferdssammenhenger:
-C=c_0+c_1 (Y-T)-c_2 i
-I=I-b_1 i
+$C=c_0+c_1 (Y-T)-c_2 i$
+$I=I-b_1 i$
 Hvor T er nettoskatter, i det nominelle rentenivået, og små bokstaver betegner positive parametere.
 Likvektsbetingelsen for varmarkedet er gitt ved 
 Y=Z	
@@ -76,11 +39,8 @@ Hvor Y betegner produksjonen.
 	Hva skjer når i øker (vis formelt, verbalt og grafisk)?
 	Anta at sentralbanken innfører en renteregel som tilsier at i=m_0 Y
 	Sammenlikn multiplikatoren i modellen før og etter innføringen av en slik regel. Hvilken er høyest?
-	Gi en verbal på forklaring på hvordan innførselen av en regel virker inn ved en positiv økning i investeringen I.   
-Hva menes med the paradox of thrift?
-
-Oppgaver gitt til 4. forelesning 
-	Ta utgangspunkt i samme modell som i forrige oppgavesett. Anta i tillegg nå at pengemarkedet er operativt. Pengetilbudet er derfor gitt ved M^s=M/P og penge etterspørselen M^d=M(LY,i).  Vis likevekten i pengemarkedet under forutsetning om at sentralbanken (a) setter rentenivået, (b) bestemmer pengetilbudet. 
+	Gi en verbal på forklaring på hvordan innførselen av en regel virker inn ved en positiv økning i investeringen ### II: 
+Ta utgangspunkt i samme modell som i forrige oppgavesett. Anta i tillegg nå at pengemarkedet er operativt. Pengetilbudet er derfor gitt ved M^s=M/P og penge etterspørselen M^d=M(LY,i).  Vis likevekten i pengemarkedet under forutsetning om at sentralbanken (a) setter rentenivået, (b) bestemmer pengetilbudet. 
 	Bestem Y grafisk under (a) og (b) under forutsetning om at både vare- og pengemarkedet er i likevekt (IS-LM modellen).
 	Under (a), hva skjer dersom konsumet øker? Vis grafisk og verbalt.
 	Under (b), ha skjer dersom prisnivået P øker? Vis grafisk og verbalt.
@@ -103,8 +63,8 @@ Anta at parameterne a_1,a_2,s_1  og s_2 er positive Bestem og forklar hvilke for
 	Hvilke virkemidler har myndighetene for å stabilisere konjunkturene under henholdsvis et fast og flytende kurs regime?
 	Hva menes med intern og ekstern balanse?
 
-Oppgaver gitt til 6. forelesning 
-	Basert på de forutsetningene som har blitt gjort i oppgaver gitt til 5. forelesning, finn  ∆NX/∆P og avgjør fortegnet.  
+## 3. 
+Basert på de forutsetningene som har blitt gjort i oppgaver gitt til 5. forelesning, finn  ∆NX/∆P og avgjør fortegnet.  
 	Finn deretter  ∆Y/∆P og tegn AD-kurven inn i to diagrammer, et for fast og et for flytende kurs.
 	Tegn til slutt AS-kurven inn i de to diagrammene. 
 	Anta at vi får en sterk økning i C ̅. 
@@ -112,7 +72,8 @@ Oppgaver gitt til 6. forelesning
 	Hva skjer med utenriksregnskapet?
 	Hvorfor vil det under en slik endring være enklere å føre en stabiliseringspolitikk i et flytende vs. et fast kurs regime?
 
-Oppgaver gitt til 7. forelesning
+# Del II: Økonomisk vekst
+## I:
 	y=f()  Y/N=F(K,N)
 	Tre komponenter:
 	Redusert sparerate
@@ -123,6 +84,5 @@ Oppgaver gitt til 7. forelesning
 	Blanchard oppgaver
 	Vekst i norge
 	Produktivitetsveksten
-
-
--->
+# Del III: Økonomiske kriser
+# Prøveeksamen
