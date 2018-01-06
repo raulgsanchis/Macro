@@ -25,17 +25,19 @@ usaunem <- rbind(fred$series.observations(series_id = c('M0892AUSM156SNBR')), fr
 
 # 2. Cleaning up data
 tusagdp  <- usagdp %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
+tusaunem <- usaunem %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
 tusainf <- usainf %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
 tusamone <- usamone %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
-tusaunem <- usaunem %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
 
-# 3. Manipulation data
-tusagdp$gdp <- ts(tusagdp$value, start = c(1929,1), end = c(2016,1), freq = 1)
-tusagdp$lngdp <- log(tusagdp$gdp)
-tusagdp$hptrend <- hpfilter(tusagdp$lngdp, freq = 100)$trend
+# 3. Manipulating the data
+tusagdp <- tusagdp %>% dplyr::mutate(gdp = ts(value, start = c(1929,1), end = c(2016,1), freq = 1)) %>%
+  dplyr::mutate(lngdp = log(gdp)) %>%
+  dplyr::mutate(hpcycle = hpfilter(lngdp, freq = 100)$cycle) %>%
+  dplyr::mutate(hptrend = hpfilter(lngdp, freq = 100)$trend) %>%
 
-# 4. Transforming data
-#melttusagdp <- reshape2::melt(select(tusagdp, -value, -gdp), id.vars = c("date"))
+tusaunem <- tusaunem %>% dplyr::mutate(unem = ts (value)) %>%
+  dplyr::mutate(hptrend = hpfilter(unem, freq = 14400)$cycle) %>%
+  dplyr::mutate(hptrend = hpfilter(unem, freq = 14400)$trend)
 
 # 5. Saving data in Rda-format
 devtools::use_data(tusagdp, overwrite = TRUE)
@@ -44,10 +46,6 @@ devtools::use_data(tusainf, overwrite = TRUE)
 devtools::use_data(tusamone, overwrite = TRUE)
 
 # A. Testing
-melttusagdp <- reshape2::melt(select(tusagdp, -value, -gdp), id.vars = c("date"))
-## qplot
-qplot(data = melttusagdp, date, value, color = variable, geom = 'point')
-## ggplot2
-ggplot(data = melttusagdp, aes(date, value, color= variable)) + geom_point()
-
+names(iris)
+qplot(data = mpg, cty, hwy, geom = 'point')
 

@@ -12,8 +12,9 @@ library(ggplot2)
 library(gridExtra)
 library(grid)
 
-unemdata <- MakroOEKB1115::tusaunem
-gpddata <- MakroOEKB1115::tusagdp %>% dplyr::mutate(value=log(value))
+unemdata <- MakroOEKB1115::melttusagdp
+gpddata <- MakroOEKB1115::tusagdp
+#MakroOEKB1115:: %>% dplyr::mutate(value=log(value))
 
 
 hpu <- gpmakro(unemdata, startp = "1929-04-01", endp =" 2017-12-12", labt = list(y='Ledighetsrate', x = 'År'))
@@ -88,7 +89,7 @@ Hva forårsaker
 ## Abstraksjon 
 [Ockhams barberkniv](https://no.wikipedia.org/wiki/Ockhams_barberkniv)
 
-> Entia non sunt multiplicanda praeter necessitatem (**More things should not be used than are necessary**).
+> More things should not be used than are necessary (*Entia non sunt multiplicanda praeter necessitatem*).
 
 Prinsippet slår fast at man skal ikke anta flere foreteelser eller ting enn hva som trengs for å forklare de observasjoner man gjør
 
