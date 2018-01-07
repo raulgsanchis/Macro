@@ -1,9 +1,9 @@
 # Introduksjon
 
 ## Tre hovedtemaer: 
-- Svingninger (del I)
-- Økonomisk vekst (del II) 
-- Økonomiske kriser (del III)
+- Konjunktursvingninger - del I
+- Økonomisk vekst - del II  
+- Økonomiske kriser - del III 
 
 ```{r include=FALSE}
 library(MakroOEKB1115)
@@ -13,53 +13,69 @@ library(gridExtra)
 library(grid)
 
 moltmacrousa <- MakroOEKB1115::moltmacrousa
-
-# gpmakro <- function(data=moltmacrousa, variables = c('lngdp', 'hptrend'), katv = c('gdp'), startp="929-04-01", endp =" 2017-12-12", labt = list(x=NULL, y=NULL)){
+# 
+# gpmakro <- function(data = moltmacrousa, variables = c('lngdp', 'hptrendg'), katv = c('gdp'),
+#                     startp="1929-04-01", endp =" 2017-12-12",
+#                     variabeln = c('var1', 'var2'),
+#                     labt = list(x='x-variabel', y='y-variabel')){
+#   # Filtrere datasettet
 #   datainp <- dplyr::filter(data, variable %in% variables, kat %in% katv, date >= startp & date <= endp)
-#   ggplot(data = datainp, aes(date, value)) + geom_line() + theme_classic() +
-#   geom_smooth(method = 'loess', color = 'red', size = 0.5, se = FALSE) +
-#   labs(x = labt$x, y = labt$y)
+#   # Lager plot
+#   ggplot(data = datainp, aes(x = date, y = value, color = factor (variable, labels = variabeln))) +   geom_line() + theme_classic() +
+#     labs(color = "Variabel:",x = labt$x, y = labt$y) +
+#     labs(x = labt$x, y = labt$y)
 # }
 
-hpu <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendu'), katv = c('unem')
-, startp = "1929-04-01", endp =" 2017-12-12", labt = list(y='Ledighetsrate', x = 'År'))
-gdu <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendu'), katv = c('unem')
-, startp = "1929-04-01", endp =" 1941-01-01", labt = list(y='Ledighetsrate', x = 'År'))
-gru <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendu'), katv = c('unem')
-, startp = "2007-01-01", endp =" 2017-12-12", labt = list(y='Ledighetsrate', x = 'År'))
-mpu <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendu'), katv = c('unem')
-,startp = "1945-01-01", endp =" 2007-01-01", labt = list(y='Ledighetsrate', x = 'År'))
+varinavng <- c('BNP', 'BNP-trend (hp-filter)')
 
+hpg <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendg'), katv = c('gdp'), startp = "1929-04-01", endp =" 2017-12-12", variabeln = varinavng, labt = list(y='BNP realpriser (log)', x = 'År'))
+gdg <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendg'), katv = c('gdp'), startp = "1929-04-01", endp =" 1941-01-01", variabeln = varinavng, labt = list(y='BNP realpriser (log)', x = 'År'))
+grg <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendg'), katv = c('gdp'), startp = "2007-01-01", endp =" 2017-12-12", variabeln = varinavng, labt = list(y='BNP realpriser (log)', x = 'År'))
+mpg <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendg'), katv = c('gdp'), startp = "1945-01-01", endp =" 2017-12-12", variabeln = varinavng,labt = list(y='BNP realpriser (log)', x = 'År'))
 
+varinavnu <- c('Ledighetsrate', 'Snitt (normalperioden)')
 
-hpg <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendg'), katv = c('gdp'), startp = "1929-04-01", endp =" 2017-12-12", labt = list(y='BNP realpriser (log)', x = 'År'))
-gdg <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendg'), katv = c('gdp'), startp = "1929-04-01", endp =" 1941-01-01", labt = list(y='BNP realpriser (log)', x = 'År'))
-grg <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendg'), katv = c('gdp'), startp = "2007-01-01", endp =" 2017-12-12", labt = list(y='BNP realpriser (log)', x = 'År'))
-mpg <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendg'), katv = c('gdp'), startp = "1945-01-01", endp =" 2017-12-12", labt = list(y='BNP realpriser (log)', x = 'År'))
+hpu <- gpmakro(moltmacrousa, variables = c('unem', 'trendu'), katv = c('unem')
+, startp = "1929-04-01", endp =" 2017-12-12", variabeln = varinavnu
+,labt = list(y='Ledighetsrate', x = 'År'))
+gdu <- gpmakro(moltmacrousa, variables = c('unem', 'trendu'), katv = c('unem')
+, startp = "1929-04-01", variabeln = varinavnu
+,endp =" 1941-01-01", labt = list(y='Ledighetsrate', x = 'År'))
+gru <- gpmakro(moltmacrousa, variables = c('unem', 'trendu'), katv = c('unem')
+, startp = "2007-01-01", endp =" 2017-12-12", variabeln = varinavnu
+,labt = list(y='Ledighetsrate', x = 'År'))
+mpu <- gpmakro(moltmacrousa, variables = c('unem', 'trendu'), katv = c('unem')
+,startp = "1945-01-01", endp =" 2007-01-01", variabeln = varinavnu
+,labt = list(y='Ledighetsrate', x = 'År'))
 ```
 
-### USA 1929-2017
+### USA 1929-2016
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
-grid.arrange(hpu, hpg, ncol = 2, top = 'USA' )
+grid.arrange(hpg, hpu , ncol = 2, top = 'USA' )
 ```
 
-### USA fra etter 2. verdenskrig og fram til den store resesjonsen (1946-2007) 
+### USA 1946-2007 
 
 ```{r echo=FALSE}
-grid.arrange(mpu, mpg, ncol = 2, top = 'USA' )
+grid.arrange(mpg, mpu , ncol = 2, top = 'USA' )
 ```
 
+- Sentralt poeng: Makroøkonmien innehar selvkorrigerende mekanismer
 
 
-### USA under dene store depresjonen (1929-1939) og resesjonen (2007-2012)
+
+### USA 1929-1939 ("The Great Depression") og 2007-2012 ("The Great Recession")
 
 ```{r echo=FALSE}
-grid.arrange(gdu, gru, gdg, grg,top = 'USA' )
+grid.arrange(gdg, grg, gdu, gru, top = 'USA' )
 ```
 
+- Sentralt poeng: Makroøkonmien selvkorrigerende egenskaper er satt ut av spill
 
-## Tre grunnleggende spørsmål forsøkt besvart
+
+
+## Tre grunnleggende spørsmål blir forsøkt besvart
 Hva forårsaker
 - konjunktursvingninger?
 - økonomisk vekst?
@@ -98,7 +114,7 @@ Hva forårsaker
 
 > More things should not be used than are necessary (*Entia non sunt multiplicanda praeter necessitatem*)
 
-Dette prinsippet slår fast at man ikke skal anta **flere** foreteelser eller ting enn hva som trengs for å forklare de observasjoner som en studerer
+Dette prinsippet slår fast at man ikke skal anta **flere** foreteelser (i vårt kurs betyr dette *(1) aktører* og *(2) markeder* og *(3) størrelsen på økonomien*) eller ting enn hva som trengs for å forklare de observasjoner som en studerer
 
 I dette kurset (1) legger vi Ockhams barberkniv til grunn, samt forsøker vi å beskrive det fenomener vi ønsker å studere ved bruk av (2) matematikk
 
@@ -111,34 +127,39 @@ I dette kurset (1) legger vi Ockhams barberkniv til grunn, samt forsøker vi å 
 
 #### Finansinstitusjoner (investerings- og forretningsbanker) (del III) 
 - Mellomledd mellom långive og låntakere
-- Kredittskapende evener 
+- Kredittskapende evner $\Rightarrow$ bestemmer lånetilbudet i økonomien 
 <!--
 (dvs. tilby lån til kundene ved å øke pengemengden)
 The argument that banks originate loans and thereby create money and additional demand was once a commonplace position. But in the 1950s, American Neoclassicals in particular began to push the view that banks are effectively just intermediaries between savers and investors; the view that banks were uniquely important in capitalism became a fringe view. I cover this history and the revival of the endogenous money approach by Basil Moore, Augusto Graziani and others
 -->
 
 #### Sentralbanken (del I og III)
-Bestemmer rentenivå eller pengemengden
+- Bestemmer rentenivå eller pengemengden
 
-#### Offentlig myndigheter (del I og III) 
-Finanspolitikk
+#### Regjeringen og stortinget (del I og III) 
+- Finanspolitikk
 
 ### Markedene vi studerer
 
-#### Godemarkedet (varer og tjenester) - del I, del II og del III
+#### Godemarkedet (varer og tjenester) 
+- del I, del II og del III
 
-#### Pengemarkedet - del I, del III
+#### Pengemarkedet 
+- del I, del III
 
-#### Arbeidsmarkedet - del I, del III
+#### Arbeidsmarkedet 
+- del I, del III
 
-#### Finansmarkeder (kapital- og lånemarkedet) - del II, III
+#### Finansmarkeder (kapital- og lånemarkedet) 
+- del II, III
 
-#### Valutakursmarkedet - del I
+#### Valutakursmarkedet 
+- del I
 
 ### Størrelsen på en økonomi
 
 #### Lukket (global økonomi) økonomi 
-Påvirkes ikke av omverden (Tilnærming: USA)
+- Påvirkes ikke av omverden (Tilnærming: USA)
 
 #### Liten åpen økonomi
-Påvirkes av, men påvirker ikke selv, omverden (Tilnærming:  Norge)
+- Påvirkes av, men påvirker ikke selv, omverden (Tilnærming:  Norge)

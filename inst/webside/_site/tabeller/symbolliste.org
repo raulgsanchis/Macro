@@ -5,7 +5,7 @@
 
 * Variabelforklaringer
 
-| Variabel       | Betydning                                                                            |
+| Variabel       | Forklaring                                                                           |
 |----------------+--------------------------------------------------------------------------------------|
 | Y              | Bruttonasjonalprodukt                                                                |
 | N              | Arbeidsstyrken                                                                       |

@@ -20,9 +20,9 @@ macro.series4 <- fred$series.search("inflation")
 
 # Makrotall USA
 usagdp <- fred$series.observations(series_id = c('GDPCA'))
+usaunem <- rbind(fred$series.observations(series_id = c('M0892AUSM156SNBR')), fred$series.observations(series_id = c('UNRATE')))
 usainf <- fred$series.observations(series_id = c('CPIAUCSL', 'CPILFESL')[1])
 usamone <- fred$series.observations(series_id = c('M1'))
-usaunem <- rbind(fred$series.observations(series_id = c('M0892AUSM156SNBR')), fred$series.observations(series_id = c('UNRATE')))
 
 # 2. Cleaning up data
 tusagdp  <- usagdp %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
@@ -33,16 +33,23 @@ tusamone <- usamone %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(d
 # 3. Manipulating og transformerer dataene
 molttusagdp <- tusagdp %>% dplyr::mutate(gdp = ts(value, start = c(1929,1), end = c(2016,1), freq = 1)) %>%
   dplyr::mutate(lngdp = log(gdp)) %>%
-  dplyr::mutate(hpcycleg = hpfilter(lngdp, freq = 100)$cycle) %>%
-  dplyr::mutate(hptrendg = hpfilter(lngdp, freq = 100)$trend) %>%
+  dplyr::mutate(hpcycleg = hpfilter(lngdp, freq = 2000)$cycle) %>%
+  dplyr::mutate(hptrendg = hpfilter(lngdp, freq = 2000)$trend) %>%
   reshape2::melt(id.vars = c("date")) %>%
   dplyr::mutate(kat=c('gdp'))
 
+#ggplot(data = dplyr::filter(molttusagdp, variable %in% c('lngdp','hptrendg')), aes(x = date, y =  value)) + geom_line(aes(color = variable))
+
+nunem <- mean(dplyr::filter(tusaunem, date >'1939-12-01' & date < '2007-12-01')$value)
 molttusaunem <- tusaunem %>% dplyr::mutate(unem = ts (value)) %>%
-  dplyr::mutate(hpcycleu = hpfilter(unem, freq = 14400)$cycle) %>%
-  dplyr::mutate(hptrendu = hpfilter(unem, freq = 14400)$trend) %>%
+  #dplyr::mutate(hpcycleu = hpfilter(unem, freq = 6000000000000)$cycle) %>%
+  #dplyr::mutate(hptrendu = hpfilter(unem, freq = 6000000000000)$trend) %>%
+  dplyr::mutate(trendu = nunem) %>%
   reshape2::melt(id.vars = c("date")) %>%
   dplyr::mutate(kat = 'unem')
+
+#ggplot(data = dplyr::filter(molttusaunem, variable %in% c('unem','rendu')), aes(x = date, y =  value)) + geom_line(aes(color = variable))
+
 
 molttusainf <- tusainf %>% reshape2::melt(id.vars = c("date")) %>%
   dplyr::mutate(kat = 'inf')
@@ -55,4 +62,7 @@ moltmacrousa <- rbind(molttusaunem, molttusagdp, molttusainf, molttusamone)
 
 # 4. Saving data in Rda-format
 devtools::use_data(moltmacrousa, overwrite = TRUE)
+
+# Appendiks: grafikk
+
 

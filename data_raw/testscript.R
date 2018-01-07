@@ -1,7 +1,7 @@
 load("~/gitclones/teaching/MakroOEKB1115/data/moltmacrousa.rda")
 # A. Testing
-# names(mpg)
-# qplot(data = mpg, cty, hwy, geom = 'point')
+names(mpg)
+qplot(data = mpg, cty, hwy, geom = 'point')
 
 # melttusagdp <-
 #
@@ -15,10 +15,16 @@ load("~/gitclones/teaching/MakroOEKB1115/data/moltmacrousa.rda")
 # qplot
 qplot(data = subset(moltmacrousa, kat == 'gdp', variable =='value'), date, value, geom = 'point', color =  variable)
 # ggplot2
+
 ggplot(data = subset(moltmacrousa, kat == 'gdp'), aes(x = date, y =  value)) + geom_point(aes(color = variable))
 
 
-ggplot(data = subset(moltmacrousa, select = c('lngdp'), kat == 'gdp'), aes(x = date, y =  value)) + geom_point(aes(color = variable))
+ggplot(data = dplyr::filter(moltmacrousa, variable %in% c('lngdp','hptrendg')), aes(x = date, y =  value)) + geom_line(aes(color = variable))
+
+
+
+
+
 
 
 
