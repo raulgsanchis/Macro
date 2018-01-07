@@ -3,20 +3,30 @@
 #+OPTIONS: toc:nil
 #+TITLE: 
 
+* Del 1:
+** Agenter
 
-* Lukket økonomi
+
+** Markeder
+*** Lukket økonomi
 | Modell                   | Godemarkedet | Pengemarkedet | Arbeidsmarkedet | Valutamarkedet |
 | Enkel Keynes uten handel | V            |               |                 |                |
 | IS-LM                    | V            | V             |                 |                |
 | AD-AS                    | V            | V             | V               |                |
 
-* Åpen økonomi
+** Åpen økonomi
 | Modell                                | Godemarkedet | Pengemarkedet | Arbeidsmarkedet | Valutamarkedet |
 | Enkel Keynes med internasjonal handel | V            |               |                 |                |
 | Mundell-Fleming (IS-LM åpen økonomi)  | V            | V             |                 | V              |
 | AD-AS                                 | V            | V             | V               | V              |
 
-# Likvekt i flere enn et marked
+* Del 2:
+** Markeder
+
+* Del 3:
+** Markeder
+
+# Likevekt i flere enn et marked
 
 
 

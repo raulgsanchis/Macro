@@ -3,13 +3,13 @@
 #+OPTIONS: toc:nil
 #+TITLE: 
 
-| Økonom         | Konjunktursvingninger                      | Stabiliseringspolitikk                            | Krisepolitikk                      |
-|----------------+--------------------------------------------+---------------------------------------------------+------------------------------------|
-| Keynes/Krugman | Investeringer ('animal spirit')            | Finanspolitikk                                    | Ekspansiv finans- og pengepolitikk |
-| Friedman       | Endringer i pengemengden                   | Konstant pengemengdevekst                         | Ekspaniv pengepolitikk             |
-| Minsky         | Økonmisk stabilitiet fører til ustabilitet | Finansreguleringer og sentralbank                 | Bail-out (redningspakker)          |
-|                | Kredittvekst                               | Fri konkurrane i banksektoren (ingen sentralbank) | Likvididering (Bail-In)            |
-|                |                                            |                                                   |                                    |
+| Økonom         | Konjunktursvingninger | Stabiliseringspolitikk                            | Krisepolitikk                      |
+|----------------+-----------------------+---------------------------------------------------+------------------------------------|
+| Keynes/Krugman |                       |                                                   |                                    |
+| Friedman       |                       |                                                   |                                    |
+| Minsky         |                       |                                                   |                                    |
+| Hayek          |                       |                                                   |                                    |
+|                |                       |                                                   |                                    |
 
 
 

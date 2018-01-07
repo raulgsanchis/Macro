@@ -3,20 +3,43 @@
 #+OPTIONS: toc:nil
 #+TITLE: 
 
+* Del 1:
+** Agenter
+| Del | Husholdninger | Bedrifter | Finansinstitusjoner | Sentralbanken | Offentlige myndigheter |
+| I   | V             |  V        |                     | V             |  V                     |
+** Markeder
+*** Lukket økonomi
+| Modell                   | Godemarkedet | Pengemarkedet | Arbeidsmarkedet | Valutamarkedet | Finansmarkedet |
+| Enkel Keynes uten handel | V            |               |                 |                |                |
+| IS-LM                    | V            | V             |                 |                |                |
+| AD-AS                    | V            | V             | V               |                |                |
+** Åpen økonomi
+| Modell                                | Godemarkedet | Pengemarkedet | Arbeidsmarkedet | Valutamarkedet | Finansmarkedet |
+| Enkel Keynes med internasjonal handel | V            |               |                 |                |                |
+| Mundell-Fleming (IS-LM åpen økonomi)  | V            | V             |                 | V              |                |
+| AD-AS                                 | V            | V             | V               | V              |                |
 
-* Lukket økonomi
-| Modell                   | Godemarkedet | Pengemarkedet | Arbeidsmarkedet | Valutamarkedet |
-| Enkel Keynes uten handel | V            |               |                 |                |
-| IS-LM                    | V            | V             |                 |                |
-| AD-AS                    | V            | V             | V               |                |
+* Del 2:
+** Agenter
+| Del | Husholdninger | Bedrifter | Finansinstitusjoner | Sentralbanken | Offentlige myndigheter | 
+| III | v             |  V        |   V                 | V             | V                      |
+** Markeder
+| Modell         | Godemarkedet | Pengemarkedet | Arbeidsmarkedet | Valutamarkedet | Finansmarkedet |
+| Solow-modellen | V            |               | V               |                | V              |
 
-* Åpen økonomi
-| Modell                                | Godemarkedet | Pengemarkedet | Arbeidsmarkedet | Valutamarkedet |
-| Enkel Keynes med internasjonal handel | V            |               |                 |                |
-| Mundell-Fleming (IS-LM åpen økonomi)  | V            | V             |                 | V              |
-| AD-AS                                 | V            | V             | V               | V              |
+* Del 3:
+** Agenter
+| Del | Husholdninger | Bedrifter | Finansinstitusjoner | Sentralbanken | Offentlige myndigheter |
+|-----+---------------+-----------+---------------------+---------------+------------------------|
+| II  | V             | V         | V                   | V             | V                      |
 
-# Likvekt i flere enn et marked
+** Markeder
+| Modell                     | Godemarkedet | Pengemarkedet | Arbeidsmarkedet | Valutamarkedet | Finansmarkedet |
+| IS-LM med to husholdninger | V            | V             |                 |                |                |
+
+
+
+# Likevekt i flere enn et marked
 
 
 
