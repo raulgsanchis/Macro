@@ -21,7 +21,7 @@
 <img id='grede' src="bilder/depression.jpg" height="75px" width="300px" />
 <img id='grere' src="bilder/recession.jpg" height="75px" width="300px" />
 
-**Kursansvarlig:** Jørn I. Halvorsen (jiha@hvl)
+**Kurs og emneansvarlig:** Førsteamanuensis Jørn I. Halvorsen (Jorn.Inge.Halvorsen@hvl.no)
 
 **Kursassistent:** Susanna Murati (170729@stud.hvl.no)
 
@@ -51,7 +51,3 @@ rmarkdown::render("index.Rmd", rmarkdown::pdf_document())
 keyneslatex <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/webside/jupyter/keynestex.json'))
 keynesequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/webside/jupyter/keynesequ.json'))
 ```
-
-
-
-

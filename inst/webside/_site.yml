@@ -14,7 +14,7 @@ navbar:
   - text: Forelesninger
     menu:
     - text: Introduksjon
-      href: innledning.html
+      href: presentasjoner/pres_innledning.html
     - text: 'Del I: Konjunktursvingninger'
       href: del1_konjunkturer.html
     - text: 'Del II: Økonomisk vekst'
@@ -31,7 +31,7 @@ navbar:
       href: losningsforslag.html
   - text: Lenker
     menu:
-    - text: Lenker
+    - text: Supplerende kursinformasjon
       href: nyhetslinker.html
   - text: Utskrifter
     menu:
@@ -40,8 +40,8 @@ navbar:
     - text: Variabeldefinisjoner
       href: symbolliste.html
   right:
-  - text: Kursansvarlig
-  - icon: mail
+  - text:
+  - icon: ion-android-contact
     href: https://www.hvl.no/person/?user=3601450
 output:
   html_document:
