@@ -38,13 +38,13 @@ grg <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendg'), katv = c('gdp')
 mpg <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendg'), katv = c('gdp'), startp = "1945-01-01", endp =" 2017-12-12", labt = list(y='BNP realpriser (log)', x = 'År'))
 ```
 
-### USA fra 1929-2017
+### USA 1929-2017
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
 grid.arrange(hpu, hpg, ncol = 2, top = 'USA' )
 ```
 
-### USA fra den 2. verdenskrig og til den store resesjonsen (1946-2007) 
+### USA fra etter 2. verdenskrig og fram til den store resesjonsen (1946-2007) 
 
 ```{r echo=FALSE}
 grid.arrange(mpu, mpg, ncol = 2, top = 'USA' )
@@ -94,29 +94,31 @@ Hva forårsaker
 ```
 
 ## Abstraksjon 
-[Ockhams barberkniv](https://no.wikipedia.org/wiki/Ockhams_barberkniv)
+[Ockhams barberkniv:](https://no.wikipedia.org/wiki/Ockhams_barberkniv)
 
-> More things should not be used than are necessary (*Entia non sunt multiplicanda praeter necessitatem*).
+> More things should not be used than are necessary (*Entia non sunt multiplicanda praeter necessitatem*)
 
-Prinsippet slår fast at man skal ikke anta flere foreteelser eller ting enn hva som trengs for å forklare de observasjoner man gjør
+Dette prinsippet slår fast at man ikke skal anta **flere** foreteelser eller ting enn hva som trengs for å forklare de observasjoner som en studerer
 
-- Bruker mattematikk
+I dette kurset (1) legger vi Ockhams barberkniv til grunn, samt forsøker vi å beskrive det fenomener vi ønsker å studere ved bruk av (2) matematikk
 
 ### Sentrale aktører i makroøkonomien
 #### Husholdninger (del I, del II og del III)
-Konsumerer og sparer
+- Konsumerer og sparer
 
 #### Bedrifter (del I, del II og del III)
-Produserer og investerer
+- Produserer og investerer
 
 #### Finansinstitusjoner (investerings- og forretningsbanker) (del III) 
-
+- Mellomledd mellom långive og låntakere
+- Kredittskapende evener 
 <!--
+(dvs. tilby lån til kundene ved å øke pengemengden)
 The argument that banks originate loans and thereby create money and additional demand was once a commonplace position. But in the 1950s, American Neoclassicals in particular began to push the view that banks are effectively just intermediaries between savers and investors; the view that banks were uniquely important in capitalism became a fringe view. I cover this history and the revival of the endogenous money approach by Basil Moore, Augusto Graziani and others
 -->
 
 #### Sentralbanken (del I og III)
-Setter rentenivå
+Bestemmer rentenivå eller pengemengden
 
 #### Offentlig myndigheter (del I og III) 
 Finanspolitikk
@@ -136,9 +138,7 @@ Finanspolitikk
 ### Størrelsen på en økonomi
 
 #### Lukket (global økonomi) økonomi 
-Påvirkes ikke av omverden
-Tilnærming: USA
+Påvirkes ikke av omverden (Tilnærming: USA)
 
 #### Liten åpen økonomi
-Påvirkes av, men påvirker ikke selv, omverden
-Tilnærming:  Norge
+Påvirkes av, men påvirker ikke selv, omverden (Tilnærming:  Norge)

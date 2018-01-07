@@ -7,10 +7,24 @@
 1. Eksamen og MAGS   
 1. Tavla
 1. Læreboka
+1. Erfaring fra bra kurs
+1. E. språk
+
 
 * Introduksjon
 ** Kursinfo
-** Administrativt
+*** Nettside
+- Instruksjoner om å komme fram i salen
+- Presentasjon av meg selv (skrive navnet på tavla med e-post adresse)
+- Ikke fronter, men egen nettside med passord
+- Vise hovedoverskrifter og forelesningsplan
+- Gå legg igjennom de andre tingene
+- Hovedside
+- Løst: Del 1
+- Løst: Del 2
+- Løst: Del 3
+
+** Introduksjon
 *** Definere makro
 VIS: 
 *** Introdouksjon
@@ -127,6 +141,7 @@ Lang sikt:
 + Vare og 
 
 *** Modellering
+
 
 * Del 2: Økonomisk vekst
 ** Oversikt

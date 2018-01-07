@@ -5,10 +5,10 @@ navbar:
   left:
   - text: Kursinformasjon
     menu:
-    - text: Kursbeskrivelse
-      href: kursbeskrivelse.html
     - text: Forelesningsplan
       href: forelesningsplan.html
+    - text: Kursbeskrivelse
+      href: kursbeskrivelse.html
     - text: Læringsmål
       href: laeringsmaal.html
   - text: Forelesninger

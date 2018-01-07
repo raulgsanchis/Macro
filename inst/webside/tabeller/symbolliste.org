@@ -3,16 +3,16 @@
 #+OPTIONS: toc:nil
 #+TITLE:
 
-* Variabeldefinisjoner benyttet i ØKB1115
+* Variabelforklaringer
 
 | Variabel       | Betydning                                                                            |
 |----------------+--------------------------------------------------------------------------------------|
 | Y              | Bruttonasjonalprodukt                                                                |
-| L              | Arbeidsstyrken                                                                       |
-| N              | Sysselsatte personer                                                                 |
+| N              | Arbeidsstyrken                                                                       |
+| L              | Sysselsatte personer                                                                 |
 | U              | Antall utenfor arbeid                                                                |
 | u              | Ledighetsrate                                                                        |
-| P              | Aggregerte prisnivået (innenlandsk)                                                  |
+| P              | Det aggregerte prisnivået (innenlandsk)                                              |
 | $\pi$          | Inflasjon                                                                            |
 | Z              | Aggregert etterspørsel (utgifter)                                                    |
 | C              | Aggregert konsum                                                                     |
@@ -24,7 +24,7 @@
 | i              | Det nominelle rentenivået                                                            |
 | G              | Offentlig konsum og realinvestiringer                                                |
 | M              | Tilbud av penger (nominelt)                                                          |
-| L              | Etterspørsel etter penger (real)                                                     |
+| $L_{m}$        | Etterspørsel etter penger (real)                                                     |
 | K              | Nivået på realkapital                                                                |
 | $\text{P}^{e}$ | Prisforventninger                                                                    |
 | $\mu$          | Påslag (i prosent) på det aggregerte prisnivået                                      |
@@ -33,8 +33,10 @@
 | E              | Nominell valutakurs (pris for én enhet av utenlandsk valuta)                         |
 | $\text{P}^{*}$ | Aggregerte prisnivået (innenlandsk)                                                  |
 | $\text{i}^{*}$ | Det nominelle rentenivået i utlandet                                                 |
+| BP             | Utenriksregnskapet                                                                   |
 | CU             | Driftsregnskapet ovenfor utlandet                                                    |
 | CA             | Kapitalregnskapet                                                                    |
+| OR             | Endring i sentralbankens valutareserver                                              |
 | S              | Sparing                                                                              |
 | $\delta$       | Depresieringsrate på kapital                                                         |
 | a              | Teknologisk vekst                                                                    |
@@ -43,3 +45,4 @@
 | $B^{t}$        | Nominelt nivå på statsobligasjoner utstedt av finansmyndighetene                     |
 | $B^{m}$        | Nominelt nivå på statsobligasjoner på sentralbankens regnskapsbalanse                |
 |----------------+--------------------------------------------------------------------------------------|
+|                |                                                                                      |
