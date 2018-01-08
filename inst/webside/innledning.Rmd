@@ -5,7 +5,6 @@
 - Økonomisk vekst - del II  
 - Økonomiske kriser - del III 
 
-
 ```{r include=FALSE}
 library(MakroOEKB1115)
 library(dplyr)
@@ -18,21 +17,21 @@ moltmacrousa <- MakroOEKB1115::moltmacrousa
 
 varinavng <- c('BNP', 'BNP-trend (hp-filter)')
 
-hpg <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendg'), katv = c('gdp'), startp = "1929-04-01", endp =" 2017-12-12", variabeln = varinavng, labt = list(y='BNP realpriser (log)', x = 'År'))
+hpg <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendg'), katv = c('gdp'), startp = "1929-04-01", endp =" 2016-12-12", variabeln = varinavng, labt = list(y='BNP realpriser (log)', x = 'År'))
 gdg <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendg'), katv = c('gdp'), startp = "1929-04-01", endp =" 1941-01-01", variabeln = varinavng, labt = list(y='BNP realpriser (log)', x = 'År'))
-grg <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendg'), katv = c('gdp'), startp = "2007-01-01", endp =" 2017-12-12", variabeln = varinavng, labt = list(y='BNP realpriser (log)', x = 'År'))
-mpg <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendg'), katv = c('gdp'), startp = "1945-01-01", endp =" 2017-12-12", variabeln = varinavng,labt = list(y='BNP realpriser (log)', x = 'År'))
+grg <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendg'), katv = c('gdp'), startp = "2007-01-01", endp =" 2016-12-12", variabeln = varinavng, labt = list(y='BNP realpriser (log)', x = 'År'))
+mpg <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendg'), katv = c('gdp'), startp = "1945-01-01", endp =" 2016-12-12", variabeln = varinavng,labt = list(y='BNP realpriser (log)', x = 'År'))
 
 varinavnu <- c('Ledighetsrate', 'Snitt (normalperioden)')
 
 hpu <- gpmakro(moltmacrousa, variables = c('unem', 'trendu'), katv = c('unem')
-, startp = "1929-04-01", endp =" 2017-12-12", variabeln = varinavnu
+, startp = "1929-04-01", endp =" 2016-12-12", variabeln = varinavnu
 ,labt = list(y='Ledighetsrate', x = 'År'))
 gdu <- gpmakro(moltmacrousa, variables = c('unem', 'trendu'), katv = c('unem')
 , startp = "1929-04-01", variabeln = varinavnu
 ,endp =" 1941-01-01", labt = list(y='Ledighetsrate', x = 'År'))
 gru <- gpmakro(moltmacrousa, variables = c('unem', 'trendu'), katv = c('unem')
-, startp = "2007-01-01", endp =" 2017-12-12", variabeln = varinavnu
+, startp = "2007-01-01", endp =" 2016-12-12", variabeln = varinavnu
 ,labt = list(y='Ledighetsrate', x = 'År'))
 mpu <- gpmakro(moltmacrousa, variables = c('unem', 'trendu'), katv = c('unem')
 ,startp = "1945-01-01", endp =" 2007-01-01", variabeln = varinavnu
@@ -64,25 +63,25 @@ grid.arrange(mpg, mpu , nrow = 2, top = 'USA' )
 ```{r echo=FALSE}
 grid.arrange(gdg, grg, gdu, gru, top = 'USA' )
 ```
-- Sentralt poeng: Makroøkonmien selvkorrigerende egenskaper er satt ut av spill
+- Sentralt poeng: Makroøkonmien selvkorrigerende mekanismer er satt ut av spill
 
 ## Tre grunnleggende spørsmål blir forsøkt besvart
 
-- Hva forårsaker konjunktursvingninger?
-- Hva er forklaringen bak økonomisk vekst?
-- Hvorfor oppstår økonomiske kriser?
+1. Hva forårsaker konjunktursvingninger?
+1. Hva er forklaringen bak økonomisk vekst?
+1. Hvorfor oppstår økonomiske kriser?
 
 ## Og i den sammenheng, hvilken rolle bør offentlige myndigheter spille?
-- Stabiliseringspolitikk (aktiv/passiv)
-- Vekstpolitikk (kapitalisme/offentlig sektor)
-- Økonomiske kriser (stabiliserende/likvidierende)
+
+1. Stabiliseringspolitikk - aktiv eller passiv
+1. Samfunnsinstitusjoner og graden av frie markeder
+1. Bail-in (investorene tar tapene) vs. bail-out (offentlige redningspakker)
 
 ## Kjente makroøkonomer
 <figure>
-<img id='grede' src="bilder/keynes.jpg" height="75px" width="300px" />
+<img id='grede' src="bilder/keynes.jpg" height="75px" width="300px"  />
 <figcaption>John M. Keynes (1883-1946)</figcaption>
 <figure>
-<!--
 <figure>
 <img id='grede' src="bilder/krugman.jpg" height="75px" width="300px" />
 <figcaption>Paul Krugman(1953-)</figcaption>
@@ -95,7 +94,6 @@ grid.arrange(gdg, grg, gdu, gru, top = 'USA' )
 <img id='grede' src="bilder/hayek.jpg" height="75px" width="300px" />
 <figcaption>Friedrich Hayek (1899-1992)</figcaption>
 <figure>
--->
 
 ---
 
@@ -110,33 +108,36 @@ grid.arrange(gdg, grg, gdu, gru, top = 'USA' )
 
 > More things should not be used than are necessary (*Entia non sunt multiplicanda praeter necessitatem*)
 
-Dette prinsippet slår fast at man ikke skal anta **flere** foreteelser (i vårt kurs betyr dette *(1) aktører* og *(2) markeder* og *(3) størrelsen på økonomien*) eller ting enn hva som trengs for å forklare de observasjoner som en studerer
+- Prinsippet slår fast at man ikke skal anta *flere* ting enn hva som trengs for å forklare de observasjoner som en studerer
 
 ---
 
-I dette kurset (1) legger vi Ockhams barberkniv til grunn, samt forsøker vi å beskrive det fenomener vi ønsker å studere ved bruk av (2) matematikk
+Disse tingene vil i vårt kurs være knyttet til
+
+- Hvem utgjør de økonomiske aktørene i økonomien?
+- Hvilken markeder er operasjonelle ($\text{v}$ er symbolet for dette)?
+- Hva er størrelsen på økonomien?
+
+Videre, vi formulerer vi de økonomiske sammenhengene vi mener gjør seg gjeldende ved bruk av matematikk (dvs. algebraiske ligninger)
 
 ## Sentrale aktører i makroøkonomien
-### Husholdninger (del I, del II og del III)
+### Husholdninger - del I, del II og del III
 - Konsumerer ($\text{C}$)  og sparer ($\text{S}$)
 
-### Bedrifter (del I, del II og del III)
+### Bedrifter - del I, del II og del III
 - Produserer ($\text{Y}$) og investerer ($\text{I}$)
+
+### Finansinstitusjoner - del (I) og III  
+- Investerinsbanker: Mellomledd mellom lånegive og låntakere 
+- Forretningsbanker: Mellomledd mellom lånegive og låntakere *og* innehar kredittskapende evner 
+$\Rightarrow$ bestemmer lånetilbudet i økonomien
 
 ---
 
-### Finansinstitusjoner (del III) 
-- Mellomledd mellom långive og låntakere (investerings- og forretningsbanker)
-- Kredittskapende evner $\Rightarrow$ bestemmer lånetilbudet i økonomien (forretningsbanker)
-<!--
-(dvs. tilby lån til kundene ved å øke pengemengden)
-The argument that banks originate loans and thereby create money and additional demand was once a commonplace position. But in the 1950s, American Neoclassicals in particular began to push the view that banks are effectively just intermediaries between savers and investors; the view that banks were uniquely important in capitalism became a fringe view. I cover this history and the revival of the endogenous money approach by Basil Moore, Augusto Graziani and others
--->
-
-### Sentralbanken (del I og III)
+### Sentralbanken - del I og III 
 - Bestemmer rentenivå ($\text{i}$) eller pengemengden ($\text{M}$)
 
-### Offentlige myndigheter (del I og III) 
+### Offentlige myndigheter - del I og III 
 - Finanspolitikk ($\text{G}$)
 
 ## Markedene vi studerer
@@ -151,9 +152,8 @@ The argument that banks originate loans and thereby create money and additional 
 - del I og del II
 
 ### Finansmarkeder 
-- del II (kapitalmarkedet) og del III (lånemarkedet)
-
----
+- del II kapitalmarkedet (investeringsbanker)
+- del III lånemarkedet (forretningsbanker)
 
 ### Valutakursmarkedet 
 - del I
@@ -161,8 +161,13 @@ The argument that banks originate loans and thereby create money and additional 
 ## Størrelsen på en økonomi
 
 ### Lukket (eller global) økonomi 
-- Påvirkes ikke av omverden (Tilnærming: USA)
+- Påvirkes ikke av omverden
+- Eks. på en  grov tilnærming: USA
 
 ### Liten åpen økonomi
-- Påvirkes av, men påvirker ikke selv, omverden (Tilnærming:  Norge)
-`
+- Påvirkes av, men påvirker ikke selv omverden
+- Eks. på en tilnærming: Norge
+
+---
+
+**Øvelse til nest forelesning:** Lag et oversiktskart som summerer opp alle opplysningene knyttet til de økonomiske agentene, markedene og størrelsen på økonomien

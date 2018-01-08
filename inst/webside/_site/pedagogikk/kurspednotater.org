@@ -9,20 +9,40 @@
 1. Læreboka
 1. Erfaring fra bra kurs
 1. E. språk
-
+Kursbeskrivelse
 
 * Introduksjon
 ** Kursinfo
 *** Nettside
 - Instruksjoner om å komme fram i salen
-- Presentasjon av meg selv (skrive navnet på tavla med e-post adresse)
+- Presentasjon av meg selv (skrive navnet på tavla med e-post adresse og kurskode)
 - Ikke fronter, men egen nettside med passord
-- Vise hovedoverskrifter og forelesningsplan
-- Gå legg igjennom de andre tingene
+- Vise først hovedoverskrifter
+- Detaljert om forelesningsplan og pensum
+- video inn
+- Gå raskt igjennom de andre tingene 
 - Hovedside
+- Makroøkonomi: Studio av et lands økonomi som helhet
 - Løst: Del 1
+Daglig informasjon
+Penger viktiglehman brothersca
 - Løst: Del 2
+Hvilken av disse landene har høyest levestandar?
+Kan det ene landet ta igjen det andre, hvor lang tid tar
+Hva forklarer veksten?
 - Løst: Del 3
+Likt:
+Lehman Brothers gikk konkurs -> nedgangskonjunktur -> flere banker konkurs -> massearbeidsledighet
+The Bank of America -> nedgangskonjunktur -> bail-out -> stor arbeidsledighet og mistanke 
+￼
+# Høres spennede ut?
+Sjansen får du ikke igjen!
+# Tips
+- Start med en gang (modningsfag)
+- Gå på seminar
+- Gå på forelesninger
+- Følg med i nyhetsbildet
+- Tidlig eksamen
 
 ** Introduksjon
 *** Definere makro
@@ -30,7 +50,7 @@ VIS:
 *** Introdouksjon
 **** Tre grunnluggende spørsmål forsøkt besvart
 1. Konjunktursvingninger EKS: USA
-1. Vekst 
+1. Vekst EKS: Nord og Sør Kora 
 1. Økonomiske kriser EKS: USA
 **** Hvilken rolle bør offentlige myndigheter spille
 1. Offentlig myndigheter
@@ -54,13 +74,12 @@ EKS: Dialog
 1. Størrelsen på økonomien VIS
 1. Av og på i del I, del II og del III VIS:Oversiktskart  
 
-
 * Del 1: Konjunktursvingninger
 ** Nasjonalregnsaksbegreper og empiri lukket økonomi
 1. Hva er BNP?
 1. Hvordan bestemmes BNP?
 Kort sikt: Etterspørsel -> Produksjon pga stive priser 
-Mellomlang: Tilbud  
+Mellomlang: Tilbud  Kursbeskrivelse
 Lang sikt:   
 1. Ledighet
 1. Inflasjon
@@ -157,7 +176,7 @@ Lang sikt:
     - [ ] Sentralbanken
     - [ ] Offentlig myndigheter
 ** Solows vekstmodell
-
+ Makroøkonomi er studiet av et lands økonomi som helhet m helhet
 
 * Del 3: Økonomiske kriser
 ** Oversikt 

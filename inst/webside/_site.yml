@@ -7,8 +7,6 @@ navbar:
     menu:
     - text: Forelesningsplan
       href: forelesningsplan.html
-    - text: Kursbeskrivelse
-      href: kursbeskrivelse.html
     - text: Læringsmål
       href: laeringsmaal.html
   - text: Forelesninger
@@ -27,8 +25,6 @@ navbar:
     menu:
     - text: Oppgaver
       href: oppgaver.html
-    - text: Løsningsforslag
-      href: losningsforslag.html
   - text: Lenker
     menu:
     - text: Supplerende kursinformasjon
@@ -40,7 +36,7 @@ navbar:
     - text: Variabeldefinisjoner
       href: symbolliste.html
   right:
-  - text:
+  - text: ~
   - icon: ion-android-contact
     href: https://www.hvl.no/person/?user=3601450
 output:

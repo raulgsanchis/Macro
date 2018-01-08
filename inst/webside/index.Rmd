@@ -1,5 +1,7 @@
 
 ```{r eval=FALSE, include=FALSE}
+#html-rapportering  
+
 # Kursbeskrivelse
 # Bottom header
 # Foreløpig 
@@ -21,7 +23,7 @@
 <img id='grede' src="bilder/depression.jpg" height="75px" width="300px" />
 <img id='grere' src="bilder/recession.jpg" height="75px" width="300px" />
 
-**Kurs- og emneansvarlig:** Førsteamanuensis Jørn I. Halvorsen (Jorn.Inge.Halvorsen@hvl.no)
+**Kursansvarlig:** Førsteamanuensis Jørn I. Halvorsen (Jorn.Inge.Halvorsen@hvl.no)
 
 **Studentassistent:** Susanna Murati (170729@stud.hvl.no)
 
@@ -51,3 +53,11 @@ rmarkdown::render("index.Rmd", rmarkdown::pdf_document())
 keyneslatex <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/webside/jupyter/keynestex.json'))
 keynesequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/webside/jupyter/keynesequ.json'))
 ```
+
+<!--susanna-007@hotmail.com  -->    
+
+
+<!--
+(dvs. tilby lån til kundene ved å øke pengemengden)
+The argument that banks originate loans and thereby create money and additional demand was once a commonplace position. But in the 1950s, American Neoclassicals in particular began to push the view that banks are effectively just intermediaries between savers and investors; the view that banks were uniquely important in capitalism became a fringe view. I cover this history and the revival of the endogenous money approach by Basil Moore, Augusto Graziani and others
+-->

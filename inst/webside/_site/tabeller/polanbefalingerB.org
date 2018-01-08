@@ -3,13 +3,13 @@
 #+OPTIONS: toc:nil
 #+TITLE: 
 
-| Økonom         | Konjunktursvingninger                      | Stabiliseringspolitikk                            | Krisepolitikk                      |
-|----------------+--------------------------------------------+---------------------------------------------------+------------------------------------|
-| Keynes/Krugman | Investeringer ('animal spirit')            | Finanspolitikk                                    | Ekspansiv finans- og pengepolitikk |
-| Friedman       | Endringer i pengemengden                   | Konstant pengemengdevekst                         | Ekspaniv pengepolitikk             |
-| Minsky         | Økonmisk stabilitiet fører til ustabilitet | Finansreguleringer og sentralbank                 | Bail-out (redningspakker)          |
-| Hayek          | Kredittvekst                               | Fri konkurrane i banksektoren (ingen sentralbank) | Bail-In (likvididering)            |
-|                |                                            |                                                   |                                    |
+| Økonom         | Konjunktursvingninger                                | Stabiliseringspolitikk                            | Krisepolitikk                      |
+|----------------+------------------------------------------------------+---------------------------------------------------+------------------------------------|
+| Keynes/Krugman | Investeringer ($\Delta\overline{I}$) 'animal spirit' | Finanspolitikk ($\Delta G$)                       | Ekspansiv finans- og pengepolitikk |
+| Minsky         | Økonmisk stabilitiet fører til ustabilitet           | Finansreguleringer og sentralbank                 | Bail-out (redningspakker)          |
+| Friedman       | Endringer i pengemengden ($\Delta M$)                | Konstant pengemengdevekst ($\Delta M$ = g)        | Ekspaniv pengepolitikk             |
+| Hayek          | Kredittvekst                                         | Fri konkurrane i banksektoren (ingen sentralbank) | Bail-In (likvididering)            |
+|                |                                                      |                                                   |                                    |
 
 
 

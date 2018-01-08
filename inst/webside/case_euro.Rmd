@@ -3,7 +3,7 @@
 output: html_notebook
 ---
 -->
-# Case-studie: Krisen i Eurosonen: 
+# Applikasjon: Krisen i Eurosonen: 
 
 <img id='grere' src="bilder/eurozone.jpg" height="75px" width="300px" />
 

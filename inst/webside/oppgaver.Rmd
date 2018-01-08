@@ -7,7 +7,9 @@ output: html_notebook
 # Del I: Konjunktursvingninger
 # Del II: Økonomisk vekst
 # Del III: Økonomiske kriser
-# Prøveeksamen
+# Innleveringsoppgave
+
+
 <!--
 ## 1. 
 - Installer applikasjonen FRED i ditt Excel regneark

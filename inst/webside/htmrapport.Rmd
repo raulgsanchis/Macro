@@ -11,6 +11,7 @@ bibliography: pensum.bib
 ```
 
 <!--
+
 ```{r child = 'del1_konjunkturer.Rmd'}
 ```
 
