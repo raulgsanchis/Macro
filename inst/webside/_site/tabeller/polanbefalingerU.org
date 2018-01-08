@@ -1,0 +1,23 @@
+#+OPTIONS: html-postamble:nil
+#+OPTIONS: num:nil
+#+OPTIONS: toc:nil
+#+TITLE: 
+
+| Økonom         | Konjunktursvingninger | Stabiliseringspolitikk                            | Krisepolitikk                      |
+|----------------+-----------------------+---------------------------------------------------+------------------------------------|
+| Keynes/Krugman |                       |                                                   |                                    |
+| Friedman       |                       |                                                   |                                    |
+| Minsky         |                       |                                                   |                                    |
+| Hayek          |                       |                                                   |                                    |
+|                |                       |                                                   |                                    |
+
+
+
+
+
+
+
+
+
+
+

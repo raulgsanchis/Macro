@@ -10,17 +10,8 @@ bibliography: pensum.bib
 ```{r child = 'innledning.Rmd'}
 ```
 
-<!--
-
-```{r child = 'del1_konjunkturer.Rmd'}
-```
-
 -->
 
 # Referanser
 
 <font color="white">Smith cited [@gartner2016macroeconomics]</font>
-
-<!--
-<font color="white">Smith cited [@halvorsen2014]</font>
--->

@@ -46,7 +46,7 @@ Sjansen får du ikke igjen!
 
 ** Introduksjon
 *** Definere makro
-VIS: 
+VIS: - Makroøkonomi: Studio av et lands økonomi som helhet 
 *** Introdouksjon
 **** Tre grunnluggende spørsmål forsøkt besvart
 1. Konjunktursvingninger EKS: USA

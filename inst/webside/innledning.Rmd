@@ -99,7 +99,7 @@ grid.arrange(gdg, grg, gdu, gru, top = 'USA' )
 
 ### Politikkanbefalinger
 
-```{r pol, child = 'tabeller/polanbefalinger.html'}
+```{r pol, child = 'tabeller/polanbefalingerU.html'}
 
 ```
 
@@ -112,7 +112,7 @@ grid.arrange(gdg, grg, gdu, gru, top = 'USA' )
 
 ---
 
-Disse tingene vil i vårt kurs være knyttet til
+Disse tingene vil i vårt kurs være knyttet til:
 
 - Hvem utgjør de økonomiske aktørene i økonomien?
 - Hvilken markeder er operasjonelle ($\text{v}$ er symbolet for dette)?
@@ -155,6 +155,8 @@ $\Rightarrow$ bestemmer lånetilbudet i økonomien
 - del II kapitalmarkedet (investeringsbanker)
 - del III lånemarkedet (forretningsbanker)
 
+---
+
 ### Valutakursmarkedet 
 - del I
 
@@ -170,4 +172,4 @@ $\Rightarrow$ bestemmer lånetilbudet i økonomien
 
 ---
 
-**Øvelse til nest forelesning:** Lag et oversiktskart som summerer opp alle opplysningene knyttet til de økonomiske agentene, markedene og størrelsen på økonomien
+**Øvelse:** Lag et oversiktskart som summerer opp alle opplysningene knyttet til de økonomiske agentene, markedene og størrelsen på økonomien

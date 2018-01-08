@@ -11,7 +11,7 @@
 |   2 |  9.1 | Introduksjon                 | JIH       | Oversikt over faget                                                                       | Forelesningsnotater                                   |
 |-----+------+------------------------------+-----------+-------------------------------------------------------------------------------------------+-------------------------------------------------------|
 |   3 | 16.1 | Del I: Konjunktursvingninger | JIH       | Grunnleggende basiskunnskaper og enkel Keynes modell                                      | Forelesningsnotater + Gärtner kap 1                   |
-|   4 | 23.1 |                              | JIH       | IS-LM for en lukket (globalisert) økonomi                                                 | Forelesningsnotater + Gärtner kap 3                   |
+|   4 | 23.1 |                              | JIH       | IS-LM for en lukket (eller global) økonomi                                                | Forelesningsnotater + Gärtner kap 3                   |
 |   5 | 30.1 |                              | JIH       | Arbeidsmarkedet, ledighet og AS-kurven                                                    | Forelesningsnotater                                   |
 |   6 |  6.2 |                              | JIH       | AD-AS for en lukket (globalisert) økonomi                                                 | Forelesningsnotater + Gärtner kap 7                   |
 |   7 | 13.2 |                              | JIH       | Mundell-Fleming (IS-LM åpen økonomi) og AD-AS for en åpen økonomi med fast valutakurs     | Forelesningsnotater + Gärtner kap 4, 5 og 7           |
@@ -54,10 +54,9 @@
 Utlevert like før påskeferien, med innleveringsfrist onsdag 11. april (fra 1 til maks 3 personer per oppgave)
 
 ** Eksamen
-Eksamensdato: 09.5.2018
+Eksamensdato: 9.5.2018
 
 ** 
 *Faglærer:* Førsteamanuensis Jørn I. Halvorsen (JIH), *Studentassistent:* Susanna Murati (SMU) 
 
 *Merk:* Undervisningsplanen kan bli oppdatert utover semesteret 
-
