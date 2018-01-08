@@ -4,8 +4,11 @@ title: "Oppgaver ØKB1115 Makroøkonomi"
 output: html_notebook
 ---
 -->
-
 # Del I: Konjunktursvingninger
+# Del II: Økonomisk vekst
+# Del III: Økonomiske kriser
+# Prøveeksamen
+<!--
 ## 1. 
 - Installer applikasjonen FRED i ditt Excel regneark
 <iframe width="200" height="200" src="https://research.stlouisfed.org/fred-addin/">
@@ -86,3 +89,5 @@ Basert på de forutsetningene som har blitt gjort i oppgaver gitt til 5. foreles
 	Produktivitetsveksten
 # Del III: Økonomiske kriser
 # Prøveeksamen
+-->
+

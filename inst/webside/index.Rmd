@@ -21,9 +21,9 @@
 <img id='grede' src="bilder/depression.jpg" height="75px" width="300px" />
 <img id='grere' src="bilder/recession.jpg" height="75px" width="300px" />
 
-**Kurs og emneansvarlig:** Førsteamanuensis Jørn I. Halvorsen (Jorn.Inge.Halvorsen@hvl.no)
+**Kurs- og emneansvarlig:** Førsteamanuensis Jørn I. Halvorsen (Jorn.Inge.Halvorsen@hvl.no)
 
-**Kursassistent:** Susanna Murati (170729@stud.hvl.no)
+**Studentassistent:** Susanna Murati (170729@stud.hvl.no)
 
 <!--
 <span style="color:red"> Status: Under utvikling </span>

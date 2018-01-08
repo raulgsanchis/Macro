@@ -37,16 +37,4 @@
 | Modell                     | Godemarkedet | Pengemarkedet | Arbeidsmarkedet | Valutamarkedet | Finansmarkedet |
 | IS-LM med to husholdninger | V            | V             |                 |                |                |
 
-
-
 # Likevekt i flere enn et marked
-
-
-
-
-
-
-
-
-
-

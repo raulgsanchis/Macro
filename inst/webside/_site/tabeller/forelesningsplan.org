@@ -41,19 +41,26 @@
 |  10 |  5.3 | Mundell-Flemming og AD-AS modellen under fast og flytende kurs     |          |           |
 |-----+------+--------------------------------------------------------------------+----------+-----------|
 |     |      | Del II: Økonomisk vekst                                            |          |           |
-|  12 |  5.3 | Solow-modellen                                                     |          | SMU       |
+|  12 | 19.3 | Solow-modellen                                                     |          | SMU       |
+|-----+------+--------------------------------------------------------------------+----------+-----------|
+|  16 | 16.4 | Gjennomgang av obligatorisk oppgave                                |          | JIH       |
 |-----+------+--------------------------------------------------------------------+----------+-----------|
 |     |      | Del III: Økonomiske kriser                                         |          |           |
-|  16 | 19.3 | Penger, banker, kapitalkrav, statsgjeldskrise og likvidietsfellsen |          | SMU       |
-|-----+------+--------------------------------------------------------------------+----------+-----------|
-|  17 | 23.4 | Prøveeksamen                                                       |          | JIH       |
+|  17 | 23.4 | Penger, banker, kapitalkrav, statsgjeldskrise og likviditetsfellen |          | SMU/JIH   |
 |-----+------+--------------------------------------------------------------------+----------+-----------|
 **Rom: ??**. **Tidspunkt: ??**
 
+** Obligatorisk oppgave
+Utlevert like før påskeferien, med innleverinsfrist onsdag 11. april (mer info senere)
+
 ** Eksamen
-Eksamensdato: xx.5.2018
+Eksamensdato: 09.5.2018
 
 ** 
-*Faglærer:* Førsteamanuensis Jørn I. Halvorsen (JIH), *Kursassistent:* Susanna Murati (SMU) 
+*Faglærer:* Førsteamanuensis Jørn I. Halvorsen (JIH), *Studentassistent:* Susanna Murati (SMU) 
 
 *Merk:* Undervisningsplanen kan bli oppdatert utover semesteret 
+
+
+
+# ans/hsh.no/home/jiha

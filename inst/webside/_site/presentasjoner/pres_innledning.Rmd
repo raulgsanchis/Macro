@@ -1,5 +1,5 @@
 ---
-title: "Innledning"
+title: "Forelesning ØKB1115 Makroøkonomi"
 output:
   ioslides_presentation: default
 ---

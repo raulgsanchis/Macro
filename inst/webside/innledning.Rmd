@@ -44,7 +44,7 @@ mpu <- gpmakro(moltmacrousa, variables = c('unem', 'trendu'), katv = c('unem')
 ### USA 1929-2016
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
-grid.arrange(hpg, hpu , ncol = 2, top = 'USA' )
+grid.arrange(hpg, hpu , nrow = 2, top = 'USA' )
 ```
 
 ---
@@ -52,7 +52,7 @@ grid.arrange(hpg, hpu , ncol = 2, top = 'USA' )
 ### USA 1946-2007 
 
 ```{r echo=FALSE}
-grid.arrange(mpg, mpu , ncol = 2, top = 'USA' )
+grid.arrange(mpg, mpu , nrow = 2, top = 'USA' )
 ```
 
 - Sentralt poeng: Makroøkonmien innehar selvkorrigerende mekanismer
@@ -82,6 +82,7 @@ grid.arrange(gdg, grg, gdu, gru, top = 'USA' )
 <img id='grede' src="bilder/keynes.jpg" height="75px" width="300px" />
 <figcaption>John M. Keynes (1883-1946)</figcaption>
 <figure>
+<!--
 <figure>
 <img id='grede' src="bilder/krugman.jpg" height="75px" width="300px" />
 <figcaption>Paul Krugman(1953-)</figcaption>
@@ -94,6 +95,7 @@ grid.arrange(gdg, grg, gdu, gru, top = 'USA' )
 <img id='grede' src="bilder/hayek.jpg" height="75px" width="300px" />
 <figcaption>Friedrich Hayek (1899-1992)</figcaption>
 <figure>
+-->
 
 ---
 
@@ -158,7 +160,7 @@ The argument that banks originate loans and thereby create money and additional 
 
 ## Størrelsen på en økonomi
 
-### Lukket (global) økonomi 
+### Lukket (eller global) økonomi 
 - Påvirkes ikke av omverden (Tilnærming: USA)
 
 ### Liten åpen økonomi
