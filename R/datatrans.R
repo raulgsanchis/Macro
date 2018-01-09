@@ -4,7 +4,7 @@ buildweb <- function(webnr=1){
   website <- c('')[webnr]
 
   pkg <- devtools::as.package(".")
-  rmarkdown::render_site(paste0('webside/'), encoding = 'UTF-8')
+  rmarkdown::render_site(paste0(devtools::as.package(".")$path,'/inst/webside/'))
 }
 
 gitcomit <- function(message=Sys.Date()){
