@@ -9,6 +9,7 @@
 1. Læreboka
 1. Erfaring fra bra kurs
 1. E. språk
+1. David A.
 Kursbeskrivelse
 
 * Introduksjon
@@ -22,12 +23,14 @@ Kursbeskrivelse
 - video inn
 - Gå raskt igjennom de andre tingene 
 - Hovedside
-- Makroøkonomi: Studio av et lands økonomi som helhet
+- Makroøkonomi: Studio av et lands økonomi som helhet (skrive ned)
+Egen erfaringer
 - Løst: Del 1
+Egen erfaringer: sånn det blir på jobben
 Daglig informasjon
-Penger viktiglehman brothersca
+Penger viktig lehman brothersca
 - Løst: Del 2
-Hvilken av disse landene har høyest levestandar?
+Hvilken av disse landene har høyest levestandard?
 Kan det ene landet ta igjen det andre, hvor lang tid tar
 Hva forklarer veksten?
 - Løst: Del 3
@@ -57,9 +60,10 @@ VIS: - Makroøkonomi: Studio av et lands økonomi som helhet
 1. Konjunktursvingninger: Aktiv eller passiv
 1. Vekst: Kapitalisme vs. offentlig sektor !!
 1. Økonomiske kriser: Stabiliseringspolitikk (bail-out) EKS: Hjelpepakker
-
+   
 **** Keynes/Krugman, Minsky og Hayesk forståelse av de tre grunnleggende spørsmålene og offentlige myndighetene rolle
 1. Hørt om noen av disse?
+Tips: politisk: venstre høyre akse
 EKS: Dialog
 1. Hva forårsaker konjunktursvigninger
 1. Hva forårsaker kriser

@@ -99,7 +99,7 @@ grid.arrange(gdg, grg, gdu, gru, top = 'USA' )
 
 ### Politikkanbefalinger
 
-```{r pol, child = 'tabeller/polanbefalingerU.html'}
+```{r pol, child = 'tabeller/polanbefalinger.html'}
 
 ```
 
@@ -127,7 +127,7 @@ Videre, vi formulerer vi de økonomiske sammenhengene vi mener gjør seg gjelden
 ### Bedrifter - del I, del II og del III
 - Produserer ($\text{Y}$) og investerer ($\text{I}$)
 
-### Finansinstitusjoner - del (I) og III  
+### Finansinstitusjoner - del II, III  
 - Investerinsbanker: Mellomledd mellom lånegive og låntakere 
 - Forretningsbanker: Mellomledd mellom lånegive og låntakere *og* innehar kredittskapende evner 
 $\Rightarrow$ bestemmer lånetilbudet i økonomien
