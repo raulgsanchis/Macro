@@ -6,30 +6,30 @@
 * ØKB1115 Makroøkonomi våren 2018
 ** Undervisning
 
-| Uke | Dato | Del                          | Ansvarlig | Tema                                                                                      | Pensum                                                |
-|-----+------+------------------------------+-----------+-------------------------------------------------------------------------------------------+-------------------------------------------------------|
-|   2 |  9.1 | Introduksjon                 | JIH       | Oversikt over faget                                                                       | Forelesningsnotater                                   |
-|-----+------+------------------------------+-----------+-------------------------------------------------------------------------------------------+-------------------------------------------------------|
-|   3 | 16.1 | Del I: Konjunktursvingninger | JIH       | Grunnleggende basiskunnskaper og enkel Keynes modell                                      | Forelesningsnotater + Gärtner kap 1                   |
-|   4 | 23.1 |                              | JIH       | IS-LM for en lukket (eller global) økonomi                                                | Forelesningsnotater + Gärtner kap 3                   |
-|   5 | 30.1 |                              | JIH       | Arbeidsmarkedet, ledighet og AS-kurven                                                    | Forelesningsnotater                                   |
-|   6 |  6.2 |                              | JIH       | AD-AS for en lukket (globalisert) økonomi                                                 | Forelesningsnotater + Gärtner kap 7                   |
-|   7 | 13.2 |                              | JIH       | Mundell-Fleming (IS-LM åpen økonomi) og AD-AS for en åpen økonomi med fast valutakurs     | Forelesningsnotater + Gärtner kap 4, 5 og 7           |
-|   8 | 20.2 |                              | JIH       | Mundell-Fleming (IS-LM åpen økonomi) og AD-AS for en åpen økonomi med flytende valutakurs | Forelesningsnotater + Gärtner kap 4, 6 og 7           |
-|-----+------+------------------------------+-----------+-------------------------------------------------------------------------------------------+-------------------------------------------------------|
-|   9 | 27.2 | Del II: Økonomisk vekst      | JIH       | Stiliserte fakta om økonomisk vekst                                                       | Forelesningsnotater + Gärtner kap 9                   |
-|  10 |  6.3 |                              | JIH       | Solows vekstmodell                                                                        | Forelesningsnotater + Gärtner kap 9                   |
-|-----+------+------------------------------+-----------+-------------------------------------------------------------------------------------------+-------------------------------------------------------|
-|  11 | 13.3 | Del III: Økonomiske kriser   | JIH       | Penger (innvendige og utvendige)                                                          | Forelesningsnotater + Notat om penger                 |
-|  12 | 20.3 |                              | JIH       | Banker, systemrisiko og kapitalkrav                                                       | Forelesningsnotater + Notat om banker og reguleringer |
-|  14 |  3.4 |                              | JIH       | Statsgjeldskrise                                                                          | Forelesningsnotater + Gärtner kap 14                  |
-|  15 | 10.4 |                              | JIH       | Likviditetsfellen (IS-LM modellen med to husholdninger)                                   | Notat om likviditetsfellen                            |
-|-----+------+------------------------------+-----------+-------------------------------------------------------------------------------------------+-------------------------------------------------------|
-|  16 | 17.4 | Applikasjon                  | JIH       | Krisen i Eurosonen                                                                        | Forelesningsnotater + Halvorsen 2014                  |
-|-----+------+------------------------------+-----------+-------------------------------------------------------------------------------------------+-------------------------------------------------------|
-|  17 | 24.4 | Repetisjon                   | JIH       | Del I-III                                                                                 | Læringsmål                                            |
-|-----+------+------------------------------+-----------+-------------------------------------------------------------------------------------------+-------------------------------------------------------|
-**Rom: Auditorium A**. **Tidspunkt: 12:15-15:00**
+| Uke | Dato | Del                          | Tema                                                                                     | Ansvarlig | Pensum                                                    |   |
+|-----+------+------------------------------+------------------------------------------------------------------------------------------+-----------+-----------------------------------------------------------+---|
+|   2 |  9.1 | Introduksjon                 | Oversikt over faget                                                                      | JIH       | Forelesningsnotater                                       |   |
+|-----+------+------------------------------+------------------------------------------------------------------------------------------+-----------+-----------------------------------------------------------+---|
+|   3 | 16.1 | Del I: Konjunktursvingninger | Grunnleggende basiskunnskaper og enkel Keynes modell                                     | JIH       | Forelesningsnotater + Gärtner kap 1                       |   |
+|   4 | 23.1 |                              | IS-LM modellen (for en lukket, eller global økonomi)                                     | JIH       | Forelesningsnotater + Gärtner kap 3                       |   |
+|   5 | 30.1 |                              | Arbeidsmarkedet, ledighet og AS-kurven                                                   | JIH       | Forelesningsnotater                                       |   |
+|   6 |  6.2 |                              | AD-AS modellen (for en lukket, eller globalisert økonomi)                                | JIH       | Forelesningsnotater + Gärtner kap 7                       |   |
+|   7 | 13.2 |                              | Mundell-Fleming (IS-LM åpen økonomi) for en åpen økonomi med fast og flytende valutakurs | JIH       | Forelesningsnotater + Gärtner kap 4, 5 og 7               |   |
+|   8 | 20.2 |                              | AD-AS for en åpen økonomi med fast og flytende valutakurs                                | JIH       | Forelesningsnotater + Gärtner kap 4, 6 og 7               |   |
+|-----+------+------------------------------+------------------------------------------------------------------------------------------+-----------+-----------------------------------------------------------+---|
+|   9 | 27.2 | Del II: Økonomisk vekst      | Stiliserte fakta om økonomisk vekst                                                      | JIH       | Forelesningsnotater + Gärtner kap 9                       |   |
+|  10 |  6.3 |                              | Solows vekstmodell                                                                       | JIH       | Forelesningsnotater + Gärtner kap 9                       |   |
+|-----+------+------------------------------+------------------------------------------------------------------------------------------+-----------+-----------------------------------------------------------+---|
+|  11 | 13.3 | Del III: Økonomiske kriser   | Penger (innvendige og utvendige)                                                         | JIH       | Forelesningsnotater + Notat om penger                     |   |
+|  12 | 20.3 |                              | Banker, systemrisiko og kapitalkrav                                                      | JIH       | Forelesningsnotater + Notat om banker og bankreguleringer |   |
+|  14 |  3.4 |                              | Statsgjeldskrise                                                                         | JIH       | Forelesningsnotater + Gärtner kap 14                      |   |
+|  15 | 10.4 |                              | Likviditetsfellen (IS-LM modellen med to husholdninger)                                  | JIH       | Notat om likviditetsfellen                                |   |
+|-----+------+------------------------------+------------------------------------------------------------------------------------------+-----------+-----------------------------------------------------------+---|
+|  16 | 17.4 | Applikasjon                  | Krisen i Eurosonen                                                                       | JIH       | Forelesningsnotater + Halvorsen 2014                      |   |
+|-----+------+------------------------------+------------------------------------------------------------------------------------------+-----------+-----------------------------------------------------------+---|
+|  17 | 24.4 | Repetisjon                   | Del I-III                                                                                | JIH       | Læringsmål                                                |   |
+|-----+------+------------------------------+------------------------------------------------------------------------------------------+-----------+-----------------------------------------------------------+---|
+**Rom: Auditorium A**. **Tidspunkt: 12:15-15:00 (mandager)**
 
 ** Oppgaveseminar
 | Uke | Dato | Tema                                                               | Oppgaver | Ansvarlig |
@@ -48,7 +48,7 @@
 |     |      | Del III: Økonomiske kriser                                         |          |           |
 |  17 | 23.4 | Penger, banker, kapitalkrav, statsgjeldskrise og likviditetsfellen |          | SMU/JIH   |
 |-----+------+--------------------------------------------------------------------+----------+-----------|
-**Rom: Sørhauggaten 100. Rom 1 og 2**. **Tidspunkt: 12:00-14:00**
+**Rom: Sørhauggaten 100. Rom 1 og 2**. **Tidspunkt: 12:00-14:00 (tirsdager)**
 
 ** Obligatorisk oppgave
 Utlevert like før påskeferien, med innleveringsfrist onsdag 11. april (fra 1 til maks 3 personer per oppgave)

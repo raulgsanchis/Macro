@@ -7,8 +7,8 @@
 |----------------+------------------------------------------------------+---------------------------------------------------+--------------------------------------------------|
 | Keynes/Krugman | Investeringer ($\Delta\overline{I}$) 'animal spirit' | Finanspolitikk ($\Delta G$)                       | Nullrente ($i=0$) og ekspansiv finanspolitikk ($\overline{G}>0$) |
 | Minsky         | Økonmisk stabilitiet fører til ustabilitet           | Finansreguleringer og sentralbank                 | Bail-out (redningspakker)                        |
-| Friedman       | Endringer i pengemengden ($\Delta M$)                | Konstant pengemengdevekst ($\Delta M$ = g)        | Nullrente ($i=0$)                                |
-| Hayek          | Kredittvekst                                         | Fri konkurrane i banksektoren (ingen sentralbank) | Likvidering (bail-out)                           |
+| Friedman       | Endringer i pengemengden ($\Delta M$)                | Konstant pengemengdevekst ($\Delta M$ = g > 0)    | Nullrente ($i=0$)                                |
+| Hayek          | Kredittvekst                                         | Fri konkurrane i banksektoren (ingen sentralbank) | Likvidering (bail-in)                            |
 |                |                                                      |                                                   |                                                  |
 
 

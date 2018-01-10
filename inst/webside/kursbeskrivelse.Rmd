@@ -1,7 +1,7 @@
 ---
 # ØKB1115 Makroøkonomi
 
-## Gjelder for studieåret 2017/2018
+## Gjelder for studieåret 2018/2019
 
 ### Innhold
 Hovedtemaer i dette kurset er:
@@ -10,7 +10,27 @@ Hovedtemaer i dette kurset er:
 - Økonomisk vekst
 - Økonomiske kriser
     
-### Læringsutbytte
+### LæringsutbytteMål på aggregert produksjon: BNP
+(1) Verdien til alle sluttgodene (varer og tjenester) som blir produsert i en bestemt tidsperiode.
+(2) Summen av all merverdi for en bestemte tidsperiode.
+(3) Summen av all inntekt for en bestemte tidsperiode.
+Nominell BNP (LY)
+
+Reel BNP (Y)
+   
+Ledighet (U) og ledighetsrate (u)
+ hvor N antall i arbeid og U antall utenfor arbeid
+
+Inflasjon ()
+ 
+Okuns lov:
+Negativ korrelasjon mellom vekst i produksjonen (BNP) og endring i ledighetsraten. 
+Phillips-kuven:	
+Negativ korrelasjon mellom endring i inflasjon og ledighetsraten.
+Hva bestemmer aggregert BNP?
+Kort sikt: Etterspørsel bestemmer produksjonen (pga. stive stive priser)
+Mellomlang sikt: Tilgangen på innsatsfaktorer (arbeidskraft, teknologi og kapital) bestemmer etterspørselen.
+Lang sikt: Teknologisk framgang og kapital akkumulasjon (avhenger av sparing, befolkningsvekst (fødselsrater + nettoinnvandring)).
 #### Kunnskaper
 - Kjenne til sentrale nasjonalregnskapsbegreper
 - Kjenne til enkel Keynes-modell med og uten internasjonal handel  
@@ -19,7 +39,7 @@ Hovedtemaer i dette kurset er:
 - Kjenne til AD-AS modell under lukket og åpen (fast og flytende valutakurs) økonomi  
 - Kjenne til hva som menes med stabiliseringspolitikk
 - Kjenne til hva som forårsaker konjunktursvingninger
-- Kjenne til solows vekstmodell
+- Kjenne til Solows vekstmodell
 - Kjenne til pengesystemet (innvendige og utvendige penger)
 - Kjenne til formålet med bankreguleringer 
 - Kjenne til statsgjeldskrise
