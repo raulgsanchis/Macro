@@ -45,9 +45,10 @@ molttusagdp <- tusagdp %>% dplyr::mutate(gdp = ts(value, start = c(1929,1), end 
 #ggplot(data = dplyr::filter(molttusagdp, variable %in% c('lngdp','hptrendg')), aes(x = date, y =  value)) + geom_line(aes(color = variable))
 
 nunem <- mean(dplyr::filter(tusaunem, date >'1939-12-01' & date < '2007-12-01')$value)
-molttusaunem <- tusaunem %>% dplyr::mutate(unem = ts (value)) %>%
-  dplyr::mutate(Lunem = lag(unem, n = 12)) %>%
-  dplyr::mutate(cunem = unem - Lunem) %>%
+molttusaunem <- tusaunem %>%
+    dplyr::mutate(unem = ts (value)) %>%
+    dplyr::mutate(Lunem = lag(unem, n = 12)) %>%
+    dplyr::mutate(cunem = round(unem - Lunem, digits = 4)) %>%
   #dplyr::mutate(hpcycleu = hpfilter(unem, freq = 6000000000000)$cycle) %>%
   #dplyr::mutate(hptrendu = hpfilter(unem, freq = 6000000000000)$trend) %>%
   dplyr::mutate(trendu = nunem) %>%
@@ -56,19 +57,32 @@ molttusaunem <- tusaunem %>% dplyr::mutate(unem = ts (value)) %>%
 
 #ggplot(data = dplyr::filter(molttusaunem, variable %in% c('unem','rendu')), aes(x = date, y =  value)) + geom_line(aes(color = variable))
 
-molttusainf <- tusainf %>% reshape2::melt(id.vars = c("date")) %>% dplyr::mutate(inflation = ts(value)) %>%
-  dplyr::mutate(Linflation=lag(inflation)) %>%
+molttusainf <- tusainf %>% reshape2::melt(id.vars = c("date")) %>%
+  dplyr::mutate(inflation = ts(value)) %>%
+  dplyr::mutate(Linflation=lag(inflation, n = 12)) %>%
+  dplyr::mutate(cinflation = round(inflation - Linflation,digits=4)) %>%
+  reshape2::melt(id.vars = c("date")) %>%
   dplyr::mutate(kat = 'inf')
 
-molttusamone <- tusamone %>% reshape2::melt(id.vars = c("date")) %>%
+molttusamone <- tusamone %>% dplyr::mutate(money = ts(value)) %>%
+  reshape2::melt(id.vars = c("date")) %>%
   dplyr::mutate(kat='mon')
 
 ## Samler alle dataene for USA
-moltmacrousa <- rbind(molttusaunem, molttusagdp, molttusainf, molttusamone)
+moltmacrousa <- rbind(molttusaunem, molttusagdp, molttusainf, molttusamone) %>%
+  dplyr::mutate(freqm = substring(date,6,7))
 
 # 4. Saving data in Rda-format
 devtools::use_data(moltmacrousa, overwrite = TRUE)
 
 # Appendiks: grafikk
+unique(moltmacrousa$variable)
+a <- dplyr::filter(moltmacrousa, variable %in% c('unem','cunem'))
+b <- reshape2::dcast(a, date ~ variable)
+c <- dplyr::filter(moltmacrousa, variable %in% c('cunem',  'ggdp', 'inflation', 'cinflation'))
+d <- reshape2::dcast(c, date + freqm ~ variable) %>% dplyr::filter(freqm=='01', date >= '1948-01-01'
+                                                                   & date < '2017-01-01')
+qplot(data = d, x = ggdp, y = cunem, geom = 'point') + geom_smooth(model=lm)
+qplot(data = d, x = inflation, y = cinflation, geom = 'point') + geom_smooth(model=lm)
 
 

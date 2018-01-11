@@ -63,7 +63,7 @@ grid.arrange(mpg, mpu , nrow = 2, top = 'USA' )
 ```{r echo=FALSE}
 grid.arrange(gdg, grg, gdu, gru, top = 'USA' )
 ```
-- Sentralt poeng: Makroøkonmien selvkorrigerende mekanismer er satt ut av spill
+- Sentralt poeng: Makroøkonmiens selvkorrigerende mekanismer er satt ut av spill
 
 ## Tre grunnleggende spørsmål blir forsøkt besvart
 
@@ -128,10 +128,10 @@ Videre, vi formulerer vi de økonomiske sammenhengene vi mener gjør seg gjelden
 - Produserer ($\text{Y}$) og investerer ($\text{I}$)
 
 ### Finansinstitusjoner - del II, III  
-- Investerinsbanker: Mellomledd mellom lånegive og låntakere 
-- Forretningsbanker: Mellomledd mellom lånegive og låntakere *og* innehar kredittskapende evner 
+- Investerinsbanker: Mellomledd mellom långivere og låntakere 
+- Forretningsbanker: Mellomledd mellom lånegivere og låntakere *og* innehar kredittskapende evner 
 $\Rightarrow$ bestemmer lånetilbudet i økonomien
-
+  
 ---
 
 ### Sentralbanken - del I og III 

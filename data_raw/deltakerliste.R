@@ -11,3 +11,7 @@ deltakerlistefil <- deltakerliste %>% dplyr::mutate(passord = substring(epost, 1
 
 # 2. Lagre data i Rda-format
 devtools::use_data(deltakerlistefil, overwrite = TRUE)
+
+load("~/gitclones/teaching/MakroOEKB1115/data/  .rda")
+
+
