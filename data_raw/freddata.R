@@ -33,6 +33,10 @@ tusamone <- usamone %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(d
 # 3. Manipulating og transformerer dataene
 molttusagdp <- tusagdp %>% dplyr::mutate(gdp = ts(value, start = c(1929,1), end = c(2016,1), freq = 1)) %>%
   dplyr::mutate(lngdp = log(gdp)) %>%
+  dplyr::mutate(Lgdp = lag(gdp,n=1)) %>%
+  dplyr::mutate(Llngdp = lag(lngdp,n=1)) %>%
+  dplyr::mutate(ggdp = round(gdp/Lgdp-1,digits=4)) %>%
+  dplyr::mutate(glgdp = round(lngdp - Llngdp, digits = 4)) %>%
   dplyr::mutate(hpcycleg = hpfilter(lngdp, freq = 2000)$cycle) %>%
   dplyr::mutate(hptrendg = hpfilter(lngdp, freq = 2000)$trend) %>%
   reshape2::melt(id.vars = c("date")) %>%
@@ -42,6 +46,8 @@ molttusagdp <- tusagdp %>% dplyr::mutate(gdp = ts(value, start = c(1929,1), end 
 
 nunem <- mean(dplyr::filter(tusaunem, date >'1939-12-01' & date < '2007-12-01')$value)
 molttusaunem <- tusaunem %>% dplyr::mutate(unem = ts (value)) %>%
+  dplyr::mutate(Lunem = lag(unem, n = 12)) %>%
+  dplyr::mutate(cunem = unem - Lunem) %>%
   #dplyr::mutate(hpcycleu = hpfilter(unem, freq = 6000000000000)$cycle) %>%
   #dplyr::mutate(hptrendu = hpfilter(unem, freq = 6000000000000)$trend) %>%
   dplyr::mutate(trendu = nunem) %>%
@@ -50,8 +56,8 @@ molttusaunem <- tusaunem %>% dplyr::mutate(unem = ts (value)) %>%
 
 #ggplot(data = dplyr::filter(molttusaunem, variable %in% c('unem','rendu')), aes(x = date, y =  value)) + geom_line(aes(color = variable))
 
-
-molttusainf <- tusainf %>% reshape2::melt(id.vars = c("date")) %>%
+molttusainf <- tusainf %>% reshape2::melt(id.vars = c("date")) %>% dplyr::mutate(inflation = ts(value)) %>%
+  dplyr::mutate(Linflation=lag(inflation)) %>%
   dplyr::mutate(kat = 'inf')
 
 molttusamone <- tusamone %>% reshape2::melt(id.vars = c("date")) %>%

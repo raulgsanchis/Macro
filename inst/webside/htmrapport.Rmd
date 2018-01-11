@@ -10,7 +10,8 @@ bibliography: pensum.bib
 ```{r child = 'innledning.Rmd'}
 ```
 
--->
+```{r child = 'del1_konjunkturer.Rmd'}
+```
 
 # Referanser
 

@@ -81,18 +81,23 @@ EKS: Dialog
 
 * Del 1: Konjunktursvingninger
 ** Forelesning uke 3: Grunnlegende basiskunnskaper og enkel Keynes modell..
-1. Oversiktskart, pusse ut
-*** Repetisjon
-1. Repitisjon -> skisse av en konjunktursykel
-1. Oppgaveseminar
-
+*** Repetisjon (30 min)
+1. Obligasjonsmarkedet i USA tyder på økt inflasjon
+2. Repitisjon VIS:skisse av en konjunktursykel
+3. Oppgaveseminar
+4. Repitisjon: ledighet, tabell 
+5. Mål: Intern balanse (gapet mellom faktisk og potensiell produksjon lukkes) 'In the long run we are all dead'
+6. Oversiktskart - VIS:Ovelseskart
 *** Nasjonalregnsaksbegreper og empiri for en lukket økonomi
-Mål: Intern balanse (produksjongapet lukket)
 1. Hva er BNP?
-1. Hvordan bestemmes BNP?
+2. Hvordan bestemmes BNP?
+- Kort sikt
+- Mellom lang sikt (2-4)
+- Lang sikt
+
 Kort sikt: Etterspørsel -> Produksjon pga stive priser 
 Mellomlang: Tilbud  Kursbeskrivelse
-Lang sikt:   
+Lang sikt: Abc   
 1. Ledighet
 1. Inflasjon
 1. Okuns lov
