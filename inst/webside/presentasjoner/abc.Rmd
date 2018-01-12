@@ -23,34 +23,38 @@ philipusa <- qplot(data = fusadataI, x = unem, y = cinflation, geom = c('point',
 
 okunusag <- ggplot(data = fusadataI, aes(x = cunem, y = ggdp))  + geom_point() +  geom_smooth(method=lm, se=FALSE) + theme_classic() + labs(title = 'Okuns lov', x = 'Endring i arbeidsledigheten', y = c('Vekst i BNP (realpriser)'))
 
-philipusag <- ggplot(data = fusadataI, aes(x = unem, y = inflation))  + geom_point() +  geom_smooth(method=lm, se=FALSE) + theme_classic() + labs(title = 'Phillips-kurven' ,x = 'Ledighetsrate', y = 'Inflation')
+philipusag <- ggplot(data = fusadataI, aes(x = unem, y = inflation))  + geom_point() +  geom_smooth(method=lm, se=FALSE) + theme_classic() + labs(title = 'Philips-curven' ,x = 'Ledighetsrate', y = 'Inflation')
 ```
+
+# Del I: Konjunktursvingninger
+<img id='grede' src="bilder/cycles.jpg" height="75px" width="300px" />
+<img id='grere' src="bilder/money.jpg" height="75px" width="300px" />
+
+> Long run is a misleading guide to current affairs. In the long run we are all dead.
+- Keynes
 
 ## Grunnleggende bakgrunnkunnskaper og enkel Keynes modell (lukket økonomi)
 
-### Stabiliseringsmål for en lukket økonomi
-1. Intern balanse (lukke produksjonsgapet)
-
-### Sentrale nasjonalregnskapstall
+### Sentrale nasjonalregskapstall
 - Bruttonasjonalprodukt ($Y$)
 Den samlede verdien av alle varer og tjenester som blir produsert i landet
 - Nettonasjonalprodukt
-- Arbeidsledighet: $u = 1-\frac{L}{N}$
-- Inflasjon: $\pi = \frac{P_{1} - P_{0}}{P_{0}}$
+- Arbeidsledighet ($u = $)
+$u = 1-\frac{L}{N}$
+- Inflasjon ($\pi$)
+$\pi = \frac{P}{}$
 
 ---
 
 ### Sentrale empiriske sammenhenger
-#### Okuns lov (sammenheng mellom endring i ledighete og endring i BNP)
-- USA fra 1950-2010
+- Okuns lov (sammenheng mellom endring i ledighete og endring i BNP)
+
 ```{r echo=FALSE}
 okunusag 
 ```
 
----
+- Phillips-kurven (sammenheng mellom arbeidsledighet og inflasjon eller endring i inflasjon)
 
-#### Phillips-kurven (sammenheng mellom arbeidsledighet og inflasjon eller endring i inflasjon)
-- USA fra 1950-2010
 ```{r echo=FALSE}
 philipusag 
 ```
@@ -116,7 +120,7 @@ Lag
 
 #### Offentlige myndigheter
 
-#### Markeder i likevekt: Gode- og pengemarkedet
+#### Markeder i likevekt: Godemarkedet (varer og tjenester)
 
 #### Løsning av modellen:
 1. Setter inn for x, y
@@ -143,46 +147,9 @@ Lag
 
 ### AD-AS modellen: likevekt i gode-, penge- og arbeidsmarkedet
 
-#### Husholdningene
-
-#### Bedriftene 
-
-#### Likevekt i arbeidsmarkedet og AS-kurven
-
-#### Markeder i likevekt: Gode, penge, og arbeidsmarkedet
-
-#### Løsning av modellen:
-1. Setter inn for x, y
-
-1. Løser modellen mhp. på Y (godemarkedet) 
-
-1. Lister opp de endogene og eksogene variablene
-
-1. Grafisk framvisning ('Keynesian cross')
-
-#### Komparativ statikk (FGV): 
-
-- Økning i pengemengden
-
-- (F)ormelt
-
-- (G)rafisk
-
-- (V)erbal tolkning utenfor modellen
-
-#### Stabiliseringspolitikk
-
-#### Øvelse
-
 ## Åpen Økonomi
 
-### Stabiliseringsmål for en åpen økonomi
-1. Intern balanse (lukke produksjonsgapet)
-1. Ekstern balanse (holde utenlandsgjelden på et rimelig nivå)
-
-### Utenriksregnskapet
-
-### Mundell-Fleming modellen (IS-LM for en åpen økonomi): likevekt i gode, penge- og valutakursmarkedet
+### Mundell-Flemming modellen (IS-LM for en åpen økonomi): likevekt i gode, penge- og valutakursmarkedet
 
 #### Husholdninger
 
@@ -192,7 +159,7 @@ Lag
 
 #### Offentlige myndigheter
 
-#### Markeder i likevekt: Gode-, penge- og valutakursmarkedet
+#### Markeder i likevekt: Godemarkedet (varer og tjenester)
 
 #### Løsning av modellen:
 1. Setter inn for x, y
@@ -203,7 +170,7 @@ Lag
 
 1. Grafisk framvisning ('Keynesian cross')
 
-#### Komparativ statikk (GV): 
+#### Komparativ statikk (FGV): 
 
 - Økte investeringer ('animal spirits') $\Delta{I}>0$
 
@@ -219,18 +186,24 @@ Lag
 
 Lag
 
-#### Øvelse
+### IS-LM modellen: likevekt i gode- og pengemarkedet
 
-### AD-AS: likevekt i gode, penge, valuta- og arbeidsmarkedet
+#### Husholdninger
 
-#### Markeder i likevekt: Gode, penge, arbeids, og valutakursmarkedet
+#### Bedrifter
+
+#### Sentralbanken
+
+#### Offentlige myndigheter
+
+#### Markeder i likevekt: Godemarkedet (varer og tjenester)
 
 #### Løsning av modellen:
 1. Setter inn for x, y
 
 1. Løser modellen mhp. på Y (godemarkedet) 
 
-1. Lister opp de endogene og eksogene variablene
+1. Lister opp de endogende og eksogene variablene
 
 1. Grafisk framvisning ('Keynesian cross')
 
@@ -247,6 +220,8 @@ Lag
 #### Stabiliseringspolitikk
 
 #### Øvelse
+
+### AD-AS: likevekt i gode, penge, valuta- og arbeidsmarkedet
 
 <!--
 Del 1: Økonomiske svingninger på kort sikt

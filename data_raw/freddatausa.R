@@ -58,9 +58,14 @@ molttusaunem <- tusaunem %>%
 #ggplot(data = dplyr::filter(molttusaunem, variable %in% c('unem','rendu')), aes(x = date, y =  value)) + geom_line(aes(color = variable))
 
 molttusainf <- tusainf %>%
-  dplyr::mutate(inflation = ts(value)) %>%
-  dplyr::mutate(Linflation=lag(inflation, n = 12)) %>%
-  dplyr::mutate(cinflation = round(inflation - Linflation,digits=4)) %>%
+  dplyr::mutate(priceindex = ts(value)) %>%
+  dplyr::mutate(lnpriceindex = log(priceindex)) %>%
+  dplyr::mutate(Llnpriceindex = lag(lnpriceindex, n = 12)) %>%
+  dplyr::mutate(Lpriceindex = lag(priceindex, n = 12)) %>%
+  dplyr::mutate(ainflation = round(lnpriceindex-Llnpriceindex, digits = 4)) %>%
+  dplyr::mutate(inflation = round(priceindex/Lpriceindex - 1, digits = 4)) %>%
+  dplyr::mutate(Linflation = lag(inflation, n = 12)) %>%
+  dplyr::mutate(cinflation = lag(inflation, n = 12)) %>%
   reshape2::melt(id.vars = c("date")) %>%
   dplyr::mutate(kat = 'inf')
 
@@ -79,13 +84,12 @@ devtools::use_data(moltmacrousa, overwrite = TRUE)
 unique(moltmacrousa$variable)
 a <- dplyr::filter(moltmacrousa, variable %in% c('unem','cunem'))
 b <- reshape2::dcast(a, date ~ variable)
-c <- dplyr::filter(moltmacrousa, variable %in% c('cunem',  'ggdp', 'inflation', 'cinflation'))
+c <- dplyr::filter(moltmacrousa, variable %in% c('unem', 'cunem', 'ggdp', 'inflation', 'cinflation'))
 d <- reshape2::dcast(c, date + freqm ~ variable) %>% dplyr::filter(freqm=='01', date >= '1948-01-01'
                                                                    & date < '2017-01-01')
-qplot(data = d, x = ggdp, y = cunem, geom = 'point') + geom_smooth(model=lm)
-qplot(data = d, x = inflation, y = cinflation, geom = 'point') + gemolttusagdpom_smooth(model=lm)
+qplot(data = d, x = ggdp, y = cunem, geom = c('point', 'smooth'), method='lm')
+qplot(data = d, x = unem, y = cinflation, geom = c('point', 'smooth'), method='lm')
 
-qplot(data = mtcars, wt, cyl, geom = 'point')
 
 
 

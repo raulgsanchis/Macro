@@ -3,13 +3,13 @@
 #+OPTIONS: toc:nil
 #+TITLE: 
 
-| Økonom         | Konjunktursvingninger                                | Stabiliseringspolitikk                            | Krisepolitikk                                    |
-|----------------+------------------------------------------------------+---------------------------------------------------+--------------------------------------------------|
-| Keynes/Krugman | Investeringer ($\Delta\overline{I}$) 'animal spirit' | Finanspolitikk ($\Delta G$)                       | Nullrente ($i=0$) og ekspansiv finanspolitikk ($\overline{G}>0$) |
-| Minsky         | Økonmisk stabilitiet fører til ustabilitet           | Finansreguleringer og sentralbank                 | Bail-out (redningspakker)                        |
-| Friedman       | Endringer i pengemengden ($\Delta M$)                | Konstant pengemengdevekst ($\Delta M$ = g > 0)    | Nullrente ($i=0$)                                |
-| Hayek          | Kredittvekst                                         | Fri konkurrane i banksektoren (ingen sentralbank) | Likvidering (bail-in)                            |
-|                |                                                      |                                                   |                                                  |
+| Økonom         | Konjunktursvingninger                                 | Stabiliseringspolitikk                            | Krisepolitikk                                                    |
+|----------------+-------------------------------------------------------+---------------------------------------------------+------------------------------------------------------------------|
+| Keynes/Krugman | Investeringer ($\Delta\overline{I}$) 'animal spirits' | Finanspolitikk ($\Delta G$)                       | Nullrente ($i=0$) og ekspansiv finanspolitikk ($\overline{G}>0$) |
+| Minsky         | Økonomisk stabilitiet fører til ustabilitet           | Finansreguleringer og sentralbank                 | Bail-out (redningspakker)                                        |
+| Friedman       | Endringer i pengemengden ($\Delta M$)                 | Konstant pengemengdevekst ($\Delta M$ = g > 0)    | Nullrente ($i=0$) og holde pengemengden stabil                   |
+| Hayek          | Bankenes kredittvekst                                 | Fri konkurrane i banksektoren (ingen sentralbank) | Likvidering (bail-in)                                            |
+
 
 
 

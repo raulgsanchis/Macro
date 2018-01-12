@@ -3,17 +3,24 @@ title: "Innholdsfortegnelse"
 output:
   html_document:
     toc: true
-    toc_depth: 3
+    toc_depth: 4
 bibliography: pensum.bib
 ---
 
 ```{r child = 'innledning.Rmd'}
 ```
 
-<!--
+# Del I: Konjunktursvingninger
+<img id='grede' src="bilder/cycles.jpg" height="75px" width="300px" />
+<img id='grere' src="bilder/money.jpg" height="75px" width="300px" />
 
-``{r child = 'del1_konjunkturer.Rmd'}
+> Long run is a misleading guide to current affairs. In the long run we are all dead.
+- Keynes
+
+```{r child = 'del1_konjunkturer.Rmd'}
 ```
+
+<!--
 
 -->
 

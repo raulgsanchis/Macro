@@ -21,7 +21,7 @@
 |  10 |  6.3 |                              | Solows vekstmodell                                                                       | JIH       | Forelesningsnotater + Gärtner kap 9                       |   |
 |-----+------+------------------------------+------------------------------------------------------------------------------------------+-----------+-----------------------------------------------------------+---|
 |  11 | 13.3 | Del III: Økonomiske kriser   | Penger (innvendige og utvendige)                                                         | JIH       | Forelesningsnotater + Notat om penger                     |   |
-|  12 | 20.3 |                              | Banker, systemrisiko og kapitalkrav                                                      | JIH       | Forelesningsnotater + Notat om banker og bankreguleringer |   |
+|  12 | 23.3 |                              | Banker, systemrisiko og kapitalkrav                                                      | JIH       | Forelesningsnotater + Notat om banker og bankreguleringer |   |
 |  14 |  3.4 |                              | Statsgjeldskrise                                                                         | JIH       | Forelesningsnotater + Gärtner kap 14                      |   |
 |  15 | 10.4 |                              | Likviditetsfellen (IS-LM modellen med to husholdninger)                                  | JIH       | Notat om likviditetsfellen                                |   |
 |-----+------+------------------------------+------------------------------------------------------------------------------------------+-----------+-----------------------------------------------------------+---|
@@ -29,7 +29,7 @@
 |-----+------+------------------------------+------------------------------------------------------------------------------------------+-----------+-----------------------------------------------------------+---|
 |  17 | 24.4 | Repetisjon                   | Del I-III                                                                                | JIH       | Læringsmål                                                |   |
 |-----+------+------------------------------+------------------------------------------------------------------------------------------+-----------+-----------------------------------------------------------+---|
-**Rom: Auditorium A**. **Tidspunkt: 12:15-15:00 (tirsdager)**
+**Rom: Auditorium A**. **Tidspunkt: 12:15-15:00 (tirsdager), med unntak av uke 12 hvor forelesningen er lagt til en fredag**
 
 ** Oppgaveseminar
 | Uke | Dato | Tema                                                               | Oppgaver | Ansvarlig |
@@ -59,4 +59,4 @@ Eksamensdato: 9.5.2018
 ** 
 *Faglærer:* Førsteamanuensis Jørn I. Halvorsen (JIH), *Studentassistent:* Susanna Murati (SMU) 
 
-*Merk:* Undervisningsplanen kan bli oppdatert utover semesteret 
+*Merk:* Undervisningsplanen kan bli oppdatert i løpet av semesteret 
