@@ -282,139 +282,120 @@ $(document).ready(function () {
 
 <!--
 ---
-title: "Oppgaver ØKB1115 Makroøkonomi"
 output: html_notebook
 ---
 -->
-<div id="del-i-konjunktursvingninger" class="section level1">
-<h1>Del I: Konjunktursvingninger</h1>
-<div id="gjr-flgende-oppgaver-for-norge-og-minst-ett-land-i-eurosonen" class="section level2">
-<h2>Gjør følgende oppgaver for Norge og minst ett land i Eurosonen</h2>
-<div id="installering-av-fred" class="section level3">
-<h3>Installering av FRED</h3>
-<ul>
-<li>Installer applikasjonen FRED (St. Louis Federal Reserve) i ditt Excel regneark <a href="https://research.stlouisfed.org/fred-addin/install_windows.html">klikk her for næmere instruksjon</a></li>
-<li>Hjelp til hvordan bruke programmet finnes her: <a href="http://www.youtube.com/watch?v=OAH-wGtP_k8">lenke</a></li>
-</ul>
-</div>
-<div id="tidsserier" class="section level3">
-<h3>Tidsserier</h3>
-<ul>
-<li>Finn tidsserien til bruttonasjonalproduktet i reelle størrelser.</li>
-<li>Finn tidsserien antall innbyggere</li>
-<li>Konstruer tidsserien bruttonasjonalprodukt</li>
-<li>Transformer serien ved å ta logaritmen.</li>
-</ul>
-</div>
-<div id="grafisk" class="section level3">
-<h3>Grafisk</h3>
-<ul>
-<li>Vis serien grafisk.</li>
-<li>Gir serien noen tegn på dype økonomiske kriser? Hvis ja, se om du kan finne (søk på internett) noen kortfattede - forklaringer bak disse krisene.</li>
-</ul>
-</div>
-<div id="okuns-lov-og-phillips-kurven" class="section level3">
-<h3>Okuns lov og Phillips-kurven</h3>
-<ul>
-<li>Finn et mål på inflasjon.</li>
-<li>Finn et mål på ledighet.</li>
-<li>Lag et scatterplot for ledighet og endring inflasjon (Phillips-kurven).</li>
-<li>Lag et scatterplot for vekst og endring i inflasjon (Okuns lov).</li>
-</ul>
-</div>
-</div>
-</div>
-<div id="del-ii-konomisk-vekst" class="section level1">
-<h1>Del II: Økonomisk vekst</h1>
-</div>
-<div id="del-iii-konomiske-kriser" class="section level1">
-<h1>Del III: Økonomiske kriser</h1>
-</div>
-<div id="innleveringsoppgave" class="section level1">
-<h1>Innleveringsoppgave</h1>
-<p>asfddsaf</p>
+<div id="del-3-konomiske-kriser" class="section level1">
+<h1>Del 3: Økonomiske kriser</h1>
+<p><img id='grede' src="bilder/depression.jpg" height="75px" width="300px" /> <img id='grere' src="bilder/recession.jpg" height="75px" width="300px" /></p>
+<blockquote>
+<p>Can ‘It’ - a Great Depression - happen again? And if ‘It’ can happen why didn’t ‘It’ occur in the years since World War II? These are questions that naturally follow from both the historical record and the comparative success of the past thirty-five years. To answer these questions it is necessary to have an economic theory which makes great depressions one of the possible states in which our type of capitalist economy can find itself. - Minsky (1982)</p>
+</blockquote>
 <!--
-servr::httw(".")
-## 1. 
-- Installer applikasjonen FRED i ditt Excel regneark
-<iframe width="200" height="200" src="https://research.stlouisfed.org/fred-addin/">
+
+## Tema 1: Penger, kreditt og bankadferd
+### Innvendige og utvendige penger
+<iframe width="200" height="200" src="https://www.youtube.com/embed/O7pnjzCuSv8">
 </iframe>
-- Gjør følgende oppgave for Norge, Tyskland og Hellas:
-1.  Finn tidsserien til bruttonasjonalproduktet i reelle størrelser.
-1.  Finn tidsserien antall innbyggere
-1.  Konstruer tidsserien bruttonasjonalprodukt per innbygger.
-1.  Transformer serien ved å ta logaritmen.
-1.  Vis serien grafisk.
-1.  Gir serien noen tegn på dype økonomiske kriser?  Hvis ja, se om du kan finne (søk på internett) noen ortfattede forklaringer bak disse krisene.
-1.  Finn et mål på inflasjon.
-1.  Finn et mål på ledighet.
-1.  Lag et scatterplot for ledighet og inflasjon (Phillips-kurven).
-1.  Lag et scatterplot for vekst og endring i inflasjon (Okuns lov).
-## 2. 
-### I:
-Ta utgangspunkt i følgende makroøkonomisk modell:
-$Z=C+I+G$
-Hvor Z er aggregert etterspørsel. C er konsum. I er private realinvesteringer og G er offentlig kjøp av varer og tjenester.
-I tillegg postulerer vi følgende adferdssammenhenger:
-$C=c_0+c_1 (Y-T)-c_2 i$
-$I=I-b_1 i$
-Hvor T er nettoskatter, i det nominelle rentenivået, og små bokstaver betegner positive parametere.
-Likvektsbetingelsen for varmarkedet er gitt ved 
-Y=Z 
 
-Hvor Y betegner produksjonen.
-    Nevn tre sentrale forutsetninger som ligger bak en slik modell.
-    Finn løsningen til modellen med hensyn på Y.
-    Hva skjer når i øker (vis formelt, verbalt og grafisk)?
-    Anta at sentralbanken innfører en renteregel som tilsier at i=m_0 Y
-    Sammenlikn multiplikatoren i modellen før og etter innføringen av en slik regel. Hvilken er høyest?
-    Gi en verbal på forklaring på hvordan innførselen av en regel virker inn ved en positiv økning i investeringen ### II: 
-Ta utgangspunkt i samme modell som i forrige oppgavesett. Anta i tillegg nå at pengemarkedet er operativt. Pengetilbudet er derfor gitt ved M^s=M/P og penge etterspørselen M^d=M(LY,i).  Vis likevekten i pengemarkedet under forutsetning om at sentralbanken (a) setter rentenivået, (b) bestemmer pengetilbudet. 
-    Bestem Y grafisk under (a) og (b) under forutsetning om at både vare- og pengemarkedet er i likevekt (IS-LM modellen).
-    Under (a), hva skjer dersom konsumet øker? Vis grafisk og verbalt.
-    Under (b), ha skjer dersom prisnivået P øker? Vis grafisk og verbalt.
-    Diskuter fordeler og ulemper ved pengepolitikk vs. finanspolitikk som stabiliseringspolitiske verktøy. 
-Oppgaver gitt til 5. forelesning 
-    Vi tar først utgangspunkt i samme modell som ble satt opp under oppgave gitt til 3. forelesning. Videre tenker vi oss at økonomien er åpen for handel og kapitalbevegelser med utlandet. Dette betyr nå at 
-Z=C+I+G+NX
-Y=Z
-                    NX≡X-R*IM
-E_ =((1+i))/((1+i_^* ) ) E_^e   
-I tillegg postulerer vi at følgende sammenhenger for import og eksport:
-X(R,Y^* )=A ̅+/-a_1 R+/-a_2 Y^*
-IM(R,Y)=B ̅+/-s_1 R+/-s_2 Y
-                R=(EP^*)/P
-Anta at parameterne a_1,a_2,s_1  og s_2 er positive Bestem og forklar hvilke fortegn (+/-) som bør gjelde for eksport og import likningene ovenfor.
-    Finn et uttrykk for ∆NX/∆Y , ∆NX/∆R og om mulig avgjør fortegnene.
-    Finn et eksplisitt utrykk for IS likningen under faste kurs (enklest).
-    Finn et eksplisitt utrykk for IS likningen under flytende kurs (litt mer vanskelig).
-    I løpet av forelesningen ble det hevdet at importlekkasje gjør multiplikatoren mindre. I tillegg til dette, vil helningen på IS-kurven (likevekt i vare- og valutakursmarkedet) være brattere i et under fast kurs sammenliknet flytene kurs. Er dette overens med løsningen du fant i de to oppgavene ovenfor?
-    Hvilke virkemidler har myndighetene for å stabilisere konjunkturene under henholdsvis et fast og flytende kurs regime?
-    Hva menes med intern og ekstern balanse?
+Del 3: Økonomiske kriser
+Tema 1: Penger, kreditt og bankadferd
+Pengens funksjoner 
+    Penger som gjeld
+Utvendige penger (M0(M1)): 
+Skapt av sentralbanken og består av sedler, mynt pluss forretningsbankenes innskuddskontoer i sentralbanken. 
 
-## 3. 
-Basert på de forutsetningene som har blitt gjort i oppgaver gitt til 5. forelesning, finn  ∆NX/∆P og avgjør fortegnet.  
-    Finn deretter  ∆Y/∆P og tegn AD-kurven inn i to diagrammer, et for fast og et for flytende kurs.
-    Tegn til slutt AS-kurven inn i de to diagrammene. 
-    Anta at vi får en sterk økning i C ̅. 
-    Hva skjer med handelsbalansen?
-    Hva skjer med utenriksregnskapet?
-    Hvorfor vil det under en slik endring være enklere å føre en stabiliseringspolitikk i et flytende vs. et fast kurs regime?
+Innvendige penger(M1(M2)-M0(M1)) : 
+Skapt av bankene ved at de krediterer sine innskuddskontoer.
+Tre arketyper for banksystemets forskjellige utforminger 
+    System 1: Lånebasert økonomi 
+Problemer:
+Uelastisk kredittilbud.
+Kostnader ved å flytte reserver mellom forretningsbankene.
 
-# Del II: Økonomisk vekst
-## I:
-    y=f()  Y/N=F(K,N)
-    Tre komponenter:
-    Redusert sparerate
-    Reduser befolkningsvekst
-    Lsninger og realavkastning
-    Sjekk spareraten i kina
-    Hva kan man gjøre for å få opp teknologiske veksten
-    Blanchard oppgaver
-    Vekst i norge
-    Produktivitetsveksten
-# Del III: Økonomiske kriser
-# Prøveeksamen
+    System 2: Fraksjonsbasert bankvirksomhet uten sentralbank
+Problemer:
+Åpne for løp på bankene.
+Kostnader ved å flytte reserver mellom forretningsbankene.
+
+    System 3: Fraksjonsbasert bankvirksomhet med sentralbank og fiat penger
+Problemer:
+
+### Banker, systemrisiko og kapitalkrav
+> In a world of businessmen and financial intermediaries who aggressively seek profit, innovators will always outpace regulators; the authorities cannot prevent changes in the structure of portfolios from occurring. What they can do is keep the asset-equity ratio of banks within bounds by setting equity-absorption ratios for various types of assets. 
+- Minsky (1982)
+
+Vilkårlig omfordeling av formue.
+Banker og systemrisiko  
+    Bloos rule: Innskuddsgaranti gjør det mer lønnsomt å velge prosjekter med unødvendig 
+Dersom alle banker går får en slik løsning  Systemrisiko.
+    Høyere egenkapitalkrav til bankene vil føre (1)Lavere forventede utbetalinger ved systemrisiko (2) Gradvis substitusjon over fra forretningsmodeller med overdreven risiko. 
+
+
+## Tema 2: Statsgjeld
+Konsolidert budsjettbetingelse for offentlig sektor
+Offentlig sektor
+B_t^f=(1+i_(t-1) ) B_(t-1)^f+(G_t-T_t )-SNG_t    
+Sentralbanken
+i_(t-1) B_(t-1)^m  +∆B_t^m=∆M_t+SNG_t
+Statsgjeld
+B_t=B_t^f-B_t^m
+    Ved å kombinere uttrykkene ovenfor får vi den konsoliderte budsjettbetingelsen for offentlig sektor
+
+B_t=(1+i_(t-1 ) ) B_t+(G_t-T_t )-ΔM_t
+
+Dynamikken i statsgjelden over tid
+    Ved null inflasjon og  i_t=r_t og ΔM_t=0, kan uttrykket ovenfor skrives som 
+
+B_t/Y_t =((G_t-T_t))/Y_t +  B_(t-1)/Y_(t-1) (1+r-g)
+    Grafisk analyse for fire tifeller:
+Viktigst:  
+(1+r-g)>1 og  (i) (G_t-T_t)>0  og (ii) (G_t-T_t)<0 
+Mindre viktig:
+ (1+r-g)<1 og  (iii) (G_t-T_t)>0  og (iv) (G_t-T_t)<0
+Mulig tiltak for å forhindre en statsgjeldskrise
+    Kutte i primærbudsjettet (øke T eller redusere G)
+    Mislighold
+    Inflasjon ( man må gjøre sentralbanken mindre uavhengig)
+
+## Tema 3: Likviditetsfellen og privat gjeld
+<iframe width="420" height="345" src="http://www.youtube.com/watch?feature=player_embedded&v=2ZgQ-7uNmSU">
+</iframe>
+<!--
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=2ZgQ-7uNmSU
+" target="_blank"><img src="http://img.youtube.com/vi/2ZgQ-7uNmSU/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+-->
+<!--
+Hva er likviditetsfellen?
+    Sitasjon hvor pengepolitikken ikke lengre kan påvirke realøkonomien på en ekspansiv måte: Kortsiktig nominell rente er (nær) lik null.
+    Beskrevet først av Keynes i “General Theory” på 1930-tallet. Men blitt aktualisert etter den globale finanskrisen
+
+Hvordan havner man i en likviditetsfelle?
+    Case 1: Demografiske endringer (Krugman, 1998) ⇒Δ ̅C<0 (eks. spare mere til alderdommen)
+
+ΔY=1/((1-c(1-t)) (Δ ̅C)<0
+Likviditetsfelle dersom rentereduksjonen ikke klarer å veie opp for nedgangen i konsumet som er en følge av de demografiske endringene: 
+(Δ C ̅-b∙Δ i^0)<0
+⇒ΔY=1/((1-c(1-t))(Δ C ̅-b∙Δ i^0)<0
+
+
+    Case 2: Privat gjeldsreduksjon (Krugman og EggertsSon, 2012)⇒ΔD^b<0 (Minsky moment)
+
+
+ΔY=1/((1-¯c(1-t)) (θ∙Δ ̅D^b )<0
+Likviditetsfelle dersom rentereduksjonen ikke klarer å veie opp for nedgangen i konsumet som er en følge av gjeldsreduksjonen:
+ (θ∙Δ D^b-¯b  ∙Δ i^0)<0
+⇒ΔY=1/((1-¯c  (1-t))(θ∙Δ D^b-b∙Δ i^0)<0
+
+    Likviditetsfelle  Y<Y^n T=tY   går ned. Redusert BNP og redusert skatter  B_t/Y_t øker. Gitt at sentralbanken ikke gis muligheten til å øke pengemengden for å kjøpe statsobligasjoner, vil en overgang til en likviditetsfelle lett kunne smitte over i en statsgjeldskrise.  
+Hvordan komme ut av en likviditetsfelle?
+    Den lukkede økonomi modellen forteller oss at finanspolitikken kan betraktes som en gratis lunsj:
+    Vil kunne lukke produksjonsgapet.
+    Vil stabilisere prisene
+    Rentekostnader ved å gjøre dette vil være (tilnærmet) lik null. 
+    For en åpen økonomi er ikke situasjonen like enkel.  Dette vil bli forklart nærmere under forelesningen om krisen i eurosonen. 
+
 -->
 </div>
 

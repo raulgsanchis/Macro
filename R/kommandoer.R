@@ -10,7 +10,7 @@ inst <- function(){
 }
 
 
-
+# system('/home/joernih/gitclones/teaching/ R CMD INSTALL --no-multiarch --with-keep.source MakroOEKB1115')
 
 
 

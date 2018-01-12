@@ -5,12 +5,40 @@ output: html_notebook
 ---
 -->
 # Del I: Konjunktursvingninger
-# Del II: Økonomisk vekst
-# Del III: Økonomiske kriser
-# Innleveringsoppgave
+## 
+Gjør følgende oppgaver for Norge og minst ett land i Eurosonen
+### Installering av FRED
+- Installer applikasjonen FRED (St. Louis Federal Reserve)  i ditt Excel regneark [klikk her for næmere instruksjon](https://research.stlouisfed.org/fred-addin/install_windows.html)
+- Hjelp til hvordan bruke programmet finnes her: [lenke](http://www.youtube.com/watch?v=OAH-wGtP_k8) 
 
+### Tidsserier
+- Finn tidsserien til bruttonasjonalproduktet i reelle størrelser.
+- Transformer denne serien ved å ta logaritmen (naturlige)
+- Finn tidsserien for arbeidsledighet 
+- Finn tidsserien for inflasjon 
+- Finn tidsserien for det nominelle rentenivået 
+
+### Grafisk
+- Vis serien grafisk
+- Gir serien noen tegn på dype økonomiske kriser?  Hvis ja, se om du kan finne (søk på internett) noen kortfattede - forklaringer bak disse krisene
+
+### Okuns lov og Phillips-kurven
+- Finn et mål på inflasjon
+- Finn et mål på ledighet
+- Lag et scatterplot for ledighet og endring inflasjon (Phillips-kurven).
+- Lag et scatterplot for vekst og endring i inflasjon (Okuns lov)
+- For de to scatterplottene, se om du klarer å estimere en linje som graden av linear
+- Er resultaten du finner i tråd med de empirisk regularitetene som ble gjennomgått i forelesningen?
+
+# Del II: Økonomisk vekst
+
+# Del III: Økonomiske kriser
+
+# Innleveringsoppgave
+asfddsaf
 
 <!--
+servr::httw(".")
 ## 1. 
 - Installer applikasjonen FRED i ditt Excel regneark
 <iframe width="200" height="200" src="https://research.stlouisfed.org/fred-addin/">
