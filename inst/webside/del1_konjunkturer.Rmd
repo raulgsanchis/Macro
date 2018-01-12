@@ -5,6 +5,8 @@
 > Long run is a misleading guide to current affairs. In the long run we are all dead.
 - Keynes
 
+<!--
+
 ## Grunnleggende bakgrunnkunnskaper og enkel Keynes modell (lukket økonomi)
 
 ### Sentrale nasjonalregskapstall
@@ -28,6 +30,8 @@ $\pi = \frac{P}{}$
 ### Hva bestemmer aggregert BNP?
 <!-- I dette kurset er produktfunksjonen gitt ved
 $Y = AN$ -->
+
+<!--
 
 #### Kort sikt (Keynes, IS-LM og Mundell-Fleming modellen, del I og III):
 - Samlet etterspørsel ($AE$) bestemmer BNP ($Y$)
@@ -198,5 +202,4 @@ AD-AS modellen for en åpen økonomi
 	AD-kurven er fallende ved at økt priser fører til lavere etterspørsel.
 	Sentral poeng med modellen – Selvkorrigerende mekanismer:
 Fleksibilitet i P og korrekte prisforventninger P^e på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.
--->
 -->

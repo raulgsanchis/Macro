@@ -69,8 +69,8 @@ molttusamone <- tusamone %>% dplyr::mutate(money = ts(value)) %>%
   dplyr::mutate(kat='mon')
 
 ## Samler alle dataene for USA
-moltmacrousa <- rbind(molttusaunem, molttusagdp, molttusainf, molttusamone) %>%
-  dplyr::mutate(freqm = substring(date,6,7))
+moltmacrousa <- rbind(molttusaunem, molttusagdp)# , molttusainf, molttusamone) #%>%
+  #dplyr::mutate(freqm = substring(date,6,7))
 
 # 4. Saving data in Rda-format
 devtools::use_data(moltmacrousa, overwrite = TRUE)
@@ -83,6 +83,4 @@ c <- dplyr::filter(moltmacrousa, variable %in% c('cunem',  'ggdp', 'inflation', 
 d <- reshape2::dcast(c, date + freqm ~ variable) %>% dplyr::filter(freqm=='01', date >= '1948-01-01'
                                                                    & date < '2017-01-01')
 qplot(data = d, x = ggdp, y = cunem, geom = 'point') + geom_smooth(model=lm)
-qplot(data = d, x = inflation, y = cinflation, geom = 'point') + geom_smooth(model=lm)
-
-
+qplot(data = d, x = inflation, y = cinflation, geom = 'point') + gemolttusagdpom_smooth(model=lm)

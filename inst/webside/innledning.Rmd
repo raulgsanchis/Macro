@@ -14,6 +14,7 @@ library(grid)
 
 # Henter datasett
 moltmacrousa <- MakroOEKB1115::moltmacrousa
+unique(moltmacrousa$variable)
 
 varinavng <- c('BNP', 'BNP-trend (hp-filter)')
 
@@ -129,7 +130,7 @@ Videre, vi formulerer vi de økonomiske sammenhengene vi mener gjør seg gjelden
 
 ### Finansinstitusjoner - del II, III  
 - Investerinsbanker: Mellomledd mellom långivere og låntakere 
-- Forretningsbanker: Mellomledd mellom lånegivere og låntakere *og* innehar kredittskapende evner 
+- Forretningsbanker: Mellomledd mellom långivere og låntakere *og* innehar kredittskapende evner 
 $\Rightarrow$ bestemmer lånetilbudet i økonomien
   
 ---
