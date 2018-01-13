@@ -14,7 +14,7 @@ navbar:
     - text: Introduksjon
       href: presentasjoner/pres_innledning.html
     - text: 'Del I: Konjunktursvingninger'
-      href: del1_konjunkturer.html
+      href: del1_konjunkturerF.html
     - text: 'Del II: Økonomisk vekst'
       href: del2_vekst.html
     - text: 'Del III: Økonomiske kriser'

@@ -1,6 +1,10 @@
----
-output: html_notebook
----
+# Del I: Konjunktursvingninger
+<img id='grede' src="bilder/cycles.jpg" height="75px" width="300px" />
+<img id='grere' src="bilder/money.jpg" height="75px" width="300px" />
+
+> Long run is a misleading guide to current affairs. In the long run we are all dead.
+- Keynes
+
 
 ```{r include=FALSE}
 library(MakroOEKB1115)
@@ -20,6 +24,7 @@ fusadataI <- reshape2::dcast(usadataI, date + freqm ~ variable) %>%
 
 okunusa <- qplot(data = fusadataI, x = ggdp, y = cunem, geom = c('point', 'smooth'), method='lm')
 philipusa <- qplot(data = fusadataI, x = unem, y = cinflation, geom = c('point', 'smooth'), method='lm')
+
 
 okunusag <- ggplot(data = fusadataI, aes(x = cunem, y = ggdp))  + geom_point() +  geom_smooth(method=lm, se=FALSE) + theme_classic() + labs(title = 'Okuns lov', x = 'Endring i arbeidsledigheten', y = c('Vekst i BNP (realpriser)'))
 
@@ -41,7 +46,7 @@ Den samlede verdien av alle varer og tjenester som blir produsert i landet
 ---
 
 ### Sentrale empiriske sammenhenger
-#### Okuns lov (sammenheng mellom endring i ledighete og endring i BNP)
+#### Okuns lov - negativ korrelasjon mellom endring i ledighet og vekst i BNP (realpriser) 
 - USA fra 1950-2010
 ```{r echo=FALSE}
 okunusag 
@@ -51,6 +56,7 @@ okunusag
 
 #### Phillips-kurven (sammenheng mellom arbeidsledighet og inflasjon eller endring i inflasjon)
 - USA fra 1950-2010
+
 ```{r echo=FALSE}
 philipusag 
 ```
@@ -71,40 +77,69 @@ philipusag
 
 ### Enkel Keynes-modell: likevekt i godemarkedet (varer og tjenester)
 
-#### Husholdninger
+#### Aggregert etterspørsel
+$AD \equiv  C + I + G$
 
+#### Husholdninger
+$C =  \overline{C} + c(Y - T)$
+Hvor $0<c=<1$ og $\overline{C}>0$
 #### Bedrifter
+$I = \overline{I} - b\cdot i$
 
 #### Sentralbanken
+$i = \overline{i}$
 
 #### Offentlige myndigheter
+$G = \overline{G}$ og $T = \overline{T}$
+
+---
 
 #### Markeder i likevekt: Godemarkedet (varer og tjenester)
+$Y = AE \equiv C + I + G$
 
 #### Løsning av modellen:
-1. Setter inn for x, y
+Setter adferdslikningene inn i markedslikevekten
 
-1. Løser modellen mhp. på Y (godemarkedet) 
+$Y = \overline{C} + c(Y - T) + \overline{I} - b\cdot i + \overline{G}$
 
-1. Lister opp de endogende og eksogene variablene
+Løser modellen mhp. på Y (godemarkedet) 
 
-1. Grafisk framvisning ('Keynesian cross')
+$Y = \frac{1}{1-c}  \left [ \overline{C} - T - b\cdot \overline{i} + \overline{G}  \right ]$
+
+Endogene variabler: $Y$ 
+
+Eksogene variabler: $\overline{C}, \overline{T}, \overline{i}, \overline{I}, \overline{G}$
+
+Parametre: $c, b$
+
+-  Grafisk framvisning ('Keynesian cross')
+
+---
 
 #### Komparativ statikk (FGV): 
 
 - Økte investeringer ('animal spirits') $\Delta{I}>0$
 
-- (F)ormelt
+- (F)ormelt:
+$\Delta Y = \frac{1}{1-c}\Delta  \overline{I} > 0  $
 
 - (G)rafisk
 
 - (V)erbalt
 
+---
+
 #### Stabiliseringspolitikk
 
 - Reduserte offentlige utgifter $\Delta G < 0$
 
-Lag
+$Y = \frac{1}{1-c}  \left [ \Delta \overline{I} + \Delta \overline{G} \right ]$
+
+Dersom vi lar $\Delta \overline{I} = - \Delta \overline{G} > 0 \Rightarrow \Delta Y = 0$ (dvs. intern balanse)
+
+I praksis kan det ofte være vanskelig å benytte finanspolitske som konjunkturstabiliserende virkemiddel, siden det politiske systemet vanligvis innehar tregheter tilknyttet endringer i finanspolitikken
+
+---
 
 ### IS-LM modellen: likevekt i gode- og pengemarkedet
 

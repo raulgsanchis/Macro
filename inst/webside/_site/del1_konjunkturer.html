@@ -204,7 +204,7 @@ $(document).ready(function () {
       <a href="presentasjoner/pres_innledning.html">Introduksjon</a>
     </li>
     <li>
-      <a href="del1_konjunkturer.html">Del I: Konjunktursvingninger</a>
+      <a href="del1_konjunkturerF.html">Del I: Konjunktursvingninger</a>
     </li>
     <li>
       <a href="del2_vekst.html">Del II: Økonomisk vekst</a>
@@ -280,39 +280,47 @@ $(document).ready(function () {
 </div>
 
 
-<!--
--->
-<!--
--->
-<div id="del-i-konjunktursvingninger-def" class="section level1">
-<h1>Del I: Konjunktursvingninger def</h1>
+<div id="del-i-konjunktursvingninger" class="section level1">
+<h1>Del I: Konjunktursvingninger</h1>
 <p><img id='grede' src="bilder/cycles.jpg" height="75px" width="300px" /> <img id='grere' src="bilder/money.jpg" height="75px" width="300px" /></p>
 <blockquote>
 <p>Long run is a misleading guide to current affairs. In the long run we are all dead. - Keynes</p>
 </blockquote>
 <div id="grunnleggende-bakgrunnkunnskaper-og-enkel-keynes-modell-lukket-konomi" class="section level2">
 <h2>Grunnleggende bakgrunnkunnskaper og enkel Keynes modell (lukket økonomi)</h2>
-<div id="sentrale-nasjonalregskapstall" class="section level3">
-<h3>Sentrale nasjonalregskapstall</h3>
+<div id="stabiliseringsmal-for-en-lukket-konomi" class="section level3">
+<h3>Stabiliseringsmål for en lukket økonomi</h3>
+<ol style="list-style-type: decimal">
+<li>Intern balanse (lukke produksjonsgapet)</li>
+</ol>
+</div>
+<div id="sentrale-nasjonalregnskapstall" class="section level3">
+<h3>Sentrale nasjonalregnskapstall</h3>
 <ul>
 <li>Bruttonasjonalprodukt (<span class="math inline">\(Y\)</span>) Den samlede verdien av alle varer og tjenester som blir produsert i landet</li>
 <li>Nettonasjonalprodukt</li>
-<li>Arbeidsledighet ($u = $) <span class="math inline">\(u = 1-\frac{L}{N}\)</span></li>
-<li>Inflasjon (<span class="math inline">\(\pi\)</span>) <span class="math inline">\(\pi = \frac{P}{}\)</span></li>
+<li>Arbeidsledighet: <span class="math inline">\(u = 1-\frac{L}{N}\)</span></li>
+<li>Inflasjon: <span class="math inline">\(\pi = \frac{P_{1} - P_{0}}{P_{0}}\)</span></li>
 </ul>
 <hr />
 </div>
 <div id="sentrale-empiriske-sammenhenger" class="section level3">
 <h3>Sentrale empiriske sammenhenger</h3>
+<div id="okuns-lov---negativ-korrelasjon-mellom-endring-i-ledighet-og-vekst-i-bnp-realpriser" class="section level4">
+<h4>Okuns lov - negativ korrelasjon mellom endring i ledighet og vekst i BNP (realpriser)</h4>
 <ul>
-<li>Okuns lov (sammenheng mellom endring i ledighete og endring i BNP)</li>
+<li>USA fra 1950-2010 <img src="del1_konjunkturer_files/figure-html/unnamed-chunk-2-1.png" width="672" /></li>
 </ul>
-<p><img src="del1_konjunkturer_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="phillips-kurven-sammenheng-mellom-arbeidsledighet-og-inflasjon-eller-endring-i-inflasjon" class="section level4">
+<h4>Phillips-kurven (sammenheng mellom arbeidsledighet og inflasjon eller endring i inflasjon)</h4>
 <ul>
-<li>Phillips-kurven (sammenheng mellom arbeidsledighet og inflasjon eller endring i inflasjon)</li>
+<li>USA fra 1950-2010</li>
 </ul>
 <p><img src="del1_konjunkturer_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <hr />
+</div>
 </div>
 <div id="hva-bestemmer-aggregert-bnp" class="section level3">
 <h3>Hva bestemmer aggregert BNP?</h3>
@@ -338,18 +346,230 @@ $(document).ready(function () {
 </div>
 <div id="enkel-keynes-modell-likevekt-i-godemarkedet-varer-og-tjenester" class="section level3">
 <h3>Enkel Keynes-modell: likevekt i godemarkedet (varer og tjenester)</h3>
-<!--
-
-### IS-LM modellen: likevekt i gode- og pengemarkedet
-
-### AD-AS modellen: likevekt i gode-, penge- og arbeidsmarkedet
-
-## Åpen Økonomi
-
-### Mundell-Flemming modellen (IS-LM for en åpen økonomi): likevekt i gode, penge- og valutakursmarkedet
-
-### AD-AS: likevekt i gode, penge, valuta- og arbeidsmarkedet
-
+<div id="aggregert-ettersprsel" class="section level4">
+<h4>Aggregert etterspørsel</h4>
+<p><span class="math inline">\(AD \equiv C + I + G\)</span></p>
+</div>
+<div id="husholdninger" class="section level4">
+<h4>Husholdninger</h4>
+<p><span class="math inline">\(C = \overline{C} + c(Y - T)\)</span> Hvor <span class="math inline">\(0&lt;c=&lt;1\)</span> og <span class="math inline">\(\overline{C}&gt;0\)</span> #### Bedrifter <span class="math inline">\(I = \overline{I} - b\cdot i\)</span></p>
+</div>
+<div id="sentralbanken" class="section level4">
+<h4>Sentralbanken</h4>
+<p><span class="math inline">\(i = \overline{i}\)</span></p>
+</div>
+<div id="offentlige-myndigheter" class="section level4">
+<h4>Offentlige myndigheter</h4>
+<p><span class="math inline">\(G = \overline{G}\)</span> og <span class="math inline">\(T = \overline{T}\)</span></p>
+<hr />
+</div>
+<div id="markeder-i-likevekt-godemarkedet-varer-og-tjenester" class="section level4">
+<h4>Markeder i likevekt: Godemarkedet (varer og tjenester)</h4>
+<p><span class="math inline">\(Y = AE \equiv C + I + G\)</span></p>
+</div>
+<div id="lsning-av-modellen" class="section level4">
+<h4>Løsning av modellen:</h4>
+<p>Setter adferdslikningene inn i markedslikevekten</p>
+<p><span class="math inline">\(Y = \overline{C} + c(Y - T) + \overline{I} - b\cdot i + \overline{G}\)</span></p>
+<p>Løser modellen mhp. på Y (godemarkedet)</p>
+<p><span class="math inline">\(Y = \frac{1}{1-c} \left [ \overline{C} - T - b\cdot \overline{i} + \overline{G} \right ]\)</span></p>
+<p>Endogene variabler: <span class="math inline">\(Y\)</span></p>
+<p>Eksogene variabler: <span class="math inline">\(\overline{C}, \overline{T}, \overline{i}, \overline{I}, \overline{G}\)</span></p>
+<p>Parametre: <span class="math inline">\(c, b\)</span></p>
+<ul>
+<li>Grafisk framvisning (‘Keynesian cross’)</li>
+</ul>
+<hr />
+</div>
+<div id="komparativ-statikk-fgv" class="section level4">
+<h4>Komparativ statikk (FGV):</h4>
+<ul>
+<li><p>Økte investeringer (‘animal spirits’) <span class="math inline">\(\Delta{I}&gt;0\)</span></p></li>
+<li><p>(F)ormelt: $Y =  &gt; 0 $</p></li>
+<li><p>(G)rafisk</p></li>
+<li><p>(V)erbalt</p></li>
+</ul>
+<hr />
+</div>
+<div id="stabiliseringspolitikk" class="section level4">
+<h4>Stabiliseringspolitikk</h4>
+<ul>
+<li>Reduserte offentlige utgifter <span class="math inline">\(\Delta G &lt; 0\)</span></li>
+</ul>
+<p><span class="math inline">\(Y = \frac{1}{1-c} \left [ \Delta \overline{I} + \Delta \overline{G} \right ]\)</span></p>
+<p>Dersom vi lar <span class="math inline">\(\Delta \overline{I} = - \Delta \overline{G} &gt; 0 \Rightarrow \Delta Y = 0\)</span> (dvs. intern balanse)</p>
+<p>I praksis kan det ofte være vanskelig å benytte finanspolitske som konjunkturstabiliserende virkemiddel, siden det politiske systemet vanligvis innehar tregheter tilknyttet endringer i finanspolitikken</p>
+<hr />
+</div>
+</div>
+<div id="is-lm-modellen-likevekt-i-gode--og-pengemarkedet" class="section level3">
+<h3>IS-LM modellen: likevekt i gode- og pengemarkedet</h3>
+<div id="husholdninger-1" class="section level4">
+<h4>Husholdninger</h4>
+</div>
+<div id="bedrifter" class="section level4">
+<h4>Bedrifter</h4>
+</div>
+<div id="sentralbanken-1" class="section level4">
+<h4>Sentralbanken</h4>
+</div>
+<div id="offentlige-myndigheter-1" class="section level4">
+<h4>Offentlige myndigheter</h4>
+</div>
+<div id="markeder-i-likevekt-gode--og-pengemarkedet" class="section level4">
+<h4>Markeder i likevekt: Gode- og pengemarkedet</h4>
+</div>
+<div id="lsning-av-modellen-1" class="section level4">
+<h4>Løsning av modellen:</h4>
+<ol style="list-style-type: decimal">
+<li><p>Setter inn for x, y</p></li>
+<li><p>Løser modellen mhp. på Y (godemarkedet)</p></li>
+<li><p>Lister opp de endogende og eksogene variablene</p></li>
+<li><p>Grafisk framvisning (‘Keynesian cross’)</p></li>
+</ol>
+</div>
+<div id="komparativ-statikk-fgv-1" class="section level4">
+<h4>Komparativ statikk (FGV):</h4>
+<ul>
+<li><p>Økning i pengemengden</p></li>
+<li><p>(F)ormelt</p></li>
+<li><p>(G)rafisk</p></li>
+<li><p>(V)erbal tolkning utenfor modellen</p></li>
+</ul>
+</div>
+<div id="stabiliseringspolitikk-1" class="section level4">
+<h4>Stabiliseringspolitikk</h4>
+</div>
+<div id="velse" class="section level4">
+<h4>Øvelse</h4>
+</div>
+</div>
+<div id="ad-as-modellen-likevekt-i-gode--penge--og-arbeidsmarkedet" class="section level3">
+<h3>AD-AS modellen: likevekt i gode-, penge- og arbeidsmarkedet</h3>
+<div id="husholdningene" class="section level4">
+<h4>Husholdningene</h4>
+</div>
+<div id="bedriftene" class="section level4">
+<h4>Bedriftene</h4>
+</div>
+<div id="likevekt-i-arbeidsmarkedet-og-as-kurven" class="section level4">
+<h4>Likevekt i arbeidsmarkedet og AS-kurven</h4>
+</div>
+<div id="markeder-i-likevekt-gode-penge-og-arbeidsmarkedet" class="section level4">
+<h4>Markeder i likevekt: Gode, penge, og arbeidsmarkedet</h4>
+</div>
+<div id="lsning-av-modellen-2" class="section level4">
+<h4>Løsning av modellen:</h4>
+<ol style="list-style-type: decimal">
+<li><p>Setter inn for x, y</p></li>
+<li><p>Løser modellen mhp. på Y (godemarkedet)</p></li>
+<li><p>Lister opp de endogene og eksogene variablene</p></li>
+<li><p>Grafisk framvisning (‘Keynesian cross’)</p></li>
+</ol>
+</div>
+<div id="komparativ-statikk-fgv-2" class="section level4">
+<h4>Komparativ statikk (FGV):</h4>
+<ul>
+<li><p>Økning i pengemengden</p></li>
+<li><p>(F)ormelt</p></li>
+<li><p>(G)rafisk</p></li>
+<li><p>(V)erbal tolkning utenfor modellen</p></li>
+</ul>
+</div>
+<div id="stabiliseringspolitikk-2" class="section level4">
+<h4>Stabiliseringspolitikk</h4>
+</div>
+<div id="velse-1" class="section level4">
+<h4>Øvelse</h4>
+</div>
+</div>
+</div>
+<div id="apen-konomi" class="section level2">
+<h2>Åpen Økonomi</h2>
+<div id="stabiliseringsmal-for-en-apen-konomi" class="section level3">
+<h3>Stabiliseringsmål for en åpen økonomi</h3>
+<ol style="list-style-type: decimal">
+<li>Intern balanse (lukke produksjonsgapet)</li>
+<li>Ekstern balanse (holde utenlandsgjelden på et rimelig nivå)</li>
+</ol>
+</div>
+<div id="utenriksregnskapet" class="section level3">
+<h3>Utenriksregnskapet</h3>
+</div>
+<div id="mundell-fleming-modellen-is-lm-for-en-apen-konomi-likevekt-i-gode-penge--og-valutakursmarkedet" class="section level3">
+<h3>Mundell-Fleming modellen (IS-LM for en åpen økonomi): likevekt i gode, penge- og valutakursmarkedet</h3>
+<div id="husholdninger-2" class="section level4">
+<h4>Husholdninger</h4>
+</div>
+<div id="bedrifter-1" class="section level4">
+<h4>Bedrifter</h4>
+</div>
+<div id="sentralbanken-2" class="section level4">
+<h4>Sentralbanken</h4>
+</div>
+<div id="offentlige-myndigheter-2" class="section level4">
+<h4>Offentlige myndigheter</h4>
+</div>
+<div id="markeder-i-likevekt-gode--penge--og-valutakursmarkedet" class="section level4">
+<h4>Markeder i likevekt: Gode-, penge- og valutakursmarkedet</h4>
+</div>
+<div id="lsning-av-modellen-3" class="section level4">
+<h4>Løsning av modellen:</h4>
+<ol style="list-style-type: decimal">
+<li><p>Setter inn for x, y</p></li>
+<li><p>Løser modellen mhp. på Y (godemarkedet)</p></li>
+<li><p>Lister opp de endogende og eksogene variablene</p></li>
+<li><p>Grafisk framvisning (‘Keynesian cross’)</p></li>
+</ol>
+</div>
+<div id="komparativ-statikk-gv" class="section level4">
+<h4>Komparativ statikk (GV):</h4>
+<ul>
+<li><p>Økte investeringer (‘animal spirits’) <span class="math inline">\(\Delta{I}&gt;0\)</span></p></li>
+<li><p>(F)ormelt</p></li>
+<li><p>(G)rafisk</p></li>
+<li><p>(V)erbalt</p></li>
+</ul>
+</div>
+<div id="stabiliseringspolitikk-3" class="section level4">
+<h4>Stabiliseringspolitikk</h4>
+<ul>
+<li>Reduserte offentlige utgifter <span class="math inline">\(\Delta G &lt; 0\)</span></li>
+</ul>
+<p>Lag</p>
+</div>
+<div id="velse-2" class="section level4">
+<h4>Øvelse</h4>
+</div>
+</div>
+<div id="ad-as-likevekt-i-gode-penge-valuta--og-arbeidsmarkedet" class="section level3">
+<h3>AD-AS: likevekt i gode, penge, valuta- og arbeidsmarkedet</h3>
+<div id="markeder-i-likevekt-gode-penge-arbeids-og-valutakursmarkedet" class="section level4">
+<h4>Markeder i likevekt: Gode, penge, arbeids, og valutakursmarkedet</h4>
+</div>
+<div id="lsning-av-modellen-4" class="section level4">
+<h4>Løsning av modellen:</h4>
+<ol style="list-style-type: decimal">
+<li><p>Setter inn for x, y</p></li>
+<li><p>Løser modellen mhp. på Y (godemarkedet)</p></li>
+<li><p>Lister opp de endogene og eksogene variablene</p></li>
+<li><p>Grafisk framvisning (‘Keynesian cross’)</p></li>
+</ol>
+</div>
+<div id="komparativ-statikk-fgv-3" class="section level4">
+<h4>Komparativ statikk (FGV):</h4>
+<ul>
+<li><p>Økning i pengemengden</p></li>
+<li><p>(F)ormelt</p></li>
+<li><p>(G)rafisk</p></li>
+<li><p>(V)erbal tolkning utenfor modellen</p></li>
+</ul>
+</div>
+<div id="stabiliseringspolitikk-4" class="section level4">
+<h4>Stabiliseringspolitikk</h4>
+</div>
+<div id="velse-3" class="section level4">
+<h4>Øvelse</h4>
 <!--
 Del 1: Økonomiske svingninger på kort sikt
 Grunnleggende bakgrunnskunnskap 
@@ -493,6 +713,7 @@ AD-AS modellen for en åpen økonomi
     Sentral poeng med modellen – Selvkorrigerende mekanismer:
 Fleksibilitet i P og korrekte prisforventninger P^e på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.
 -->
+</div>
 </div>
 </div>
 </div>

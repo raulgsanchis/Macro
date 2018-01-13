@@ -1,19 +1,14 @@
 ---
-title: "Innledning"
+title: "Forelesning ØKB1115 Makroøkonomi"
 output:
   ioslides_presentation: default
+#    logo: logo.png
 ---
 
-# Del I: Konjunktursvingninger
-<img id='grede' src="bilder/cycles.jpg" height="75px" width="300px" />
-<img id='grere' src="bilder/money.jpg" height="75px" width="300px" />
-
-> Long run is a misleading guide to current affairs. In the long run we are all dead.
-- Keynes
-
-<!--
-``{r plan, child = '../abc.Rmd'}
+```{r plan, child = '../del1_konjunkturer.Rmd'}
 
 ```
 
--->
+<!-- http://rmarkdown.rstudio.com/ioslides_presentation_format.html -->
+
+
