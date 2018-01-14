@@ -1,10 +1,9 @@
-<!--
 ---
 output:
   pdf_document: default
+  word_document: default
   html_document: default
 ---
-<!--
 <!--
 ---
 title: "Oppgaver ØKB1115 Makroøkonomi"
@@ -14,10 +13,10 @@ output: html_notebook
 # Del I: Konjunktursvingninger
 ## Seminar 1: Datatransformering av nasjonalregnskapstal
 
-Gjør følgende oppgaver for Norge, Tysklandog minst et annet land i Eurosonen
+Gjør følgende oppgaver for Norge og minst et av landene i Eurosonen
 
 ### Installering av FRED applikasjon til Excel
-- Installer applikasjonen FRED (fra Federal Reserve Bank of St. Louis)  i ditt Excel regneark [klikk her for næmere instruksjoner](https://research.stlouisfed.org/fred-addin/install_windows.html)
+- Installer applikasjonen FRED (fra Federal Reserve Bank of St. Louis)  i ditt Excel regneark [klikk her for næmere instruksjon](https://research.stlouisfed.org/fred-addin/install_windows.html)
 
 - Hjelp og tips til bruk av programmet finnes her:
 [Youtube](http://www.youtube.com/watch?v=OAH-wGtP_k8)
@@ -26,9 +25,9 @@ Gjør følgende oppgaver for Norge, Tysklandog minst et annet land i Eurosonen
 - Hent tidsserien til bruttonasjonalproduktet i real størrelser
 - Transformer denne serien ved å ta logaritmen 
 - Hent en tidsserie for arbeidsledighet 
-- Hent en tidsserie for konsumprisindeksen 
+- Hent en tidsserie for prisindeksen 
 - Vis tidsseriene grafisk
-- Gir serien noen indikasjoner på dype økonomiske kriser?  Hvis ja, se om du kan finne (ved søk på internett) noen kortfattede økonomiske forklaringer bak disse krisene
+- Gir serien noen tegn på dype økonomiske kriser?  Hvis ja, se om du kan finne (ved søk på internett) noen kortfattede økonomiske forklaringer bak disse krisene
 
 ### Okuns lov og Phillips-kurven
 - Finn et mål på inflasjon

@@ -10,6 +10,7 @@ output: html_notebook
 > Can 'It' - a Great Depression - happen again? And if 'It' can happen why didn't 'It' occur in the years since World War II? These are questions that naturally follow from both the historical record and the comparative success of the past thirty-five years. To answer these questions it is necessary to have an economic theory which makes great depressions one of the possible states in which our type of capitalist economy can find itself.
 - Minsky  (1982)
 
+
 <!--
 
 ## Tema 1: Penger, kreditt og bankadferd

@@ -288,24 +288,25 @@ output: html_notebook
 -->
 <div id="del-i-konjunktursvingninger" class="section level1">
 <h1>Del I: Konjunktursvingninger</h1>
-<div id="section" class="section level2">
-<h2></h2>
-<p>Gjør følgende oppgaver for Norge og minst ett land i Eurosonen ### Installering av FRED - Installer applikasjonen FRED (St. Louis Federal Reserve) i ditt Excel regneark <a href="https://research.stlouisfed.org/fred-addin/install_windows.html">klikk her for næmere instruksjon</a> - Hjelp til hvordan bruke programmet finnes her: <a href="http://www.youtube.com/watch?v=OAH-wGtP_k8">lenke</a></p>
+<div id="seminar-1-datatransformering-av-nasjonalregnskapstal" class="section level2">
+<h2>Seminar 1: Datatransformering av nasjonalregnskapstal</h2>
+<p>Gjør følgende oppgaver for Norge og minst ett av landene i Eurosonen</p>
+<div id="installering-av-fred-applikasjon-til-excel" class="section level3">
+<h3>Installering av FRED applikasjon til Excel</h3>
+<ul>
+<li><p>Installer applikasjonen FRED (fra Federal Reserve Bank of St. Louis) i ditt Excel regneark <a href="https://research.stlouisfed.org/fred-addin/install_windows.html">klikk her for næmere instruksjon</a></p></li>
+<li><p>Hjelp og tips til bruk av programmet finnes her: <a href="http://www.youtube.com/watch?v=OAH-wGtP_k8">Youtube</a></p></li>
+</ul>
+</div>
 <div id="tidsserier" class="section level3">
 <h3>Tidsserier</h3>
 <ul>
-<li>Finn tidsserien til bruttonasjonalproduktet i reelle størrelser.</li>
-<li>Transformer denne serien ved å ta logaritmen (naturlige)</li>
-<li>Finn tidsserien for arbeidsledighet</li>
-<li>Finn tidsserien for inflasjon</li>
-<li>Finn tidsserien for det nominelle rentenivået</li>
-</ul>
-</div>
-<div id="grafisk" class="section level3">
-<h3>Grafisk</h3>
-<ul>
-<li>Vis serien grafisk</li>
-<li>Gir serien noen tegn på dype økonomiske kriser? Hvis ja, se om du kan finne (søk på internett) noen kortfattede - forklaringer bak disse krisene</li>
+<li>Hent tidsserien til bruttonasjonalproduktet i real størrelser</li>
+<li>Transformer denne serien ved å ta logaritmen</li>
+<li>Hent en tidsserie for arbeidsledighet</li>
+<li>Hent en tidsserie for prisindeksen</li>
+<li>Vis tidsserien grafisk</li>
+<li>Gir serien noen tegn på dype økonomiske kriser? Hvis ja, se om du kan finne (ved søk på internett) noen kortfattede økonomiske forklaringer bak disse krisene</li>
 </ul>
 </div>
 <div id="okuns-lov-og-phillips-kurven" class="section level3">
@@ -313,9 +314,9 @@ output: html_notebook
 <ul>
 <li>Finn et mål på inflasjon</li>
 <li>Finn et mål på ledighet</li>
-<li>Lag et scatterplot for ledighet og endring inflasjon (Phillips-kurven).</li>
 <li>Lag et scatterplot for vekst og endring i inflasjon (Okuns lov)</li>
-<li>For de to scatterplottene, se om du klarer å estimere en linje som graden av linear</li>
+<li>Lag et scatterplot for ledighet og endring inflasjon (Phillips-kurven).</li>
+<li>For de to scatterplottene, se om du klarer å estimere en linje for graden av lineær korrelasjon</li>
 <li>Er resultaten du finner i tråd med de empirisk regularitetene som ble gjennomgått i forelesningen?</li>
 </ul>
 </div>
@@ -326,93 +327,6 @@ output: html_notebook
 </div>
 <div id="del-iii-konomiske-kriser" class="section level1">
 <h1>Del III: Økonomiske kriser</h1>
-</div>
-<div id="innleveringsoppgave" class="section level1">
-<h1>Innleveringsoppgave</h1>
-<p>asfddsaf</p>
-<!--
-servr::httw(".")
-## 1. 
-- Installer applikasjonen FRED i ditt Excel regneark
-<iframe width="200" height="200" src="https://research.stlouisfed.org/fred-addin/">
-</iframe>
-- Gjør følgende oppgave for Norge, Tyskland og Hellas:
-1.  Finn tidsserien til bruttonasjonalproduktet i reelle størrelser.
-1.  Finn tidsserien antall innbyggere
-1.  Konstruer tidsserien bruttonasjonalprodukt per innbygger.
-1.  Transformer serien ved å ta logaritmen.
-1.  Vis serien grafisk.
-1.  Gir serien noen tegn på dype økonomiske kriser?  Hvis ja, se om du kan finne (søk på internett) noen ortfattede forklaringer bak disse krisene.
-1.  Finn et mål på inflasjon.
-1.  Finn et mål på ledighet.
-1.  Lag et scatterplot for ledighet og inflasjon (Phillips-kurven).
-1.  Lag et scatterplot for vekst og endring i inflasjon (Okuns lov).
-## 2. 
-### I:
-Ta utgangspunkt i følgende makroøkonomisk modell:
-$Z=C+I+G$
-Hvor Z er aggregert etterspørsel. C er konsum. I er private realinvesteringer og G er offentlig kjøp av varer og tjenester.
-I tillegg postulerer vi følgende adferdssammenhenger:
-$C=c_0+c_1 (Y-T)-c_2 i$
-$I=I-b_1 i$
-Hvor T er nettoskatter, i det nominelle rentenivået, og små bokstaver betegner positive parametere.
-Likvektsbetingelsen for varmarkedet er gitt ved 
-Y=Z 
-
-Hvor Y betegner produksjonen.
-    Nevn tre sentrale forutsetninger som ligger bak en slik modell.
-    Finn løsningen til modellen med hensyn på Y.
-    Hva skjer når i øker (vis formelt, verbalt og grafisk)?
-    Anta at sentralbanken innfører en renteregel som tilsier at i=m_0 Y
-    Sammenlikn multiplikatoren i modellen før og etter innføringen av en slik regel. Hvilken er høyest?
-    Gi en verbal på forklaring på hvordan innførselen av en regel virker inn ved en positiv økning i investeringen ### II: 
-Ta utgangspunkt i samme modell som i forrige oppgavesett. Anta i tillegg nå at pengemarkedet er operativt. Pengetilbudet er derfor gitt ved M^s=M/P og penge etterspørselen M^d=M(LY,i).  Vis likevekten i pengemarkedet under forutsetning om at sentralbanken (a) setter rentenivået, (b) bestemmer pengetilbudet. 
-    Bestem Y grafisk under (a) og (b) under forutsetning om at både vare- og pengemarkedet er i likevekt (IS-LM modellen).
-    Under (a), hva skjer dersom konsumet øker? Vis grafisk og verbalt.
-    Under (b), ha skjer dersom prisnivået P øker? Vis grafisk og verbalt.
-    Diskuter fordeler og ulemper ved pengepolitikk vs. finanspolitikk som stabiliseringspolitiske verktøy. 
-Oppgaver gitt til 5. forelesning 
-    Vi tar først utgangspunkt i samme modell som ble satt opp under oppgave gitt til 3. forelesning. Videre tenker vi oss at økonomien er åpen for handel og kapitalbevegelser med utlandet. Dette betyr nå at 
-Z=C+I+G+NX
-Y=Z
-                    NX≡X-R*IM
-E_ =((1+i))/((1+i_^* ) ) E_^e   
-I tillegg postulerer vi at følgende sammenhenger for import og eksport:
-X(R,Y^* )=A ̅+/-a_1 R+/-a_2 Y^*
-IM(R,Y)=B ̅+/-s_1 R+/-s_2 Y
-                R=(EP^*)/P
-Anta at parameterne a_1,a_2,s_1  og s_2 er positive Bestem og forklar hvilke fortegn (+/-) som bør gjelde for eksport og import likningene ovenfor.
-    Finn et uttrykk for ∆NX/∆Y , ∆NX/∆R og om mulig avgjør fortegnene.
-    Finn et eksplisitt utrykk for IS likningen under faste kurs (enklest).
-    Finn et eksplisitt utrykk for IS likningen under flytende kurs (litt mer vanskelig).
-    I løpet av forelesningen ble det hevdet at importlekkasje gjør multiplikatoren mindre. I tillegg til dette, vil helningen på IS-kurven (likevekt i vare- og valutakursmarkedet) være brattere i et under fast kurs sammenliknet flytene kurs. Er dette overens med løsningen du fant i de to oppgavene ovenfor?
-    Hvilke virkemidler har myndighetene for å stabilisere konjunkturene under henholdsvis et fast og flytende kurs regime?
-    Hva menes med intern og ekstern balanse?
-
-## 3. 
-Basert på de forutsetningene som har blitt gjort i oppgaver gitt til 5. forelesning, finn  ∆NX/∆P og avgjør fortegnet.  
-    Finn deretter  ∆Y/∆P og tegn AD-kurven inn i to diagrammer, et for fast og et for flytende kurs.
-    Tegn til slutt AS-kurven inn i de to diagrammene. 
-    Anta at vi får en sterk økning i C ̅. 
-    Hva skjer med handelsbalansen?
-    Hva skjer med utenriksregnskapet?
-    Hvorfor vil det under en slik endring være enklere å føre en stabiliseringspolitikk i et flytende vs. et fast kurs regime?
-
-# Del II: Økonomisk vekst
-## I:
-    y=f()  Y/N=F(K,N)
-    Tre komponenter:
-    Redusert sparerate
-    Reduser befolkningsvekst
-    Lsninger og realavkastning
-    Sjekk spareraten i kina
-    Hva kan man gjøre for å få opp teknologiske veksten
-    Blanchard oppgaver
-    Vekst i norge
-    Produktivitetsveksten
-# Del III: Økonomiske kriser
-# Prøveeksamen
--->
 </div>
 
 <html>
