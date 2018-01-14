@@ -13,35 +13,35 @@ library(MASS)
 api.key = 'd62b9d8d4ce53e56ea04049dc463ac51'  # substitute ... with your API key
 fred <- FredR(api.key)
 str(fred,1)
-macro.series1 <- fred$series.search("CLVMNACNSAB1GQNO")
-macro.series2 <- fred$series.search("LMUNRLTTNOQ647S")
-macro.series3 <- fred$series.search("NORCPIALLMINMEI")
+macro.series1 <- fred$series.search("Norway")
+#macro.series2 <- fred$series.search("Germany")
+#macro.series3 <- fred$series.search("Greece")
 
-# Makrotall nor
-norgdp <- fred$series.observations(series_id = c('CLVMNACNSAB1GQNO'))
-norunem <- rbind(fred$series.observations(series_id = c('LMUNRLTTNOQ647S')), fred$series.observations(series_id = c('UNRATE')))
-norinf <- fred$series.observations(series_id = c('NORCPIALLMINMEI')[1])
+# Makrotall
+norgdp <- fred$series.observations(series_id = c('CLVMNACSCAB1GQNO'))
+norunem <- rbind(fred$series.observations(series_id = c('NORURHARMADSMEI')))
+norpricei <- fred$series.observations(series_id = c('NORCPIALLMINMEI'))
 
 # 2. Cleaning up data
 tnorgdp  <- norgdp %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
 tnorunem <- norunem %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
-tnorinf <- norinf %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
+tnorpricei <- norpricei %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
 
 # 3. Manipulating og transformerer dataene
 molttnorgdp <- tnorgdp %>% dplyr::mutate(gdp = ts(value,freq = 4)) %>%
-  dplyr::mutate(lngdp = log(gdp)) %>%
-  dplyr::mutate(Lgdp = lag(gdp,n=4)) %>%
-  dplyr::mutate(Llngdp = lag(lngdp,n=4)) %>%
-  dplyr::mutate(ggdp = round(gdp/Lgdp-1,digits=4)) %>%
-  dplyr::mutate(glgdp = round(lngdp - Llngdp, digits = 4)) %>%
-  dplyr::mutate(hpcycleg = hpfilter(lngdp, freq = 2000)$cycle) %>%
-  dplyr::mutate(hptrendg = hpfilter(lngdp, freq = 2000)$trend) %>%
+    dplyr::mutate(lngdp = log(gdp)) %>%
+    dplyr::mutate(Lgdp = lag(gdp,n=4)) %>%
+    dplyr::mutate(Llngdp = lag(lngdp,n=4)) %>%
+    dplyr::mutate(ggdp = round(gdp/Lgdp-1,digits=4)) %>%
+    dplyr::mutate(glgdp = round(lngdp - Llngdp, digits = 4)) %>%
+    dplyr::mutate(hpcycleg = hpfilter(lngdp, freq = 1600)$cycle) %>%
+    dplyr::mutate(hptrendg = hpfilter(lngdp, freq = 1600)$trend) %>%
   reshape2::melt(id.vars = c("date")) %>%
   dplyr::mutate(kat=c('gdp'))
 
-ggplot(data = dplyr::filter(molttnorgdp, variable %in% c('lngdp','hptrendg')), aes(x = date, y =  value)) + geom_line(aes(color = variable))
+ggplot(data = dplyr::filter(molttnorgdp, variable %in% c('lngdp', 'hptrendg')), aes(x = date, y =  value)) + geom_line(aes(color = variable))
 
-nunem <- mean(dplyr::filter(tnorunem, date >'1939-12-01' & date < '2007-12-01')$value)
+nunem <- mean(tnorunem$value)
 molttnorunem <- tnorunem %>%
     dplyr::mutate(unem = ts (value)) %>%
     dplyr::mutate(Lunem = lag(unem, n = 12)) %>%
@@ -52,19 +52,21 @@ molttnorunem <- tnorunem %>%
   reshape2::melt(id.vars = c("date")) %>%
   dplyr::mutate(kat = 'unem')
 
-#ggplot(data = dplyr::filter(molttnorunem, variable %in% c('unem','rendu')), aes(x = date, y =  value)) + geom_line(aes(color = variable))
+ggplot(data = dplyr::filter(molttnorunem, variable %in% c('unem','trendu')), aes(x = date, y =  value)) + geom_line(aes(color = variable))
 
-molttnorinf <- tnorinf %>% reshape2::melt(id.vars = c("date")) %>%
-  dplyr::mutate(inflation = ts(value)) %>%
-  dplyr::mutate(Linflation=lag(inflation, n = 12)) %>%
+molttnorpricei <- tnorpricei %>%
+  dplyr::mutate(pricei = ts(value)) %>%
+  dplyr::mutate(Lpricei = lag(pricei, n = 12)) %>%
+  dplyr::mutate(inflation = round(pricei - Lpricei,digits=4)) %>%
+  dplyr::mutate(Linflation = lag(inflation, n = 12)) %>%
   dplyr::mutate(cinflation = round(inflation - Linflation,digits=4)) %>%
   reshape2::melt(id.vars = c("date")) %>%
   dplyr::mutate(kat = 'inf')
 
+ggplot(data = dplyr::filter(molttnorpricei, variable %in% c('inflation')), aes(x = date, y =  value)) + geom_line(aes(color = variable))
+
 ## Samler alle dataene for nor
 moltmacronor <- rbind(molttnorunem, molttnorgdp, molttnorinf)
-
-  #dplyr::mutate(freqm = substring(date,6,7))
 
 # 4. Saving data in Rda-format
 devtools::use_data(moltmacronor, overwrite = TRUE)
