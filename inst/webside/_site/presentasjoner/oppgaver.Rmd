@@ -13,7 +13,7 @@ output: html_notebook
 # Del I: Konjunktursvingninger
 ## Seminar 1: Datatransformering av nasjonalregnskapstal
 
-Gjør følgende oppgaver for Norge og minst et av landene i Eurosonen
+Gjør følgende oppgaver for Norge, Tyskland og enten Hellas, Spania, Portugal eller Italia.
 
 ### Installering av FRED applikasjon til Excel
 - Installer applikasjonen FRED (fra Federal Reserve Bank of St. Louis)  i ditt Excel regneark [klikk her for næmere instruksjon](https://research.stlouisfed.org/fred-addin/install_windows.html)

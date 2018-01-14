@@ -1,1 +1,1 @@
-{"YS": "Y^{s} = Y", "CD": "C = Y c_{1} + oC", "GD": "G = oG", "EQV": "Y = C + G + I", "ID": "I^{d} = oI", "AD": "Y = - \\frac{oC + oG + oI}{c_{1} - 1}"}
+{"YS": "Y^{s} = Y", "EQV": "Y = C + G + I", "CD": "C = Y c_{1} + oC", "GD": "G = oG", "AD": "Y = - \\frac{1}{c_{1} - 1} \\left(a i + oC + oG + oI\\right)", "ID": "I^{d} = a i + oI"}

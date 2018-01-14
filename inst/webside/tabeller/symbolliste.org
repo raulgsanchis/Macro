@@ -8,6 +8,7 @@
 | Variabel       | Økonomisk forklaring                                                                 |
 |----------------+--------------------------------------------------------------------------------------|
 | Y              | Bruttonasjonalprodukt                                                                |
+| $\overline{Y}$ | Potensiell produkusjon                                                               |
 | N              | Arbeidsstyrken                                                                       |
 | L              | Sysselsatte personer                                                                 |
 | U              | Antall utenfor arbeid                                                                |
@@ -39,6 +40,7 @@
 | OR             | Endring i sentralbankens valutareserver                                              |
 | S              | Sparing                                                                              |
 | $\delta$       | Depresieringsrate på kapital                                                         |
+| A              | Teknologinivå                                                                        |
 | a              | Teknologisk vekst                                                                    |
 | n              | Befolkningsvekst                                                                     |
 | B              | Nominelt nivå på statsobligasjoner eid av private aktører                            |

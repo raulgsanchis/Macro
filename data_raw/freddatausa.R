@@ -16,18 +16,18 @@ str(fred,1)
 macro.series1 <- fred$series.search("GDP")
 macro.series2 <- fred$series.search("unemployment")
 macro.series3 <- fred$series.search("money")
-macro.series4 <- fred$series.search("inflation")
+macro.series4 <- fred$series.search("Price")
 
 # Makrotall USA
 usagdp <- fred$series.observations(series_id = c('GDPCA'))
 usaunem <- rbind(fred$series.observations(series_id = c('M0892AUSM156SNBR')), fred$series.observations(series_id = c('UNRATE')))
-usainf <- fred$series.observations(series_id = c('CPIAUCSL', 'CPILFESL')[1])
+usapricei <- fred$series.observations(series_id = c('CPIAUCSL', 'CPIAUCNS')[2])
 usamone <- fred$series.observations(series_id = c('M1'))
 
 # 2. Cleaning up data
 tusagdp  <- usagdp %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
 tusaunem <- usaunem %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
-tusainf <- usainf %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
+tusapricei <- usapricei %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
 tusamone <- usamone %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
 
 # 3. Manipulerer og transformerer dataene
@@ -57,15 +57,12 @@ molttusaunem <- tusaunem %>%
 
 #ggplot(data = dplyr::filter(molttusaunem, variable %in% c('unem','rendu')), aes(x = date, y =  value)) + geom_line(aes(color = variable))
 
-molttusainf <- tusainf %>%
-  dplyr::mutate(priceindex = ts(value)) %>%
-  dplyr::mutate(lnpriceindex = log(priceindex)) %>%
-  dplyr::mutate(Llnpriceindex = lag(lnpriceindex, n = 12)) %>%
-  dplyr::mutate(Lpriceindex = lag(priceindex, n = 12)) %>%
-  dplyr::mutate(ainflation = round(lnpriceindex-Llnpriceindex, digits = 4)) %>%
-  dplyr::mutate(inflation = round(priceindex/Lpriceindex - 1, digits = 4)) %>%
+molttusapricei <- tusapricei %>%
+  dplyr::mutate(pricei = ts(value)) %>%
+  dplyr::mutate(Lpricei = lag(pricei, n = 12)) %>%
+  dplyr::mutate(inflation = round(pricei - Lpricei,digits=4)) %>%
   dplyr::mutate(Linflation = lag(inflation, n = 12)) %>%
-  dplyr::mutate(cinflation = lag(inflation, n = 12)) %>%
+  dplyr::mutate(cinflation = round(inflation - Linflation,digits=4)) %>%
   reshape2::melt(id.vars = c("date")) %>%
   dplyr::mutate(kat = 'inf')
 
@@ -74,7 +71,7 @@ molttusamone <- tusamone %>% dplyr::mutate(money = ts(value)) %>%
   dplyr::mutate(kat='mon')
 
 ## Samler alle dataene for USA
-moltmacrousa <- rbind(molttusaunem, molttusagdp,molttusainf, molttusamone) %>%
+moltmacrousa <- rbind(molttusaunem, molttusagdp,molttusapricei, molttusamone) %>%
   dplyr::mutate(freqm = substring(date,6,7))
 
 # 4. Saving data in Rda-format
@@ -84,11 +81,11 @@ devtools::use_data(moltmacrousa, overwrite = TRUE)
 unique(moltmacrousa$variable)
 a <- dplyr::filter(moltmacrousa, variable %in% c('unem','cunem'))
 b <- reshape2::dcast(a, date ~ variable)
-c <- dplyr::filter(moltmacrousa, variable %in% c('unem', 'cunem', 'ggdp', 'inflation', 'cinflation'))
+c <- dplyr::filter(moltmacrousa, variable %in% c('unem', 'cunem', 'ggdp', 'priceilation', 'cpriceilation'))
 d <- reshape2::dcast(c, date + freqm ~ variable) %>% dplyr::filter(freqm=='01', date >= '1948-01-01'
                                                                    & date < '2017-01-01')
 qplot(data = d, x = ggdp, y = cunem, geom = c('point', 'smooth'), method='lm')
-qplot(data = d, x = unem, y = cinflation, geom = c('point', 'smooth'), method='lm')
+qplot(data = d, x = unem, y = cpriceilation, geom = c('point', 'smooth'), method='lm')
 
 
 

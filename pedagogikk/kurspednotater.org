@@ -113,9 +113,13 @@ Lang sikt: Abc
 + Godemarkedet (vare- og tjenstemarkedet)
 *** Modellering
 **** Husholdninger
+C
 **** Bedrifter
+I
 **** Sentralbank
+i
 **** Offentlig myndigheter
+G
 **** Godemarkdet 
 1. Y = C + I + G (Generalbudsjettligningen lukket økonomi)
 **** Løsning av modellen 

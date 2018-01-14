@@ -1,1 +1,1 @@
-{"YS": "Y", "CD": "Y*c_1 + oC", "GD": "oG", "EQV": "C + G + I", "ID": "oI", "AD": "-(oC + oG + oI)/(c_1 - 1)"}
+{"YS": "Y", "EQV": "C + G + I", "CD": "Y*c_1 + oC", "GD": "oG", "AD": "-(a*i + oC + oG + oI)/(c_1 - 1)", "ID": "a*i + oI"}
