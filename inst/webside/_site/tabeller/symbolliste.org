@@ -47,4 +47,4 @@
 | $B^{t}$        | Nominelt nivå på statsobligasjoner utstedt av finansmyndighetene                     |
 | $B^{m}$        | Nominelt nivå på statsobligasjoner på sentralbankens regnskapsbalanse                |
 |----------------+--------------------------------------------------------------------------------------|
-|                |                                                                                      |
+

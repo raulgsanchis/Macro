@@ -12,6 +12,7 @@ library(dplyr)
 library(ggplot2)
 library(gridExtra)
 library(grid)
+library(latex2exp)
 
 # Henter datasett
 moltmacrousa <- MakroOEKB1115::moltmacrousa
@@ -21,10 +22,8 @@ usadataI <- dplyr::filter(moltmacrousa, variable %in% c('unem', 'cunem', 'ggdp',
 fusadataI <- reshape2::dcast(usadataI, date + freqm ~ variable) %>% 
   dplyr::filter(freqm=='01', date >= '1948-01-01'& date < '2017-01-01')
 
-
 okunusa <- qplot(data = fusadataI, x = ggdp, y = cunem, geom = c('point', 'smooth'), method='lm')
 philipusa <- qplot(data = fusadataI, x = unem, y = cinflation, geom = c('point', 'smooth'), method='lm')
-
 
 okunusag <- ggplot(data = fusadataI, aes(x = cunem, y = ggdp))  + geom_point() +  geom_smooth(method=lm, se=FALSE) + theme_classic() + labs(title = 'Okuns lov', x = 'Endring i arbeidsledigheten', y = c('Vekst i BNP (realpriser)'))
 
@@ -35,34 +34,44 @@ philipusag <- ggplot(data = fusadataI, aes(x = unem, y = inflation))  + geom_poi
 keynesequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/keynesequ.json'))
 
 # Parameterverdier
-exoparval <- list(c_1=0.7, oC = 100)
+exoparval <- list(c_1=0.7, oC = 50, oG= 50, a=30, i = 0.03, oI = 30)
+dexoparval <- list(c_1=0.7, oC = 50, oG= 50, a=30, i = 0.03, oI = 35)
 
 # Variabler som endrer seg
-grad45v <- c(0:1000)
 Yv <- c(0:1000)
+
+# Implikasoner
+grad45v <- 0:rev(Yv)[1]
 cdv <- eval(parse(text=keynesequ$CD),c(exoparval,list(Y=Yv)))
+idv <- eval(parse(text=keynesequ$ID),c(exoparval,list(Y=Yv)))
+gdv <- eval(parse(text=keynesequ$GD),c(exoparval,list(Y=Yv)))
 
 # Datatabell (format)
-dfkeykryss <- data.frame(x = Yv, grad45 = grad45v, cd = cdv) %>% 
+dfkeykryss <- data.frame(x = Yv, grad45 = grad45v, cd = cdv, id = idv, gd = gdv) %>% 
   reshape2::melt(id.vars = c("x")) 
   #%>%dplyr::mutate(kat=substring(variable,6,6))
 
-# Qplot
- #unique(dfkeykryss$variable)
-datainp <- dplyr::filter(dfkeykryss, variable %in% c('grad45', 'cd'))
-keykg <- ggplot(data = datainp, aes(x = x, y = value, color = factor(variable))) + geom_line() +
+# Labeling
+## Main
+lablist <- list(x='Inntekt', y = 'AE (aggregert etterspørsel)')
+## I plottet
+lablistdf <- data.frame(label=c('ABC'),x=c(1),y=c(1))
+
+
+# Ggplot2 (funksjon senere)
+## Henter datasettet
+datainp <- dplyr::filter(dfkeykryss, variable %in% c('grad45', 'cd', 'gd'))
+## Komponent1
+keykg <- ggplot(data = datainp, aes(x = x, y = value, color = factor(variable))) + 
+  geom_line() +
+  geom_point(aes(x=0, y=0)) +
+  geom_segment(aes(x = 500, y = 0, xend = 500, yend = 100), lty = 2) +
+  #geom_text(aes(x=500, y=500, label=TeX('$\theta$')), parse=TRUE) +
+  scale_x_continuous(name=lablist$x, breaks = c(400), labels = c(TeX('$Y_{0}$')) ) +
+  scale_y_continuous(name=lablist$y, breaks = c(400), labels = c('def') ) +
   labs(title= 'Keyneskrysset') + theme_classic() +
-  #theme(legend.position="none") +
+  theme(legend.position="none") +
   coord_cartesian()
-
-#qplot(geom = "blank")  + 
-## Scale
-#scale_x_continuous
-## Add text to plot
-
-# dat <- data.frame(x=runif(10),y=runif(10),
-#         grp = rep(LETTERS[1:5],each = 2),stringsAsFactors = TRUE)
-
 ```
 
 ## Grunnleggende bakgrunnkunnskaper og enkel Keynes modell (lukket økonomi)
