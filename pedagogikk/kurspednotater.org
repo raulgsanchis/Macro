@@ -93,14 +93,14 @@ EKS: Dialog
 3. Hvordan bestemmes BNP?
 4. Kort sikt
 5. Mellomlang sikt (2-4)
-6. Lang sikt
+6. Lang sikt 
 Kort sikt: Etterspørsel -> Produksjon pga stive priser 
 Mellomlang: Tilbud  Kursbeskrivelse
-Lang sikt: Abc   
+Lang sikt:    
 1. Ledighet
-1. Inflasjon
-1. Okuns lov
-1. Phillips-kurven
+2. Inflasjon
+3. Okuns lov
+4. Phillips-kurven
 *** Enkel Keynes-modell
 *** Oversikt
 **** Aktører
@@ -112,12 +112,15 @@ Lang sikt: Abc
 + Godemarkedet (vare- og tjenstemarkedet)
 *** Modellering
 **** Husholdninger
+Må konsumere for å overlevere
 **** Bedrifter
-I
+Nåverdi
 **** Sentralbank
 i
+Eksogen
 **** Offentlig myndigheter
 G
+G og T
 **** Godemarkdet 
 1. Y = C + I + G (Generalbudsjettligningen lukket økonomi)
 **** Løsning av modellen 

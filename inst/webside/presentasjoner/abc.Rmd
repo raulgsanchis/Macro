@@ -24,17 +24,16 @@ library(latex2exp)
 moltmacrousa <- MakroOEKB1115::moltmacrousa
 unique(moltmacrousa$variable)
 
-usadataI <- dplyr::filter(moltmacrousa, variable %in% c('unem', 'cunem', 'ggdp', 'inflation', 'cinflation'))
+usadataI <- dplyr::filter(moltmacrousa, variable %in% c('unem', 'cunem', 'ggdp', 'inflation', 'cinflation', 'yinflation', 'cyinflation'))
 fusadataI <- reshape2::dcast(usadataI, date + freqm ~ variable) %>% 
   dplyr::filter(freqm=='01', date >= '1948-01-01'& date < '2017-01-01')
 
 okunusa <- qplot(data = fusadataI, x = ggdp, y = cunem, geom = c('point', 'smooth'), method='lm')
-philipusa <- qplot(data = fusadataI, x = unem, y = cinflation, geom = c('point', 'smooth'), method='lm')
+philipusa <- qplot(data = fusadataI, x = unem, y = yinflation, geom = c('point', 'smooth'), method='lm')
 
-okunusag <- ggplot(data = fusadataI, aes(x = cunem, y = ggdp))  + geom_point() +  geom_smooth(method=lm, se=FALSE) + theme_classic() + labs(title = 'Okuns lov', subtitle = 'USA fra 1950-2010', x = 'Endring i arbeidsledigheten', y = c('Vekst i BNP (realpriser)'))
+okunusag <- ggplot(data = fusadataI, aes(x = cunem, y = ggdp))  + geom_point() +  geom_smooth(method=lm, se=FALSE) + theme_classic() + labs(title = 'Okuns lov', x = 'Endring i arbeidsledigheten', y = c('Vekst i BNP (realpriser)'))
 
-philipusag <- ggplot(data = fusadataI, aes(x = unem, y = inflation))  + geom_point() +  geom_smooth(method=lm, se=FALSE) + theme_classic() + labs(title = 'Phillips-kurven', subtitle = 'USA fra 1950-2010
-' ,x = 'Ledighetsrate', y = 'Inflation')
+philipusag <- ggplot(data = fusadataI, aes(x = unem, y = cyinflation))  + geom_point() +  geom_smooth(method=lm, se=FALSE) + theme_classic() + labs(title = 'Phillips-kurven' ,x = 'Ledighetsrate', y = 'Inflation')
 
 # Keyneskrysset
 # Henter Jupyter data
@@ -111,7 +110,7 @@ okunusag
 
 ---
 
-#### Phillips-kurven: sammenheng mellom arbeidsledighet og inflasjon eller endring i inflasjon
+#### Phillips-kurven: sammenheng mellom arbeidsledighet og endring i inflasjon (eller inflasjon)
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 # Check for warnings
@@ -139,22 +138,25 @@ philipusag
 
 ### Enkel Keynes-modell 
 
-- likevekt i godemarkedet (varer og tjenester)
+- Likevekt i godemarkedet (varer og tjenester)
 
 #### Aggregert etterspørsel (AE)
 $AE \equiv  C + I + G$
 
 #### Markeder i likevekt: Godemarkedet (varer og tjenester)
-$Y = AE \equiv C + I + G$
+$Y = AE$
 
 ---
 
 #### Husholdninger
 $C =  \overline{C} + c(Y - T)$
-Hvor $0<c=<1$ og $\overline{C}>0$
+
+Hvor $0<c<1$ og $\overline{C}>0$
 
 #### Bedrifter
 $I = \overline{I} - b\cdot i$
+
+Hvor $\overline{I}>0$ og $b>1$ og 
 
 #### Sentralbanken
 $i = \overline{i}$
@@ -179,9 +181,7 @@ Eksogene variabler: $\overline{C}, \overline{T}, \overline{i}, \overline{I}, \ov
 
 Parametre: $c, b$
 
--  Grafisk framvisning ('Keynesian cross')
-
----
+-  Grafisk framvisning 
 
 ```{r echo=FALSE}
 keykg
@@ -194,11 +194,10 @@ keykg
 - Økte investeringer ('animal spirits') $\Delta{I}>0$
 
 - (F)ormelt:
+
 $\Delta Y = \frac{1}{1-c}\Delta  \overline{I}>0$
 
 - (V)erbalt
-
----
 
 - (G)rafisk
 
@@ -216,7 +215,7 @@ $Y = \frac{1}{1-c}  \left [ \Delta \overline{I} + \Delta \overline{G} \right ]$
 
 Dersom vi lar $\Delta \overline{I} = - \Delta \overline{G} > 0 \Rightarrow \Delta Y = 0$ (dvs. intern balanse)
 
-I praksis kan det ofte være vanskelig å benytte finanspolitske som konjunkturstabiliserende virkemiddel, siden det politiske som oftest innehar tregheter tilknyttet endringer i finanspolitikken
+I praksis kan det som regel være vanskelig å benytte finanspolitikk som konjunkturstabiliserende virkemiddel, siden det politiske systemet som oftest innehar innebygde tregheter tilknyttet endringer i finanspolitikken (eks. godkjennes av Storting og regjering)
 
 ---
 

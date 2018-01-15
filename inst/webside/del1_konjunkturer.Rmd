@@ -18,16 +18,16 @@ library(latex2exp)
 moltmacrousa <- MakroOEKB1115::moltmacrousa
 unique(moltmacrousa$variable)
 
-usadataI <- dplyr::filter(moltmacrousa, variable %in% c('unem', 'cunem', 'ggdp', 'inflation', 'cinflation'))
+usadataI <- dplyr::filter(moltmacrousa, variable %in% c('unem', 'cunem', 'ggdp', 'inflation', 'cinflation', 'yinflation', 'cyinflation'))
 fusadataI <- reshape2::dcast(usadataI, date + freqm ~ variable) %>% 
   dplyr::filter(freqm=='01', date >= '1948-01-01'& date < '2017-01-01')
 
 okunusa <- qplot(data = fusadataI, x = ggdp, y = cunem, geom = c('point', 'smooth'), method='lm')
-philipusa <- qplot(data = fusadataI, x = unem, y = cinflation, geom = c('point', 'smooth'), method='lm')
+philipusa <- qplot(data = fusadataI, x = unem, y = yinflation, geom = c('point', 'smooth'), method='lm')
 
 okunusag <- ggplot(data = fusadataI, aes(x = cunem, y = ggdp))  + geom_point() +  geom_smooth(method=lm, se=FALSE) + theme_classic() + labs(title = 'Okuns lov', x = 'Endring i arbeidsledigheten', y = c('Vekst i BNP (realpriser)'))
 
-philipusag <- ggplot(data = fusadataI, aes(x = unem, y = inflation))  + geom_point() +  geom_smooth(method=lm, se=FALSE) + theme_classic() + labs(title = 'Phillips-kurven' ,x = 'Ledighetsrate', y = 'Inflation')
+philipusag <- ggplot(data = fusadataI, aes(x = unem, y = cyinflation))  + geom_point() +  geom_smooth(method=lm, se=FALSE) + theme_classic() + labs(title = 'Phillips-kurven' ,x = 'Ledighetsrate', y = 'Inflation')
 
 # Keyneskrysset
 # Henter Jupyter data
