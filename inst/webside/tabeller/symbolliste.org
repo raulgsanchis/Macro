@@ -7,8 +7,10 @@
 
 | Variabel       | Økonomisk forklaring                                                                 |
 |----------------+--------------------------------------------------------------------------------------|
-| Y              | Bruttonasjonalprodukt                                                                |
+| Y              | Bruttonasjonalprodukt (reelt)                                                        |
 | $\overline{Y}$ | Potensiell produkusjon                                                               |
+| LY             | Nominelt bruttonasjonalprodukt                                                       |
+| $Y_{d}$        | Disponibel inntekt (inntekt etter skatt er betalt)                                   |
 | N              | Arbeidsstyrken                                                                       |
 | L              | Sysselsatte personer                                                                 |
 | U              | Antall utenfor arbeid                                                                |

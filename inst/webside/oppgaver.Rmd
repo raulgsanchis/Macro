@@ -19,7 +19,7 @@ Gjør følgende oppgaver for Norge, Tyskland og enten for Hellas, Italia, Portua
 - Hent en tidsserie for arbeidsledighet 
 - Hent en tidsserie for konsumprisindeksen 
 - Vis tidsseriene grafisk
-- Gir serien noen indikasjoner på dype økonomiske kriser?  Hvis ja, se om du kan finne (ved søk på internett) noen kortfattede økonomiske forklaring   er bak disse krisene
+- Gir serien noen indikasjoner på dype økonomiske kriser?  Hvis ja, se om du kan finne (ved søk på internett) noen kortfattede økonomiske forklaringer bak disse krisene
 
 ### Okuns lov og Phillips-kurven
 - Finn et mål på inflasjon (årlig)

@@ -10,3 +10,20 @@ gpmakro <- function(data = moltmacrousa, variables = c('lngdp', 'hptrendg'), kat
     labs(color = "Variabel:",x = labt$x, y = labt$y) +
     labs(x = labt$x, y = labt$y)
 }
+
+
+
+gpmodell <- function(data = datainp){
+  datainp
+    # keykg <- ggplot(data = datainp, aes(x = x, y = value, color = factor(variable))) +
+    # geom_line() +
+    # geom_point(aes(x=0, y=0)) +
+    # geom_segment(aes(x = 500, y = 0, xend = 500, yend = 100), lty = 2) +
+    # #geom_text(aes(x=500, y=500, label=TeX('$\theta$')), parse=TRUE) +
+    # scale_x_continuous(name=lablist$x, breaks = c(400), labels = c(TeX('$Y_{0}$')) ) +
+    # scale_y_continuous(name=lablist$y, breaks = c(400), labels = c('def') ) +
+    # labs(title= 'Keyneskrysset') + theme_classic() +
+    # theme(legend.position="none") +
+    # coord_cartesian()
+
+}
