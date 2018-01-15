@@ -20,9 +20,9 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -180,16 +180,13 @@ $(document).ready(function () {
       <ul class="nav navbar-nav">
         <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Kursinformasjon
+    Forelesningsplan
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
       <a href="forelesningsplan.html">Forelesningsplan</a>
-    </li>
-    <li>
-      <a href="laeringsmaal.html">LÃ¦ringsmÃ¥l</a>
     </li>
   </ul>
 </li>
@@ -200,18 +197,10 @@ $(document).ready(function () {
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="presentasjoner/pres_innledning.html">Introduksjon</a>
-    </li>
-    <li>
-      <a href="del1_konjunkturerF.html">Del I: Konjunktursvingninger</a>
-    </li>
-    <li>
-      <a href="del2_vekst.html">Del II: Ã˜konomisk vekst</a>
-    </li>
-    <li>
-      <a href="del3_kriser.html">Del III: Ã˜konomiske kriser</a>
-    </li>
+    <li class="dropdown-header">Introduksjon</li>
+    <li class="dropdown-header">Del I: Konjunktursvingninger</li>
+    <li class="dropdown-header">Del II: Ã˜konomisk vekst</li>
+    <li class="dropdown-header">Del III: Ã˜konomiske kriser</li>
     <li>
       <a href="case_euro.html">Applikasjon: Krisen i Eurosonen</a>
     </li>
@@ -224,21 +213,28 @@ $(document).ready(function () {
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="oppgaver.html">Oppgaver</a>
-    </li>
+    <li class="dropdown-header">Oppgaver</li>
+    <li class="dropdown-header">LÃ¸sningsforslag</li>
   </ul>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Lenker
+    Nyhetsarkiv
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="nyhetslinker.html">Supplerende kursinformasjon</a>
-    </li>
+    <li class="dropdown-header">Nyheter</li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Symbolliste
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Symbolliste</li>
   </ul>
 </li>
 <li class="dropdown">
@@ -248,22 +244,18 @@ $(document).ready(function () {
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Forelesningsnotater</li>
     <li>
-      <a href="htmrapport.html">Forelesningsnotater</a>
-    </li>
-    <li>
-      <a href="symbolliste.html">Variabeldefinisjoner</a>
+      <a href="laeringsmaal.html">LÃ¦ringsmÃ¥l</a>
     </li>
   </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a></a>
-</li>
+        <li class="dropdown-header">Source Code on GitHub</li>
 <li>
-  <a href="https://www.hvl.no/person/?user=3601450">
-    <span class="ion ion-android-contact"></span>
+  <a href="https://github.com/joernih/MakroOESO002">
+    <span class="fa fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -280,57 +272,16 @@ $(document).ready(function () {
 </div>
 
 
-<div id="del-i-konjunktursvingninger" class="section level1">
-<h1>Del I: Konjunktursvingninger</h1>
-<div id="seminar-1-datatransformering-av-nasjonalregnskapstall" class="section level2">
-<h2>Seminar 1: Datatransformering av nasjonalregnskapstall</h2>
-<p>Gjør følgende oppgaver for Norge, Tyskland og enten for Hellas, Italia, Portual eller Spania</p>
-<div id="installering-av-fred-applikasjon-til-excel" class="section level3">
-<h3>Installering av FRED applikasjon til Excel</h3>
-<ul>
-<li><p>Installer applikasjonen FRED (fra Federal Reserve Bank of St. Louis) i ditt Excel regneark <a href="https://research.stlouisfed.org/fred-addin/install_windows.html">Windows</a> og <a href="https://research.stlouisfed.org/fred-addin/install_mac.html">Apple</a></p></li>
-<li><p>Hjelp og tips til bruk av programmet finnes her: <a href="http://www.youtube.com/watch?v=OAH-wGtP_k8">Youtube</a></p></li>
-</ul>
-</div>
-<div id="tidsserier" class="section level3">
-<h3>Tidsserier</h3>
-<ul>
-<li>Hent tidsserien til bruttonasjonalproduktet i real størrelser</li>
-<li>Transformer denne serien ved å ta logaritmen</li>
-<li>Hent en tidsserie for arbeidsledighet</li>
-<li>Hent en tidsserie for konsumprisindeksen</li>
-<li>Vis tidsseriene grafisk</li>
-<li>Gir serien noen indikasjoner på dype økonomiske kriser? Hvis ja, se om du kan finne (ved søk på internett) noen kortfattede økonomiske forklaring er bak disse krisene</li>
-</ul>
-</div>
-<div id="okuns-lov-og-phillips-kurven" class="section level3">
-<h3>Okuns lov og Phillips-kurven</h3>
-<ul>
-<li>Finn et mål på inflasjon (årlig)</li>
-<li>Finn et mål på ledighet (årlig)</li>
-<li>Lag et scatterplot for vekst og endring i inflasjon (Okuns lov)</li>
-<li>Lag et scatterplot for ledighet og endring i inflasjon (Phillips-kurven).</li>
-<li>For de to scatterplottene, se om du klarer å estimere en linje (dvs. finn korrelasjonskoeffisienten) for graden av lineær korrelasjon</li>
-<li>Er resultaten du finner i tråd med de empirisk regularitetene som ble diskutert i forelesningen?</li>
-</ul>
 <!--
-# Del II: Økonomisk vekst
-
-# Del III: Økonomiske kriser
+---
+output: html_notebook
+---
 -->
-</div>
-</div>
+<div id="case-studie-krisen-i-eurosonen" class="section level1">
+<h1>Case-studie: Krisen i Eurosonen:</h1>
+<p><a href="artikler/Krisen_i_eurosonen_JIH_2014.pdf">Krisen_i_eurosonen_JIH_2014.pdf</a></p>
 </div>
 
-<html>
-<body>
-<!--
-<footer>
-  <p>Publisert av: <a href="mailto:jorn.inge.halvorsen@hvl.no">jorn.inge.halvorsen@hvl.no</a>.</p>
-</footer>
--->
-</body>
-</html>
 
 
 

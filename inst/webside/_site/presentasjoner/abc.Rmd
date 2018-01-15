@@ -2,30 +2,7 @@
 output: html_notebook
 ---
 
-```{r include=FALSE}
-library(MakroOEKB1115)
-library(dplyr)
-library(ggplot2)
-library(gridExtra)
-library(grid)
-
-# Henter datasett
-moltmacrousa <- MakroOEKB1115::moltmacrousa
-unique(moltmacrousa$variable)
-
-usadataI <- dplyr::filter(moltmacrousa, variable %in% c('unem', 'cunem', 'ggdp', 'inflation', 'cinflation'))
-fusadataI <- reshape2::dcast(usadataI, date + freqm ~ variable) %>% 
-  dplyr::filter(freqm=='01', date >= '1948-01-01'& date < '2017-01-01')
-
-
-okunusa <- qplot(data = fusadataI, x = ggdp, y = cunem, geom = c('point', 'smooth'), method='lm')
-philipusa <- qplot(data = fusadataI, x = unem, y = cinflation, geom = c('point', 'smooth'), method='lm')
-
-okunusag <- ggplot(data = fusadataI, aes(x = cunem, y = ggdp))  + geom_point() +  geom_smooth(method=lm, se=FALSE) + theme_classic() + labs(title = 'Okuns lov', x = 'Endring i arbeidsledigheten', y = c('Vekst i BNP (realpriser)'))
-
-philipusag <- ggplot(data = fusadataI, aes(x = unem, y = inflation))  + geom_point() +  geom_smooth(method=lm, se=FALSE) + theme_classic() + labs(title = 'Philips-curven' ,x = 'Ledighetsrate', y = 'Inflation')
-```
-
+<!--
 # Del I: Konjunktursvingninger
 <img id='grede' src="bilder/cycles.jpg" height="75px" width="300px" />
 <img id='grere' src="bilder/money.jpg" height="75px" width="300px" />
@@ -33,82 +10,216 @@ philipusag <- ggplot(data = fusadataI, aes(x = unem, y = inflation))  + geom_poi
 > Long run is a misleading guide to current affairs. In the long run we are all dead.
 - Keynes
 
+-->
+
+```{r include=FALSE}
+library(MakroOEKB1115)
+library(dplyr)
+library(ggplot2)
+library(gridExtra)
+library(grid)
+library(latex2exp)
+
+# Henter datasett
+moltmacrousa <- MakroOEKB1115::moltmacrousa
+unique(moltmacrousa$variable)
+
+usadataI <- dplyr::filter(moltmacrousa, variable %in% c('unem', 'cunem', 'ggdp', 'inflation', 'cinflation', 'yinflation', 'cyinflation'))
+fusadataI <- reshape2::dcast(usadataI, date + freqm ~ variable) %>% 
+  dplyr::filter(freqm=='01', date >= '1948-01-01'& date < '2017-01-01')
+
+okunusa <- qplot(data = fusadataI, x = ggdp, y = cunem, geom = c('point', 'smooth'), method='lm')
+philipusa <- qplot(data = fusadataI, x = unem, y = yinflation, geom = c('point', 'smooth'), method='lm')
+
+okunusag <- ggplot(data = fusadataI, aes(x = cunem, y = ggdp))  + geom_point() +  geom_smooth(method=lm, se=FALSE) + theme_classic() + labs(title = 'Okuns lov', x = 'Endring i arbeidsledigheten', y = c('Vekst i BNP (realpriser)'))
+
+philipusag <- ggplot(data = fusadataI, aes(x = unem, y = cyinflation))  + geom_point() +  geom_smooth(method=lm, se=FALSE) + theme_classic() + labs(title = 'Phillips-kurven' ,x = 'Ledighetsrate', y = 'Inflation')
+
+# Keyneskrysset
+# Henter Jupyter data
+keynesequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/keynesequ.json'))
+
+# Parameterverdier
+exoparval <- list(c_1=0.7, oC = 50, oG= 50, a=30, i = 0.03, oI = 30)
+dexoparval <- list(c_1=0.7, oC = 50, oG= 50, a=30, i = 0.03, oI = 35)
+
+# Variabler som endrer seg
+Yv <- c(0:1000)
+
+# Implikasoner
+grad45v <- 0:rev(Yv)[1]
+cdv <- eval(parse(text=keynesequ$CD),c(exoparval,list(Y=Yv)))
+idv <- eval(parse(text=keynesequ$ID),c(exoparval,list(Y=Yv)))
+gdv <- eval(parse(text=keynesequ$GD),c(exoparval,list(Y=Yv)))
+
+# Datatabell (format)
+dfkeykryss <- data.frame(x = Yv, grad45 = grad45v, cd = cdv, id = idv, gd = gdv) %>% 
+  reshape2::melt(id.vars = c("x")) 
+  #%>%dplyr::mutate(kat=substring(variable,6,6))
+
+# Labeling
+## Main
+lablist <- list(x='Inntekt', y = 'AE (aggregert etterspørsel)')
+## I plottet
+lablistdf <- data.frame(label=c('ABC'),x=c(1),y=c(1))
+
+
+# Ggplot2 (funksjon senere)
+## Henter datasettet
+datainp <- dplyr::filter(dfkeykryss, variable %in% c('grad45', 'cd', 'gd'))
+## Komponent1
+keykg <- ggplot(data = datainp, aes(x = x, y = value, color = factor(variable))) + 
+  geom_line() +
+  geom_point(aes(x=0, y=0)) +
+  geom_segment(aes(x = 500, y = 0, xend = 500, yend = 100), lty = 2) +
+  #geom_text(aes(x=500, y=500, label=TeX('$\theta$')), parse=TRUE) +
+  scale_x_continuous(name=lablist$x, breaks = c(400), labels = c(TeX('$Y_{0}$')) ) +
+  scale_y_continuous(name=lablist$y, breaks = c(400), labels = c('def') ) +
+  labs(title= 'Keyneskrysset') + theme_classic() +
+  theme(legend.position="none") +
+  coord_cartesian()
+```
+
 ## Grunnleggende bakgrunnkunnskaper og enkel Keynes modell (lukket økonomi)
 
-### Sentrale nasjonalregskapstall
-- Bruttonasjonalprodukt ($Y$)
-Den samlede verdien av alle varer og tjenester som blir produsert i landet
-- Nettonasjonalprodukt
-- Arbeidsledighet ($u = $)
-$u = 1-\frac{L}{N}$
-- Inflasjon ($\pi$)
-$\pi = \frac{P}{}$
+### Stabiliseringsmål lukket økonomi
+
+Intern balanse (lukke produksjonsgapet):
+
+- $(Y-\overline{Y})=0$
+  
+---
+
+### Sentrale nasjonalregnskapstall
+- Bruttonasjonalprodukt (GDP/BNP)
+Den samlede verdien av alle varer og tjenester som blir produsert i landet i løpet av et år
+- Bruttonasjonalinntekt (GNP/BNI)
+Den samlede verdien av alle varer og tjenester som landets innbyggere produserer i løpet av et år
+- Arbeidsledighetsrate: $u = 1-\frac{L}{N}$
+- Inflasjon: $\pi = \frac{P_{1} - P_{0}}{P_{0}}$
 
 ---
 
-### Sentrale empiriske sammenhenger
-- Okuns lov (sammenheng mellom endring i ledighete og endring i BNP)
+### Noen sentrale empiriske sammenhenger
+
+#### Okuns lov: negativ korrelasjon mellom endring i arbeidsledighet og vekst eller endring i vekst  i BNP (realpriser) 
 
 ```{r echo=FALSE}
 okunusag 
 ```
 
-- Phillips-kurven (sammenheng mellom arbeidsledighet og inflasjon eller endring i inflasjon)
+---
 
-```{r echo=FALSE}
+#### Phillips-kurven: sammenheng mellom arbeidsledighet og endring i inflasjon (eller inflasjon)
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+# Check for warnings
 philipusag 
 ```
 
 ---
 
 ### Hva bestemmer aggregert BNP?
-#### Kort sikt (Keynes, IS-LM og Mundell-Fleming modellen, del I og III):
-- Samlet etterspørsel ($AE$) bestemmer BNP ($Y$)
+#### Kort sikt (0-3 år):
+- Pga av antagelsen om at produktpriser og lønninger ikke endrer seg på kort sikt, vil  samlet etterspørsel ($AE$) bestemmer BNP ($Y$)
+- Vi legger dette til grunn i enkel Keynes, IS-LM,  og Mundell-Fleming modellen (del I og del III)
 
-#### Mellomlang sikt (AD-AS modelen - del I):
+#### Mellomlang sikt (5-10 år):
 - Tilgangen på innsatsfaktorene arbeidskraft ($L$), teknkologi ($A$) og kapital ($K$) bestemmer BNP ($Y$)
-
-#### Lang sikt (Solow modellen - del II):
-- Teknologisk framgang ($a$), kapitalakkumalasjon ($\Delta K$) og befolkningsvekst ($n$) bestemmer BNP ($Y$)
+- Likvektsbetingelsen som gjelder for AD-AS modellen på lang sikt (del I)
 
 ---
 
-### Enkel Keynes-modell: likevekt i godemarkedet (varer og tjenester)
+#### Lang sikt (10-50 år):
+- Teknologisk framgang ($a$), kapitalakkumalasjon ($\Delta K$) og befolkningsvekst ($n$) bestemmer BNP ($Y$)
+- Hovedresultatet fra Solow modellen (del II)
 
-#### Husholdninger
+---
 
-#### Bedrifter
+### Enkel Keynes-modell 
 
-#### Sentralbanken
+- Likevekt i godemarkedet (varer og tjenester)
 
-#### Offentlige myndigheter
+#### Aggregert etterspørsel (AE)
+$AE \equiv  C + I + G$
 
 #### Markeder i likevekt: Godemarkedet (varer og tjenester)
+$Y = AE$
+
+---
+
+#### Husholdninger
+$C =  \overline{C} + c(Y - T)$
+
+Hvor $0<c<1$ og $\overline{C}>0$
+
+#### Bedrifter
+$I = \overline{I} - b\cdot i$
+
+Hvor $\overline{I}>0$ og $b>1$ og 
+
+#### Sentralbanken
+$i = \overline{i}$
+
+#### Offentlige myndigheter
+$G = \overline{G}$ og $T = \overline{T}$
+
+---
 
 #### Løsning av modellen:
-1. Setter inn for x, y
+Setter adferdslikningene inn i likevekstbetingelsen for godemarkedet
 
-1. Løser modellen mhp. på Y (godemarkedet) 
+$Y = \overline{C} + c(Y - T) + \overline{I} - b\cdot i + \overline{G}$
 
-1. Lister opp de endogende og eksogene variablene
+Løser modellen mhp. på Y (godemarkedet) 
 
-1. Grafisk framvisning ('Keynesian cross')
+$Y = \frac{1}{1-c}  \left [ \overline{C} - T - b\cdot \overline{i} + \overline{G}  \right ]$
+
+Endogene variabler: $Y$ 
+
+Eksogene variabler: $\overline{C}, \overline{T}, \overline{i}, \overline{I}, \overline{G}$
+
+Parametre: $c, b$
+
+-  Grafisk framvisning 
+
+```{r echo=FALSE}
+keykg
+```
+
+---
 
 #### Komparativ statikk (FGV): 
 
 - Økte investeringer ('animal spirits') $\Delta{I}>0$
 
-- (F)ormelt
+- (F)ormelt:
+
+$\Delta Y = \frac{1}{1-c}\Delta  \overline{I}>0$
+
+- (V)erbalt
 
 - (G)rafisk
 
-- (V)erbalt
+```{r echo=FALSE}
+keykg
+```
+
+---
 
 #### Stabiliseringspolitikk
 
 - Reduserte offentlige utgifter $\Delta G < 0$
 
-Lag
+$Y = \frac{1}{1-c}  \left [ \Delta \overline{I} + \Delta \overline{G} \right ]$
+
+Dersom vi lar $\Delta \overline{I} = - \Delta \overline{G} > 0 \Rightarrow \Delta Y = 0$ (dvs. intern balanse)
+
+I praksis kan det som regel være vanskelig å benytte finanspolitikk som konjunkturstabiliserende virkemiddel, siden det politiske systemet som oftest innehar innebygde tregheter tilknyttet endringer i finanspolitikken (eks. godkjennes av Storting og regjering)
+
+---
+
+<!--
 
 ### IS-LM modellen: likevekt i gode- og pengemarkedet
 
@@ -120,7 +231,7 @@ Lag
 
 #### Offentlige myndigheter
 
-#### Markeder i likevekt: Godemarkedet (varer og tjenester)
+#### Markeder i likevekt: Gode- og pengemarkedet
 
 #### Løsning av modellen:
 1. Setter inn for x, y
@@ -147,63 +258,20 @@ Lag
 
 ### AD-AS modellen: likevekt i gode-, penge- og arbeidsmarkedet
 
-## Åpen Økonomi
+#### Husholdningene
 
-### Mundell-Flemming modellen (IS-LM for en åpen økonomi): likevekt i gode, penge- og valutakursmarkedet
+#### Bedriftene 
 
-#### Husholdninger
+#### Likevekt i arbeidsmarkedet og AS-kurven
 
-#### Bedrifter
-
-#### Sentralbanken
-
-#### Offentlige myndigheter
-
-#### Markeder i likevekt: Godemarkedet (varer og tjenester)
+#### Markeder i likevekt: Gode, penge, og arbeidsmarkedet
 
 #### Løsning av modellen:
 1. Setter inn for x, y
 
 1. Løser modellen mhp. på Y (godemarkedet) 
 
-1. Lister opp de endogende og eksogene variablene
-
-1. Grafisk framvisning ('Keynesian cross')
-
-#### Komparativ statikk (FGV): 
-
-- Økte investeringer ('animal spirits') $\Delta{I}>0$
-
-- (F)ormelt
-
-- (G)rafisk
-
-- (V)erbalt
-
-#### Stabiliseringspolitikk
-
-- Reduserte offentlige utgifter $\Delta G < 0$
-
-Lag
-
-### IS-LM modellen: likevekt i gode- og pengemarkedet
-
-#### Husholdninger
-
-#### Bedrifter
-
-#### Sentralbanken
-
-#### Offentlige myndigheter
-
-#### Markeder i likevekt: Godemarkedet (varer og tjenester)
-
-#### Løsning av modellen:
-1. Setter inn for x, y
-
-1. Løser modellen mhp. på Y (godemarkedet) 
-
-1. Lister opp de endogende og eksogene variablene
+1. Lister opp de endogene og eksogene variablene
 
 1. Grafisk framvisning ('Keynesian cross')
 
@@ -221,7 +289,79 @@ Lag
 
 #### Øvelse
 
+## Åpen Økonomi
+
+### Stabiliseringsmål for en åpen økonomi
+1. Intern balanse (lukke produksjonsgapet)
+1. Ekstern balanse (holde utenlandsgjelden på et rimelig nivå)
+
+### Utenriksregnskapet
+
+### Mundell-Fleming modellen (IS-LM for en åpen økonomi): likevekt i gode, penge- og valutakursmarkedet
+
+#### Husholdninger
+
+#### Bedrifter
+
+#### Sentralbanken
+
+#### Offentlige myndigheter
+
+#### Markeder i likevekt: Gode-, penge- og valutakursmarkedet
+
+#### Løsning av modellen:
+1. Setter inn for x, y
+
+1. Løser modellen mhp. på Y (godemarkedet) 
+
+1. Lister opp de endogende og eksogene variablene
+
+1. Grafisk framvisning ('Keynesian cross')
+
+#### Komparativ statikk (GV): 
+
+- Økte investeringer ('animal spirits') $\Delta{I}>0$
+
+- (F)ormelt
+
+- (G)rafisk
+
+- (V)erbalt
+
+#### Stabiliseringspolitikk
+
+- Reduserte offentlige utgifter $\Delta G < 0$
+
+Lag
+
+#### Øvelse
+
 ### AD-AS: likevekt i gode, penge, valuta- og arbeidsmarkedet
+
+#### Markeder i likevekt: Gode, penge, arbeids, og valutakursmarkedet
+
+#### Løsning av modellen:
+1. Setter inn for x, y
+
+1. Løser modellen mhp. på Y (godemarkedet) 
+
+1. Lister opp de endogene og eksogene variablene
+
+1. Grafisk framvisning ('Keynesian cross')
+
+#### Komparativ statikk (FGV): 
+
+- Økning i pengemengden
+
+- (F)ormelt
+
+- (G)rafisk
+
+- (V)erbal tolkning utenfor modellen
+
+#### Stabiliseringspolitikk
+
+#### Øvelse
 
 <!--
 Del 1: Økonomiske svingninger på kort sikt

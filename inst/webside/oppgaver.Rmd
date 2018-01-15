@@ -7,7 +7,8 @@ output:
 Gjør følgende oppgaver for Norge, Tyskland og enten for Hellas, Italia, Portual eller Spania 
 
 ### Installering av FRED applikasjon til Excel
-- Installer applikasjonen FRED (fra Federal Reserve Bank of St. Louis)  i ditt Excel regneark [klikk her for næmere instruksjoner](https://research.stlouisfed.org/fred-addin/install_windows.html)
+- Installer applikasjonen FRED (fra Federal Reserve Bank of St. Louis)  i ditt Excel regneark [Windows](https://research.stlouisfed.org/fred-addin/install_windows.html) og [Apple](https://research.stlouisfed.org/fred-addin/install_mac.html)
+
 
 - Hjelp og tips til bruk av programmet finnes her:
 [Youtube](http://www.youtube.com/watch?v=OAH-wGtP_k8)
@@ -18,11 +19,11 @@ Gjør følgende oppgaver for Norge, Tyskland og enten for Hellas, Italia, Portua
 - Hent en tidsserie for arbeidsledighet 
 - Hent en tidsserie for konsumprisindeksen 
 - Vis tidsseriene grafisk
-- Gir serien noen indikasjoner på dype økonomiske kriser?  Hvis ja, se om du kan finne (ved søk på internett) noen kortfattede økonomiske forklaringer bak disse krisene
+- Gir serien noen indikasjoner på dype økonomiske kriser?  Hvis ja, se om du kan finne (ved søk på internett) noen kortfattede økonomiske forklaring   er bak disse krisene
 
 ### Okuns lov og Phillips-kurven
-- Finn et mål på inflasjon
-- Finn et mål på ledighet
+- Finn et mål på inflasjon (årlig)
+- Finn et mål på ledighet (årlig)
 - Lag et scatterplot for vekst og endring i inflasjon (Okuns lov)
 - Lag et scatterplot for ledighet og endring i inflasjon (Phillips-kurven).
 - For de to scatterplottene, se om du klarer å estimere en linje (dvs. finn korrelasjonskoeffisienten) for graden av lineær korrelasjon
