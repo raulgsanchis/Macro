@@ -7,7 +7,7 @@ output:
 Gjør følgende oppgaver for Norge, Tyskland og enten for Hellas, Italia, Portual eller Spania 
 
 ### Installering av FRED applikasjon til Excel
-- Installer applikasjonen FRED (fra Federal Reserve Bank of St. Louis)  i ditt Excel regneark [Windows](https://research.stlouisfed.org/fred-addin/install_windows.html) og [Apple](https://research.stlouisfed.org/fred-addin/install_mac.html)
+- Installer applikasjonen FRED (fra Federal Reserve Bank of St. Louis)  i ditt Excel regneark [Windows](https://research.stlouisfed.org/fred-addin/install_windows.html) og [Mac](https://research.stlouisfed.org/fred-addin/install_mac.html)
 
 
 - Hjelp og tips til bruk av programmet finnes her:

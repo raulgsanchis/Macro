@@ -171,8 +171,10 @@ keykg
 
 - (F)ormelt:
 $\Delta Y = \frac{1}{1-c}\Delta  \overline{I} > 0  $
+Økte investeringer $\rightarrow$ økt produksjon $\rightarrow$
 
-- (V)erbalt
+- (V)erbalt (skisse - utenfor modellen)
+
 
 - (G)rafisk
 
