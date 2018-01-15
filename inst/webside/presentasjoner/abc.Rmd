@@ -99,6 +99,8 @@ $$Y = PY/P$$
 
 - Bruttonasjonalinntekt (GNP/BNI): Den samlede verdien av alle varer og tjenester som landets innbyggere produserer i løpet av et år
 
+---
+
 - Arbeidsledighetsrate:
 
 $$u = 1-\frac{L}{N}$$
@@ -135,7 +137,7 @@ philipusag
 
 #### Mellomlang sikt (5-10 år):
 - Tilgangen på innsatsfaktorene arbeidskraft ($L$), teknkologi ($A$) og kapital ($K$) bestemmer BNP ($Y$)
-- Likvektsbetingelsen som gjelder for AD-AS modellen på lang sikt (del I)
+- Langsiktig likevekstbetingelse for AD-AS modellen (del I)
 
 ---
 
@@ -172,6 +174,8 @@ $$i = \overline{i}$$
 
 Hvor $\overline{i} \geqslant 0$
 
+---
+
 #### Offentlige myndigheter
 $$G = \overline{G}$$ og $$T = \overline{T}$$
 
@@ -192,6 +196,8 @@ Eksogene variabler: $\overline{C}, \overline{T}, \overline{i}, \overline{I}, \ov
 
 Parametre: $c, b$
 
+---
+
 -  Grafisk framvisning 
 
 ```{r echo=FALSE}
@@ -200,7 +206,7 @@ keykg
 
 ---
 
-#### Komparativ statikk (FGV): 
+#### Komparativ statikk (analyse fra en likevekt til en annen): 
 
 Økte investeringer ('animal spirits') $\Delta{\overline{I}}>0$
 
@@ -212,6 +218,7 @@ $$\Delta Y = \frac{1}{1-c}\Delta  \overline{I}>0$$
 
 Økte investeringer $\rightarrow$ økt produksjon $\rightarrow$ multiplikatoreffekt: $\rightarrow$ økt disponibel inntekt $\rightarrow$ økt konsum $\rightarrow$ økt produksjon etc.
 
+---
 
 - **G**rafisk:
 
@@ -232,6 +239,16 @@ Dersom vi lar $\Delta \overline{I} = - \Delta \overline{G} > 0 \Rightarrow \Delt
 I praksis kan det som regel være vanskelig å benytte finanspolitikk som konjunkturstabiliserende virkemiddel, siden det politiske systemet som oftest innehar innebygde tregheter tilknyttet endringer i finanspolitikken (eks. må godkjennes av Storting og regjering)
 
 ---
+
+#### Øvelse
+
+Redusert rentenivå $\Delta{{i}}<0$
+
+- **F**ormelt:
+
+- **G**rafisk (Y, i plan):
+
+- **V**erbalt (tolkning utenfor modellen):
 
 <!--
 
