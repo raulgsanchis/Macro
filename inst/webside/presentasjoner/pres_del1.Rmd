@@ -1,13 +1,15 @@
 ---
-title: "Forelesning ØKB1115 Makroøkonomi"
+title: "Forelesning ØKB1115 Makroøkonomi: Del 1"
 output:
   ioslides_presentation: default
 #    logo: logo.png
 ---
 
-```{r plan, child = '../del1_konjunkturer.Rmd'}
-
+```{r plan, child = 'abc.Rmd'}
+#../del1_konjunkturer.Rmd
 ```
+
+
 
 <!-- http://rmarkdown.rstudio.com/ioslides_presentation_format.html -->
 

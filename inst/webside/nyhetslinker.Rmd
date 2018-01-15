@@ -32,11 +32,18 @@ Despite Hurricane](artikler/del1_growthusa3.pdf)
 
 ## Blogger
 
-- [Paul Krugman](https://www.nytimes.com/column/paul-krugman)
+[Paul Krugman](https://www.nytimes.com/column/paul-krugman)
 
-- [John Cochrane](https://johnhcochrane.blogspot.no/)
+[John Cochrane](https://johnhcochrane.blogspot.no/)
 
-- [Hans-Werner Sinn](https://www.project-syndicate.org/columnist/hans-werner-sinn)
+[Hans-Werner Sinn](https://www.project-syndicate.org/columnist/hans-werner-sinn)
+
+## Statistikk
+
+- [SSB](http://www.ssb.no/nasjonalregnskap-og-konjunkturer)
+
+- [Federal Reserve Bank of St. Louis (FRED)](http://www.ssb.no/nasjonalregnskap-og-konjunkturer)
+
 
 <!--
 <p>

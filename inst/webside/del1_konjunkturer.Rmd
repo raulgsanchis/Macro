@@ -192,7 +192,7 @@ $Y = \frac{1}{1-c}  \left [ \Delta \overline{I} + \Delta \overline{G} \right ]$
 
 Dersom vi lar $\Delta \overline{I} = - \Delta \overline{G} > 0 \Rightarrow \Delta Y = 0$ (dvs. intern balanse)
 
-I praksis kan det ofte være vanskelig å benytte finanspolitske som konjunkturstabiliserende virkemiddel, siden det politiske systemet vanligvis innehar tregheter tilknyttet endringer i finanspolitikken
+I praksis kan det ofte være vanskelig å benytte finanspolitske som konjunkturstabiliserende virkemiddel, siden det politiske som oftest innehar tregheter tilknyttet endringer i finanspolitikken
 
 ---
 

@@ -21,8 +21,9 @@ macro.series4 <- fred$series.search("Price")
 # Makrotall USA
 usagdp <- fred$series.observations(series_id = c('GDPCA'))
 usaunem <- rbind(fred$series.observations(series_id = c('M0892AUSM156SNBR')), fred$series.observations(series_id = c('UNRATE')))
-usapricei <- fred$series.observations(series_id = c('CPIAUCSL', 'CPIAUCNS')[2])
+usapricei <- fred$series.observations(series_id = c('CPIAUCSL', 'CPILFESL')[2])
 usamone <- fred$series.observations(series_id = c('M1'))
+#CPIAUCSL CPILFESL
 
 # 2. Cleaning up data
 tusagdp  <- usagdp %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
@@ -60,9 +61,8 @@ molttusaunem <- tusaunem %>%
 molttusapricei <- tusapricei %>%
   dplyr::mutate(pricei = ts(value)) %>%
   dplyr::mutate(Lpricei = lag(pricei, n = 12)) %>%
-  dplyr::mutate(inflation = round(pricei - Lpricei,digits=4)) %>%
-  dplyr::mutate(Linflation = lag(inflation, n = 12)) %>%
-  dplyr::mutate(cinflation = round(inflation - Linflation,digits=4)) %>%
+  dplyr::mutate(inflation = 100*round(pricei/Lpricei-1,digits=4)) %>%
+  dplyr::mutate(cinflation = round(inflation - lag(inflation, n =12),digits=4)) %>%
   reshape2::melt(id.vars = c("date")) %>%
   dplyr::mutate(kat = 'inf')
 
@@ -71,7 +71,7 @@ molttusamone <- tusamone %>% dplyr::mutate(money = ts(value)) %>%
   dplyr::mutate(kat='mon')
 
 ## Samler alle dataene for USA
-moltmacrousa <- rbind(molttusaunem, molttusagdp,molttusapricei, molttusamone) %>%
+moltmacrousa <- rbind(molttusaunem, molttusagdp, molttusapricei, molttusamone) %>%
   dplyr::mutate(freqm = substring(date,6,7))
 
 # 4. Saving data in Rda-format

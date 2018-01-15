@@ -25,7 +25,7 @@ Gjør følgende oppgaver for Norge, Tyskland og enten for Hellas, Italia, Portua
 - Finn et mål på ledighet
 - Lag et scatterplot for vekst og endring i inflasjon (Okuns lov)
 - Lag et scatterplot for ledighet og endring i inflasjon (Phillips-kurven).
-- For de to scatterplottene, se om du klarer å estimere en linje for graden av lineær korrelasjon
+- For de to scatterplottene, se om du klarer å estimere en linje (dvs. finn korrelasjonskoeffisienten) for graden av lineær korrelasjon
 - Er resultaten du finner i tråd med de empirisk regularitetene som ble diskutert i forelesningen?
 
 <!--

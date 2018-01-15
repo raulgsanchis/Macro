@@ -40,9 +40,7 @@ output:
 - To typer økonomier:
     + Lukket (eller globalisert) økonomi
     + Åpen økonomi
-
-<!--
-
+    
 #Del 1
 ##Grunnleggende bakgrunnskunnskap
 - Mål på aggregert produksjon: BNP ($Y$) (Bruttonasjonalprodukt) $Y$
@@ -67,7 +65,7 @@ Negativ korrelasjon mellom vekst i produksjonen (BNP) og endring i ledighetsrate
 
 - Phillips-kurven
 
-- Hvordan bestemmes aggregert BNP?
+- Hvordan bestemmes BNP?
     + Kort sikt
     + Mellomlang sikt
     + Lang sikt
@@ -80,6 +78,8 @@ $Z \equiv C + I + G$
 - Likevekt
 - Skiftanalyse
 - Stabiliseringspolitikk
+
+<!--
 
 ### IS-LM modellen:
 
