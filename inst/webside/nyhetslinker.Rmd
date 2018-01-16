@@ -3,6 +3,8 @@
 [U.S. Economy Notches Solid 3 percent Growth,
 Despite Hurricane](artikler/del1_growthusa3.pdf)
 
+[Investors Prepare for Inflation](artikler/del1_inflation.pdf)
+
 ## Videoer
 <iframe width="200" height="200" src="https://www.youtube.com/embed/qtAeINU3FKM">
 </iframe>

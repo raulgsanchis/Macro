@@ -1,12 +1,3 @@
-<!--
----
-output:
-  html_notebook:
-    toc: true
-    toc_depth: 4
----
--->
-
 #Oversikt over faget
 - Tre hovedtemaer: 
     1. Konjunktursvingninger
@@ -43,27 +34,28 @@ output:
     
 #Del 1
 ##Grunnleggende bakgrunnskunnskap
-- Mål på aggregert produksjon: BNP ($Y$) (Bruttonasjonalprodukt) $Y$
-    + Sluttgoder
-    + Merverdi
-    + Inntekt
+- Bruttonasjonalprodukt (GDP/BNP)
+
+- Bruttonasjonalinntekt (GNP/BNI)
 
 - Nominell BNP ($LY$)
-$LY = PY$
-
+$$LY = PY$$
 - Reel BNP
-$Y = \frac{LY}{P}$
+$$Y = \frac{LY}{P}$$
 
-- Ledighet ($U$) og ledighetsrate ($u$)
-$U \equiv L - N$, hvor $N$ er antall personer i arbeid
+- Arbeidsledighetsrate:
 
-- Inflasjon ($\pi$)
+$$u = 1-\frac{L}{N}$$
 
+- Inflasjon 
 
-- Okuns lov
-Negativ korrelasjon mellom vekst i produksjonen (BNP) og endring i ledighetsraten. 
+$$\pi = \frac{\Delta P}{P} =\frac{P_{t} - P_{t-1}}{P_{t-1}}$$
 
-- Phillips-kurven
+- Okuns lov:
+negativ korrelasjon mellom endring i arbeidsledighet og vekst BNP 
+
+- Phillips-kurven:
+negativ sammenheng mellom arbeidsledighet og endring i inflasjon
 
 - Hvordan bestemmes BNP?
     + Kort sikt
@@ -71,7 +63,7 @@ Negativ korrelasjon mellom vekst i produksjonen (BNP) og endring i ledighetsrate
     + Lang sikt
 
 ## Lukket økonomi
-$Z \equiv C + I + G$
+$AE \equiv C + I + G$
 
 ### Enkel Keynes-modell:
 - Adferdslikninger

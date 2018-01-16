@@ -1,0 +1,4 @@
+
+
+# Nullrente (i=0) og holde pengemengden stabil
+

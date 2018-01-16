@@ -2,9 +2,9 @@
 output:
   pdf_document: default
 ---
+
 # Del I: Konjunktursvingninger
 ## Seminar 1: Datatransformering av nasjonalregnskapstall
-Gjør følgende oppgaver for Norge, Tyskland og enten for Hellas, Italia, Portual eller Spania 
 
 ### Installering av FRED applikasjon til Excel
 - Installer applikasjonen FRED (fra Federal Reserve Bank of St. Louis)  i ditt Excel regneark [Windows](https://research.stlouisfed.org/fred-addin/install_windows.html) og [Mac](https://research.stlouisfed.org/fred-addin/install_mac.html)
@@ -14,6 +14,8 @@ Gjør følgende oppgaver for Norge, Tyskland og enten for Hellas, Italia, Portua
 [Youtube](http://www.youtube.com/watch?v=OAH-wGtP_k8)
 
 ### Tidsserier
+Gjør følgende oppgaver for Norge, Tyskland og enten for Hellas, Italia, Portual eller Spania 
+
 - Hent tidsserien til bruttonasjonalproduktet i real størrelser
 - Transformer denne serien ved å ta logaritmen 
 - Hent en tidsserie for arbeidsledighet 

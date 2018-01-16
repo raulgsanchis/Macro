@@ -1,7 +1,3 @@
----
-output: html_notebook
----
-
 <!--
 # Del I: Konjunktursvingninger
 <img id='grede' src="bilder/cycles.jpg" height="75px" width="300px" />
@@ -9,8 +5,14 @@ output: html_notebook
 
 > Long run is a misleading guide to current affairs. In the long run we are all dead.
 - Keynes
-
 -->
+
+```{r eval=FALSE, include=FALSE}
+# library(ggplot2movies)
+# data(movies)
+# mov <- subset(movies, length != "")
+```
+
 
 ```{r include=FALSE}
 library(MakroOEKB1115)
@@ -31,53 +33,98 @@ fusadataI <- reshape2::dcast(usadataI, date + freqm ~ variable) %>%
 okunusa <- qplot(data = fusadataI, x = ggdp, y = cunem, geom = c('point', 'smooth'), method='lm')
 philipusa <- qplot(data = fusadataI, x = unem, y = yinflation, geom = c('point', 'smooth'), method='lm')
 
-okunusag <- ggplot(data = fusadataI, aes(x = cunem, y = ggdp))  + geom_point() +  geom_smooth(method=lm, se=FALSE) + theme_classic() + labs(title = 'Okuns lov', subtitle = 'USA 1948-2017', x = 'Endring i arbeidsledigheten', y = c('Vekst i BNP (realpriser)'))
+okunusag <- ggplot(data = fusadataI, aes(x = cunem, y = ggdp))  + geom_point() +  geom_smooth(method=lm, se=FALSE) + theme_classic() + labs(title = 'Okuns lov', subtitle = 'USA 1948-2016', x = 'Endring i arbeidsledigheten', y = c('Vekst i BNP (realpriser)'))
 
-philipusag <- ggplot(data = fusadataI, aes(x = unem, y = cyinflation))  + geom_point() +  geom_smooth(method=lm, se=FALSE) + theme_classic() + labs(title = 'Phillips-kurven', subtitle = 'USA 1948-2017' ,x = 'Ledighetsrate', y = 'Inflation')
+philipusag <- ggplot(data = fusadataI, aes(x = unem, y = cyinflation))  + geom_point() +  geom_smooth(method=lm, se=FALSE) + theme_classic() + labs(title = 'Phillips-kurven', subtitle = 'USA 1948-2016' ,x = 'Ledighetsrate', y = 'Endring i inflation')
+```
 
+
+```{r include=FALSE}
 # Keyneskrysset
 # Henter Jupyter data
 keynesequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/keynesequ.json'))
 
 # Parameterverdier
-exoparval <- list(c_1=0.7, oC = 50, oG= 50, a=30, i = 0.03, oI = 30)
-dexoparval <- list(c_1=0.7, oC = 50, oG= 50, a=30, i = 0.03, oI = 35)
+exoparval <- list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 50)
+dexoparval <- list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 110)
 
 # Variabler som endrer seg
-Yv <- c(0:1000)
+Yv <- c(0:600)
 
 # Implikasoner
+##
 grad45v <- 0:rev(Yv)[1]
 cdv <- eval(parse(text=keynesequ$CD),c(exoparval,list(Y=Yv)))
 idv <- eval(parse(text=keynesequ$ID),c(exoparval,list(Y=Yv)))
 gdv <- eval(parse(text=keynesequ$GD),c(exoparval,list(Y=Yv)))
+#
+dcdv <- eval(parse(text=keynesequ$CD),c(dexoparval,list(Y=Yv)))
+didv <- eval(parse(text=keynesequ$ID),c(dexoparval,list(Y=Yv)))
+dgdv <- eval(parse(text=keynesequ$GD),c(dexoparval,list(Y=Yv)))
+
+
+## Likevekt
+yeae <-eval(parse(text=keynesequ$AD),c(exoparval))
+dyeae <-eval(parse(text=keynesequ$AD),c(dexoparval))
 
 # Datatabell (format)
-dfkeykryss <- data.frame(x = Yv, grad45 = grad45v, cd = cdv, id = idv, gd = gdv) %>% 
-  reshape2::melt(id.vars = c("x")) 
-  #%>%dplyr::mutate(kat=substring(variable,6,6))
+dfkeykryss <- data.frame(x = Yv, grad45 = grad45v, cd = cdv, id = idv, gd = gdv, idpgd = idv + gdv,
+                         idpgdcd = idv + gdv + cdv, 
+                         dcd = dcdv, did = didv, dgd = dgdv, didpgd = didv + dgdv,
+                         didpgdcd = didv + dgdv + dcdv) %>% 
+  reshape2::melt(id.vars = c("x")) %>% 
+  dplyr::mutate(kat=substring(variable,6,6))
 
 # Labeling
 ## Main
-lablist <- list(x='Inntekt', y = 'AE (aggregert etterspørsel)')
+lablist <- list(x='inntekt, produksjon', y = 'AE (aggregert etterspørsel)')
 ## I plottet
 lablistdf <- data.frame(label=c('ABC'),x=c(1),y=c(1))
 
 
 # Ggplot2 (funksjon senere)
 ## Henter datasettet
-datainp <- dplyr::filter(dfkeykryss, variable %in% c('grad45', 'cd', 'gd'))
+datainp <- dplyr::filter(dfkeykryss, variable %in% c('grad45', 'id', 'idpgd', 'idpgdcd'))
 ## Komponent1
 keykg <- ggplot(data = datainp, aes(x = x, y = value, color = factor(variable))) + 
   geom_line() +
-  geom_point(aes(x=0, y=0)) +
-  geom_segment(aes(x = 500, y = 0, xend = 500, yend = 100), lty = 2) +
-  #geom_text(aes(x=500, y=500, label=TeX('$\theta$')), parse=TRUE) +
-  scale_x_continuous(name=lablist$x, breaks = c(400), labels = c(TeX('$Y_{0}$')) ) +
-  scale_y_continuous(name=lablist$y, breaks = c(400), labels = c('def') ) +
+  geom_point(aes(x=yeae, y=yeae)) +
+  geom_segment(aes(x = yeae, y = 0, xend = yeae , yend = yeae), lty = 2) +
+  geom_segment(aes(x = 0, y = yeae, xend = yeae , yend = yeae), lty = 2) + 
+  geom_text(x=550, y=600, label = 'Y = AD', color = 'red') +
+  geom_text(x=550, y=500, label = 'C+I+G', color = 'red') +
+  geom_text(x=550, y=65, label = 'I', color = 'red') +
+  geom_text(x=550, y=115, label = 'I+G', color = 'red') +
+  scale_x_continuous(name=lablist$x, breaks = c(yeae), labels = c(TeX('$Y_{0}$'))) +
+  scale_y_continuous(name=lablist$y, breaks = c(yeae), labels = c(TeX('$AE_{0}$'))) +
   labs(title= 'Keyneskrysset') + theme_classic() +
   theme(legend.position="none") +
-  coord_cartesian()
+  coord_cartesian() + 
+  scale_colour_manual(values = c("black","black", "black", 'black'))
+
+## Henter datasettet
+ddatainp <- dplyr::filter(dfkeykryss, variable %in% c('grad45','idpgdcd','didpgdcd'))
+## Komponent1
+tl <- data.frame(x=c(100,0), y=c(100,0), label=c('abc', 'def'))
+
+dkeykg <- ggplot(data = ddatainp, aes(x = x, y = value, color = factor(variable))) + 
+  geom_line() +
+  geom_point(aes(x=yeae, y=yeae)) +
+  geom_segment(aes(x = dyeae, y = 0, xend = dyeae , yend = dyeae), lty = 2) +
+  geom_segment(aes(x = 0, y = dyeae, xend = dyeae , yend = dyeae), lty = 2) + 
+  geom_segment(aes(x = yeae, y = 0, xend = yeae , yend = yeae), lty = 2) +
+  geom_segment(aes(x = 0, y = yeae, xend = yeae , yend = yeae), lty = 2) + 
+  geom_text(x=560, y=600, label = 'Y = AD', color = 'red') +
+  geom_text(x=560, y=550, label = "C+I'+G", color = 'red') +
+  geom_text(x=560, y=475, label = "C+I+G", color = 'red') +
+  #scale_x_continuous(name=lablist$x, breaks = c(dyeae), labels = c(TeX('$Y_{0}$'))) +
+  #scale_y_continuous(name=lablist$y, breaks = c(dyeae), labels = c(TeX('$AE_{0}$'))) +
+  scale_x_continuous(name=lablist$x, breaks = c(dyeae), labels = c(TeX('$Y_{1}$'))) +
+  scale_y_continuous(name=lablist$y, breaks = c(dyeae), labels = c(TeX('$AE_{1}$'))) +
+  labs(title= 'Keyneskrysset') + theme_classic() +
+  theme(legend.position="none") +
+  coord_cartesian() + 
+  scale_colour_manual(values = c("black","black", "black", 'black'))
 ```
 
 ## Grunnleggende bakgrunnkunnskaper og enkel Keynes modell (lukket økonomi)
@@ -86,27 +133,28 @@ keykg <- ggplot(data = datainp, aes(x = x, y = value, color = factor(variable)))
 
 Intern balanse (lukke produksjonsgapet):
 
-- $(Y-\overline{Y})=0$
+$$(Y-\overline{Y})=0$$
   
 ---
 
 ### Sentrale nasjonalregnskapstall
-- Bruttonasjonalprodukt (GDP/BNP):
-Den samlede verdien av alle varer og tjenester som blir produsert i landet i løpet av et år
-    - abc
-    - def
+- Bruttonasjonalprodukt (GDP/BNP): Den samlede verdien av alle varer og tjenester som blir produsert i landet i løpet av et år
+    - Nominelt BNP (LY) 
+$$LY = PY$$
+    - Reelt BNP (Y)
+$$LY/P = Y$$
 
-- Bruttonasjonalinntekt (GNP/BNI):
+- Bruttonasjonalinntekt (GNP/BNI): Den samlede verdien av alle varer og tjenester som landets innbyggere produserer i løpet av et år
 
-Den samlede verdien av alle varer og tjenester som landets innbyggere produserer i løpet av et år
+---
 
 - Arbeidsledighetsrate:
 
-$u = 1-\frac{L}{N}$
+$$u = 1-\frac{L}{N}$$
 
 - Inflasjon: 
 
-$\pi = \frac{P_{1} - P_{0}}{P_{0}}$
+$$\pi = \frac{P_{1} - P_{0}}{P_{0}}$$
 
 ---
 
@@ -131,18 +179,18 @@ philipusag
 
 ### Hva bestemmer aggregert BNP?
 #### Kort sikt (0-3 år):
-- Pga av antagelsen om at produktpriser og lønninger ikke endrer seg på kort sikt, vil  samlet etterspørsel ($AE$) bestemmer BNP ($Y$)
+- Pga av antagelsen om at produktpriser og lønninger ikke endrer seg på kort sikt (og statiske prisforventninger), vil  samlet etterspørsel ($AE$) bestemmer BNP ($Y$)
 - Vi legger dette til grunn i enkel Keynes, IS-LM,  og Mundell-Fleming modellen (del I og del III)
 
 #### Mellomlang sikt (5-10 år):
 - Tilgangen på innsatsfaktorene arbeidskraft ($L$), teknkologi ($A$) og kapital ($K$) bestemmer BNP ($Y$)
-- Likvektsbetingelsen som gjelder for AD-AS modellen på lang sikt (del I)
+- Langsiktig likevekstbetingelse for AD-AS modellen (del I)
 
 ---
 
 #### Lang sikt (10-50 år):
 - Teknologisk framgang ($a$), kapitalakkumalasjon ($\Delta K$) og befolkningsvekst ($n$) bestemmer BNP ($Y$)
-- Hovedresultatet fra Solow modellen (del II)
+- Hovedresultatet fra Solow-modellen (del II)
 
 ---
 
@@ -151,46 +199,51 @@ philipusag
 - Likevekt i godemarkedet (varer og tjenester)
 
 #### Aggregert etterspørsel (AE)
-$AE \equiv  C + I + G$
+$$AE \equiv  C + I + G$$
 
 #### Markeder i likevekt: Godemarkedet (varer og tjenester)
-$Y = AE$
+$$Y = AE$$
 
 ---
 
 #### Husholdninger
-$C =  \overline{C} + c(Y - T)$
+$$C =  \overline{C} + c(Y - T)$$
 
 Hvor $0<c<1$ og $\overline{C}>0$
 
 #### Bedrifter
-$I = \overline{I} - b\cdot i$
+$$I = \overline{I} - b\cdot i$$
 
 Hvor $\overline{I}>0$ og $b>1$ og 
 
 #### Sentralbanken
-$i = \overline{i}$
+$$i = \overline{i}$$
 
-Hvor $\overline{I} \geqslant$
+Hvor $\overline{i} \geqslant 0$
+
+---
+
 #### Offentlige myndigheter
-$G = \overline{G}$ og $T = \overline{T}$
+$$G = \overline{G}$$ og $$T = \overline{T}$$
 
 ---
 
 #### Løsning av modellen:
 Setter adferdslikningene inn i likevekstbetingelsen for godemarkedet
 
-$Y = \overline{C} + c(Y - T) + \overline{I} - b\cdot i + \overline{G}$
+$$Y = \overline{C} + c(Y - T) + \overline{I} - b\cdot i + \overline{G}$$
 
 Løser modellen mhp. på Y (godemarkedet) 
 
-$Y = \frac{1}{1-c}  \left [ \overline{C} - T - b\cdot \overline{i} + \overline{G}  \right ]$
+$$Y = \frac{1}{1-c}  \left [ \overline{C} - T - b\cdot \overline{i} + \overline{G}  \right ]$$
 
 Endogene variabler: $Y$ 
 
 Eksogene variabler: $\overline{C}, \overline{T}, \overline{i}, \overline{I}, \overline{G}$
 
 Parametre: $c, b$
+
+---
 
 -  Grafisk framvisning 
 
@@ -200,35 +253,49 @@ keykg
 
 ---
 
-#### Komparativ statikk (FGV): 
+#### Komparativ statikk (analyse fra en likevekt til en annen): 
 
-- Økte investeringer ('animal spirits') $\Delta{I}>0$
+Økte investeringer ('animal spirits') $\Delta{\overline{I}}>0$
 
-- (F)ormelt:
+- **F**ormelt:
 
-$\Delta Y = \frac{1}{1-c}\Delta  \overline{I}>0$
+$$\Delta Y = \frac{1}{1-c}\Delta  \overline{I}>0$$
 
-- (V)erbalt
+- **V**erbalt (tolkning utenfor modellen):
 
-- (G)rafisk
+Økte investeringer $\rightarrow$ økt produksjon $\rightarrow$ initierer en multiplikatoreffekt: $\rightarrow$ økt disponibel inntekt $\rightarrow$ økt konsum $\rightarrow$ økt produksjon etc.
+
+---
+
+- **G**rafisk:
 
 ```{r echo=FALSE}
-keykg
+dkeykg
 ```
 
 ---
 
 #### Stabiliseringspolitikk
 
-- Reduserte offentlige utgifter $\Delta G < 0$
+Reduserte offentlige utgifter $\Delta G < 0$
 
-$Y = \frac{1}{1-c}  \left [ \Delta \overline{I} + \Delta \overline{G} \right ]$
+$$\Delta Y = \frac{1}{1-c}  \left [ \Delta \overline{I} + \Delta \overline{G} \right ]$$
 
 Dersom vi lar $\Delta \overline{I} = - \Delta \overline{G} > 0 \Rightarrow \Delta Y = 0$ (dvs. intern balanse)
 
 I praksis kan det som regel være vanskelig å benytte finanspolitikk som konjunkturstabiliserende virkemiddel, siden det politiske systemet som oftest innehar innebygde tregheter tilknyttet endringer i finanspolitikken (eks. må godkjennes av Storting og regjering)
 
 ---
+
+#### Øvelse
+
+Redusert rentenivå $\Delta{{i}}<0$
+
+- **F**ormelt:
+
+- **G**rafisk (Y, i plan):
+
+- **V**erbalt (tolkning utenfor modellen):
 
 <!--
 
@@ -517,3 +584,5 @@ AD-AS modellen for en åpen økonomi
 	Sentral poeng med modellen – Selvkorrigerende mekanismer:
 Fleksibilitet i P og korrekte prisforventninger P^e på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.
 -->
+
+

@@ -98,7 +98,7 @@ grid.arrange(gdg, grg, gdu, gru, top = 'USA' )
 
 ---
 
-### Politikkanbefalingerp {.smaller}
+### Politikkanbefalinger 
 
 ```{r pol, child = 'tabeller/polanbefalinger.html'}
 
