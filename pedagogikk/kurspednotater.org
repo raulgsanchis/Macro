@@ -83,10 +83,12 @@ EKS: Dialog
 ** Forelesning uke 3: Grunnlegende basiskunnskaper og enkel Keynes modell..
 *** Repetisjon (30 min)
 1. Oppgaveseminar - åpen økonomi
-2. Repetisjon VIS:skisse av en konjunktursykel
-3. USA: (1): Generelt om økonomi  (2): Obligasjonsmarkedet i USA tyder på økt inflasjon
-4. Repetisjon: ledighet, tabell 
-5. Abstraksjon -> Oversiktskart - VIS:Ovelseskart
+2. De som ikke var her forrige gang
+3. Repetisjon VIS:skisse av en konjunktursykel
+4. Why do we care? (1) ledighet og (2) inflasjon
+5. Repetisjon: ledighet, tabell 
+6. USA: (1): Generelt om økonomi  (2): Obligasjonsmarkedet i USA tyder på økt inflasjon
+7. Abstraksjon -> Oversiktskart - VIS:Ovelseskart
 *** Nasjonalregnsaksbegreper og empiri for en lukket økonomi
 1. Mål: Intern balanse (gapet mellom faktisk og potensiell produksjon lukkes) 'In the long run we are all dead'
 2. Hva er BNP?
@@ -137,7 +139,10 @@ G og T
 1. Endring i finanspolitikk
 1. Finanspolitikk fungerer med lagg
 ** Forelesning uke 4: IS-LM modell (for en lukket, eller globalisert økonomi)
-*** Repetisjon (kort, mer under modellen)
+*** Repetisjon
+**** Keynes modell som gir oss IS-Kurven
+**** Tall 
+**** Empiri på G,I og T
 *** IS-LM modellen
 *** Oversikt
 **** Aktører
