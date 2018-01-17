@@ -27,101 +27,46 @@ okunusag <- ggplot(data = fusadataI, aes(x = cunem, y = ggdp))  + geom_point() +
 philipusag <- ggplot(data = fusadataI, aes(x = unem, y = cyinflation))  + geom_point() +  geom_smooth(method=lm, se=FALSE) + theme_classic() + labs(title = 'Phillips-kurven', subtitle = 'USA 1948-2016' ,x = 'Ledighetsrate', y = 'Endring i inflation')
 ```
 
-
 ```{r include=FALSE}
 # Keyneskrysset
-# Henter Jupyter data
-keynesequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/keynesequ.json'))
-islmequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/islmequ.json'))
-
 # Parameterverdier (Keyneskrysset)
-exoparval <- list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 50, T = 10)
-# Variabler som endrer seg
-Yv <- c(0:600)
+lableg <- list(title= 'Keyneskrysset', x='Inntekt, produksjon (Y)', 
+                                       y='Aggregert etterspørsel (AE)')
 
+Yv <- 0:600
+exoparval <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 50, T = 10), list(Y=c(Yv)))
+cexoparval <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 75, T = 10), list(Y=c(Yv)))
+dfkeynes <- dfgpmakro(Yv, exoparval, endr=0)
+cdfkeynes <- dfgpmakro(Yv, cexoparval, endr=1)
 
-# Implikasoner
-grad45v <- 0:rev(Yv)[1]
-cdv <- eval(parse(text=keynesequ$CD),c(exoparval,list(Y=Yv)))
-idv <- eval(parse(text=keynesequ$ID),c(exoparval,list(Y=Yv)))
-gdv <- eval(parse(text=keynesequ$GD),c(exoparval,list(Y=Yv)))
-#
-dexoparval <- list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 110, T = 10)
-dcdv <- eval(parse(text=keynesequ$CD),c(dexoparval,list(Y=Yv)))
-didv <- eval(parse(text=keynesequ$ID),c(dexoparval,list(Y=Yv)))
-dgdv <- eval(parse(text=keynesequ$GD),c(dexoparval,list(Y=Yv)))
+labldf <- data.frame(labeling=c('45 grader', 'I', 'G + I', 'C+ I + G', 'Y = AE'), 
+                     x=c(70, 560, 560, 560, 560), 
+                     y = c(20, 60, 110, 490, 600),
+                     col = c('black', rep(c('red'),1,4)))
 
+clabldf <- data.frame(labeling=c("45 grader", "C+ I' + G", "Y = AE"), 
+                     x=c(70, 560, 570), 
+                     y = c(20, 510, 610),
+                     col = c('black', rep(c('red'),1,2)))
 
-## Likevekt
-yeae <-eval(parse(text=keynesequ$AD),c(exoparval))
-dyeae <-eval(parse(text=keynesequ$AD),c(dexoparval))
+keykryss <- gpdiamdoell(data = dfkeynes$dfmodell, variables = c("grad45v", "idv", "gdvpidv", "cdvpidvgdv"),
+                           labt = lableg,
+                           color = rep(c('black'),4),
+                           labplassmon = labldf,
+                           scalebreaksy = dfkeynes$scy,
+                           scalebreaksx = dfkeynes$scx,
+                           equisol = list(x = dfkeynes$yeae, y = dfkeynes$yeae))
 
-# Datatabell (format)
-dfkeykryss <- data.frame(x = Yv, grad45 = grad45v, cd = cdv, id = idv, gd = gdv, idpgd = idv + gdv,
-                         idpgdcd = idv + gdv + cdv, 
-                         dcd = dcdv, did = didv, dgd = dgdv, didpgd = didv + dgdv,
-                         didpgdcd = didv + dgdv + dcdv) %>% 
-  reshape2::melt(id.vars = c("x")) %>% 
-  dplyr::mutate(kat=substring(variable,6,6))
-
-# Labeling
-## Main
-lablist <- list(x='inntekt, produksjon', y = 'AE (aggregert etterspørsel)')
-## I plottet
-lablistdf <- data.frame(label=c('ABC'),x=c(1),y=c(1))
-
-
-# Ggplot2 (funksjon senere)
-## Henter datasettet
-datakeynes <- dplyr::filter(dfkeykryss, variable %in% c('grad45', 'id', 'idpgd', 'idpgdcd'))
-## Komponent1
-keykg <- ggplot(data = datainp, aes(x = x, y = value, color = factor(variable))) + 
-  geom_line() +
-  geom_point(aes(x=yeae, y=yeae)) +
-  geom_segment(aes(x = yeae, y = 0, xend = yeae , yend = yeae), lty = 2) +
-  geom_segment(aes(x = 0, y = yeae, xend = yeae , yend = yeae), lty = 2) + 
-  geom_text(x=550, y=600, label = 'Y = AD', color = 'red') +
-  geom_text(x=550, y=500, label = 'C+I+G', color = 'red') +
-  geom_text(x=550, y=65, label = 'I', color = 'red') +
-  geom_text(x=550, y=115, label = 'I+G', color = 'red') +
-  scale_x_continuous(name=lablist$x, breaks = c(yeae), labels = c(TeX('$Y_{0}$'))) +
-  scale_y_continuous(name=lablist$y, breaks = c(yeae), labels = c(TeX('$AE_{0}$'))) +
-  labs(title= 'Keyneskrysset') + theme_classic() +
-  theme(legend.position="none") +
-  coord_cartesian() + 
-  scale_colour_manual(values = c("black","black", "black", 'black'))
-
-## Henter datasettet
-ddatainp <- dplyr::filter(dfkeykryss, variable %in% c('grad45','idpgdcd','didpgdcd'))
-## Komponent1
-tl <- data.frame(x=c(100,0), y=c(100,0), label=c('abc', 'def'))
-
-dkeykg <- ggplot(data = ddatainp, aes(x = x, y = value, color = factor(variable))) + 
-  geom_line() +
-  geom_point(aes(x=yeae, y=yeae)) +
-  geom_segment(aes(x = dyeae, y = 0, xend = dyeae , yend = dyeae), lty = 2) +
-  geom_segment(aes(x = 0, y = dyeae, xend = dyeae , yend = dyeae), lty = 2) + 
-  geom_segment(aes(x = yeae, y = 0, xend = yeae , yend = yeae), lty = 2) +
-  geom_segment(aes(x = 0, y = yeae, xend = yeae , yend = yeae), lty = 2) + 
-  geom_text(x=560, y=600, label = 'Y = AD', color = 'red') +
-  geom_text(x=560, y=550, label = "C+I'+G", color = 'red') +
-  geom_text(x=560, y=475, label = "C+I+G", color = 'red') +
-  #scale_x_continuous(name=lablist$x, breaks = c(dyeae), labels = c(TeX('$Y_{0}$'))) +
-  #scale_y_continuous(name=lablist$y, breaks = c(dyeae), labels = c(TeX('$AE_{0}$'))) +
-  scale_x_continuous(name=lablist$x, breaks = c(dyeae), labels = c(TeX('$Y_{1}$'))) +
-  scale_y_continuous(name=lablist$y, breaks = c(dyeae), labels = c(TeX('$AE_{1}$'))) +
-  labs(title= 'Keyneskrysset') + theme_classic() +
-  theme(legend.position="none") +
-  coord_cartesian() + 
-  scale_colour_manual(values = c("black","black", "black", 'black'))
-
-
-islmequ$LMC
-islmequ$ISC
-
-a <-gpdiamdoell()
-
+ckeykryss <- gpdiamdoell(data = cdfkeynes$dfmodell, variables = c("grad45v","cdvpidvgdv"),
+                           labt = lableg,
+                           color = rep(c('black'), 2),
+                           labplassmon = clabldf,
+                           scalebreaksy = cdfkeynes$scy,
+                           scalebreaksx = cdfkeynes$scx,
+                           equisol = list(x = cdfkeynes$yeae, y = cdfkeynes$yeae))
 ```
+
+
 
 ## Grunnleggende bakgrunnkunnskaper og enkel Keynes modell (lukket økonomi)
 
@@ -161,7 +106,6 @@ $$\pi = \frac{\Delta P}{P} =\frac{P_{t} - P_{t-1}}{P_{t-1}}$$
 ```{r echo=FALSE}
 okunusag 
 ```
-
 ---
 
 #### Phillips-kurven: negativ sammenheng mellom arbeidsledighet og endring i inflasjon (eller inflasjon)
@@ -195,43 +139,48 @@ philipusag
 - Likevekt i godemarkedet (varer og tjenester)
 
 #### Aggregert etterspørsel (AE)
-$$AE \equiv  C + I + G$$
+(@AE) $$AE \equiv  C + I + G$$
 
 #### Markeder i likevekt: Godemarkedet (varer og tjenester)
-$$Y = AE$$
+(@MG) $$Y = AE \equiv  C + I + G$$
 
 ---
 
 #### Husholdninger
-$$C =  \overline{C} + c(Y - \overline{T})$$
+(@CH) $$C =  \overline{C} + c(Y - T)$$
 
 Hvor $0<c<1$ og $\overline{C}>0$
 
 #### Bedrifter
-$$I = \overline{I} - b\cdot i$$
+(@ID) $$I = \overline{I} - b\cdot i$$
 
 Hvor $\overline{I}>0$ og $b>1$ og 
 
 #### Sentralbanken
-$$i = \overline{i}$$
+(@CB) $$i = \overline{i}$$
 
 Hvor $\overline{i} >= 0$
 
 ---
 
 #### Offentlige myndigheter
-$$G = \overline{G}$$ og $$T = \overline{T}$$
+(@OMG) $$G = \overline{G}$$ 
+
+og
+
+(@OMT) $$T = \overline{T}$$ 
+
 
 ---
 
 #### Løsning av modellen:
-Setter alle adferdsligningene inn i likevekstbetingelsen for godemarkedet
+Setter adferdsligningene (@CH) - (@OM) inn i likevekstbetingelsen for godemarkedet (@MG)
 
 $$Y = \overline{C} + c(Y - \overline{T}) + \overline{I} - b\cdot \overline{i} + \overline{G}$$
 
 Løser modellen mhp. på Y (godemarkedet) 
 
-$$Y = \frac{1}{1-c}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]$$
+(@LBL) $$Y = \frac{1}{1-c}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]$$
 
 Endogene variabler (bestemt av modellen): $Y$ 
 
@@ -244,7 +193,7 @@ Parametre: $c, b$
 -  Grafisk framvisning 
 
 ```{r echo=FALSE}
-keykg
+keykryss
 ```
 
 ---
@@ -254,7 +203,7 @@ keykg
 Økte investeringer ('animal spirits') $\Delta{\overline{I}}>0$
 
 - **F**ormelt:
-$$\Delta Y = \frac{1}{1-c}\Delta  \overline{I}>0 \text{ eller } \frac{\Delta Y}{\Delta  \overline{I} } = \frac{1}{1-c}>1$$
+(@KSI) $$\Delta Y = \frac{1}{1-c}\Delta  \overline{I}>0 \text{ eller } \frac{\Delta Y}{\Delta  \overline{I} } = \frac{1}{1-c}>1$$
 
 - **V**erbalt (dynamisk tolkning utenfor modellen):
 
@@ -265,7 +214,7 @@ $$\Delta Y = \frac{1}{1-c}\Delta  \overline{I}>0 \text{ eller } \frac{\Delta Y}{
 - **G**rafisk:
 
 ```{r echo=FALSE}
-dkeykg
+ckeykryss
 ```
 
 ---
@@ -274,7 +223,7 @@ dkeykg
 
 Reduserte offentlige utgifter $\Delta G < 0$
 
-$$\Delta Y = \frac{1}{1-c}  \left [ \Delta \overline{I} + \Delta \overline{G} \right ]$$
+(@KSISG) $$\Delta Y = \frac{1}{1-c}  \left [ \Delta \overline{I} + \Delta \overline{G} \right ]$$
 
 Dersom vi lar $\Delta \overline{I} = - \Delta \overline{G} > 0 \Rightarrow \Delta Y = 0$ (dvs. intern balanse)
 
@@ -508,47 +457,100 @@ AD-AS modellen for en åpen økonomi
 	Sentral poeng med modellen – Selvkorrigerende mekanismer:
 Fleksibilitet i P og korrekte prisforventninger P^e på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.
 -->
+<!--
 
-```{r}
+```{r include=FALSE}
 # Keyneskrysset
+# Henter Jupyter data
+keynesequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/keynesequ.json'))
+islmequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/islmequ.json'))
+
 # Parameterverdier (Keyneskrysset)
-lableg <- list(title= 'Keyneskrysset', x='Inntekt, produksjon (Y)', 
-                                       y='Aggregert etterspørsel (AE)')
-
-Yv <- 0:600
-exoparval <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 50, T = 10), list(Y=c(Yv)))
-cexoparval <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 75, T = 10), list(Y=c(Yv)))
-dfkeynes <- dfgpmakro(Yv, exoparval)
-cdfkeynes <- dfgpmakro(Yv, cexoparval)
-
-labldf <- data.frame(labeling=c('45 grader', 'I', 'G + I', 'Y = AE', 'C+ I + G'), 
-                     x=c(50, 560, 560, 560, 560), 
-                     y = c(20, 60, 110, 490, 600),
-                     col = c('black', rep(c('red'),1,4)))
-
-clabldf <- data.frame(labeling=c('45 grader', 'Y = AE', 'C+ I + G'), 
-                     x=c(50, 560, 560), 
-                     y = c(20, 490, 600),
-                     col = c('black', rep(c('red'),1,2)))
+exoparval <- list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 50, T = 10)
+# Variabler som endrer seg
+Yv <- c(0:600)
 
 
-
-keykryss <- gpdiamdoell(data = dfkeynes$dfmodell, variables = c("grad45v", "idv", "gdvpidv", "cdvpidvgdv"),
-                           labt = lableg,
-                           color = rep(c('black'),4),
-                           labplassmon = labldf,
-                           scalebreaksy = dfkeynes$scy,
-                           scalebreaksx = dfkeynes$scx,
-                           equisol = list(x = dfkeynes$yeae, y = dfkeynes$yeae))
-
-ckeykryss <- gpdiamdoell(data = cdfkeynes$dfmodell, variables = c("grad45v","cdvpidvgdv"),
-                           labt = lableg,
-                           color = rep(c('black'), 1),
-                           labplassmon = clabldf,
-                           scalebreaksy = dfkeynes$scy,
-                           scalebreaksx = dfkeynes$scx,
-                           equisol = list(x = dfkeynes$yeae, y = dfkeynes$yeae))
+# Implikasoner
+grad45v <- 0:rev(Yv)[1]
+cdv <- eval(parse(text=keynesequ$CD),c(exoparval,list(Y=Yv)))
+idv <- eval(parse(text=keynesequ$ID),c(exoparval,list(Y=Yv)))
+gdv <- eval(parse(text=keynesequ$GD),c(exoparval,list(Y=Yv)))
+#
+dexoparval <- list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 110, T = 10)
+dcdv <- eval(parse(text=keynesequ$CD),c(dexoparval,list(Y=Yv)))
+didv <- eval(parse(text=keynesequ$ID),c(dexoparval,list(Y=Yv)))
+dgdv <- eval(parse(text=keynesequ$GD),c(dexoparval,list(Y=Yv)))
 
 
+## Likevekt
+yeae <-eval(parse(text=keynesequ$AD),c(exoparval))
+dyeae <-eval(parse(text=keynesequ$AD),c(dexoparval))
+
+# Datatabell (format)
+dfkeykryss <- data.frame(x = Yv, grad45 = grad45v, cd = cdv, id = idv, gd = gdv, idpgd = idv + gdv,
+                         idpgdcd = idv + gdv + cdv, 
+                         dcd = dcdv, did = didv, dgd = dgdv, didpgd = didv + dgdv,
+                         didpgdcd = didv + dgdv + dcdv) %>% 
+  reshape2::melt(id.vars = c("x")) %>% 
+  dplyr::mutate(kat=substring(variable,6,6))
+
+# Labeling
+## Main
+lablist <- list(x='inntekt, produksjon', y = 'AE (aggregert etterspørsel)')
+## I plottet
+lablistdf <- data.frame(label=c('ABC'),x=c(1),y=c(1))
+
+
+# Ggplot2 (funksjon senere)
+## Henter datasettet
+datakeynes <- dplyr::filter(dfkeykryss, variable %in% c('grad45', 'id', 'idpgd', 'idpgdcd'))
+## Komponent1
+keykg <- ggplot(data = datainp, aes(x = x, y = value, color = factor(variable))) + 
+  geom_line() +
+  geom_point(aes(x=yeae, y=yeae)) +
+  geom_segment(aes(x = yeae, y = 0, xend = yeae , yend = yeae), lty = 2) +
+  geom_segment(aes(x = 0, y = yeae, xend = yeae , yend = yeae), lty = 2) + 
+  geom_text(x=550, y=600, label = 'Y = AD', color = 'red') +
+  geom_text(x=550, y=500, label = 'C+I+G', color = 'red') +
+  geom_text(x=550, y=65, label = 'I', color = 'red') +
+  geom_text(x=550, y=115, label = 'I+G', color = 'red') +
+  scale_x_continuous(name=lablist$x, breaks = c(yeae), labels = c(TeX('$Y_{0}$'))) +
+  scale_y_continuous(name=lablist$y, breaks = c(yeae), labels = c(TeX('$AE_{0}$'))) +
+  labs(title= 'Keyneskrysset') + theme_classic() +
+  theme(legend.position="none") +
+  coord_cartesian() + 
+  scale_colour_manual(values = c("black","black", "black", 'black'))
+
+## Henter datasettet
+ddatainp <- dplyr::filter(dfkeykryss, variable %in% c('grad45','idpgdcd','didpgdcd'))
+## Komponent1
+tl <- data.frame(x=c(100,0), y=c(100,0), label=c('abc', 'def'))
+
+dkeykg <- ggplot(data = ddatainp, aes(x = x, y = value, color = factor(variable))) + 
+  geom_line() +
+  geom_point(aes(x=yeae, y=yeae)) +
+  geom_segment(aes(x = dyeae, y = 0, xend = dyeae , yend = dyeae), lty = 2) +
+  geom_segment(aes(x = 0, y = dyeae, xend = dyeae , yend = dyeae), lty = 2) + 
+  geom_segment(aes(x = yeae, y = 0, xend = yeae , yend = yeae), lty = 2) +
+  geom_segment(aes(x = 0, y = yeae, xend = yeae , yend = yeae), lty = 2) + 
+  geom_text(x=560, y=600, label = 'Y = AD', color = 'red') +
+  geom_text(x=560, y=550, label = "C+I'+G", color = 'red') +
+  geom_text(x=560, y=475, label = "C+I+G", color = 'red') +
+  #scale_x_continuous(name=lablist$x, breaks = c(dyeae), labels = c(TeX('$Y_{0}$'))) +
+  #scale_y_continuous(name=lablist$y, breaks = c(dyeae), labels = c(TeX('$AE_{0}$'))) +
+  scale_x_continuous(name=lablist$x, breaks = c(dyeae), labels = c(TeX('$Y_{1}$'))) +
+  scale_y_continuous(name=lablist$y, breaks = c(dyeae), labels = c(TeX('$AE_{1}$'))) +
+  labs(title= 'Keyneskrysset') + theme_classic() +
+  theme(legend.position="none") +
+  coord_cartesian() + 
+  scale_colour_manual(values = c("black","black", "black", 'black'))
+
+
+islmequ$LMC
+islmequ$ISC
+
+a <-gpdiamdoell()
 
 ```
+-->

@@ -24,15 +24,13 @@ gpdiamdoell <- function(data = datakeynes,
                      scalebreaksx = list(breaksvx = c(1,10), labels = c('xxx',TeX('$X_{0}$'))),
                      scalebreaksy = list(breaksvy = c(1,10), labels = c('yyy',TeX('$Y_{0}$')))){
 
-    browser()
-
     # Henter dataene
     datainp <- dplyr::filter(data, variable %in% variables)
 
     # Plotte dataene
     ggplot() +
+    geom_text(data = labplassmon, aes(x = x, y = y, label = labeling), color = as.character(labplassmon$col)) +
     geom_line(data = datainp, aes(x = Yv, y = value, color = factor(variable))) +
-    geom_text(data = labplassmon, aes(x = x, y = y, label = labeling), color = labldf$col) +
     geom_point(aes(x=equisol$x, y=equisol$y)) +
     labs(title = labt$title, x = labt$x, y = labt$y) +
     scale_colour_manual(values = color) +
@@ -43,7 +41,6 @@ gpdiamdoell <- function(data = datakeynes,
     scale_y_continuous(name=labt$y, breaks = scalebreaksy$breaksvy, labels = scalebreaksy$labels ) +
     theme(legend.position="none") +
     coord_cartesian()
-
 }
 
 #' IS-LM
@@ -70,9 +67,3 @@ dfgpmakro <- function(Yv=NULL, exoparval=NULL, modell='keynes', endr=0){
 
   list(dfmodell=dfkeykryss, yeae=yeae, scx=scx, scy=scy)
 }
-
-
-
-
-
-
