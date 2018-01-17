@@ -9,6 +9,7 @@ library(ggplot2)
 library(dplyr)
 library(mFilter)
 library(MASS)
+library(latex2exp)
 
 api.key = 'd62b9d8d4ce53e56ea04049dc463ac51'  # substitute ... with your API key
 fred <- FredR(api.key)
@@ -67,6 +68,13 @@ data1 <- dplyr::filter(molttnorpricei, variable %in% c('pricei'))
 data2 <- dplyr::filter(molttnorpricei, variable %in% c('Lpricei'))
 datas <- dplyr::filter(molttnorpricei, variable %in% c('pricei', 'Lpricei'))
 
+## Samler alle dataene for nor
+moltmacronor <- rbind(molttnorunem, molttnorgdp, molttnorinf)
+
+# 4. Saving data in Rda-format
+devtools::use_data(moltmacronor, overwrite = TRUE)
+
+# Appendiks: grafikk
 labplassmon <- data.frame(label=c('MI=MK','MK','D'), x=datas$date[c(5,6,7)], y = c(0, 60, 100))
 
 ggplot(data = data1, aes(x = date, y =  value)) + geom_line(color ='red') +
@@ -75,41 +83,15 @@ ggplot(data = data1, aes(x = date, y =  value)) + geom_line(color ='red') +
 
 ggplot(data = datas, aes(x = date, y =  value)) + geom_line(aes(color=factor(variable))) +
   geom_text(data = labplassmon, aes(x,y,label=label)) +
-  geom_text(x = 2020, y = 30, label=TeX("$\\hat{Y} = B_0+ \\frac{1}{\\theta} + B_1X_1", output='character'), parse = TRUE) +
+  theme(legend.position="none")
+
+geom_text(x = 2020, y = 30, label=TeX("$\\hat{Y} = B_0+ \\frac{1}{\\theta} + B_1X_1", output='character'), parse = TRUE) +
   ggtitle(TeX('Using $\\LaTeX$ for plotting in ggplot2. I $\\heartsuit$ ggplot!')) +
   annotate(geom='text', x=datas$date[c(5)], y=3, label=TeX("$\\hat{Y} = B_0 + B_1X_1", output='character'), parse=TRUE) +
   scale_colour_manual(values = c("black","red"))
 
+# ggplot(mpg, aes(hwy, cty)) +
+# geom_point(aes(color = cyl)) +
+# geom_smooth(method ="lm") +
+# coord_cartesian() +
 
-
-library(latex2exp)
-
-  # ggplot(mpg, aes(hwy, cty)) +
-  # geom_point(aes(color = cyl)) +
-  # geom_smooth(method ="lm") +
-  # coord_cartesian() +
-  # scale_color_gradient2() +
-  # theme_bw()
-
-
-## Samler alle dataene for nor
-moltmacronor <- rbind(molttnorunem, molttnorgdp, molttnorinf)
-
-# 4. Saving data in Rda-format
-devtools::use_data(moltmacronor, overwrite = TRUE)
-
-# Appendiks: grafikk
-
-
-# library(tikzDevice)
-# ## add a package to the defaults
-# options(tikzLatexPackages=
-#           c(getOption("tikzLatexPackages"),"\\usepackage{fixltx2e}"))
-# tikz("tikz.tex",standAlone=TRUE)
-# library("ggplot2"); theme_set(theme_bw())
-# p <- ggplot(mpg, aes(x=cty, y=hwy)) + geom_point() +
-#   scale_x_continuous(name="text\\textsubscript{subscript}")
-# p + annotate("text", x=10, y=40, label="text\\textsubscript{subscript}")
-# dev.off()
-#
-# system("pdflatex tikz.tex")

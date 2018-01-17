@@ -1,3 +1,7 @@
+---
+output: html_notebook
+---
+
 
 ```{r include=FALSE}
 library(MakroOEKB1115)
@@ -28,21 +32,21 @@ philipusag <- ggplot(data = fusadataI, aes(x = unem, y = cyinflation))  + geom_p
 # Keyneskrysset
 # Henter Jupyter data
 keynesequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/keynesequ.json'))
+islmequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/islmequ.json'))
 
-# Parameterverdier
+# Parameterverdier (Keyneskrysset)
 exoparval <- list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 50, T = 10)
-dexoparval <- list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 110, T = 10)
-
 # Variabler som endrer seg
 Yv <- c(0:600)
 
+
 # Implikasoner
-##
 grad45v <- 0:rev(Yv)[1]
 cdv <- eval(parse(text=keynesequ$CD),c(exoparval,list(Y=Yv)))
 idv <- eval(parse(text=keynesequ$ID),c(exoparval,list(Y=Yv)))
 gdv <- eval(parse(text=keynesequ$GD),c(exoparval,list(Y=Yv)))
 #
+dexoparval <- list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 110, T = 10)
 dcdv <- eval(parse(text=keynesequ$CD),c(dexoparval,list(Y=Yv)))
 didv <- eval(parse(text=keynesequ$ID),c(dexoparval,list(Y=Yv)))
 dgdv <- eval(parse(text=keynesequ$GD),c(dexoparval,list(Y=Yv)))
@@ -69,7 +73,7 @@ lablistdf <- data.frame(label=c('ABC'),x=c(1),y=c(1))
 
 # Ggplot2 (funksjon senere)
 ## Henter datasettet
-datainp <- dplyr::filter(dfkeykryss, variable %in% c('grad45', 'id', 'idpgd', 'idpgdcd'))
+datakeynes <- dplyr::filter(dfkeykryss, variable %in% c('grad45', 'id', 'idpgd', 'idpgdcd'))
 ## Komponent1
 keykg <- ggplot(data = datainp, aes(x = x, y = value, color = factor(variable))) + 
   geom_line() +
@@ -110,6 +114,13 @@ dkeykg <- ggplot(data = ddatainp, aes(x = x, y = value, color = factor(variable)
   theme(legend.position="none") +
   coord_cartesian() + 
   scale_colour_manual(values = c("black","black", "black", 'black'))
+
+
+islmequ$LMC
+islmequ$ISC
+
+a <-gpdiamdoell()
+
 ```
 
 ## Grunnleggende bakgrunnkunnskaper og enkel Keynes modell (lukket økonomi)
@@ -123,13 +134,13 @@ $$(Y-\overline{Y})=0$$
 ---
 
 ### Sentrale nasjonalregnskapstall
-- Bruttonasjonalprodukt (GDP/BNP): Den samlede verdien av alle varer og tjenester som blir produsert i landet i løpet av et år
+- Bruttonasjonalprodukt (GDP/BNP): Den samlede verdien av alle varer og tjenester som blir *produsert i landet* i løpet av et år
     - Nominelt BNP (LY) 
 $$LY = PY$$
     - Reelt BNP (Y)
 $$Y = LY/P $$
 
-- Bruttonasjonalinntekt (GNP/BNI): Den samlede verdien av alle varer og tjenester som landets innbyggere produserer i løpet av et år
+- Bruttonasjonalinntekt (GNP/BNI): Den samlede verdien av alle varer og tjenester som *landets innbyggere produserer* i løpet av et år
 
 ---
 
@@ -145,7 +156,7 @@ $$\pi = \frac{\Delta P}{P} =\frac{P_{t} - P_{t-1}}{P_{t-1}}$$
 
 ### Noen sentrale empiriske sammenhenger
 
-#### Okuns lov: negativ sammenheng mellom endring i arbeidsledighet og vekst (eller endring)  BNP (realpriser) 
+#### Okuns lov: negativ sammenheng mellom endring i arbeidsledighet og vekst (eller endring i vekst)  i BNP (realpriser) 
 
 ```{r echo=FALSE}
 okunusag 
@@ -162,7 +173,7 @@ philipusag
 
 ---
 
-### Hva bestemmer aggregert BNP?
+### Hva bestemmer aggregert produksjon (BNP)?
 #### Kort sikt (0-3 år):
 - Pga antagelsen om prisstivheter på kort sikt (uendret lønn og produktpriser), vil  samlet etterspørsel ($AE$) bestemme BNP ($Y$)
 - Vi legger dette til grunn i enkel Keynes, IS-LM,  og Mundell-Fleming modellen (del I og del III)
@@ -282,17 +293,16 @@ Redusert rentenivå $\Delta{\overline{i}}<0$
 - **V**erbalt (tolkning utenfor modellen):
 
 ---
-<!--
 
 ### IS-LM modellen: likevekt i gode- og pengemarkedet
 #### Markeder i likevekt: Godemarkedet (varer og tjenester)
-(@mgo) $$Y = AE$$ ()
+(@mgo) $$Y = AE$$ 
 
-(@mpe) $$L = M/P$$
+(@mpe) $$L_{m} = M/P$$
 
 #### Husholdninger
 Bestemmer pengeetterspørselen (realverdi)
-$$L = kY -hi$$
+(@mpe) $$L_{m} = kY -hi$$
 Hvor $k>0$ og $h>0$
 
 #### Sentralbanken
@@ -309,7 +319,7 @@ $$kY -hi = \overline{M}/P$$
 #### IS-LM diagrammet
 **Formelt**
 
-IS-kurven finner vi ved å differensiere likvektsbetingelsen for godemarkedet mph. Y og i:
+IS-kurven finner vi ved å differensiere likevektsbetingelsen for godemarkedet mph. Y og i:
 
 $$\Delta Y = (\frac{-b}{1-c})\cdot \Delta \overline{i}<0$$
 
@@ -321,8 +331,6 @@ $$k\Delta Y -h\Delta i = 0 \Leftrightarrow  \frac{\Delta Y}{\Delta i} = \frac{h}
 library(ggplot2)
 qplot()
 ```
-
-
 
 #### Komparativ statikk: 
 
@@ -413,7 +421,6 @@ qplot()
 Lag
 
 #### Øvelse
-
 <!--
 Likevekt i pengemarkedet 
 Ser foreløpig kun på utvendige penger M=M_0 (M_1): Sedler og mynt pluss bankenes innskuddskontoer i sentralbanken. Dette nivået blir bestemt av sentralbanken.
@@ -501,3 +508,47 @@ AD-AS modellen for en åpen økonomi
 	Sentral poeng med modellen – Selvkorrigerende mekanismer:
 Fleksibilitet i P og korrekte prisforventninger P^e på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.
 -->
+
+```{r}
+# Keyneskrysset
+# Parameterverdier (Keyneskrysset)
+lableg <- list(title= 'Keyneskrysset', x='Inntekt, produksjon (Y)', 
+                                       y='Aggregert etterspørsel (AE)')
+
+Yv <- 0:600
+exoparval <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 50, T = 10), list(Y=c(Yv)))
+cexoparval <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 75, T = 10), list(Y=c(Yv)))
+dfkeynes <- dfgpmakro(Yv, exoparval)
+cdfkeynes <- dfgpmakro(Yv, cexoparval)
+
+labldf <- data.frame(labeling=c('45 grader', 'I', 'G + I', 'Y = AE', 'C+ I + G'), 
+                     x=c(50, 560, 560, 560, 560), 
+                     y = c(20, 60, 110, 490, 600),
+                     col = c('black', rep(c('red'),1,4)))
+
+clabldf <- data.frame(labeling=c('45 grader', 'Y = AE', 'C+ I + G'), 
+                     x=c(50, 560, 560), 
+                     y = c(20, 490, 600),
+                     col = c('black', rep(c('red'),1,2)))
+
+
+
+keykryss <- gpdiamdoell(data = dfkeynes$dfmodell, variables = c("grad45v", "idv", "gdvpidv", "cdvpidvgdv"),
+                           labt = lableg,
+                           color = rep(c('black'),4),
+                           labplassmon = labldf,
+                           scalebreaksy = dfkeynes$scy,
+                           scalebreaksx = dfkeynes$scx,
+                           equisol = list(x = dfkeynes$yeae, y = dfkeynes$yeae))
+
+ckeykryss <- gpdiamdoell(data = cdfkeynes$dfmodell, variables = c("grad45v","cdvpidvgdv"),
+                           labt = lableg,
+                           color = rep(c('black'), 1),
+                           labplassmon = clabldf,
+                           scalebreaksy = dfkeynes$scy,
+                           scalebreaksx = dfkeynes$scx,
+                           equisol = list(x = dfkeynes$yeae, y = dfkeynes$yeae))
+
+
+
+```
