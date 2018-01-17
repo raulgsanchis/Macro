@@ -25,11 +25,10 @@ ans/hsh.no/home/jiha
 
 **Kursansvarlig:** Førsteamanuensis Jørn I. Halvorsen (Jorn.Inge.Halvorsen@hvl.no)
 
-**Studentassistent:** Susanna Murati (170729@stud.hvl.no)
+**Studentassistent:** Susanna Murati (susanna-007@hotmail.com)
 
-<!--
-<span style="color:red"> Status: Under utvikling </span>
--->
+<span style="color:red"> Vedrørende oppgaveseminar: Noen sliter med å installere FRED-appen til Excel (det kan se ut som FRED-appen foreløpig ikke støtter den seneste versjonen av Excel). I oppgavebeskrivelsen er det derfor nå gitt en oppdatert beskrivelse på hvordan du kan laste ned disse tallene direke til ditt regneark </span>
+
 Siste gang oppdatert ``r base::Sys.time()`` 
 
 ```{r eval=FALSE, include=FALSE}

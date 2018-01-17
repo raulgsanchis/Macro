@@ -1,6 +1,3 @@
----
-output: html_notebook
----
 
 ```{r include=FALSE}
 library(MakroOEKB1115)
@@ -285,8 +282,13 @@ Redusert rentenivå $\Delta{\overline{i}}<0$
 - **V**erbalt (tolkning utenfor modellen):
 
 ---
+<!--
 
 ### IS-LM modellen: likevekt i gode- og pengemarkedet
+#### Markeder i likevekt: Godemarkedet (varer og tjenester)
+(@mgo) $$Y = AE$$ ()
+
+(@mpe) $$L = M/P$$
 
 #### Husholdninger
 Bestemmer pengeetterspørselen (realverdi)

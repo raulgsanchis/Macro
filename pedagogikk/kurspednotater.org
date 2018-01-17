@@ -160,6 +160,8 @@ G og T
 **** Sentralbank
 1. Pengetilbud (eksogen)
 **** Offentlig myndigheter
+1. Skatt
+T = 0 
 **** Markeder
 ***** Godemarkedet 
 1. Y = C + I + G (Generalbudsjettligningen lukket økonomi)

@@ -7,4 +7,9 @@
 Setter ligning (@CD1A) 
 
 
-mpg
+```{r}
+library(ggplot2)
+rs <- mpg
+scale_colour_manual(values = c("black","black", "black", 'black'))
+```
+
