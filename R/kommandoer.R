@@ -4,6 +4,8 @@ inst <- function(){
   # rmarkdown::render("test.Rmd", "html_document")
   rmarkdown::render(paste0(devtools::as.package(".")$path,'/inst/webside/presentasjoner/pres_innledning.Rmd'))
   rmarkdown::render(paste0(devtools::as.package(".")$path,'/inst/webside/presentasjoner/pres_del1.Rmd'))
+  rmarkdown::render(paste0(devtools::as.package(".")$path,'/inst/webside/presentasjoner/pres_del2.Rmd'))
+  rmarkdown::render(paste0(devtools::as.package(".")$path,'/inst/webside/presentasjoner/pres_del3.Rmd'))
   rmarkdown::render_site(paste0(devtools::as.package(".")$path,'/inst/webside/'))
   #system('cd ..')
   #system('pwd')

@@ -1,0 +1,30 @@
+# Del III: Økonomiske kriser
+
+<p>Click the "Try it" button to toggle between hiding and showing the DIV element:</p>
+
+<button onclick="myFunction()">Løsningsforslag</button>
+
+<div id="myDIV">
+# Del I: Konjunktursvingninger
+## Seminar 1: Datatransformering av nasjonalregnskapstall
+
+</div>
+
+<p><b>Note:</b> The element will not take up any space when the display property set to "none".</p>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myDIV");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+
+
+<div id="myDIV">
+adfsa
+</div>

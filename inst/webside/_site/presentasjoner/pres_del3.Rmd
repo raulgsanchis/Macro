@@ -1,10 +1,12 @@
 ---
-title: "Innledning"
+title: "Forelesning ØKB1115 Makroøkonomi: Del 3 Økonomiske kriser"
 output:
   ioslides_presentation: default
+#    logo: logo.png
 ---
 
 
-```{r plan, child = '../abc.Rmd'}
+
+```{r plan, child = '../del3_kriser.Rmd'}
 
 ```

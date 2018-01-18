@@ -1,14 +1,3 @@
-<!--
----
-output: html_notebook
----
--->
-# Del 2: Økonomisk vekst
-<img id='grere' src="bilder/poverty.jpg" height="75px" width="300px" />
-<img id='grede' src="bilder/growth.jpg" height="75px" width="300px" />
-
-> A society that puts equality before freedom will get neither. A society that puts freedom before equality will get a high degree of both.” 
-― Milton Friedman
 
 <!--
 

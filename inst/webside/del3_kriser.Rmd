@@ -1,18 +1,4 @@
 <!--
----
-output: html_notebook
----
--->
-# Del 3: Økonomiske kriser
-<img id='grede' src="bilder/depression.jpg" height="75px" width="300px" />
-<img id='grere' src="bilder/recession.jpg" height="75px" width="300px" />
-
-> Can 'It' - a Great Depression - happen again? And if 'It' can happen why didn't 'It' occur in the years since World War II? These are questions that naturally follow from both the historical record and the comparative success of the past thirty-five years. To answer these questions it is necessary to have an economic theory which makes great depressions one of the possible states in which our type of capitalist economy can find itself.
-- Minsky  (1982)
-
-
-<!--
-
 ## Tema 1: Penger, kreditt og bankadferd
 ### Innvendige og utvendige penger
 <iframe width="200" height="200" src="https://www.youtube.com/embed/O7pnjzCuSv8">
@@ -115,5 +101,4 @@ Hvordan komme ut av en likviditetsfelle?
 	Vil stabilisere prisene
 	Rentekostnader ved å gjøre dette vil være (tilnærmet) lik null. 
 	For en åpen økonomi er ikke situasjonen like enkel.  Dette vil bli forklart nærmere under forelesningen om krisen i eurosonen. 
-
 -->

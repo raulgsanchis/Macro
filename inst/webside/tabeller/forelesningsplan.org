@@ -29,7 +29,7 @@
 |-----+------+------------------------------+------------------------------------------------------------------------------------------+-----------+-----------------------------------------------------------+---|
 |  17 | 24.4 | Repetisjon                   | Del I-III                                                                                | JIH       | Læringsmål                                                |   |
 |-----+------+------------------------------+------------------------------------------------------------------------------------------+-----------+-----------------------------------------------------------+---|
-**Rom: Auditorium A**. **Tidspunkt: 12:15-15:00 (tirsdager), med unntak av uke 12 hvor forelesningen er lagt til en fredag**
+**Rom: Auditorium A**. **Tidspunkt: 12:15-15:00 på tirsdager, med unntak av uke 12 hvor forelesningen er lagt til en fredag**
 
 ** Oppgaveseminar
 | Uke | Dato | Tema                                                               | Oppgaver | Ansvarlig |
