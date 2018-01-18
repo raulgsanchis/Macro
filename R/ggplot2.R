@@ -75,10 +75,10 @@ dfgpmakro2 <- function(Iv=NULL, exoparval=exoparvalv, modell='is-lm', endr=0){
 
   # Selekterte modellligninger
   ## Enkeltligninger
-  ldv <-  eval(parse(text=modellequ$LD),exoparval)
+  ldv <- eval(parse(text=modellequ$LD), exoparval)
   msv <- eval(parse(text=modellequ$MS), exoparval)
-  isv <- eval(parse(text=modellequ$ISC),exoparval)
-  lmv <- eval(parse(text=modellequ$LMC),exoparval)
+  isv <- eval(parse(text=modellequ$ISC), exoparval)
+  lmv <- eval(parse(text=modellequ$LMC), exoparval)
   ## Likevekt
   #yeae <-NULL #eval(parse(text=keynesequ$AD), exoparval)
 
@@ -121,4 +121,12 @@ gpdiamdoell2 <- function(data = NULL,
     #scale_y_continuous(breaks = scalebreaksy$breaksvy, labels = scalebreaksx$labels) +
     theme(legend.position="none") +
     coord_cartesian()
+}
+
+
+#' @export gponeliner
+gponeliner <- function(data = NULL, navnvar = NULL) {
+  datainp <- dplyr::filter(datainp, variable %in% c(navnvar))
+  geom_line(data = datainp, aes(x = Yv, y = navnvar),
+            size = 1, colour = 'red')
 }

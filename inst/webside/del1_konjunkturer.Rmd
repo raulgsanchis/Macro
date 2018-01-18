@@ -62,6 +62,7 @@ keykryss <- gpdiamdoell(data = dfkeynes$dfmodell, variables = c("grad45v", "idv"
                            scalebreaksx = dfkeynes$scx,
                            equisol = list(x = dfkeynes$yeae, y = dfkeynes$yeae))
 
+
 ckeykryss <- gpdiamdoell(data = cdfkeynes$dfmodell, variables = c("grad45v","cdvpidvgdv"),
                            labt = lableg,
                            color = rep(c('black'), 2),
@@ -69,6 +70,11 @@ ckeykryss <- gpdiamdoell(data = cdfkeynes$dfmodell, variables = c("grad45v","cdv
                            scalebreaksy = cdfkeynes$scy,
                            scalebreaksx = cdfkeynes$scx,
                            equisol = list(x = cdfkeynes$yeae, y = cdfkeynes$yeae))
+
+onel <-gponeliner(data = dfkeynes$dfmodell, navnvar = c("cdvpidvgdv"))
+
+a <- keykryss + onel
+#As mentioned in the comments, there cannot be a continuous scale on variable of the factor type. You #could change the factor to numeric as follows, just after you define the meltDF variable.
 ```
 
 ## Grunnleggende bakgrunnkunnskaper 
@@ -171,6 +177,7 @@ Hvor $\overline{i} >= 0$
 ---
 
 #### Offentlige myndigheter
+
 (@OMG) $$G = \overline{G}$$ 
 
 og
@@ -189,7 +196,7 @@ Løser modellen mhp. på Y (godemarkedet)
 
 (@LBL) $$Y = \frac{1}{1-c}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]$$
 
-Endogene variabler (bestemt av modellen): $Y$ 
+Endogene variabler (bestemt av modellen): $Y, C, I, G$ 
 
 Eksogene variabler (bestemt utenfor modellen): $\overline{C}, \overline{T}, \overline{i}, \overline{I}, \overline{G}$
 
@@ -256,9 +263,9 @@ Redusert rentenivå $\Delta{\overline{i}}<0$
 # Pengemarkedet
 ## Numeriske verdier
 iv <- 0:10
-exoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30,oI = 50, T = 10, M= 590, P=1, h = 2, k =2, Y = 300), list(i=c(iv)))
+exoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
 
-## Dataframe
+## Datafrae
 dfislm <- dfgpmakro2(Iv=iv, exoparval = exoparvalv, endr=0)
 
 ## Labeling
@@ -272,7 +279,7 @@ lableg <- list(title= 'Pengemarkedet', x='M/P',
 
 ## Graf
 
-figislm <- gpdiamdoell2(data = dfislm$dfmodell, variables = c("ldv", "msv"),
+figpeng <- gpdiamdoell2(data = dfislm$dfmodell, variables = c("ldv", "msv"),
                            labt = lableg,
                            color = rep(c('black'),2))
 
@@ -280,11 +287,6 @@ figislm <- gpdiamdoell2(data = dfislm$dfmodell, variables = c("ldv", "msv"),
 
 
 ```{r include=FALSE}
-# IS-LM modellen
-## Numeriske verdier
-iv <- 0:10
-exoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30,oI = 50, T = 10, M= 590, P=1, h = 2, k =2, Y = 300), list(i=c(iv)))
-
 ## Labeling
 lableg <- list(title= 'IS-LM diagrammet', x='Y', y='i')
 
@@ -311,6 +313,7 @@ Hvor $k>0$ og $h>0$
 
 #### Sentralbanken
 $$M = \overline{M} $$
+
 #### Offentlige myndighter
 
 $$T = tY $$
@@ -325,7 +328,7 @@ Bestemmer pengetilbudet
 $$kY -hi = \overline{M}/P$$
 
 ```{r echo=FALSE}
-figpengmark
+figpeng
 ```
 
 
