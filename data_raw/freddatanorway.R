@@ -65,7 +65,7 @@ data2 <- dplyr::filter(molttlandpricei, variable %in% c('Lpricei'))
 datas <- dplyr::filter(molttlandpricei, variable %in% c('pricei', 'Lpricei'))
 
 ## Samler alle dataene for land
-moltmacronor <- rbind(molttlandunem, molttlandgdp, molttlandpricei)
+moltmacronor <- rbind(molttlandunem, molttlandgdp, molttlandpricei) %>% dplyr::mutate(land='nor')
 
 # 4. Saving data in Rda-format
 devtools::use_data(moltmacronor, overwrite = TRUE)
@@ -90,4 +90,3 @@ devtools::use_data(moltmacronor, overwrite = TRUE)
 # # geom_point(aes(color = cyl)) +
 # # geom_smooth(method ="lm") +
 # # coord_cartesian() +
-qplot(data=moltmacronor, unem, ggdp)

@@ -315,6 +315,12 @@ qplot()
 
 ## AS-kurven
 
+### Arbeidsmarkedet  
+
+### ledighet 
+
+### AS-kurven
+
 ## Bakgrunnskunnskap om åpen Økonomi
 
 ### Stabiliseringsmål for en åpen økonomi

@@ -65,7 +65,7 @@ data2 <- dplyr::filter(molttlandpricei, variable %in% c('Lpricei'))
 datas <- dplyr::filter(molttlandpricei, variable %in% c('pricei', 'Lpricei'))
 
 ## Samler alle dataene for land
-moltmacrohellas <- rbind(molttlandunem, molttlandgdp, molttlandpricei)
+moltmacrohellas <- rbind(molttlandunem, molttlandgdp, molttlandpricei) %>% dplyr::mutate(land='gre')
 
 # 4. Saving data in Rda-format
 devtools::use_data(moltmacrohellas, overwrite = TRUE)

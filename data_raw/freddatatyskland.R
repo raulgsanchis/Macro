@@ -65,7 +65,7 @@ data2 <- dplyr::filter(molttlandpricei, variable %in% c('Lpricei'))
 datas <- dplyr::filter(molttlandpricei, variable %in% c('pricei', 'Lpricei'))
 
 ## Samler alle dataene for land
-moltmacroger <- rbind(molttlandunem, molttlandgdp, molttlandpricei)
+moltmacroger <- rbind(molttlandunem, molttlandgdp, molttlandpricei) %>% dplyr::mutate(land='ger')
 
 # 4. Saving data in Rda-format
 devtools::use_data(moltmacroger, overwrite = TRUE)

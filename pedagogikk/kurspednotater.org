@@ -236,7 +236,7 @@ Selvkorrigerende mekanismer
 ** Forelesning uke 10:
 *** Solows vekstmodell
  Makroøkonomi er studiet av et lands økonomi som helhet m helhet
-
+- [] I steady state er ... lik potensiell produksjon
 * Del 3: Økonomiske kriser
 ** Forelesning uke 11:
 1. Oversiktskart, pusse ut

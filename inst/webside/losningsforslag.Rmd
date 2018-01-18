@@ -4,7 +4,6 @@ title: "Oppgaver ØKB1115 Makroøkonomi"
 output: html_notebook
 ---
 -->
-
 # Del I: Konjunktursvingninger
 # Del II: Økonomisk vekst
 # Del III: Økonomiske kriser

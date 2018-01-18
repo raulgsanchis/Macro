@@ -1,10 +1,9 @@
 
-# ABC
+# ABC 
 
+[Del 1: Konjunktursvingninger](seminar_del1.html)
 
-[Grunnleggende basiskunnskaper og enkel Keynes modell](presentasjoner/pres_del1.html)
+[Del 2: Økonomisk vekst]()
 
-[IS-LM modellen (for en lukket, eller global økonomi)](presentasjoner/pres_del1.html#10)
-
-[Arbeidsmarkedet, ledighet og AS-kurven](presentasjoner/pres_del1.html#25)
+[Del 3: Økonomiske kriser]()
 
