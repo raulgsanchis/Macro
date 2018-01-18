@@ -1,9 +1,9 @@
 ---
-#output: html_notebook
-output:
-  html_document:
-    toc: true
-    toc_depth: 4
+output: html_notebook
+# output:
+#   html_document:
+#     toc: true
+#     toc_depth: 4
 ---
 
 # Del 1: Konjunktursvingninger
@@ -253,8 +253,49 @@ Redusert rentenivå $\Delta{\overline{i}}<0$
 ## IS-LM modellen
 
 ```{r include=FALSE}
-qplot()
+# Pengemarkedet
+## Numeriske verdier
+iv <- 0:10
+exoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30,oI = 50, T = 10, M= 590, P=1, h = 2, k =2, Y = 300), list(i=c(iv)))
+
+## Dataframe
+dfislm <- dfgpmakro2(Iv=iv, exoparval = exoparvalv, endr=0)
+
+## Labeling
+lableg <- list(title= 'Pengemarkedet', x='M/P', 
+                                       y='i')
+
+# labldf <- data.frame(labeling=c('45 grader', 'I', 'G + I', 'C+ I + G', 'Y = AE'), 
+#                      x=c(70, 560, 560, 560, 560), 
+#                      y = c(20, 60, 110, 490, 600),
+#                      col = c('black', rep(c('red'),1,4)))
+
+## Graf
+
+figislm <- gpdiamdoell2(data = dfislm$dfmodell, variables = c("ldv", "msv"),
+                           labt = lableg,
+                           color = rep(c('black'),2))
+
 ```
+
+
+```{r include=FALSE}
+# IS-LM modellen
+## Numeriske verdier
+iv <- 0:10
+exoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30,oI = 50, T = 10, M= 590, P=1, h = 2, k =2, Y = 300), list(i=c(iv)))
+
+## Labeling
+lableg <- list(title= 'IS-LM diagrammet', x='Y', y='i')
+
+## Dataframe
+dfislm <- dfgpmakro2(Iv=iv, exoparval = exoparvalv, endr=0)
+
+figislm <- gpdiamdoell2(data = dfislm$dfmodell, variables = c("isv", "lmv"),
+                           labt = lableg,
+                           color = rep(c('black'),2))
+```
+
 
 ### Markeder i likevekt: Gode- og pengemarkedet
 (@mgo) $$Y = AE$$ 
@@ -283,7 +324,12 @@ $$Y = \frac{1}{1-c}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overlin
 Bestemmer pengetilbudet
 $$kY -hi = \overline{M}/P$$
 
-### IS-LM diagrammet
+```{r echo=FALSE}
+figpengmark
+```
+
+
+### IS-LM diagrammet (gode- og pengemarkedet i likevekt samtidig)
 **Formelt**
 
 IS-kurven finner vi ved å differensiere likevektsbetingelsen for godemarkedet mph. Y og i:
@@ -294,20 +340,17 @@ LM-kurven finner vi ved å differensiere likevektsbetingelsen for pengemarkedet 
 
 $$k\Delta Y -h\Delta i = 0 \Leftrightarrow  \frac{\Delta Y}{\Delta i} = \frac{h}{k} > 0 $$
 **Grafisk**
-```{r}
-library(ggplot2)
-qplot()
+```{r echo=FALSE}
+figislm
 ```
 
 ### Komparativ statikk: 
 
-- Økning i pengemengden
+Økning i pengemengden
 
-- (F)ormelt
+- **G**rafisk
 
-- (G)rafisk
-
-- (V)erbal tolkning utenfor modellen
+- **V**erbalt (dynamisk tolkning utenfor modellen)
 
 ### Stabiliseringspolitikk
 
@@ -382,3 +425,4 @@ qplot()
 ### Komparativ statikk
 
 ### Stabiliseringspolitikk
+

@@ -39,6 +39,8 @@ molttlandgdp <- tlandgdp %>% dplyr::mutate(gdp = ts(value,freq = 4)) %>%
   dplyr::mutate(kat=c('gdp'))
 
 ggplot(data = dplyr::filter(molttlandgdp, variable %in% c('lngdp', 'hptrendg')), aes(x = date, y =  value)) + geom_line(aes(color = variable))
+#qplot(data = dplyr::filter(molttlandgdp, variable %in% c('lngdp', 'hptrendg'), x=date, y=value, geom = 'point'))
+
 
 nunem <- mean(tlandunem$value)
 molttlandunem <- tlandunem %>%

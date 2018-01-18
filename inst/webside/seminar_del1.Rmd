@@ -30,24 +30,19 @@ Gjør følgende oppgaver for Norge, Tyskland og enten for Hellas, Italia, Portua
 
 
 ```{r}
+library(dplyr)
 moltmacroopen <- rbind(MakroOEKB1115::moltmacronor,MakroOEKB1115::moltmacrohellas, MakroOEKB1115::moltmacroger)
 
-names <- unique(moltmacroopen$variable)
-nordata <- dplyr::filter(moltmacroopen, land =='nor' & variable %in% c('unem', 'gdp', 'pricei'))
-gerdata <- dplyr::filter(moltmacroopen, land =='ger')
-gredata <- dplyr::filter(moltmacroopen, land =='gre')
+unique(moltmacroopen$variable)
 
-abc <- reshape2::dcast(nordata, date ~ variable + land)
-rawmoltmacroopen <- rbind(nordata, gerdata, gredata)
+pmoltmacroopen <- moltmacroopen %>% dplyr::filter(variable %in% c('gdp','ggdp', 'unem', 'pricei', 'inflation', 'cinflation'))
 
-sti <- paste0(devtools::as.package(".")$path,'/inst/webside/data/','tidserieopenokonomi.xlsx')
-openxlsx::write.xlsx(rawmoltmacroopen, file=sti)
+datainp <- dplyr::filter(moltmacroopen, variable %in% c('unem'), land =='nor')
+datainp <- dplyr::filter(moltmacroopen, variable %in% c('gdp'), land =='nor')
+datainp <- dplyr::filter(moltmacroopen, variable %in% c('pricei'), land =='nor')
 
-# Excel
-
-
-
-
+a <- ggplot(data = datainp, aes(x = date, y =  value)) + geom_line(aes(color = variable))
+b <- a + theme_bw()
 ```
 
 
