@@ -1,8 +1,11 @@
-<!--
 ---
-output: html_notebook
+#output: html_notebook
+output:
+  html_document:
+    toc: true
+    toc_depth: 4
 ---
--->
+
 # Del 1: Konjunktursvingninger
 
 ```{r include=FALSE}
@@ -312,34 +315,7 @@ qplot()
 
 ## AS-kurven
 
-### AD-AS: likevekt i gode, penge, valuta- og arbeidsmarkedet
-
-#### Markeder i likevekt: Gode, penge, arbeids, og valutakursmarkedet
-
-#### Løsning av modellen:
-1. Setter inn for x, y
-
-1. Løser modellen mhp. på Y (godemarkedet) 
-
-1. Lister opp de endogene og eksogene variablene
-
-1. Grafisk framvisning ('Keynesian cross')
-
-#### Komparativ statikk (FGV): 
-
-- Økning i pengemengden
-
-- (F)ormelt
-
-- (G)rafisk
-
-- (V)erbal tolkning utenfor modellen
-
-#### Stabiliseringspolitikk
-
-#### Øvelse
-
-## Åpen Økonomi
+## Bakgrunnskunnskap om åpen Økonomi
 
 ### Stabiliseringsmål for en åpen økonomi
 1. Intern balanse (lukke produksjonsgapet)
@@ -347,7 +323,11 @@ qplot()
 
 ### Utenriksregnskapet
 
-### Mundell-Fleming modellen (IS-LM for en åpen økonomi): likevekt i gode, penge- og valutakursmarkedet
+## Mundell-Fleming modellen (IS-LM for en åpen økonomi)
+
+### Markeder i likevekt: Gode-, penge- og valutakursmarkedet
+
+### Adferdslikninger
 
 #### Husholdninger
 
@@ -357,31 +337,42 @@ qplot()
 
 #### Offentlige myndigheter
 
-#### Markeder i likevekt: Gode-, penge- og valutakursmarkedet
+### Løsning av modellen fast kurs
 
-#### Løsning av modellen:
-1. Setter inn for x, y
+### Komparativ statikk
 
-1. Løser modellen mhp. på Y (godemarkedet) 
+### Stabiliseringspolitikk
 
-1. Lister opp de endogende og eksogene variablene
+### Løsning av modellen flytende kurs
 
-1. Grafisk framvisning ('Keynesian cross')
+### Komparativ statikk
 
-#### Komparativ statikk (GV): 
+### Stabiliseringspolitikk
 
-- Økte investeringer ('animal spirits') $\Delta{I}>0$
+### Øvelse
 
-- (F)ormelt
+## AD-AS for en åpen økonomi
 
-- (G)rafisk
+### Markeder i likevekt: Gode-, penge-, or arbeids- og valutakursmarkedet
 
-- (V)erbalt
+### Adferdslikninger
 
-#### Stabiliseringspolitikk
+#### Husholdninger
 
-- Reduserte offentlige utgifter $\Delta G < 0$
+#### Bedrifter
 
-Lag
+#### Sentralbanken
 
-#### Øvelse
+#### Offentlige myndigheter
+
+### Løsning av modellen fast kurs
+
+### Komparativ statikk
+
+### Stabiliseringspolitikk
+
+### Løsning av modellen flytende kurs
+
+### Komparativ statikk
+
+### Stabiliseringspolitikk

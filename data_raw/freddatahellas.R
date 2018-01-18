@@ -91,3 +91,7 @@ devtools::use_data(moltmacrohellas, overwrite = TRUE)
 # # geom_smooth(method ="lm") +
 # # coord_cartesian() +
 #
+abc <- unique(moltmacrohellas$variable)
+moltmacrohellas
+
+
