@@ -73,27 +73,20 @@ moltmacrohellas <- rbind(molttlandunem, molttlandgdp, molttlandpricei) %>% dplyr
 devtools::use_data(moltmacrohellas, overwrite = TRUE)
 
 # # Appendiks: grafikk
-# labplassmon <- data.frame(label=c('MI=MK','MK','D'), x=datas$date[c(5,6,7)], y = c(0, 60, 100))
-#
-# ggplot(data = data1, aes(x = date, y =  value)) + geom_line(color ='red') +
-#   geom_line(data = data2,aes(x = date, y =  value), color ='blue') +
-#   geom_text(data = labplassmon, aes(x,y,label=label))
-#
-# ggplot(data = datas, aes(x = date, y =  value)) + geom_line(aes(color=factor(variable))) +
-#   geom_text(data = labplassmon, aes(x,y,label=label)) +
-#   theme(legend.position="none")
-#
-# geom_text(x = 2020, y = 30, label=TeX("$\\hat{Y} = B_0+ \\frac{1}{\\theta} + B_1X_1", output='character'), parse = TRUE) +
-#   ggtitle(TeX('Using $\\LaTeX$ for plotting in ggplot2. I $\\heartsuit$ ggplot!')) +
-#   annotate(geom='text', x=datas$date[c(5)], y=3, label=TeX("$\\hat{Y} = B_0 + B_1X_1", output='character'), parse=TRUE) +
-#   scale_colour_manual(values = c("black","red"))
-#
-# # ggplot(mpg, aes(hwy, cty)) +
-# # geom_point(aes(color = cyl)) +
-# # geom_smooth(method ="lm") +
-# # coord_cartesian() +
-#
-abc <- unique(moltmacrohellas$variable)
-moltmacrohellas
+# Henter datasett
+moltmacroland <- moltmacrohellas
+
+landdataI <- dplyr::filter(moltmacroland, variable %in% c('unem', 'cunem', 'ggdp', 'inflation', 'cinflation', 'yinflation', 'cyinflation'))
+flanddataI <- reshape2::dcast(landdataI, date + freqm ~ variable) %>%
+  dplyr::filter(freqm=='01', date >= '1999-01-01 '& date < '2011-01-01')
+
+okunusag <- ggplot(data = flanddataI, aes(x = cunem, y = ggdp))  + geom_point() +  geom_smooth(method=lm, se=FALSE) + theme_classic() +
+  labs(title = 'Okuns lov', subtitle = 'Hellas', x = 'Endring i arbeidsledigheten', y = c('Vekst i BNP (realpriser)'))
+
+philipusag <- ggplot(data = flanddataI, aes(x = unem, y = cinflation))  + geom_point() +
+  geom_smooth(method=lm, se=FALSE) + theme_classic() +
+  labs(title = 'Hellas', subtitle = 'Norge' ,x = 'Ledighetsrate', y = 'Endring i inflation')
+
+
 
 
