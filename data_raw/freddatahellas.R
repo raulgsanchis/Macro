@@ -1,4 +1,4 @@
-  # 1. Download data
+# 1. Download data
 #https://fred.stlouisfed.org/series/GDPCA
 #https://fred.stlouisfed.org/series/M0892AUSM156SNBR
 
@@ -27,66 +27,80 @@ tlandunem <- landunem %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date
 tlandpricei <- landpricei %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
 
 # 3. Manipulating og transformerer dataene
-molttlandgdp <- tlandgdp %>% dplyr::mutate(gdp = ts(value,freq = 4)) %>%
-    dplyr::mutate(lngdp = log(gdp)) %>%
-    dplyr::mutate(Lgdp = lag(gdp,n=4)) %>%
-    dplyr::mutate(Llngdp = lag(lngdp,n=4)) %>%
-    dplyr::mutate(ggdp = round(gdp/Lgdp-1,digits=4)) %>%
-    dplyr::mutate(glgdp = round(lngdp - Llngdp, digits = 4)) %>%
-    dplyr::mutate(hpcycleg = hpfilter(lngdp, freq = 1600)$cycle) %>%
-    dplyr::mutate(hptrendg = hpfilter(lngdp, freq = 1600)$trend) %>%
+molttlandgdp <- tlandgdp %>%
+  dplyr::mutate(gdp = ts(tlandgdp$value,c(as.numeric(substring(tlandgdp$date[1],1,4)),as.numeric(substring(tlandgdp$date[1],6,7))), frequency = 4)) %>%
+  dplyr::select(-value) %>%
+  dplyr::mutate(date = substring(date,1,4)) %>%
+  dplyr::group_by(date) %>%
+  dplyr::mutate(gdp = mean(gdp)) %>%
+  base::unique() %>%
+  dplyr::ungroup() %>%
+  dplyr::mutate(lngdp = log(gdp)) %>%
+  dplyr::mutate(Lgdp = lag(gdp,n=1)) %>%
+  dplyr::mutate(Llngdp = lag(lngdp,n=1)) %>%
+  dplyr::mutate(ggdp = round(gdp/Lgdp-1, digits=4)) %>%
+  dplyr::mutate(glgdp = round(lngdp - Llngdp, digits = 4)) %>%
+  dplyr::mutate(hpcycleg = hpfilter(lngdp, freq = 100)$cycle) %>%
+  dplyr::mutate(hptrendg = hpfilter(lngdp, freq = 100)$trend) %>%
   reshape2::melt(id.vars = c("date")) %>%
   dplyr::mutate(kat=c('gdp'))
 
-ggplot(data = dplyr::filter(molttlandgdp, variable %in% c('lngdp', 'hptrendg')), aes(x = date, y =  value)) + geom_line(aes(color = variable))
-#qplot(data = dplyr::filter(molttlandgdp, variable %in% c('lngdp', 'hptrendg'), x=date, y=value, geom = 'point'))
-
+#ggplot(data = dplyr::filter(molttlandgdp, variable %in% c('lngdp', 'hptrendg')), aes(x = date, y =  value)) + geom_line(aes(color = variable))
 
 nunem <- mean(tlandunem$value)
 molttlandunem <- tlandunem %>%
-    dplyr::mutate(unem = ts (value)) %>%
-    dplyr::mutate(Lunem = lag(unem, n = 12)) %>%
-    dplyr::mutate(cunem = round(unem - Lunem, digits = 4)) %>%
-  #dplyr::mutate(hpcycleu = hpfilter(unem, freq = 6000000000000)$cycle) %>%
-  #dplyr::mutate(hptrendu = hpfilter(unem, freq = 6000000000000)$trend) %>%
+  dplyr::mutate(unem = ts (value)) %>%
+  dplyr::select(-value) %>%
+  dplyr::mutate(date = substring(date,1,4)) %>%
+  dplyr::group_by(date) %>%
+  dplyr::mutate(unem = mean(unem)) %>%
+  base::unique() %>%
+  dplyr::ungroup() %>%
+  dplyr::mutate(Lunem = lag(unem, n = 1)) %>%
+  dplyr::mutate(cunem = round(unem - Lunem, digits = 4)) %>%
+  #dplyr::mutate(hpcycleu = hpfilter(unem, freq = 100)$cycle) %>%
+  #dplyr::mutate(hptrendu = hpfilter(unem, freq = 100)$trend) %>%
   dplyr::mutate(trendu = nunem) %>%
   reshape2::melt(id.vars = c("date")) %>%
   dplyr::mutate(kat = 'unem')
 
 molttlandpricei <- tlandpricei %>%
   dplyr::mutate(pricei = ts(value)) %>%
-  dplyr::mutate(Lpricei = lag(pricei, n = 12)) %>%
-  dplyr::mutate(inflation = round(pricei - Lpricei,digits=4)) %>%
-  dplyr::mutate(Linflation = lag(inflation, n = 12)) %>%
+  dplyr::select(-value) %>%
+  dplyr::mutate(date = substring(date,1,4)) %>%
+  dplyr::group_by(date) %>%
+  dplyr::mutate(pricei = mean(pricei)) %>%
+  base::unique() %>%
+  dplyr::ungroup() %>%
+  dplyr::mutate(Lpricei = lag(pricei, n = 1)) %>%
+  dplyr::mutate(inflation = round((pricei - Lpricei)/Lpricei, digits=4)) %>%
+  dplyr::mutate(Linflation = lag(inflation, n = 1)) %>%
   dplyr::mutate(cinflation = round(inflation - Linflation,digits=4)) %>%
   reshape2::melt(id.vars = c("date")) %>%
   dplyr::mutate(kat = 'inf')
 
-data1 <- dplyr::filter(molttlandpricei, variable %in% c('pricei'))
-data2 <- dplyr::filter(molttlandpricei, variable %in% c('Lpricei'))
-datas <- dplyr::filter(molttlandpricei, variable %in% c('pricei', 'Lpricei'))
-
 ## Samler alle dataene for land
-moltmacrohellas <- rbind(molttlandunem, molttlandgdp, molttlandpricei) %>% dplyr::mutate(land='gre')
+moltmacrohel <- rbind(molttlandunem, molttlandgdp, molttlandpricei) %>% dplyr::mutate(land='nor') %>%
+  dplyr::mutate(freqm = substring(date,6,7))
 
 # 4. Saving data in Rda-format
-devtools::use_data(moltmacrohellas, overwrite = TRUE)
+devtools::use_data(moltmacrohel, overwrite = TRUE)
 
 # # Appendiks: grafikk
 # Henter datasett
-moltmacroland <- moltmacrohellas
 
-landdataI <- dplyr::filter(moltmacroland, variable %in% c('unem', 'cunem', 'ggdp', 'inflation', 'cinflation', 'yinflation', 'cyinflation'))
-flanddataI <- reshape2::dcast(landdataI, date + freqm ~ variable) %>%
-  dplyr::filter(freqm=='01', date >= '1999-01-01 '& date < '2011-01-01')
+lmoltmacrohel <- reshape2::dcast(moltmacrohel, date  + land ~ variable )
+names(lmoltmacrohel)
 
-okunusag <- ggplot(data = flanddataI, aes(x = cunem, y = ggdp))  + geom_point() +  geom_smooth(method=lm, se=FALSE) + theme_classic() +
-  labs(title = 'Okuns lov', subtitle = 'Hellas', x = 'Endring i arbeidsledigheten', y = c('Vekst i BNP (realpriser)'))
+okuns <-
+  qplot(data = lmoltmacrohel, x = cunem, y = ggdp) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title= 'Okuns lov - Hellas', x='Endring i ledighet', y = 'Vekst i BNP (real)')
 
-philipusag <- ggplot(data = flanddataI, aes(x = unem, y = cinflation))  + geom_point() +
-  geom_smooth(method=lm, se=FALSE) + theme_classic() +
-  labs(title = 'Hellas', subtitle = 'Norge' ,x = 'Ledighetsrate', y = 'Endring i inflation')
+ggsave("okunshel.png")
 
+phillips <- qplot(x = unem, y = cinflation, data = lmoltmacrohel, geom = c('point')) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title= 'Phillips-kurven - Hellas', x='Ledighetsrate', y = 'Endring i inflation')
 
-
-
+ggsave("phillipshel.png")

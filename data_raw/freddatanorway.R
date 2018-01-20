@@ -50,20 +50,20 @@ molttlandgdp <- tlandgdp %>%
 
 nunem <- mean(tlandunem$value)
 molttlandunem <- tlandunem %>%
-    dplyr::mutate(unem = ts (value)) %>%
-    dplyr::select(-value) %>%
-    dplyr::mutate(date = substring(date,1,4)) %>%
-    dplyr::group_by(date) %>%
-    dplyr::mutate(unem = mean(unem)) %>%
-    base::unique() %>%
-    dplyr::ungroup() %>%
-    dplyr::mutate(Lunem = lag(unem, n = 1)) %>%
-    dplyr::mutate(cunem = round(unem - Lunem, digits = 4)) %>%
-    #dplyr::mutate(hpcycleu = hpfilter(unem, freq = 100)$cycle) %>%
-    #dplyr::mutate(hptrendu = hpfilter(unem, freq = 100)$trend) %>%
-    dplyr::mutate(trendu = nunem) %>%
-    reshape2::melt(id.vars = c("date")) %>%
-    dplyr::mutate(kat = 'unem')
+  dplyr::mutate(unem = ts (value)) %>%
+  dplyr::select(-value) %>%
+  dplyr::mutate(date = substring(date,1,4)) %>%
+  dplyr::group_by(date) %>%
+  dplyr::mutate(unem = mean(unem)) %>%
+  base::unique() %>%
+  dplyr::ungroup() %>%
+  dplyr::mutate(Lunem = lag(unem, n = 1)) %>%
+  dplyr::mutate(cunem = round(unem - Lunem, digits = 4)) %>%
+  #dplyr::mutate(hpcycleu = hpfilter(unem, freq = 100)$cycle) %>%
+  #dplyr::mutate(hptrendu = hpfilter(unem, freq = 100)$trend) %>%
+  dplyr::mutate(trendu = nunem) %>%
+  reshape2::melt(id.vars = c("date")) %>%
+  dplyr::mutate(kat = 'unem')
 
 molttlandpricei <- tlandpricei %>%
   dplyr::mutate(pricei = ts(value)) %>%

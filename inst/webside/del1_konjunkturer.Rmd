@@ -38,14 +38,35 @@ philipusag <- ggplot(data = fusadataI, aes(x = unem, y = cyinflation))  + geom_p
 lableg <- list(title= 'Keyneskrysset', x='Inntekt, produksjon (Y)', 
                                        y='Aggregert etterspørsel (AE)')
 
-Yv <- 0:600
+  Yv <- 0:600
 exoparval <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 50, T = 10), list(Y=c(Yv)))
 cexoparval <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 75, T = 10), list(Y=c(Yv)))
 dfkeynes <- dfgpmakro(Yv, exoparval, endr=0)
 cdfkeynes <- dfgpmakro(Yv, cexoparval, endr=1)
 
+### Utvikling
+dfkeynes$yeae
+cdfkeynes$yeae
+yeae
+
+b <- unique(dfkeynes$dfmodell$variable)
+
+kompanalyse <- gpdiamdoell3(ndata = dfkeynes$dfmodell,
+                            variables = c('grad45','cdvpidvgdv'),
+                            equisol = list(x = c(299.75, 310), y = c(299.75, 345),
+                            odata = cdfkeynes$dfmodell,
+                            ovariables = c('cdvpidvgdv')){
+  
+  
+  
+  
+}
+
+
+###
+
 labldf <- data.frame(labeling=c('45 grader', 'I', 'G + I', 'C+ I + G', 'Y = AE'), 
-                     x=c(70, 560, 560, 560, 560), 
+                     x = c(70, 560, 560, 560, 560), 
                      y = c(20, 60, 110, 490, 600),
                      col = c('black', rep(c('red'),1,4)))
 
@@ -54,22 +75,26 @@ clabldf <- data.frame(labeling=c("45 grader", "C+ I' + G", "Y = AE"),
                      y = c(20, 510, 610),
                      col = c('black', rep(c('red'),1,2)))
 
-keykryss <- gpdiamdoell(data = dfkeynes$dfmodell, variables = c("grad45v", "idv", "gdvpidv", "cdvpidvgdv"),
-                           labt = lableg,
-                           color = rep(c('black'),4),
-                           labplassmon = labldf,
-                           scalebreaksy = dfkeynes$scy,
-                           scalebreaksx = dfkeynes$scx,
-                           equisol = list(x = dfkeynes$yeae, y = dfkeynes$yeae))
+keykryss <- gpdiamdoell(data = dfkeynes$dfmodell, 
+                        variables = c("grad45v", "idv", "gdvpidv", "cdvpidvgdv"),
+                        labt = lableg,
+                        color = rep(c('black'),4),
+                        labplassmon = labldf,
+                        scalebreaksy = dfkeynes$scy,
+                        scalebreaksx = dfkeynes$scx,
+                        equisol = list(x = dfkeynes$yeae, y = dfkeynes$yeae))
 
 
-ckeykryss <- gpdiamdoell(data = cdfkeynes$dfmodell, variables = c("grad45v","cdvpidvgdv"),
-                           labt = lableg,
-                           color = rep(c('black'), 2),
-                           labplassmon = clabldf,
-                           scalebreaksy = cdfkeynes$scy,
-                           scalebreaksx = cdfkeynes$scx,
-                           equisol = list(x = cdfkeynes$yeae, y = cdfkeynes$yeae))
+ckeykryss <- gpdiamdoell(data = cdfkeynes$dfmodell, 
+                         variables = c("grad45v","cdv"),
+                         labt = lableg,
+                         color = rep(c('black'), 2),
+                         labplassmon = clabldf,
+                         scalebreaksy = cdfkeynes$scy,
+                         scalebreaksx = cdfkeynes$scx,
+                         equisol = list(x = cdfkeynes$yeae, y = cdfkeynes$yeae),
+                         odata = dfkeynes$dfmodell,
+                         ovariables = c('cdvpidvgdv'))
 
 onel <-gponeliner(data = dfkeynes$dfmodell, navnvar = c("cdvpidvgdv"))
 
