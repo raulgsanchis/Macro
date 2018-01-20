@@ -97,10 +97,11 @@ okuns <-
   geom_smooth(method = "lm", se = FALSE) +
   labs(title= 'Okuns lov - Hellas', x='Endring i ledighet', y = 'Vekst i BNP (real)')
 
-ggsave("okunshel.png")
+ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/okunshel.png'))
 
 phillips <- qplot(x = unem, y = cinflation, data = lmoltmacrohel, geom = c('point')) +
   geom_smooth(method = "lm", se = FALSE) +
   labs(title= 'Phillips-kurven - Hellas', x='Ledighetsrate', y = 'Endring i inflation')
 
-ggsave("phillipshel.png")
+ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/phillipshel.png'))
+

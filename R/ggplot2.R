@@ -43,11 +43,11 @@ gpdiamdoell <- function(data = datakeynes,
     geom_segment(aes(x = 0, y = equisol$y, xend = equisol$x , yend = equisol$y), lty = 2) +
     scale_x_continuous(breaks =scalebreaksx$breaksvx, labels = scalebreaksx$labels) +
     scale_y_continuous(breaks = scalebreaksy$breaksvy, labels = scalebreaksx$labels) +
-    theme(legend.position="none") +
-    coord_cartesian() +
-      # Old
-
+      theme(legend.position="none") +
+      coord_cartesian()
+    # Old
 }
+
 
 dfgpmakro <- function(Yv=NULL, exoparval=NULL, modell='keynes', endr=0){
 
@@ -79,7 +79,6 @@ dfgpmakro2 <- function(Iv=NULL, exoparval=exoparvalv, modell='is-lm', endr=0){
 
   # Leser inn modellen
   modellequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/islmequ.json'))
-
   # Selekterte modellligninger
   ## Enkeltligninger
   ldv <- eval(parse(text=modellequ$LD), exoparval)
@@ -139,39 +138,66 @@ gponeliner <- function(data = NULL, navnvar = NULL) {
 }
 
 
-#' Grafter
+#' Komparativ
 #' @export gpdiamdoell3
-gpdiamdoell3 <- function(ndata = datakeynes,
-                         variables = c('grad45','id'),
+makrofigurechange <- function(ndata = datakeynes,
                          labt = list(title= 'Testplot', x='x-variabel', y='y-variabel'),
-                         color = NULL,
+                         variables = c('grad45','id'),
                          labplassmon = data.frame(labeling=c('45 grader'), x=c(60), y = c(20)),
                          equisol = list(x = c(299.75, 310), y = c(299.75, 345)),
                          scalebreaksx = list(breaksvx = c(1,10), labels = c('xxx',TeX('$X_{0}$'))),
                          scalebreaksy = list(breaksvy = c(1,10), labels = c('yyy',TeX('$Y_{0}$'))),
+                         colorl = NULL,
                          odata = NULL,
                          ovariables = NULL){
 
   # Henter dataene
-  datainp <- dplyr::filter(ndata, variable %in% c('grad45v', 'cdvpidvgdv')) %>% dplyr::mutate(kat='naa')
+  datainp <- dplyr::filter(ndata, variable %in% variables) %>% dplyr::mutate(kat='naa')
   odatainp <- dplyr::filter(odata, variable %in% c(ovariables)) %>% dplyr::mutate(kat='foer')
 
   # Plotte dataene
   ggplot() +
+    labs(title = labt$title, x = labt$x, y = labt$y) +
+    geom_text(data = labplassmon, aes(x = x, y = y, label = labeling), color = labplassmon$col) +
     geom_line(data = datainp, aes(x = Yv, y = value, color = factor(variable))) +
     geom_line(data = odatainp, aes(x = Yv, y = value, color = factor(variable))) +
-    geom_text(data = labplassmon, aes(x = x, y = y, label = labeling), color = as.character(labplassmon$col)) +
-    labs(title = labt$title, x = labt$x, y = labt$y) +
-    #
     geom_point(aes(x=equisol$x, y=equisol$y)) +
-    scale_x_continuous(breaks =scalebreaksx$breaksvx, labels = scalebreaksx$labels) +
-    scale_y_continuous(breaks = scalebreaksy$breaksvy, labels = scalebreaksx$labels) +
-    scale_colour_manual(values = color) +
     geom_segment(aes(x = equisol$x, y = 0, xend = equisol$x , yend = equisol$y), lty = 2) +
     geom_segment(aes(x = 0, y = equisol$y, xend = equisol$x , yend = equisol$y), lty = 2) +
-    theme(legend.position="none") +
-    coord_cartesian() +
-    theme_classic()
-    # Old
-
+    scale_x_continuous(breaks = scalebreaksx$breaksvx, labels = scalebreaksx$labels) +
+    scale_y_continuous(breaks = scalebreaksy$breaksvy, labels = scalebreaksy$labels) +
+    scale_colour_manual(values = colorl) +
+    theme_classic() +
+    theme(legend.position="none")
+  # Old
 }
+
+#' @export gpdiamdoell4
+makrofigure <- function(ndata = datakeynes,
+                         labt = list(title= 'Testplot', x='x-variabel', y='y-variabel'),
+                         variables = c('grad45','id'),
+                         labplassmon = data.frame(labeling=c('45 grader'), x=c(60), y = c(20)),
+                         equisol = list(x = c(299.75, 310), y = c(299.75, 345)),
+                         scalebreaksx = list(breaksvx = c(1,10), labels = c('xxx',TeX('$X_{0}$'))),
+                         scalebreaksy = list(breaksvy = c(1,10), labels = c('yyy',TeX('$Y_{0}$'))),
+                         colorl = NULL){
+
+  # Henter dataene
+  datainp <- dplyr::filter(ndata, variable %in% variables) %>% dplyr::mutate(kat='naa')
+
+  # Plotte dataene
+  ggplot() +
+    labs(title = labt$title, x = labt$x, y = labt$y) +
+    geom_text(data = labplassmon, aes(x = x, y = y, label = labeling), color = labplassmon$col) +
+    geom_line(data = datainp, aes(x = Yv, y = value, color = factor(variable))) +
+    geom_point(aes(x=equisol$x, y=equisol$y)) +
+    geom_segment(aes(x = equisol$x, y = 0, xend = equisol$x , yend = equisol$y), lty = 2) +
+    geom_segment(aes(x = 0, y = equisol$y, xend = equisol$x , yend = equisol$y), lty = 2) +
+    scale_x_continuous(breaks = scalebreaksx$breaksvx, labels = scalebreaksx$labels) +
+    scale_y_continuous(breaks = scalebreaksy$breaksvy, labels = scalebreaksy$labels) +
+    scale_colour_manual(values = colorl) +
+    theme_classic() +
+    theme(legend.position="none")
+  # Old
+}
+

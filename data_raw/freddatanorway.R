@@ -92,15 +92,13 @@ devtools::use_data(moltmacronor, overwrite = TRUE)
 lmoltmacronor <- reshape2::dcast(moltmacronor, date  + land ~ variable )
 names(lmoltmacronor)
 
-okuns <-
-  qplot(data = lmoltmacronor, x = cunem, y = ggdp) +
-  geom_smooth(method = "lm", se = FALSE) +
+okuns <-qplot(data = lmoltmacronor, x = cunem, y = ggdp) + geom_smooth(method = "lm", se = FALSE) +
   labs(title= 'Okuns lov - Norge', x='Endring i ledighet', y = 'Vekst i BNP (real)')
 
-#ggsave("okunsnor.png")
+ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/phillipsnor.png'))
 
 phillips <- qplot(x = unem, y = cinflation, data = lmoltmacronor, geom = c('point')) +
   geom_smooth(method = "lm", se = FALSE) +
   labs(title= 'Phillips-kurven - Norge', x='Ledighetsrate', y = 'Endring i inflation')
 
-#ggsave("phillipsnor.png")
+ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/okunsnor.png'))

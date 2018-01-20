@@ -96,10 +96,12 @@ okuns <-
   geom_smooth(method = "lm", se = FALSE) +
   labs(title= 'Okuns lov - Tyskland', x='Endring i ledighet', y = 'Vekst i BNP (real)')
 
-ggsave("okunsger.png")
+ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/okunsger.png'))
 
 phillips <- qplot(x = unem, y = cinflation, data = lmoltmacroger, geom = c('point')) +
   geom_smooth(method = "lm", se = FALSE) +
   labs(title= 'Phillips-kurven - Tyskland', x='Ledighetsrate', y = 'Endring i inflation')
 
-ggsave("phillipsger.png")
+
+
+
