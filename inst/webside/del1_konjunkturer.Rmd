@@ -1,3 +1,4 @@
+<!--
 ---
 output: html_notebook
 # output:
@@ -5,6 +6,7 @@ output: html_notebook
 #     toc: true
 #     toc_depth: 4
 ---
+-->
 
 # Del 1: Konjunktursvingninger
 
@@ -38,9 +40,9 @@ mlabels <- list(title= 'Keyneskrysset', x='produksjon, inntekt (Y)', y='Aggreger
 # Parameterverdier (Keyneskrysset)
 Iv <- 0:600
 exoparval <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 50, T = 10), list(Y=c(Iv)))
-cexoparval <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 90, T = 10), list(Y=c(Yv)))
+cexoparval <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 90, T = 10), list(Y=c(Iv)))
 dfkeynes <- dfgpmakro(Iv, exoparval, endr=0)
-cdfkeynes <- dfgpmakro(Yv, cexoparval, endr=1)
+cdfkeynes <- dfgpmakro(Iv, cexoparval, endr=1)
 eqsol <- list(x= c(dfkeynes$yeae), y = c(dfkeynes$yeae))
 ceqsol <- list(x= c(dfkeynes$yeae, cdfkeynes$yeae), y = c(dfkeynes$yeae, cdfkeynes$yeae))
 eqlinjey <- list(breaksvy = eqsol$y, labels = c(TeX('$AE_{0}$')))
@@ -160,10 +162,10 @@ philipusag
 - Likevekt i godemarkedet (varer og tjenester)
 
 ### Aggregert etterspørsel (AE)
-(@AE) $$AE \equiv  C + I + G$$
+$$AE \equiv  C + I + G$$
 
 ### Markeder i likevekt: Godemarkedet (varer og tjenester)
-(@MG) $$Y = AE \equiv  C + I + G$$
+$$Y = AE \equiv  C + I + G$$
 
 ---
 
@@ -171,17 +173,17 @@ philipusag
 
 #### Husholdninger
 
-(@CH) $$C =  \overline{C} + c(Y - T)$$
+$$C =  \overline{C} + c(Y - T)$$
 
-Hvor $0<c<1$ og $\overline{C}>0$
+Hvor $0<c<1$ (marginale konsumtilbøyeligheten) og $\overline{C}>0$ (inntektsuavhengig konsum)
 
 #### Bedrifter
-(@ID) $$I = \overline{I} - b\cdot i$$
+$$I = \overline{I} - b\cdot i$$
 
-Hvor $\overline{I}>0$ og $b>1$ og 
+Hvor $\overline{I}>0$ ('animial spirits') og $b>1$ (lavere rente gjør flere investeringsprosjekter lønnsomme pga. økt nåverdi) 
 
 #### Sentralbanken
-(@CB) $$i = \overline{i}$$
+$$i = \overline{i}$$
 
 Hvor $\overline{i} >= 0$
 
@@ -189,14 +191,25 @@ Hvor $\overline{i} >= 0$
 
 #### Offentlige myndigheter
 
-(@OMG) $$G = \overline{G}$$ 
+$$G = \overline{G}$$ 
 
 og
 
-(@OMT) $$T = \overline{T}$$ 
+$$T = \overline{T}$$ 
 
 
 ---
+
+### Modellen består av
+
+Endogene variabler (bestemt av modellen): $Y, C, I, G$ 
+
+Eksogene variabler (bestemt utenfor modellen): $\overline{C}, \overline{T}, \overline{i}, \overline{I}, \overline{G}$
+
+Parametre: $c, b$
+
+---
+
 
 ### Løsning av modellen:
 Setter adferdsligningene (@CH) - (@OM) inn i likevekstbetingelsen for godemarkedet (@MG)
@@ -205,13 +218,8 @@ $$Y = \overline{C} + c(Y - \overline{T}) + \overline{I} - b\cdot \overline{i} + 
 
 Løser modellen mhp. på Y (godemarkedet) 
 
-(@LBL) $$Y = \frac{1}{1-c}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]$$
+$$Y = \frac{1}{1-c}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]$$
 
-Endogene variabler (bestemt av modellen): $Y, C, I, G$ 
-
-Eksogene variabler (bestemt utenfor modellen): $\overline{C}, \overline{T}, \overline{i}, \overline{I}, \overline{G}$
-
-Parametre: $c, b$
 
 ---
 
@@ -225,10 +233,10 @@ keynesc
 
 ### Komparativ statikk (analyse fra en likevekt til en annen): 
 
-Økte investeringer ('animal spirits') $\Delta{\overline{I}}>0$
+Økte investeringer ('eks. pga. animal spirits') $\Delta{\overline{I}}>0$
 
 - **F**ormelt:
-(@KSI) $$\Delta Y = \frac{1}{1-c}\Delta  \overline{I}>0 \text{ eller } \frac{\Delta Y}{\Delta  \overline{I} } = \frac{1}{1-c}>1$$
+$$\Delta Y = \frac{1}{1-c}\Delta  \overline{I}>0 \text{ eller } \frac{\Delta Y}{\Delta  \overline{I} } = \frac{1}{1-c}>1$$
 
 - **V**erbalt (dynamisk tolkning utenfor modellen):
 
@@ -248,7 +256,7 @@ keynesccinv
 
 Reduserte offentlige utgifter $\Delta G < 0$
 
-(@KSISG) $$\Delta Y = \frac{1}{1-c}  \left [ \Delta \overline{I} + \Delta \overline{G} \right ]$$
+$$\Delta Y = \frac{1}{1-c}  \left [ \Delta \overline{I} + \Delta \overline{G} \right ]$$
 
 Dersom vi lar $\Delta \overline{I} = - \Delta \overline{G} > 0 \Rightarrow \Delta Y = 0$ (dvs. intern balanse)
 
@@ -262,7 +270,7 @@ Redusert rentenivå $\Delta{\overline{i}}<0$
 
 - **F**ormelt:
 
-- **G**rafisk (Y, i plan):
+- **G**rafisk (Y,EA) plan og (Y,i) plan:
 
 - **V**erbalt (tolkning utenfor modellen):
 
@@ -271,81 +279,21 @@ Redusert rentenivå $\Delta{\overline{i}}<0$
 ## IS-LM modellen
 
 ```{r include=FALSE}
-iv <- 0:7.5
-exoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
-cexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 250, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
-dfislm <- dfgpmakro2(Iv=iv, exoparval = exoparvalv, endr=0)
-cdfislm <- dfgpmakro2(Iv=iv, exoparval = cexoparvalv, endr=0)
-
-# Pengemarkedet
-mlabels <- list(title= 'Pengemarkedet', y='Pengetilbudet (M/P)', x='rentenivå (i)')
-labldf <- labldf <- data.frame(labeling=c("Ms", "Ld"), 
-                     x = c(7.5, 1), 
-                     y = c(200+30, 600),
-                     col = c(rep(c('red'),1,2)))
-eqsol <- list(x= c(5), y = c(200))
-eqlinjey <- list(breaksvy = eqsol$y, labels = c(TeX('$M_{0}/P_{0}$')))
-eqlinjex <- list(breaksvx = eqsol$x, labels = c(TeX('$i_{0}$')))
-
-figpengem <- makrofigure(ndata = dfislm$dfmodell,
-                            variables = c("ldv", "msv"),
-                            labt = mlabels,
-                            labplassmon = labldf,
-                            equisol = eqsol,
-                            scalebreaksx = eqlinjex,
-                            scalebreaksy = eqlinjey,
-                            colorl = c(rep('black',2))) + coord_flip()
-
-# Penge- og godemarkedet 
-# figpengem <- makrofigure(ndata = cdfislm$dfmodell,
-#                             variables = c("ldv", "msv"),
-#                             labt = mlabels,
-#                             labplassmon = labldf,
-#                             equisol = eqsol,
-#                             scalebreaksx = eqlinjex,
-#                             scalebreaksy = eqlinjey,
-#                             colorl = c(rep('black',2))) + coord_flip()
-
-
-
-islmlabels <- list(title= 'IS-LM modellen', x='rentenivå (i)', y='Produksjon, inntekt (Y)')
-
-## Labeling
-lableg <- list(title= 'IS-LM modellen', x='Y', y='i')
-eqsol <- list(x= c(4.2), y = c(268))
-rev(subset(dfislm$dfmodell, variable == 'isv')$value)[1]
-rev(subset(dfislm$dfmodell, variable == 'lmv')$value)[1]
-labldfislm <- labldf <- data.frame(labeling=c("IS-kurven", "LM-kurven"), 
-                     x = c(7, 2), 
-                     y = c(160+40, 380+20),
-                     col = c(rep(c('red'),1,2)))
-
-eqlinjey <- list(breaksvy = eqsol$y, labels = c(TeX('$Y_{0}$')))
-eqlinjex <- list(breaksvx = eqsol$x, labels = c(TeX('$i_{0}$')))
-
-figislm <- makrofigure(ndata = dfislm$dfmodell, 
-                          variables = c("isv", "lmv"),
-                          labt = islmlabels,
-                          labplassmon = labldfislm,
-                          equisol = eqsol,
-                          scalebreaksx = eqlinjex,
-                          scalebreaksy = eqlinjey,
-                          color = rep(c('black'),2)) + coord_flip()
-
+source('~/gitclones/teaching/MakroOEKB1115/inst/webside/figurer/islmfig.R')
 ```
 
 
 ### Markeder i likevekt: Gode- og pengemarkedet
-(@mgo) $$Y = AE$$ 
+$$Y = AE$$ 
 
-(@mpe) $$L_{m} = M/P$$
+$$L_{m} = M/P$$
 
-### Adferdsligninger
+### Adferdsligninger (bare endringer og nye ligninger er lagt til her)
 
 #### Husholdninger
 Bestemmer pengeetterspørselen (realverdi)
-(@mpe) $$L_{m} = kY -hi$$
-Hvor $k>0$ og $h>0$
+$$L_{m} = \kappa Y -hi$$
+Hvor $k>0$ (pengeetterspørselens inntektsfølsomhet) og $h>0$ (pengeetterspørselens rentefølsomhet) 
 
 #### Sentralbanken
 $$M = \overline{M} $$
@@ -357,10 +305,13 @@ Hvor $t$ er prosentvis skattesats
 
 ### Løsning av modellen:
 #### Godemarkedet (samme løsningsmetodikk som under enkel Keynes-modell)
-$$Y = \frac{1}{1-c}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]$$
+Bestemmer produksjonen
 
-#### Pengemarkedet
-Bestemmer pengetilbudet
+$$Y = \frac{1}{1-c(1-t)}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]$$
+
+#### Pengemarkedet (utvendige penger - M0)
+Bestemmer rentenivået
+
 $$kY -hi = \overline{M}/P$$
 
 ```{r echo=FALSE}
@@ -368,16 +319,23 @@ figpengem
 ```
 
 
-### IS-LM diagrammet (gode- og pengemarkedet i likevekt samtidig)
+### IS-LM diagrammet 
+Viser den samtidige likevekten i gode- og pengemarkedet
+
 **Formelt**
 
 IS-kurven finner vi ved å differensiere likevektsbetingelsen for godemarkedet mph. Y og i:
 
-$$\Delta Y = (\frac{-b}{1-c})\cdot \Delta \overline{i}<0$$
+$$\Delta Y =\left[\frac{-b}{1-c(1-t)}\right ]   \cdot \Delta \overline{i}<0$$
+
+- Økt rente gir lavere investeringer som initierer en negativ multiplikatoreffekt (redusert investeringer før til redusert etterspørsel som fører redusert konsum osv.)
 
 LM-kurven finner vi ved å differensiere likevektsbetingelsen for pengemarkedet mhp. Y og i:
 
-$$k\Delta Y -h\Delta i = 0 \Leftrightarrow  \frac{\Delta Y}{\Delta i} = \frac{h}{k} > 0 $$
+$$k\Delta Y -h\Delta i = 0 \Leftrightarrow  \frac{\Delta i}{\Delta Y} = \frac{k}{h} > 0 $$
+
+- Økt inntekt gir økt etterspørsel etter penger pga økt transaksjonsbehov. For at markedet skal være i likevekt, må dette motsvares av et høyere rentenivå
+
 **Grafisk**
 ```{r echo=FALSE}
 figislm
@@ -391,13 +349,23 @@ figislm
 
 
 ```{r echo=FALSE}
-grid.arrange(figpengem, figislm , ncol= 2)
+grid.arrange(figpengemchm, figislmxchm , ncol= 2)
 ```
 
 
 - **V**erbalt (dynamisk tolkning utenfor modellen)
 
+Økt pengemengde $\Rightarrow$ redusert rente (fra pengemarkedet) $\Rightarrow$ Økte investeringer $\Rightarrow$ økt produksjon $\Rightarrow$ initierer en multiplikatoreffekt: $\Rightarrow$ økt disponibel inntekt $\Rightarrow$ økt konsum $\Rightarrow$ økt produksjon osv.
+
 ### Stabiliseringspolitikk
+
+Konstant pengemengdevekst $\frac{\Delta M}{M} = k$, hvor k er lik veksten i BNP eller inflasjonen, er forslaget fra Milton Friedman på en pengepolitisk regel som har hensikt å virke som en effektiv 
+stabiliseringspolitisk virkemiddel. 
+
+Forslaget kommer på bakgrunn av boken [*A Monetary History of the United States*](https://en.wikipedia.org/wiki/A_Monetary_History_of_the_United_States), som Friedman 
+forfattet sammen med Anna J. Schwartz.I boken argumenteres det (basert på tidsserier for pengemengdeveksten i USA) at uforutsette endringer i pengemengden er hovedårsaken til konjunktursvingningene i USA i perioden 1867-1963
+
+Innenfor IS-LM rammeverket, kan vi tolke dette som at sentralbanken har til oppgave ikke skape skift i LM-kurven som har sitt opphave i endringer i pengetilbudet.
 
 #### Øvelse
 

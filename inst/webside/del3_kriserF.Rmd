@@ -8,8 +8,9 @@ output: html_notebook
 <img id='grere' src="bilder/recession.jpg" height="75px" width="300px" />
 
 > Can 'It' - a Great Depression - happen again? And if 'It' can happen why didn't 'It' occur in the years since World War II? These are questions that naturally follow from both the historical record and the comparative success of the past thirty-five years. To answer these questions it is necessary to have an economic theory which makes great depressions one of the possible states in which our type of capitalist economy can find itself.
-- Minsky  (1982)
+- Hyman Minsky  (1982)
 
+<!--
 [Penger (innvendige og utvendige)](presentasjoner/pres_del3.html)
 
 [Banker, systemrisiko og kapitalkrav](presentasjoner/pres_del3.html#10)
@@ -17,3 +18,4 @@ output: html_notebook
 [Statsgjeldskrise](presentasjoner/pres_del3.html#10)
 
 [Likviditetsfellen (IS-LM modellen med to husholdninger)](presentasjoner/pres_del3.html#10)
+-->

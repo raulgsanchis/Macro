@@ -17,8 +17,8 @@ dfgpmakro <- function(Iv=NULL, exoparval=NULL, modell='keynes', endr=0){
   xeae <-eval(parse(text=keynesequ$AD), exoparval)
 
   # Før eller etter
-  #scx <- list(breaksvx = c(yeae), labels = c(TeX(paste0("$Y_{",endr,"}$"))))
-  #scy <- list(breaksvy = c(yeae), labels = c(TeX(paste0("$X_{",endr,"}$"))))
+  scx <- NULL#list(breaksvx = c(yeae), labels = c(TeX(paste0("$Y_{",endr,"}$"))))
+  scy <- NULL# list(breaksvy = c(yeae), labels = c(TeX(paste0("$X_{",endr,"}$"))))
 
   list(dfmodell=dfkeykryss, yeae=yeae, xeae=xeae, scx=scx, scy=scy)
 }
@@ -135,22 +135,22 @@ gpmakro <- function(data = moltmacrousa, variables = c('lngdp', 'hptrendg'), kat
 #' Grafter
 #' @export gpdiamdoell
 gpdiamdoell <- function(data = datakeynes,
-                     variables = c('grad45','id'),
-                     labt = list(title= 'Keyneskrysset', x='x-variabel', y='y-variabel'),
-                     equisol = list(x = 299.75, y = 299.75),
-                     color = NULL,
-                     labplassmon = data.frame(labeling=c('45 grader'), x=c(60), y = c(20)),
-                     scalebreaksx = list(breaksvx = c(1,10), labels = c('xxx',TeX('$X_{0}$'))),
-                     scalebreaksy = list(breaksvy = c(1,10), labels = c('yyy',TeX('$Y_{0}$'))),
-                     odata = NULL,
-                     ovariables = NULL){
+                        variables = c('grad45','id'),
+                        labt = list(title= 'Keyneskrysset', x='x-variabel', y='y-variabel'),
+                        equisol = list(x = 299.75, y = 299.75),
+                        color = NULL,
+                        labplassmon = data.frame(labeling=c('45 grader'), x=c(60), y = c(20)),
+                        scalebreaksx = list(breaksvx = c(1,10), labels = c('xxx',TeX('$X_{0}$'))),
+                        scalebreaksy = list(breaksvy = c(1,10), labels = c('yyy',TeX('$Y_{0}$'))),
+                        odata = NULL,
+                        ovariables = NULL){
 
-    # Henter dataene
-    datainp <- dplyr::filter(data, variable %in% variables)
-    odatainp <- dplyr::filter(datainp, variable %in% c(ovariables))
+  # Henter dataene
+  datainp <- dplyr::filter(data, variable %in% variables)
+  odatainp <- dplyr::filter(datainp, variable %in% c(ovariables))
 
-    # Plotte dataene
-    ggplot() +
+  # Plotte dataene
+  ggplot() +
     geom_text(data = labplassmon, aes(x = x, y = y, label = labeling), color = as.character(labplassmon$col)) +
     geom_line(data = datainp, aes(x = Iv, y = value, color = factor(variable))) +
     geom_line(data = odatainp, aes(x = Iv, y = value, color = factor(variable))) +
@@ -162,9 +162,9 @@ gpdiamdoell <- function(data = datakeynes,
     geom_segment(aes(x = 0, y = equisol$y, xend = equisol$x , yend = equisol$y), lty = 2) +
     scale_x_continuous(breaks =scalebreaksx$breaksvx, labels = scalebreaksx$labels) +
     scale_y_continuous(breaks = scalebreaksy$breaksvy, labels = scalebreaksx$labels) +
-      theme(legend.position="none") +
-      coord_cartesian()
-    # Old
+    theme(legend.position="none") +
+    coord_cartesian()
+  # Old
 }
 
 

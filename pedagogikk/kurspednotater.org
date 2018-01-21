@@ -143,6 +143,7 @@ G og T
 **** Keynes modell som gir oss IS-Kurven
 **** Tall 
 **** Empiri på G,I og T
+**** Oppgavesminar
 *** IS-LM modellen
 *** Oversikt
 **** Aktører
@@ -153,19 +154,27 @@ G og T
 **** Markeder
 + Godemarkedet (varer og tjenester)
 + Pengemarkedet
+1. Hva er penger i samfunnsøkonomi?
+1. 1-2/(3) års sikt
 *** Modellering (repitisjon + nye ting)
 **** Husholdninger
-1. Pengeetterspørsel
+1. C = Cb + c(Y-T)
+1. Pengeetterspørsel - avveining mellom å holde formue i obligasjoner eller 
+penger
+1. Transaksjonsmotivert etterspørsel
+1. Tape renteinntekter
 **** Bedrifter
+1. I = I -b*i
 **** Sentralbank
 1. Pengetilbud (eksogen)
 **** Offentlig myndigheter
 1. Skatt
-T = 0
+T = tY
 **** Markeder
 ***** Godemarkedet 
 1. Y = C + I + G (Generalbudsjettligningen lukket økonomi)
 ***** Pengemarkedet
+1. Ld = Md
 **** Løsning av modellen
 IS-kurven
 LM-kurven
@@ -178,7 +187,7 @@ Friedman
 -> viktig kilde til konjktursvingninger forsvinner
 -> idag morphed into inflation targeting
 **** Øvelse
-Hva skjer med Y når P går opp. Tegn og forklar
+Hva skjer med Y når P går opp. Tegn og forklar i to diagrammer
 ** Forelesning uke 5: Arbeidsmarkedet, ledighet og AS-kurven
 *** Repetison av forrige øvelse og skissere AS-kurvenen
 ** Forelesning uke 6: AD-AS modellen (for en lukket, eller globalisert økonomi)  

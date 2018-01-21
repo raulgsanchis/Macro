@@ -1,3 +1,8 @@
+<!--
+---
+output: html_notebook
+---
+-->
 #Oversikt over faget
 - Tre hovedtemaer: 
     1. Konjunktursvingninger
@@ -63,18 +68,93 @@ negativ sammenheng mellom arbeidsledighet og endring i inflasjon
     + Lang sikt
 
 ## Lukket økonomi
+Aggregert etterspørsel (AE) i en lukket økonomi    
+
 $AE \equiv C + I + G$
 
-### Enkel Keynes-modell:
+### Likevekt i godemarkedet (varer og tjenester)
+
+Hvor vi postulerer følgene adferdlikninger
+
+- Husholdningene:
+$$C = \overline{C} + c(Y-T)$$
+- Bedriftene:
+$$I = \overline{I} - b\cdot i$$
+
+- Sentralbanken
+$$i = \overline{i}$$
+
+- Offentlige myndigheter
+$$G = \overline{G}$$  
+$$T = t\cdot Y$$ 
+
+Løser denne modellen mhp. på Y gir oss IS-likningen (kombinasjoner av i og Y som er forenlig med likevekt i varemarkedet)
+
+$$Y = \frac{1}{1-c}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]$$
+
+Skiftanalyse (matematisk, figur, og verbalt): Eks. endring i $\Delta Y$ som følge av en økning i $\Delta \overline{I}$:
+
+- Matematisk:
+
+$$\Delta Y = \frac{1}{1-c}\Delta  \overline{I}>0 \text{ eller } \frac{\Delta Y}{\Delta  \overline{I} } = \frac{1}{1-c}>1$$
+
+- Figur: (se notater)
+
+- Verbalt  (dynamisk forklaring utenfor modellen):
+Økte investeringer $\rightarrow$ økt produksjon $\rightarrow$ initierer en multiplikatoreffekt: $\rightarrow$ økt disponibel inntekt $\rightarrow$ økt konsum $\rightarrow$ økt produksjon osv.
+
+Stabiliseringspolitikk: $\Delta G <0$
+
+$$\Delta Y = \frac{1}{1-c}  \left [ \Delta \overline{I} + \Delta \overline{G} \right ]$$
+
+Dersom vi lar $\Delta \overline{I} = - \Delta \overline{G} > 0 \Rightarrow \Delta Y = 0$ (dvs. intern balanse)
+
+### Likevekt i pengemarkedet 
+- Tilbudet av penger ($M^{s}$)
+
+Ser foreløpig kun på utvendige penger: Sedler og mynt pluss reserver. Dette nivået blir bestemt av sentralbanken
+$\overline{M}/P$
+
+- Etterspørsel etter penger:
+$$L_{d} = \kappa Y -hi$$
+
+- Likevekt i pengemarkedet: 
+$$M/P = L_{d}$$  
+
+Sentralbanken bestemmer hva som skjer i pengemarkedet ved
+(1) Endre tilbudet av penger (vanlig tidligere) eller (2) å endre rentenivået (vanlig i dag).
+
+## IS-LM modellen for en lukket økonomi: Gode- og pengemarkedet i likevekt
+- Varemarkedet
+$$Y = \frac{1}{1-c(1-t)}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]$$
+- IS-kurven
+$$\Delta Y =\left[\frac{-b}{1-c(1-t)}\right ]   \cdot \Delta \overline{i}<0$$
+- Pengemarkedet
+$$kY -hi = \overline{M}/P$$
+- LM kurven
+$$\Delta Y =\left[\frac{-b}{1-c(1-t)}\right ]   \cdot \Delta \overline{i}<0$$
+
+- Grafisk tegning bestemmer her $i$ og $Y$ samtidig
+
+- Skiftanalyse (grafisk og verbalt)
+Merk: P gir AD-kurven
+
+- Stabiliseringspolitikk (grafisk og verbalt)
+Virkemidler: $G, T, M/i$
+
+<!--
 - Adferdslikninger
 - Likevekt
 - Skiftanalyse
 - Stabiliseringspolitikk
 
-<!--
 
 ### IS-LM modellen:
 
+
+-->
+
+<!--
 ### AD-AS modellen:
 
 ## Åpen Økonomi
