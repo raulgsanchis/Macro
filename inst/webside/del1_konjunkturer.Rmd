@@ -34,12 +34,15 @@ philipusag <- ggplot(data = fusadataI, aes(x = unem, y = cyinflation))  + geom_p
 
 ```{r include=FALSE}
 # Keyneskrysset
-mlabels <- list(title= 'Keyneskrysset', x='Produksjon, inntekt (Y)', y='Aggregert etterspørsel (AE)')
+mlabels <- list(title= 'Keyneskrysset', x='produksjon, inntekt (Y)', y='Aggregert etterspørsel (AE)')
 # Parameterverdier (Keyneskrysset)
 Iv <- 0:600
 exoparval <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 50, T = 10), list(Y=c(Iv)))
+cexoparval <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 90, T = 10), list(Y=c(Yv)))
 dfkeynes <- dfgpmakro(Iv, exoparval, endr=0)
+cdfkeynes <- dfgpmakro(Yv, cexoparval, endr=1)
 eqsol <- list(x= c(dfkeynes$yeae), y = c(dfkeynes$yeae))
+ceqsol <- list(x= c(dfkeynes$yeae, cdfkeynes$yeae), y = c(dfkeynes$yeae, cdfkeynes$yeae))
 eqlinjey <- list(breaksvy = eqsol$y, labels = c(TeX('$AE_{0}$')))
 eqlinjex <- list(breaksvx = eqsol$x, labels = c(TeX('$Y_{0}$')))
 unique(dfkeynes$dfmodell$variable)
@@ -63,9 +66,6 @@ keynesc <- makrofigure(ndata = dfkeynes$dfmodell,
                             colorl = c(rep('black',4)))
 
 ###
-cexoparval <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 90, T = 10), list(Y=c(Yv)))
-cdfkeynes <- dfgpmakro(Yv, cexoparval, endr=1)
-ceqsol <- list(x= c(dfkeynes$yeae, cdfkeynes$yeae), y = c(dfkeynes$yeae, cdfkeynes$yeae))
 rev(subset(dfkeynes$dfmodell, variable == 'cdvpidvgdv')$value)[1]
 ceqlinjey <- list(breaksvy = ceqsol$y, labels = c(TeX('$AE_{0}$'), TeX('$AE_{1}$')))
 ceqlinjex <- list(breaksvx = ceqsol$x, labels = c(TeX('$Y_{0}$'), TeX('$Y_{0}$')))
@@ -278,7 +278,7 @@ dfislm <- dfgpmakro2(Iv=iv, exoparval = exoparvalv, endr=0)
 cdfislm <- dfgpmakro2(Iv=iv, exoparval = cexoparvalv, endr=0)
 
 # Pengemarkedet
-mlabels <- list(title= 'Pengemarkedet', y='Pengetilbudet (M/P)', x='nominelt rentenivå (i)')
+mlabels <- list(title= 'Pengemarkedet', y='Pengetilbudet (M/P)', x='rentenivå (i)')
 labldf <- labldf <- data.frame(labeling=c("Ms", "Ld"), 
                      x = c(7.5, 1), 
                      y = c(200+30, 600),
@@ -297,6 +297,17 @@ figpengem <- makrofigure(ndata = dfislm$dfmodell,
                             colorl = c(rep('black',2))) + coord_flip()
 
 # Penge- og godemarkedet 
+# figpengem <- makrofigure(ndata = cdfislm$dfmodell,
+#                             variables = c("ldv", "msv"),
+#                             labt = mlabels,
+#                             labplassmon = labldf,
+#                             equisol = eqsol,
+#                             scalebreaksx = eqlinjex,
+#                             scalebreaksy = eqlinjey,
+#                             colorl = c(rep('black',2))) + coord_flip()
+
+
+
 islmlabels <- list(title= 'IS-LM modellen', x='rentenivå (i)', y='Produksjon, inntekt (Y)')
 
 ## Labeling
@@ -377,6 +388,7 @@ figislm
 Økning i pengemengden (M)
 
 - **G**rafisk
+
 
 ```{r echo=FALSE}
 grid.arrange(figpengem, figislm , ncol= 2)

@@ -96,13 +96,15 @@ makrofigurechange <- function(ndata = datakeynes,
   datainp <- dplyr::filter(ndata, variable %in% variables) %>% dplyr::mutate(kat='naa')
   odatainp <- dplyr::filter(odata, variable %in% c(ovariables)) %>% dplyr::mutate(kat='foer')
 
+  #browser()
+
   # Plotte dataene
   ggplot() +
     labs(title = labt$title, x = labt$x, y = labt$y) +
-    geom_text(data = labplassmon, aes(x = x, y = y, label = labeling), color = labplassmon$col) +
     geom_line(data = datainp, aes(x = Iv, y = value, color = factor(variable))) +
     geom_line(data = odatainp, aes(x = Iv, y = value, color = factor(variable))) +
     geom_point(aes(x=equisol$x, y=equisol$y)) +
+    geom_text(data = labplassmon, aes(x = x, y = y, label = labeling), color = labplassmon$col) +
     geom_segment(aes(x = equisol$x, y = 0, xend = equisol$x , yend = equisol$y), lty = 2) +
     geom_segment(aes(x = 0, y = equisol$y, xend = equisol$x , yend = equisol$y), lty = 2) +
     scale_x_continuous(breaks = scalebreaksx$breaksvx, labels = scalebreaksx$labels) +
