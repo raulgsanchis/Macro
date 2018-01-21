@@ -1,3 +1,4 @@
+#' @export dfgpmakro
 dfgpmakro <- function(Iv=NULL, exoparval=NULL, modell='keynes', endr=0){
 
   keynesequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/keynesequ.json'))
@@ -24,6 +25,7 @@ dfgpmakro <- function(Iv=NULL, exoparval=NULL, modell='keynes', endr=0){
 }
 
 #' IS-LM
+#' @export dfgpmakro2
 dfgpmakro2 <- function(Iv=NULL, exoparval=exoparvalv, modell='is-lm', endr=0){
 
   #browser()
