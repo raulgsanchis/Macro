@@ -5,7 +5,7 @@ output:
 #    logo: logo.png
 ---
 
-```{r plan, child = '../innledning.Rmd'}
+```{r, child = '../innledning.Rmd'}
 
 ```
 

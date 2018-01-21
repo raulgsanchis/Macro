@@ -6,35 +6,35 @@ navbar:
   - text: Kursinformasjon
     menu:
     - text: Forelesningsplan
-      href: forelesningsplan.html
+#      href: forelesningsplan.html
     - text: Læringsmål
-      href: laeringsmaal.html
+#      href: laeringsmaal.html
   - text: Forelesninger
     menu:
     - text: Introduksjon
-      href: presentasjoner/pres_innledning.html
+#      href: presentasjoner/pres_innledning.html
     - text: 'Del I: Konjunktursvingninger'
       href: del1_konjunkturerF.html
     - text: 'Del II: Økonomisk vekst'
-      href: del2_vekstF.html
+#      href: del2_vekstF.html
     - text: 'Del III: Økonomiske kriser'
-      href: del3_kriserF.html
+#      href: del3_kriserF.html
     - text: 'Applikasjon: Krisen i Eurosonen'
-      href: case_euro.html
+#      href: case_euro.html
   - text: Oppgaver
     menu:
     - text: Oppgaver
-      href: oppgaver.html
+#      href: oppgaver.html
   - text: Lenker
     menu:
     - text: Supplerende kursinformasjon
-      href: nyhetslinker.html
+#      href: nyhetslinker.html
   - text: Utskrifter
     menu:
     - text: Forelesningsnotater
-      href: htmrapport.html
+#      href: htmrapport.html
     - text: Variabeldefinisjoner
-      href: symbolliste.html
+#      href: symbolliste.html
   right:
   - text: ~
   - icon: ion-android-contact
@@ -43,8 +43,8 @@ output:
   html_document:
     theme: cosmo
     highlight: textmate
-    include:
-      after_body: footer.html
-    lib_dir: site_libs
-    self_contained: no
+#    include:
+#      after_body: footer.html
+#    lib_dir: site_libs
+#    self_contained: no
 

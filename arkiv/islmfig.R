@@ -23,7 +23,7 @@ figpengem <- makrofigure(ndata = dfislm$dfmodell,
                          scalebreaksy = eqlinjey,
                          colorl = c(rep('black',2))) + coord_flip()
 
-ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/figpengem.png'))
+#ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/figpengem.png'))
 
 
 ## Endring
@@ -48,7 +48,7 @@ figpengemchm <- makrofigurechange(ndata = dfislm$dfmodell,
                                   odata = cdfislm$dfmodell,
                                   ovariables = c("ldv", "msv")) + coord_flip()
 
-ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/figpengemchm.png'))
+##ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/figpengemchm.png'))
 
 ## Merkelapper
 islmlabels <- list(title= 'IS-LM modellen', x='rentenivå (i)', y='produksjon, inntekt (Y)')
@@ -73,7 +73,7 @@ figislm <- makrofigure(ndata = dfislm$dfmodell,
                        scalebreaksy = eqlinjey,
                        color = rep(c('black'),2)) + coord_flip()
 
-ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/figislm.png'))
+##ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/figislm.png'))
 
 ## Endring
 ceqsol <- list(x= c(3.7, 4.15), y = c(284, 264))
@@ -99,4 +99,4 @@ figislmxchm <- makrofigurechange(ndata = dfislm$dfmodell,
 
 grid.arrange(figpengemchm, figislmxchm , ncol= 2)
 
-ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/figislmxchm.png'))
+##ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/figislmxchm.png'))
