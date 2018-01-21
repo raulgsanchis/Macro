@@ -13,7 +13,7 @@
 
 # Del I: Konjunktursvingninger
 <img id='grede' src="bilder/cycles.jpg" height="75px" width="300px" />
-<img id='grere' src="bilder/money.jpg" height="75px" width="300px" />The chunk 'plan' has the 'child' option, and this code chunk must be empty. Its code will be ignored.
+<img id='grere' src="bilder/money.jpg" height="75px" width="300px" />
 
 # Del II: Økonomisk vekst
 <img id='grere' src="bilder/poverty.jpg" height="75px" width="300px" />

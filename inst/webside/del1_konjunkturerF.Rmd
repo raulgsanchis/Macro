@@ -3,11 +3,18 @@
 <img id='grere' src="bilder/money.jpg" height="75px" width="300px" />
 
 > Long run is a misleading guide to current affairs. In the long run we are all dead.
-- Keynes
+- John Maynard Keynes
 
-[#1: Grunnleggende basiskunnskaper og enkel Keynes modell](presentasjoner/pres_del1.html)
+[Forelesning uke #2: Grunnleggende basiskunnskaper og enkel Keynes modell](presentasjoner/pres_del1.html#1)
+
+[Forelesning uke #3: IS-LM modellen (for en lukket, eller global økonomi)](presentasjoner/pres_del1.html#20)
 
 <!--
-[abc](presentasjoner/pres_del1.html#7)
--->
+[Arbeidsmarkedet, ledighet og AS-kurven](presentasjoner/pres_del1.html#25)
 
+[AD-AS modellen (for en lukket, eller globalisert økonomi)](presentasjoner/pres_del1.html#25)
+
+[Mundell-Fleming (IS-LM åpen økonomi) for en åpen økonomi med fast og flytende valutakurs](presentasjoner/pres_del1.html#25)
+
+[AD-AS for en åpen økonomi med fast og flytende valutakurs](presentasjoner/pres_del1.html#25)
+-->

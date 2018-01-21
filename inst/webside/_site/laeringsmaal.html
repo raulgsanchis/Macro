@@ -207,10 +207,10 @@ $(document).ready(function () {
       <a href="del1_konjunkturerF.html">Del I: Konjunktursvingninger</a>
     </li>
     <li>
-      <a href="del2_vekst.html">Del II: Økonomisk vekst</a>
+      <a href="del2_vekstF.html">Del II: Økonomisk vekst</a>
     </li>
     <li>
-      <a href="del3_kriser.html">Del III: Økonomiske kriser</a>
+      <a href="del3_kriserF.html">Del III: Økonomiske kriser</a>
     </li>
     <li>
       <a href="case_euro.html">Applikasjon: Krisen i Eurosonen</a>
@@ -280,6 +280,11 @@ $(document).ready(function () {
 </div>
 
 
+<!--
+---
+output: html_notebook
+---
+-->
 <div id="oversikt-over-faget" class="section level1">
 <h1>Oversikt over faget</h1>
 <ul>
@@ -353,19 +358,71 @@ $(document).ready(function () {
 </div>
 <div id="lukket-konomi" class="section level2">
 <h2>Lukket økonomi</h2>
+<p>Aggregert etterspørsel (AE) i en lukket økonomi</p>
 <p><span class="math inline">\(AE \equiv C + I + G\)</span></p>
-<div id="enkel-keynes-modell" class="section level3">
-<h3>Enkel Keynes-modell:</h3>
+<div id="likevekt-i-godemarkedet-varer-og-tjenester" class="section level3">
+<h3>Likevekt i godemarkedet (varer og tjenester)</h3>
+<p>Hvor vi postulerer følgene adferdlikninger</p>
 <ul>
-<li>Adferdslikninger</li>
-<li>Likevekt</li>
-<li>Skiftanalyse</li>
-<li>Stabiliseringspolitikk</li>
+<li>Husholdningene: <span class="math display">\[C = \overline{C} + c(Y-T)\]</span></li>
+<li><p>Bedriftene: <span class="math display">\[I = \overline{I} - b\cdot i\]</span></p></li>
+<li><p>Sentralbanken <span class="math display">\[i = \overline{i}\]</span></p></li>
+<li><p>Offentlige myndigheter <span class="math display">\[G = \overline{G}\]</span><br />
+<span class="math display">\[T = t\cdot Y\]</span></p></li>
+</ul>
+<p>Løser denne modellen mhp. på Y gir oss IS-likningen (kombinasjoner av i og Y som er forenlig med likevekt i varemarkedet)</p>
+<p><span class="math display">\[Y = \frac{1}{1-c}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]\]</span></p>
+<p>Skiftanalyse (matematisk, figur, og verbalt): Eks. endring i <span class="math inline">\(\Delta Y\)</span> som følge av en økning i <span class="math inline">\(\Delta \overline{I}\)</span>:</p>
+<ul>
+<li>Matematisk:</li>
+</ul>
+<p><span class="math display">\[\Delta Y = \frac{1}{1-c}\Delta  \overline{I}&gt;0 \text{ eller } \frac{\Delta Y}{\Delta  \overline{I} } = \frac{1}{1-c}&gt;1\]</span></p>
+<ul>
+<li><p>Figur: (se notater)</p></li>
+<li><p>Verbalt (dynamisk forklaring utenfor modellen): Økte investeringer <span class="math inline">\(\rightarrow\)</span> økt produksjon <span class="math inline">\(\rightarrow\)</span> initierer en multiplikatoreffekt: <span class="math inline">\(\rightarrow\)</span> økt disponibel inntekt <span class="math inline">\(\rightarrow\)</span> økt konsum <span class="math inline">\(\rightarrow\)</span> økt produksjon osv.</p></li>
+</ul>
+<p>Stabiliseringspolitikk: <span class="math inline">\(\Delta G &lt;0\)</span></p>
+<p><span class="math display">\[\Delta Y = \frac{1}{1-c}  \left [ \Delta \overline{I} + \Delta \overline{G} \right ]\]</span></p>
+<p>Dersom vi lar <span class="math inline">\(\Delta \overline{I} = - \Delta \overline{G} &gt; 0 \Rightarrow \Delta Y = 0\)</span> (dvs. intern balanse)</p>
+</div>
+<div id="likevekt-i-pengemarkedet" class="section level3">
+<h3>Likevekt i pengemarkedet</h3>
+<ul>
+<li>Tilbudet av penger (<span class="math inline">\(M^{s}\)</span>)</li>
+</ul>
+<p>Ser foreløpig kun på utvendige penger: Sedler og mynt pluss reserver. Dette nivået blir bestemt av sentralbanken <span class="math inline">\(\overline{M}/P\)</span></p>
+<ul>
+<li><p>Etterspørsel etter penger: <span class="math display">\[L_{d} = \kappa Y -hi\]</span></p></li>
+<li><p>Likevekt i pengemarkedet: <span class="math display">\[M/P = L_{d}\]</span></p></li>
+</ul>
+<p>Sentralbanken bestemmer hva som skjer i pengemarkedet ved (1) Endre tilbudet av penger (vanlig tidligere) eller (2) å endre rentenivået (vanlig i dag).</p>
+</div>
+</div>
+<div id="is-lm-modellen-for-en-lukket-konomi-gode--og-pengemarkedet-i-likevekt" class="section level2">
+<h2>IS-LM modellen for en lukket økonomi: Gode- og pengemarkedet i likevekt</h2>
+<ul>
+<li>Varemarkedet</li>
+</ul>
+<p><span class="math display">\[Y = \frac{1}{1-c(1-t)}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]\]</span> <span class="math inline">\(\Rightarrow\)</span> IS-kurven</p>
+<p><span class="math display">\[\Delta Y =\left[\frac{-b}{1-c(1-t)}\right ]   \cdot \Delta \overline{i}&lt;0\]</span> - Pengemarkedet <span class="math display">\[kY -hi = \overline{M}/P\]</span> <span class="math inline">\(\Rightarrow\)</span> LM-kurven</p>
+<p><span class="math display">\[\Delta Y =\left[\frac{-b}{1-c(1-t)}\right ]   \cdot \Delta \overline{i}&lt;0\]</span></p>
+<ul>
+<li><p>Grafisk tegning bestemmer her <span class="math inline">\(i\)</span> og <span class="math inline">\(Y\)</span> samtidig</p></li>
+<li><p>Skiftanalyse (grafisk og verbalt) Merk: P gir AD-kurven</p></li>
+<li><p>Stabiliseringspolitikk (grafisk og verbalt) Virkemidler: <span class="math inline">\(G, T, M/i\)</span></p></li>
 </ul>
 <!--
+- Adferdslikninger
+- Likevekt
+- Skiftanalyse
+- Stabiliseringspolitikk
+
 
 ### IS-LM modellen:
 
+
+-->
+<!--
 ### AD-AS modellen:
 
 ## Åpen Økonomi
@@ -665,7 +722,6 @@ Hvordan komme ut av en likviditetsfelle?
 
 [![Alt text](https://img.youtube.com/vi/XZ7hE4lQAYs/0.jpg)](https://www.youtube.com/watch?v=XZ7hE4lQAYs)
 -->
-</div>
 </div>
 </div>
 

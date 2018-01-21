@@ -16,9 +16,9 @@ navbar:
     - text: 'Del I: Konjunktursvingninger'
       href: del1_konjunkturerF.html
     - text: 'Del II: Økonomisk vekst'
-      href: del2_vekst.html
+      href: del2_vekstF.html
     - text: 'Del III: Økonomiske kriser'
-      href: del3_kriser.html
+      href: del3_kriserF.html
     - text: 'Applikasjon: Krisen i Eurosonen'
       href: case_euro.html
   - text: Oppgaver
