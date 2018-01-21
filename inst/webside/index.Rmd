@@ -27,7 +27,7 @@
 
 **Studentassistent:** Susanna Murati (susanna-007@hotmail.com)
 
-<span style="color:red"> Vedrørende oppgaveseminar: Noen sliter med å installere FRED-appen til Excel (det kan se ut som FRED-appen foreløpig ikke støtter den seneste versjonen av Excel). I oppgavebeskrivelsen er det derfor nå gitt en oppdatert beskrivelse på hvordan du kan laste ned disse tallene direke til ditt regneark </span>
+<span style="color:red">  </span>
 
 Siste gang oppdatert ``r base::Sys.time()`` 
 
