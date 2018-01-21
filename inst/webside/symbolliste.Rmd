@@ -1,5 +1,4 @@
 
-```{r plan, child = 'tabeller/symbolliste.html'}
-
+```{r, child = 'tabeller/symbolliste.html'}
 ```
 

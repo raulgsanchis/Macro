@@ -100,8 +100,7 @@ grid.arrange(gdg, grg, gdu, gru, top = 'USA' )
 
 ### Politikkanbefalinger 
 
-```{r pol, child = 'tabeller/polanbefalinger.html'}
-
+```{r, child = 'tabeller/polanbefalinger.html'}
 ```
 
 ## Abstraksjon 

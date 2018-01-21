@@ -1,3 +1,14 @@
+<!--
+---
+output: html_notebook
+# output:
+#   html_document:
+#     toc: true
+#     toc_depth: 4
+---
+-->
+
+# Del 1: Konjunktursvingninger
 
 ```{r include=FALSE}
 library(MakroOEKB1115)
@@ -23,96 +34,63 @@ okunusag <- ggplot(data = fusadataI, aes(x = cunem, y = ggdp))  + geom_point() +
 philipusag <- ggplot(data = fusadataI, aes(x = unem, y = cyinflation))  + geom_point() +  geom_smooth(method=lm, se=FALSE) + theme_classic() + labs(title = 'Phillips-kurven', subtitle = 'USA 1948-2016' ,x = 'Ledighetsrate', y = 'Endring i inflation')
 ```
 
-
 ```{r include=FALSE}
 # Keyneskrysset
-# Henter Jupyter data
-keynesequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/keynesequ.json'))
+mlabels <- list(title= 'Keyneskrysset', x='produksjon, inntekt (Y)', y='Aggregert etterspørsel (AE)')
+# Parameterverdier (Keyneskrysset)
+Iv <- 0:600
+exoparval <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 50, T = 10), list(Y=c(Iv)))
+cexoparval <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 90, T = 10), list(Y=c(Iv)))
+dfkeynes <- dfgpmakro(Iv, exoparval, endr=0)
+cdfkeynes <- dfgpmakro(Iv, cexoparval, endr=1)
+eqsol <- list(x= c(dfkeynes$yeae), y = c(dfkeynes$yeae))
+ceqsol <- list(x= c(dfkeynes$yeae, cdfkeynes$yeae), y = c(dfkeynes$yeae, cdfkeynes$yeae))
+eqlinjey <- list(breaksvy = eqsol$y, labels = c(TeX('$AE_{0}$')))
+eqlinjex <- list(breaksvx = eqsol$x, labels = c(TeX('$Y_{0}$')))
+unique(dfkeynes$dfmodell$variable)
 
-# Parameterverdier
-exoparval <- list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 50, T = 10)
-dexoparval <- list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 110, T = 10)
+rev(subset(dfkeynes$dfmodell, variable == 'gdv')$value)[1]
+rev(subset(dfkeynes$dfmodell, variable == 'gdvpidv')$value)[1]
+rev(subset(dfkeynes$dfmodell, variable == 'cdvpidvgdv')$value)[1]
+rev(subset(dfkeynes$dfmodell, variable == 'grad45v')$value)[1]
+labldf <- data.frame(labeling=c("45 grader", "I", "C + I", "C + I + G", "Y = AE"), 
+                     x = c(105, 560, 560, 560, 560), 
+                     y = c(20, 50+10, 100+10, 480+10, 600+10),
+                     col = c('black', rep(c('red'),1,4)))
 
-# Variabler som endrer seg
-Yv <- c(0:600)
+keynesc <- makrofigure(ndata = dfkeynes$dfmodell,
+                            labt = mlabels,
+                            variables = c('grad45v', 'gdv', 'gdvpidv','cdvpidvgdv'),
+                            labplassmon = labldf,
+                            equisol = eqsol,
+                            scalebreaksx = eqlinjex,
+                            scalebreaksy = eqlinjey,
+                            colorl = c(rep('black',4)))
 
-# Implikasoner
-##
-grad45v <- 0:rev(Yv)[1]
-cdv <- eval(parse(text=keynesequ$CD),c(exoparval,list(Y=Yv)))
-idv <- eval(parse(text=keynesequ$ID),c(exoparval,list(Y=Yv)))
-gdv <- eval(parse(text=keynesequ$GD),c(exoparval,list(Y=Yv)))
-#
-dcdv <- eval(parse(text=keynesequ$CD),c(dexoparval,list(Y=Yv)))
-didv <- eval(parse(text=keynesequ$ID),c(dexoparval,list(Y=Yv)))
-dgdv <- eval(parse(text=keynesequ$GD),c(dexoparval,list(Y=Yv)))
+###
+rev(subset(dfkeynes$dfmodell, variable == 'cdvpidvgdv')$value)[1]
+ceqlinjey <- list(breaksvy = ceqsol$y, labels = c(TeX('$AE_{0}$'), TeX('$AE_{1}$')))
+ceqlinjex <- list(breaksvx = ceqsol$x, labels = c(TeX('$Y_{0}$'), TeX('$Y_{0}$')))
+rev(subset(cdfkeynes$dfmodell, variable == 'cdvpidvgdv')$value)[1]
+rev(subset(cdfkeynes$dfmodell, variable == 'grad45v')$value)[1]
+labldf <- data.frame(labeling=c("45 grader", "C + I + G", "C+ I' + G", "Y=AE"), 
+                     x = c(105, 560, 560, 560), 
+                     y = c(20, 480+5, 520+5, 600+5),
+                     col = c('black', rep(c('red'),1,3)))
 
-
-## Likevekt
-yeae <-eval(parse(text=keynesequ$AD),c(exoparval))
-dyeae <-eval(parse(text=keynesequ$AD),c(dexoparval))
-
-# Datatabell (format)
-dfkeykryss <- data.frame(x = Yv, grad45 = grad45v, cd = cdv, id = idv, gd = gdv, idpgd = idv + gdv,
-                         idpgdcd = idv + gdv + cdv, 
-                         dcd = dcdv, did = didv, dgd = dgdv, didpgd = didv + dgdv,
-                         didpgdcd = didv + dgdv + dcdv) %>% 
-  reshape2::melt(id.vars = c("x")) %>% 
-  dplyr::mutate(kat=substring(variable,6,6))
-
-# Labeling
-## Main
-lablist <- list(x='inntekt, produksjon', y = 'AE (aggregert etterspørsel)')
-## I plottet
-lablistdf <- data.frame(label=c('ABC'),x=c(1),y=c(1))
-
-
-# Ggplot2 (funksjon senere)
-## Henter datasettet
-datainp <- dplyr::filter(dfkeykryss, variable %in% c('grad45', 'id', 'idpgd', 'idpgdcd'))
-## Komponent1
-keykg <- ggplot(data = datainp, aes(x = x, y = value, color = factor(variable))) + 
-  geom_line() +
-  geom_point(aes(x=yeae, y=yeae)) +
-  geom_segment(aes(x = yeae, y = 0, xend = yeae , yend = yeae), lty = 2) +
-  geom_segment(aes(x = 0, y = yeae, xend = yeae , yend = yeae), lty = 2) + 
-  geom_text(x=550, y=600, label = 'Y = AD', color = 'red') +
-  geom_text(x=550, y=500, label = 'C+I+G', color = 'red') +
-  geom_text(x=550, y=65, label = 'I', color = 'red') +
-  geom_text(x=550, y=115, label = 'I+G', color = 'red') +
-  scale_x_continuous(name=lablist$x, breaks = c(yeae), labels = c(TeX('$Y_{0}$'))) +
-  scale_y_continuous(name=lablist$y, breaks = c(yeae), labels = c(TeX('$AE_{0}$'))) +
-  labs(title= 'Keyneskrysset') + theme_classic() +
-  theme(legend.position="none") +
-  coord_cartesian() + 
-  scale_colour_manual(values = c("black","black", "black", 'black'))
-
-## Henter datasettet
-ddatainp <- dplyr::filter(dfkeykryss, variable %in% c('grad45','idpgdcd','didpgdcd'))
-## Komponent1
-tl <- data.frame(x=c(100,0), y=c(100,0), label=c('abc', 'def'))
-
-dkeykg <- ggplot(data = ddatainp, aes(x = x, y = value, color = factor(variable))) + 
-  geom_line() +
-  geom_point(aes(x=yeae, y=yeae)) +
-  geom_segment(aes(x = dyeae, y = 0, xend = dyeae , yend = dyeae), lty = 2) +
-  geom_segment(aes(x = 0, y = dyeae, xend = dyeae , yend = dyeae), lty = 2) + 
-  geom_segment(aes(x = yeae, y = 0, xend = yeae , yend = yeae), lty = 2) +
-  geom_segment(aes(x = 0, y = yeae, xend = yeae , yend = yeae), lty = 2) + 
-  geom_text(x=560, y=600, label = 'Y = AD', color = 'red') +
-  geom_text(x=560, y=550, label = "C+I'+G", color = 'red') +
-  geom_text(x=560, y=475, label = "C+I+G", color = 'red') +
-  #scale_x_continuous(name=lablist$x, breaks = c(dyeae), labels = c(TeX('$Y_{0}$'))) +
-  #scale_y_continuous(name=lablist$y, breaks = c(dyeae), labels = c(TeX('$AE_{0}$'))) +
-  scale_x_continuous(name=lablist$x, breaks = c(dyeae), labels = c(TeX('$Y_{1}$'))) +
-  scale_y_continuous(name=lablist$y, breaks = c(dyeae), labels = c(TeX('$AE_{1}$'))) +
-  labs(title= 'Keyneskrysset') + theme_classic() +
-  theme(legend.position="none") +
-  coord_cartesian() + 
-  scale_colour_manual(values = c("black","black", "black", 'black'))
+keynesccinv <- makrofigurechange(ndata = dfkeynes$dfmodell,
+                            labt = mlabels,
+                            variables = c('grad45v','cdvpidvgdv'),
+                            labplassmon = labldf,
+                            equisol = ceqsol,
+                            scalebreaksx = ceqlinjex,
+                            scalebreaksy = ceqlinjey,
+                            colorl = c(rep('black',3)),
+                            odata = cdfkeynes$dfmodell,
+                            ovariables = c('cdvpidvgdv'))
 ```
 
-## Grunnleggende bakgrunnkunnskaper og enkel Keynes modell (lukket økonomi)
+## Grunnleggende bakgrunnkunnskaper 
 
 ### Stabiliseringsmål lukket økonomi
 
@@ -123,13 +101,13 @@ $$(Y-\overline{Y})=0$$
 ---
 
 ### Sentrale nasjonalregnskapstall
-- Bruttonasjonalprodukt (GDP/BNP): Den samlede verdien av alle varer og tjenester som blir produsert i landet i løpet av et år
+- Bruttonasjonalprodukt (GDP/BNP): Den samlede verdien av alle varer og tjenester som blir *produsert i landet* i løpet av et år
     - Nominelt BNP (LY) 
 $$LY = PY$$
     - Reelt BNP (Y)
 $$Y = LY/P $$
 
-- Bruttonasjonalinntekt (GNP/BNI): Den samlede verdien av alle varer og tjenester som landets innbyggere produserer i løpet av et år
+- Bruttonasjonalinntekt (GNP/BNI): Den samlede verdien av alle varer og tjenester som *landets innbyggere produserer* i løpet av et år
 
 ---
 
@@ -145,7 +123,7 @@ $$\pi = \frac{\Delta P}{P} =\frac{P_{t} - P_{t-1}}{P_{t-1}}$$
 
 ### Noen sentrale empiriske sammenhenger
 
-#### Okuns lov: negativ sammenheng mellom endring i arbeidsledighet og vekst (eller endring)  BNP (realpriser) 
+#### Okuns lov: negativ sammenheng mellom endring i arbeidsledighet og vekst (eller endring i vekst)  i BNP (realpriser) 
 
 ```{r echo=FALSE}
 okunusag 
@@ -162,7 +140,7 @@ philipusag
 
 ---
 
-### Hva bestemmer aggregert BNP?
+### Hva bestemmer aggregert produksjon (BNP)?
 #### Kort sikt (0-3 år):
 - Pga antagelsen om prisstivheter på kort sikt (uendret lønn og produktpriser), vil  samlet etterspørsel ($AE$) bestemme BNP ($Y$)
 - Vi legger dette til grunn i enkel Keynes, IS-LM,  og Mundell-Fleming modellen (del I og del III)
@@ -177,29 +155,30 @@ philipusag
 - Teknologisk framgang ($a$), kapitalakkumulasjon ($\Delta K$) og befolkningsvekst ($n$) bestemmer BNP ($Y$)
 - Hovedresultatet fra Solow-modellen (del II)
 
----
-
-### Enkel Keynes-modell 
+## Enkel Keynes-modell 
 
 - Likevekt i godemarkedet (varer og tjenester)
 
-#### Aggregert etterspørsel (AE)
+### Aggregert etterspørsel (AE)
 $$AE \equiv  C + I + G$$
 
-#### Markeder i likevekt: Godemarkedet (varer og tjenester)
-$$Y = AE$$
+### Markeder i likevekt: Godemarkedet (varer og tjenester)
+$$Y = AE \equiv  C + I + G$$
 
 ---
 
-#### Husholdninger
-$$C =  \overline{C} + c(Y - \overline{T})$$
+### Adferdsligninger
 
-Hvor $0<c<1$ og $\overline{C}>0$
+#### Husholdninger
+
+$$C =  \overline{C} + c(Y - T)$$
+
+Hvor $0<c<1$ (marginale konsumtilbøyeligheten) og $\overline{C}>0$ (inntektsuavhengig konsum)
 
 #### Bedrifter
 $$I = \overline{I} - b\cdot i$$
 
-Hvor $\overline{I}>0$ og $b>1$ og 
+Hvor $\overline{I}>0$ ('animial spirits') og $b>1$ (lavere rente gjør flere investeringsprosjekter lønnsomme pga. økt nåverdi) 
 
 #### Sentralbanken
 $$i = \overline{i}$$
@@ -209,20 +188,19 @@ Hvor $\overline{i} >= 0$
 ---
 
 #### Offentlige myndigheter
-$$G = \overline{G}$$ og $$T = \overline{T}$$
+
+$$G = \overline{G}$$ 
+
+og
+
+$$T = \overline{T}$$ 
+
 
 ---
 
-#### Løsning av modellen:
-Setter alle adferdsligningene inn i likevekstbetingelsen for godemarkedet
+### Modellen består av
 
-$$Y = \overline{C} + c(Y - \overline{T}) + \overline{I} - b\cdot \overline{i} + \overline{G}$$
-
-Løser modellen mhp. på Y (godemarkedet) 
-
-$$Y = \frac{1}{1-c}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]$$
-
-Endogene variabler (bestemt av modellen): $Y$ 
+Endogene variabler (bestemt av modellen): $Y, C, I, G$ 
 
 Eksogene variabler (bestemt utenfor modellen): $\overline{C}, \overline{T}, \overline{i}, \overline{I}, \overline{G}$
 
@@ -230,17 +208,30 @@ Parametre: $c, b$
 
 ---
 
+
+### Løsning av modellen:
+Setter samtlige adferdsligningene inn i likevekstbetingelsen for godemarkedet 
+
+$$Y = \overline{C} + c(Y - \overline{T}) + \overline{I} - b\cdot \overline{i} + \overline{G}$$
+
+Løser modellen mhp. på Y (godemarkedet) 
+
+$$Y = \frac{1}{1-c}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]$$
+
+
+---
+
 -  Grafisk framvisning 
 
 ```{r echo=FALSE}
-keykg
+keynesc
 ```
 
 ---
 
-#### Komparativ statikk (analyse fra en likevekt til en annen): 
+### Komparativ statikk (analyse fra en likevekt til en annen): 
 
-Økte investeringer ('animal spirits') $\Delta{\overline{I}}>0$
+Økte investeringer ('eks. pga. animal spirits') $\Delta{\overline{I}}>0$
 
 - **F**ormelt:
 $$\Delta Y = \frac{1}{1-c}\Delta  \overline{I}>0 \text{ eller } \frac{\Delta Y}{\Delta  \overline{I} } = \frac{1}{1-c}>1$$
@@ -254,12 +245,12 @@ $$\Delta Y = \frac{1}{1-c}\Delta  \overline{I}>0 \text{ eller } \frac{\Delta Y}{
 - **G**rafisk:
 
 ```{r echo=FALSE}
-dkeykg
+keynesccinv
 ```
 
 ---
 
-#### Stabiliseringspolitikk
+### Stabiliseringspolitikk
 
 Reduserte offentlige utgifter $\Delta G < 0$
 
@@ -271,233 +262,14 @@ Dersom vi lar $\Delta \overline{I} = - \Delta \overline{G} > 0 \Rightarrow \Delt
 
 ---
 
-#### Øvelse
+### Øvelse
 
 Redusert rentenivå $\Delta{\overline{i}}<0$
 
 - **F**ormelt:
 
-- **G**rafisk (Y, i plan):
+- **G**rafisk (Y,EA) plan og (Y,i) plan:
 
 - **V**erbalt (tolkning utenfor modellen):
 
 ---
-<!--
-
-### IS-LM modellen: likevekt i gode- og pengemarkedet
-#### Markeder i likevekt: Godemarkedet (varer og tjenester)
-(@mgo) $$Y = AE$$ ()
-
-(@mpe) $$L = M/P$$
-
-#### Husholdninger
-Bestemmer pengeetterspørselen (realverdi)
-$$L = kY -hi$$
-Hvor $k>0$ og $h>0$
-
-#### Sentralbanken
-$$M = \overline{M} $$
-
-#### Løsning av modellen:
-#### Godemarkedet (samme løsning som under enkel Keynes-modell)
-$$Y = \frac{1}{1-c}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]$$
-
-#### Pengemarkedet
-Bestemmer pengetilbudet
-$$kY -hi = \overline{M}/P$$
-
-#### IS-LM diagrammet
-**Formelt**
-
-IS-kurven finner vi ved å differensiere likvektsbetingelsen for godemarkedet mph. Y og i:
-
-$$\Delta Y = (\frac{-b}{1-c})\cdot \Delta \overline{i}<0$$
-
-LM-kurven finner vi ved å differensiere likevektsbetingelsen for pengemarkedet mhp. Y og i:
-
-$$k\Delta Y -h\Delta i = 0 \Leftrightarrow  \frac{\Delta Y}{\Delta i} = \frac{h}{k} > 0 $$
-**Grafisk**
-```{r}
-library(ggplot2)
-qplot()
-```
-
-
-
-#### Komparativ statikk: 
-
-- Økning i pengemengden
-
-- (F)ormelt
-
-- (G)rafisk
-
-- (V)erbal tolkning utenfor modellen
-
-#### Stabiliseringspolitikk
-
-#### Øvelse
-
-## AS-kurven
-
-### AD-AS: likevekt i gode, penge, valuta- og arbeidsmarkedet
-
-#### Markeder i likevekt: Gode, penge, arbeids, og valutakursmarkedet
-
-#### Løsning av modellen:
-1. Setter inn for x, y
-
-1. Løser modellen mhp. på Y (godemarkedet) 
-
-1. Lister opp de endogene og eksogene variablene
-
-1. Grafisk framvisning ('Keynesian cross')
-
-#### Komparativ statikk (FGV): 
-
-- Økning i pengemengden
-
-- (F)ormelt
-
-- (G)rafisk
-
-- (V)erbal tolkning utenfor modellen
-
-#### Stabiliseringspolitikk
-
-#### Øvelse
-
-## Åpen Økonomi
-
-### Stabiliseringsmål for en åpen økonomi
-1. Intern balanse (lukke produksjonsgapet)
-1. Ekstern balanse (holde utenlandsgjelden på et rimelig nivå)
-
-### Utenriksregnskapet
-
-### Mundell-Fleming modellen (IS-LM for en åpen økonomi): likevekt i gode, penge- og valutakursmarkedet
-
-#### Husholdninger
-
-#### Bedrifter
-
-#### Sentralbanken
-
-#### Offentlige myndigheter
-
-#### Markeder i likevekt: Gode-, penge- og valutakursmarkedet
-
-#### Løsning av modellen:
-1. Setter inn for x, y
-
-1. Løser modellen mhp. på Y (godemarkedet) 
-
-1. Lister opp de endogende og eksogene variablene
-
-1. Grafisk framvisning ('Keynesian cross')
-
-#### Komparativ statikk (GV): 
-
-- Økte investeringer ('animal spirits') $\Delta{I}>0$
-
-- (F)ormelt
-
-- (G)rafisk
-
-- (V)erbalt
-
-#### Stabiliseringspolitikk
-
-- Reduserte offentlige utgifter $\Delta G < 0$
-
-Lag
-
-#### Øvelse
-
-<!--
-Likevekt i pengemarkedet 
-Ser foreløpig kun på utvendige penger M=M_0 (M_1): Sedler og mynt pluss bankenes innskuddskontoer i sentralbanken. Dette nivået blir bestemt av sentralbanken.
-	Etterspørsel etter penger.
-M^D (Y┬((∓)),i┬((-)))  
-	Likevekt i pengemarkedet: 
-M/P=M^D (Y,i)
-	Sentralbanken bestemmer hva som skjer i pengemarkedet ved
-	Endre tilbudet av penger (vanlig tidligere) eller (2) å endre rentenivået (vanlig i dag).
-IS-LM modellen for en lukket økonomi: Gode- og pengemarkedet i likevekt
-	Modellen 
-Y=1/(1-c) [C ̅+cT+I ̅-b∙i+G] ∶Varemarkedet
-M/P=M^D (Y,i):Pengemarkedet
-Grafisk tegning bestemmer her Yog i samtidig 
-	Skiftanalyse (grafisk og verbalt)
-Merk: P gir AS-kurven.
-	Stabiliseringspolitikk (grafisk og verbalt)
-Virkemidler: G,T og M/i
-AD-AS modellen for en lukket økonomi: Gode, penge og arbeidsmarkedet i likevekt
-	Husholdningene: Tilbyr arbeid
-W=P^e F(u┬((-)),z┬((+)))
-	Bedrifter: Etterspør arbeidskraft og tilbyr produktet i et marked med monopolistisk konkurranse
- Y=AN
-P=(1+μ)W
-	Ledighet
-u =U/L=(L-N)/L  =1-N/L=1-Y/AL
-	Kombinere dett gir oss AS-kurven (verdier av P og Y som gir likevekt i arbeidsmarkedet)
-P=(1+μ) P^e F(1-Y/AL,z)
-	AD-AS-modellen  
-Y=1/(1-c) [C ̅+cT+I ̅-b∙i+G] ∶Varemarkedet
-M/P=M^D (Y,L):Pengemarkedet
-P=(1+μ) P^e F(1-Y/AL,z):Arbeidsmarkedet
-Merk: P=P^e⇒Y=Y^n=u=u^n Naturlige produksjons- og ledighetsnivået,
-Grafisk tegning bestemmer her P, Yog i samtidig 
-	Skiftanalyse (grafisk og verbalt)
-	Stabiliseringspolitikk (grafisk og verbalt)
-Virkemidler: G,T og M/i
-	Sentral poeng med modellen – Selvkorrigerende mekanismer:
-Fleksibilitet i P og korrekte prisforventninger P^e på mellomlang sikt, fører til at økonomien går tilbake til sitt naturlige produksjons- og ledighetsnivå.  
-IS-LM modellen for en åpen økonomi: Gode-, penge- og valutakursmarkedet i likevekt 
-	Tre fundamentale endringer:
-(1) Handel med utlandet. 
-(2) Internasjonale finansmarkeder. 
-(3) Fast eller flytende kurs.
-Z=C+I+G+NX; 
-NX = X-R*IM
-CU+CA=0
-CU=Driftsregnskapet: Nettoeksport, Nettofinansinntekter(aksjer og obligasjoner), Nettoverføringer
-CA=Kapitalregnskapet: Nettoendringer i fordringer og gjeld ovenfor utlandet
-	To stabiliseringsmål: 
-(I) Intern balanse (produksjon lik naturlig produksjonsnivå).
-(II) Ekstern balanse (rimelig nivå på utenlandsgjelden).
-	(1) Handel med utlandet (avhenger blant annet av relative prisnivået mellom innenlandske og utenlandske varer)
-Realvalutakursen: R=(EP^*)/P  
-	E: Pris per enhet av utenlandsk (innenlandsk) valuta E  (1/E)
-	Postulerer følgende sammenhenger for handelsbalansen
-X=X(R┬((∓)),(Y^*)┬((∓)))
-IM = IM(R┬((-)),Y┬((∓)))
-	NX(R,Y,Y*)= X(R,Y*)-R∙IM(R,Y)
-Antar at dNX/dR > 0 (men dette kan ta litt tid)
-(2) internasjonale finansmarkeder (renteparitetsbetingelsen)
-(1+i_(t+1))=((1+i_(t+1)^* ) E_(t+1)^e)/(E_t)
-	(3) Fast eller flytende kurs
-Flytende:
-E=(1+i*)/(1+i) E^e  
-Fast: (troverdig  ⇒E=E^e):
-i=i^*
-Modellen 
-Y=1/(1-c+Rb_2 ) [C ̅+cT+I ̅-b∙i+G] ∶Varemarkedet.
-M/P=M^D (Y,L):Pengemarkedet.
-E=(1+i*)/(1+i) E^e: Flytende-kursregime.
-i=i^*: Fast-kursregime.
-	IS-kurven under fast og flytende kurs
-Generelt fører lavere rente til høyere produksjon.
-Men multiplikatoren blir mindre ved en åpen økonomi, grunnet importlekkasje.
-Helningen på kurven er slakere under flytende kurs enn med fast kurs. Det skyldes at lavere rente under fast kurs fører til en depresiering av den nominelle og realvalutakursen, noe som forbedrer landets konkurranse evne og dermed fører til økt etterspørsel gjennom økt nettoeksport.
-	LM modellen samme som tidligere.
-	Skiftanalyse (grafisk og verbalt)
-Merk: P gir AS-kurven.
-	Stabiliseringspolitikk (grafisk og verbalt)
-Virkemidler: G,T og M/i (Flytende) og G,T og (E) (Fast kurs)
-AD-AS modellen for en åpen økonomi
-	AS-kurven samme som under en lukket økonomi.
-	AD-kurven er fallende ved at økt priser fører til lavere etterspørsel.
-	Sentral poeng med modellen – Selvkorrigerende mekanismer:
-Fleksibilitet i P og korrekte prisforventninger P^e på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.
--->
