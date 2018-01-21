@@ -27,7 +27,9 @@
 | i              | Det nominelle rentenivået                                                            |
 | G              | Offentlig konsum og realinvestiringer                                                |
 | M              | Tilbud av penger (nominelt)                                                          |
-| $L_{m}$        | Etterspørsel etter penger (real)                                                     |
+| $L_{m}$        | Etterspørsel etter penger (realverdi)                                                |
+| $\kappa$       | Pengeetterspørselens inntektsfølsomhet                                               |
+| h              | Pengeetterspørselens rentefølsomhet                                                  |
 | K              | Nivået på realkapital                                                                |
 | $\text{P}^{e}$ | Prisforventninger                                                                    |
 | $\mu$          | Påslag (i prosent) på det aggregerte prisnivået                                      |
