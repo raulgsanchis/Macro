@@ -81,7 +81,7 @@ EKS: Dialog
 
 * Del 1: Konjunktursvingninger
 ** Forelesning uke 3: Grunnlegende basiskunnskaper og enkel Keynes modell..
-*** Repetisjon (30 min)
+*** Repetisjon (45 min)
 1. Oppgaveseminar - åpen økonomi
 2. De som ikke var her forrige gang
 3. Repetisjon VIS:skisse av en konjunktursykel
@@ -140,6 +140,7 @@ G og T
 1. Finanspolitikk fungerer med lagg
 ** Forelesning uke 4: IS-LM modell (for en lukket, eller globalisert økonomi)
 *** Repetisjon
+**** Oppgave
 **** Keynes modell som gir oss IS-Kurven
 **** Tall 
 **** Empiri på G,I og T

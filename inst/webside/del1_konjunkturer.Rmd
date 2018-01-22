@@ -1,12 +1,3 @@
-<!--
----
-output: html_notebook
-# output:
-#   html_document:
-#     toc: true
-#     toc_depth: 4
----
--->
 
 # Del 1: Konjunktursvingninger
 
@@ -180,6 +171,8 @@ $$I = \overline{I} - b\cdot i$$
 
 Hvor $\overline{I}>0$ ('animial spirits') og $b>1$ (lavere rente gjør flere investeringsprosjekter lønnsomme pga. økt nåverdi) 
 
+---
+
 #### Sentralbanken
 $$i = \overline{i}$$
 
@@ -275,115 +268,76 @@ Redusert rentenivå $\Delta{\overline{i}}<0$
 ## IS-LM modellen
 
 ```{r include=FALSE}
-iv <- 0:7.5
-exoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
-cexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 275, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
-dfislm <- dfgpmakro2(Iv=iv, exoparval = exoparvalv, endr=0)
-cdfislm <- dfgpmakro2(Iv=iv, exoparval = cexoparvalv, endr=0)
 
-# Pengemarkedet
-mlabels <- list(title= 'Pengemarkedet', y='Pengetilbudet (M/P)', x='rentenivå (i)')
-labldf <- labldf <- data.frame(labeling=c("Ms", "Ld"),
-                               x = c(7.5, 1),
-                               y = c(200+30, 600),
-                               col = c(rep(c('red'),1,2)))
-eqsol <- list(x= c(5), y = c(200))
-eqlinjey <- list(breaksvy = eqsol$y, labels = c(TeX('$M_{0}/P_{0}$')))
-eqlinjex <- list(breaksvx = eqsol$x, labels = c(TeX('$i_{0}$')))
+#ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/figpengem.png'))
 
-figpengem <- makrofigure(ndata = dfislm$dfmodell,
-                         variables = c("ldv", "msv"),
-                         labt = mlabels,
-                         labplassmon = labldf,
-                         equisol = eqsol,
-                         scalebreaksx = eqlinjex,
-                         scalebreaksy = eqlinjey,
-                         colorl = c(rep('black',2))) + coord_flip()
 #
-# #ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/figpengem.png'))
-#
-#
+##abcdef <- png::readPNG(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/figpengem.png')
+
+# 
+# 
+# # ## Endring
+# ceqsol <- list(x= c(5, 4), y = c(200, 275))
+# ceqlinjey <- list(breaksvy = ceqsol$y, labels = c(TeX('$M/P_{0}$'), TeX('$M/P_{1}$')))
+# ceqlinjex <- list(breaksvx = ceqsol$x, labels = c(TeX('$i_{0}$'), TeX('$i_{1}$')))
+# labldf <- data.frame(labeling=c("Ms", "Ms'", "Ld"),
+#                      x = c(7.5, 7.5, 1),
+#                      y = c(200, 200+80, 600),
+#                      col = c(rep('red',3)))
+# eqlinjey <- list(breaksvy = eqsol$y, labels = c(TeX('$M_{0}/P_{0}$')))
+# eqlinjex <- list(breaksvx = eqsol$x, labels = c(TeX('$i_{0}$')))
+# 
+# figpengemchm <- makrofigurechange(ndata = dfislm$dfmodell,
+#                                   labt = mlabels,
+#                                   variables = c("ldv", "msv"),
+#                                   labplassmon = labldf,
+#                                   equisol = ceqsol,
+#                                   scalebreaksx = ceqlinjex,
+#                                   scalebreaksy = ceqlinjey,
+#                                   colorl = c(rep('black',3)),
+#                                   odata = cdfislm$dfmodell,
+#                                   ovariables = c("ldv", "msv")) + coord_flip()
+# #
+# # ##ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/figpengemchm.png'))
+# #
+# 
+# # ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/figislm.png'))
+# #
 # ## Endring
-ceqsol <- list(x= c(5, 4), y = c(200, 275))
-ceqlinjey <- list(breaksvy = ceqsol$y, labels = c(TeX('$M/P_{0}$'), TeX('$M/P_{1}$')))
-ceqlinjex <- list(breaksvx = ceqsol$x, labels = c(TeX('$i_{0}$'), TeX('$i_{1}$')))
-labldf <- data.frame(labeling=c("Ms", "Ms'", "Ld"),
-                     x = c(7.5, 7.5, 1),
-                     y = c(200, 200+80, 600),
-                     col = c(rep('red',3)))
-eqlinjey <- list(breaksvy = eqsol$y, labels = c(TeX('$M_{0}/P_{0}$')))
-eqlinjex <- list(breaksvx = eqsol$x, labels = c(TeX('$i_{0}$')))
-
-figpengemchm <- makrofigurechange(ndata = dfislm$dfmodell,
-                                  labt = mlabels,
-                                  variables = c("ldv", "msv"),
-                                  labplassmon = labldf,
-                                  equisol = ceqsol,
-                                  scalebreaksx = ceqlinjex,
-                                  scalebreaksy = ceqlinjey,
-                                  colorl = c(rep('black',3)),
-                                  odata = cdfislm$dfmodell,
-                                  ovariables = c("ldv", "msv")) + coord_flip()
-#
-# ##ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/figpengemchm.png'))
-#
-## Merkelapper
-islmlabels <- list(title= 'IS-LM modellen', x='rentenivå (i)', y='produksjon, inntekt (Y)')
-lableg <- list(title= 'IS-LM modellen', x='Y', y='i')
-eqsol <- list(x= c(4.2), y = c(268))
-rev(subset(dfislm$dfmodell, variable == 'isv')$value)[1]
-rev(subset(dfislm$dfmodell, variable == 'lmv')$value)[1]
-labldfislm <- labldf <- data.frame(labeling=c("IS-kurven", "LM-kurven"),
-                                   x = c(7, 2),
-                                   y = c(160+40, 380+20),
-                                   col = c(rep(c('red'),1,2)))
-
-eqlinjey <- list(breaksvy = eqsol$y, labels = c(TeX('$Y_{0}$')))
-eqlinjex <- list(breaksvx = eqsol$x, labels = c(TeX('$i_{0}$')))
-
-figislm <- makrofigure(ndata = dfislm$dfmodell,
-                       variables = c("isv", "lmv"),
-                       labt = islmlabels,
-                       labplassmon = labldfislm,
-                       equisol = eqsol,
-                       scalebreaksx = eqlinjex,
-                       scalebreaksy = eqlinjey,
-                       color = rep(c('black'),2)) + coord_flip()
-
-# ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/figislm.png'))
-#
-## Endring
-ceqsol <- list(x= c(3.7, 4.15), y = c(284, 264))
-equisol = ceqsol
-ceqlinjey <- list(breaksvy = ceqsol$y, labels = c(TeX('$Y_{1}$'), TeX('$Y_{0}$')))
-ceqlinjex <- list(breaksvx = ceqsol$x, labels = c(TeX('$i_{1}$'), TeX('$i_{0}$')))
-
-labldfislm <- labldf <- data.frame(labeling=c("LM-kurven'", "IS-kurven"),
-                                   x = c(7.5, 2),
-                                   y = c(400, 380+20),
-                                   col = c(rep(c('red'),1,2)))
-
-figislmxchm <- makrofigurechange(ndata = dfislm$dfmodell,
-                                 variables = c("isv", "lmv"),
-                                 labt = islmlabels,
-                                 labplassmon = labldfislm,
-                                 equisol = ceqsol,
-                                 scalebreaksx = ceqlinjex,
-                                 scalebreaksy = ceqlinjey,
-                                 odata = cdfislm$dfmodell,
-                                 ovariables = c("lsv", "lmv"),
-                                 color = rep('black',4)) + coord_flip()
-
-grid.arrange(figpengemchm, figislmxchm , ncol= 2)
-
-##ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/figislmxchm.png'))
+# ceqsol <- list(x= c(3.7, 4.15), y = c(284, 264))
+# equisol = ceqsol
+# ceqlinjey <- list(breaksvy = ceqsol$y, labels = c(TeX('$Y_{1}$'), TeX('$Y_{0}$')))
+# ceqlinjex <- list(breaksvx = ceqsol$x, labels = c(TeX('$i_{1}$'), TeX('$i_{0}$')))
+# 
+# labldfislm <- labldf <- data.frame(labeling=c("LM-kurven'", "IS-kurven"),
+#                                    x = c(7.5, 2),
+#                                    y = c(400, 380+20),
+#                                    col = c(rep(c('red'),1,2)))
+# 
+# figislmxchm <- makrofigurechange(ndata = dfislm$dfmodell,
+#                                  variables = c("isv", "lmv"),
+#                                  labt = islmlabels,
+#                                  labplassmon = labldfislm,
+#                                  equisol = ceqsol,
+#                                  scalebreaksx = ceqlinjex,
+#                                  scalebreaksy = ceqlinjey,
+#                                  odata = cdfislm$dfmodell,
+#                                  ovariables = c("lsv", "lmv"),
+#                                  color = rep('black',4)) + coord_flip()
+# 
+# grid.arrange(figpengemchm, figislmxchm , ncol= 2)
+# 
+# ##ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/figislmxchm.png'))
 
 ```
 
 
 ### Markeder i likevekt: Gode- og pengemarkedet
 
-$$Y = AE$$ 
+Likevekstsbetingelsen for godemarkedet
+
+$$Y = AE \equiv C + I + G$$ 
+Likevekstsbetingelsen for pengemarkedet
 
 $$L_{m} = M/P$$
 
@@ -414,9 +368,11 @@ Hvor $t$ er prosentvis skattesats
 #### Godemarkedet (samme løsningsmetodikk som under enkel Keynes-modell)
 Bestemmer produksjonen
 
-$$Y = \frac{1}{1-c(1-t)}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]$$
+$$Y = \frac{1}{1-c(1-t)}  \left [ \overline{C}- b\cdot \overline{i} + \overline{G}  \right ]$$
 
----
+Merk: høyere skattesats gjør multiplikatoren mindre
+
+--- 
 
 #### Pengemarkedet (M0 - basispengemengden)
 Bestemmer rentenivået
@@ -424,6 +380,31 @@ Bestemmer rentenivået
 $$kY -hi = \overline{M}/P$$
 
 ```{r echo=FALSE}
+iv <- 0:7.5
+exoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
+cexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 275, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
+dfislm <- dfgpmakro2(Iv=iv, exoparval = exoparvalv, endr=0)
+cdfislm <- dfgpmakro2(Iv=iv, exoparval = cexoparvalv, endr=0)
+
+# Pengemarkedet
+mlabels <- list(title= 'Pengemarkedet', y='Pengetilbudet (M/P)', x='rentenivå (i)')
+labldf <- labldf <- data.frame(labeling=c("Ms", "Ld"),
+                               x = c(7.5, 1),
+                               y = c(200+30, 600),
+                               col = c(rep(c('red'),1,2)))
+eqsol <- list(x= c(5), y = c(200))
+eqlinjey <- list(breaksvy = eqsol$y, labels = c(TeX('$M_{0}/P_{0}$')))
+eqlinjex <- list(breaksvx = eqsol$x, labels = c(TeX('$i_{0}$')))
+
+figpengem <- makrofigure(ndata = dfislm$dfmodell,
+                         variables = c("ldv", "msv"),
+                         labt = mlabels,
+                         labplassmon = labldf,
+                         equisol = eqsol,
+                         scalebreaksx = eqlinjex,
+                         scalebreaksy = eqlinjey,
+                         colorl = c(rep('black',2))) + coord_flip()
+
 figpengem
 ```
 
@@ -452,6 +433,28 @@ $$k\Delta Y -h\Delta i = 0 \Leftrightarrow  \frac{\Delta i}{\Delta Y} = \frac{k}
 
 **Grafisk**
 ```{r echo=FALSE}
+## Merkelapper
+islmlabels <- list(title= 'IS-LM modellen', x='rentenivå (i)', y='produksjon, inntekt (Y)')
+lableg <- list(title= 'IS-LM modellen', x='Y', y='i')
+eqsol <- list(x= c(4.2), y = c(268))
+#rev(subset(dfislm$dfmodell, variable == 'isv')$value)[1]
+#rev(subset(dfislm$dfmodell, variable == 'lmv')$value)[1]
+labldfislm <- labldf <- data.frame(labeling=c("IS-kurven", "LM-kurven"),
+                                   x = c(7, 2),
+                                   y = c(160+40, 380+20),
+                                   col = c(rep(c('red'),1,2)))
+
+eqlinjey <- list(breaksvy = eqsol$y, labels = c(TeX('$Y_{0}$')))
+eqlinjex <- list(breaksvx = eqsol$x, labels = c(TeX('$i_{0}$')))
+
+figislm <- makrofigure(ndata = dfislm$dfmodell,
+                       variables = c("isv", "lmv"),
+                       labt = islmlabels,
+                       labplassmon = labldfislm,
+                       equisol = eqsol,
+                       scalebreaksx = eqlinjex,
+                       scalebreaksy = eqlinjey,
+                       color = rep(c('black'),2)) + coord_flip()
 figislm
 ```
 
@@ -463,11 +466,66 @@ figislm
 
 - **G**rafisk
 
-
 ```{r echo=FALSE}
-grid.arrange(figpengemchm, figislmxchm , ncol= 2)
+# ## Endring
+iv <- 0:7.5
+exoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
+cexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 275, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
+dfislm <- dfgpmakro2(Iv=iv, exoparval = exoparvalv, endr=0)
+cdfislm <- dfgpmakro2(Iv=iv, exoparval = cexoparvalv, endr=0)
+
+ceqsol <- list(x= c(5, 4), y = c(200, 275))
+ceqlinjey <- list(breaksvy = ceqsol$y, labels = c(TeX('$M/P_{0}$'), TeX('$M/P_{1}$')))
+ceqlinjex <- list(breaksvx = ceqsol$x, labels = c(TeX('$i_{0}$'), TeX('$i_{1}$')))
+labldf <- data.frame(labeling=c("Ms", "Ms'", "Ld"),
+                     x = c(7.5, 7.5, 1),
+                     y = c(200, 200+80, 600),
+                     col = c(rep('red',3)))
+eqlinjey <- list(breaksvy = eqsol$y, labels = c(TeX('$M_{0}/P_{0}$')))
+eqlinjex <- list(breaksvx = eqsol$x, labels = c(TeX('$i_{0}$')))
+
+figpengemchm2 <- makrofigurechange(ndata = dfislm$dfmodell,
+                                  labt = mlabels,
+                                  variables = c("ldv", "msv"),
+                                  labplassmon = labldf,
+                                  equisol = ceqsol,
+                                  scalebreaksx = ceqlinjex,
+                                  scalebreaksy = ceqlinjey,
+                                  colorl = c(rep('black',3)),
+                                  odata = cdfislm$dfmodell,
+                                  ovariables = c("ldv", "msv")) + coord_flip()
+#
+# ##ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/figpengemchm.png'))
+#
+
+# ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/figislm.png'))
+#
+## Endring
+ceqsol <- list(x= c(3.7, 4.15), y = c(284, 264))
+equisol = ceqsol
+ceqlinjey <- list(breaksvy = ceqsol$y, labels = c(TeX('$Y_{1}$'), TeX('$Y_{0}$')))
+ceqlinjex <- list(breaksvx = ceqsol$x, labels = c(TeX('$i_{1}$'), TeX('$i_{0}$')))
+
+labldfislm <- labldf <- data.frame(labeling=c("LM-kurven'", "IS-kurven"),
+                                   x = c(7.5, 2),
+                                   y = c(400, 380+20),
+                                   col = c(rep(c('red'),1,2)))
+
+figislmxchm <- makrofigurechange(ndata = dfislm$dfmodell,
+                                 variables = c("isv", "lmv"),
+                                 labt = islmlabels,
+                                 labplassmon = labldfislm,
+                                 equisol = ceqsol,
+                                 scalebreaksx = ceqlinjex,
+                                 scalebreaksy = ceqlinjey,
+                                 odata = cdfislm$dfmodell,
+                                 ovariables = c("lsv", "lmv"),
+                                 color = rep('black',4)) + coord_flip()
+
+grid.arrange(figpengemchm2, figislmxchm , ncol= 2)
 ```
 
+---
 
 - **V**erbalt (dynamisk tolkning utenfor modellen)
 
@@ -475,17 +533,17 @@ grid.arrange(figpengemchm, figislmxchm , ncol= 2)
 
 ---
 
-### Stabiliseringspolitikk
+### Stabiliseringspolitikk (G, t, eller i/M)
 
-Konstant pengemengdevekst $\frac{\Delta M}{M} = k$, hvor k er lik veksten i BNP eller inflasjonen, er forslaget fra Milton Friedman på en pengepolitisk regel som har hensikt å virke som en effektiv 
-stabiliseringspolitisk virkemiddel. 
-
-Innenfor IS-LM rammeverket, kan vi tolke dette som at sentralbanken har til oppgave ikke skape skift i LM-kurven som har sitt opphave i endringer i pengetilbudet.
+Konstant pengemengdevekst $\frac{\Delta M}{M} = k$ (hvor k er lik veksten i BNP eller inflasjonen) er
+et stabiliseringspolitisk forslag, i form av en pengepoltisk regel, fremmet av Milton Friedman. 
 
 ---
 
-Forslaget kommer på bakgrunn av boken [*A Monetary History of the United States*](https://en.wikipedia.org/wiki/A_Monetary_History_of_the_United_States), som Friedman 
-forfattet sammen med Anna J. Schwartz.I boken argumenteres det (basert på tidsserier for pengemengdeveksten i USA) at uforutsette endringer i pengemengden er hovedårsaken til konjunktursvingningene i USA i perioden 1867-1963
+Forslaget kom på bakgrunn av boken [*A Monetary History of the United States*](https://en.wikipedia.org/wiki/A_Monetary_History_of_the_United_States), som Friedman 
+forfattet sammen med Anna J. Schwartz. Basert på analyse av tidsserier for pengemengdeveksten i USA i perioden 1867-1963, argumenteres det i boken for at det er *uforutsette* endringer i pengemengden som er hovedårsaken til konjunktursvingningene i USA i denne perioden.
+
+Innenfor IS-LM rammeverket, kan vi tolke dette som at sentralbanken skal unngå skift i LM-kurven som har sitt opphav i endringer i tilbudet av penger.
 
 ---
 
@@ -493,7 +551,7 @@ forfattet sammen med Anna J. Schwartz.I boken argumenteres det (basert på tidss
 
 Reduksjon i prisnivået (P)
 
-- **G**rafisk (Y, i plan) og (P, Y plan) 
+- **G**rafisk (Y, i) plan og (P, Y) plan 
 
 - **V**erbalt (tolkning utenfor modellen):
 

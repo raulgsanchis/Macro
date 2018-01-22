@@ -25,6 +25,8 @@ navbar:
     menu:
     - text: Oppgaver
       href: oppgaver.html
+    - text: Regneregler for differensialer
+      href: formler.html
   - text: Lenker
     menu:
     - text: Supplerende kursinformasjon
@@ -32,7 +34,7 @@ navbar:
   - text: Utskrifter
     menu:
     - text: Forelesningsnotater
-      href: htmrapport.html
+      href: htmlrapport.html
     - text: Variabeldefinisjoner
       href: symbolliste.html
   right:

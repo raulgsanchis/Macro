@@ -355,7 +355,7 @@ $(document).ready(function () {
 </ul></li>
 <li><a href="#is-lm-diagrammet">IS-LM diagrammet</a></li>
 <li><a href="#komparativ-statikk">Komparativ statikk:</a></li>
-<li><a href="#stabiliseringspolitikk-1">Stabiliseringspolitikk</a></li>
+<li><a href="#stabiliseringspolitikk-g-t-eller-im">Stabiliseringspolitikk (G, t, eller i/M)</a></li>
 <li><a href="#velse-1">Øvelse</a></li>
 </ul></li>
 </ul></li>
@@ -813,15 +813,6 @@ Likvidering (bail-in)
 </ul>
 <hr />
 <p><strong>Øvelse:</strong> Lag et oversiktskart som summerer opp alle opplysningene knyttet til de økonomiske agentene, markedene og størrelsen på økonomien</p>
-<!--
----
-output: html_notebook
-# output:
-#   html_document:
-#     toc: true
-#     toc_depth: 4
----
--->
 </div>
 </div>
 </div>
@@ -920,6 +911,7 @@ output: html_notebook
 <h4>Bedrifter</h4>
 <p><span class="math display">\[I = \overline{I} - b\cdot i\]</span></p>
 <p>Hvor <span class="math inline">\(\overline{I}&gt;0\)</span> (‘animial spirits’) og <span class="math inline">\(b&gt;1\)</span> (lavere rente gjør flere investeringsprosjekter lønnsomme pga. økt nåverdi)</p>
+<hr />
 </div>
 <div id="sentralbanken" class="section level4">
 <h4>Sentralbanken</h4>
@@ -994,7 +986,8 @@ output: html_notebook
 <h2>IS-LM modellen</h2>
 <div id="markeder-i-likevekt-gode--og-pengemarkedet" class="section level3">
 <h3>Markeder i likevekt: Gode- og pengemarkedet</h3>
-<p><span class="math display">\[Y = AE\]</span></p>
+<p>Likevekstsbetingelsen for godemarkedet</p>
+<p><span class="math display">\[Y = AE \equiv C + I + G\]</span> Likevekstsbetingelsen for pengemarkedet</p>
 <p><span class="math display">\[L_{m} = M/P\]</span></p>
 <hr />
 </div>
@@ -1021,7 +1014,8 @@ output: html_notebook
 <div id="godemarkedet-samme-lsningsmetodikk-som-under-enkel-keynes-modell" class="section level4">
 <h4>Godemarkedet (samme løsningsmetodikk som under enkel Keynes-modell)</h4>
 <p>Bestemmer produksjonen</p>
-<p><span class="math display">\[Y = \frac{1}{1-c(1-t)}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]\]</span></p>
+<p><span class="math display">\[Y = \frac{1}{1-c(1-t)}  \left [ \overline{C}- b\cdot \overline{i} + \overline{G}  \right ]\]</span></p>
+<p>Merk: høyere skattesats gjør multiplikatoren mindre</p>
 <hr />
 </div>
 <div id="pengemarkedet-m0---basispengemengden" class="section level4">
@@ -1058,25 +1052,26 @@ output: html_notebook
 <li><strong>G</strong>rafisk</li>
 </ul>
 <p><img src="htmrapport_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<hr />
 <ul>
 <li><strong>V</strong>erbalt (dynamisk tolkning utenfor modellen)</li>
 </ul>
 <p>Økt pengemengde <span class="math inline">\(\rightarrow\)</span> redusert rente (fra pengemarkedet) <span class="math inline">\(\rightarrow\)</span> Økte investeringer <span class="math inline">\(\rightarrow\)</span> økt produksjon <span class="math inline">\(\rightarrow\)</span> initierer en multiplikatoreffekt: <span class="math inline">\(\rightarrow\)</span> økt disponibel inntekt <span class="math inline">\(\rightarrow\)</span> økt konsum <span class="math inline">\(\rightarrow\)</span> økt produksjon osv.</p>
 <hr />
 </div>
-<div id="stabiliseringspolitikk-1" class="section level3">
-<h3>Stabiliseringspolitikk</h3>
-<p>Konstant pengemengdevekst <span class="math inline">\(\frac{\Delta M}{M} = k\)</span>, hvor k er lik veksten i BNP eller inflasjonen, er forslaget fra Milton Friedman på en pengepolitisk regel som har hensikt å virke som en effektiv stabiliseringspolitisk virkemiddel.</p>
-<p>Innenfor IS-LM rammeverket, kan vi tolke dette som at sentralbanken har til oppgave ikke skape skift i LM-kurven som har sitt opphave i endringer i pengetilbudet.</p>
+<div id="stabiliseringspolitikk-g-t-eller-im" class="section level3">
+<h3>Stabiliseringspolitikk (G, t, eller i/M)</h3>
+<p>Konstant pengemengdevekst <span class="math inline">\(\frac{\Delta M}{M} = k\)</span> (hvor k er lik veksten i BNP eller inflasjonen) er et stabiliseringspolitisk forslag, i form av en pengepoltisk regel, fremmet av Milton Friedman.</p>
 <hr />
-<p>Forslaget kommer på bakgrunn av boken <a href="https://en.wikipedia.org/wiki/A_Monetary_History_of_the_United_States"><em>A Monetary History of the United States</em></a>, som Friedman forfattet sammen med Anna J. Schwartz.I boken argumenteres det (basert på tidsserier for pengemengdeveksten i USA) at uforutsette endringer i pengemengden er hovedårsaken til konjunktursvingningene i USA i perioden 1867-1963</p>
+<p>Forslaget kom på bakgrunn av boken <a href="https://en.wikipedia.org/wiki/A_Monetary_History_of_the_United_States"><em>A Monetary History of the United States</em></a>, som Friedman forfattet sammen med Anna J. Schwartz. Basert på analyse av tidsserier for pengemengdeveksten i USA i perioden 1867-1963, argumenteres det i boken for at det er <em>uforutsette</em> endringer i pengemengden som er hovedårsaken til konjunktursvingningene i USA i denne perioden.</p>
+<p>Innenfor IS-LM rammeverket, kan vi tolke dette som at sentralbanken skal unngå skift i LM-kurven som har sitt opphav i endringer i tilbudet av penger.</p>
 <hr />
 </div>
 <div id="velse-1" class="section level3">
 <h3>Øvelse</h3>
 <p>Reduksjon i prisnivået (P)</p>
 <ul>
-<li><p><strong>G</strong>rafisk (Y, i plan) og (P, Y plan)</p></li>
+<li><p><strong>G</strong>rafisk (Y, i) plan og (P, Y) plan</p></li>
 <li><p><strong>V</strong>erbalt (tolkning utenfor modellen):</p></li>
 </ul>
 <!--
