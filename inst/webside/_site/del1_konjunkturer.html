@@ -227,6 +227,9 @@ $(document).ready(function () {
     <li>
       <a href="oppgaver.html">Oppgaver</a>
     </li>
+    <li>
+      <a href="formler.html">Regneregler for differensialer</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -249,7 +252,7 @@ $(document).ready(function () {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="htmrapport.html">Forelesningsnotater</a>
+      <a href="htmlrapport.html">Forelesningsnotater</a>
     </li>
     <li>
       <a href="symbolliste.html">Variabeldefinisjoner</a>
@@ -432,7 +435,7 @@ $(document).ready(function () {
 <p><span class="math display">\[\Delta Y = \frac{1}{1-c}  \left [ \Delta \overline{I} + \Delta \overline{G} \right ]\]</span></p>
 <p>Dersom vi lar <span class="math inline">\(\Delta \overline{I} = - \Delta \overline{G} &gt; 0 \Rightarrow \Delta Y = 0\)</span> (dvs. intern balanse)</p>
 <ul>
-<li>Merk: Det politiske systemet i de fleste land innebygd iboende tregheter tilknyttet budsjettendringer. Dette gjør finanspolitikk vanskelig å implementere som konjunkturstabiliserende virkemiddel, fordi treghetene gjør at man responderer for sent sett i forhold til konjunktursituasjonen</li>
+<li>Merk: Det politiske systemet i de fleste land innebygd iboende tregheter tilknyttet budsjettendringer. Dette gjør finanspolitikk vanskelig å implementere som konjunkturstabiliserende virkemiddel. Dette fordi treghetene gjør at man responderer for sent sett i forhold til konjunktursituasjonen</li>
 </ul>
 <hr />
 </div>
@@ -481,13 +484,41 @@ $(document).ready(function () {
 <p><span class="math display">\[Y = \frac{1}{1-c(1-t)}  \left [ \overline{C}- b\cdot \overline{i} + \overline{G}  \right ]\]</span></p>
 <p>Merk: høyere skattesats gjør multiplikatoren mindre</p>
 <hr />
+<p><img src="figurer/islm/pengem.png" width="722" /></p>
 </div>
-<div id="pengemarkedet-m0---basispengemengden" class="section level4">
-<h4>Pengemarkedet (M0 - basispengemengden)</h4>
-<p>Bestemmer rentenivået</p>
-<p><span class="math display">\[kY -hi = \overline{M}/P\]</span></p>
-<p><img src="del1_konjunkturer_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+<div id="markeder-i-likevekt-gode--og-pengemarkedet-1" class="section level3">
+<h3>Markeder i likevekt: Gode- og pengemarkedet</h3>
+<p>Likevekstsbetingelsen for godemarkedet</p>
+<p><span class="math display">\[Y = AE \equiv C + I + G\]</span> Likevekstsbetingelsen for pengemarkedet</p>
+<p><span class="math display">\[L_{m} = M/P\]</span></p>
 <hr />
+</div>
+<div id="adferdsligninger-bare-endringer-og-nye-ligninger-er-lagt-til-her-1" class="section level3">
+<h3>Adferdsligninger (bare endringer og nye ligninger er lagt til her)</h3>
+<div id="husholdninger-2" class="section level4">
+<h4>Husholdninger</h4>
+<p>Bestemmer pengeetterspørselen (realverdi) <span class="math display">\[L_{m} = \kappa Y -hi\]</span> Hvor <span class="math inline">\(k&gt;0\)</span> (pengeetterspørselens inntektsfølsomhet) og <span class="math inline">\(h&gt;0\)</span> (pengeetterspørselens rentefølsomhet)</p>
+</div>
+<div id="sentralbanken-2" class="section level4">
+<h4>Sentralbanken</h4>
+<p><span class="math display">\[M = \overline{M} \]</span></p>
+<hr />
+</div>
+<div id="offentlige-myndighter-1" class="section level4">
+<h4>Offentlige myndighter</h4>
+<p><span class="math display">\[T = tY \]</span></p>
+<p>Hvor <span class="math inline">\(t\)</span> er prosentvis skattesats</p>
+<hr />
+</div>
+</div>
+<div id="lsning-av-modellen-2" class="section level3">
+<h3>Løsning av modellen:</h3>
+<div id="godemarkedet-samme-lsningsmetodikk-som-under-enkel-keynes-modell-1" class="section level4">
+<h4>Godemarkedet (samme løsningsmetodikk som under enkel Keynes-modell)</h4>
+<p>Bestemmer produksjonen</p>
+<p><span class="math display">\[Y = \frac{1}{1-c(1-t)}  \left [ \overline{C}- b\cdot \overline{i} + \overline{G}  \right ]\]</span></p>
+<p>Merk: høyere skattesats gjør multiplikatoren mindre</p>
 </div>
 </div>
 <div id="is-lm-diagrammet" class="section level3">
@@ -506,8 +537,8 @@ $(document).ready(function () {
 <li>Økt inntekt gir økt etterspørsel etter penger pga økt transaksjonsbehov. For at markedet skal være i likevekt, må dette motsvares av et høyere rentenivå</li>
 </ul>
 <hr />
-<p><strong>Grafisk</strong> <img src="del1_konjunkturer_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
-<hr />
+<p><strong>Grafisk</strong></p>
+<p><img src="figurer/islm/islm.png" width="722" /></p>
 </div>
 <div id="komparativ-statikk" class="section level3">
 <h3>Komparativ statikk:</h3>
@@ -515,8 +546,7 @@ $(document).ready(function () {
 <ul>
 <li><strong>G</strong>rafisk</li>
 </ul>
-<p><img src="del1_konjunkturer_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
-<hr />
+<pre class="r"><code>#grid.arrange(figislmxchm)</code></pre>
 <ul>
 <li><strong>V</strong>erbalt (dynamisk tolkning utenfor modellen)</li>
 </ul>
@@ -538,79 +568,6 @@ $(document).ready(function () {
 <li><p><strong>G</strong>rafisk (Y, i) plan og (P, Y) plan</p></li>
 <li><p><strong>V</strong>erbalt (tolkning utenfor modellen):</p></li>
 </ul>
-<!--
-
-## AS-kurven
-
-### Arbeidsmarkedet  
-
-### ledighet 
-
-### AS-kurven
-
-## Bakgrunnskunnskap om åpen Økonomi
-
-### Stabiliseringsmål for en åpen økonomi
-1. Intern balanse (lukke produksjonsgapet)
-1. Ekstern balanse (holde utenlandsgjelden på et rimelig nivå)
-
-### Utenriksregnskapet
-
-## Mundell-Fleming modellen (IS-LM for en åpen økonomi)
-
-### Markeder i likevekt: Gode-, penge- og valutakursmarkedet
-
-### Adferdslikninger
-
-#### Husholdninger
-
-#### Bedrifter
-
-#### Sentralbanken
-
-#### Offentlige myndigheter
-
-### Løsning av modellen fast kurs
-
-### Komparativ statikk
-
-### Stabiliseringspolitikk
-
-### Løsning av modellen flytende kurs
-
-### Komparativ statikk
-
-### Stabiliseringspolitikk
-
-### Øvelse
-
-## AD-AS for en åpen økonomi
-
-### Markeder i likevekt: Gode-, penge-, or arbeids- og valutakursmarkedet
-
-### Adferdslikninger
-
-#### Husholdninger
-
-#### Bedrifter
-
-#### Sentralbanken
-
-#### Offentlige myndigheter
-
-### Løsning av modellen fast kurs
-
-### Komparativ statikk
-
-### Stabiliseringspolitikk
-
-### Løsning av modellen flytende kurs
-
-### Komparativ statikk
-
-### Stabiliseringspolitikk
-
--->
 </div>
 </div>
 </div>

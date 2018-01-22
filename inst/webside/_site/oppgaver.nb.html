@@ -247,10 +247,10 @@ $(document).ready(function () {
       <a href="del1_konjunkturerF.html">Del I: Konjunktursvingninger</a>
     </li>
     <li>
-      <a href="del2_vekst.html">Del II: Økonomisk vekst</a>
+      <a href="del2_vekstF.html">Del II: Økonomisk vekst</a>
     </li>
     <li>
-      <a href="del3_kriser.html">Del III: Økonomiske kriser</a>
+      <a href="del3_kriserF.html">Del III: Økonomiske kriser</a>
     </li>
     <li>
       <a href="case_euro.html">Applikasjon: Krisen i Eurosonen</a>
@@ -266,6 +266,9 @@ $(document).ready(function () {
   <ul class="dropdown-menu" role="menu">
     <li>
       <a href="oppgaver.html">Oppgaver</a>
+    </li>
+    <li>
+      <a href="formler.html">Regneregler for differensialer</a>
     </li>
   </ul>
 </li>
@@ -289,7 +292,7 @@ $(document).ready(function () {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="htmrapport.html">Forelesningsnotater</a>
+      <a href="htmlrapport.html">Forelesningsnotater</a>
     </li>
     <li>
       <a href="symbolliste.html">Variabeldefinisjoner</a>
@@ -331,51 +334,9 @@ $(document).ready(function () {
 
 
 <!-- rnb-text-begin -->
-<div id="del-i-konjunktursvingninger" class="section level1">
-<h1>Del I: Konjunktursvingninger</h1>
-<div id="seminar-1-datatransformering-av-nasjonalregnskapstall" class="section level2">
-<h2>Seminar 1: Datatransformering av nasjonalregnskapstall</h2>
-<div id="installering-av-fred-applikasjon-til-excel" class="section level3">
-<h3>Installering av FRED applikasjon til Excel</h3>
-<ul>
-<li><p>Installer applikasjonen FRED (fra Federal Reserve Bank of St. Louis) i ditt Excel regneark <a href="https://research.stlouisfed.org/fred-addin/install_windows.html">Windows</a> og <a href="https://research.stlouisfed.org/fred-addin/install_mac.html">Mac</a></p></li>
-<li><p>Hjelp og tips til bruk av programmet finnes her: <a href="http://www.youtube.com/watch?v=OAH-wGtP_k8">Youtube</a></p></li>
-<li><p>Har du problemer med installeringen med applikasjonen, er en annen framgangsmåte at du søker opp tallene direkte ved bruk av denne <a href="https://fred.stlouisfed.org/">lenken</a>. Etter at du gjort bruk av søkefeltet, klikker du på den tidsserien du ønsker å benytte. I det nye vinduet som da åpner seg har du mulighet til å laste ned (download-knappen) tidsserien som Excel-fil (merk: edit graph-knappen gir deg mulighet til å velge ulike frekvenser for tidsserien)</p></li>
-</ul>
-</div>
-<div id="tidsserier" class="section level3">
-<h3>Tidsserier</h3>
-<p>Gjør følgende oppgaver for Norge, Tyskland og enten for Hellas, Italia, Portual eller Spania</p>
-<ul>
-<li>Hent tidsserien til bruttonasjonalproduktet i real størrelser</li>
-<li>Transformer denne serien ved å ta logaritmen</li>
-<li>Hent en tidsserie for arbeidsledighet</li>
-<li>Hent en tidsserie for konsumprisindeksen</li>
-<li>Vis tidsseriene grafisk</li>
-<li>Gir serien noen indikasjoner på dype økonomiske kriser? Hvis ja, se om du kan finne (ved søk på internett) noen kortfattede økonomiske forklaringer bak disse krisene</li>
-</ul>
-</div>
-<div id="okuns-lov-og-phillips-kurven" class="section level3">
-<h3>Okuns lov og Phillips-kurven</h3>
-<ul>
-<li>Finn et mål på inflasjon (årlig)</li>
-<li>Finn et mål på ledighet (årlig)</li>
-<li>Lag et scatterplot for endring i ledighet og vekst i BNP (Okuns lov)</li>
-<li>Lag et scatterplot for ledighet og endring i inflasjon (Phillips-kurven).</li>
-<li>For de to scatterplottene, se om du klarer å estimere en linje (dvs. finn korrelasjonskoeffisienten) for graden av lineær korrelasjon</li>
-<li>Er resultaten du finner i tråd med de empirisk regularitetene som ble diskutert i forelesningen?</li>
-</ul>
-<!--
-# Del II: Økonomisk vekst
-
-# Del III: Økonomiske kriser
--->
 <!-- rnb-text-end -->
-</div>
-</div>
-</div>
 
-<div id="rmd-source-code">CiMgRGVsIEk6IEtvbmp1bmt0dXJzdmluZ25pbmdlcgojIyBTZW1pbmFyIDE6IERhdGF0cmFuc2Zvcm1lcmluZyBhdiBuYXNqb25hbHJlZ25za2Fwc3RhbGwKCiMjIyBJbnN0YWxsZXJpbmcgYXYgRlJFRCBhcHBsaWthc2pvbiB0aWwgRXhjZWwKLSBJbnN0YWxsZXIgYXBwbGlrYXNqb25lbiBGUkVEIChmcmEgRmVkZXJhbCBSZXNlcnZlIEJhbmsgb2YgU3QuIExvdWlzKSAgaSBkaXR0IEV4Y2VsIHJlZ25lYXJrIFtXaW5kb3dzXShodHRwczovL3Jlc2VhcmNoLnN0bG91aXNmZWQub3JnL2ZyZWQtYWRkaW4vaW5zdGFsbF93aW5kb3dzLmh0bWwpIG9nIFtNYWNdKGh0dHBzOi8vcmVzZWFyY2guc3Rsb3Vpc2ZlZC5vcmcvZnJlZC1hZGRpbi9pbnN0YWxsX21hYy5odG1sKQoKLSBIamVscCBvZyB0aXBzIHRpbCBicnVrIGF2IHByb2dyYW1tZXQgZmlubmVzIGhlcjoKW1lvdXR1YmVdKGh0dHA6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1PQUgtd0d0UF9rOCkKCi0gSGFyIGR1IHByb2JsZW1lciBtZWQgaW5zdGFsbGVyaW5nZW4gbWVkIGFwcGxpa2Fzam9uZW4sIGVyIGVuIGFubmVuIGZyYW1nYW5nc23DpXRlIGF0IGR1IHPDuGtlciBvcHAgdGFsbGVuZSBkaXJla3RlIHZlZCBicnVrIGF2IGRlbm5lIFtsZW5rZW5dKGh0dHBzOi8vZnJlZC5zdGxvdWlzZmVkLm9yZy8pLiBFdHRlciBhdCBkdSBnam9ydCBicnVrIGF2IHPDuGtlZmVsdGV0LCBrbGlra2VyIGR1IHDDpSBkZW4gdGlkc3NlcmllbiBkdSDDuG5za2VyIMOlIGJlbnl0dGUuIEkgZGV0IG55ZSB2aW5kdWV0IHNvbSBkYSDDpXBuZXIgc2VnIGhhciBkdSBtdWxpZ2hldCB0aWwgw6UgbGFzdGUgbmVkIChkb3dubG9hZC1rbmFwcGVuKSB0aWRzc2VyaWVuIHNvbSBFeGNlbC1maWwgKG1lcms6IGVkaXQgZ3JhcGgta25hcHBlbiBnaXIgZGVnIG11bGlnaGV0IHRpbCDDpSB2ZWxnZSB1bGlrZSBmcmVrdmVuc2VyIGZvciB0aWRzc2VyaWVuKSAgIAoKCiMjIyBUaWRzc2VyaWVyCkdqw7hyIGbDuGxnZW5kZSBvcHBnYXZlciBmb3IgTm9yZ2UsIFR5c2tsYW5kIG9nIGVudGVuIGZvciBIZWxsYXMsIEl0YWxpYSwgUG9ydHVhbCBlbGxlciBTcGFuaWEgCgotIEhlbnQgdGlkc3NlcmllbiB0aWwgYnJ1dHRvbmFzam9uYWxwcm9kdWt0ZXQgaSByZWFsIHN0w7hycmVsc2VyCi0gVHJhbnNmb3JtZXIgZGVubmUgc2VyaWVuIHZlZCDDpSB0YSBsb2dhcml0bWVuIAotIEhlbnQgZW4gdGlkc3NlcmllIGZvciBhcmJlaWRzbGVkaWdoZXQgCi0gSGVudCBlbiB0aWRzc2VyaWUgZm9yIGtvbnN1bXByaXNpbmRla3NlbiAKLSBWaXMgdGlkc3NlcmllbmUgZ3JhZmlzawotIEdpciBzZXJpZW4gbm9lbiBpbmRpa2Fzam9uZXIgcMOlIGR5cGUgw7hrb25vbWlza2Uga3Jpc2VyPyAgSHZpcyBqYSwgc2Ugb20gZHUga2FuIGZpbm5lICh2ZWQgc8O4ayBww6UgaW50ZXJuZXR0KSBub2VuIGtvcnRmYXR0ZWRlIMO4a29ub21pc2tlIGZvcmtsYXJpbmdlciBiYWsgZGlzc2Uga3Jpc2VuZQoKIyMjIE9rdW5zIGxvdiBvZyBQaGlsbGlwcy1rdXJ2ZW4KLSBGaW5uIGV0IG3DpWwgcMOlIGluZmxhc2pvbiAow6VybGlnKQotIEZpbm4gZXQgbcOlbCBww6UgbGVkaWdoZXQgKMOlcmxpZykKLSBMYWcgZXQgc2NhdHRlcnBsb3QgZm9yIGVuZHJpbmcgaSBsZWRpZ2hldCBvZyB2ZWtzdCBpIEJOUCAoT2t1bnMgbG92KQotIExhZyBldCBzY2F0dGVycGxvdCBmb3IgbGVkaWdoZXQgb2cgZW5kcmluZyBpIGluZmxhc2pvbiAoUGhpbGxpcHMta3VydmVuKS4KLSBGb3IgZGUgdG8gc2NhdHRlcnBsb3R0ZW5lLCBzZSBvbSBkdSBrbGFyZXIgw6UgZXN0aW1lcmUgZW4gbGluamUgKGR2cy4gZmlubiBrb3JyZWxhc2pvbnNrb2VmZmlzaWVudGVuKSBmb3IgZ3JhZGVuIGF2IGxpbmXDpnIga29ycmVsYXNqb24KLSBFciByZXN1bHRhdGVuIGR1IGZpbm5lciBpIHRyw6VkIG1lZCBkZSBlbXBpcmlzayByZWd1bGFyaXRldGVuZSBzb20gYmxlIGRpc2t1dGVydCBpIGZvcmVsZXNuaW5nZW4/Cgo8IS0tCiMgRGVsIElJOiDDmGtvbm9taXNrIHZla3N0CgojIERlbCBJSUk6IMOYa29ub21pc2tlIGtyaXNlcgotLT4K</div>
+<div id="rmd-source-code">LS0tCm91dHB1dDogaHRtbF9vdXRwdXQKLS0tCgo=</div>
 
 
 

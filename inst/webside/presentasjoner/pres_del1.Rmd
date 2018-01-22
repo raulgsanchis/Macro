@@ -6,7 +6,6 @@ output:
 ---
 
 ```{r plan, child = '../del1_konjunkturer.Rmd'}
-#../del1_konjunkturer.Rmd
 ```
 
 
