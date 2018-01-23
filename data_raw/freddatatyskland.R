@@ -10,17 +10,16 @@ library(dplyr)
 library(mFilter)
 library(MASS)
 library(latex2exp)
-library(xts)
 
 api.key = 'd62b9d8d4ce53e56ea04049dc463ac51'  # substitute ... with your API key
 fred <- FredR(api.key)
 str(fred,1)
-macro.series1 <- fred$series.search("Norway")
+macro.series1 <- fred$series.search("Germany")
 
 # Makrotall
-landgdp <- fred$series.observations(series_id = c('CLVMNACSCAB1GQNO'))
-landunem <- rbind(fred$series.observations(series_id = c('NORURHARMADSMEI')))
-landpricei <- fred$series.observations(series_id = c('NORCPIALLMINMEI'))
+landgdp <- fred$series.observations(series_id = c('RGDPNADEA666NRUG'))
+landunem <- rbind(fred$series.observations(series_id = c('LMUNRRTTDEA156N')))
+landpricei <- fred$series.observations(series_id = c('DEUCPIALLMINMEI'))
 
 # 2. Cleaning up data
 tlandgdp  <- landgdp %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
@@ -81,24 +80,30 @@ molttlandpricei <- tlandpricei %>%
   dplyr::mutate(kat = 'inf')
 
 ## Samler alle dataene for land
-moltmacronor <- rbind(molttlandunem, molttlandgdp, molttlandpricei) %>% dplyr::mutate(land='nor') %>%
+moltmacroger <- rbind(molttlandunem, molttlandgdp, molttlandpricei) %>% dplyr::mutate(land='nor') %>%
   dplyr::mutate(freqm = substring(date,6,7))
 
+
 # 4. Saving data in Rda-format
-devtools::use_data(moltmacronor, overwrite = TRUE)
+devtools::use_data(moltmacroger, overwrite = TRUE)
 
 # # Appendiks: grafikk
 # Henter datasett
-lmoltmacronor <- reshape2::dcast(moltmacronor, date  + land ~ variable )
-names(lmoltmacronor)
+lmoltmacroger <- reshape2::dcast(moltmacroger, date  + land ~ variable )
+names(lmoltmacroger)
 
-okuns <-qplot(data = lmoltmacronor, x = cunem, y = ggdp) + geom_smooth(method = "lm", se = FALSE) +
-  labs(title= 'Okuns lov - Norge', x='Endring i ledighet', y = 'Vekst i BNP (real)')
-
-ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/sem1/okunsnor.png.png'))
-
-phillips <- qplot(x = unem, y = cinflation, data = lmoltmacronor, geom = c('point')) +
+okuns <-
+  qplot(data = lmoltmacroger, x = cunem, y = ggdp) +
   geom_smooth(method = "lm", se = FALSE) +
-  labs(title= 'Phillips-kurven - Norge', x='Ledighetsrate', y = 'Endring i inflation')
+  labs(title= 'Okuns lov - Tyskland', x='Endring i ledighet', y = 'Vekst i BNP (real)')
 
-ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/sem1/phillipsnor.png'))
+ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/sem1/okunsger.png'))
+
+phillips <- qplot(x = unem, y = cinflation, data = lmoltmacroger, geom = c('point')) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title= 'Phillips-kurven - Tyskland', x='Ledighetsrate', y = 'Endring i inflation')
+
+
+ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/sem1/phillipsger.png'))
+
+

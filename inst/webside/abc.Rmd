@@ -29,25 +29,6 @@ Gjør følgende oppgaver for Norge, Tyskland og enten for Hellas, Italia, Portua
 - For de to scatterplottene, se om du klarer å estimere en linje (dvs. finn korrelasjonskoeffisienten) for graden av lineær korrelasjon
 - Er resultaten du finner i tråd med de empirisk regularitetene som ble diskutert i forelesningen?
 
-[Trykk her for Excel data](excel/dataoppgaveseminar1.xlsx)
-
-
-### Okuns lov
-```{r echo=FALSE, out.width="50%", out.height="50%"}
-mappe <- paste0(devtools::as.package(".")$path)
-
-sem1figurer <- list.files(paste0(mappe,'/inst/webside/figurer/sem1/'), pattern = ".png", full.names = TRUE)
-knitr::include_graphics(sem1figurer[c(1:3)])
-```
-
-### Phillips-kurven
-```{r echo=FALSE, out.width="50%", out.height="50%"}
-mappe <- paste0(devtools::as.package(".")$path)
-
-sem1figurer <- list.files(paste0(mappe,'/inst/webside/figurer/sem1/'), pattern = ".png", full.names = TRUE)
-knitr::include_graphics(sem1figurer[c(4:6)])
-```
-
 <!--
 # Del II: Økonomisk vekst
 

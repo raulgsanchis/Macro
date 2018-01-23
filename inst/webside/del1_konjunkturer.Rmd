@@ -251,7 +251,7 @@ $$\Delta Y = \frac{1}{1-c}  \left [ \Delta \overline{I} + \Delta \overline{G} \r
 
 Dersom vi lar $\Delta \overline{I} = - \Delta \overline{G} > 0 \Rightarrow \Delta Y = 0$ (dvs. intern balanse)
 
-- Merk: Det politiske systemet i de fleste land innebygd iboende tregheter tilknyttet budsjettendringer. Dette gjør finanspolitikk vanskelig å implementere som konjunkturstabiliserende virkemiddel, fordi treghetene gjør at man responderer for sent sett i forhold til konjunktursituasjonen
+- Merk: Det politiske systemet i de fleste land innebygd iboende tregheter tilknyttet budsjettendringer. Dette gjør finanspolitikk vanskelig å implementere som konjunkturstabiliserende virkemiddel. Dette fordi treghetene gjør at man responderer for sent sett i forhold til konjunktursituasjonen
 
 ---
 
@@ -339,7 +339,7 @@ Likevekstsbetingelsen for godemarkedet
 $$Y = AE \equiv C + I + G$$ 
 Likevekstsbetingelsen for pengemarkedet
 
-$$L_{m} = M/P$$
+$$M^{s} = L_{m}$$
 
 ---
 
