@@ -51,28 +51,3 @@ knitr::include_graphics(sem1figurer[c(4:6)])
 
 # Del III: Økonomiske kriser
 -->
-
-
-<!--
-# Del I: Konjunktursvingninger
-
-[Seminar1](seminar/seminar1)
-
-[Seminar2](seminar/se)
-
-[Seminar3](seminar/se)
-
-[Seminar4](seminar/se)
-
-# Del II: Økonomisk vekst
-
-[Seminar5](seminar/se)
-
-# Del III: Økonomiske kriser
-
-[Seminar6](seminar/se)
-
-# Obligatorisk innleveringsoppgave
-
-[Seminar7](seminar/se)
--->

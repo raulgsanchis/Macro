@@ -1,36 +1,77 @@
 
-# Del I: Konjunktursvingninger
-## Seminar 1: Datatransformering av nasjonalregnskapstall
+### Komparativ statikk: 
 
-### Installering av FRED applikasjon til Excel
-- Installer applikasjonen FRED (fra Federal Reserve Bank of St. Louis)  i ditt Excel regneark [Windows](https://research.stlouisfed.org/fred-addin/install_windows.html) og [Mac](https://research.stlouisfed.org/fred-addin/install_mac.html)
+Økning i pengemengden (M)
 
-- Hjelp og tips til bruk av programmet finnes her:
-[Youtube](http://www.youtube.com/watch?v=OAH-wGtP_k8)
+- **G**rafisk
 
-- Har du problemer med installeringen med applikasjonen, er en annen framgangsmåte at du søker opp tallene direkte ved bruk av denne [lenken](https://fred.stlouisfed.org/). Etter at du gjort bruk av søkefeltet, klikker du på den tidsserien du ønsker å benytte. I det nye vinduet som da åpner seg har du mulighet til å laste ned (download-knappen) tidsserien som Excel-fil (merk: edit graph-knappen gir deg mulighet til å velge ulike frekvenser for tidsserien)   
+```{r echo=FALSE}
+library(MakroOEKB1115)
+library(dplyr)
+library(ggplot2)
+library(gridExtra)
+library(grid)
+library(latex2exp)
+mlabels <- list(title= 'Pengemarkedet', y='Pengetilbudet (M/P)', x='rentenivå (i)')
+islmlabels <- list(title= 'IS-LM modellen', x='rentenivå (i)', y='produksjon, inntekt (Y)')
+### Endring
+iv <- 0:7.5
+exoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
+cexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 275, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
+dfislm <- dfgpmakro2(Iv=iv, exoparval = exoparvalv, endr=0)
+cdfislm <- dfgpmakro2(Iv=iv, exoparval = cexoparvalv, endr=0)
 
+ceqsol <- list(x= c(5, 4), y = c(200, 275))
+ceqlinjey <- list(breaksvy = ceqsol$y, labels = c(TeX('$M/P_{0}$'), TeX('$M/P_{1}$')))
+ceqlinjex <- list(breaksvx = ceqsol$x, labels = c(TeX('$i_{0}$'), TeX('$i_{1}$')))
+labldf <- data.frame(labeling=c("Ms", "Ms'", "Ld"),
+                     x = c(7.5, 7.5, 1),
+                     y = c(200, 200+80, 600),
+                     col = c(rep('red',3)))
+#eqlinjey <- list(breaksvy = eqsol$y, labels = c(TeX('$M_{0}/P_{0}$')))
+#eqlinjex <- list(breaksvx = eqsol$x, labels = c(TeX('$i_{0}$')))
 
-### Tidsserier
-Gjør følgende oppgaver for Norge, Tyskland og enten for Hellas, Italia, Portual eller Spania 
+figpengemchm2 <- makrofigurechange(ndata = dfislm$dfmodell,
+                                  labt = mlabels,
+                                  variables = c("ldv", "msv"),
+                                  labplassmon = labldf,
+                                  equisol = ceqsol,
+                                  scalebreaksx = ceqlinjex,
+                                  scalebreaksy = ceqlinjey,
+                                  colorl = c(rep('black',3)),
+                                  odata = cdfislm$dfmodell,
+                                  ovariables = c("ldv", "msv")) + coord_flip()
+#
+ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/islm/figpengemchm.png'), width = 2, height = 2, units = "cm")
+#
 
-- Hent tidsserien til bruttonasjonalproduktet i real størrelser
-- Transformer denne serien ved å ta logaritmen 
-- Hent en tidsserie for arbeidsledighet 
-- Hent en tidsserie for konsumprisindeksen 
-- Vis tidsseriene grafisk
-- Gir serien noen indikasjoner på dype økonomiske kriser?  Hvis ja, se om du kan finne (ved søk på internett) noen kortfattede økonomiske forklaringer bak disse krisene
+# ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/figislm.png'))
+#
+## Endring
+#grid.arrange(figpengemchm2, figislmxchm , ncol= 2)
+#figpengemchm2
+ceqsol <- list(x= c(3.7, 4.15), y = c(284, 264))
+equisol = ceqsol
+ceqlinjey <- list(breaksvy = ceqsol$y, labels = c(TeX('$Y_{1}$'), TeX('$Y_{0}$')))
+ceqlinjex <- list(breaksvx = ceqsol$x, labels = c(TeX('$i_{1}$'), TeX('$i_{0}$')))
 
-### Okuns lov og Phillips-kurven
-- Finn et mål på inflasjon (årlig)
-- Finn et mål på ledighet (årlig)
-- Lag et scatterplot for endring i ledighet og vekst i BNP (Okuns lov)
-- Lag et scatterplot for ledighet og endring i inflasjon (Phillips-kurven).
-- For de to scatterplottene, se om du klarer å estimere en linje (dvs. finn korrelasjonskoeffisienten) for graden av lineær korrelasjon
-- Er resultaten du finner i tråd med de empirisk regularitetene som ble diskutert i forelesningen?
+labldfislm <- labldf <- data.frame(labeling=c("LM-kurven'", "IS-kurven"),
+                                   x = c(7.5, 2),
+                                   y = c(400, 380+20),
+                                   col = c(rep(c('red'),1,2)))
 
-<!--
-# Del II: Økonomisk vekst
+figislmxchm <- makrofigurechange(ndata = dfislm$dfmodell,
+                                 variables = c("isv", "lmv"),
+                                 labt = islmlabels,
+                                 labplassmon = labldfislm,
+                                 equisol = ceqsol,
+                                 scalebreaksx = ceqlinjex,
+                                 scalebreaksy = ceqlinjey,
+                                 odata = cdfislm$dfmodell,
+                                 ovariables = c("lsv", "lmv"),
+                                 color = rep('black',4)) + coord_flip()
 
-# Del III: Økonomiske kriser
--->
+#figislmxchm
+grid.arrange(figislmxchm, figpengemchm2, ncol= 2)
+```
+

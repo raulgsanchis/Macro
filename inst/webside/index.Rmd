@@ -27,7 +27,7 @@
 
 **Studentassistent:** Susanna Murati (susanna-007@hotmail.com)
 
-<span style="color:red">Forlesningsnotatene til uke 4 er nå lagt ut</span>
+<span style="color:red"></span>
 
 Siste gang oppdatert ``r base::Sys.time()`` 
 

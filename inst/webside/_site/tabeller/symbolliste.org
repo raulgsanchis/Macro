@@ -19,13 +19,14 @@
 | $\pi$          | Inflasjon                                                                            |
 | Z              | Aggregert etterspørsel (utgifter)                                                    |
 | C              | Aggregert konsum                                                                     |
-| $\overline{C}$ | Innteksuavhengig konsum                                                              |
+| $\overline{C}$ | Inntektsuavhengig konsum                                                             |
 | c              | Den marginale konsumtilbøyeligheten                                                  |
 | I              | Private realinvesteringer                                                            |
 | $\overline{I}$ | Konstantledd tilhørende private realinvesteringer                                    |
 | b              | Rentefølsomheten tilknyttet investeringer                                            |
 | i              | Det nominelle rentenivået                                                            |
 | G              | Offentlig konsum og realinvestiringer                                                |
+| M^{s}          | Tilbud av penger (reelt)                                                             |
 | M              | Tilbud av penger (nominelt)                                                          |
 | $L_{m}$        | Etterspørsel etter penger (realverdi)                                                |
 | $\kappa$       | Pengeetterspørselens inntektsfølsomhet                                               |

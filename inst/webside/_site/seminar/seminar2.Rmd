@@ -1,0 +1,43 @@
+# Seminar 2
+## Keynes modell for en lukket økonomi
+### Med eksogen rente
+Aggregert etterspørsel (AE) er gitt ved
+$$AE\equiv C + I + G$$
+
+Hvor $C$ er konsum, $I$ private realinvesteringer og
+$G$ offentlig forbruk.
+
+I tillegg postulerer vi følgende adferdsligninger for aktørene i økonomien:
+$$C = \overline{C} + c_{1}(Y-T) - C_{2}\cdot i$$
+$$I = \overline{I} - b\cdot i$$
+$$i = \overline{i}$$
+$$G = \overline{G} \text{ og } T=\overline{T}$$
+
+1. Er det produksjonen $Y$ som bestemmer etterspørselen $AE$, eller er det etterspørselen $AE$ som bestemmer produksjonen $Y$ i denne modellen?
+
+1. Hvilken sentral forutsetning ligger til grunn for dette resultatet?
+
+1. Forsøk å gi en økonomisk tolkning tilknyttet konsumfunksjonen
+
+1. Finn løsningen til modellen mhp. på Y
+
+1. Økt pessisme i økonomien gir seg utslag i et lavere inntektsuavhengig konsum ($\overline{C}>0$). Hvis formelt, grafisk og forklar verbalt hvordan dette påvirker likevekten i modellen?
+
+1. Vis formelt (ved differensiering) hvilken stabiliseringspoltikse virkemidler det offentlig har tilgjengelig for å dempe det negative utslaget av den økte pessimisem
+
+### Med renteregel
+Anta at sentralbanken innfører en renteregel som sier at $i= m\cdot Y$
+
+1. Finn løsningen til modellen mhp. på Y
+
+1. Tror du at en slik renteregel bidrar til å stabilisere eller dempe konjunktursvingingene (hint: sammenlikn multiplikatoren i modellen med eksogen vs endogen rente)?
+
+## Litt fra IS-LM modellen
+Likvektsbetingelsen for pengemarkedet er gitt ved
+$$M^{S} = L_{d} $$
+Vi antar at etterspørselen etter penger er gitt ved $L_{d} = \kappa\cdot Y - h\cdot i$
+og tilbudet av penger fra sentralbanekn er gitt ved $M^{s}=\frac{M}{P}$
+
+1. Gi en økonomisk tolkning av hvorfor IS-kurven er synkende og LM-kurven er stigende
+
+1. Hva skjer med LM-kurven dersom den blir erstattet av $i= m\cdot Y$. Vis løsningen ved en figur for pengemarkedet og is-kurven

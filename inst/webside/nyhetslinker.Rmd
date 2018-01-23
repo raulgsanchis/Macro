@@ -46,9 +46,9 @@ Despite Hurricane](artikler/del1_growthusa3.pdf)
 
 ## Statistikk
 
-- [SSB](http://www.ssb.no/nasjonalregnskap-og-konjunkturer)
+[SSB](http://www.ssb.no/nasjonalregnskap-og-konjunkturer)
 
-- [Federal Reserve Bank of St. Louis (FRED)](http://www.ssb.no/nasjonalregnskap-og-konjunkturer)
+[Federal Reserve Bank of St. Louis (FRED)](http://www.ssb.no/nasjonalregnskap-og-konjunkturer)
 
 
 <!--
