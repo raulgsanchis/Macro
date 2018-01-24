@@ -1,1 +1,1 @@
-{"MS": "M/P", "EQM": "M_s", "ISC": "(T*c_1 + b*i - oC - oG - oI)/(c_1 - 1)", "AD": "(T*c_1 + b*i - oC - oG - oI)/(c_1 - 1)", "GD": "oG", "EQV": "C + G + I", "TR": "Y*t", "YS": "Y", "LD": "Y*k - h*i", "LMC": "(M + P*h*i)/(P*k)", "CD": "c_1*(-T + Y) + oC", "ID": "-b*i + oI"}
+{"EQV": "C + G + I", "LMC": "(M + P*h*i)/(P*k)", "MS": "M/P", "AD": "(T*c_1 + b*i - oC - oG - oI)/(c_1 - 1)", "YS": "Y", "TR": "Y*t", "GD": "oG", "ID": "-b*i + oI", "LD": "Y*k - h*i", "EQM": "M_s", "ISC": "(T*c_1 + b*i - oC - oG - oI)/(c_1 - 1)", "CD": "c_1*(-T + Y) + oC"}

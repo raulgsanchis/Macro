@@ -121,41 +121,332 @@ $(document).ready(function () {
 </div>
 
 
-<div id="seminar-2" class="section level1">
-<h1>Seminar 2</h1>
-<div id="enkel-keynes-modell-for-en-lukket-konomi" class="section level2">
-<h2>Enkel Keynes modell for en lukket økonomi</h2>
-<div id="med-eksogen-rente" class="section level3">
-<h3>Med eksogen rente</h3>
-<p>Vi ser for oss en lukket økonomi hvor aggregert etterspørsel (AE) er gitt ved <span class="math display">\[AE\equiv C + I + G\]</span></p>
-<p>Hvor <span class="math inline">\(C\)</span> er konsum, <span class="math inline">\(I\)</span> private realinvesteringer og <span class="math inline">\(G\)</span> offentlig forbruk.</p>
-<p>I tillegg postulerer vi følgende adferdsligninger for aktørene i økonomien: <span class="math display">\[C = \overline{C} + c_{1}(Y-T) - C_{2}\cdot i\]</span> <span class="math display">\[I = \overline{I} - b\cdot i\]</span> <span class="math display">\[i = \overline{i}\]</span> <span class="math display">\[G = \overline{G} \text{ og } T=\overline{T}\]</span></p>
+<div id="analysen" class="section level2">
+<h2>ANALYSEN</h2>
+<p><strong>Grunnleggende info</strong></p>
+<ul>
+<li>Om meg selv.</li>
+<li>Forsket og undervist (ferdiglagde kurs) makro tidligere</li>
+<li>Første gang</li>
+<li>Forme kurs selv!</li>
+<li>Elevenes bakgrunn</li>
+<li>Lærerboka</li>
+<li>It's learning</li>
+<li>Forelesningsplan</li>
+<li>Eksamen</li>
+<li>Øvingsoppgaver</li>
+<li>Spørsmål og diskusjon om faget fra studentene:</li>
+</ul>
+<p>Bakrunn, Ledighet, kriser og fattigdom.</p>
+<p><strong>Oversikt over faget</strong></p>
+<ul>
+<li>Konjunktursvingninger (figur) over et langt tidsspenn</li>
+<li>Tre hoved temaer: Svingninger, økonomiske vekst og kriser.</li>
+<li>Kurset kan inndeles i tre deler pluss en applikasjon.</li>
+<li>Høres spennende ut.</li>
+<li>Ulike meninger: Marx(1818-1883), Keynes(1883-1946)/Hicks(1904-1989),Friedman(1912-2006),Hayek(1899-1992)(Mises)/Minsky(1919-1996)</li>
+<li>Positivistisk: Hva forårsaker konjunktursvingninger og langsiktig vekst</li>
+<li>Normativ : Hvilken rolle kan offentlige myndigheter spille (stabiliseringspolitik)</li>
+<li>I dette kurset: benytte matematisk modeller</li>
+<li><ul>
+<li>Logisk konsistent.</li>
+</ul></li>
+<li><ul>
+<li>Grove(?) Forenklninger</li>
+</ul></li>
+<li>Aktørene i økonomien: Husholdninger, Bedrifter, Finansinstitusjoner, Sentralbanken og Offentlige myndigheter</li>
+<li>Markedene: Varer og tjenester, arbeidsmarkedet, pengemarkedet, bankkreditt, valutakursmarkedet</li>
+<li>Bilmetaforen</li>
+<li>Tips til eksamen Algebra, grafisk, beskrivelse med ord. Oversikt.</li>
+</ul>
+<p><strong>DEL 1</strong></p>
+<p><strong>Noe basiskunnskap før vi går i gang med modellene (kapittel 2, BAG)</strong></p>
+<ul>
+<li><p>Nasjonalregnskap (SSB, Eurostat): BNP, ledighet og inflasjon.</p></li>
+<li><p>Mål på aggregert produksjon: BNP</p></li>
+</ul>
 <ol style="list-style-type: decimal">
-<li><p>Er det produksjonen <span class="math inline">\(Y\)</span> som bestemmer etterspørselen <span class="math inline">\(AE\)</span>, eller er det etterspørselen <span class="math inline">\(AE\)</span> som bestemmer produksjonen <span class="math inline">\(Y\)</span> i denne modellen?</p></li>
-<li><p>Hvilken sentral forutsetning ligger til grunn for dette resultatet?</p></li>
-<li><p>Forsøk å gi en økonomisk tolkning tilknyttet konsumfunksjonen</p></li>
-<li><p>Finn løsningen til modellen mhp. på Y</p></li>
-<li><p>Økt pessisme i økonomien gir seg utslag i et lavere inntektsuavhengig konsum (<span class="math inline">\(\overline{C}&gt;0\)</span>). Hvis formelt, grafisk og forklar verbalt hvordan dette påvirker likevekten i modellen?</p></li>
-<li><p>Vis formelt (ved differensiering) hvilken stabiliseringspoltikse virkemidler det offentlig har tilgjengelig for å dempe det negative utslaget av den økte pessimisem</p></li>
+<li><p>Verdien til alle sluttgodene (varer og tjenester) som blir produsert i en bestemt tidsperiode.</p></li>
+<li><p>Summen av all merverdi for en bestemte tidsperiode.</p></li>
+<li><p>Summen av all inntekt for en bestemte tidsperiode.</p></li>
 </ol>
+<ul>
+<li>MAO: BNP: Inkluderer ikke vareinnsats</li>
+<li>Nominelle versus reelle størrelserPrisXMengde</li>
+</ul>
+<p>Nominell BNP- verdiskapning løpende priser. NY=P*Y</p>
+<p>Reel BNP- verdiskapning i faste priser. Y = NY/P</p>
+<ul>
+<li>Ledighet</li>
+</ul>
+<p>L = N+U; u = U/L</p>
+<ul>
+<li>Inflasjon (CPI, PPI)</li>
+</ul>
+<p>P = NY/Y; Pi = dP/P</p>
+<ul>
+<li>To empiriske sammenhenger: Okuns lov og Phillips kurven</li>
+<li>Okuns lov: X dY, Y: d u</li>
+<li>Phillips kurven: X u, Y: d pi</li>
+<li>Hva bestemmer aggregert etterspørsel?</li>
+<li>Kort sikt –stive priser etterspørsel bestemmer tilbudet (produksjonen)</li>
+<li>Mellom lang sikt tilbudet (den tilgangen på innsatsfaktorene) bestemmer produksjonen</li>
+<li>Lang sikt: Teknologi, sparing og demografi</li>
+</ul>
+<p><strong>Varemarkedet (kapittel 3, BAG)</strong></p>
+<ul>
+<li><p>Repetisjon (inflasjon)</p></li>
+<li><p>Etterspørsel (Z) rettet mot innenlandsk produksjon (Y) dekomponert:</p></li>
+</ul>
+<p>Z == C+I+G+NX()-IM</p>
+<p>Hvor: Konsum (D), Investering (faste) (I), Offentlig forbruk(G),Nettoeksport(NX=X-I), Lagerinvesteringer (IM)</p>
+<ul>
+<li>Forenkle: Stive priser, lukket økonomi og produksjon av kun en vare</li>
+<li>Z=C+I+G</li>
+<li>Studere nærmere de ulike enkeltkomponenter (postulere adferdslikninger)</li>
+<li>Konsum (Graph)</li>
+</ul>
+<p>C=C(Yd(+),i(-))</p>
+<p>C=lC+c1Yd</p>
+<p>C=lC+c1Yd-c2i</p>
+<p>Yd=Y-T</p>
+<ul>
+<li>Y(1-c-b)=c + I+G</li>
+<li>Y=1/(1-c1-b)[c0-c1T+bI+G]</li>
+<li>Investeringer (Graph)</li>
+</ul>
+<p>I = I-b*i</p>
+<p>Offentlig forbruk</p>
+<p>G (eksogen)</p>
+<ul>
+<li>Likevekt i varemarkedet: Y=Z</li>
+<li>Satt opp vår første modell (IS modell) (sjekk!):</li>
+<li>Løsning av modellen mhp. på Y (aggregert produksjon)</li>
+<li>Y=MP[ ]</li>
+<li>Skiftanalyse (Matematisk, figur og verbalt)</li>
+<li>DY = 1/(1-c1) DI … DY/ DI = 1/(1-c1-b)</li>
+<li>Grafisk</li>
+<li>V (utenfor modellen)</li>
+</ul>
+<p>Økte investeringer  økt produksjon  økt inntekt  økt konsum  økt produkson</p>
+<p>Økt inntekt osv.</p>
+<ul>
+<li>Stabiliseringspolitikk</li>
+<li>DY = 1/(1-c1) (DI+DG)=0 hvis =DI=-DG</li>
+<li>Om dynamikk</li>
+<li>Privat og offentlig sparing er lik investeringer</li>
+</ul>
+<p>S=(Y-T)-C</p>
+<p>S=C+I+G-T-C= I+G-T</p>
+<p>S+T(-G)=I</p>
+<p><strong>Pengemarkedet (kapittel 4, BAG)</strong></p>
+<ul>
+<li><p>Virker også på kort. IS modellen må utvides med pengemarkedet</p></li>
+<li>Hva er penger? Sedler og mynt + innskuddskontoer</li>
+<li>Hvem har lov til å lage penger? Sentralbanken + Forretningsbanker</li>
+<li>Utvendige penger: M0= Sedler + Mynt + Reserver</li>
+<li>Innvendige penger: M1-M0 = Innskuddskontoer-Reserver</li>
+<li>Ser foreløpig bort fra innvendige penger:</li>
+<li><p>Forenkler her til kun å gjelde sentralbanken. M=M0=M1=…=Mn</p></li>
+<li>Tilbud etter penger, M0.</li>
+<li><p>Etterspørsel etter penger.</p></li>
+</ul>
+<p>M(i,LY) tapte renteinnteker</p>
+<p>Tegne beslutningsdiagram</p>
+<ul>
+<li>Pengemarkedet.</li>
+<li>Skiftanalyse: Åpne markedsoperasjoner og rentereduksjoner.</li>
+</ul>
+<p><strong>IS-LM modellen: Gode- og pengemarkedet i likevekt (kapittel 5, BAG)</strong></p>
+<ul>
+<li>Repetisjon</li>
+<li>Nyhestartikkel.</li>
+<li>Tre boks graf.</li>
+<li>Etabler likevekt.</li>
+<li>Endogene, Eksogene.</li>
+<li>Løse modellen mhp på IS og LM likningen</li>
+<li>Skiftanalyse.</li>
+<li>Stabiliseringspolitikk</li>
+<li>Dynamikk. (VAR)</li>
+</ul>
+<p><strong>AD-AS modellen: Gode, Penge og arbeidsmarkedet i likevekt</strong></p>
+<ul>
+<li>IS-LM-modell: ide: ekspansjon, dynamikk ,statisk.</li>
+<li><p>AD-AS tilbake til likevekt: priser:</p></li>
+<li>Skrur på arbeidsmarkedet</li>
+<li>Langsiktig ledighet.</li>
+<li><p>Husholdning: Tilbyr arbeid, fagforeninger og velferdsstat</p></li>
+</ul>
+<p>W=PeF(u,z)</p>
+<p>Forhandlingsstyrke.</p>
+<p>Z=Arbeidsledighetstrygd, minstelønn, employment protection.</p>
+<ul>
+<li>Hartz reform (I,II,III,IV,V)</li>
+<li>Bedrifter: Etterspør arbeidskraft</li>
+</ul>
+<p>Y=AF(L,K) kort sikt (K konstant) Y=AN</p>
+<ul>
+<li>Monopolistisk prissetting</li>
+<li>P=(1+mu)W</li>
+<li>Ønsker en likning i P og Y(u)</li>
+<li>P=(1+mu) PeF(u,z)</li>
+<li>Men hvordan er Y en funksjon av u</li>
+<li>u = U/L = (L-N)/(L) =1-N/L=1-Y/AL</li>
+<li>Setter inn i</li>
+</ul>
+<p>P=(1+mu) PeF(1-Y/AL,z)</p>
+<ul>
+<li>P=Pe Y=Yn</li>
+<li>Tegn AS for alle andre verdier av P.</li>
+<li>AD</li>
+<li>P øker. Rente øker og produksjon går ned (øvelse tidligere)</li>
+<li>Etabler likevekt.</li>
+<li>Skiftanalyse.</li>
+<li>I og M</li>
+<li>Vi ser at økonomien har selvkorrigerende mekanismer.</li>
+<li>Dynamikk. (VAR)</li>
+</ul>
+<p><strong>IS-LM for en åpen økonomi</strong></p>
+<ul>
+<li>Åpen – Handel og kapitalbevegelser.</li>
+<li>Privat sektor: Konsum eller sparing</li>
+<li>Åpen økonomi:</li>
+<li>Husholdninger:</li>
+<li>Innenlandske og utenlandske varer (import)</li>
+<li>Sparing: Innenlandsk eller utenlandsk sparing</li>
+<li>Bedrifter:</li>
+<li>Innenlandsk eller utenlandsk (eksport) produksjon</li>
+<li>Offentlig sektor:</li>
+<li>Fast eller flytende valutakurs.</li>
+<li><p>Sette dette inn i oversiktsfigur.</p></li>
+<li>Ser først på handel med utlandet (1):</li>
+<li>Ser så på internasjonale finansmarkeder (2):</li>
+<li>Beslutning (1) avhenger blant annet av relative prisnivået mellom innenlands og utenlandske varer</li>
+<li>Nominell valutakurs (kronekurs): E</li>
+<li>Pris per enhet av utenlandsk (innenlandsk) valuta E (1/E)</li>
+<li>E opp (dyrere), Depresiering, devaluering, A</li>
+<li>Pris per enhet av utenlandske (innenlandske) varer i enheter av innenlandske (utenlandske) varer.</li>
+<li>Realvalutakursen: R == EP*/P</li>
+<li>På kort sikt, nær sammenheng mellom den nominelle- og realvalutakursen (vis grafisk).</li>
+<li>Z=C+I+G+NX; NX = X-R*IM</li>
+<li>X=X(R,Y*)</li>
+<li>IM = IM(R,Y)</li>
+<li>NX(R,Y,Y*) = X(R,Y*)-R*IM(R,Y)</li>
+<li>Antar at dNX/dR &gt; 0 (men dette kan ta litt tid)</li>
+<li>dNX(R,Y,Y*)/dY: Tegn grafisk</li>
+<li>Handelsbalansen ovenfor utlandet</li>
+<li>Utenriksregnskapet</li>
+<li>CU+CA=0</li>
+<li>CU: Driftsregnskapet</li>
+<li>CA: Kapitalregnskapet</li>
+<li>CU=Nettoeksport, Nettofinansinntekter(aksjer og obligasjoner), Nettoverføringer</li>
+<li>CA=Nettoendringer i fordringer og gjeld ovenfor utlandet</li>
+<li>Ser så på internasjonale finansmarkeder (2):</li>
+<li>Renteparitetsbetingelsen</li>
+<li>(1+i)=(1+i*)E_t+1e/E_t</li>
+<li>Flytende</li>
+<li>Setter inn i NX((1+i)/(1+i*) Ee,Y,Y*).</li>
+<li>Fast</li>
+<li>i=i*</li>
+<li>Setter inn i M(i*,Y)</li>
+<li>IS-kurven under fast og flytende kurs</li>
+<li>LM modellen samme som tidligere.</li>
+<li>IS-LM modellen for en åpen økonomi</li>
+<li>Politikkanalyse</li>
+<li>Stabiliseringspolitikk</li>
+<li>IS-LM modellen under fast kurs</li>
+<li>Politikkanalyse</li>
+<li>Stabiliseringspolitikk</li>
+<li><p>Privat og offentlig sparing er lik investeringer</p></li>
+</ul>
+<p>S=(Y-T)-C</p>
+<p>S=C+I+G+NX-T-C= I+G-T</p>
+<p>S+ (T -G)=I+NX</p>
+<p><strong>AD-AS modellen for en åpen økonomi</strong></p>
+<ul>
+<li>AS kurven den samme</li>
+<li>AD kurven med realvalutakursen.</li>
+<li>Politikkanalyse (eksempel fra eurosonen)</li>
+<li>Dynamikk. (VAR)</li>
+</ul>
+<p><strong>DEL 2.</strong></p>
+<ul>
+<li>Konvergens</li>
+<li>Vokster over tid med avtagende utbytte</li>
+<li>Solow modellen</li>
+<li>Teknisk: Konstant skalutbytte</li>
+<li>Y=</li>
+<li>2Y=</li>
+<li>xY=</li>
+<li>x=1/N</li>
+<li>y=f(k) f'k&gt;0,f''k&lt;0</li>
+<li>Kilder til vekst</li>
+<li><ol style="list-style-type: decimal">
+<li>Kapital</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: decimal">
+<li>Teknologi</li>
+</ol></li>
+<li></li>
+</ul>
+<p><strong>DEL 3.</strong></p>
+<p><strong>Penger, kreditt og bankadferd</strong></p>
+<ul>
+<li>Bankenes funksjon: Gi lån og utføre betalingstjenester</li>
+<li>Tegn kart: Likvidietskrise og insolvens</li>
+<li><p>Konjunktursykel.</p></li>
+<li>Historisk: Hvordan ble alt dette til?</li>
+<li>Gull og sølv: Penger som har verdi (bakking) i seg selv.</li>
+<li>Sedler utstedt av banker og transaksjonstjenester</li>
+<li>Fractional reserve banking og reservekrav</li>
+<li>Penger som gjeld (fiat og inside money)</li>
+<li>Privatgjeld – inside money</li>
+<li>Deal: Sentralbanken og forretningsbanker</li>
+<li>Statsgjeld - outside money (myndigheten har monopol å utstede)</li>
+<li>Elastisitet i pengetilbudet</li>
+<li>Maturity mismatch</li>
+<li>Innskudsgarantier</li>
+<li>The Bloos rule</li>
+<li>Overdreven risiko. Hva kan ligge bak?</li>
+<li>Ødeleggende gjelds- og pengeoppbygging (Minsky og Hayek)</li>
+<li>Sunn gjelds og pengebygging</li>
+<li>Bankkollaps skrur av transaksjonstjenstene.</li>
+<li><p>Likvidering? Katastrofe eller sunt</p></li>
+</ul>
+<p><strong>Statsgjeld</strong></p>
+<ul>
+<li>Gjeld</li>
+</ul>
+<p><strong>Likviditetsfellen</strong></p>
+<ul>
+<li>Gjeld</li>
+</ul>
 </div>
-<div id="med-renteregel" class="section level3">
-<h3>Med renteregel</h3>
-<p>Anta at sentralbanken innfører en renteregel som sier at <span class="math inline">\(i= m\cdot Y\)</span></p>
-<ol style="list-style-type: decimal">
-<li><p>Finn løsningen til modellen mhp. på Y</p></li>
-<li><p>Tror du at en slik renteregel bidrar til å stabilisere eller dempe konjunktursvingingene (hint: sammenlikn multiplikatoren i modellen med eksogen vs endogen rente)?</p></li>
-</ol>
-</div>
-</div>
-<div id="litt-fra-is-lm-modellen" class="section level2">
-<h2>Litt fra IS-LM modellen</h2>
-<p>Likvektsbetingelsen for pengemarkedet er gitt ved <span class="math display">\[M^{S} = L_{d} \]</span> Vi antar at etterspørselen etter penger er gitt ved <span class="math inline">\(L_{d} = \kappa\cdot Y - h\cdot i\)</span> og tilbudet av penger fra sentralbanekn er gitt ved <span class="math inline">\(M^{s}=\frac{M}{P}\)</span></p>
-<ol style="list-style-type: decimal">
-<li><p>Gi en økonomisk tolkning av hvorfor IS-kurven er synkende og LM-kurven er stigende</p></li>
-<li><p>Hva skjer med LM-kurven dersom den blir erstattet av <span class="math inline">\(i= m\cdot Y\)</span>. Vis løsningen ved en figur for pengemarkedet og is-kurven</p></li>
-</ol>
-</div>
+<div id="grovplan" class="section level1">
+<h1>Grovplan</h1>
+<p><strong>Fase 1:</strong></p>
+<p><strong>ECN222</strong></p>
+<p><strong>Oppgaver gitt til 1. forelesning (4. september)</strong></p>
+<p>Gjør følgende oppgaver for USA, Japan, Norge og (dersom du har tid) minst ett europeisk land.</p>
+<ul>
+<li>Installer applikasjonen FRED i ditt Excel regneark</li>
+</ul>
+<p>( <a href="http://research.stlouisfed.org/fred2/" class="uri">http://research.stlouisfed.org/fred2/</a>)</p>
+<p>Hjelp om programmet</p>
+<p><a href="http://www.youtube.com/watch?v=OAH-wGtP_k8" class="uri">http://www.youtube.com/watch?v=OAH-wGtP_k8</a></p>
+<ul>
+<li>Finn tidsserien til bruttonasjonalproduktet i reell.</li>
+<li>Finn tidsserien antall innbyggere</li>
+<li>Konstruer tidsserien bruttonasjonalprodukt per innbygger.</li>
+<li>Transformer serien ved å ta logaritmen.</li>
+<li>Vis serien grafisk.</li>
+<li>Gir serien noen tegn på dype økonomiske kriser? Hvis ja, se om du kan finne (søk på internett) noen kortfattede forklaringer bak disse krisene.</li>
+<li>Finn et mål på inflasjon.</li>
+<li>Finn et mål på ledighet.</li>
+<li>Lag et scatterplot for ledighet og inflasjon (Phillips-kurven).</li>
+<li>Lag et scatterplot for vekst og endring i inflasjon (Okuns lov).</li>
+</ul>
+<p>Endre kursbeskrivelsen</p>
 </div>
 
 

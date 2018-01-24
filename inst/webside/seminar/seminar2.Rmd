@@ -1,7 +1,7 @@
 # Seminar 2
 ## Enkel Keynes modell for en lukket økonomi
 ### Med eksogen rente
-Aggregert etterspørsel (AE) er gitt ved
+Vi ser for oss en lukket økonomi hvor aggregert etterspørsel (AE) er gitt ved
 $$AE\equiv C + I + G$$
 
 Hvor $C$ er konsum, $I$ private realinvesteringer og

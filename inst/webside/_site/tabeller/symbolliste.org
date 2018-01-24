@@ -35,6 +35,8 @@
 | $\text{P}^{e}$ | Prisforventninger                                                                    |
 | $\mu$          | Påslag (i prosent) på det aggregerte prisnivået                                      |
 | NX             | Netto eksport                                                                        |
+| EX             | Eksport                                                                              |
+| IM             | Import                                                                               |
 | R              | Real valutakurs (pris for én enhet av utenlandsk gode i enhenter av innenlansk gode) |
 | E              | Nominell valutakurs (pris for én enhet av utenlandsk valuta)                         |
 | $\text{P}^{*}$ | Aggregerte prisnivået (innenlandsk)                                                  |

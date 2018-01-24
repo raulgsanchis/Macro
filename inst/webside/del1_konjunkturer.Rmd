@@ -1,6 +1,10 @@
 ---
-output: html_notebook
+output:
+  html_notebook:
+    toc: true
+    toc_depth: 4
 ---
+
 
 ```{r include=FALSE}
 library(MakroOEKB1115)
@@ -558,3 +562,107 @@ Reduksjon i prisnivået (P)
 - **G**rafisk (Y, i) plan og (Y, P) plan 
 
 - **V**erbalt (tolkning utenfor modellen):
+
+
+## AS-kurven
+
+### Adferdsligninger (tilknyttet arbeidsmarkedet)
+
+###¤ Husholdningene 
+Organisert som en fagforening som tilbyr sin arbeidskraft
+
+$$W=P^{e}F(\underset{(-)}{u}, \underset{(+)}{z})$$
+
+
+
+#### Bedriftene 
+Etterspør arbeidskraft og tilbyr produktet i et marked med monopolistisk konkurranse
+
+Produktfunksjonen er gitt ved
+
+$$Y=AL^{\alpha}$$
+Hvor $0<\alpha \leqslant 1$
+
+Produktprisen kommer som et påslag (markup) på det (nominelle) lønnsnivået
+
+$$P=(1+μ)W$$
+#### AS-Kurven
+
+Setter vi først produktfunksjonen inn i definisjonen for arbeidsledighet:
+
+$$u=\frac{U}{N}=\frac{N-L}{N}=1−\frac{L}{N}=1−\frac{Y/A}{N}=1 - \frac{Y}{AN}$$
+
+Kombinerer vi det siste uttrykket med 
+
+
+- Kombinere dett gir oss AS-kurven (verdier av P og Y som gir likevekt i arbeidsmarkedet)
+
+$$P=(1+μ)P^{e}F(1 - \frac{Y}{AN},z)$$
+## AD-AS-diagrammet
+
+Viser den samtidige likevekten i gode-, penge- og arbeidsmarkedet
+
+
+-->
+<!--
+## Bakgrunnskunnskap om åpen Økonomi
+
+### Stabiliseringsmål for en åpen økonomi
+1. Intern balanse (lukke produksjonsgapet)
+1. Ekstern balanse (holde utenlandsgjelden på et rimelig nivå)
+
+### Utenriksregnskapet
+
+## Mundell-Fleming modellen (IS-LM for en åpen økonomi)
+
+### Markeder i likevekt: Gode-, penge- og valutakursmarkedet
+
+### Adferdslikninger
+
+#### Husholdninger
+
+#### Bedrifter
+
+#### Sentralbanken
+
+#### Offentlige myndigheter
+
+### Løsning av modellen fast kurs
+
+### Komparativ statikk
+
+### Stabiliseringspolitikk
+
+### Løsning av modellen flytende kurs
+
+### Komparativ statikk
+
+### Stabiliseringspolitikk
+
+### Øvelse
+
+## AD-AS for en åpen økonomi
+
+### Markeder i likevekt: Gode-, penge-, or arbeids- og valutakursmarkedet
+
+### Adferdslikninger
+
+#### Husholdninger
+
+#### Bedrifter
+
+#### Sentralbanken
+
+#### Offentlige myndigheter
+
+### Løsning av modellen fast kurs
+
+### Komparativ statikk
+
+### Stabiliseringspolitikk
+
+### Løsning av modellen flytende kurs
+
+### Komparativ statikk
+
+### Stabiliseringspolitikk
