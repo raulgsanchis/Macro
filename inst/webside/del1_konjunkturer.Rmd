@@ -1,4 +1,6 @@
-
+---
+output: html_notebook
+---
 
 ```{r include=FALSE}
 library(MakroOEKB1115)
@@ -553,6 +555,6 @@ Innenfor IS-LM rammeverket, kan vi tolke dette som at sentralbanken skal unngå 
 
 Reduksjon i prisnivået (P)
 
-- **G**rafisk (Y, i) plan og (P, Y) plan 
+- **G**rafisk (Y, i) plan og (Y, P) plan 
 
 - **V**erbalt (tolkning utenfor modellen):

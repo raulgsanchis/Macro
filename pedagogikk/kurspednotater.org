@@ -181,7 +181,11 @@ Friedman
 **** Øvelse
 Hva skjer med Y når P går opp. Tegn og forklar
 ** Forelesning uke 5: Arbeidsmarkedet, ledighet og AS-kurven
+*** Huske/forstå ligninger
+*** Skiftanalyse
 *** Repetison av forrige øvelse og skissere AS-kurvenen
+*** Struktur/dansing
+
 ** Forelesning uke 6: AD-AS modellen (for en lukket, eller globalisert økonomi)  
 *** Repetisjon
 
@@ -520,5 +524,9 @@ Likviditetsfellen
 
 
   
+
+
+
+
 
 
