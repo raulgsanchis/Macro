@@ -20,18 +20,48 @@ $$G = \overline{G} \text{ og } T=\overline{T} \text{: offentlige myndigheter}$$
 
 1. Er det produksjonen $Y$ som bestemmer etterspørselen $AE$, eller etterspørselen $AE$ som bestemmer produksjonen $Y$ i denne modellen?
 
+*På kort sikt er det etterspørselen som bestemmer produksjonen i et lands økonomi*
+
 2. Hvilken sentral forutsetning ligger til grunn for dette resultatet?
+
+*Produktprisen er stive (eksogene) i modellen*
 
 3. Gi en økonomisk tolkning tilknyttet konsumfunksjonen til husholdningen.
 
+*- $\Overline{C}$ Konsum som blir gitt uavhengig av verdien på de andre variablene i modellen.*
+*- $c(Y-T)$ Hvor stor andel av disponinbel inntekt som går til konsum*
+*- $c_{2}\cdot$ Rentenivåets påvirkning på konsumet. Høyere rente fører til mindre konsum fordi husholdingen ønsker å spare mer*
+
 4. Løs modellen mhp. på $Y$.
+
+$$Y = \frac{1}{1-c}\left[\overline{C}-c_{1}\overline{T} - (b+c_{2})\cdot i + \overline{I} + G  \right] $$
+
 
 5. Økt pessimisme i økonomien gir seg utslag i et lavere inntektsuavhengig konsum ($\overline{C}>0$). Hvis formelt, grafisk (dersom du ønsker å benytte Keyneskrysset) og verbalt hvordan dette endrer likevekten i modellen.
 
+- Formelt: $$ \Delta Y = \frac{1}{1-c}\Delta \overline{C} < 0$$
+
+- Keyneskrysset 
+
+- Verbalt: $Redusert konsum medfører først redusert etterspørsel, produksjon og inntekt. Den reduserte inntekten initierer en multiplikatoreffekt siden  
+
+
 6. Vis formelt (ved differensiering) hvilke stabiliseringspolitiske virkemidler det offentlige har tilgjengelig for å motvirke den økte pessimismen
 
+- Økt offentlige utgifter
+
+$$\Delta Y = \ \frac{1}{1-c}\left[\Delta \overline{C} + \Delta {G}  \right]=0 \Rightarrow \Delta \underset{(-)}{\overline{C} }=- \Delta \underset{(+)}{G}   $$
+
+- Reduserte skatter
+
+$$\Delta Y = \ \frac{1}{1-c}\left[\Delta \overline{C}-c_{1} \Delta \overline{T}    \right] \Rightarrow 
+\Delta \underset{(-)}{\overline{C}} = c_{1} \Delta \underset{(-)}{\overline{T}}    $$
+
+Anta at sentralbanken innfører en renteregel, som er gitt ved at $i= m\cdot Y$. 
 
 7. Finn nå løsningen til modellen mhp. på Y
+
+$$Y = \frac{1}{1-c-b}\left[\overline{C}-c_{1}\overline{T} - (b+c_{2})\cdot i + \overline{I} + G  \right] $$
 
 8. Bidrar en slik renteregel til å stabilisere eller dempe konjunktursvingingene (hint: sammenlikn multiplikatoren i de to modellene med hverandre)?
 
@@ -50,9 +80,23 @@ $$M^{s}=\frac{\overline{M}}{P} \text{ :Hvor sentralbanken bestemmer tilbudet av 
 
 1. Vis ved differensiering i et (Y, i) diagram og gi en økonomisk tolkning på hvorfor IS-ligningen er synkende og LM-kurven er stigende 
 
+- IS-kurven $$ \frac{\Delta Y}{\Delta \overline{i}} =\left[\frac{-b}{1-c(1-t)}\right ] <0$$
+
+- Økt rente gir lavere investeringer som initierer en negativ multiplikatoreffekt (redusert investeringer før til redusert etterspørsel som fører redusert konsum osv.)
+
+LM-kurven finner vi ved å differensiere likevektsbetingelsen for pengemarkedet mhp. Y og i:
+
+$$k\Delta Y -h\Delta i = 0 \Leftrightarrow  \frac{\Delta i}{\Delta Y} = \frac{k}{h} > 0 $$
+
+
+- LM-kurven $456$
+
 1. Vis ved hjelp av en figur effekten av økt optimisme tilknyttet private realinvestinger ('animal spirits').
 
 1. Vis og forklar verbalt effekten av en reduksjon i prisnivået.
 
 1. Vis grafisk hvordan likevekten ser ut i pengemarkedet og IS-LM modellen, dersom sentralbanken går over til en renteregel gitt ved  
 i= m\cdot Y
+
+
+
