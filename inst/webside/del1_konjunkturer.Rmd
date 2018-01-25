@@ -415,7 +415,7 @@ figpengem
 
 ---
 
-### IS-LM diagrammet 
+### IS-LM modellen 
 Viser den samtidige likevekten i gode- og pengemarkedet
 
 **Formelt**
@@ -598,9 +598,49 @@ Kombinerer vi det siste uttrykket med
 - Kombinere dett gir oss AS-kurven (verdier av P og Y som gir likevekt i arbeidsmarkedet)
 
 $$P=(1+μ)P^{e}F(1 - \frac{Y}{AN},z)$$
-## AD-AS-diagrammet
 
-Viser den samtidige likevekten i gode-, penge- og arbeidsmarkedet
+## AD-AS modellen for en lukket økonomi
+
+### AS-kurven
+$$\frac{\Delta P}{\Delta Y}=-(1+μ)P^{e}F'_{u}(1 - \frac{Y}{AN},z)\frac{1}{AN}>0$$
+
+
+Økt produksjon gir økt etterspørsel etter arbeidskraft, dette reduserer arbeidsledigheten og styrker fagforeningens forhandlingsposijon. Den Forbedrede forhandlingsposisjonen gir seg utslag i høyere lønnskrav. Siden produktprisen er et påslag på lønningene, vil produktprisene stige når lønningene øker
+
+
+
+### AD-kurven
+Økte produktpriser reduser realpengemengden. I pengemarkedet fører dette til en økning i rentenivå. Den økte renta medfører redusert etterspørsel pga lavere private realinvesteringer, som initerer en negativ multiplikatoreffekt siden redusert etterspørsel fører til mindre konsum som fører til redusert etterspørsel osv. 
+
+
+### Likevektsløsningen
+
+Skjæringspunktet mellom AD- og AS-kurven gir oss produkprisen og likevek
+
+```{r}
+mlabels <- list(title= 'Pengemarkedet', y='Pengetilbudet (M/P)', x='rentenivå (i)')
+islmlabels <- list(title= 'IS-LM modellen', x='rentenivå (i)', y='produksjon, inntekt (Y)')
+### Endring
+Yv <- 0:100
+exoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2,Pe=1, mu = 0.1,
+                     l_1=-1,l_2=1, z=1, A=1, N=1, alpha = 0.5), list(Y=c(Yv)))
+#cexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 275, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
+
+abc <- dfgpmakro3(Iv=iv, exoparval=exoparvalv, modell='ad-asc', endr=0)
+
+a <- qplot(data=abc$dfmodell,Iv, value, geom = 'line')
+b <- qplot(data = subset(dfmodellres, variable == 'adv'), Iv, value, geom = 'line')
+grid.arrange(a, b, ncol = 2)
+```
+
+
+
+### Likevektsproduksjon og likevektsledighet
+
+
+### Komparativ statikk
+
+### Stabiliseringspolitikk
 
 
 -->

@@ -1,0 +1,24 @@
+---
+output: html_notebook
+---
+
+# Del 1: Småspørsmål
+1.
+1.
+1.
+1.
+1.
+
+# Del 2: Lukket økonomi
+1.
+1.
+1.
+1.
+1.
+
+# Del 3: Åpen økonomi
+1.
+1.
+1.
+1.
+1.

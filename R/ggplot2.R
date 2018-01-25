@@ -53,6 +53,34 @@ dfgpmakro2 <- function(Iv=NULL, exoparval=exoparvalv, modell='is-lm', endr=0){
   list(dfmodell=dfmodellres, yeae = NULL, scx = NULL, scy = NULL)
 }
 
+#' AD-AS
+#' @export dfgpmakro3
+dfgpmakro3 <- function(Iv=NULL, exoparval=exoparvalv, modell='ad-asc', endr=0){
+
+  #browser()
+
+  # Leser inn modellen
+  modellequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/adascequ.json'))
+  # Selekterte modellligninger
+  ## Enkeltligninger
+  asv <- eval(parse(text=modellequ$AS), exoparval)
+  adv <- eval(parse(text=modellequ$AD), exoparval)
+
+
+  ## Likevekt
+  #yeae <- eval(parse(text=modellequ$EQM), exoparval)
+
+  # Linjer
+  dfmodellres <- data.frame(Iv, adv, asv) %>%
+    reshape2::melt(id.vars = c("Iv"))
+
+  # Før eller etter
+  scx <- NULL#list(breaksvy = c(yeae), labels = c(TeX(paste0("$Y_{",endr,"}$"))))
+  scy <- NULL#list(breaksvx = c(yeae), labels = c(TeX(paste0("$X_{",endr,"}$"))))
+
+  list(dfmodell=dfmodellres, yeae = NULL, scx = NULL, scy = NULL)
+}
+
 #' @export makrofigure
 makrofigure <- function(ndata = datakeynes,
                         labt = list(title= 'Testplot', x='x-variabel', y='y-variabel'),
