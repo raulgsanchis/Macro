@@ -1,15 +1,4 @@
----
-output:
-  html_document:
-    df_print: paged
-    toc: yes
-    toc_depth: '4'
-  html_notebook:
-    toc: yes
-    toc_depth: 4
----
-
-#Oversikt over faget
+#Oversikt over fagett
 - Tre hovedtemaer: 
     1. Konjunktursvingninger
     1. Økonomisk vekst
@@ -152,6 +141,8 @@ Merk: P gir AD-kurven
 - Stabiliseringspolitikk (grafisk og verbalt)
 Virkemidler: $G, T, M/i$
 
+<!--
+
 ### AD-AS modellen for en lukket økonomi: Gode, penge og arbeidsmarkedet i likevekt
 
 - Husholdningene: Tilbyr arbeid
@@ -194,6 +185,8 @@ Virkemidler: $G$, $T$ og $M/i$
 
 Fleksibilitet i P og korrekte prisforventninger Pe
  på mellomlang sikt, fører til at økonomien går tilbake til sitt naturlige produksjons- og ledighetsnivå.
+
+<!--
 
 ### IS-LM modellen for en åpen økonomi: Gode-, penge- og valutakursmarkedet i likevekt
 
@@ -505,8 +498,6 @@ Bt/Yt
  øker. Gitt at sentralbanken ikke gis muligheten til å øke pengemengden for å kjøpe statsobligasjoner, vil en overgang til en likviditetsfelle lett kunne smitte over i en statsgjeldskrise.
  øker. Gitt at sentralbanken ikke gis muligheten til å øke pengemengden for å kjøpe statsobligasjoner, vil en overgang til en likviditetsfelle lett kunne smitte over i en statsgjeldskrise.
 
-
--->
 ## Hvordan komme ut av en likviditetsfelle?
 
 - Den lukkede økonomi modellen forteller oss at finanspolitikken kan betraktes som en gratis lunsj:
@@ -516,3 +507,5 @@ Bt/Yt
 3. (3)Rentekostnader ved å gjøre dette vil være (tilnærmet) lik null.
 
 - For en åpen økonomi er ikke situasjonen like enkel.  Dette vil bli forklart nærmere under forelesningen om krisen i eurosonen.
+
+-->

@@ -1,0 +1,19 @@
+<style>
+div { 
+    display: block;
+    color: red;
+}
+</style>
+</head>
+<body>
+
+A div element is displayed like this:
+
+<div>This is some text in a div element.</div>
+
+<div>This is some text in a div element.</div>
+
+Change the default CSS settings to see the effect.
+
+</body>
+</html>

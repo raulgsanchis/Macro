@@ -121,37 +121,462 @@ $(document).ready(function () {
 </div>
 
 
-<div id="seminar-2-enkel-keynes-og-is-lm-modellen" class="section level1">
-<h1>Seminar 2: Enkel Keynes og IS-LM modellen</h1>
-<div id="keynes-modell-for-en-lukket-konomi" class="section level2">
-<h2>Keynes modell for en lukket økonomi</h2>
-<p>Vi ser for oss en lukket økonomi hvor aggregert etterspørsel (AE) er gitt ved <span class="math display">\[AE\equiv C + I + G\]</span></p>
-<p>Hvor <span class="math inline">\(C\)</span> er konsum, <span class="math inline">\(I\)</span> private realinvesteringer og <span class="math inline">\(G\)</span> offentlig forbruk.</p>
-<p>I tillegg postulerer vi følgende adferdsligninger for aktørene i økonomien: <span class="math display">\[C = \overline{C} + c_{1}(Y-T) - c_{2}\cdot i \text{ :Husholdningen}\]</span> <span class="math display">\[I = \overline{I} - b\cdot i \text{ :Private realinvesteringer}\]</span> <span class="math display">\[i = \overline{i} \text{ :sentralbanken}\]</span> <span class="math display">\[G = \overline{G} \text{ og } T=\overline{T} \text{: offentlige myndigheter}\]</span></p>
+<div id="ecn222-anbefalte-oppgaver-med-lsningsforslag" class="section level1">
+<h1>ECN222: Anbefalte oppgaver med løsningsforslag</h1>
+<p><strong>Oppgaver gitt til 1. forelesning (4. september)</strong></p>
+<p>Gjør følgende oppgaver for USA, Japan, Norge og (dersom du har tid) minst ett europeisk land.</p>
+<ul>
+<li>Installer applikasjonen FRED i ditt Excel regneark</li>
+</ul>
+<p><a href="http://research.stlouisfed.org/fred2/" class="uri">http://research.stlouisfed.org/fred2/</a></p>
+<p>Hjelp til hvordan bruke programmet finnes her:</p>
+<p><a href="http://www.youtube.com/watch?v=OAH-wGtP_k8" class="uri">http://www.youtube.com/watch?v=OAH-wGtP_k8</a></p>
+<ul>
+<li>Finn tidsserien til bruttonasjonalproduktet i reelle størrelser.</li>
+<li>Finn tidsserien antall innbyggere</li>
+<li>Konstruer tidsserien bruttonasjonalprodukt per innbygger.</li>
+<li>Transformer serien ved å ta logaritmen.</li>
+<li>Vis serien grafisk.</li>
+<li>Gir serien noen tegn på dype økonomiske kriser? Hvis ja, se om du kan finne (søk på internett) noen kortfattede forklaringer bak disse krisene.</li>
+<li>Finn et mål på inflasjon.</li>
+<li>Finn et mål på ledighet.</li>
+<li>Lag et scatterplot for ledighet og inflasjon (Phillips-kurven).</li>
+<li>Lag et scatterplot for vekst og endring i inflasjon (Okuns lov).</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Har noen laget et regneark på dette? Send det til</em> <a href="mailto:jorn.halvorsen@gmail.com"><em>jorn.halvorsen@gmail.com</em></a><em>, så vil jeg legge det ut til de andre studentene i klassen.</em></p>
+<p><strong>Oppgaver gitt til 2. forelesning</strong></p>
+<p>Kapittel 2, Blanchard, Amighini og Giavazzi</p>
+<ul>
+<li>Question 3.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Ble vist i forelesningen.</em></p>
+<ul>
+<li>Question 4.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Ble vist i forelesningen.</em></p>
+<p><strong>Oppgaver gitt til 3. forelesning</strong></p>
+<p>Ta utgangspunkt i følgende makroøkonomisk modell:</p>
+<p>Z=C+I+G</p>
+<p>Hvor Z er aggregert etterspørsel. C er konsum. I er private realinvesteringer og G er offentlig kjøp av varer og tjenester.</p>
+<p>I tillegg postulerer vi følgende adferdssammenhenger:</p>
+<p>C=c0+c1(Y−T)−c2i</p>
+<p>I=I−b1i</p>
+<p>Hvor T er nettoskatter, i det nominelle rentenivået, og små bokstaver betegner positive parametere.</p>
+<p>Likvektsbetingelsen for varmarkedet er gitt ved</p>
+<p>Y=Z</p>
+<p>Hvor Y betegner produksjonen.</p>
+<ul>
+<li>Nevn tre sentrale forutsetninger som ligger bak en slik modell.</li>
+</ul>
+<p><em>Svar:</em></p>
 <ol style="list-style-type: decimal">
-<li><p>Er det produksjonen <span class="math inline">\(Y\)</span> som bestemmer etterspørselen <span class="math inline">\(AE\)</span>, eller etterspørselen <span class="math inline">\(AE\)</span> som bestemmer produksjonen <span class="math inline">\(Y\)</span> i denne modellen?</p></li>
-<li><p>Hvilken sentral forutsetning ligger til grunn for dette resultatet?</p></li>
-<li><p>Gi en økonomisk tolkning tilknyttet adferden til husholdningen basert på konsumfunksjonen.</p></li>
-<li><p>Løs modellen mhp. på <span class="math inline">\(Y\)</span>.</p></li>
-<li><p>Økt pessimisme i økonomien gir seg utslag i et lavere inntektsuavhengig konsum (<span class="math inline">\(\overline{C}&gt;0\)</span>). Hvis formelt, grafisk (dersom du ønsker å benytte Keyneskrysset) og verbalt hvordan dette endrer likevekten i modellen.</p></li>
-<li><p>Vis formelt (ved differensiering) hvilke stabiliseringspolitiske virkemidler det offentlige har tilgjengelig for å motvirke den økte pessimismen. Hvilken av disse tiltakene vil ha sterkest negativ effekt på statsbudsjettet?</p></li>
-<li><p>Anta nå at rentenivået i økonomien er gitt ved en renteregel <span class="math inline">\(i= m\cdot Y\)</span>, hvor <span class="math inline">\(m&gt;0\)</span>. Finn likevekten for <span class="math inline">\(Y\)</span> og vurder hvorvidten slik renteregel bidrar til å stabilisere eller dempe konjunktursvingingene (hint: sammenlikn multiplikatoren i modellene med og uten renteregel med hverandre).</p></li>
+<li>(1)<em>Stive priser, )(2) Lukket økonomi og (3) produksjon av kun èn vare</em></li>
 </ol>
-</div>
-<div id="is-lm-modellen" class="section level2">
-<h2>IS-LM modellen</h2>
-<p>Likvektsbetingelsen for pengemarkedet er gitt ved</p>
-<p><span class="math display">\[M^{S} = L_{d} \]</span></p>
-<p>I tillegg til adferdsligningene fra forrige oppgave, har vi her at</p>
-<p><span class="math display">\[L_{d} = \kappa\cdot Y - h\cdot i \text{ Husholdningens etterspørsel etter penger}\]</span></p>
-<p><span class="math display">\[M^{s}=\frac{\overline{M}}{P} \text{ :Hvor sentralbanken bestemmer tilbudet av basispenger}\]</span></p>
+<ul>
+<li>Finn løsningen til modellen med hensyn på Y.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Setter inn for C og I som gir</em></p>
+<p>Y=c0+c1(Y−T)−c2i+I´−b1i+G</p>
+<p><em>Løser uttrykket ovenfor mhp. Y:</em></p>
+<p>Y(1−c1)=c0−c1T−c2i+I´−b1i+G</p>
+<p>Y=1(1−c1)[c0−c1T−c2i+I´−b1i+G]</p>
+<ul>
+<li>Hva skjer når i øker (vis formelt, verbalt og grafisk)?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Formelt:</em></p>
+<p><em>Differensiering av</em> ΔY <em>mhp</em> Δi <em>gir</em></p>
+<p>ΔY=1(1−c1)[−c2Δi−b1Δi]=−1(1−c1)[c2+b1]Δi&lt;0</p>
+<p>ΔYΔi=−1(1−c1)[c2+b1]&lt;0</p>
+<p><em>Grafisk:</em></p>
+<p><em>Se forelesningsnotatene.</em></p>
+<p><em>Verbalt:</em></p>
+<p><em>Økte rente</em> <em></em> <em>laver konsum og investeringer</em> <em></em> <em>redusert etterspørsel</em> <em></em> <em>redusert produksjon</em> <em></em> <em>redusert disponibel inntekt</em> <em> <strong>redusert konsum</strong> </em> <em>redusert etterspørsel</em> <em></em> <em>redusert produksjon…etc.</em></p>
+<ul>
+<li>Anta at sentralbanken innfører en renteregel som tilsier at i=m0Y</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Ved å sette renteregelen inn for i får vi</em></p>
+<p>Y=c0+c1(Y−T)−c2m0Y+I´−b1m0Y+G</p>
+<p><em>Løst mhp. Y gir</em></p>
+<p>Y(1−c1+c2m0+b1m0)=c0−c1T+I´+G</p>
+<p>c(0−c1T+I´+G)Y=1(1−c1+c2m0+b1m0)</p>
+<ul>
+<li>Sammenlikn multiplikatoren i modellen før og etter innføringen av en slik regel. Hvilken er høyest?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p>1(1−c1+c2m0+b1m0)&lt;1(1−c1)</p>
+<p><em>Multiplikatoren blir mindre ved bruk av renteregel.</em></p>
+<ul>
+<li>Gi en verbal på forklaring på hvordan innførselen av en regel virker inn ved en positiv økning i investeringen</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Først vil vi ha at:</em></p>
+<p><em>Økt investeringer</em> ___Økt etterspørsel_ <em></em> <em>Økt produksjon</em></p>
+<p><em>Reglen vil ha en stabiliserende effekt, siden vi etter dett vil ha at</em></p>
+<p>_økt rente <strong></strong> reduserte investeringer og konsum___ <em>Redusert produksjon etc.</em></p>
+<ul>
+<li>Hva menes med the paradox of thrift?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>I en IS-LM modell for en lukket økonomi vil det være investeringer være bestemmende for sparingen (S=I). På lengre sikt (jmf. Solow-modellen) vil det være motsatt, dvs. det er sparinger som er bestemmende for investeringene (dette resultatet er en følge av antagelsen om stive priser)</em></p>
+<p><strong>Oppgaver gitt til 4. forelesning</strong></p>
+<ul>
+<li>Ta utgangspunkt i samme modell som i forrige oppgavesett. Anta i tillegg nå at pengemarkedet er operativt. Pengetilbudet er derfor gitt vedMs=M /P og penge etterspørselen Md=M(Y,i) . Vis likevekten i pengemarkedet under forutsetning om at sentralbanken (a) setter rentenivået, (b) bestemmer pengetilbudet. /P og penge etterspørselen Md=M(Y,i) . Vis likevekten i pengemarkedet under forutsetning om at sentralbanken (a) setter rentenivået, (b) bestemmer pengetilbudet. . Vis likevekten i pengemarkedet under forutsetning om at sentralbanken (a) setter rentenivået, (b) bestemmer pengetilbudet.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Grafisk: Se forelesningsnotatene.</em></p>
+<ul>
+<li>Bestem Y grafisk under (a) og (b) under forutsetning om at både vare- og pengemarkedet er i likevekt (IS-LM modellen).</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Grafisk: Se forelesningsnotatene.</em></p>
+<ul>
+<li>Under (a), hva skjer dersom konsumet øker? Vis grafisk og verbalt.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Grafisk: Se forelesningsnotatene.</em></p>
+<p><em>Verbalt:</em></p>
+<p><em>Under a)</em></p>
+<p><em>Økt konsum</em> <em></em> _økt etterspørsel <strong></strong> økt produksjon <strong></strong> økt disponibel inntekt___ <em>økt konsum etc.</em></p>
+<p><em>Under b)</em></p>
+<p><em>Økt konsum</em> <em></em> _økt etterspørsel <strong></strong> økt produksjon ___ _økt rene__ _ _økt disponibel inntekt(men ikke like sterk som under a)___ <em>økt konsum (men ikke like sterk som under a) etc.</em></p>
+<ul>
+<li>Under (b), ha skjer dersom prisnivået P øker? Vis grafisk og verbalt.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Grafisk: Se forelesningsnotatene.</em></p>
+<p><em>Verbalt:</em></p>
+<p>_Økt priser <strong></strong> Redusert realpengemengde ___ _økt nominell rente__ _ _redusert konsum og investeringer ___ _redusert etterspørsel__ _ _redusert produksjon ___ _redusert disponibel inntekt__ _ <em>redusert konsum etc.</em></p>
+<p><em>For AS-Kurven vil økte priser være assosiert med redusert produksjon.</em></p>
+<ul>
+<li>Diskuter fordeler og ulemper ved pengepolitikk vs. finanspolitikk som stabiliseringspolitiske verktøy.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Pengepolitikk funger raskere enn finanspolitikk.</em></p>
+<p><em>Finanspolitikk kan være svært effektivt i en likvidietsfelle (vi kommer til dette sener)</em></p>
+<p><em>Finanspolitikk øker offentlig sektor på bekostning av privat sektor. Politiske preferanser avgjør om dette er bra eller dårlig.</em></p>
+<p><strong>Oppgaver gitt til 5. forelesning</strong></p>
+<ul>
+<li>Vi tar først utgangspunkt i samme modell som ble satt opp under oppgave gitt til 3. forelesning. Videre tenker vi oss at økonomien er åpen for handel og kapitalbevegelser med utlandet. Dette betyr nå at</li>
+</ul>
+<p>Z=C+I+G+NX</p>
+<p>Y=Z</p>
+<pre><code>                                    NX≡X−R∗ℑ</code></pre>
+<p>E❑=(1+i)(1+i❑)E❑e</p>
+<p>I tillegg postulerer vi at følgende sammenhenger for import og eksport:</p>
+<p>X(R,Y)=A´+−a1R+−a2Y</p>
+<p>ℑ(R,Y)=B´+−s1R+−s2Y</p>
+<pre><code>                            R=EPP</code></pre>
+<p>Anta at parameterne a1,a2,s1ogs2 er positive Bestem og forklar hvilke fortegn (+/-) som bør gjelde for eksport og import likningene ovenfor.</p>
+<p><em>Svar:</em></p>
+<p>X(R,Y)=A´+a1R+a2Y</p>
+<p>ℑ(R,Y)=B´−s1R+s2Y</p>
+<ul>
+<li>Finn et uttrykk for ∆NX∆Y , ∆NX∆R og om mulig avgjør fortegnene. , ∆NX∆R og om mulig avgjør fortegnene. og om mulig avgjør fortegnene.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p>ΔNX=−Rs2∆Y&gt;0</p>
+<p>⇔</p>
+<p>ΔNXΔY=−Rs2&gt;0</p>
+<p>ΔNX=(a1−(B´−s1R+s2Y)+Rs1)∆R&gt;0</p>
+<p>⇔</p>
+<p>ΔNX∆R=(a1−(B´−s1R+s2Y)+Rs1)&gt;0</p>
+<p>Matematiskikkemuligåavgjørefortegnet,menviantar&gt;0</p>
+<p>eroppfyltivåremodeller(Marshall−Lernerbetingelsen) .</p>
+<ul>
+<li>Finn et eksplisitt utrykk for IS likningen under faste kurs (enklest).</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Merk først: Fast kurs betyr at</em> E=Ee_så realvalutakursen R holdes her uendret._</p>
+<p><em>Innsetting for NX gir</em></p>
+<p>Y=c0+c1(Y−T)−c2i+I´−b1i+G</p>
+<p>+[(A´+a1R+Y)−R(B´−s1R+s2Y)]</p>
+<p>Løst mhp. Y:</p>
+<p>B´−s1R(A´+a1R+Y)−RY(1−c1+Rs2)=c0−c1T−c2i+I´−b1i+G+</p>
+<p>c0−c1T−c2i+I´−b1i+G+(A´+a1R+Y)−R(B´−s1R)Y=1(1−c1+Rs2)</p>
+<p>IS-kurven som også gir likevekt i valutakursmarkedet finner vi da ved å differensiere ΔY mph på Δi</p>
+<p>ΔY=−1(1−c1+Rs2)[c2+b2]∆i&gt;0</p>
+<p>⇔</p>
+<p>ΔY∆i=−1(1−c1+Rs2)[c2+b2]&gt;0</p>
+<ul>
+<li>Finn et eksplisitt utrykk for IS likningen under flytende kurs (mer vanskelig).</li>
+</ul>
+<p><em>Svar:</em></p>
+<p>Merk først: Flytende kurs betyr at</p>
+<p>E=1+i1+iEe</p>
+<p>R=1+i1+iEePP</p>
+<p>IS-kurven som også gir likevekt i valutakursmarkedet finner vi da ved å differensiere ΔY mph på Δi</p>
+<p>ΔY=1(1−c1+Rs2)[−c2−b2−∆NX∆R]∆i&gt;0</p>
+<p>⇔</p>
+<p>∆Y∆i=1(1−c1+Rs2)[−c2−b2−∆NX∆R]&gt;0</p>
+<p>Vi får med et ekstra ledd, sammenliknet med løsningen under fast kurs. Dette leddet er gitt ved</p>
+<p>Hvor</p>
+<p>∆NX∆R=[(a1−(B´−s1R+s2Y)+Rs1)]Ee(1+i)&gt;0</p>
+<ul>
+<li>I løpet av forelesningen ble det hevdet at importlekkasje gjør multiplikatoren mindre. I tillegg til dette, vil helningen på IS-kurven (likevekt i vare- og valutakursmarkedet) være brattere i et under fast kurs sammenliknet flytene kurs. Er dette overens med løsningen du fant i de to oppgavene ovenfor?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Ja, det stemmer. Importlekkasjen gitt ved</em> Rs2_dukker opp i nevneren i multiplikatoren. Videre_</p>
+<p><em>Helningen på IS-kurvene er slakere under flytende kurs som en følge av at vi inkluder leddet</em> ∆NX∆R_. Dette leddet reflekterer forbedringen i handelsbalansen som en konsekvens av det lavere rentenivået medfører en depresiering av den nominelle valutakursen._</p>
+<ul>
+<li>Hvilke virkemidler har myndighetene for å stabilisere konjunkturene under henholdsvis et fast og flytende kurs regime?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Flytende kurs: renta (i) og finanspolitikk (G og T)</em></p>
+<p><em>Fast kurs: finanspolitikk (G og T) og E dersom en står utenfor en valutaunion.</em></p>
+<ul>
+<li>Hva menes med intern og ekstern balanse?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Intern balanse vil si produksjon og ledighet er lik sitt naturlige ledighetsnivå.</em></p>
+<p><em>Ekstern balanse vil si at utenlandsgjelden er på et bærekraftig nivå.</em></p>
+<p>_ _</p>
+<p><strong>Oppgaver gitt til 6. forelesning</strong></p>
+<ul>
+<li>Basert på de forutsetningene som har blitt gjort i oppgaver gitt til 5. forelesning, finn ∆NX∆P og avgjør fortegnet. og avgjør fortegnet.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p>ΔNX=(−a1EPP2ΔP+(B´−s1R+s2Y)EPP2ΔP−s1EPP2ΔP)&gt;0</p>
+<p>⇔</p>
+<p>∆NX∆P=(−a1EPP2+(B´−s1R+s2Y)EPP2−s1EPP2)&lt;0</p>
+<ul>
+<li>Finn deretter ∆Y∆P og tegn AD-kurven inn i to diagrammer, et for fast og et for flytende kurs (slapp av, vil ikke bli bedt om å utlede dette formelt på eksamen). og tegn AD-kurven inn i to diagrammer, et for fast og et for flytende kurs (slapp av, vil ikke bli bedt om å utlede dette formelt på eksamen).</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Modellen for varemarkedet løst mhp. Y</em></p>
+<p>c0−c1T−c2i+I´−b1i+G+(A´+a1R+Y)−R(B´−s1R)Y=1(1−c1+Rs2)</p>
+<p><em>Differensiering av</em> ΔY _mhp. _ΔP <em>gir</em></p>
+<p>c0−c1T−c2i+I´−b1i+G+(A´+a1R+Y)−R(B´−s1R)∆P+1(1−c1+Rs2)(−a1EPP2+(B´−s1R+s2Y)EPP2−s1EPP2)ΔP∆Y=s2(1−c1+Rs2)2EPP2</p>
+<p>⇔</p>
+<p>c0−c1T−c2i+I´−b1i+G+(A´+a1R+Y)−R(B´−s1R)+1(1−c1+Rs2)(−a1EPP2+(B´−s1R+s2Y)EPP2−s1EPP2)&lt;0∆Y∆P=s2(1−c1+Rs2)2EPP2</p>
+<p>knyttettilmultiplimatorenMmatematiskikkemuligåavgjøre,menviantaratførsteeffekten</p>
+<p>forimportlekkasjeervesentligmindre(iabsoluttverdi)enndenandreeffekten.</p>
+<ul>
+<li>Tegn til slutt AS-kurven inn i de to diagrammene.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>AS-kurven er som under en lukket økonoi: Økt produksjon fører til økte priser som følge økt lønninger. Sistnevnte er knyttet til bedre forhandlingsposisjon hos arbeiderne som følge av lavere ledighet).</em></p>
+<ul>
+<li>Anta at vi får en sterk økning i C´.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>AD-kurven skifter til høyre, som i en periode gir både høyere produksjon og høyere priser. Økningen i produksjonen stopper opp i det prisforventningene er korrekte</em> P=Pe_<em>Y=Yn_og</em> u=un.</p>
+<ul>
+<li>Hva skjer med handelsbalansen?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Høyere produksjon svekker handelsbalansen:</em></p>
+<p>_ _ ΔNX∆Y=−Rs2&gt;0</p>
+<p><em>Høyere priser svekker handelsbalansen:</em></p>
+<p>∆NX∆P=(−a1EPP2+(B´−s1R+s2Y)EPP2−s1EPP2)&lt;0</p>
+<p><em>(begge disse utrykkene er blitt utledet i tidligere oppgaver)</em></p>
+<ul>
+<li>Hva skjer med utenriksregnskapet?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p>CU+CA=0(utenriksregnskapet)</p>
+<p>ΔCU=ΔNX&lt;0 Nettoeksporten reduseres.</p>
+<p><em>Det motsvares av en tilsvarende økning i nettokapitalimporten (tilsvarer økt låneopptak i utlandet)</em></p>
+<p>ΔCU=ΔNX=−ΔCA</p>
+<p><em>Merk at økt nettokapitalimport fører til økt utenlandsgjeld med tilhørende renteforpliktelser i neste periode. Har landet problemet med å betjene denne gjelden, har vi oppnådd en situasjon med ekstern ubalanse.</em></p>
+<ul>
+<li>Hvorfor vil det under en slik endring være enklere å føre en stabiliseringspolitikk i et flytende vs. et fast kurs regime?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Under fast kurs vil renta måtte brukes til å forsvare valutakursen. Rentenivået vil derfor være bestemt av rentenivået utenlands. Dersom renta som blir satt i utlandet ikke samsvarer med den renta som trengs på hjemmebane, vil rente opphøre å fungere som et politisk stabiliseringsverktøy.</em></p>
+<p><strong>Oppgaver gitt til 7. forelesning</strong></p>
+<ul>
+<li>Solow-modellen består av tre komponenter ((1) produktfunksjonen på intensiv form, (2) sparing per innbygger og (3) uttrykk for kapitalakkumulasjon). Utled disse sammenhengene formelt under antagelsen om at ∆AA=a=0 og ∆NN =n=0 og vis deretter den grafiske løsningen av modellen. og ∆NN =n=0 og vis deretter den grafiske løsningen av modellen. =n=0 og vis deretter den grafiske løsningen av modellen.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Se forelesningsnotatene.</em></p>
+<ul>
+<li>Hva menes med at modellen går mot en steady state?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Uavhengig av startnivået på kapitalen (<em>k0</em>) vil økonomien over tid konvergere mot et konstant nivå på y: <em>yss=Yss/Nss </em>.</em></p>
+<ul>
+<li>Anta nå ∆NN =n&gt;0. Finn et utrykk for ∆k . =n&gt;0. Finn et utrykk for ∆k . .</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Vi kan starte først med å differensiere</em> k=K/N <em>som gir</em></p>
+<p>Δk=ΔKN−KN2ΔN=ΔKN−kn</p>
+<p>Vi trenger nå et utrykk for ΔK/N . Vi har at</p>
+<p>YN=f(k)</p>
+<p>,</p>
+<p>Kt+1=(1−δ)Kt+It</p>
+<p>og</p>
+<p>S=I⇔IN=sYN=sf(k)</p>
+<p>Det gir</p>
+<p>ΔK=−δK+I</p>
+<p>ΔK/N=−δK/N+I/N</p>
+<p>ΔK/N=−δk+sy</p>
+<p>Ved å sette det siste uttrykket inn i det første utrykket vi utledet får vi:</p>
+<p>Δk=−δk+sy−kn=sy−(δ+n)k</p>
+<ul>
+<li>Hva er produksjonsveksten i denne økonomien i steady state?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p>Ylna(ss)−lna(Nss)lna(yss)=</p>
+<p>Ylna(ss)=lna(Nss)</p>
+<p>_ Tidsderivasjon gir_</p>
+<p>Yss´Yss=Nss´Nss=n</p>
+<p><em>Produksjonsveksten vokser med en rate n som er lik befolkningsveksten.</em></p>
+<ul>
+<li>Solow-modellen er uten noen forklaring på hva som skaper teknologisk framgang (parameteren a er bestemt utenfor modellen). Hva mener du kan gjøres for å øke veksten i denne parameteren?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Utdanning, bedre institusjoner, helsevesen, bedre lover og regler etc.</em></p>
+<p><strong>Oppgaver gitt til 8. forelesning</strong></p>
+<ul>
+<li>Finn ved bruk av FRED M0 (M1) og M2 for USA i årene før og etter finanskrisen og vis disse tallene grafisk</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Benytt Fred-Excel plugg inn på ditt regneark.</em></p>
+<ul>
+<li>Fra talleksempelet under system 2, finn for banksektoren som helhet:</li>
+</ul>
+<p>Reserveandelen</p>
+<p>Kapitalandelen</p>
+<p>M0</p>
+<p>M1</p>
+<p><em>Svar:</em></p>
+<p><em>Reserveandelen er gitt ved reserver/innskudd=150/300=0,5 (50 prosent)</em></p>
+<p><em>Kapitalandelen er gitt ved egenkapital/sum balanse = 25/350=0,0833 (8,3 prosent)</em></p>
+<p><em>M0 =200</em></p>
+<p><em>M1=150+200=350</em></p>
+<ul>
+<li>Kvantitative lettelser:</li>
+</ul>
+<p>Ta utgangspunkt i talleksemplet under system 3, anta videre at sentralbanken ved å bruke av seddelpressen ønsker å kjøpe statsobligasjoner til 500 og et bilfirma til 600. Hvordan vil balansene se ut etter en slik endring?</p>
+<p><em>Svar:</em></p>
+<p><em>X=500 og T=600.</em></p>
+<ul>
+<li>Dersom forretningsbank 1 oppnår et bratt fall i sine reserver, hvilke to muligheter gir system 3 for at banken skal kunne øke sin likviditet</li>
+</ul>
+<p><em>Svar:</em></p>
 <ol style="list-style-type: decimal">
-<li><p>Vis ved differensiering diagram og gi en verbal tolkning på hvorfor IS-ligningen er synkende og LM-kurven er stigende</p></li>
-<li><p>Vis ved hjelp av en figur effekten av økt optimisme tilknyttet private realinvestinger (‘animal spirits’).</p></li>
-<li><p>Vis ved hjelp av en figur og forklar verbalt effekten av en reduksjon i prisnivået.</p></li>
-<li><p>Vis grafisk hvordan likevekten ser ut i pengemarkedet og IS-LM modellen, dersom sentralbanken går over til renteregelen (som vi så på under Keynes modellen) gitt ved <span class="math inline">\(i= m\cdot Y\)</span>.</p></li>
+<li>(1)<em>Interbanklån fra forretningsbank 1 og (2) refinansieringslån fra sentralbanken.</em></li>
 </ol>
-</div>
+<ul>
+<li>Refinansieringslån:</li>
+</ul>
+<p>Ta utgangspunkt i talleksemplet under system 3, anta videre at interbankmarkedet er “frosset” grunnet manglene tillit mellom forretningsbankene. Hvordan vil balansen se ut dersom sentralbanken låner forretningsbanken et beløp på 75</p>
+<p><em>Svar:</em></p>
+<p><em>Y1=Y2=75</em></p>
+<ul>
+<li>Hva tror du vil skje med utlånene til banksektoren dersom kapitalkravene for banksektoren øker?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Øke kapitalkrav kan oppnås ved en reduksjon i innskudd. Når innskuddene reduseres må også eiendelssiden reduseres tilsvarende. Holdes reservene konstante, vil dette bety at utlånene går ned (mao. innvendig penger blir redusert).</em></p>
+<p><strong>Oppgaver gitt til 9. forelesning</strong></p>
+<ul>
+<li>Benytt regneksemplet som ble gitt navnet the BLOOS rule, og finn den forventede avkastningen på egenkapital og statlige overføringer under et egenkapitalkrav på 20 og 99 prosent.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>0,20 gir forventet avkastning på egenkapital på 0,092 og statlige overføringer på 0,84.</em></p>
+<p><em>0,99 gir forventet avkastning på egenkapital på 0,05 og statlige overføringer på 0,01.</em></p>
+<ul>
+<li>Tegn to grafer. Begge grafene har graden av egenkapital på den horisontale aksen, mens den første har forventet avkastning på egenkapital på den vertikale aksen mens den andre har forventet statlige overføringer. Plot inn verdiene du får for egenkapitalkrav på 5, 10, 20 og 99 prosent for de to bankene.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Vist under forelesningen.</em></p>
+<ul>
+<li>I Fronter finn fram regnearket for the Bloos rule. For forretningsmodell 1, legg inn for tilstand 1 at avkastningen skal være 0,056 mot tidligere 0,0606.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Endringene må gjøres i celle C57 i filen BloosRuleExcel.xlsk</em></p>
+<ul>
+<li>Under situasjonen med en 100 prosent bailout garanti, for hvilken egenkapitalnivå vil bank 2 være indifferent mellom å investere i de to forretningsmodellene?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Ca. 0,55. Svaret finner man prøve seg fram med litt forskjellig verdier i regnearket BloosRuleExcel.xlsk</em></p>
+<p><strong>Oppgaver gitt til 10. forelesning</strong></p>
+<ul>
+<li><p>Ta utgangspunkt i de tre likningene for offentlig sektor</p>
+<p>Finansdepartementet</p></li>
+</ul>
+<p>Btf=(1+it−1)Bt−1f+(Gt−Tt)−SNGt</p>
+<p>Sentralbanken</p>
+<p>SNGt+∆Btm=∆Mt+it−1Bt−1m</p>
+<p>Statsgjeld</p>
+<p>Bt=Btf−Btm</p>
+<p>Forsøk å gi en tolkning av hver enkelt likning</p>
+<p><em>Svar:</em></p>
+<p><em>Finansdepartementet</em></p>
+<p><em>Gjeld i dag er lik forrige periodes gjeld pluss rentekostnader, pluss underskuddet på den primære budsjettbalansen fratrukket utbytte (seigniorage) fra sentralbanken</em></p>
+<p><em>Sentralbanken:</em></p>
+<p><em>Kjøper statsgjeld ved å øke basispengemengden og gir utbetalinger for obligasjonene som utbytte (seigniorage) til finansdepartmentet </em></p>
+<p><em>Statsgjeld:</em></p>
+<p><em>Offentlig gjeld eies av både private aktører og sentralbanken.</em></p>
+<ul>
+<li>Vis ved innsetting at det er mulig å skrive de tre likningene (konsolidert budsjettbetingelse for offentlig sektor) som</li>
+</ul>
+<p>Bt=(1+it−1)Bt+(Gt−Tt)−ΔMt</p>
+<p><em>Svar:</em></p>
+<p><em>Kombinere de to første likningene gir</em></p>
+<p>Btf=(1+it−1)Bt−1f+(Gt−Tt)−(∆Mt+it−1Bt−1m−∆Btm)</p>
+<p>ΔBtf−ΔBtm=(it−1)Bt−1f−Bt−1m+(Gt−Tt)−∆Mt</p>
+<p>Δ(Btf−Btm)=(it−1)(Bt−1f−Bt−1m)+(Gt−Tt)−∆Mt</p>
+<p><em>Innsetter deretter for likningen for statsgjeld</em></p>
+<p>ΔBt=it−1∙Bt−1+(Gt−Tt)−∆Mt</p>
+<p>Bt−Bt−1=it−1∙Bt−1+(Gt−Tt)−∆Mt</p>
+<p>Bt=(1+it−1)Bt−1+(Gt−Tt)−∆Mt</p>
+<p>Bt=(1+it−1)Bt+(Gt−Tt)−ΔMt</p>
+<ul>
+<li>Vi antar null inflasjon, slik at it=rt og ΔMt=0 . Omgjør likningen ovenfor på en slik form at og ΔMt=0 . Omgjør likningen ovenfor på en slik form at . Omgjør likningen ovenfor på en slik form at</li>
+</ul>
+<p>BtYt=(Gt−Tt)Yt+Bt−1Yt−1(1+r−g)</p>
+<p><em>Svar:</em></p>
+<p>BtYt=(1+r)Bt−1Yt+(Gt−Tt)Yt</p>
+<p>BtYt=(1+r)BtYt−1Yt∙Yt−1+(Gt−Tt)Yt</p>
+<p><em>Vi lar veksten i BNP vær gitt ved en konstant rate</em> g_:_Yt−Yt−1Yt−1=g⇔YtYt−1=g+1</p>
+<p><em>Innsetting av dett gir</em></p>
+<p>BtYt=(1+r)Bt1(1+g)Yt1+(Gt−Tt)Yt</p>
+<p><em>Vi kan videre bruke at</em></p>
+<p>1+r1+g≈1+r−g</p>
+<p>BtYt=(Gt−Tt)Yt+(1+r−g)Bt−1Yt−1</p>
+<ul>
+<li>Vis i en figur den dynamiske utviklingen over tid for BtYt i en situasjon hvor (1+r-g)&lt;1 og (i) (Gt−Tt) &gt;0 og (ii) (Gt−Tt) &lt;0. Går den offentlige gjeldsandelen mot en steady state i de to tilfellene? i en situasjon hvor (1+r-g)&lt;1 og (i) (Gt−Tt) &gt;0 og (ii) (Gt−Tt) &lt;0. Går den offentlige gjeldsandelen mot en steady state i de to tilfellene? &gt;0 og (ii) (Gt−Tt) &lt;0. Går den offentlige gjeldsandelen mot en steady state i de to tilfellene? &lt;0. Går den offentlige gjeldsandelen mot en steady state i de to tilfellene?</li>
+</ul>
+<p><em>Svar: Ja, begge modellen går mot en steady state. Se Blanchard boka for grafisk løsning.</em></p>
+<p><strong>Oppgaver gitt til 11. forelesning</strong></p>
+<ul>
+<li>Hva menes innenfor økonomi med en likviditetsfelle?</li>
+</ul>
+<p><em>Svar: En situasjon hvor pengepoltikken ikke lengre kan ha en ekspansiv effekt på økonomien. Dette fordi den nominelle rente er (nær) lik null.</em></p>
+<ul>
+<li>Ifølge forskning utført av Krugman er det spesielt to forhold som kan lede et land inn i en likviditetsfelle. Nevn disse.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Demografiske endringer som fører til pessimistiske framtidsutsikter og dermed redusert konsum ( <em>ΔC´&lt;0</em>)</em></p>
+<p><em>Gjeldsnedbygging i privat sektor (Minsky beveglse) (<em>Dlav−DhøyΔDb=</em>)&lt;0)</em></p>
+<ul>
+<li>Hva menes med en Minsky bevegelse (deleveraging shock)?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Krav om rask nedbetaling av gjeld som en konsekvens av økt usikkerhet tilknyttet husholdningene evne til å betjene gjeld.</em></p>
+<ul>
+<li>Ta utgangspunkt i IS-(LM) modellen benyttet i forelesningen for dette temaet. Hvilken betingelse må være oppfylt for at en økonomi skal havne i en likviditetsfelle som følge av en Minsky bevegelse (deleveraging)</li>
+</ul>
+<p><em>Svar:</em></p>
+<p>_Vi har havnet i en likviditetsfelle__dersom rentereduksjon ikke er tilstrekkelig til å motvirke fallet i konsumetterspørselen_</p>
+<p>(θ∙ΔDb−b´∙Δi0)&lt;0</p>
+<ul>
+<li>Hvorfor kan det oppstå en nær sammenheng mellom en privat og statlig gjeldskrise?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>En privat gjeldskrise som gjør at vi havner i en likviditetsfelle vi bety lavere produksjon og mindre skatteinntekter. Begge er faktorer som vil svekke den primære budsjettbalansen og dermed øke statsgjelden som andel av BNP. Dette kan initiere en statlig gjeldskrise.</em></p>
+<p><strong>Regneregler for differensiering til bruk i dette kurset</strong></p>
+<p>∆∆x(α)=0</p>
+<p>∆∆x(αX)=α∆x</p>
+<p>∆∆x(f(x)g(x))=f'(x)g(x)Δx+f(x)g'(x)Δx</p>
+<p>∆∆x(f(x)g(x))=f'(x)g(x)Δx−f(x)g(x)2g'(x)∆x</p>
 </div>
 
 
