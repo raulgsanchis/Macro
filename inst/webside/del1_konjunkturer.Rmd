@@ -1,3 +1,6 @@
+---
+output: html_notebook
+---
 
 ```{r include=FALSE}
 library(MakroOEKB1115)
@@ -556,18 +559,19 @@ Reduksjon i prisnivået (P)
 
 - **V**erbalt (tolkning utenfor modellen):
 
-<!--
+---
 
-## AS-kurven
+## 	Arbeidsmarkedet, ledighet og AS-kurven
 
 ### Adferdsligninger (tilknyttet arbeidsmarkedet)
 
-###¤ Husholdningene 
-Organisert som en fagforening som tilbyr sin arbeidskraft
+#### Husholdningene 
+Organisert som en fagforening hvor lønnsnivået $W$ blir bestemt som et resultat av forhandlinger
 
 $$W=P^{e}F(\underset{(-)}{u}, \underset{(+)}{z})$$
+$P^{e}$ er prisforventningene i perioden hvor lønningene gjelder for. $u$ er arbeidsledighetsnivået, hvor høyere ledighet gir svakere forhandlingsposisjon og dermed reduserte lønninger. $z$ samler opp alle andre faktorer som reflekterer forhandlingsstyrke (eks. velferdsordninger, oppsigelesesfrist, streikekasse).
 
-
+---
 
 #### Bedriftene 
 Etterspør arbeidskraft og tilbyr produktet i et marked med monopolistisk konkurranse
@@ -580,18 +584,34 @@ Hvor $0<\alpha \leqslant 1$
 Produktprisen kommer som et påslag (markup) på det (nominelle) lønnsnivået
 
 $$P=(1+μ)W$$
-#### AS-Kurven
 
-Setter vi først produktfunksjonen inn i definisjonen for arbeidsledighet:
+---
+
+### AS-Kurven
+
+Setter uttrykket for produktprisen inn i utrykket for bestmmelse av lønnsnivået gir oss
+
+$$P=(1+μ)P^{e}F(u,z)$$
+
+Produktfunksjonen kan settes inn i definisjonen for arbeidsledighet:
 
 $$u=\frac{U}{N}=\frac{N-L}{N}=1−\frac{L}{N}=1−\frac{Y/A}{N}=1 - \frac{Y}{AN}$$
 
-Kombinerer vi det siste uttrykket med 
-
-
-- Kombinere dett gir oss AS-kurven (verdier av P og Y som gir likevekt i arbeidsmarkedet)
+Kombinerer vi det siste uttrykket med utrykket ovenfor får vi
 
 $$P=(1+μ)P^{e}F(1 - \frac{Y}{AN},z)$$
+
+---
+
+Differensierer vi $P$ mhp. $Y$ finner vi AS-kurven 
+
+$$
+\frac{\Delta P}{\Delta Y} = -(1+μ)P^{e}F'_{u}(1 - \frac{Y}{AN},z)\frac{1}{AN}>0
+$$
+
+Tolkning: Økt produksjon gir økt etterspørsel etter arbeidskraft, dette reduserer arbeidsledigheten samt øker fagforeningens forhandlingsstyrke. Økt forhandlingsstykre gir seg utslag i høyere lønnskrav. Siden produktprisen er et påslag på lønningene, vil produktprisene måte stige når lønningene øker.
+
+<!--
 
 ## AD-AS modellen for en lukket økonomi
 
@@ -599,7 +619,6 @@ $$P=(1+μ)P^{e}F(1 - \frac{Y}{AN},z)$$
 $$\frac{\Delta P}{\Delta Y}=-(1+μ)P^{e}F'_{u}(1 - \frac{Y}{AN},z)\frac{1}{AN}>0$$
 
 
-Økt produksjon gir økt etterspørsel etter arbeidskraft, dette reduserer arbeidsledigheten og styrker fagforeningens forhandlingsposijon. Den Forbedrede forhandlingsposisjonen gir seg utslag i høyere lønnskrav. Siden produktprisen er et påslag på lønningene, vil produktprisene stige når lønningene øker
 
 
 
@@ -609,7 +628,7 @@ $$\frac{\Delta P}{\Delta Y}=-(1+μ)P^{e}F'_{u}(1 - \frac{Y}{AN},z)\frac{1}{AN}>0
 
 ### Likevektsløsningen
 
-Skjæringspunktet mellom AD- og AS-kurven gir oss produkprisen og likevek
+Skjæringspunktet mellom AD- og AS-kurven gir oss produktprisen og likevek
 
 <!--
 

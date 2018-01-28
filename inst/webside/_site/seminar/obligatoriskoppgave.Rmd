@@ -1,9 +1,13 @@
 ---
-output: html_notebook
+output:
+  html_document:
+    css: abc.css
 ---
 
 # Del 1: Småspørsmål
-1.
+(@) A list whose numbering
+(@) A list whose numbering
+(@) A list whose numbering
 1.
 1.
 1.
@@ -22,3 +26,6 @@ output: html_notebook
 1.
 1.
 1.
+
+
+<div, class='losning'> abc  </div>

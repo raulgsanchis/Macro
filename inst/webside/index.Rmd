@@ -1,3 +1,9 @@
+---
+output:
+  html_document:
+    css: abc.css
+---
+
 
 ```{r eval=FALSE, include=FALSE}
 #html-rapportering  
