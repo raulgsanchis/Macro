@@ -576,7 +576,7 @@ Etterspør arbeidskraft og tilbyr produktet i et marked med monopolistisk konkur
 Produktfunksjonen er gitt ved
 
 $$Y=AL^{\alpha}$$
-Hvor $0<\alpha \leqslant 1$
+Hvor $0<\alpha \le 1$
 
 Produktprisen kommer som et påslag (markup) på det (nominelle) lønnsnivået
 

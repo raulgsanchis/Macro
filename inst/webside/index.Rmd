@@ -33,9 +33,12 @@ output:
 
 **Studentassistent:** Susanna Murati (susanna-007@hotmail.com)
 
-<span style="color:red">Oppgaver til seminar 2 (5. februar) er nå lagt ut</span>
+<span style="color:red">
+<p> Oppgaver til seminar 2 (5. februar) er lagt ut <p/>
+<p> Forelesningsnotaer til uke 5 (Arbeidsmarkedet, ledighet og AS-kurven) er lagt ut </p>
+</span>
 
-Siste gang oppdatert ``r base::Sys.time()`` 
+<p style="color:black">Siste gang oppdatert ``r base::Sys.time()`` </p>
 
 ```{r eval=FALSE, include=FALSE}
 gitinfo <- list(base::system('git log --oneline', intern=TRUE),base::system('git rev-list --count HEAD'
