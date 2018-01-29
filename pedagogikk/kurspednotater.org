@@ -181,14 +181,32 @@ Friedman
 **** Øvelse
 Hva skjer med Y når P går opp. Tegn og forklar
 ** Forelesning uke 5: Arbeidsmarkedet, ledighet og AS-kurven
-*** Huske/forstå ligninger
-*** Skiftanalyse
-*** Repetison av forrige øvelse og skissere AS-kurvenen
+*** Oppgaveseminar neste mandag
 *** Struktur/dansing
-*** Gjøre noe annet den siste halvtimen
-*** Tenke rundt dette med økt arbeidskraft og medium term
-*** Lønnsoppgjør
+*** Forstå ligninger (foreløpig ikke pugg)
+    1. [ ] Tar tid første gangen -- tåke
+    2. [ ] Tving deg selv til å forklar det høyt til deg selv eller en venn
+*** Likevekt (skjæringspunktet)
+*** Samtidig likevekt
+- [ ] Keynes modell -> Y
+- [ ] IS-LM modell -> Y,i
+- [ ] AD-AS modell -> Y, i, P
+*** Skiftanalyse
+- [] De som står på aksene på figuren
+- [] IS-LM
+- [] Formler
+- [] Utenom aksene (skift)
+- [] Skift IS-LM
+- [] Formelt eller stå på aksene
+
+*** 
 *** Læreboka ikke pensum, kun forelesningsnotater
+
+
+*** Repetison av forrige øvelse og skissere AD-kurven
+*** http://wifi.espressohouse.se:8880/guest/s/default/?id=8c:70:5a:bb:fe:f0&ap=04:18:d6:20:fb:2d&t=1517224641&url=http://www.vg.no%2f&ssid=espressohouseTenke rundt dette med økt arbeidskraft og medium term
+*** Lønnsoppgjør
+*** Gjøre noe annet den siste halvtimen
 *** Hartz
 
 ** Forelesning uke 6: AD-AS modellen (for en lukket, eller globalisert økonomi)  

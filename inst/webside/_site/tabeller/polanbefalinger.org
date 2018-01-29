@@ -9,15 +9,3 @@
 | Minsky         | Økonomisk stabilitiet fører til ustabilitet           | Finansreguleringer og sentralbank                 | Bail-out (redningspakker)                                        |
 | Friedman       | Endringer i pengemengden ($\Delta M$)                 | Konstant pengemengdevekst ($\frac{\Delta M}{M}$ = k > 0) | Nullrente ($i=0$) og holde pengemengden stabil                   |
 | Hayek          | Bankenes kredittvekst                                 | Fri konkurrane i banksektoren (ingen sentralbank) | Likvidering (bail-in)                                            |
-
-
-
-
-
-
-
-
-
-
-
-

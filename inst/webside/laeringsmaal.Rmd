@@ -141,11 +141,10 @@ Merk: P gir AD-kurven
 - Stabiliseringspolitikk (grafisk og verbalt)
 Virkemidler: $G, T, M/i$
 
-<!--
 
 ### AD-AS modellen for en lukket økonomi: Gode, penge og arbeidsmarkedet i likevekt
 
-- Husholdningene: Tilbyr arbeid
+- Husholdningene: Organisert som en fagforening, hvor utfallet av lønnsforhandlingene er gitt ved
 
 $$W=P^{e}F(\underset{(-)}{u}, \underset{(+)}{z})$$
 
@@ -162,6 +161,7 @@ $$u=\frac{U}{N}=\frac{N-L}{N}=1−\frac{L}{N}=1−\frac{Y/A}{N}=1 - \frac{Y}{AN}
 - Kombinere dett gir oss AS-kurven (verdier av P og Y som gir likevekt i arbeidsmarkedet)
 
 $$P=(1+μ)P^{e}F(1 - \frac{Y}{AN},z)$$
+<!--
 
 - AD-AS-modellen
 
@@ -508,4 +508,5 @@ Bt/Yt
 
 - For en åpen økonomi er ikke situasjonen like enkel.  Dette vil bli forklart nærmere under forelesningen om krisen i eurosonen.
 
+-->
 -->

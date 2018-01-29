@@ -9,6 +9,8 @@
 
 [Forelesning uke 4: IS-LM modellen (for en lukket, eller global økonomi)](presentasjoner/pres_del1.html#20)
 
+[Forelesning uke 5: Arbeidsmarkedet, ledighet og AS-kurven](presentasjoner/pres_del1.html#33)
+
 <!--
 [Arbeidsmarkedet, ledighet og AS-kurven](presentasjoner/pres_del1.html#25)
 
