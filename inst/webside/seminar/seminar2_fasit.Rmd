@@ -2,7 +2,7 @@
 output: html_notebook
 ---
 # Seminar 2
-## Keynes modell for en lukket økonomi
+## Keynes-modell for en lukket økonomi
 
 Vi ser for oss en lukket økonomi hvor aggregert etterspørsel (AE) er gitt ved
 $$AE\equiv C + I + G$$
@@ -53,11 +53,14 @@ $$\Delta Y = \ \frac{1}{1-c_{1}}\left[\Delta \overline{C} + \Delta {G}  \right]=
 - *Reduserte skatter*
 
 $$\Delta Y = \ \frac{1}{1-c_{1}}\left[\Delta \overline{C}-c_{1} \Delta \overline{T}    \right] \Rightarrow 
-\Delta \underset{(-)}{\overline{C}} = c_{1} \Delta \underset{(-)}{\overline{T}}    $$
+\Delta \underset{(-)}{\overline{C}} = c_{1} \Delta \underset{(-)}{\overline{T}}$$
 
-*Underskuddet på statsbudsjettet er gitt ved $G-T$ (offentlige utgifter minus skatteinntekter). Siden $\Delta G < - \Delta T$.
+*Underskuddet på statsbudsjettet er gitt ved $G-T$* (offentlige utgifter min skatteinntekter) 
 
-Anta at sentralbanken innfører en renteregel, som er gitt ved at $i= m\cdot Y$. 
+Utgiftsøkningen vil være på $\Delta \overline{C}$, mens skatteinntekten vil måtte reduseres ved
+$\Delta \overline{C}/c_{1}$. Siden $\Delta \overline{C} < \Delta \overline{C}/c_{1}$ vil den negative effekten på statsbudsjettet av å gjøre dette ved en skattereduksjon være større enn ved en økning i offentlig utgifter.
+
+Anta at sentralbanken innfører en renteregel som er gitt ved at $i= m\cdot Y$. 
 
 7. Finn nå løsningen til modellen mhp. på Y
 
