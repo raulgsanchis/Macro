@@ -58,13 +58,14 @@ dfgpmakro2 <- function(Iv=NULL, exoparval=exoparvalv, modell='is-lm', endr=0){
 dfgpmakro3 <- function(Iv=NULL, exoparval=exoparvalv, modell='ad-asc', endr=0){
 
   #browser()
+  #exoparval <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2,Pe=1, mu = 0.1, l_1=-1,l_2=1, z=1, A=1, N=1, alpha = 0.5), list(Y=c(25:100)))
 
   # Leser inn modellen
   modellequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/adascequ.json'))
   # Selekterte modellligninger
   ## Enkeltligninger
-  asv <- eval(parse(text=modellequ$AS), exoparval)
   adv <- eval(parse(text=modellequ$AD), exoparval)
+  asv <- eval(parse(text=modellequ$AS), exoparval)
 
   ## Likevekt
   #yeae <- eval(parse(text=modellequ$EQM), exoparval)

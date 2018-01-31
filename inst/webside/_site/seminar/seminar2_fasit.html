@@ -135,68 +135,77 @@ $(document).ready(function () {
 <ol start="2" style="list-style-type: decimal">
 <li>Hvilken sentral forutsetning ligger til grunn for dette resultatet?</li>
 </ol>
-<p><em>Produktprisen er stive (eksogene) i modellen</em></p>
+<p><em>Produktprisen i modellen er konstante (stive)</em></p>
 <ol start="3" style="list-style-type: decimal">
 <li>Gi en økonomisk tolkning tilknyttet konsumfunksjonen til husholdningen.</li>
 </ol>
-<p><em>- <span class="math inline">\(\Overline{C}\)</span> Konsum som blir gitt uavhengig av verdien på de andre variablene i modellen.</em> <em>- <span class="math inline">\(c(Y-T)\)</span> Hvor stor andel av disponinbel inntekt som går til konsum</em> <em>- <span class="math inline">\(c_{2}\cdot\)</span> Rentenivåets påvirkning på konsumet. Høyere rente fører til mindre konsum fordi husholdingen ønsker å spare mer</em></p>
+<ul>
+<li><em><span class="math inline">\(\overline{C}\)</span> Konsum som blir gitt uavhengig av verdien på de andre variablene i modellen.</em></li>
+<li><em><span class="math inline">\(c(Y-T)\)</span> forteller oss hvorstor andel av disponinbel inntekt som går til konsum</em></li>
+<li><em><span class="math inline">\(c_{2}\cdot\)</span> gir rentenivåets påvirkning på konsumet. Høyere rente fører til mindre konsum, dette fordi husholdingen ønsker å spare mer når rente øker</em></li>
+</ul>
 <ol start="4" style="list-style-type: decimal">
 <li>Løs modellen mhp. på <span class="math inline">\(Y\)</span>.</li>
 </ol>
-<p><span class="math display">\[Y = \frac{1}{1-c}\left[\overline{C}-c_{1}\overline{T} - (b+c_{2})\cdot i + \overline{I} + G  \right] \]</span></p>
+<ul>
+<li><em><span class="math display">\[Y = \frac{1}{1-c_{2}}\left[\overline{C}-c_{1}\overline{T} - (b+c_{2})\cdot i + \overline{I} + G  \right] \]</span></em></li>
+</ul>
 <ol start="5" style="list-style-type: decimal">
 <li>Økt pessimisme i økonomien gir seg utslag i et lavere inntektsuavhengig konsum (<span class="math inline">\(\overline{C}&gt;0\)</span>). Hvis formelt, grafisk (dersom du ønsker å benytte Keyneskrysset) og verbalt hvordan dette endrer likevekten i modellen.</li>
 </ol>
 <ul>
-<li><p>Formelt: <span class="math display">\[ \Delta Y = \frac{1}{1-c}\Delta \overline{C} &lt; 0\]</span></p></li>
+<li><p>Formelt: <span class="math display">\[ \Delta Y = \frac{1}{1-c_{1}}\Delta \overline{C} &lt; 0\]</span></p></li>
 <li><p>Keyneskrysset</p></li>
-<li><p>Verbalt: $Redusert konsum medfører først redusert etterspørsel, produksjon og inntekt. Den reduserte inntekten initierer en multiplikatoreffekt siden</p></li>
+<li><p>Verbalt: $Redusert konsum medfører først redusert aggregert etterspørsel og dermed også produksjon og inntekt. Den reduserte inntekten initierer en multiplikatoreffekt, siden redusert inntekt medfører redusert konsum, etterspørsel, produksjon og inntekt osv.</p></li>
 </ul>
 <ol start="6" style="list-style-type: decimal">
-<li>Vis formelt (ved differensiering) hvilke stabiliseringspolitiske virkemidler det offentlige har tilgjengelig for å motvirke den økte pessimismen</li>
+<li>Vis formelt (ved differensiering) hvilke stabiliseringspolitiske virkemidler det offentlige har tilgjengelig for å motvirke den økte pessimismen. Hvilken av disse tiltakene vil ha sterkest negativ effekt på statsbudsjettet?</li>
 </ol>
 <ul>
-<li>Økt offentlige utgifter</li>
+<li><em>Økte offentlige utgifter</em></li>
 </ul>
-<p><span class="math display">\[\Delta Y = \ \frac{1}{1-c}\left[\Delta \overline{C} + \Delta {G}  \right]=0 \Rightarrow \Delta \underset{(-)}{\overline{C} }=- \Delta \underset{(+)}{G}   \]</span></p>
+<p><span class="math display">\[\Delta Y = \ \frac{1}{1-c_{1}}\left[\Delta \overline{C} + \Delta {G}  \right]=0 \Rightarrow \Delta \underset{(-)}{\overline{C} }=- \Delta \underset{(+)}{G}   \]</span></p>
 <ul>
-<li>Reduserte skatter</li>
+<li><em>Reduserte skatter</em></li>
 </ul>
-<p><span class="math display">\[\Delta Y = \ \frac{1}{1-c}\left[\Delta \overline{C}-c_{1} \Delta \overline{T}    \right] \Rightarrow 
+<p><span class="math display">\[\Delta Y = \ \frac{1}{1-c_{1}}\left[\Delta \overline{C}-c_{1} \Delta \overline{T}    \right] \Rightarrow 
 \Delta \underset{(-)}{\overline{C}} = c_{1} \Delta \underset{(-)}{\overline{T}}    \]</span></p>
+<p>*Underskuddet på statsbudsjettet er gitt ved <span class="math inline">\(G-T\)</span> (offentlige utgifter minus skatteinntekter). Siden <span class="math inline">\(\Delta G &lt; - \Delta T\)</span> fordi $$</p>
 <p>Anta at sentralbanken innfører en renteregel, som er gitt ved at <span class="math inline">\(i= m\cdot Y\)</span>.</p>
 <ol start="7" style="list-style-type: decimal">
 <li>Finn nå løsningen til modellen mhp. på Y</li>
 </ol>
-<p><span class="math display">\[Y = \frac{1}{1-c-b}\left[\overline{C}-c_{1}\overline{T} - (b+c_{2})\cdot i + \overline{I} + G  \right] \]</span></p>
+<p><em>Svar:</em></p>
+<p><span class="math display">\[Y = \frac{1}{1-c_{1}+m\cdot c_{2} + m\cdot b}\left[\overline{C}-c_{1}\overline{T} + \overline{I} + G  \right] \]</span></p>
 <ol start="8" style="list-style-type: decimal">
 <li>Bidrar en slik renteregel til å stabilisere eller dempe konjunktursvingingene (hint: sammenlikn multiplikatoren i de to modellene med hverandre)?</li>
 </ol>
+<p><em>Vi har at <span class="math inline">\(\frac{1}{1-c_{1}}&gt;\frac{1}{1-c_{1}+m\cdot c_{2} + m\cdot b}\)</span>. Siden multiplikatoren er mindre i modellen med renteregel,vil regelen bidra til å dempe effekten eksogenene endringer vil ha på konjunktursvingningene</em></p>
 </div>
 <div id="is-lm-modellen" class="section level2">
 <h2>IS-LM modellen</h2>
 <p>Likvektsbetingelsen for pengemarkedet er gitt ved</p>
-<p><span class="math display">\[M^{S} = L_{d} \]</span></p>
+<p><span class="math display">\[M^{S} = L_{d}\]</span></p>
 <p>I tillegg til adferdsligningene fra forrige oppgave, har vi her at</p>
 <p><span class="math display">\[L_{d} = \kappa\cdot Y - h\cdot i \text{ Husholdningens etterspørsel etter penger}\]</span></p>
 <p><span class="math display">\[M^{s}=\frac{\overline{M}}{P} \text{ :Hvor sentralbanken bestemmer tilbudet av basispenger}\]</span></p>
 <ol style="list-style-type: decimal">
 <li>Vis ved differensiering i et (Y, i) diagram og gi en økonomisk tolkning på hvorfor IS-ligningen er synkende og LM-kurven er stigende</li>
 </ol>
+<p>IS-kurven <span class="math display">\[\frac{\Delta Y}{\Delta \overline{i}} =\left[\frac{-b}{1-c(1-t)}\right ]&lt;0\]</span></p>
 <ul>
-<li><p>IS-kurven <span class="math display">\[ \frac{\Delta Y}{\Delta \overline{i}} =\left[\frac{-b}{1-c(1-t)}\right ] &lt;0\]</span></p></li>
-<li><p>Økt rente gir lavere investeringer som initierer en negativ multiplikatoreffekt (redusert investeringer før til redusert etterspørsel som fører redusert konsum osv.)</p></li>
+<li>Økt rente gir lavere investeringer som initierer en negativ multiplikatoreffekt (redusert investeringer før til redusert etterspørsel som fører redusert konsum osv.)</li>
 </ul>
 <p>LM-kurven finner vi ved å differensiere likevektsbetingelsen for pengemarkedet mhp. Y og i:</p>
-<p><span class="math display">\[k\Delta Y -h\Delta i = 0 \Leftrightarrow  \frac{\Delta i}{\Delta Y} = \frac{k}{h} &gt; 0 \]</span></p>
+<p><span class="math display">\[\frac{\Delta i}{\Delta Y} = \frac{k}{h} &gt; 0 \]</span></p>
 <ul>
-<li>LM-kurven <span class="math inline">\(456\)</span></li>
+<li>Økt inntekt gir økt etterspørsel etter penger pga økt transaksjonsbehov. For at markedet skal være i likevekt, må dette motsvares av et høyere rentenivå</li>
 </ul>
 <ol style="list-style-type: decimal">
 <li><p>Vis ved hjelp av en figur effekten av økt optimisme tilknyttet private realinvestinger (‘animal spirits’).</p></li>
 <li><p>Vis og forklar verbalt effekten av en reduksjon i prisnivået.</p></li>
 <li><p>Vis grafisk hvordan likevekten ser ut i pengemarkedet og IS-LM modellen, dersom sentralbanken går over til en renteregel gitt ved<br />
-i= mY</p></li>
+<span class="math inline">\(i= m\cdot Y\)</span></p></li>
 </ol>
 </div>
 </div>
