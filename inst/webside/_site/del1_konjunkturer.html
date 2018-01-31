@@ -404,7 +404,7 @@ $(document).ready(function () {
 <p>Setter samtlige adferdsligningene inn i likevekstbetingelsen for godemarkedet</p>
 <p><span class="math display">\[Y = \overline{C} + c(Y - \overline{T}) + \overline{I} - b\cdot \overline{i} + \overline{G}\]</span></p>
 <p>Løser modellen mhp. på Y (godemarkedet)</p>
-<p><span class="math display">\[Y = \frac{1}{1-c}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]\]</span></p>
+<p><span class="math display">\[Y = \frac{1}{1-c}  \left [ \overline{C} -c\cdot \overline{T} + \overline{I} - b\cdot \overline{i} + \overline{G}  \right ]\]</span></p>
 <hr />
 <ul>
 <li>Grafisk framvisning</li>
@@ -412,8 +412,9 @@ $(document).ready(function () {
 <p><img src="del1_konjunkturer_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <hr />
 </div>
-<div id="komparativ-statikk-analyse-fra-en-likevekt-til-en-annen" class="section level3">
-<h3>Komparativ statikk (analyse fra en likevekt til en annen):</h3>
+<div id="komparativ-statikk-skiftanalyse" class="section level3">
+<h3>Komparativ statikk (skiftanalyse)</h3>
+<p>Analyse fra en likevekt til en annen</p>
 <p>Økte investeringer (‘eks. pga. animal spirits’) <span class="math inline">\(\Delta{\overline{I}}&gt;0\)</span></p>
 <ul>
 <li><p><strong>F</strong>ormelt: <span class="math display">\[\Delta Y = \frac{1}{1-c}\Delta  \overline{I}&gt;0 \text{ eller } \frac{\Delta Y}{\Delta  \overline{I} } = \frac{1}{1-c}&gt;1\]</span></p></li>
@@ -479,7 +480,7 @@ $(document).ready(function () {
 <div id="godemarkedet-samme-lsningsmetodikk-som-under-enkel-keynes-modell" class="section level4">
 <h4>Godemarkedet (samme løsningsmetodikk som under enkel Keynes-modell)</h4>
 <p>Bestemmer produksjonen</p>
-<p><span class="math display">\[Y = \frac{1}{1-c(1-t)}  \left [ \overline{C}- b\cdot \overline{i} + \overline{G}  \right ]\]</span></p>
+<p><span class="math display">\[Y = \frac{1}{1-c(1-t)}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G}  \right ]\]</span></p>
 <p>Merk: høyere skattesats gjør multiplikatoren mindre</p>
 <hr />
 </div>
@@ -510,8 +511,8 @@ $(document).ready(function () {
 <p><strong>Grafisk</strong> <img src="del1_konjunkturer_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <hr />
 </div>
-<div id="komparativ-statikk" class="section level3">
-<h3>Komparativ statikk:</h3>
+<div id="komparativ-statikk-skiftanalyse-1" class="section level3">
+<h3>Komparativ statikk (skiftanalyse)</h3>
 <p>Økning i pengemengden (M)</p>
 <ul>
 <li><strong>G</strong>rafisk</li>
@@ -583,39 +584,30 @@ $(document).ready(function () {
 <hr />
 <p>Dette nivået bestemmer det naturlige ledighetsnivået direkte gjennom</p>
 <p><span class="math display">\[u^{n} = 1 - \frac{Y^{n}}{AN}\]</span> Merk:</p>
-<p><span class="math inline">\(\mu&gt;0 \text{ (monopolistisk konkurranse) } \Rightarrow \overline{Y}&gt;Y^{n}\)</span> <span class="math inline">\(\mu=0 \text{ (perfekt konkurranse) } \Rightarrow \overline{Y}=Y^{n}\)</span></p>
+<ul>
+<li><p><span class="math inline">\(\mu&gt;0 \text{ (monopolistisk konkurranse)} \Rightarrow \overline{Y}&gt;Y^{n}\)</span></p></li>
+<li><p><span class="math inline">\(\mu=0 \text{ (fullkommen konkurranse)} \Rightarrow \overline{Y}=Y^{n}\)</span></p></li>
+<li><p>I dette kurset antar vi at markup-faktoren er såpass lav, slik at <span class="math inline">\(Y^{n} \approx \overline{Y}\)</span></p></li>
+</ul>
+</div>
+<div id="ad-kurven" class="section level3">
+<h3>AD-kurven</h3>
+<p>Tokning: Økte produktpriser reduser realpengemengden. I pengemarkedet fører dette til en økning i rentenivå. Den økte renta medfører redusert etterspørsel pga lavere private realinvesteringer, som initerer en negativ multiplikatoreffekt siden redusert etterspørsel fører til mindre konsum som fører til redusert etterspørsel osv.</p>
+</div>
+</div>
+<div id="ad-as-modellen-for-en-lukket-konomi" class="section level2">
+<h2>AD-AS modellen for en lukket økonomi</h2>
+<p>Viser den samtidige likevekten i gode-, penge- og arbeidsmarkedet</p>
+<ul>
+<li><p>Skjæringspunktet mellom AD og AS-kurven gir oss</p></li>
+<li><p>Likevektsproduksjon og likevektsledighet</p></li>
+</ul>
+<div id="komparativ-statikk-skiftanalyse-2" class="section level3">
+<h3>Komparativ statikk (skiftanalyse)</h3>
+</div>
+<div id="stabiliseringspolitikk-1" class="section level3">
+<h3>Stabiliseringspolitikk</h3>
 <!--
-
-## AD-AS modellen for en lukket økonomi
-
-### AS-kurven
-$$\frac{\Delta P}{\Delta Y}=-(1+μ)P^{e}F'_{u}(1 - \frac{Y}{AN},z)\frac{1}{AN}>0$$
-
-
-
-
-
-### AD-kurven
-Økte produktpriser reduser realpengemengden. I pengemarkedet fører dette til en økning i rentenivå. Den økte renta medfører redusert etterspørsel pga lavere private realinvesteringer, som initerer en negativ multiplikatoreffekt siden redusert etterspørsel fører til mindre konsum som fører til redusert etterspørsel osv. 
-
-
-### Likevektsløsningen
-
-Skjæringspunktet mellom AD- og AS-kurven gir oss produktprisen og likevek
-
-<!--
-
-
-
-<!--
-
-### Likevektsproduksjon og likevektsledighet
-
-
-### Komparativ statikk
-
-### Stabiliseringspolitikk
-
 
 ## Bakgrunnskunnskap om åpen Økonomi
 
@@ -641,13 +633,13 @@ Skjæringspunktet mellom AD- og AS-kurven gir oss produktprisen og likevek
 
 ### Løsning av modellen fast kurs
 
-### Komparativ statikk
+### Komparativ statikk (skiftanalyse)
 
 ### Stabiliseringspolitikk
 
 ### Løsning av modellen flytende kurs
 
-### Komparativ statikk
+### Komparativ statikk (skiftanalyse)
 
 ### Stabiliseringspolitikk
 
@@ -669,13 +661,13 @@ Skjæringspunktet mellom AD- og AS-kurven gir oss produktprisen og likevek
 
 ### Løsning av modellen fast kurs
 
-### Komparativ statikk
+### Komparativ statikk (skiftanalyse)
 
 ### Stabiliseringspolitikk
 
 ### Løsning av modellen flytende kurs
 
-### Komparativ statikk
+### Komparativ statikk (skiftanalyse)
 
 ### Stabiliseringspolitikk
 

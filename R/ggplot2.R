@@ -66,7 +66,6 @@ dfgpmakro3 <- function(Iv=NULL, exoparval=exoparvalv, modell='ad-asc', endr=0){
   asv <- eval(parse(text=modellequ$AS), exoparval)
   adv <- eval(parse(text=modellequ$AD), exoparval)
 
-
   ## Likevekt
   #yeae <- eval(parse(text=modellequ$EQM), exoparval)
 

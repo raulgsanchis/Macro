@@ -207,7 +207,7 @@ $$Y = \overline{C} + c(Y - \overline{T}) + \overline{I} - b\cdot \overline{i} + 
 
 Løser modellen mhp. på Y (godemarkedet) 
 
-$$Y = \frac{1}{1-c}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]$$
+$$Y = \frac{1}{1-c}  \left [ \overline{C} -c\cdot \overline{T} + \overline{I} - b\cdot \overline{i} + \overline{G}  \right ]$$
 
 
 ---
@@ -220,7 +220,8 @@ keynesc
 
 ---
 
-### Komparativ statikk (analyse fra en likevekt til en annen): 
+### Komparativ statikk (skiftanalyse) 
+Analyse fra en likevekt til en annen
 
 Økte investeringer ('eks. pga. animal spirits') $\Delta{\overline{I}}>0$
 
@@ -366,7 +367,7 @@ Hvor $t$ er prosentvis skattesats
 #### Godemarkedet (samme løsningsmetodikk som under enkel Keynes-modell)
 Bestemmer produksjonen
 
-$$Y = \frac{1}{1-c(1-t)}  \left [ \overline{C}- b\cdot \overline{i} + \overline{G}  \right ]$$
+$$Y = \frac{1}{1-c(1-t)}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G}  \right ]$$
 
 Merk: høyere skattesats gjør multiplikatoren mindre
 
@@ -458,7 +459,7 @@ figislm
 
 ---
 
-### Komparativ statikk: 
+### Komparativ statikk (skiftanalyse) 
 
 Økning i pengemengden (M)
 
@@ -623,29 +624,18 @@ Dette nivået bestemmer det naturlige ledighetsnivået direkte gjennom
 $$u^{n} = 1 - \frac{Y^{n}}{AN}$$
 Merk:
 
-$\mu>0 \text{ (monopolistisk konkurranse) } \Rightarrow \overline{Y}>Y^{n}$
-$\mu=0 \text{ (perfekt konkurranse) } \Rightarrow \overline{Y}=Y^{n}$
+- $\mu>0 \text{ (monopolistisk konkurranse)} \Rightarrow \overline{Y}>Y^{n}$
 
-<!--
+- $\mu=0 \text{ (fullkommen konkurranse)} \Rightarrow \overline{Y}=Y^{n}$
 
-## AD-AS modellen for en lukket økonomi
-
-### AS-kurven
-$$\frac{\Delta P}{\Delta Y}=-(1+μ)P^{e}F'_{u}(1 - \frac{Y}{AN},z)\frac{1}{AN}>0$$
-
-
-
-
+- I dette kurset antar vi at markup-faktoren er såpass lav, slik at 
+$Y^{n} \approx \overline{Y}$
 
 ### AD-kurven
-Økte produktpriser reduser realpengemengden. I pengemarkedet fører dette til en økning i rentenivå. Den økte renta medfører redusert etterspørsel pga lavere private realinvesteringer, som initerer en negativ multiplikatoreffekt siden redusert etterspørsel fører til mindre konsum som fører til redusert etterspørsel osv. 
+Tokning: Økte produktpriser reduser realpengemengden. I pengemarkedet fører dette til en økning i rentenivå. Den økte renta medfører redusert etterspørsel pga lavere private realinvesteringer, som initerer en negativ multiplikatoreffekt siden redusert etterspørsel fører til mindre konsum som fører til redusert etterspørsel osv. 
 
-
-### Likevektsløsningen
-
-Skjæringspunktet mellom AD- og AS-kurven gir oss produktprisen og likevek
-
-<!--
+## AD-AS modellen for en lukket økonomi
+Viser den samtidige likevekten i gode-, penge- og arbeidsmarkedet
 
 ```{r eval=FALSE, include=FALSE}
 mlabels <- list(title= 'Pengemarkedet', y='Pengetilbudet (M/P)', x='rentenivå (i)')
@@ -656,22 +646,22 @@ exoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200
                      l_1=-1,l_2=1, z=1, A=1, N=1, alpha = 0.5), list(Y=c(Yv)))
 #cexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 275, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
 
-#abc <- dfgpmakro3(Iv=iv, exoparval=exoparvalv, modell='ad-asc', endr=0)
+abc <- dfgpmakro3(Iv=Yv, exoparval=exoparvalv, modell='ad-asc', endr=0)
 
-a <- qplot(data=abc$dfmodell,Iv, value, geom = 'line')
-b <- qplot(data = subset(dfmodellres, variable == 'adv'), Iv, value, geom = 'line')
-grid.arrange(a, b, ncol = 2)
+a <- qplot(data=subset(dfmodellres, variable == 'adv'), Iv, value, geom = 'line')
+#b <- qplot(data = subset(dfmodellres, variable == 'adv'), Iv, value, geom = 'line')
+grid.arrange(a, a, ncol = 2)
 ```
 
-<!--
+- Skjæringspunktet mellom AD og AS-kurven gir oss 
 
-### Likevektsproduksjon og likevektsledighet
+- Likevektsproduksjon og likevektsledighet
 
-
-### Komparativ statikk
+### Komparativ statikk (skiftanalyse)
 
 ### Stabiliseringspolitikk
 
+<!--
 
 ## Bakgrunnskunnskap om åpen Økonomi
 
@@ -697,13 +687,13 @@ grid.arrange(a, b, ncol = 2)
 
 ### Løsning av modellen fast kurs
 
-### Komparativ statikk
+### Komparativ statikk (skiftanalyse)
 
 ### Stabiliseringspolitikk
 
 ### Løsning av modellen flytende kurs
 
-### Komparativ statikk
+### Komparativ statikk (skiftanalyse)
 
 ### Stabiliseringspolitikk
 
@@ -725,13 +715,13 @@ grid.arrange(a, b, ncol = 2)
 
 ### Løsning av modellen fast kurs
 
-### Komparativ statikk
+### Komparativ statikk (skiftanalyse)
 
 ### Stabiliseringspolitikk
 
 ### Løsning av modellen flytende kurs
 
-### Komparativ statikk
+### Komparativ statikk (skiftanalyse)
 
 ### Stabiliseringspolitikk
 
