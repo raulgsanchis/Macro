@@ -59,7 +59,7 @@ dfgpmakro3 <- function(Iv=NULL, exoparval=exoparvalv, modell='ad-asc', endr=0){
 
   #browser()
   #exoparval <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2,Pe=1, mu = 0.1, l_1=-1,l_2=1, z=1, A=1, N=1, alpha = 0.5), list(Y=c(25:100)))
-  exoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2,Pe=1, mu = 0.1, l_1=-1,l_2=1, z=1, A=1, N=300, alpha = 1), list(Y=c(Yv)))
+  #exoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2,Pe=1, mu = 0.1, l_1=-1,l_2=1, z=1, A=1, N=300, alpha = 1), list(Y=c(Yv)))
 
   # Leser inn modellen
   modellequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/adascequ.json'))
@@ -92,15 +92,16 @@ makrofigure <- function(ndata = datakeynes,
                         scalebreaksy = list(breaksvy = c(1,10), labels = c('yyy',TeX('$Y_{0}$'))),
                         colorl = NULL){
 
+
   # Henter dataene
   datainp <- dplyr::filter(ndata, variable %in% variables) %>% dplyr::mutate(kat='naa')
 
   # Plotte dataene
   ggplot() +
-    labs(title = labt$title, x = labt$x, y = labt$y) +
     geom_line(data = datainp, aes(x = Iv, y = value, color = factor(variable))) +
-    geom_text(data = labplassmon, aes(x = x, y = y, label = labeling), color = labplassmon$col) +
     geom_point(aes(x=equisol$x, y=equisol$y)) +
+    geom_text(data = labplassmon, aes(x = x, y = y, label = labeling), color = labplassmon$col) +
+    labs(title = labt$title, x = labt$x, y = labt$y) +
     geom_segment(aes(x = equisol$x, y = 0, xend = equisol$x , yend = equisol$y), lty = 2) +
     geom_segment(aes(x = 0, y = equisol$y, xend = equisol$x , yend = equisol$y), lty = 2) +
     scale_x_continuous(breaks = scalebreaksx$breaksvx, labels = scalebreaksx$labels) +

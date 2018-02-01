@@ -605,9 +605,39 @@ $(document).ready(function () {
 <div id="komparativ-statikk-skiftanalyse-2" class="section level3">
 <h3>Komparativ statikk (skiftanalyse)</h3>
 </div>
-<div id="stabiliseringspolitikk-1" class="section level3">
-<h3>Stabiliseringspolitikk</h3>
+<div id="stabiliseringspolitikk-g-t-og-mi" class="section level3">
+<h3>Stabiliseringspolitikk (G, T og M/(i))</h3>
 <!--
+
+
+
+```r
+## Merkelapper
+islmlabels <- list(title= 'IS-LM modellen', x='rentenivå (i)', y='produksjon, inntekt (Y)')
+lableg <- list(title= 'IS-LM modellen', x='Y', y='i')
+eqsol <- list(x= c(4.2), y = c(268))
+#rev(subset(dfislm$dfmodell, variable == 'isv')$value)[1]
+#rev(subset(dfislm$dfmodell, variable == 'lmv')$value)[1]
+labldfislm <- labldf <- data.frame(labeling=c("IS-kurven", "LM-kurven"),
+                                   x = c(7, 2),
+                                   y = c(160+40, 380+20),
+                                   col = c(rep(c('red'),1,2)))
+
+eqlinjey <- list(breaksvy = eqsol$y, labels = c(TeX('$Y_{0}$')))
+eqlinjex <- list(breaksvx = eqsol$x, labels = c(TeX('$i_{0}$')))
+
+figislm <- makrofigure(ndata = dfislm$dfmodell,
+                       variables = c("isv", "lmv"),
+                       labt = islmlabels,
+                       labplassmon = labldfislm,
+                       equisol = eqsol,
+                       scalebreaksx = eqlinjex,
+                       scalebreaksy = eqlinjey,
+                       color = rep(c('black'),2)) + coord_flip()
+figislm
+```
+
+<img src="del1_konjunkturer_files/figure-html/unnamed-chunk-12-1.png" width="672" />
 
 ## Bakgrunnskunnskap om åpen Økonomi
 
