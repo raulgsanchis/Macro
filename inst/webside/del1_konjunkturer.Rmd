@@ -439,7 +439,8 @@ $$k\Delta Y -h\Delta i = 0 \Leftrightarrow  \frac{\Delta i}{\Delta Y} = \frac{k}
 ## Merkelapper
 islmlabels <- list(title= 'IS-LM modellen', x='rentenivå (i)', y='produksjon, inntekt (Y)')
 lableg <- list(title= 'IS-LM modellen', x='Y', y='i')
-eqsol <- list(x= c(4.2), y = c(268))
+eqsol <- list(x= c(dfislm$yeae$root[2]), y = c(dfislm$yeae$root[1]))
+
 #rev(subset(dfislm$dfmodell, variable == 'isv')$value)[1]
 #rev(subset(dfislm$dfmodell, variable == 'lmv')$value)[1]
 labldfislm <- labldf <- data.frame(labeling=c("IS-kurven", "LM-kurven"),
@@ -457,7 +458,8 @@ figislm <- makrofigure(ndata = dfislm$dfmodell,
                        equisol = eqsol,
                        scalebreaksx = eqlinjex,
                        scalebreaksy = eqlinjey,
-                       color = rep(c('black'),2)) + coord_flip()
+                       color = rep(c('black'),2),
+                       starts = list(x=0,y=100)) + coord_flip()
 figislm
 ```
 
@@ -479,6 +481,9 @@ cexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 27
 dfislm <- dfgpmakro2(Iv=iv, exoparval = exoparvalv, endr=0)
 cdfislm <- dfgpmakro2(Iv=iv, exoparval = cexoparvalv, endr=0)
 
+dfislm$yeae$root
+cdfislm$yeae$root
+
 ceqsol <- list(x= c(5, 4), y = c(200, 275))
 ceqlinjey <- list(breaksvy = ceqsol$y, labels = c(TeX('$M/P_{0}$'), TeX('$M/P_{1}$')))
 ceqlinjex <- list(breaksvx = ceqsol$x, labels = c(TeX('$i_{0}$'), TeX('$i_{1}$')))
@@ -486,8 +491,6 @@ labldf <- data.frame(labeling=c("Ms", "Ms'", "Ld"),
                      x = c(7.5, 7.5, 1),
                      y = c(200, 200+80, 600),
                      col = c(rep('red',3)))
-#eqlinjey <- list(breaksvy = eqsol$y, labels = c(TeX('$M_{0}/P_{0}$')))
-#eqlinjex <- list(breaksvx = eqsol$x, labels = c(TeX('$i_{0}$')))
 
 figpengemchm2 <- makrofigurechange(ndata = dfislm$dfmodell,
                                   labt = mlabels,
@@ -513,7 +516,7 @@ equisol = ceqsol
 ceqlinjey <- list(breaksvy = ceqsol$y, labels = c(TeX('$Y_{1}$'), TeX('$Y_{0}$')))
 ceqlinjex <- list(breaksvx = ceqsol$x, labels = c(TeX('$i_{1}$'), TeX('$i_{0}$')))
 
-labldfislm <- labldf <- data.frame(labeling=c("LM-kurven'", "IS-kurven"),
+labldfislm <- labldf <- data.frame(labeling=c("LM'", "IS"),
                                    x = c(7.5, 2),
                                    y = c(400, 380+20),
                                    col = c(rep(c('red'),1,2)))
@@ -565,8 +568,6 @@ Reduksjon i prisnivået (P)
 #### Svar
 
 Tokning: Økte produktpriser reduser realpengemengden. I pengemarkedet fører dette til en økning i rentenivå. Den økte renta medfører redusert etterspørsel pga lavere private realinvesteringer, som initerer en negativ multiplikatoreffekt siden redusert etterspørsel fører til mindre konsum som fører til redusert etterspørsel osv. 
-
-
 
 ## 	Arbeidsmarkedet, ledighet og AS-kurven
 
@@ -645,21 +646,27 @@ $Y^{n} \approx \overline{Y}$
 Viser den samtidige likevekten i gode-, penge- og arbeidsmarkedet
 
 ```{r echo=FALSE}
-adaslabels <- list(title= 'AD-AS modellen', x='produksjon, inntekt (Y)', y='Prisnivå (P)')
+adaslabels <- list(title= 'AD-AS modellen', x='produksjon, inntekt (Y)', y='prisnivå (P)')
 
-Yv <- 225:300
-exoparvalvadas <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2,Pe=2, mu = 0.1, l_1=-1,l_2=1, z=1, A=0.5, N=400, alpha = 1), list(Y=c(Yv)))
+Yv <- 200:250 # Guess
+exoparvalvadas <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 100, oI = 75,
+                           T = 75, M= 2000, P=1, h = 2, k =2, Pe=1, mu = 0.1,
+                           l_1=-20,l_2=1, z=1, A=0.5, N=400, alpha = 1, Ac = 2), list(Y=c(Yv)))
+
 dfadas <- dfgpmakro3(Iv=Yv, exoparval=exoparvalvadas, modell='ad-asc', endr=0)
-eqsoladas <- list(y= c(3.1), x= c(268))
-
-eqlinjexadas <- list(breaksvx = eqsoladas$x, labels = c(TeX('$Y_{0}$')))
+eqsoladas <- list(y= c(dfadas$yeae[2]), x= c(dfadas$yeae[1]))
+eqlinjexadas <- list(breaksvx = eqsoladas$x, labels = c(TeX('$Y_{0}=Y^{N}$')))
 eqlinjeyadas <- list(breaksvy = eqsoladas$y, labels = c(TeX('$P_{0}$')))
 
-labldf <- data.frame(labeling=c("AD", "AS"), 
-                     x = c(225, 225), 
-                     y = c(2, 4),
-                     col = c('red','red'))
+xxadas <- c(rev(subset(dfadas$dfmodell, variable = 'adv')$Iv)[1], rev(subset(dfadas$dfmodell, variable = 'asv')$Iv)[1])
 
+yyadas <- c(rev(subset(dfadas$dfmodell, variable == 'adv')$value)[1],
+        rev(subset(dfadas$dfmodell, variable == 'asv')$value)[1])
+
+labldf <- data.frame(labeling=c("AD", "AS"),
+                     x = xxadas,
+                     y = yyadas,
+                     col = c('red','red'))
 
 figadas <- makrofigure(ndata = dfadas$dfmodell,
                        variables = c("adv", "asv"),
@@ -668,10 +675,12 @@ figadas <- makrofigure(ndata = dfadas$dfmodell,
                        equisol = eqsoladas,
                        scalebreaksx = eqlinjexadas ,
                        scalebreaksy = eqlinjeyadas,
-                       colorl = rep(c('black'),2)) 
+                       colorl = rep(c('black'),2),
+                       starts = list(x=200,y=0))
 
-#a <- figadas + geom_line(data=data.frame(x=250,y=0:10), x,y)
-figadas
+natfigadas <- figadas + geom_line(data=data.frame(x=dfadas$yeae[1],y=0:10), aes(x,y),linetype="dotted")
+
+natfigadas
 ```
 
 - Skjæringspunktet mellom AD og AS-kurven gir oss 
@@ -685,62 +694,7 @@ figadas
 - Statiske prisforventninger
 
 ```{r echo=FALSE}
-#adaslabels <- list(title= 'AD-AS modellen', x='produksjon, inntekt (Y)', y='Prisnivå (P)')
-
-#Yv <- 225:300
-#exoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2,Pe=2, mu = 0.1, l_1=-1,l_2=1, z=1, A=0.5, N=400, alpha = 1), list(Y=c(Yv)))
-#cexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 275, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
-#dfadas <- dfgpmakro3(Iv=Yv, exoparval=exoparvalv, modell='ad-asc', endr=0)
-#eqsoladas <- list(y= c(4.2), x= c(268))
-
-#eqlinjexadas <- list(breaksvx = eqsoladas$x, labels = c(TeX('$Y_{0}$')))
-#eqlinjeyadas <- list(breaksvy = eqsoladas$y, labels = c(TeX('$P_{0}$')))
-
-#labldf <- data.frame(labeling=c("AD", "AS"), 
-#                     x = c(225, 225), 
-#                     y = c(2, 4),
-#                     col = c('red','red'))
-
-
-cfigadas <- makrofigure(ndata = dfadas$dfmodell,
-                       variables = c("adv", "asv"),
-                       labt = adaslabels,
-                       labplassmon = labldf,
-                       equisol = eqsoladas,
-                       scalebreaksx = eqlinjexadas ,
-                       scalebreaksy = eqlinjeyadas,
-                       colorl = rep(c('black'),2)) 
-
-#a <- figadas + geom_line(data=data.frame(x=250,y=0:10), x,y)
-adaslabels <- list(title= 'AD-AS modellen', x='produksjon, inntekt (Y)', y='Prisnivå (P)')
-
-Yv <- 225:300
-exoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2,Pe=2, mu = 0.1, l_1=-1,l_2=1, z=1, A=0.5, N=400, alpha = 1), list(Y=c(Yv)))
-#cexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 275, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
-dfadas <- dfgpmakro3(Iv=Yv, exoparval=exoparvalv, modell='ad-asc', endr=0)
-eqsoladas <- list(y= c(4.2), x= c(268))
-
-eqlinjexadas <- list(breaksvx = eqsoladas$x, labels = c(TeX('$Y_{0}$')))
-eqlinjeyadas <- list(breaksvy = eqsoladas$y, labels = c(TeX('$P_{0}$')))
-
-labldf <- data.frame(labeling=c("AD", "AS"), 
-                     x = c(225, 225), 
-                     y = c(2, 4),
-                     col = c('red','red'))
-
-
-figadas <- makrofigure(ndata = dfadas$dfmodell,
-                       variables = c("adv", "asv"),
-                       labt = adaslabels,
-                       labplassmon = labldf,
-                       equisol = eqsoladas,
-                       scalebreaksx = eqlinjexadas ,
-                       scalebreaksy = eqlinjeyadas,
-                       colorl = rep(c('black'),2)) 
-
-#a <- figadas + geom_line(data=data.frame(x=250,y=0:10), x,y)
-cfigadas
-
+natfigadas
 ```
 
 
@@ -750,14 +704,14 @@ cfigadas
 - Korrekte prisforventninger
 
 ```{r echo=FALSE}
-cfigadas
+natfigadas
 ```
 
 
 ### Stabiliseringspolitikk (G, T og M/(i))
 
 ```{r}
-cfigadas
+natfigadas
 ```
 
 

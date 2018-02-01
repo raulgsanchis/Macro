@@ -39,8 +39,17 @@ dfgpmakro2 <- function(Iv=NULL, exoparval=exoparvalv, modell='is-lm', endr=0){
   isv <- eval(parse(text=modellequ$ISC), exoparval)
   lmv <- eval(parse(text=modellequ$LMC), exoparval)
 
-  ## Likevekt
-  #yeae <- eval(parse(text=modellequ$EQM), exoparval)
+  ## Samtidig likevekt
+  iss <- 3
+  yss <- 300
+  #y <- c(yss,iss)
+  exoparvalvd <- exoparvalv[1:length(exoparvalv)-1]
+  #y <- c(yss, pss)
+  optadas <- function(y){
+    c(Y1 = y[1] - eval(parse(text=modellequ$ISC), c(exoparvalvd, list(i=y[2]))),
+      Y2 = y[1] - eval(parse(text=modellequ$LMC), c(exoparvalvd, list(i=y[2]))))}
+
+  yeae <- nmtaggmodela <- rootSolve::multiroot(f = optadas, start = c(yss, iss))
 
   # Linjer
   dfmodellres <- data.frame(Iv, ldv, msv, isv, lmv) %>%
@@ -50,12 +59,15 @@ dfgpmakro2 <- function(Iv=NULL, exoparval=exoparvalv, modell='is-lm', endr=0){
   scx <- NULL#list(breaksvy = c(yeae), labels = c(TeX(paste0("$Y_{",endr,"}$"))))
   scy <- NULL#list(breaksvx = c(yeae), labels = c(TeX(paste0("$X_{",endr,"}$"))))
 
-  list(dfmodell=dfmodellres, yeae = NULL, scx = NULL, scy = NULL)
+  list(dfmodell=dfmodellres, yeae = yeae, scx = NULL, scy = NULL)
 }
 
 #' AD-AS
 #' @export dfgpmakro3
-dfgpmakro3 <- function(Iv=NULL, exoparval=exoparvalv, modell='ad-asc', endr=0){
+dfgpmakro3 <- function(Iv=NULL, exoparval=NULL, modell='ad-asc', endr=0){
+
+
+
 
   # Leser inn modellen
   modellequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/adascequ.json'))
@@ -63,26 +75,27 @@ dfgpmakro3 <- function(Iv=NULL, exoparval=exoparvalv, modell='ad-asc', endr=0){
   ## Enkeltligninger
   adv <- eval(parse(text=modellequ$AD), exoparval)
   asv <- eval(parse(text=modellequ$AS), exoparval)
+  # Linjer
+  dfmodellres <- data.frame(Iv, adv, asv) %>%
+    reshape2::melt(id.vars = c("Iv"))
 
-  yss <- 300
-  pss <- 2
-  exoparvalvd <- exoparvalv[1:length(exoparvalv)-1]
+
+  yss <- median(exoparval$Y)
+  pss <- exoparval$P
+  exoparvalvd <- exoparval[1:length(exoparval)-1]
   #y <- c(yss, pss)
   optadas <- function(y){
     c(Y1 = y[2] - eval(parse(text=modellequ$AD), c(exoparvalvd, list(Y=y[1]))),
       Y2 = y[2] - eval(parse(text=modellequ$AS), c(exoparvalvd, list(Y=y[1]))))}
 
-  yeae <- nmtaggmodela <- rootSolve::multiroot(f = optadas, start = c(yss, pss))
+  yeae <- rootSolve::multiroot(f = optadas, start = c(yss, pss))$root
 
-  # Linjer
-  dfmodellres <- data.frame(Iv, adv, asv) %>%
-    reshape2::melt(id.vars = c("Iv"))
 
   # Før eller etter
   scx <- NULL#list(breaksvy = c(yeae), labels = c(TeX(paste0("$Y_{",endr,"}$"))))
   scy <- NULL#list(breaksvx = c(yeae), labels = c(TeX(paste0("$X_{",endr,"}$"))))
 
-  list(dfmodell=dfmodellres, yeae = NULL, scx = NULL, scy = NULL)
+  list(dfmodell=dfmodellres, yeae = yeae, scx = NULL, scy = NULL)
 }
 
 #' @export makrofigure
@@ -126,7 +139,8 @@ makrofigurechange <- function(ndata = datakeynes,
                               scalebreaksy = list(breaksvy = c(1,10), labels = c('yyy',TeX('$Y_{0}$'))),
                               colorl = NULL,
                               odata = NULL,
-                              ovariables = NULL){
+                              ovariables = NULL,
+                              starts = list(x=0,y=0)){
 
   # Henter dataene
   datainp <- dplyr::filter(ndata, variable %in% variables) %>% dplyr::mutate(kat='naa')
@@ -141,8 +155,8 @@ makrofigurechange <- function(ndata = datakeynes,
     geom_line(data = odatainp, aes(x = Iv, y = value, color = factor(variable))) +
     geom_point(aes(x=equisol$x, y=equisol$y)) +
     geom_text(data = labplassmon, aes(x = x, y = y, label = labeling), color = labplassmon$col) +
-    geom_segment(aes(x = equisol$x, y = 0, xend = equisol$x , yend = equisol$y), lty = 2) +
-    geom_segment(aes(x = 0, y = equisol$y, xend = equisol$x , yend = equisol$y), lty = 2) +
+    geom_segment(aes(x = equisol$x, y = starts$y, xend = equisol$x , yend = equisol$y), lty = 2) +
+    geom_segment(aes(x = starts$x, y = equisol$y, xend = equisol$x , yend = equisol$y), lty = 2) +
     scale_x_continuous(breaks = scalebreaksx$breaksvx, labels = scalebreaksx$labels) +
     scale_y_continuous(breaks = scalebreaksy$breaksvy, labels = scalebreaksy$labels) +
     scale_colour_manual(values = colorl) +
