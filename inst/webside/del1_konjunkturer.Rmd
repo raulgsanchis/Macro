@@ -648,10 +648,9 @@ Viser den samtidige likevekten i gode-, penge- og arbeidsmarkedet
 adaslabels <- list(title= 'AD-AS modellen', x='produksjon, inntekt (Y)', y='Prisnivå (P)')
 
 Yv <- 225:300
-exoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2,Pe=2, mu = 0.1, l_1=-1,l_2=1, z=1, A=0.5, N=400, alpha = 1), list(Y=c(Yv)))
-#cexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 275, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
-dfadas <- dfgpmakro3(Iv=Yv, exoparval=exoparvalv, modell='ad-asc', endr=0)
-eqsoladas <- list(y= c(4.2), x= c(268))
+exoparvalvadas <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2,Pe=2, mu = 0.1, l_1=-1,l_2=1, z=1, A=0.5, N=400, alpha = 1), list(Y=c(Yv)))
+dfadas <- dfgpmakro3(Iv=Yv, exoparval=exoparvalvadas, modell='ad-asc', endr=0)
+eqsoladas <- list(y= c(3.1), x= c(268))
 
 eqlinjexadas <- list(breaksvx = eqsoladas$x, labels = c(TeX('$Y_{0}$')))
 eqlinjeyadas <- list(breaksvy = eqsoladas$y, labels = c(TeX('$P_{0}$')))
@@ -757,7 +756,7 @@ cfigadas
 
 ### Stabiliseringspolitikk (G, T og M/(i))
 
-```{r echo=FALSE}
+```{r}
 cfigadas
 ```
 

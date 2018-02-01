@@ -57,10 +57,6 @@ dfgpmakro2 <- function(Iv=NULL, exoparval=exoparvalv, modell='is-lm', endr=0){
 #' @export dfgpmakro3
 dfgpmakro3 <- function(Iv=NULL, exoparval=exoparvalv, modell='ad-asc', endr=0){
 
-  #browser()
-  #exoparval <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2,Pe=1, mu = 0.1, l_1=-1,l_2=1, z=1, A=1, N=1, alpha = 0.5), list(Y=c(25:100)))
-  #exoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2,Pe=1, mu = 0.1, l_1=-1,l_2=1, z=1, A=1, N=300, alpha = 1), list(Y=c(Yv)))
-
   # Leser inn modellen
   modellequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/adascequ.json'))
   # Selekterte modellligninger
@@ -68,8 +64,15 @@ dfgpmakro3 <- function(Iv=NULL, exoparval=exoparvalv, modell='ad-asc', endr=0){
   adv <- eval(parse(text=modellequ$AD), exoparval)
   asv <- eval(parse(text=modellequ$AS), exoparval)
 
-  ## Likevekt
-  #yeae <- eval(parse(text=modellequ$EQM), exoparval)
+  yss <- 300
+  pss <- 2
+  exoparvalvd <- exoparvalv[1:length(exoparvalv)-1]
+  #y <- c(yss, pss)
+  optadas <- function(y){
+    c(Y1 = y[2] - eval(parse(text=modellequ$AD), c(exoparvalvd, list(Y=y[1]))),
+      Y2 = y[2] - eval(parse(text=modellequ$AS), c(exoparvalvd, list(Y=y[1]))))}
+
+  yeae <- nmtaggmodela <- rootSolve::multiroot(f = optadas, start = c(yss, pss))
 
   # Linjer
   dfmodellres <- data.frame(Iv, adv, asv) %>%
@@ -90,7 +93,8 @@ makrofigure <- function(ndata = datakeynes,
                         equisol = list(x = c(299.75, 310), y = c(299.75, 345)),
                         scalebreaksx = list(breaksvx = c(1,10), labels = c('xxx',TeX('$X_{0}$'))),
                         scalebreaksy = list(breaksvy = c(1,10), labels = c('yyy',TeX('$Y_{0}$'))),
-                        colorl = NULL){
+                        colorl = NULL,
+                        starts = list(x=0,y=0)){
 
 
   # Henter dataene
@@ -102,8 +106,8 @@ makrofigure <- function(ndata = datakeynes,
     geom_point(aes(x=equisol$x, y=equisol$y)) +
     geom_text(data = labplassmon, aes(x = x, y = y, label = labeling), color = labplassmon$col) +
     labs(title = labt$title, x = labt$x, y = labt$y) +
-    geom_segment(aes(x = equisol$x, y = 0, xend = equisol$x , yend = equisol$y), lty = 2) +
-    geom_segment(aes(x = 0, y = equisol$y, xend = equisol$x , yend = equisol$y), lty = 2) +
+    geom_segment(aes(x = equisol$x, y = starts$y, xend = equisol$x , yend = equisol$y), lty = 2) +
+    geom_segment(aes(x = starts$x, y = equisol$y, xend = equisol$x , yend = equisol$y), lty = 2) +
     scale_x_continuous(breaks = scalebreaksx$breaksvx, labels = scalebreaksx$labels) +
     scale_y_continuous(breaks = scalebreaksy$breaksvy, labels = scalebreaksy$labels) +
     scale_colour_manual(values = colorl) +
