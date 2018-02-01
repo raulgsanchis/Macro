@@ -33,9 +33,9 @@ $$G = \overline{G} \text{ og } T=\overline{T} \text{: offentlige myndigheter}$$
 
 4. Løs modellen mhp. på $Y$.
 
-- *$$Y = \frac{1}{1-c_{2}}\left[\overline{C}-c_{1}\overline{T} - (b+c_{2})\cdot i + \overline{I} + G  \right] $$*
+- *$$Y = \frac{1}{1-c_{1}}\left[\overline{C}-c_{1}\overline{T} - (b+c_{2})\cdot i + \overline{I} + G  \right] $$*
 
-5. Økt pessimisme i økonomien gir seg utslag i et lavere inntektsuavhengig konsum ($\overline{C}>0$). Hvis formelt, grafisk (dersom du ønsker å benytte Keyneskrysset) og verbalt hvordan dette endrer likevekten i modellen.
+5. Økt pessimisme i økonomien gir seg utslag i et lavere inntektsuavhengig konsum ($\overline{C}<0$). Hvis formelt, grafisk (dersom du ønsker å benytte Keyneskrysset) og verbalt hvordan dette endrer likevekten i modellen.
 
 - Formelt: $$ -\frac{\Delta Y}{\Delta \overline{C}} = \frac{-1}{1-c_{1}} > 0$$
 
@@ -99,11 +99,11 @@ $$\frac{\Delta i}{\Delta Y} = \frac{k}{h}>0$$
 
 - Økt inntekt gir økt etterspørsel etter penger pga økt transaksjonsbehov. For at markedet skal være i likevekt, må dette motsvares av et høyere rentenivå
 
-1. Vis ved hjelp av en figur effekten av økt optimisme tilknyttet private realinvestinger ('animal spirits').
+2. Vis ved hjelp av en figur effekten av økt optimisme ('animal spirits') tilknyttet private realinvestinger 
 
-1. Vis og forklar verbalt effekten av en reduksjon i prisnivået.
+3. Vis og forklar verbalt effekten av en reduksjon i prisnivået.
 
-*Blir vist i forelesningen*
+*Se forelesningsnotater (øvelse)*
 
-1. Vis grafisk hvordan likevekten ser ut i pengemarkedet og IS-LM modellen dersom sentralbanken går over til en renteregel gitt ved  
+4. Vis grafisk hvordan likevekten ser ut i pengemarkedet og IS-LM modellen dersom sentralbanken går over til en renteregel gitt ved  
 $i= m\cdot Y$
