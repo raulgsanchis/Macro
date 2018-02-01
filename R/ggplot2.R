@@ -66,9 +66,6 @@ dfgpmakro2 <- function(Iv=NULL, exoparval=exoparvalv, modell='is-lm', endr=0){
 #' @export dfgpmakro3
 dfgpmakro3 <- function(Iv=NULL, exoparval=NULL, modell='ad-asc', endr=0){
 
-
-
-
   # Leser inn modellen
   modellequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/adascequ.json'))
   # Selekterte modellligninger
