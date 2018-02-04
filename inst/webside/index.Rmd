@@ -71,7 +71,7 @@ The argument that banks originate loans and thereby create money and additional 
 
 
 ```{r}
- source('~/gitclones/teaching/MakroOEKB1115/inst/webside/figurer/adas/adasl.R')
-adaslikevekt
+# source('~/gitclones/teaching/MakroOEKB1115/inst/webside/figurer/adas/adasl.R')
+#adaslikevekt
 ```
 

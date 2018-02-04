@@ -8,5 +8,9 @@ writing from Ubuntu and write from nucserver
 
 Altibox
 
+```{r}
+#source(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/adas/adasl.R'))
+#adaslikevekt
+```
 
 

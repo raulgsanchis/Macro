@@ -25,6 +25,21 @@ genmakrofigure <- function(dfnumeric = NULL,
 
 }
 
+#' @export genmakrofigure
+cgenmakrofigure <- function(edfnumeric = NULL,
+                            evariables = NULL,
+                            alabt = NULL){
+
+  edatainp <- dplyr::filter(edfnumeric$dfmodell, variable %in% evariables) %>% dplyr::mutate(kat='naa')
+
+  #browser()
+
+  geom_line(data = edatainp, aes(x = Iv, y = value, color = factor(variable))) #+
+  #geom_point(aes(x=edfnumeric$yeae[1], y=edfnumeric$yeae[2]))
+  #geom_text(data = alabt$kurver, aes(x = x, y = y, label = kurve), color = alabt$kurver$fargek) #+
+
+}
+
 #' @export dfgeneric
 dfgeneric <- function(modell='adasl', labels = NULL ,exoparval=NULL){
 
