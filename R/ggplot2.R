@@ -25,7 +25,7 @@ genmakrofigure <- function(dfnumeric = NULL,
 
 }
 
-#' @export genmakrofigure
+#' @export cgenmakrofigure
 cgenmakrofigure <- function(edfnumeric = NULL,
                             evariables = NULL,
                             alabt = NULL){
@@ -42,6 +42,8 @@ cgenmakrofigure <- function(edfnumeric = NULL,
 
 #' @export dfgeneric
 dfgeneric <- function(modell='adasl', labels = NULL ,exoparval=NULL){
+
+  #browser()
 
   Iv <- as.vector(unlist(rev(exoparval)[1]))
 
@@ -117,7 +119,7 @@ dfgeneric <- function(modell='adasl', labels = NULL ,exoparval=NULL){
 
   varnavn <- as.character(unique(dfmodellres$variable))
 
-  varnavnmaksverdi <- subset(dfadas$dfmodell, Iv ==rev(Iv)[1])
+  varnavnmaksverdi <- subset(dfmodellres, Iv ==rev(Iv)[1])
 
   list(dfmodell=dfmodellres, yeae = yeae, varnavn = varnavn,
        varnavnmaksverdi = varnavnmaksverdi)
