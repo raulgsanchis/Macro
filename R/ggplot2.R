@@ -1,3 +1,111 @@
+#' @export genmakrofigure
+genmakrofigure <- function(dfnumeric = NULL,
+                           variables = NULL,
+                           labt = labelsadas,
+                           scalejust = list(x=0, y=0)){
+  # Henter dataene
+  datainp <- dplyr::filter(dfnumeric$dfmodell, variable %in% variables) %>% dplyr::mutate(kat='naa')
+
+  # Grafikk
+  ggplot() +
+    labs(title = labt$title, x = labt$x, y = labt$y) +
+    geom_line(data = datainp, aes(x = Iv, y = value, color = factor(variable))) +
+    geom_text(data = labt$kurver, aes(x = x, y = y, label = kurve), color = labt$kurver$farge) +
+    geom_point(aes(x=dfnumeric$yeae[1], y=dfnumeric$yeae[2])) +
+    geom_segment(aes(x =dfnumeric$yeae[1], y = dfnumeric$yeae[2] ,
+                     xend = dfnumeric$yeae[1], yend = scalejust$y), lty = 2) +
+    geom_segment(aes(x = scalejust$x, y = dfnumeric$yeae[2], xend = dfnumeric$yeae[1],
+                     yend = dfnumeric$yeae[2]), lty = 2) +
+    scale_x_continuous(breaks = dfnumeric$yeae[1], labels = labt$x0) +
+    scale_y_continuous(breaks = dfnumeric$yeae[2], labels = labt$y0) +
+    theme_classic() +
+    theme(legend.position="none")
+
+}
+
+#' @export dfgeneric
+dfgeneric <- function(modell='adasl', labels = NULL ,exoparval=NULL){
+
+  Iv <- as.vector(unlist(rev(exoparval)[1]))
+
+  if (modell =='keynes'){
+    # Keynes
+    keynesequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/keynesequ.json'))
+    grad45v <- 0:rev(Iv)[1]
+    cdv <- eval(parse(text=keynesequ$CD),exoparval)
+    idv <- eval(parse(text=keynesequ$ID),exoparval)
+    gdv <- eval(parse(text=keynesequ$GD),exoparval)
+
+    # Linjer
+    dfkeykryss <- data.frame(Iv, grad45v, cdv, idv, gdv) %>%
+      dplyr::mutate(gdvpidv = gdv + idv) %>%
+      dplyr::mutate(cdvpidvgdv = cdv + idv + gdv) %>%
+      reshape2::melt(id.vars = c("Iv"))
+
+    # Likevekt
+    yeae <-eval(parse(text=keynesequ$AD), exoparval)
+    xeae <-eval(parse(text=keynesequ$AD), exoparval)
+
+  } else if (modell =='islm'){
+    # Leser inn modellen
+    # modellequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/islmequ.json'))
+    # # Selekterte modellligninger
+    # ## Enkeltligninger
+    # ldv <- eval(parse(text=modellequ$LD), exoparval)
+    # msv <- eval(parse(text=modellequ$MS), exoparval)
+    # isv <- eval(parse(text=modellequ$ISC), exoparval)
+    # lmv <- eval(parse(text=modellequ$LMC), exoparval)
+    #
+    # ## Samtidig likevekt
+    # iss <- 3
+    # yss <- 300
+    # #y <- c(yss,iss)
+    # exoparvalvd <- exoparvalv[1:length(exoparvalv)-1]
+    # #y <- c(yss, pss)
+    # optadas <- function(y){
+    #   c(Y1 = y[1] - eval(parse(text=modellequ$ISC), c(exoparvalvd, list(i=y[2]))),
+    #     Y2 = y[1] - eval(parse(text=modellequ$LMC), c(exoparvalvd, list(i=y[2]))))}
+    #
+    # yeae <- nmtaggmodela <- rootSolve::multiroot(f = optadas, start = c(yss, iss))
+    #
+    # # Linjer
+    # dfmodellres <- data.frame(Iv, ldv, msv, isv, lmv) %>%
+    #   reshape2::melt(id.vars = c("Iv"))
+  } else if (modell =='adasl'){
+    # Leser inn modellen
+    modellequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/adascequ.json'))
+    # Selekterte modellligninger
+    ## Enkeltligninger
+    adv <- eval(parse(text=modellequ$AD), exoparval)
+    asv <- eval(parse(text=modellequ$AS), exoparval)
+
+    # Melted
+    dfmodellres <- data.frame(Iv, adv, asv) %>%
+      reshape2::melt(id.vars = c("Iv"))
+
+    # Samtidig likevekt
+    yss <- median(exoparval$Y)
+    pss <- exoparval$P
+    exoparvalvd <- exoparval[1:length(exoparval)-1]
+    #y <- c(yss, pss)
+    optadas <- function(y){
+      c(Y1 = y[2] - eval(parse(text=modellequ$AD), c(exoparvalvd, list(Y=y[1]))),
+        Y2 = y[2] - eval(parse(text=modellequ$AS), c(exoparvalvd, list(Y=y[1]))))}
+
+    yeae <- rootSolve::multiroot(f = optadas, start = c(yss, pss))$root
+
+  } else {
+    print('Modell ikke funnet!')
+  }
+
+  varnavn <- as.character(unique(dfmodellres$variable))
+
+  varnavnmaksverdi <- subset(dfadas$dfmodell, Iv ==rev(Iv)[1])
+
+  list(dfmodell=dfmodellres, yeae = yeae, varnavn = varnavn,
+       varnavnmaksverdi = varnavnmaksverdi)
+}
+
 #' @export dfgpmakro
 dfgpmakro <- function(Iv=NULL, exoparval=NULL, modell='keynes', endr=0){
 
@@ -116,10 +224,10 @@ makrofigure <- function(ndata = datakeynes,
     geom_point(aes(x=equisol$x, y=equisol$y)) +
     geom_text(data = labplassmon, aes(x = x, y = y, label = labeling), color = labplassmon$col) +
     labs(title = labt$title, x = labt$x, y = labt$y) +
-    geom_segment(aes(x = equisol$x, y = starts$y, xend = equisol$x , yend = equisol$y), lty = 2) +
-    geom_segment(aes(x = starts$x, y = equisol$y, xend = equisol$x , yend = equisol$y), lty = 2) +
-    scale_x_continuous(breaks = scalebreaksx$breaksvx, labels = scalebreaksx$labels) +
-    scale_y_continuous(breaks = scalebreaksy$breaksvy, labels = scalebreaksy$labels) +
+    geom_segment(aes(x = equisol$x, y = 0, xend = equisol$x , yend = equisol$y), lty = 2) +
+    geom_segment(aes(x = 0, y = equisol$y, xend = equisol$x , yend = equisol$y), lty = 2) +
+    scale_x_continuous(breaks = starts$x, labels = scalebreaksx$labels) +
+    scale_y_continuous(breaks = starts$y, labels = scalebreaksy$labels) +
     scale_colour_manual(values = colorl) +
     theme_classic() +
     theme(legend.position="none")
@@ -234,15 +342,18 @@ gpdiamdoell2 <- function(data = NULL,
   # Plotte dataene
   ggplot() +
     geom_line(data = datainp, aes(y = Iv, x = value, color = factor(variable))) +
-    #geom_point(aes(x=equisol$x, y=equisol$y)) +
-    #geom_text(data = labplassmon, aes(x = x, y = y, label = labeling), color = as.character(labplassmon$col)) +
+    geom_point(aes(x=equisol$x, y=equisol$y)) +
+    geom_text(data = labplassmon, aes(x = x, y = y, label = labeling), color = as.character(labplassmon$col)) +
     labs(title = labt$title, x = labt$x, y = labt$y) +
     scale_colour_manual(values = color) +
     theme_classic() +
-    #geom_segment(aes(x = equisol$x, y = 0, xend = equisol$x , yend = equisol$y), lty = 2) +
-    #geom_segment(aes(x = 0, y = equisol$y, xend = equisol$x , yend = equisol$y), lty = 2) +
-    #scale_x_continuous(breaks =scalebreaksx$breaksvx, labels = scalebreaksx$labels) +
-    #scale_y_continuous(breaks = scalebreaksy$breaksvy, labels = scalebreaksx$labels) +
+    geom_segment(aes(x = equisol$x, y = 0, xend = equisol$x , yend = equisol$y), lty = 2) +
+    geom_segment(aes(x = 0, y = equisol$y, xend = equisol$x , yend = equisol$y), lty = 2) +
+    scale_x_continuous(breaks =scalebreaksx$breaksvx, labels = scalebreaksx$labels) +
+    scale_y_continuous(breaks = scalebreaksy$breaksvy, labels = scalebreaksx$labels) +
     theme(legend.position="none") +
     coord_cartesian()
 }
+
+
+
