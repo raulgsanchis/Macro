@@ -1,0 +1,167 @@
+%&latex
+\documentclass[a4paper,notitlepage]{article}
+\usepackage{beamerarticle}
+%\mode<article>{\usepackage{fullpage}}
+%\documentclass[notes=show]{beamer}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{natbib}
+\usepackage{mathpazo}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage{graphicx}
+\usepackage{amssymb}
+%\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+%\usepackage{amsmath}
+\usetheme{Madrid}
+%\input{tcilatex}
+\usepackage{color}
+
+\begin{document}
+
+\title[Triola kapittel 1]{Likviditetsfellen og privat gjeld}
+\author[JIH]{J\o rn I. Halvorsen \\ Universitet i ?s}
+\institute[BI]{\inst{1} }
+\date[Sj\o krigsskolen 2007]{Forelesningsnotat ECN 222, h?sten 2013}
+\maketitle
+%------------------------------
+\section{Introduksjon}
+Med likviditetsfellen menes en situasjon hvor pengepolitikken ikke lengre har mulighet til ? ?ve en ekspansiv effekt p? real?konomien. N?rmere bestemt s? er en slik situasjon karakterisert ved en kortsiktig rente som er (tiln?rmet) null. For dette renteniv?et, vil det ikke lengre v?re mulig ? sette renta videre ned.
+\footnote{ Andre pengepolitisk tiltak som kvantitative lettelser skal i teorien heller ikke ha noen nevneverdig effekt. Men en rente (tiln?rmet) lik null, vil alternativkostnaden av ? holde penger (tapte renteinntekter) forsvinne. Under en slik situasjon vil private banker ikke ha noen st?rre interesse av ? l?ne ut penger framfor det ? holde de som reserver}
+
+
+Likviditetsfellen har v?rt et tema innenfor makro?konomi helt siden Keynes i 1936 ga ut boken. ''The General Theory of Employment Interest and Money''. Men temaet har ikke hatt noen stor plass innenfor makro?konomi f?r ganske nylig. Denne fornyede interessen i dette temaet skyldes at styringsrenten for USA og eurosonen de siste ?rene har ligget n?r null. Enda mindre plass har blitt viet til sp?rsm?let om bakgrunnen for hvorfor et land havner i en likviditetsfelle.
+
+Vi skal i dette notatet se p? to forklaringer for hvorfor et land kan havne i en likvidtetsfelle: (1) Demografiske endringer (\cite{krugman1998s}) og (2) Privat gjeldsreduksjon (\cite{eggertsson2012debt}. Sistnevnte forklaring gir oss ogs? en klar sammenheng mellom en privat og statlig gjeldskrise, noe som har v?rt tilfelle for mange land i etterkant av den globale finanskrisen i 2008. Avslutningsvis skal vi p? hvordan finanspolitikk n?rmest kan fungere som en gratis lunsj n?r det gjelder ? trekke et land ut av en likviditetsfelle.
+\section{Modell}
+\subsection{IS-LM Modell for en lukket ?konomi}
+For en lukket ?konomi har vi at produksjon er lik ettersp?rsel
+\begin{equation*}
+Y=C+I+G
+\end{equation*}
+Hvor $Y$ er bruttonasjonalprodukt, $C$ privat konsum, $I$ privat realinvesteringer og $G$ offentlig konsum og investeringer.
+Vi ser her bort fra rentef?lsomme investeringer, og antar her at investeringene er gitt ved
+\begin{equation*}
+I=\overline{I}
+\end{equation*}
+Skatteinntektene i ?konomien $T$ er gitt ved en proporsjonal skattesats $t$
+\begin{equation*}
+T=tY
+\end{equation*}
+Vi antar at sentralbanken bestemmer renta, og pengemengden blir bestemt i pengemarkedet ved
+\begin{equation*}
+\frac{M}{P}=L(Y,i)
+\end{equation*}
+Hvor $M$ er tilbudet av penger, $P$ prisniv?et og $i$ det nominelle renteniv?et.
+\bigskip\\
+\noindent \textbf{Case 1: Demografiske endringer (\cite{krugman1998s})}\\
+Vi postulerer her f?lgende konsumfunksjon
+\noindent Vi tenker oss her at konsumfunksjonen er gitt ved
+\begin{equation*}
+C=\bar{C}+c\cdot (1-t)\cdot Y-b\cdot i \text{ hvor } b,c>0
+\end{equation*}
+L?ser vi denne modellen for Y f?r vi (IS-likningen) \\
+\begin{equation*}
+Y=\frac{1}{1-c\cdot (1-t)}(\bar{C}-b\cdot i+\overline{I}+G)
+\end{equation*}
+Som et resultat av aldrende befolkning forventer husholdningene lavere framtidig produksjon i ?konomien, det medf?rer redusert konsum i dag ved
+\begin{equation*}
+\Delta\bar{C}<0
+\end{equation*}
+Effekten p? BNP blir
+\begin{equation*}
+\Delta Y=\frac{1}{1-c\cdot (1-t)}\Delta\bar{C}<0
+\end{equation*}
+Sentralbanken kan fors?ke ? stabilisere denne negative utviklingen ved ? sette ned renta, men ikke mer ned enn til null $\Delta i ^{0}<0$.
+Vi vil derfor ha at
+\begin{equation*}
+\Delta Y=\frac{1}{1-c\cdot (1-t)}(\Delta\bar{C}-b\cdot \Delta i ^{0})<0
+\end{equation*}
+Vi har havnet i en likviditetstilfelle dersom effekten av en rentereduksjon ikke er tilstrekkelig til ? motvirke fallet i konsumettersp?rselen:
+\begin{equation*}
+(\Delta\bar{C}-b\cdot \Delta i^{0})<0
+\end{equation*}
+Totaleffekten p? ?konomien blir derfor negativ siden
+\begin{equation*}
+\Delta Y=\frac{1}{1-c(1-t)}(\Delta\bar{C}-b\cdot \Delta i ^{0})<0
+\end{equation*}
+\noindent \textbf{Case 2: Gjeldsnedbygging \cite{eggertsson2012debt}}\\
+
+\noindent ?konomien best?r n? av to heterogene typer husholdninger
+\begin{equation*}
+C=\theta C^{b}+(1-\theta)C^{s}
+\end{equation*}
+Hvor $\theta$ er andelen av gjeldstyngede husholdninger. $(1-\theta)$ utgj?r de resterende husholdningene med formue.
+
+Den gjeldstyngede husholdningen er karakterisert ved at den l?ner helt opp til et fastsatt gjeldsniv? $D^{\text{b,h?y}}$
+\begin{equation*}
+C^{b}= (1-t)\cdot Y-D^{\text{b,h?y}}\cdot i_{-1}+\Delta D^{b}
+\end{equation*}
+De andre husholdningene oppf?rer seg som vi har postulert tidligere
+\begin{equation*}
+C^{s}=\overline{C}+c((1-t)Y)-bi
+\end{equation*}
+Aggregert konsum i ?konomien vil derfor v?re gitt ved
+\begin{equation*}
+C=(1-\theta)\overline{C}+(\theta c+(1-\theta))\cdot(1-t)Y-\overline{b}\cdot i - \theta D^{\text{b,h?y}}\cdot i_{-1}+ \theta\Delta D^{b} \end{equation*}
+ Definerer vi $ \tilde {C}=(1-\theta)\overline{C} \text{ , } \overline{b}=(1-\theta)b$ \text{ og } $\overline{c}=\theta c+(1-\theta)$ kan vi skrive uttrykket ovenfor mer kompakt som
+\begin{equation*}
+C=\tilde{C}+\overline{c}(1-t)Y-\overline{b}\cdot i - \theta D^{\text{b,h?y}}\cdot i_{-1}+ \theta\Delta D^{b}
+\end{equation*}
+L?ser vi denne modellen for Y f?r vi (IS-likningen) \\
+\begin{equation*}
+Y=\frac{1}{1-\overline{c}(1-t)}(\tilde{C}-\overline{b}\cdot i - \theta D^{\text{b,h?y} }\cdot i_{-1}+ \theta\Delta D^{b}+\overline{I}+G)
+\end{equation*}
+Et overraskende krav om gjeldsreduksjon (Minsky-bevegelse) f?rer til at $\Delta D^{b} =(D^{lav}-D^{h?y}<0)$ som gir
+\begin{equation*}
+\Delta Y=\frac{1}{1-\overline{c}(1-t)}( \theta\Delta D^{b})<0
+\end{equation*}
+Sentralbanken kan ogs? her fors?ke ? stabilisere denne negative utviklingen ved ? sette ned renta, men ikke mer ned enn til null $\Delta i ^{0}<0$.
+\begin{equation*}
+\Delta Y=\frac{1}{1-\overline{c}(1-t)}\left[ \theta\Delta D^{b}-\overline{b} \Delta i^{0} \right]
+\end{equation*}
+Vi har havnet i likviditetstilfellen, dersom rentereduksjon ikke er tilstrekkelig til ? motvirke fallet i konsumettersp?rselen:
+\begin{equation*}
+\left( \theta\Delta D^{b}-\overline{b}\cdot \Delta i^{0} \right)<0
+\end{equation*}
+Totaleffekten p? ?konomien blir derfor negativ siden
+\begin{equation*}
+\Delta Y=\frac{1}{1-\overline{c}(1-t)}( \theta\Delta D^{b}-\overline{b}\cdot \Delta i ^{0})<0
+\end{equation*}
+\subsection{Sammenhengen mellom privat og statlig gjeldskrise}
+Ved en privat gjeldsreduksjon (Minsky-bevegelse) som ikke kan bli n?ytralisert ved en tilstrekkelig reduksjon i renteniv?et (likviditetsfelle), vil en privat gjeldskrise lett ogs? sl? ut i en statsgjeldskrise.
+
+Vi kan f? ?ye p? dette ved ? differensiere uttrykket for skatteinntekter \begin{equation*}
+\Delta T=t \Delta Y
+\end{equation*}
+Bruker vi dette uttrykket og setter inn for l?sningen vi fikk i forrige avsnitt for $\Delta Y$, finner vi at
+\begin{equation*}
+\Delta T=t \frac{1}{1-\overline{c}(1-t)}(\theta \Delta\bar{D}^{b}-b\cdot \Delta i ^{0})<0
+\end{equation*}
+
+Fra forrige forelesning har vi at den prim?re budsjettbalansen er gitt ved \begin{equation*}
+\frac{G_{t}-T_{t}}{Y_{t}}
+\end{equation*}
+En privat gjeldsreduksjon med etterf?lgende likviditetsfelle vil svekke b?de $T_{t}$ og $Y_{t}$ mens $G_{t}$ holdes uendret. Totalt sett vil dette bidra til ? ?ke den offentlige gjeldsandelen.
+Det vil derfor i en ?konomi fort kunne eksistere en n?r sammenheng mellom en privat- og offentlig gjeldskrise.
+\subsection{Finanspoltikk under en likviditetstilfelle: En gratis lunsj?}
+L?sningen p? en privat gjeldskrise, med en eventuell etterf?lgende statsgjeldskrise, kan fort virke paradoksal. Den g?r rett og slett ut p? staten ?ker sin gjeld gjennom en ?kning i offentlig konsum eller investeringer,$\Delta G>0$, slik at vi oppn?r intern balanse (produksjonsgapet lukkes).
+\begin{equation*}
+\Delta Y=\frac{1}{1-\overline{c}(1-t)}( \theta\Delta D^{b}-\overline{b}\cdot \Delta i ^{0}+\Delta G)=0
+\end{equation*}
+Som betyr at
+\begin{equation*}
+(\theta\Delta D^{b}-\overline{b}\cdot \Delta i ^{0})=-\Delta G
+\end{equation*}
+Merk at innenfor modellen finnes det absolutt ingen kostnader ved denne politikken, kun  gevinster: (1) Ressurser som ellers ville ha v?rt ledig vil kunne g? inn til produktiv virksomhet. (2) Siden rente er null, vil det ikke v?re knyttet noen rentekostnader til ?kte offentlige utgifter. (3) Dersom produksjonsgapet er lukket, vil ogs? prisniv?et bli stabilisert.\footnote{I en ?pen ?konomi vil ikke situasjonen v?re like enkel. Problemer tilknyttet den eksterne balansen kan fort gj?re det n?dvendig for et land ? ha deflasjon for ? rette opp konkurranseevnen (jmf, krisen i eursonen).}
+\begin{equation*}
+\end{equation*}
+\bibliographystyle{econometrica}%
+\bibliography{foraas}%
+\end{document}
+http://www.tradingeconomics.com/united-states/interest-rate
+http://www.tradingeconomics.com/germany/interest-rate
+http://www.tradingeconomics.com/japan/interest-rate
+http://www.youtube.com/watch?v=X2lqcZIv4XI
+27:50

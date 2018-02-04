@@ -4,7 +4,7 @@ inst <- function(){
   # rmarkdown::render("test.Rmd", "html_document")
   rmarkdown::render(paste0(devtools::as.package(".")$path,'/inst/webside/presentasjoner/pres_innledning.Rmd'))
   rmarkdown::render(paste0(devtools::as.package(".")$path,'/inst/webside/presentasjoner/pres_del1.Rmd'))
-  rmarkdown::render(paste0(devtools::as.package(".")$path,'/inst/webside/presentasjoner/pres_del1.Rmd'))
+  #rmarkdown::render(paste0(devtools::as.package(".")$path,'/inst/webside/presentasjoner/pres_del1.Rmd'))
   rmarkdown::render(paste0(devtools::as.package(".")$path,'/inst/webside/seminar/seminar1.Rmd'))
   rmarkdown::render(paste0(devtools::as.package(".")$path,'/inst/webside/seminar/seminar2.Rmd'))
   rmarkdown::render_site(paste0(devtools::as.package(".")$path,'/inst/webside/'))
@@ -20,3 +20,19 @@ inst <- function(){
 #
 # rmarkdown::render("test.Rmd", "html_document")
 # R CMD INSTALL --no-multiarch --with-keep.source MakroOEKB1115
+
+
+inst2 <- function(){
+  website <- c('')[1]
+  pkg <- devtools::as.package(".")
+  # rmarkdown::render("test.Rmd", "html_document")
+  rmarkdown::render(paste0(devtools::as.package(".")$path,'/inst/websidebygger/presentasjoner/pres_innledning.Rmd'))
+  rmarkdown::render(paste0(devtools::as.package(".")$path,'/inst/websidebygger/presentasjoner/pres_del1.Rmd'))
+  #rmarkdown::render(paste0(devtools::as.package(".")$path,'/inst/websidebygger/presentasjoner/pres_del1.Rmd'))
+  rmarkdown::render(paste0(devtools::as.package(".")$path,'/inst/websidebygger/seminar/seminar1.Rmd'))
+  rmarkdown::render(paste0(devtools::as.package(".")$path,'/inst/websidebygger/seminar/seminar2.Rmd'))
+  rmarkdown::render_site(paste0(devtools::as.package(".")$path,'/inst/websidebygger/'))
+  #system('cd ..')
+  #system('pwd')
+  #system('R CMD INSTALL --no-multiarch --with-keep.source MakroOEKB1115')
+}

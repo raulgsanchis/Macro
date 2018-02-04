@@ -1,0 +1,71 @@
+## Artikler
+
+[U.S. Economy Notches Solid 3 percent Growth,
+Despite Hurricane](artikler/del1_growthusa3.pdf)
+
+[Investors Prepare for Inflation](artikler/del1_inflation.pdf)
+
+[The Global Economy’s Output Gap Has Closed](artikler/del1_output_gap.pdf)
+
+[Nettsedler](artikler/del1_epenger.pdf)
+
+[U.S. Gained 200,000 Jobs in January](artikler/del1_jobmarket.pdf)
+
+[The FED's point's man on productivity](artikler/del1_USA_TFPg.pdf)
+
+## Videoer
+<iframe width="200" height="200" src="https://www.youtube.com/embed/qtAeINU3FKM">
+</iframe>
+<iframe width="200" height="200" src="https://www.youtube.com/embed/SHsCkinrCPE">
+</iframe>
+<!--
+<iframe width="200" height="200" src="https://www.youtube.com/embed/15idnfuyqXs">
+</iframe>
+<iframe width="200" height="200" src="https://www.youtube.com/embed/DGmUtJkTaqc">
+</iframe>
+<iframe width="200" height="200" src="https://www.youtube.com/embed/0OdFoNCYU0M">
+</iframe>
+<iframe width="200" height="200" src="https://www.youtube.com/embed/Ta2m3D9Ig0g">
+</iframe>
+-->
+
+## Lydbøker
+
+[The Shifts and the Shocks: What We've Learned--and Have Still to Learn--from the Financial Crisis](https://www.audible.com/pd/Nonfiction/The-Shifts-and-the-Shocks-Audiobook/B00NHBLBKC)
+
+
+## Øknomisk debatt
+
+[Project Syndicate](https://www.project-syndicate.org/)
+
+[Voxeu](http://voxeu.org/)
+
+## Blogger
+
+[Paul Krugman](https://www.nytimes.com/column/paul-krugman)
+
+[John Cochrane](https://johnhcochrane.blogspot.no/)
+
+[Hans-Werner Sinn](https://www.project-syndicate.org/columnist/hans-werner-sinn)
+
+## Statistikk
+
+[SSB](http://www.ssb.no/nasjonalregnskap-og-konjunkturer)
+
+[Federal Reserve Bank of St. Louis (FRED)](http://www.ssb.no/nasjonalregnskap-og-konjunkturer)
+
+
+<!--
+<p>
+This is an email link:
+<a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">Send Mail</a>
+</p>
+
+## Musikk
+
+<iframe width="200" height="200" src="https://www.youtube.com/embed/QssPdmYuL-A">
+</iframe>
+
+<iframe width="200" height="200" src="https://www.youtube.com/embed/Nu9MDqGhIak&t=3368s">
+</iframe>
+-->

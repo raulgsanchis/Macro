@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">ØKB1115 Makroøkonomi</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Kursinformasjon
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Forelesningsplan</li>
+    <li class="dropdown-header">Læringsmål</li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Forelesninger
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Introduksjon</li>
+    <li class="dropdown-header">Del I: Konjunktursvingninger</li>
+    <li class="dropdown-header">Del II: Økonomisk vekst</li>
+    <li class="dropdown-header">Del III: Økonomiske kriser</li>
+    <li class="dropdown-header">Applikasjon: Krisen i Eurosonen</li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Oppgaver
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Seminaroppgaver</li>
+    <li class="dropdown-header">Regneregler for differensialer</li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Lenker
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Supplerende kursinformasjon</li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Utskrifter
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li class="dropdown-header">Forelesningsnotater</li>
+    <li class="dropdown-header">Variabeldefinisjoner</li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a></a>
+</li>
+<li>
+  <a href="https://www.hvl.no/person/?user=3601450">
+    <span class="ion ion-android-contact"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>
+</title>
+<!-- 2018-01-29 ma. 14:25 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" /> <meta  name="generator" content="Org-mode" /> <meta  name="author" content="Jørn I. Halvorsen" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js"></script>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">
+</h1>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1">
+Variabelforklaringer
+</h2>
+<div class="outline-text-2" id="text-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup>
+<col  class="left" />
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">
+Variabel
+</th>
+<th scope="col" class="left">
+Økonomisk forklaring
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">
+Y
+</td>
+<td class="left">
+Bruttonasjonalprodukt (reelt)
+</td>
+</tr>
+<tr>
+<td class="left">
+<span class="math inline">\(\overline{Y}\)</span>
+</td>
+<td class="left">
+Potensiell produkusjon
+</td>
+</tr>
+<tr>
+<td class="left">
+<span class="math inline">\(Y^{n}\)</span>
+</td>
+<td class="left">
+Det naturlige produksjonsnivået
+</td>
+</tr>
+<tr>
+<td class="left">
+LY
+</td>
+<td class="left">
+Nominelt bruttonasjonalprodukt
+</td>
+</tr>
+<tr>
+<td class="left">
+<span class="math inline">\(Y_{d}\)</span>
+</td>
+<td class="left">
+Disponibel inntekt (inntekt etter skatt er betalt)
+</td>
+</tr>
+<tr>
+<td class="left">
+N
+</td>
+<td class="left">
+Arbeidsstyrken
+</td>
+</tr>
+<tr>
+<td class="left">
+L
+</td>
+<td class="left">
+Sysselsatte personer
+</td>
+</tr>
+<tr>
+<td class="left">
+U
+</td>
+<td class="left">
+Antall utenfor arbeid
+</td>
+</tr>
+<tr>
+<td class="left">
+u
+</td>
+<td class="left">
+Ledighetsrate
+</td>
+</tr>
+<tr>
+<td class="left">
+u<sup>n</sup>
+</td>
+<td class="left">
+Den naturlige ledighetsraten
+</td>
+</tr>
+<tr>
+<td class="left">
+P
+</td>
+<td class="left">
+Det aggregerte prisnivået (innenlandsk)
+</td>
+</tr>
+<tr>
+<td class="left">
+<span class="math inline">\(\pi\)</span>
+</td>
+<td class="left">
+Inflasjon
+</td>
+</tr>
+<tr>
+<td class="left">
+Z
+</td>
+<td class="left">
+Aggregert etterspørsel (utgifter)
+</td>
+</tr>
+<tr>
+<td class="left">
+C
+</td>
+<td class="left">
+Aggregert konsum
+</td>
+</tr>
+<tr>
+<td class="left">
+<span class="math inline">\(\overline{C}\)</span>
+</td>
+<td class="left">
+Inntektsuavhengig konsum
+</td>
+</tr>
+<tr>
+<td class="left">
+c
+</td>
+<td class="left">
+Den marginale konsumtilbøyeligheten
+</td>
+</tr>
+<tr>
+<td class="left">
+I
+</td>
+<td class="left">
+Private realinvesteringer
+</td>
+</tr>
+<tr>
+<td class="left">
+<span class="math inline">\(\overline{I}\)</span>
+</td>
+<td class="left">
+Konstantledd tilhørende private realinvesteringer
+</td>
+</tr>
+<tr>
+<td class="left">
+b
+</td>
+<td class="left">
+Rentefølsomheten tilknyttet investeringer
+</td>
+</tr>
+<tr>
+<td class="left">
+i
+</td>
+<td class="left">
+Det nominelle rentenivået
+</td>
+</tr>
+<tr>
+<td class="left">
+G
+</td>
+<td class="left">
+Offentlig konsum og realinvestiringer
+</td>
+</tr>
+<tr>
+<td class="left">
+M<sup>s</sup>
+</td>
+<td class="left">
+Tilbud av penger (reelt)
+</td>
+</tr>
+<tr>
+<td class="left">
+M
+</td>
+<td class="left">
+Tilbud av penger (nominelt)
+</td>
+</tr>
+<tr>
+<td class="left">
+<span class="math inline">\(L_{m}\)</span>
+</td>
+<td class="left">
+Etterspørsel etter penger (realverdi)
+</td>
+</tr>
+<tr>
+<td class="left">
+<span class="math inline">\(\kappa\)</span>
+</td>
+<td class="left">
+Pengeetterspørselens inntektsfølsomhet
+</td>
+</tr>
+<tr>
+<td class="left">
+h
+</td>
+<td class="left">
+Pengeetterspørselens rentefølsomhet
+</td>
+</tr>
+<tr>
+<td class="left">
+K
+</td>
+<td class="left">
+Nivået på realkapital
+</td>
+</tr>
+<tr>
+<td class="left">
+<span class="math inline">\(\text{P}^{e}\)</span>
+</td>
+<td class="left">
+Prisforventninger
+</td>
+</tr>
+<tr>
+<td class="left">
+<span class="math inline">\(\mu\)</span>
+</td>
+<td class="left">
+Påslag (i prosent) på det aggregerte prisnivået
+</td>
+</tr>
+<tr>
+<td class="left">
+NX
+</td>
+<td class="left">
+Netto eksport
+</td>
+</tr>
+<tr>
+<td class="left">
+EX
+</td>
+<td class="left">
+Eksport
+</td>
+</tr>
+<tr>
+<td class="left">
+IM
+</td>
+<td class="left">
+Import
+</td>
+</tr>
+<tr>
+<td class="left">
+R
+</td>
+<td class="left">
+Real valutakurs (pris for én enhet av utenlandsk gode i enhenter av innenlansk gode)
+</td>
+</tr>
+<tr>
+<td class="left">
+E
+</td>
+<td class="left">
+Nominell valutakurs (pris for én enhet av utenlandsk valuta)
+</td>
+</tr>
+<tr>
+<td class="left">
+<span class="math inline">\(\text{P}^{*}\)</span>
+</td>
+<td class="left">
+Aggregerte prisnivået (innenlandsk)
+</td>
+</tr>
+<tr>
+<td class="left">
+<span class="math inline">\(\text{i}^{*}\)</span>
+</td>
+<td class="left">
+Det nominelle rentenivået i utlandet
+</td>
+</tr>
+<tr>
+<td class="left">
+BP
+</td>
+<td class="left">
+Utenriksregnskapet
+</td>
+</tr>
+<tr>
+<td class="left">
+CU
+</td>
+<td class="left">
+Driftsregnskapet ovenfor utlandet
+</td>
+</tr>
+<tr>
+<td class="left">
+CA
+</td>
+<td class="left">
+Kapitalregnskapet
+</td>
+</tr>
+<tr>
+<td class="left">
+OR
+</td>
+<td class="left">
+Endring i sentralbankens valutareserver
+</td>
+</tr>
+<tr>
+<td class="left">
+S
+</td>
+<td class="left">
+Sparing
+</td>
+</tr>
+<tr>
+<td class="left">
+<span class="math inline">\(\delta\)</span>
+</td>
+<td class="left">
+Depresieringsrate på kapital
+</td>
+</tr>
+<tr>
+<td class="left">
+A
+</td>
+<td class="left">
+Teknologinivå
+</td>
+</tr>
+<tr>
+<td class="left">
+a
+</td>
+<td class="left">
+Teknologisk vekst
+</td>
+</tr>
+<tr>
+<td class="left">
+n
+</td>
+<td class="left">
+Befolkningsvekst
+</td>
+</tr>
+<tr>
+<td class="left">
+B
+</td>
+<td class="left">
+Nominelt nivå på statsobligasjoner eid av private aktører
+</td>
+</tr>
+<tr>
+<td class="left">
+<span class="math inline">\(B^{t}\)</span>
+</td>
+<td class="left">
+Nominelt nivå på statsobligasjoner utstedt av finansmyndighetene
+</td>
+</tr>
+<tr>
+<td class="left">
+<span class="math inline">\(B^{m}\)</span>
+</td>
+<td class="left">
+Nominelt nivå på statsobligasjoner på sentralbankens regnskapsbalanse
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+<html>
+<body>
+<!--
+<footer>
+  <p>Publisert av: <a href="mailto:jorn.inge.halvorsen@hvl.no">jorn.inge.halvorsen@hvl.no</a>.</p>
+</footer>
+-->
+</body>
+</html>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

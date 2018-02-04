@@ -1,0 +1,16 @@
+---
+title: "Forelesning ØKB1115 Makroøkonomi: Del I Konjunktursvingninger"
+output:
+  ioslides_presentation: default
+#    logo: logo.png
+---
+
+```{r plan, child = '../del1_konjunkturer.Rmd'}
+#../del1_konjunkturer.Rmd
+```
+
+
+
+<!-- http://rmarkdown.rstudio.com/ioslides_presentation_format.html -->
+
+

@@ -149,7 +149,7 @@ dfgpmakro <- function(Iv=NULL, exoparval=NULL, modell='keynes', endr=0){
   list(dfmodell=dfkeykryss, yeae=yeae, xeae=xeae, scx=scx, scy=scy)
 }
 
-#' IS-LM
+#IS-LM
 #' @export dfgpmakro2
 dfgpmakro2 <- function(Iv=NULL, exoparval=exoparvalv, modell='is-lm', endr=0){
 

@@ -1,9 +1,3 @@
----
-output:
-  html_document:
-    df_print: paged
----
-
 
 ```{r include=FALSE}
 library(MakroOEKB1115)
@@ -505,7 +499,7 @@ figpengemchm2 <- makrofigurechange(ndata = dfislm$dfmodell,
                                   odata = cdfislm$dfmodell,
                                   ovariables = c("ldv", "msv")) + coord_flip()
 #
-ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/islm/figpengemchm.png'), width = 2, height = 2, units = "cm")
+#ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/islm/figpengemchm.png'), width #= 2, height = 2, units = "cm")
 #
 
 # ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/figislm.png'))

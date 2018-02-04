@@ -1,0 +1,33 @@
+#+OPTIONS: html-postamble:nil
+#+OPTIONS: num:nil
+#+OPTIONS: toc:nil
+#+TITLE: Penger, kreditt og bankadferd
+
+
+
+* Banker og systemrisiko123
+** Aktørene
+*** Husholdningene
+*** Bedriftene
+*Forretningsmodell 1*
+
+| Tilstand | Sannsynlighet | Avkastning |
+|----------+---------------+------------|
+|        1 | 0,99          | 0,05       |
+|        2 | 0,01          | 0,05       |
+
+
+*Forretningsmodell 2*
+| Tilstand | Sannsynlighet | Avkastning |
+|----------+---------------+------------|
+|        1 | 0,99          | 0,06       |
+|        2 | 0,01          | -1         |
+
+
+
+*** I likevekt
+
+
+
+
+

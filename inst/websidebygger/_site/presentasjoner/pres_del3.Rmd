@@ -1,0 +1,10 @@
+---
+title: "Innledning"
+output:
+  ioslides_presentation: default
+---
+
+
+```{r plan, child = '../abc.Rmd'}
+
+```

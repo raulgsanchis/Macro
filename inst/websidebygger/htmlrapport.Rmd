@@ -1,0 +1,22 @@
+---
+title: "Innholdsfortegnelse"
+output:
+  html_document:
+    toc: true
+    toc_depth: 4
+bibliography: pensum.bib
+---
+
+```{r child = 'innledning.Rmd'}
+```
+
+```{r child = 'del1_konjunkturer.Rmd'}
+```
+
+<!--
+
+-->
+
+# Referanser
+
+<font color="white">Smith cited [@gartner2016macroeconomics]</font>

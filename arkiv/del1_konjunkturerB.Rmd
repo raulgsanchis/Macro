@@ -1,0 +1,799 @@
+
+```{r include=FALSE}
+library(MakroOEKB1115)
+library(dplyr)
+library(ggplot2)
+library(gridExtra)
+library(grid)
+library(latex2exp)
+
+# Henter datasett
+moltmacrousa <- MakroOEKB1115::moltmacrousa
+unique(moltmacrousa$variable)
+
+usadataI <- dplyr::filter(moltmacrousa, variable %in% c('unem', 'cunem', 'ggdp', 'inflation', 'cinflation', 'yinflation', 'cyinflation'))
+fusadataI <- reshape2::dcast(usadataI, date + freqm ~ variable) %>% 
+  dplyr::filter(freqm=='01', date >= '1948-01-01'& date < '2017-01-01')
+
+okunusa <- qplot(data = fusadataI, x = ggdp, y = cunem, geom = c('point', 'smooth'), method='lm')
+philipusa <- qplot(data = fusadataI, x = unem, y = yinflation, geom = c('point', 'smooth'), method='lm')
+
+okunusag <- ggplot(data = fusadataI, aes(x = cunem, y = ggdp))  + geom_point() +  geom_smooth(method=lm, se=FALSE) + theme_classic() + labs(title = 'Okuns lov', subtitle = 'USA 1948-2016', x = 'Endring i arbeidsledigheten', y = c('Vekst i BNP (realpriser)'))
+
+philipusag <- ggplot(data = fusadataI, aes(x = unem, y = cyinflation))  + geom_point() +  geom_smooth(method=lm, se=FALSE) + theme_classic() + labs(title = 'Phillips-kurven', subtitle = 'USA 1948-2016' ,x = 'Ledighetsrate', y = 'Endring i inflation')
+```
+
+```{r include=FALSE}
+# Keyneskrysset
+mlabels <- list(title= 'Keyneskrysset', x='produksjon, inntekt (Y)', y='Aggregert etterspørsel (AE)')
+# Parameterverdier (Keyneskrysset)
+Iv <- 0:600
+exoparval <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 50, T = 10), list(Y=c(Iv)))
+cexoparval <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 90, T = 10), list(Y=c(Iv)))
+dfkeynes <- dfgpmakro(Iv, exoparval, endr=0)
+cdfkeynes <- dfgpmakro(Iv, cexoparval, endr=1)
+eqsol <- list(x= c(dfkeynes$yeae), y = c(dfkeynes$yeae))
+ceqsol <- list(x= c(dfkeynes$yeae, cdfkeynes$yeae), y = c(dfkeynes$yeae, cdfkeynes$yeae))
+eqlinjey <- list(breaksvy = eqsol$y, labels = c(TeX('$AE_{0}$')))
+eqlinjex <- list(breaksvx = eqsol$x, labels = c(TeX('$Y_{0}$')))
+unique(dfkeynes$dfmodell$variable)
+
+rev(subset(dfkeynes$dfmodell, variable == 'gdv')$value)[1]
+rev(subset(dfkeynes$dfmodell, variable == 'gdvpidv')$value)[1]
+rev(subset(dfkeynes$dfmodell, variable == 'cdvpidvgdv')$value)[1]
+rev(subset(dfkeynes$dfmodell, variable == 'grad45v')$value)[1]
+labldf <- data.frame(labeling=c("45 grader", "I", "C + I", "C + I + G", "Y = AE"), 
+                     x = c(105, 560, 560, 560, 560), 
+                     y = c(20, 50+10, 100+10, 480+10, 600+10),
+                     col = c('black', rep(c('red'),1,4)))
+
+keynesc <- makrofigure(ndata = dfkeynes$dfmodell,
+                            labt = mlabels,
+                            variables = c('grad45v', 'gdv', 'gdvpidv','cdvpidvgdv'),
+                            labplassmon = labldf,
+                            equisol = eqsol,
+                            scalebreaksx = eqlinjex,
+                            scalebreaksy = eqlinjey,
+                            colorl = c(rep('black',4)))
+
+###
+rev(subset(dfkeynes$dfmodell, variable == 'cdvpidvgdv')$value)[1]
+ceqlinjey <- list(breaksvy = ceqsol$y, labels = c(TeX('$AE_{0}$'), TeX('$AE_{1}$')))
+ceqlinjex <- list(breaksvx = ceqsol$x, labels = c(TeX('$Y_{0}$'), TeX('$Y_{0}$')))
+rev(subset(cdfkeynes$dfmodell, variable == 'cdvpidvgdv')$value)[1]
+rev(subset(cdfkeynes$dfmodell, variable == 'grad45v')$value)[1]
+labldf <- data.frame(labeling=c("45 grader", "C + I + G", "C+ I' + G", "Y=AE"), 
+                     x = c(105, 560, 560, 560), 
+                     y = c(20, 480+5, 520+5, 600+5),
+                     col = c('black', rep(c('red'),1,3)))
+
+keynesccinv <- makrofigurechange(ndata = dfkeynes$dfmodell,
+                            labt = mlabels,
+                            variables = c('grad45v','cdvpidvgdv'),
+                            labplassmon = labldf,
+                            equisol = ceqsol,
+                            scalebreaksx = ceqlinjex,
+                            scalebreaksy = ceqlinjey,
+                            colorl = c(rep('black',3)),
+                            odata = cdfkeynes$dfmodell,
+                            ovariables = c('cdvpidvgdv'))
+```
+
+## Grunnleggende bakgrunnkunnskaper 
+
+### Stabiliseringsmål lukket økonomi
+
+Intern balanse (lukke produksjonsgapet):
+
+$$(Y-\overline{Y})=0$$
+  
+---
+
+### Sentrale nasjonalregnskapstall
+- Bruttonasjonalprodukt (GDP/BNP): Den samlede verdien av alle varer og tjenester som blir *produsert i landet* i løpet av et år
+    - Nominelt BNP (LY) 
+$$LY = PY$$
+    - Reelt BNP (Y)
+$$Y = LY/P $$
+
+- Bruttonasjonalinntekt (GNP/BNI): Den samlede verdien av alle varer og tjenester som *landets innbyggere produserer* i løpet av et år
+
+---
+
+- Arbeidsledighetsrate:
+
+$$u = 1-\frac{L}{N}$$
+
+- Inflasjon: 
+
+$$\pi = \frac{\Delta P}{P} =\frac{P_{t} - P_{t-1}}{P_{t-1}}$$
+
+---
+
+### Noen sentrale empiriske sammenhenger
+
+#### Okuns lov: negativ sammenheng mellom endring i arbeidsledighet og vekst (eller endring i vekst)  i BNP (realpriser) 
+
+```{r echo=FALSE}
+okunusag 
+```
+
+---
+
+#### Phillips-kurven: negativ sammenheng mellom arbeidsledighet og endring i inflasjon (eller inflasjon)
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+# Check for warnings
+philipusag 
+```
+
+---
+
+### Hva bestemmer aggregert produksjon (BNP)?
+#### Kort sikt (0-3 år):
+- Pga antagelsen om prisstivheter på kort sikt (uendret lønn og produktpriser), vil  samlet etterspørsel ($AE$) bestemme BNP ($Y$)
+- Vi legger dette til grunn i enkel Keynes, IS-LM,  og Mundell-Fleming modellen (del I og del III)
+
+#### Mellomlang sikt (5-10 år):
+- Tilgangen på innsatsfaktorene arbeidskraft ($L$), teknologi ($A$) og kapital ($K$) bestemmer BNP ($Y$)
+- Langsiktig likevektsbetingelse for AD-AS modellen (del I)
+
+---
+
+#### Lang sikt (10-50 år):
+- Teknologisk framgang ($a$), kapitalakkumulasjon ($\Delta K$) og befolkningsvekst ($n$) bestemmer BNP ($Y$)
+- Hovedresultatet fra Solow-modellen (del II)
+
+## Enkel Keynes-modell 
+
+- Likevekt i godemarkedet (varer og tjenester)
+
+### Aggregert etterspørsel (AE)
+$$AE \equiv  C + I + G$$
+
+### Markeder i likevekt: Godemarkedet (varer og tjenester)
+$$Y = AE \equiv  C + I + G$$
+
+---
+
+### Adferdsligninger
+
+#### Husholdninger
+
+$$C =  \overline{C} + c(Y - T)$$
+
+Hvor $0<c<1$ (marginale konsumtilbøyeligheten) og $\overline{C}>0$ (inntektsuavhengig konsum)
+
+#### Bedrifter
+$$I = \overline{I} - b\cdot i$$
+
+Hvor $\overline{I}>0$ ('animial spirits') og $b>1$ (lavere rente gjør flere investeringsprosjekter lønnsomme pga. økt nåverdi) 
+
+---
+
+#### Sentralbanken
+$$i = \overline{i}$$
+
+Hvor $\overline{i} >= 0$
+
+---
+
+#### Offentlige myndigheter
+
+$$G = \overline{G}$$ 
+
+og
+
+$$T = \overline{T}$$ 
+
+
+---
+
+### Modellen består av
+
+Endogene variabler (bestemt av modellen): $Y, C, I, G$ 
+
+Eksogene variabler (bestemt utenfor modellen): $\overline{C}, \overline{T}, \overline{i}, \overline{I}, \overline{G}$
+
+Parametre: $c, b$
+
+---
+
+
+### Løsning av modellen:
+Setter samtlige adferdsligningene inn i likevekstbetingelsen for godemarkedet 
+
+$$Y = \overline{C} + c(Y - \overline{T}) + \overline{I} - b\cdot \overline{i} + \overline{G}$$
+
+Løser modellen mhp. på Y (godemarkedet) 
+
+$$Y = \frac{1}{1-c}  \left [ \overline{C} -c\cdot \overline{T} + \overline{I} - b\cdot \overline{i} + \overline{G}  \right ]$$
+
+
+---
+
+-  Grafisk framvisning 
+
+```{r echo=FALSE}
+keynesc
+```
+
+---
+
+### Komparativ statikk (skiftanalyse) 
+Analyse fra en likevekt til en annen
+
+Økte investeringer ('eks. pga. animal spirits') $\Delta{\overline{I}}>0$
+
+- **F**ormelt:
+$$\Delta Y = \frac{1}{1-c}\Delta  \overline{I}>0 \text{ eller } \frac{\Delta Y}{\Delta  \overline{I} } = \frac{1}{1-c}>1$$
+
+- **V**erbalt (dynamisk tolkning utenfor modellen):
+
+Økte investeringer $\rightarrow$ økt produksjon $\rightarrow$ initierer en multiplikatoreffekt: $\rightarrow$ økt disponibel inntekt $\rightarrow$ økt konsum $\rightarrow$ økt produksjon osv.
+
+---
+
+- **G**rafisk:
+
+```{r echo=FALSE}
+keynesccinv
+```
+
+---
+
+### Stabiliseringspolitikk
+
+Reduserte offentlige utgifter $\Delta G < 0$
+
+$$\Delta Y = \frac{1}{1-c}  \left [ \Delta \overline{I} + \Delta \overline{G} \right ]$$
+
+Dersom vi lar $\Delta \overline{I} = - \Delta \overline{G} > 0 \Rightarrow \Delta Y = 0$ (dvs. intern balanse)
+
+- Merk: Det politiske systemet i de fleste land innebygd iboende tregheter tilknyttet budsjettendringer. Dette gjør finanspolitikk vanskelig å implementere som konjunkturstabiliserende virkemiddel. Dette fordi treghetene gjør at man responderer for sent sett i forhold til konjunktursituasjonen
+
+---
+
+### Øvelse
+
+Redusert rentenivå $\Delta{\overline{i}}<0$
+
+- **F**ormelt:
+
+- **G**rafisk (Y,EA) plan og (Y,i) plan:
+
+- **V**erbalt (tolkning utenfor modellen):
+
+## IS-LM modellen
+
+```{r include=FALSE}
+
+#ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/figpengem.png'))
+
+#
+##abcdef <- png::readPNG(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/figpengem.png')
+
+# 
+# 
+# # ## Endring
+# ceqsol <- list(x= c(5, 4), y = c(200, 275))
+# ceqlinjey <- list(breaksvy = ceqsol$y, labels = c(TeX('$M/P_{0}$'), TeX('$M/P_{1}$')))
+# ceqlinjex <- list(breaksvx = ceqsol$x, labels = c(TeX('$i_{0}$'), TeX('$i_{1}$')))
+# labldf <- data.frame(labeling=c("Ms", "Ms'", "Ld"),
+#                      x = c(7.5, 7.5, 1),
+#                      y = c(200, 200+80, 600),
+#                      col = c(rep('red',3)))
+# eqlinjey <- list(breaksvy = eqsol$y, labels = c(TeX('$M_{0}/P_{0}$')))
+# eqlinjex <- list(breaksvx = eqsol$x, labels = c(TeX('$i_{0}$')))
+# 
+# figpengemchm <- makrofigurechange(ndata = dfislm$dfmodell,
+#                                   labt = mlabels,
+#                                   variables = c("ldv", "msv"),
+#                                   labplassmon = labldf,
+#                                   equisol = ceqsol,
+#                                   scalebreaksx = ceqlinjex,
+#                                   scalebreaksy = ceqlinjey,
+#                                   colorl = c(rep('black',3)),
+#                                   odata = cdfislm$dfmodell,
+#                                   ovariables = c("ldv", "msv")) + coord_flip()
+# #
+# # ##ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/figpengemchm.png'))
+# #
+# 
+# # ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/figislm.png'))
+# #
+# ## Endring
+# ceqsol <- list(x= c(3.7, 4.15), y = c(284, 264))
+# equisol = ceqsol
+# ceqlinjey <- list(breaksvy = ceqsol$y, labels = c(TeX('$Y_{1}$'), TeX('$Y_{0}$')))
+# ceqlinjex <- list(breaksvx = ceqsol$x, labels = c(TeX('$i_{1}$'), TeX('$i_{0}$')))
+# 
+# labldfislm <- labldf <- data.frame(labeling=c("LM-kurven'", "IS-kurven"),
+#                                    x = c(7.5, 2),
+#                                    y = c(400, 380+20),
+#                                    col = c(rep(c('red'),1,2)))
+# 
+# figislmxchm <- makrofigurechange(ndata = dfislm$dfmodell,
+#                                  variables = c("isv", "lmv"),
+#                                  labt = islmlabels,
+#                                  labplassmon = labldfislm,
+#                                  equisol = ceqsol,
+#                                  scalebreaksx = ceqlinjex,
+#                                  scalebreaksy = ceqlinjey,
+#                                  odata = cdfislm$dfmodell,
+#                                  ovariables = c("lsv", "lmv"),
+#                                  color = rep('black',4)) + coord_flip()
+# 
+# grid.arrange(figpengemchm, figislmxchm , ncol= 2)
+# 
+# ##ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/figislmxchm.png'))
+
+```
+
+
+### Markeder i likevekt: Gode- og pengemarkedet
+
+Likevekstsbetingelsen for godemarkedet
+
+$$Y = AE \equiv C + I + G$$ 
+Likevekstsbetingelsen for pengemarkedet
+
+$$M^{s} = L_{m}$$
+
+---
+
+### Adferdsligninger (bare endringer og nye ligninger er lagt til her)
+
+#### Husholdninger
+Bestemmer pengeetterspørselen (realverdi)
+$$L_{m} = \kappa Y -hi$$
+Hvor $k>0$ (pengeetterspørselens inntektsfølsomhet) og $h>0$ (pengeetterspørselens rentefølsomhet) 
+
+#### Sentralbanken
+$$M = \overline{M} $$
+
+---
+
+#### Offentlige myndighter
+
+$$T = tY $$
+
+Hvor $t$ er prosentvis skattesats
+
+---
+
+### Løsning av modellen:
+
+#### Godemarkedet (samme løsningsmetodikk som under enkel Keynes-modell)
+Bestemmer produksjonen
+
+$$Y = \frac{1}{1-c(1-t)}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G}  \right ]$$
+
+Merk: høyere skattesats gjør multiplikatoren mindre
+
+--- 
+
+#### Pengemarkedet (M0 - basispengemengden)
+Bestemmer rentenivået
+
+$$kY -hi = \overline{M}/P$$
+
+```{r echo=FALSE}
+iv <- 0:7.5
+exoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
+#cexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 275, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
+dfislm <- dfgpmakro2(Iv=iv, exoparval = exoparvalv, endr=0)
+#cdfislm <- dfgpmakro2(Iv=iv, exoparval = cexoparvalv, endr=0)
+
+# Pengemarkedet
+mlabels <- list(title= 'Pengemarkedet', y='Pengetilbudet (M/P)', x='rentenivå (i)')
+labldf <- labldf <- data.frame(labeling=c("Ms", "Ld"),
+                               x = c(7.5, 1),
+                               y = c(200+30, 600),
+                               col = c(rep(c('red'),1,2)))
+eqsol <- list(x= c(5), y = c(200))
+eqlinjey <- list(breaksvy = eqsol$y, labels = c(TeX('$M_{0}/P_{0}$')))
+eqlinjex <- list(breaksvx = eqsol$x, labels = c(TeX('$i_{0}$')))
+
+figpengem <- makrofigure(ndata = dfislm$dfmodell,
+                         variables = c("ldv", "msv"),
+                         labt = mlabels,
+                         labplassmon = labldf,
+                         equisol = eqsol,
+                         scalebreaksx = eqlinjex,
+                         scalebreaksy = eqlinjey,
+                         colorl = c(rep('black',2))) + coord_flip()
+
+figpengem
+```
+
+---
+
+### IS-LM modellen 
+Viser den samtidige likevekten i gode- og pengemarkedet
+
+**Formelt**
+
+IS-kurven finner vi ved å differensiere likevektsbetingelsen for godemarkedet mph. Y og i:
+
+$$ \frac{\Delta Y}{\Delta \overline{i}} =\left[\frac{-b}{1-c(1-t)}\right ] <0$$
+
+- Økt rente gir lavere investeringer som initierer en negativ multiplikatoreffekt (redusert investeringer før til redusert etterspørsel som fører redusert konsum osv.)
+
+---
+
+LM-kurven finner vi ved å differensiere likevektsbetingelsen for pengemarkedet mhp. Y og i:
+
+$$k\Delta Y -h\Delta i = 0 \Leftrightarrow  \frac{\Delta i}{\Delta Y} = \frac{k}{h} > 0 $$
+
+- Økt inntekt gir økt etterspørsel etter penger pga økt transaksjonsbehov. For at markedet skal være i likevekt, må dette motsvares av et høyere rentenivå
+
+---
+
+**Grafisk**
+```{r echo=FALSE}
+## Merkelapper
+islmlabels <- list(title= 'IS-LM modellen', x='rentenivå (i)', y='produksjon, inntekt (Y)')
+lableg <- list(title= 'IS-LM modellen', x='Y', y='i')
+eqsol <- list(x= c(dfislm$yeae$root[2]), y = c(dfislm$yeae$root[1]))
+
+#rev(subset(dfislm$dfmodell, variable == 'isv')$value)[1]
+#rev(subset(dfislm$dfmodell, variable == 'lmv')$value)[1]
+labldfislm <- labldf <- data.frame(labeling=c("IS-kurven", "LM-kurven"),
+                                   x = c(7, 2),
+                                   y = c(160+40, 380+20),
+                                   col = c(rep(c('red'),1,2)))
+
+eqlinjey <- list(breaksvy = eqsol$y, labels = c(TeX('$Y_{0}$')))
+eqlinjex <- list(breaksvx = eqsol$x, labels = c(TeX('$i_{0}$')))
+
+figislm <- makrofigure(ndata = dfislm$dfmodell,
+                       variables = c("isv", "lmv"),
+                       labt = islmlabels,
+                       labplassmon = labldfislm,
+                       equisol = eqsol,
+                       scalebreaksx = eqlinjex,
+                       scalebreaksy = eqlinjey,
+                       color = rep(c('black'),2),
+                       starts = list(x=0,y=100)) + coord_flip()
+figislm
+```
+
+---
+
+### Komparativ statikk (skiftanalyse) 
+
+Økning i pengemengden (M)
+
+- **G**rafisk
+
+```{r echo=FALSE}
+mlabels <- list(title= 'Pengemarkedet', y='Pengetilbudet (M/P)', x='rentenivå (i)')
+islmlabels <- list(title= 'IS-LM modellen', x='rentenivå (i)', y='produksjon, inntekt (Y)')
+### Endring
+iv <- 0:7.5
+exoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
+cexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 275, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
+dfislm <- dfgpmakro2(Iv=iv, exoparval = exoparvalv, endr=0)
+cdfislm <- dfgpmakro2(Iv=iv, exoparval = cexoparvalv, endr=0)
+
+dfislm$yeae$root
+cdfislm$yeae$root
+
+ceqsol <- list(x= c(5, 4), y = c(200, 275))
+ceqlinjey <- list(breaksvy = ceqsol$y, labels = c(TeX('$M/P_{0}$'), TeX('$M/P_{1}$')))
+ceqlinjex <- list(breaksvx = ceqsol$x, labels = c(TeX('$i_{0}$'), TeX('$i_{1}$')))
+labldf <- data.frame(labeling=c("Ms", "Ms'", "Ld"),
+                     x = c(7.5, 7.5, 1),
+                     y = c(200, 200+80, 600),
+                     col = c(rep('red',3)))
+
+figpengemchm2 <- makrofigurechange(ndata = dfislm$dfmodell,
+                                  labt = mlabels,
+                                  variables = c("ldv", "msv"),
+                                  labplassmon = labldf,
+                                  equisol = ceqsol,
+                                  scalebreaksx = ceqlinjex,
+                                  scalebreaksy = ceqlinjey,
+                                  colorl = c(rep('black',3)),
+                                  odata = cdfislm$dfmodell,
+                                  ovariables = c("ldv", "msv")) + coord_flip()
+#
+ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/islm/figpengemchm.png'), width = 2, height = 2, units = "cm")
+#
+
+# ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/figislm.png'))
+#
+## Endring
+#grid.arrange(figpengemchm2, figislmxchm , ncol= 2)
+#figpengemchm2
+ceqsol <- list(x= c(3.7, 4.15), y = c(284, 264))
+equisol = ceqsol
+ceqlinjey <- list(breaksvy = ceqsol$y, labels = c(TeX('$Y_{1}$'), TeX('$Y_{0}$')))
+ceqlinjex <- list(breaksvx = ceqsol$x, labels = c(TeX('$i_{1}$'), TeX('$i_{0}$')))
+
+labldfislm <- labldf <- data.frame(labeling=c("LM'", "IS"),
+                                   x = c(7.5, 2),
+                                   y = c(400, 380+20),
+                                   col = c(rep(c('red'),1,2)))
+
+figislmxchm <- makrofigurechange(ndata = dfislm$dfmodell,
+                                 variables = c("isv", "lmv"),
+                                 labt = islmlabels,
+                                 labplassmon = labldfislm,
+                                 equisol = ceqsol,
+                                 scalebreaksx = ceqlinjex,
+                                 scalebreaksy = ceqlinjey,
+                                 odata = cdfislm$dfmodell,
+                                 ovariables = c("lsv", "lmv"),
+                                 color = rep('black',4)) + coord_flip()
+
+#figislmxchm
+grid.arrange(figpengemchm2, figislmxchm, ncol= 2)
+```
+
+---
+
+- **V**erbalt (dynamisk tolkning utenfor modellen)
+
+Økt pengemengde $\rightarrow$ redusert rente (fra pengemarkedet) $\rightarrow$ Økte investeringer $\rightarrow$ økt produksjon $\rightarrow$ initierer en multiplikatoreffekt: $\rightarrow$ økt disponibel inntekt $\rightarrow$ økt konsum $\rightarrow$ økt produksjon osv.
+
+---
+
+### Stabiliseringspolitikk (G, t, eller i/M)
+
+Konstant pengemengdevekst $\frac{\Delta M}{M} = k$ (hvor k er lik veksten i BNP eller inflasjonen) er
+et stabiliseringspolitisk forslag, i form av en pengepoltisk regel, fremmet av Milton Friedman. 
+
+Forslaget kom på bakgrunn av boken [*A Monetary History of the United States*](https://en.wikipedia.org/wiki/A_Monetary_History_of_the_United_States), som Friedman 
+forfattet sammen med Anna J. Schwartz. Basert på analyse av tidsserier for pengemengdeveksten i USA i perioden 1867-1963, argumenteres det i boken for at det er *uforutsette* endringer i pengemengden som er hovedårsaken til konjunktursvingningene i USA i denne perioden.
+
+Innenfor IS-LM rammeverket, kan vi tolke dette som at sentralbanken skal unngå skift i LM-kurven som har sitt opphav i endringer i tilbudet av penger.
+
+---
+
+### AD-kurven
+#### Øvelse
+
+Reduksjon i prisnivået (P)
+
+- **G**rafisk (Y, i) plan og (Y, P) plan 
+
+- **V**erbalt (tolkning utenfor modellen):
+
+#### Svar
+
+Tokning: Økte produktpriser reduser realpengemengden. I pengemarkedet fører dette til en økning i rentenivå. Den økte renta medfører redusert etterspørsel pga lavere private realinvesteringer, som initerer en negativ multiplikatoreffekt siden redusert etterspørsel fører til mindre konsum som fører til redusert etterspørsel osv. 
+
+<!-- ## 	Arbeidsmarkedet, ledighet og AS-kurven -->
+
+<!-- ### Adferdsligninger (tilknyttet arbeidsmarkedet) -->
+
+<!-- #### Husholdningene  -->
+<!-- Organisert som en fagforening hvor lønnsnivået $W$ blir bestemt som et resultat av forhandlinger -->
+
+<!-- $$W=P^{e}F(\underset{(-)}{u}, \underset{(+)}{z})$$ -->
+<!-- $P^{e}$ er prisforventningene i perioden hvor lønnsnivået er forhandlet for. $u$ er arbeidsledighetsraten, hvor høyere ledighet gir svakere forhandlingsposisjon. $z$ samler opp alle andre faktorer (eks. velferdsordninger, oppsigelsessfrist, størrelsen på streikekassen) som reflekterer forhandlingsstyrke  -->
+
+<!-- --- -->
+
+<!-- #### Bedriftene  -->
+<!-- Etterspør arbeidskraft og tilbyr produktet i et marked med monopolistisk konkurranse -->
+
+<!-- Produktfunksjonen er gitt ved -->
+
+<!-- $$Y=AL^{\alpha}$$ -->
+<!-- Hvor $0<\alpha \le 1$ -->
+
+<!-- Produktprisen kommer som et påslag (markup) på det (nominelle) lønnsnivået -->
+
+<!-- $$P=(1+μ)W$$ -->
+
+<!-- --- -->
+
+<!-- ### AS-Kurven -->
+
+<!-- Setter uttrykket for produktprisen inn i utrykket for bestmmelse av lønnsnivået gir oss -->
+
+<!-- $$P=(1+μ)P^{e}F(u,z)$$ -->
+
+<!-- Produktfunksjonen kan settes inn i definisjonen for arbeidsledighet: -->
+
+<!-- $$u=\frac{U}{N}=\frac{N-L}{N}=1−\frac{L}{N}=1−\frac{Y/A}{N}=1 - \frac{Y}{AN}$$ -->
+
+<!-- Kombinerer vi det siste uttrykket med utrykket ovenfor får vi -->
+
+<!-- $$P=(1+μ)P^{e}F(1 - \frac{Y}{AN},z)$$ -->
+
+<!-- --- -->
+
+<!-- Differensierer vi $P$ mhp. $Y$ finner vi AS-kurven  -->
+
+<!-- $$ -->
+<!-- \frac{\Delta P}{\Delta Y} = -(1+μ)P^{e}F'_{u}(1 - \frac{Y}{AN},z)\frac{1}{AN}>0 -->
+<!-- $$ -->
+
+<!-- Tolkning: Økt produksjon gir økt etterspørsel etter arbeidskraft, dette reduserer arbeidsledigheten samt øker fagforeningens forhandlingsstyrke. Økt forhandlingsstykre gir seg utslag i høyere lønnskrav. Siden produktprisen er et påslag på lønningene, vil produktprisene måte stige når lønningene øker. -->
+
+<!-- --- -->
+
+<!-- ### Naturlig produksjons- og ledighetsnivå -->
+
+<!-- - På mellomlang sikt (5-10 år) antar vi hele veien at $P=P^{e}$ (fagoreningen gjør ikke systematisk feil i sine prisforventninger).  -->
+
+<!-- Det gjør at vi kan skrive: $$1=(1+μ)1F(1 - \frac{Y^{n}}{AN},z)$$. Hvor $Y^{n}$ er det naturlige produksjonsnivået (produksjonsnivået som gjelder under fleksible priser og lønninger).  -->
+
+<!-- Dette nivået bestemmer det naturlige ledighetsnivået direkte gjennom -->
+
+<!-- $$u^{n} = 1 - \frac{Y^{n}}{AN}$$ -->
+
+<!-- --- -->
+
+<!-- Merk: -->
+
+<!-- - $\mu>0 \text{ (monopolistisk konkurranse)} \Rightarrow \overline{Y}>Y^{n}$ -->
+
+<!-- - $\mu=0 \text{ (fullkommen konkurranse)} \Rightarrow \overline{Y}=Y^{n}$ -->
+
+<!-- - I dette kurset antar vi at markup-faktoren er såpass lav, slik at  -->
+<!-- $Y^{n} \approx \overline{Y}$ -->
+
+<!-- ## AD-AS modellen for en lukket økonomi -->
+<!-- Viser den samtidige likevekten i gode-, penge- og arbeidsmarkedet -->
+
+<!-- ```{r echo=FALSE} -->
+<!-- # adaslabels <- list(title= 'AD-AS modellen', x='produksjon, inntekt (Y)', y='prisnivå (P)') -->
+<!-- #  -->
+<!-- # Yv <- 200:250 # Guess -->
+<!-- # exoparvalvadas <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 100, oI = 75, -->
+<!-- #                            T = 75, M= 2000, P=1, h = 2, k =2, Pe=1, mu = 0.1, -->
+<!-- #                            l_1=-20,l_2=1, z=1, A=0.5, N=400, alpha = 1, Ac = 2), list(Y=c(Yv))) -->
+<!-- #  -->
+<!-- # dfadas <- dfgpmakro3(Iv=Yv, exoparval=exoparvalvadas, modell='ad-asc', endr=0) -->
+<!-- # eqsoladas <- list(y= c(dfadas$yeae[2]), x= c(dfadas$yeae[1])) -->
+<!-- # eqlinjexadas <- list(breaksvx = eqsoladas$x, labels = c(TeX('$Y_{0}=Y^{N}$'))) -->
+<!-- # eqlinjeyadas <- list(breaksvy = eqsoladas$y, labels = c(TeX('$P_{0}$'))) -->
+<!-- #  -->
+<!-- # xxadas <- c(rev(subset(dfadas$dfmodell, variable = 'adv')$Iv)[1], rev(subset(dfadas$dfmodell, variable = 'asv')$Iv)[1]) -->
+<!-- #  -->
+<!-- # yyadas <- c(rev(subset(dfadas$dfmodell, variable == 'adv')$value)[1], -->
+<!-- #         rev(subset(dfadas$dfmodell, variable == 'asv')$value)[1]) -->
+<!-- #  -->
+<!-- # labldf <- data.frame(labeling=c("AD", "AS"), -->
+<!-- #                      x = xxadas, -->
+<!-- #                      y = yyadas, -->
+<!-- #                      col = c('red','red')) -->
+<!-- #  -->
+<!-- # figadas <- makrofigure(ndata = dfadas$dfmodell, -->
+<!-- #                        variables = c("adv", "asv"), -->
+<!-- #                        labt = adaslabels, -->
+<!-- #                        labplassmon = labldf, -->
+<!-- #                        equisol = eqsoladas, -->
+<!-- #                        scalebreaksx = eqlinjexadas , -->
+<!-- #                        scalebreaksy = eqlinjeyadas, -->
+<!-- #                        colorl = rep(c('black'),2), -->
+<!-- #                        starts = list(x=200,y=0)) -->
+<!-- #  -->
+<!-- # natfigadas <- figadas + geom_line(data=data.frame(x=dfadas$yeae[1],y=0:10), aes(x,y),linetype="dotted") -->
+<!-- #  -->
+<!-- # natfigadas -->
+<!-- adaslikevekt -->
+<!-- ``` -->
+
+<!-- - Skjæringspunktet mellom AD og AS-kurven gir oss  -->
+
+<!-- - Likevektsproduksjon og likevektsledighet -->
+
+<!-- ### Komparativ statikk (skiftanalyse) -->
+
+<!-- #### Kort sikt (ca. 2-4 år) -->
+
+<!-- - Statiske prisforventninger -->
+
+<!-- ```{r echo=FALSE} -->
+<!-- # adaslabels <- list(title= 'AD-AS modellen', x='produksjon, inntekt (Y)', y='prisnivå (P)') -->
+<!-- #  -->
+<!-- # Yv <- 200:250 # Guess -->
+<!-- # cexoparvalvadas <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 100, oI = 75, -->
+<!-- #                            T = 75, M= 2200, P=1, h = 2, k =2, Pe=1, mu = 0.1, -->
+<!-- #                            l_1=-20,l_2=1, z=1, A=0.5, N=400, alpha = 1, Ac = 2), list(Y=c(Yv))) -->
+<!-- #  -->
+<!-- # cdfadas <- dfgpmakro3(Iv=Yv, exoparval=cexoparvalvadas, modell='ad-asc', endr=0) -->
+<!-- #  -->
+<!-- #  -->
+<!-- # figadaschm <- makrofigurechange(ndata = dfadas$dfmodell, -->
+<!-- #                                  variables = c("adv", "asv"), -->
+<!-- #                                  labt = islmlabels, -->
+<!-- #                                  labplassmon = labldfislm, -->
+<!-- #                                  equisol = ceqsol, -->
+<!-- #                                  scalebreaksx = ceqlinjex, -->
+<!-- #                                  scalebreaksy = ceqlinjey, -->
+<!-- #                                  odata = cdfadas$dfmodell, -->
+<!-- #                                  ovariables = c("adv", "asv"), -->
+<!-- #                                  color = rep('black',4)) + coord_flip() -->
+<!-- eksadaslikevekt -->
+<!-- ``` -->
+
+
+
+<!-- #### Mellomlang sikt (4-8 år) -->
+
+<!-- - Korrekte prisforventninger -->
+
+<!-- ```{r echo=FALSE} -->
+<!-- emsadaslikevekt -->
+<!-- ``` -->
+
+
+<!-- ### Stabiliseringspolitikk (G, T og M/(i)) -->
+
+<!-- ```{r echo=FALSE} -->
+<!-- sgadaslikevekt -->
+<!-- ``` -->
+
+
+<!-- <!-- -->
+
+<!-- ## Bakgrunnskunnskap om en åpen Økonomi -->
+
+<!-- ### Stabiliseringsmål for en åpen økonomi -->
+<!-- 1. Intern balanse (lukke produksjonsgapet) -->
+<!-- 1. Ekstern balanse (holde utenlandsgjelden på et rimelig nivå) -->
+
+<!-- ### Utenriksregnskapet -->
+
+<!-- ## Mundell-Fleming modellen (IS-LM for en åpen økonomi) -->
+
+<!-- ### Markeder i likevekt: Gode-, penge- og valutakursmarkedet -->
+
+<!-- ### Adferdslikninger -->
+
+<!-- #### Husholdninger -->
+
+<!-- #### Bedrifter -->
+
+<!-- #### Sentralbanken -->
+
+<!-- #### Offentlige myndigheter -->
+
+<!-- ### Løsning av modellen fast kurs -->
+
+<!-- ### Komparativ statikk (skiftanalyse) -->
+
+<!-- ### Stabiliseringspolitikk -->
+
+<!-- ### Løsning av modellen flytende kurs -->
+
+<!-- ### Komparativ statikk (skiftanalyse) -->
+
+<!-- ### Stabiliseringspolitikk -->
+
+<!-- ### Øvelse -->
+
+<!-- ## AD-AS for en åpen økonomi -->
+
+<!-- ### Markeder i likevekt: Gode-, penge-, or arbeids- og valutakursmarkedet -->
+
+<!-- ### Adferdslikninger -->
+
+<!-- #### Husholdninger -->
+
+<!-- #### Bedrifter -->
+
+<!-- #### Sentralbanken -->
+
+<!-- #### Offentlige myndigheter -->
+
+<!-- ### Løsning av modellen fast kurs -->
+
+<!-- ### Komparativ statikk (skiftanalyse) -->
+
+<!-- ### Stabiliseringspolitikk -->
+
+<!-- ### Løsning av modellen flytende kurs -->
+
+<!-- ### Komparativ statikk (skiftanalyse) -->
+
+<!-- ### Stabiliseringspolitikk -->
+
+<!-- --> -->

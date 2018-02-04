@@ -1,0 +1,15 @@
+#+OPTIONS: html-postamble:nil
+#+OPTIONS: num:nil
+#+OPTIONS: toc:nil
+#+TITLE:
+
+
+
+
+
+
+| Modell       | Endogene variabler | Eksogene endringer | Endringer  | Stabilisteringspolitikk |
+|--------------+--------------------+--------------------+------------+-------------------------|
+| Enkel Keynes | $\theta$           | G                  | $\Delta M$ | $\delta G$              |
+|              |                    |                    |            |                         |
+
