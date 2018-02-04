@@ -146,15 +146,15 @@ makrofigurechange <- function(ndata = datakeynes,
   #browser()
 
   # Plotte dataene
-  ggplot() +
+ ggplot() +
     labs(title = labt$title, x = labt$x, y = labt$y) +
     geom_line(data = datainp, aes(x = Iv, y = value, color = factor(variable))) +
     geom_line(data = odatainp, aes(x = Iv, y = value, color = factor(variable))) +
-    geom_point(aes(x=equisol$x, y=equisol$y)) +
     geom_text(data = labplassmon, aes(x = x, y = y, label = labeling), color = labplassmon$col) +
+    geom_point(aes(x=equisol$x, y=equisol$y)) +
     geom_segment(aes(x = equisol$x, y = starts$y, xend = equisol$x , yend = equisol$y), lty = 2) +
     geom_segment(aes(x = starts$x, y = equisol$y, xend = equisol$x , yend = equisol$y), lty = 2) +
-    scale_x_continuous(breaks = scalebreaksx$breaksvx, labels = scalebreaksx$labels) +
+    scale_x_continuous(breaks = scalebreaksx$breaksvx, labels = scalebreaksx$labels)  +
     scale_y_continuous(breaks = scalebreaksy$breaksvy, labels = scalebreaksy$labels) +
     scale_colour_manual(values = colorl) +
     theme_classic() +
