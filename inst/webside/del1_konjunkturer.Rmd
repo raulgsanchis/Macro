@@ -666,7 +666,8 @@ adaslikevekt <- genmakrofigure(dfnumeric=dfadas,
                       variables = c(dfadas$varnavn),
                       labt = labelsadas,
                       scalejust = list(x=200, y=0)) +
-  geom_line(data=data.frame(x=dfadas$yeae[1], y=0:10), aes(x,y),linetype="dotted")
+  geom_line(data=data.frame(x=dfadas$yeae[1], y=0:10), aes(x,y), linetype="dotted", color ='blue',
+            size=1) + geom_text(aes(x=221, y= 10,label='LAS'), color = 'red')
 
 
 ```

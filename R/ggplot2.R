@@ -6,7 +6,6 @@ genmakrofigure <- function(dfnumeric = NULL,
   # Henter dataene
   datainp <- dplyr::filter(dfnumeric$dfmodell, variable %in% variables) %>% dplyr::mutate(kat='naa')
 
-
   # Grafikk
   ggplot() +
     labs(title = labt$title, x = labt$x, y = labt$y) +
@@ -43,7 +42,6 @@ cgenmakrofigure <- function(edfnumeric = NULL,
 #' @export dfgeneric
 dfgeneric <- function(modell='adasl', labels = NULL ,exoparval=NULL){
 
-  #browser()
 
   Iv <- as.vector(unlist(rev(exoparval)[1]))
 
@@ -63,33 +61,36 @@ dfgeneric <- function(modell='adasl', labels = NULL ,exoparval=NULL){
 
     # Likevekt
     yeae <-eval(parse(text=keynesequ$AD), exoparval)
-    xeae <-eval(parse(text=keynesequ$AD), exoparval)
+    xeae <-eval(parse(teislmexoparvalvxt=keynesequ$AD), exoparval)
 
   } else if (modell =='islm'){
     # Leser inn modellen
-    # modellequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/islmequ.json'))
-    # # Selekterte modellligninger
-    # ## Enkeltligninger
-    # ldv <- eval(parse(text=modellequ$LD), exoparval)
-    # msv <- eval(parse(text=modellequ$MS), exoparval)
-    # isv <- eval(parse(text=modellequ$ISC), exoparval)
-    # lmv <- eval(parse(text=modellequ$LMC), exoparval)
-    #
-    # ## Samtidig likevekt
-    # iss <- 3
-    # yss <- 300
-    # #y <- c(yss,iss)
-    # exoparvalvd <- exoparvalv[1:length(exoparvalv)-1]
-    # #y <- c(yss, pss)
-    # optadas <- function(y){
-    #   c(Y1 = y[1] - eval(parse(text=modellequ$ISC), c(exoparvalvd, list(i=y[2]))),
-    #     Y2 = y[1] - eval(parse(text=modellequ$LMC), c(exoparvalvd, list(i=y[2]))))}
-    #
-    # yeae <- nmtaggmodela <- rootSolve::multiroot(f = optadas, start = c(yss, iss))
-    #
-    # # Linjer
-    # dfmodellres <- data.frame(Iv, ldv, msv, isv, lmv) %>%
-    #   reshape2::melt(id.vars = c("Iv"))
+
+    modellequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/islmequ.json'))
+    # Selekterte modellligninger
+    ## Enkeltligninger
+    ldv <- eval(parse(text=modellequ$LD), exoparval)
+    msv <- eval(parse(text=modellequ$MS), exoparval)
+    isv <- eval(parse(text=modellequ$ISC), exoparval)
+    lmv <- eval(parse(text=modellequ$LMC), exoparval)
+
+    ## Samtidig likevekt
+    yss <- 300
+    iss <- 3
+    #y <- c(yss,iss)
+    exoparvalvd <- exoparval[1:length(exoparval)-1]
+    #y <- c(yss, pss)
+    optadas <- function(y){
+      c(Y1 = y[2] - eval(parse(text=modellequ$ISC), c(exoparvalvd, list(i=y[1]))),
+        Y2 = y[2] - eval(parse(text=modellequ$LMC), c(exoparvalvd, list(i=y[1]))))}
+
+    yeae <- nmtaggmodela <- rootSolve::multiroot(f = optadas, start = c(iss, yss))$root
+
+    # Linjer
+    dfmodellres <- data.frame(Iv, ldv, msv, isv, lmv) %>%
+      reshape2::melt(id.vars = c("Iv"))
+
+
   } else if (modell =='adasl'){
     # Leser inn modellen
     modellequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/adascequ.json'))
@@ -120,9 +121,11 @@ dfgeneric <- function(modell='adasl', labels = NULL ,exoparval=NULL){
   varnavn <- as.character(unique(dfmodellres$variable))
 
   varnavnmaksverdi <- subset(dfmodellres, Iv ==rev(Iv)[1])
+  varnavnminverdi <- subset(dfmodellres, Iv ==Iv[1])
+
 
   list(dfmodell=dfmodellres, yeae = yeae, varnavn = varnavn,
-       varnavnmaksverdi = varnavnmaksverdi)
+       varnavnmaksverdi = varnavnmaksverdi, varnavnminverdi= varnavnminverdi)
 }
 
 #' @export dfgpmakro
