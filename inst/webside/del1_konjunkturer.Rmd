@@ -648,7 +648,6 @@ $Y^{n} \approx \overline{Y}$
 Viser den samtidige likevekten i gode-, penge- og arbeidsmarkedet
 
 ```{r echo=FALSE}
-source('~/gitclones/teaching/MakroOEKB1115/inst/webside/figurer/adas/adasl.R')
 # adaslabels <- list(title= 'AD-AS modellen', x='produksjon, inntekt (Y)', y='prisnivå (P)')
 # 
 # Yv <- 200:250 # Guess
@@ -682,8 +681,9 @@ source('~/gitclones/teaching/MakroOEKB1115/inst/webside/figurer/adas/adasl.R')
 #                        starts = list(x=200,y=0))
 # 
 # natfigadas <- figadas + geom_line(data=data.frame(x=dfadas$yeae[1],y=0:10), aes(x,y),linetype="dotted")
-
-natfigadas
+# 
+# natfigadas
+adaslikevekt
 ```
 
 - Skjæringspunktet mellom AD og AS-kurven gir oss 
@@ -717,7 +717,7 @@ natfigadas
 #                                  odata = cdfadas$dfmodell,
 #                                  ovariables = c("adv", "asv"),
 #                                  color = rep('black',4)) + coord_flip()
-cnatfigadas
+eksadaslikevekt
 ```
 
 
@@ -727,14 +727,14 @@ cnatfigadas
 - Korrekte prisforventninger
 
 ```{r echo=FALSE}
-# natfigadas
+emsadaslikevekt
 ```
 
 
 ### Stabiliseringspolitikk (G, T og M/(i))
 
 ```{r echo=FALSE}
-# natfigadas
+sgadaslikevekt
 ```
 
 

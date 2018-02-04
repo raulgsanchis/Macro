@@ -6,11 +6,12 @@ genmakrofigure <- function(dfnumeric = NULL,
   # Henter dataene
   datainp <- dplyr::filter(dfnumeric$dfmodell, variable %in% variables) %>% dplyr::mutate(kat='naa')
 
+
   # Grafikk
   ggplot() +
     labs(title = labt$title, x = labt$x, y = labt$y) +
     geom_line(data = datainp, aes(x = Iv, y = value, color = factor(variable))) +
-    geom_text(data = labt$kurver, aes(x = x, y = y, label = kurve), color = labt$kurver$farge) +
+    geom_text(data = labt$kurver, aes(x = x, y = y, label = kurve), color = labt$kurver$fargel) +
     geom_point(aes(x=dfnumeric$yeae[1], y=dfnumeric$yeae[2])) +
     geom_segment(aes(x =dfnumeric$yeae[1], y = dfnumeric$yeae[2] ,
                      xend = dfnumeric$yeae[1], yend = scalejust$y), lty = 2) +
@@ -18,6 +19,7 @@ genmakrofigure <- function(dfnumeric = NULL,
                      yend = dfnumeric$yeae[2]), lty = 2) +
     scale_x_continuous(breaks = dfnumeric$yeae[1], labels = labt$x0) +
     scale_y_continuous(breaks = dfnumeric$yeae[2], labels = labt$y0) +
+    scale_colour_manual(values = labt$kurver$fargek) +
     theme_classic() +
     theme(legend.position="none")
 
@@ -354,6 +356,3 @@ gpdiamdoell2 <- function(data = NULL,
     theme(legend.position="none") +
     coord_cartesian()
 }
-
-
-
