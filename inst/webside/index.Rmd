@@ -7,7 +7,7 @@ output:
 
 ```{r eval=FALSE, include=FALSE}
 #html-rapportering  
-#ans/hsh.no/home/jiha
+#ans/hsh.no/home/jihah
 # Kursbeskrivelse
 # Bottom header
 # Foreløpig 

@@ -1,3 +1,7 @@
+---
+output: html_notebook
+---
+
 
 ```{r include=FALSE}
 library(MakroOEKB1115)
@@ -256,7 +260,7 @@ Dersom vi lar $\Delta \overline{I} = - \Delta \overline{G} > 0 \Rightarrow \Delt
 
 ### Øvelse
 
-Redusert rentenivå $\Delta{\overline{i}}<0$
+Redusert rentenivå, $\Delta{\overline{i}}<0$
 
 - **F**ormelt:
 
@@ -641,6 +645,7 @@ $Y^{n} \approx \overline{Y}$
 ## AD-AS modellen for en lukket økonomi
 Viser den samtidige likevekten i gode-, penge- og arbeidsmarkedet
 
+
 ```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
 Yv <- 200:250 # Guess
 adasexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 100, oI = 75,
@@ -665,15 +670,11 @@ labelsadas <- list(title = 'AD-AS modellen',
 adaslikevekt <- genmakrofigure(dfnumeric=dfadas,
                       variables = c(dfadas$varnavn),
                       labt = labelsadas,
-                      scalejust = list(x=200, y=0)) +
-  geom_line(data=data.frame(x=dfadas$yeae[1], y=0:10), aes(x,y), linetype="dotted", color ='blue',
-            size=1) + geom_text(aes(x=221, y= 10,label='LAS'), color = 'red')
-
-
+                      scalejust = list(x=200, y=0)) 
 ```
 
 ```{r echo=FALSE}
-adaslikevekt
+adaslikevekt + geom_line(data=data.frame(x=dfadas$yeae[1], y=0:10), aes(x,y), color ='black', size=0.5) + geom_text(aes(x=221, y= 10,label='LAS'), color = 'red')
 ```
 
 
@@ -683,9 +684,11 @@ adaslikevekt
 
 ### Komparativ statikk (skiftanalyse)
 
-#### Kort sikt (ca. 2-4 år)
+Økte private realinvesteringer ('animal spirits'), $\overline{I}>0$
 
-- Statiske prisforventninger
+#### Kort sikt (1.5-3 år)
+
+- Statiske prisforventninger ($P^{e}$ er eksogen)
 
 ```{r echo=FALSE}
 cksYv <- 200:250 # Guess
@@ -726,17 +729,31 @@ eadaslikevekt <- adaslikevekt + eksadaslikevekt #+
 eadaslikevekt
 ```
 
+---
 
-#### Mellomlang sikt (4-8 år)
+Tolkning: Økte private realinvesteringer fører til et positivt skift i AD-kurven på bakgrunn av de  etterspørselsvirkningene som ble beskrevet under IS-LM modellen. Effekten på produksjonen
+vil imidlertid her ikke bli like sterk som tidligere, siden økt etterspørsel innebærer økt produksjon
+og økt etterspørsel etter arbeidskraft og med det redusert ledighet. Den reduserte ledigheten
+øker arbeidernes forhandlingsstyrke, og medfører ettehvert økte lønninger og produktpriser
+som bidrar til å dempe den opprinnelige etterspørselsøkningen.
 
-- Korrekte prisforventninger
+#### Mellomlang sikt (3-10 år) 
+
+- Korrekte prisforventninger ($P^{e}=P$)
+
 
 ```{r echo=FALSE}
 eadaslikevekt
 ```
 
+Tolkning: Korrekte prisforventninger fører til et negativt skift i AS-kuren helt produksjonen og arbeidsledigheten er tilbake til sitt naturlige likvektsnivå
 
+- Sentralt poeng: Korrekte prisforventninger medfører at modellen innehar selvkorrigerende mekanismer
+ 
 ### Stabiliseringspolitikk (G, T og M/(i))
+
+Reduksjon i pengemengden ($\overline{M}<0$) fører til høyere rente og med til et negativt skift i AD-kurven på bakgrunn av de etterspørselsvirkningene som ble beskrevet under IS-LM modellen. Er reduksjonen riktig dosert, vil produksjon og arbeidslediget gå tilbake til sitt naturlige likevektsnivå, mens prisnivået (og med det inflasjonen) vil være uendret.
+
 
 ```{r echo=FALSE}
 eadaslikevekt

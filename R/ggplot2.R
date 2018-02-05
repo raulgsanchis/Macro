@@ -173,7 +173,7 @@ dfgpmakro2 <- function(Iv=NULL, exoparval=exoparvalv, modell='is-lm', endr=0){
   iss <- 3
   yss <- 300
   #y <- c(yss,iss)
-  exoparvalvd <- exoparvalv[1:length(exoparvalv)-1]
+  exoparvalvd <- exoparval[1:length(exoparval)-1]
   #y <- c(yss, pss)
   optadas <- function(y){
     c(Y1 = y[1] - eval(parse(text=modellequ$ISC), c(exoparvalvd, list(i=y[2]))),
