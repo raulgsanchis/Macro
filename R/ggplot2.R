@@ -25,18 +25,43 @@ genmakrofigure <- function(dfnumeric = NULL,
 }
 
 #' @export cgenmakrofigure
-cgenmakrofigure <- function(edfnumeric = NULL,
-                            evariables = NULL,
-                            alabt = NULL){
+cgenmakrofigure <- function(dfnumeric=NULL,
+                            edfnumeric=NULL,
+                            variables = NULL,
+                            labt = NULL,
+                            elabt=NULL,
+                            scalejust = list(x=0, y=0)){
 
-  edatainp <- dplyr::filter(edfnumeric$dfmodell, variable %in% evariables) %>% dplyr::mutate(kat='naa')
+  # Henter dataene
+  datainp <- dplyr::filter(dfnumeric$dfmodell, variable %in% variables) %>% dplyr::mutate(kat='naa')
+  odatainp <- dplyr::filter(edfnumeric$dfmodell, variable %in% variables) %>% dplyr::mutate(kat='naa')
 
-  #browser()
+  # Scalering
+  xscal <- c(dfnumeric$yeae[1], edfnumeric$yeae[1])
+  yscal <- c(dfnumeric$yeae[2], edfnumeric$yeae[2])
 
-  geom_line(data = edatainp, aes(x = Iv, y = value, color = factor(variable))) #+
-  #geom_point(aes(x=edfnumeric$yeae[1], y=edfnumeric$yeae[2]))
-  #geom_text(data = alabt$kurver, aes(x = x, y = y, label = kurve), color = alabt$kurver$fargek) #+
-
+  # Grafikk
+  ggplot() +
+    labs(title = labt$title, x = labt$x, y = labt$y) +
+    geom_line(data = datainp, aes(x = Iv, y = value, color = factor(variable))) +
+    geom_line(data = odatainp, aes(x = Iv, y = value, color = factor(variable))) +
+    geom_text(data = labt$kurver, aes(x = x, y = y, label = kurve), color = labt$kurver$fargel) +
+    geom_text(data = elabt$kurver, aes(x = x, y = y, label = kurve), color = elabt$kurver$fargel) +
+    geom_point(aes(x=dfnumeric$yeae[1], y=dfnumeric$yeae[2])) +
+    geom_point(aes(x=edfnumeric$yeae[1], y=edfnumeric$yeae[2])) +
+    geom_segment(aes(x =dfnumeric$yeae[1], y = dfnumeric$yeae[2] ,
+                     xend = dfnumeric$yeae[1], yend = scalejust$y), lty = 2) +
+    geom_segment(aes(x = scalejust$x, y = dfnumeric$yeae[2], xend = dfnumeric$yeae[1],
+                     yend = dfnumeric$yeae[2]), lty = 2) +
+    geom_segment(aes(x =edfnumeric$yeae[1], y = edfnumeric$yeae[2] ,
+                     xend = edfnumeric$yeae[1], yend = scalejust$y), lty = 2) +
+    geom_segment(aes(x = scalejust$x, y = edfnumeric$yeae[2], xend = edfnumeric$yeae[1],
+                     yend = edfnumeric$yeae[2]), lty = 2) +
+    scale_x_continuous(breaks = c(dfnumeric$yeae[1], edfnumeric$yeae[1]), labels = c(labt$x0, elabt$x0)) +
+    scale_y_continuous(breaks = c(dfnumeric$yeae[2], edfnumeric$yeae[2]), labels = c(labt$y0, elabt$y0)) +
+    scale_colour_manual(values = labt$kurver$fargek) +
+    theme_classic() +
+    theme(legend.position="none")
 }
 
 #' @export dfgeneric
