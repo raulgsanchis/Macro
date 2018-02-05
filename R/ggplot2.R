@@ -37,8 +37,8 @@ cgenmakrofigure <- function(dfnumeric=NULL,
   odatainp <- dplyr::filter(edfnumeric$dfmodell, variable %in% variables) %>% dplyr::mutate(kat='naa')
 
   # Scalering
-  xscal <- c(dfnumeric$yeae[1], edfnumeric$yeae[1])
-  yscal <- c(dfnumeric$yeae[2], edfnumeric$yeae[2])
+  #xscal <- c(dfnumeric$yeae[1], edfnumeric$yeae[1])
+  #yscal <- c(dfnumeric$yeae[2], edfnumeric$yeae[2])
 
   # Grafikk
   ggplot() +
