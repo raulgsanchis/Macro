@@ -51,12 +51,12 @@ cgenmakrofigure <- function(dfnumeric=NULL,
     geom_point(aes(x=edfnumeric$yeae[1], y=edfnumeric$yeae[2])) +
     geom_segment(aes(x =dfnumeric$yeae[1], y = dfnumeric$yeae[2] ,
                      xend = dfnumeric$yeae[1], yend = scalejust$y), lty = 2) +
-    geom_segment(aes(x = scalejust$x, y = dfnumeric$yeae[2], xend = dfnumeric$yeae[1],
-                     yend = dfnumeric$yeae[2]), lty = 2) +
+    #geom_segment(aes(x = scalejust$x, y = dfnumeric$yeae[2], xend = dfnumeric$yeae[1],
+    #                 yend = dfnumeric$yeae[2]), lty = 2) +
     geom_segment(aes(x =edfnumeric$yeae[1], y = edfnumeric$yeae[2] ,
                      xend = edfnumeric$yeae[1], yend = scalejust$y), lty = 2) +
-    geom_segment(aes(x = scalejust$x, y = edfnumeric$yeae[2], xend = edfnumeric$yeae[1],
-                     yend = edfnumeric$yeae[2]), lty = 2) +
+    #geom_segment(aes(x = scalejust$x, y = edfnumeric$yeae[2], xend = edfnumeric$yeae[1],
+    #                 yend = edfnumeric$yeae[2]), lty = 2) +
     scale_x_continuous(breaks = c(dfnumeric$yeae[1], edfnumeric$yeae[1]), labels = c(labt$x0, elabt$x0)) +
     scale_y_continuous(breaks = c(dfnumeric$yeae[2], edfnumeric$yeae[2]), labels = c(labt$y0, elabt$y0)) +
     scale_colour_manual(values = labt$kurver$fargek) +
