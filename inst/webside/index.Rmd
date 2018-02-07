@@ -35,7 +35,7 @@ output:
 **Studentassistent:** Susanna Murati (susanna-007@hotmail.com)
 
 <span style="color:red">
-<p> Forelesningsnotaer til uke 6 (AD-AS modellen) er nå lagt ut</p>
+<p> </p>
 </span>
 
 <p style="color:black">Siste gang oppdatert ``r base::Sys.time()`` </p>

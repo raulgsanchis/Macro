@@ -1,5 +1,4 @@
 
-
 ```{r include=FALSE}
 library(MakroOEKB1115)
 library(dplyr)
@@ -639,7 +638,6 @@ $Y^{n} \approx \overline{Y}$
 ## AD-AS modellen for en lukket økonomi
 Viser den samtidige likevekten i gode-, penge- og arbeidsmarkedet
 
-
 ```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
 Yv <- 200:250 # Guess
 adasexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 100, oI = 75,
@@ -673,9 +671,9 @@ adaslikevekt + geom_line(data=data.frame(x=dfadas$yeae[1], y=0:10), aes(x,y), co
 
 ---
 
-- Skjæringspunktet mellom AD og AS-kurven gir oss
-
-- Likevektsproduksjon og likevektsledighet
+- Skjæringspunktet mellom AD, AS, og LAS-kurven gir oss:S
+1. Likevektsproduksjonen
+2. Likevektsledigheten
 
 ---
 
@@ -759,7 +757,7 @@ labelsadas <- list(title = 'AD-AS modellen',
                    y0 = c(TeX('$P_{0}$')),
                    kurver = dfkurver)
 
-adaslikevekt <- genmakrofigure(dfnumeric=dfadas,
+adaslikevekt <- genmakrofigure(dfnumeric=emsdfadas,
                                variables = c(dfadas$varnavn),
                                labt = labelsadas,
                                scalejust = list(x=200, y=0))
@@ -791,7 +789,7 @@ Eks. reduksjon i pengemengden ($\overline{M}<0$)
 stYv <- 200:250 # Guess
 stadasexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 100, oI = 75,
                             T = 75, M= 2300, P=1, h = 2, k =2, Pe=1, mu = 0.1,
-                            l_1=-20,l_2=1, z=1, A=0.5, N=400, alpha = 1, Ac = 2), list(Y=c(Yv)))
+                            l_1=-20,l_2=1, z=1, A=0.5, N=400, alpha = 1, Ac = 2), list(Y=c(stYv)))
 
 stdfadas <- dfgeneric(modell='adasl', exoparval = stadasexoparvalv)
 
@@ -822,14 +820,16 @@ slabelsadas <- list(title = 'AD-AS modellen',
                     y0 = c(TeX('$P_{1}$')),
                     kurver = sdfkurver)
 
-
 stadaslikevekt <- cgenmakrofigure(dfnumeric=dfadas,
                                    edfnumeric=stdfadas,
                                    variables = c(dfadas$varnavn),
                                    labt = llabelsadas,
                                    elabt = slabelsadas,
                                    scalejust = list(x=200, y=0))
+stadaslikevekt
 ```
+
+---
 
 Tolkning: Reduksjon i pengemengden fører til høyere rente og med det til et negativt skift i AD-kurven, dette på bakgrunn av de etterspørselsvirkningene som ble beskrevet under IS-LM modellen. Er reduksjonen riktig tilpasset, vil produksjon og arbeidslediget gå tilbake til sitt naturlige likevektsnivå, mens prisnivået (og med det inflasjonen) vil være uendret.
 

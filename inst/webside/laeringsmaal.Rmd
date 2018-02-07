@@ -167,7 +167,7 @@ $$Y = \frac{1}{1-c}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overlin
 
 $$\frac{\overline{M}}{P}=\kappa Y - h\cdot i  \text{ :Pengemarkedet}$$
 
-$$P=(1+μ)PeF(1−YAL,z) \text{ :Arbeidsmarkedet}$$ 
+$$P=(1+μ)P^{e}F(1−\frac{Y}{AN},z) \text{ :Arbeidsmarkedet}$$ 
 
 Merk: $P=Pe⇒Y=Yn=u=un$: Naturlige produksjons- og ledighetsnivået,
 

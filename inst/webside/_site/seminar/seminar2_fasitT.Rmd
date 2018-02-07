@@ -1,0 +1,14 @@
+---
+output:
+  html_document:
+    css: seminar.css
+---
+
+# Seminar 2
+## Keynes-modell for en lukket økonomi
+
+Vi ser for oss en lukket økonomi hvor aggregert etterspørsel (AE) er gitt ved
+$$AE\equiv C + I + G$$
+
+*Løsning:
+$2+2$*

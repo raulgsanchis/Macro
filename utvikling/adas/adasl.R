@@ -65,6 +65,7 @@ eksadaslikevekt <- cgenmakrofigure(dfnumeric=dfadas,
                                    elabt = elabelsadas,
                                    scalejust = list(x=200, y=0))
 
+eksadaslikevekt
 ### Mellomlang sikt ###
 emsYv <- 200:250 # Guess
 emsadasexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 100, oI = 75,
@@ -106,7 +107,7 @@ emsadaslikevekt <- cgenmakrofigure(dfnumeric=dfadas,
                                    elabt = elabelsadas,
                                    scalejust = list(x=200, y=0)) + geom_line(data=data.frame(x=dfadas$yeae[1], y=0:10), aes(x,y), color ='black', size=0.5) + geom_text(aes(x=221, y= 10,label='LAS'), color = 'red')
 
-
+emsadaslikevekt
 ## AD-AS stabiliseringspolitikk
 ###########################################################################################################
 stYv <- 200:250 # Guess
@@ -143,10 +144,10 @@ slabelsadas <- list(title = 'AD-AS modellen',
                     y0 = c(TeX('$P_{1}$')),
                     kurver = sdfkurver)
 
-
 stadaslikevekt <- cgenmakrofigure(dfnumeric=dfadas,
                                    edfnumeric=stdfadas,
                                    variables = c(dfadas$varnavn),
                                    labt = llabelsadas,
                                    elabt = slabelsadas,
                                    scalejust = list(x=200, y=0))
+stadaslikevekt
