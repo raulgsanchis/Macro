@@ -4,44 +4,58 @@ library(ggplot2)
 library(gridExtra)
 library(grid)
 library(latex2exp)
-
 #######################################################################################################################
 iv <- 0:7.5
 islmexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
-dfislm <- dfgeneric(modell='islm', exoparval = islmexoparvalv)
-
+eislmexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 275, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
+edfislm <- dfgeneric(modell='islm', exoparval = islmexoparvalv)
+dfislm <- dfgeneric(modell='islm', exoparval = eislmexoparvalv)
 
 # Pengemarkedet
-dfkurver <- data.frame(kurve=c("IS", "LM"),
+dfkurver <- data.frame(kurve=c("Ld", "Ms"),
                        fargel = c('red', 'red'),
                        fargek = c('red', 'red'),
                        y = dfislm$varnavnminverdi$value[c(1,2)],
-                       x = c(dfislm$varnavnminverdi$Iv[c(1)],dfislm$varnavnmaksverdi$Iv[c(2)]))
+                       x = c(dfislm$varnavnminverdi$Iv[c(1,2)]))
 
 
 labelsislm <- list(title = 'Pengemarkedet',
                    y = 'produksjon, inntekt (Y)',
                    x = 'rentenivå (i)',
                    x0 = c(TeX('$i_{0}}$')),
-                   y0 = c(TeX('$Y_{0}$')),
+                   y0 = c(TeX('$M_{0}/P_{0}$')),
                    kurver = dfkurver)
-
-dfislm$yeae <- c(5, 200)
 
 figpengem <- genmakrofigure(dfnumeric=dfislm,
                             variables = c(dfislm$varnavn)[c(1,2)],
                             labt = labelsislm,
                             scalejust = list(x=0, y=0))  + coord_flip()
-figpengem
-#######################################################################################################################
+
+emmdfkurver = data.frame(kurve=c("LM"),
+                         fargel = c('red'),
+                         fargek = c('red'),
+                         x = edfislm$varnavnmaksverdi$Iv[c(2)],
+                         y = edfislm$varnavnmaksverdi$value[c(2)])
+
+elabelsislm <- list(title = 'Pengemarkedet',
+                    y = 'produksjon, inntekt (Y)',
+                    x = 'rentenivå (i)',
+                    x0 = c(TeX('$i_{1}}$')),
+                    y0 = c(TeX('$M/P_{1}$')),
+                    kurver = emmdfkurver)
+
+
+monpolichange <- cgenmakrofigure(dfnumeric=dfislm,
+                                 edfnumeric=edfislm,
+                                 variables = c(dfislm$varnavn)[c(1,2)],
+                                 labt = labelsislm,
+                                 elabt = elabelsislm,
+                                 scalejust = list(x=0, y=0)) + coord_flip()
+
+
 # IS-LM Modellen
 ### Likevekt ###
-iv <- 0:7.5
-islmexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
-
 #!: endogenisere gjetteverdier
-dfislm <- dfgeneric(modell='islm', exoparval = islmexoparvalv)
-
 dfkurver <- data.frame(kurve=c("IS", "LM"),
                        fargel = c('red', 'red'),
                        fargek = c('red', 'red'),
@@ -60,28 +74,46 @@ islmlikevekt <- genmakrofigure(dfnumeric=dfislm,
                                labt = labelsislm,
                                scalejust = list(x=0, y=75))  + coord_flip()
 islmlikevekt
+
 ### Komparativ statikk ###
-iv <- 0:7.5
-eexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 275, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
-
-edfislm <- dfgeneric(modell='islm', exoparval = eexoparvalv)
-
-edfkurver = data.frame(kurve=c("AD'", "AS"),
-                       fargel = c('red', 'red'),
-                       fargek = c('red', 'red'),
-                       x = edfislm$varnavnmaksverdi$Iv,
-                       y = edfislm$varnavnmaksverdi$value)
+dfkurverislm <- data.frame(kurve=c("LM"),
+                       fargel = c('red'),
+                       fargek = c('red'),
+                       y = c(dfislm$varnavnminverdi$value[c(3)]),
+                       x = c(dfislm$varnavnminverdi$Iv[c(3)]))
 
 elabelsislm <- list(title = 'IS-LM modellen',
-                    x = 'produksjon, inntekt (Y)',
-                    y = 'rentenivå (i)',
-                    x0 = c(TeX('$Y_{1}$')),
-                    y0 = c(TeX('$P_{1}$')),
-                    kurver = edfkurver)
+                   y = 'produksjon, inntekt (Y)',
+                   x = 'rentenivå (i)',
+                   x0 = c(TeX('$i_{1}}$')),
+                   y0 = c(TeX('$Y_{1}$')),
+                   kurver = dfkurverislm)
 
-eksadaslikevekt <- cgenmakrofigure(dfnumeric=dfislm,
-                                   edfnumeric=edfislm,
-                                   variables = c(dfislm$varnavn)[c(3,4)],
-                                   labt = labelsislm,
-                                   elabt = elabelsislm,
-                                   scalejust = list(x=200, y=0))
+emmdfkurver = data.frame(kurve=c("LM"),
+                         fargel = c('red'),
+                         fargek = c('red'),
+                         x = edfislm$varnavnmaksverdi$Iv[c(2)],
+                         y = edfislm$varnavnmaksverdi$value[c(2)])
+
+elabelsislm <- list(title = 'Pengemarkedet',
+                    y = 'produksjon, inntekt (Y)',
+                    x = 'rentenivå (i)',
+                    x0 = c(TeX('$i_{1}}$')),
+                    y0 = c(TeX('$M/P_{1}$')),
+                    kurver = emmdfkurver)
+
+monpolichange <- cgenmakrofigure(dfnumeric=dfislm,
+                                 edfnumeric=edfislm,
+                                 variables = c(dfislm$varnavn)[c(1,2)],
+                                 labt = labelsislm,
+                                 elabt = elabelsislm,
+                                 scalejust = list(x=0, y=0)) + coord_flip()
+
+eislmmon <- cgenmakrofigure(dfnumeric=dfislm,
+                                 edfnumeric=edfislm,
+                                 variables = c(dfislm$varnavn)[c(3,4)],
+                                 labt = labelsislm,
+                                 elabt = elabelsislm,
+                                 scalejust = list(x=0, y=50)) + coord_flip()
+
+eislmmon

@@ -4,6 +4,7 @@ library(ggplot2)
 library(gridExtra)
 library(grid)
 library(latex2exp)
+
 #######################################################################################################################
 iv <- 0:7.5
 islmexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))

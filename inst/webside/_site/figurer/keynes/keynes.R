@@ -1,77 +1,75 @@
-library(formatR)
 library(MakroOEKB1115)
 library(dplyr)
 library(ggplot2)
 library(gridExtra)
 library(grid)
 library(latex2exp)
-
-# Keynes likevekt
-labelskeynes <- list(title= 'Keyneskrysset', x='produksjon, inntekt (Y)', y='Aggregert etterspørsel (AE)')
-
+#######################################################################################################################
 Iv <- 0:600
 keynesexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 50, T = 10), list(Y=c(Iv)))
 
-b <- dfgeneric(modell='keynes', labels = labelskeynes, exoparval = keynesexoparvalv)
+dfkeynes <- dfgeneric(modell='keynes', exoparval = keynesexoparvalv)
 
+dfkurver = data.frame(kurve=c("45 grader ", "I", "I+G", "I+G+C"),
+                      fargel = c('black', 'red', 'red', 'red'),
+                      fargek = c('black', 'black', 'black', 'black'),
+                      x = c(50, dfkeynes$varnavnmaksverdi$Iv[c(3,5,6)]),
+                      y = c(0, dfkeynes$varnavnmaksverdi$value[c(3,5,6)]))
 
+labelskeynes <- list(title = 'Keyneskrysset',
+                   x = 'produksjon, inntekt (Y)',
+                   y = 'Aggregert etterspørsel (AE)',
+                   x0 = c(TeX('$Y_{0}')),
+                   y0 = c(TeX('$AE_{0}$')),
+                   kurver = dfkurver)
 
-dfgpmakro(modell='keynes', exoparval=exoparvalv)
+keynesclikevekt <- genmakrofigure(dfnumeric=dfkeynes,
+                               variables = c(dfkeynes$varnavn)[c(1,3,5,6)],
+                               labt = labelskeynes,
+                               scalejust = list(x=0, y=0))
 
-### Kladd
-
-
-
-# Keyneskrysset
-mlabels <- list(title= 'Keyneskrysset', x='produksjon, inntekt (Y)', y='Aggregert etterspørsel (AE)')
-# Parameterverdier (Keyneskrysset)
+keynesclikevekt
+## Keynes komparativ statikk (skiftanalyse)
+###########################################################################################################
 Iv <- 0:600
-exoparval <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 50, T = 10), list(Y=c(Iv)))
-cexoparval <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 90, T = 10), list(Y=c(Iv)))
-dfkeynes <- dfgpmakro(Iv, exoparval, endr=0)
-cdfkeynes <- dfgpmakro(Iv, cexoparval, endr=1)
-eqsol <- list(x= c(dfkeynes$yeae), y = c(dfkeynes$yeae))
-ceqsol <- list(x= c(dfkeynes$yeae, cdfkeynes$yeae), y = c(dfkeynes$yeae, cdfkeynes$yeae))
-eqlinjey <- list(breaksvy = eqsol$y, labels = c(TeX('$AE_{0}$')))
-eqlinjex <- list(breaksvx = eqsol$x, labels = c(TeX('$Y_{0}$')))
-unique(dfkeynes$dfmodell$variable)
+ekeynesexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 100, T = 10), list(Y=c(Iv)))
 
-rev(subset(dfkeynes$dfmodell, variable == 'gdv')$value)[1]
-rev(subset(dfkeynes$dfmodell, variable == 'gdvpidv')$value)[1]
-rev(subset(dfkeynes$dfmodell, variable == 'cdvpidvgdv')$value)[1]
-rev(subset(dfkeynes$dfmodell, variable == 'grad45v')$value)[1]
-labldf <- data.frame(labeling=c("45 grader", "I", "C + I", "C + I + G", "Y = AE"),
-                     x = c(105, 560, 560, 560, 560),
-                     y = c(20, 50+10, 100+10, 480+10, 600+10),
-                     col = c('black', rep(c('red'),1,4)))
+edfkeynes <- dfgeneric(modell='keynes', exoparval = ekeynesexoparvalv)
 
-keynesc <- makrofigure(ndata = dfkeynes$dfmodell,
-                       labt = mlabels,
-                       variables = c('grad45v', 'gdv', 'gdvpidv','cdvpidvgdv'),
-                       labplassmon = labldf,
-                       equisol = eqsol,
-                       scalebreaksx = eqlinjex,
-                       scalebreaksy = eqlinjey,
-                       colorl = c(rep('black',4)))
+edfkurver <- data.frame(kurve=c("I+G+C'"),
+                        fargel = c( 'red'),
+                        fargek = c('black'),
+                        x = c(edfkeynes$varnavnmaksverdi$Iv[c(6)]),
+                        y = c(edfkeynes$varnavnmaksverdi$value[c(6)]))
 
-###
-rev(subset(dfkeynes$dfmodell, variable == 'cdvpidvgdv')$value)[1]
-ceqlinjey <- list(breaksvy = ceqsol$y, labels = c(TeX('$AE_{0}$'), TeX('$AE_{1}$')))
-ceqlinjex <- list(breaksvx = ceqsol$x, labels = c(TeX('$Y_{0}$'), TeX('$Y_{0}$')))
-rev(subset(cdfkeynes$dfmodell, variable == 'cdvpidvgdv')$value)[1]
-rev(subset(cdfkeynes$dfmodell, variable == 'grad45v')$value)[1]
-labldf <- data.frame(labeling=c("45 grader", "C + I + G", "C+ I' + G", "Y=AE"),
-                     x = c(105, 560, 560, 560),
-                     y = c(20, 480+5, 520+5, 600+5),
-                     col = c('black', rep(c('red'),1,3)))
+dfkurver = data.frame(kurve=c("45 grader","I+G+C"),
+                      fargel = c('red','red'),
+                      fargek = c('black','black'),
+                      x = c(50, dfkeynes$varnavnmaksverdi$Iv[c(6)]),
+                      y = c(0, dfkeynes$varnavnmaksverdi$value[c(6)]))
 
-keynesccinv <- makrofigurechange(ndata = dfkeynes$dfmodell,
-                                 labt = mlabels,
-                                 variables = c('grad45v','cdvpidvgdv'),
-                                 labplassmon = labldf,
-                                 equisol = ceqsol,
-                                 scalebreaksx = ceqlinjex,
-                                 scalebreaksy = ceqlinjey,
-                                 colorl = c(rep('black',3)),
-                                 odata = cdfkeynes$dfmodell,
-                                 ovariables = c('cdvpidvgdv'))
+labelskeynes <- list(title = 'Keyneskrysset',
+                     x = 'produksjon, inntekt (Y)',
+                     y = 'Aggregert etterspørsel (AE)',
+                     x0 = c(TeX('$Y_{0}')),
+                     y0 = c(TeX('$AE_{0}$')),
+                     kurver = dfkurver)
+
+
+elabelskeynes <- list(title = 'Keyneskrysset',
+                     x = 'produksjon, inntekt (Y)',
+                     y = 'Aggregert etterspørsel (AE)',
+                     x0 = c(TeX('$Y_{1}')),
+                     y0 = c(TeX('$AE_{1}$')),
+                     kurver = edfkurver)
+
+ekeynesclikevekt <- cgenmakrofigure(dfnumeric=dfkeynes,
+                edfnumeric=edfkeynes,
+                variables = c(dfkeynes$varnavn)[c(1,6)],
+                labt = labelskeynes,
+                elabt = elabelskeynes,
+                scalejust = list(x=0, y=0))
+
+ekeynesclikevekt
+###########################################################################################################
+###########################################################################################################

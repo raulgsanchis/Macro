@@ -10,10 +10,10 @@ genmakrofigure <- function(dfnumeric = NULL,
   ggplot() +
     labs(title = labt$title, x = labt$x, y = labt$y) +
     geom_line(data = datainp, aes(x = Iv, y = value, color = factor(variable))) +
-    geom_text(data = labt$kurver, aes(x = x, y = y, label = kurve), color = labt$kurver$fargel) +
+    geom_text(data = labt$kurver, aes(x = x, y = y, label = kurve), color = labt$kurver$fargel)
     geom_point(aes(x=dfnumeric$yeae[1], y=dfnumeric$yeae[2])) +
-    geom_segment(aes(x =dfnumeric$yeae[1], y = dfnumeric$yeae[2] ,
-                     xend = dfnumeric$yeae[1], yend = scalejust$y), lty = 2) +
+    geom_segment(aes(x = dfnumeric$yeae[1], y = dfnumeric$yeae[2] ,
+                    xend = dfnumeric$yeae[1], yend = scalejust$y), lty = 2) +
     geom_segment(aes(x = scalejust$x, y = dfnumeric$yeae[2], xend = dfnumeric$yeae[1],
                      yend = dfnumeric$yeae[2]), lty = 2) +
     scale_x_continuous(breaks = dfnumeric$yeae[1], labels = labt$x0) +
@@ -60,7 +60,6 @@ cgenmakrofigure <- function(dfnumeric=NULL,
     scale_x_continuous(breaks = c(dfnumeric$yeae[1], edfnumeric$yeae[1]), labels = c(labt$x0, elabt$x0)) +
     scale_y_continuous(breaks = c(dfnumeric$yeae[2], edfnumeric$yeae[2]), labels = c(labt$y0, elabt$y0)) +
     scale_colour_manual(values = labt$kurver$fargek) +
-    #scale_colour_manual(values = c('black')) +
     theme_classic() +
     theme(legend.position="none")
 }
@@ -98,6 +97,8 @@ dfgeneric <- function(modell='adasl', labels = NULL ,exoparval=NULL){
     msv <- eval(parse(text=modellequ$MS), exoparval)
     isv <- eval(parse(text=modellequ$ISC), exoparval)
     lmv <- eval(parse(text=modellequ$LMC), exoparval)
+    #eqlm <-eval(parse(text=modellequ$LMC), exoparval)
+
 
     ## Samtidig likevekt
     yss <- 300
