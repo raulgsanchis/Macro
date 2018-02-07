@@ -79,14 +79,14 @@ dfgeneric <- function(modell='adasl', labels = NULL ,exoparval=NULL){
     gdv <- eval(parse(text=keynesequ$GD),exoparval)
 
     # Linjer
-    dfkeykryss <- data.frame(Iv, grad45v, cdv, idv, gdv) %>%
+    dfmodellres <- data.frame(Iv, grad45v, cdv, idv, gdv) %>%
       dplyr::mutate(gdvpidv = gdv + idv) %>%
       dplyr::mutate(cdvpidvgdv = cdv + idv + gdv) %>%
       reshape2::melt(id.vars = c("Iv"))
 
     # Likevekt
     yeae <-eval(parse(text=keynesequ$AD), exoparval)
-    xeae <-eval(parse(teislmexoparvalvxt=keynesequ$AD), exoparval)
+    #xeae <-eval(parse(teislmexoparvalvxt=keynesequ$AD), exoparval)
 
   } else if (modell =='islm'){
     # Leser inn modellen
@@ -142,6 +142,8 @@ dfgeneric <- function(modell='adasl', labels = NULL ,exoparval=NULL){
   } else {
     print('Modell ikke funnet!')
   }
+
+  #browser()
 
   varnavn <- as.character(unique(dfmodellres$variable))
 
