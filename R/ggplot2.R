@@ -60,6 +60,7 @@ cgenmakrofigure <- function(dfnumeric=NULL,
     scale_x_continuous(breaks = c(dfnumeric$yeae[1], edfnumeric$yeae[1]), labels = c(labt$x0, elabt$x0)) +
     scale_y_continuous(breaks = c(dfnumeric$yeae[2], edfnumeric$yeae[2]), labels = c(labt$y0, elabt$y0)) +
     scale_colour_manual(values = labt$kurver$fargek) +
+    #scale_colour_manual(values = c('black')) +
     theme_classic() +
     theme(legend.position="none")
 }
@@ -85,8 +86,7 @@ dfgeneric <- function(modell='adasl', labels = NULL ,exoparval=NULL){
       reshape2::melt(id.vars = c("Iv"))
 
     # Likevekt
-    yeae <-eval(parse(text=keynesequ$AD), exoparval)
-    #xeae <-eval(parse(teislmexoparvalvxt=keynesequ$AD), exoparval)
+    yeae <- c(eval(parse(text=keynesequ$AD), exoparval), eval(parse(text=keynesequ$AD), exoparval))
 
   } else if (modell =='islm'){
     # Leser inn modellen
