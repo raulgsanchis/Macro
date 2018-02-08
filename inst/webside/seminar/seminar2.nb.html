@@ -75,6 +75,7 @@ h6 {
 }
 </style>
 
+<link href="data:text/css;charset=utf-8,EM%20%7B%0Afont%2Dweight%3A%20bold%3B%0Acolor%3A%20blue%3B%0A%7D%0A" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -175,38 +176,85 @@ $(document).ready(function () {
 <div id="seminar-2" class="section level1">
 <h1>Seminar 2</h1>
 <div id="keynes-modell-for-en-lukket-konomi" class="section level2">
-<h2>Keynes modell for en lukket økonomi</h2>
+<h2>Keynes-modell for en lukket økonomi</h2>
 <p>Vi ser for oss en lukket økonomi hvor aggregert etterspørsel (AE) er gitt ved <span class="math display">\[AE\equiv C + I + G\]</span></p>
 <p>Hvor <span class="math inline">\(C\)</span> er konsum, <span class="math inline">\(I\)</span> private realinvesteringer og <span class="math inline">\(G\)</span> offentlig forbruk.</p>
 <p>I tillegg postulerer vi følgende adferdsligninger for aktørene i økonomien: <span class="math display">\[C = \overline{C} + c_{1}(Y-T) - c_{2}\cdot i \text{ :Husholdningen}\]</span> <span class="math display">\[I = \overline{I} - b\cdot i \text{ :Private realinvesteringer}\]</span> <span class="math display">\[i = \overline{i} \text{ :sentralbanken}\]</span> <span class="math display">\[G = \overline{G} \text{ og } T=\overline{T} \text{: offentlige myndigheter}\]</span></p>
 <ol style="list-style-type: decimal">
-<li><p>Er det produksjonen <span class="math inline">\(Y\)</span> som bestemmer etterspørselen <span class="math inline">\(AE\)</span>, eller etterspørselen <span class="math inline">\(AE\)</span> som bestemmer produksjonen <span class="math inline">\(Y\)</span> i denne modellen?</p></li>
-<li><p>Hvilken sentral forutsetning ligger til grunn for dette resultatet?</p></li>
-<li><p>Gi en økonomisk tolkning tilknyttet adferden til husholdningen basert på konsumfunksjonen.</p></li>
-<li><p>Løs modellen mhp. på <span class="math inline">\(Y\)</span>.</p></li>
-<li><p>Økt pessimisme i økonomien gir seg utslag i et lavere inntektsuavhengig konsum (<span class="math inline">\(\overline{C}&gt;0\)</span>). Hvis formelt, grafisk (dersom du ønsker å benytte Keyneskrysset) og verbalt hvordan dette endrer likevekten i modellen.</p></li>
-<li><p>Vis formelt (ved differensiering) hvilke stabiliseringspolitiske virkemidler det offentlige har tilgjengelig for å motvirke den økte pessimismen. Hvilken av disse tiltakene vil ha sterkest negativ effekt på statsbudsjettet?</p></li>
-<li><p>Anta nå at rentenivået i økonomien er gitt ved en renteregel <span class="math inline">\(i= m\cdot Y\)</span>, hvor <span class="math inline">\(m&gt;0\)</span>. Finn likevekten for <span class="math inline">\(Y\)</span> og vurder hvorvidten slik renteregel bidrar til å stabilisere eller dempe konjunktursvingingene (hint: sammenlikn multiplikatoren i modellene med og uten renteregel med hverandre).</p></li>
+<li>Er det produksjonen <span class="math inline">\(Y\)</span> som bestemmer etterspørselen <span class="math inline">\(AE\)</span>, eller etterspørselen <span class="math inline">\(AE\)</span> som bestemmer produksjonen <span class="math inline">\(Y\)</span> i denne modellen?</li>
 </ol>
+<p><em>På kort sikt er det etterspørselen som bestemmer produksjonen i et lands økonomi</em></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Hvilken sentral forutsetning ligger til grunn for dette resultatet?</li>
+</ol>
+<p><em>Produktprisen i modellen er konstante (stive)</em></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Gi en økonomisk tolkning tilknyttet konsumfunksjonen til husholdningen.</li>
+</ol>
+<ul>
+<li><em><span class="math inline">\(\overline{C}\)</span> Konsum som blir gitt uavhengig av verdien på de andre variablene i modellen.</em></li>
+<li><em><span class="math inline">\(c(Y-T)\)</span> forteller oss hvorstor andel av disponinbel inntekt som går til konsum</em></li>
+<li><em><span class="math inline">\(c_{2}\cdot\)</span> gir rentenivåets påvirkning på konsumet. Høyere rente fører til mindre konsum, dette fordi husholdingen ønsker å spare mer når renta øker</em></li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>Løs modellen mhp. på <span class="math inline">\(Y\)</span>.</li>
+</ol>
+<p><em><span class="math display">\[Y = \frac{1}{1-c_{1}}\left[\overline{C}-c_{1}\overline{T} - (b+c_{2})\cdot i + \overline{I} + G  \right] \]</span></em></p>
+<ol start="5" style="list-style-type: decimal">
+<li>Økt pessimisme i økonomien gir seg utslag i et lavere inntektsuavhengig konsum (<span class="math inline">\(\overline{C}&lt;0\)</span>). Hvis formelt, grafisk (dersom du ønsker å benytte Keyneskrysset) og verbalt hvordan dette endrer likevekten i modellen.</li>
+</ol>
+<p><em>Formelt: <span class="math display">\[ -\frac{\Delta Y}{\Delta \overline{C}} = \frac{-1}{1-c_{1}} &gt; 0\]</span></em></p>
+<p><em>Keyneskrysset</em></p>
+<p><em>Verbalt: Redusert konsum medfører først redusert aggregert etterspørsel og dermed også produksjon og inntekt. Den reduserte inntekten initierer en multiplikatoreffekt, siden redusert inntekt medfører redusert konsum, etterspørsel, produksjon og inntekt osv.</em></p>
+<ol start="6" style="list-style-type: decimal">
+<li>Vis formelt (ved differensiering) hvilke stabiliseringspolitiske virkemidler det offentlige har tilgjengelig for å motvirke den økte pessimismen. Hvilken av disse tiltakene vil ha sterkest negativ effekt på statsbudsjettet?</li>
+</ol>
+<p><em>Økte offentlige utgifter:</em></p>
+<p><em><span class="math display">\[\Delta Y = \ \frac{1}{1-c_{1}}\left[\Delta \overline{C} + \Delta {G}  \right]=0 \Rightarrow \Delta \underset{(-)}{\overline{C} }=- \Delta \underset{(+)}{G}\]</span></em></p>
+<p><em>Reduserte skatter:</em></p>
+<p><em><span class="math display">\[\Delta Y = \ \frac{1}{1-c_{1}}\left[\Delta \overline{C}-c_{1} \Delta \overline{T}    \right] \Rightarrow 
+\Delta \underset{(-)}{\overline{C}} = c_{1} \Delta \underset{(-)}{\overline{T}}\]</span></em></p>
+<p><em>Underskuddet på statsbudsjettet er gitt ved <span class="math inline">\(G-T\)</span> (offentlige utgifter min skatteinntekter)</em></p>
+<p><em>Utgiftsøkningen vil være på <span class="math inline">\(\Delta \overline{C}\)</span>, mens skatteinntekten vil måtte reduseres ved <span class="math inline">\(\Delta \overline{C}/c_{1}\)</span>. Siden <span class="math inline">\(\Delta \overline{C} &lt; \Delta \overline{C}/c_{1}\)</span> vil den negative effekten på statsbudsjettet av å gjøre dette ved en skattereduksjon være større enn ved en økning i offentlig utgifter.</em></p>
+<p>Anta at sentralbanken innfører en renteregel som er gitt ved at <span class="math inline">\(i= m\cdot Y\)</span>.</p>
+<ol start="7" style="list-style-type: decimal">
+<li>Finn nå løsningen til modellen mhp. på Y</li>
+</ol>
+<p><em><span class="math display">\[Y = \frac{1}{1-c_{1}+m\cdot c_{2} + m\cdot b}\left[\overline{C}-c_{1}\overline{T} + \overline{I} + G  \right] \]</span></em></p>
+<ol start="8" style="list-style-type: decimal">
+<li>Bidrar en slik renteregel til å stabilisere eller dempe konjunktursvingingene (hint: sammenlikn multiplikatoren i de to modellene med hverandre)?</li>
+</ol>
+<p><em>Vi har at <span class="math inline">\(\frac{1}{1-c_{1}}&gt;\frac{1}{1-c_{1}+m\cdot c_{2} + m\cdot b}\)</span>. Siden multiplikatoren er mindre i modellen med renteregel,vil regelen bidra til å dempe effekten eksogenene endringer vil ha på konjunktursvingningene</em></p>
 </div>
 <div id="is-lm-modellen" class="section level2">
 <h2>IS-LM modellen</h2>
 <p>Likvektsbetingelsen for pengemarkedet er gitt ved</p>
-<p><span class="math display">\[M^{S} = L_{d} \]</span></p>
+<p><span class="math display">\[M^{S} = L_{d}\]</span></p>
 <p>I tillegg til adferdsligningene fra forrige oppgave, har vi her at</p>
 <p><span class="math display">\[L_{d} = \kappa\cdot Y - h\cdot i \text{ Husholdningens etterspørsel etter penger}\]</span></p>
 <p><span class="math display">\[M^{s}=\frac{\overline{M}}{P} \text{ :Hvor sentralbanken bestemmer tilbudet av basispenger}\]</span></p>
 <ol style="list-style-type: decimal">
-<li><p>Vis ved differensiering diagram og gi en verbal tolkning på hvorfor IS-ligningen er synkende og LM-kurven er stigende</p></li>
-<li><p>Vis ved hjelp av en figur effekten av økt optimisme tilknyttet private realinvestinger (‘animal spirits’).</p></li>
-<li><p>Vis ved hjelp av en figur og forklar verbalt effekten av en reduksjon i prisnivået.</p></li>
-<li><p>Vis grafisk hvordan likevekten ser ut i pengemarkedet og IS-LM modellen, dersom sentralbanken går over til renteregelen (som vi så på under Keynes modellen) gitt ved <span class="math inline">\(i= m\cdot Y\)</span>.</p></li>
+<li>Vis ved differensiering i et (Y, i) diagram og gi en økonomisk tolkning på hvorfor IS-ligningen er synkende og LM-kurven er stigende</li>
+</ol>
+<p><em>IS-kurven</em> <em><span class="math display">\[\frac{\Delta Y}{\Delta \overline{i}} =-\frac{1}{1-c}(b +c_{2})&lt;0\]</span></em></p>
+<p><em>Økt rente gir lavere investeringer og konsum som fører til redusert etterspørsel. Dette initierer en negativ multiplikatoreffekt, fordi redusert etterspørsel medfører lavere produksjon og inntekt, som igjen fører til redusert etterspørsel pga lavere konsum, osv.</em></p>
+<p><em>LM-kurven finner vi ved å differensiere likevektsbetingelsen for pengemarkedet mhp. Y og i:</em></p>
+<p><em><span class="math display">\[\frac{\Delta i}{\Delta Y} = \frac{k}{h}&gt;0\]</span></em></p>
+<p><em>Økt inntekt gir økt etterspørsel etter penger pga økt transaksjonsbehov. For at markedet skal være i likevekt, må dette motsvares av et høyere rentenivå</em></p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Vis ved hjelp av en figur effekten av økt optimisme (‘animal spirits’) tilknyttet private realinvestinger</p></li>
+<li><p>Vis og forklar verbalt effekten av en reduksjon i prisnivået.</p></li>
+</ol>
+<p><em>Se forelesningsnotater (øvelse)</em></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Vis grafisk hvordan likevekten ser ut i pengemarkedet og IS-LM modellen dersom sentralbanken går over til en renteregel gitt ved<br />
+<span class="math inline">\(i= m\cdot Y\)</span></li>
 </ol>
 <!-- rnb-text-end -->
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCiMgU2VtaW5hciAyCiMjIEtleW5lcyBtb2RlbGwgZm9yIGVuIGx1a2tldCDDuGtvbm9taQoKVmkgc2VyIGZvciBvc3MgZW4gbHVra2V0IMO4a29ub21pIGh2b3IgYWdncmVnZXJ0IGV0dGVyc3DDuHJzZWwgKEFFKSBlciBnaXR0IHZlZAokJEFFXGVxdWl2IEMgKyBJICsgRyQkCgpIdm9yICRDJCBlciBrb25zdW0sICRJJCBwcml2YXRlIHJlYWxpbnZlc3RlcmluZ2VyIG9nCiRHJCBvZmZlbnRsaWcgZm9yYnJ1ay4KCkkgdGlsbGVnZyBwb3N0dWxlcmVyIHZpIGbDuGxnZW5kZSBhZGZlcmRzbGlnbmluZ2VyIGZvciBha3TDuHJlbmUgaSDDuGtvbm9taWVuOgokJEMgPSBcb3ZlcmxpbmV7Q30gKyBjX3sxfShZLVQpIC0gY197Mn1cY2RvdCBpIFx0ZXh0eyA6SHVzaG9sZG5pbmdlbn0kJAokJEkgPSBcb3ZlcmxpbmV7SX0gLSBiXGNkb3QgaSBcdGV4dHsgOlByaXZhdGUgcmVhbGludmVzdGVyaW5nZXJ9JCQKJCRpID0gXG92ZXJsaW5le2l9IFx0ZXh0eyA6c2VudHJhbGJhbmtlbn0kJAokJEcgPSBcb3ZlcmxpbmV7R30gXHRleHR7IG9nIH0gVD1cb3ZlcmxpbmV7VH0gXHRleHR7OiBvZmZlbnRsaWdlIG15bmRpZ2hldGVyfSQkIAoKCjEuIEVyIGRldCBwcm9kdWtzam9uZW4gJFkkIHNvbSBiZXN0ZW1tZXIgZXR0ZXJzcMO4cnNlbGVuICRBRSQsIGVsbGVyIGV0dGVyc3DDuHJzZWxlbiAkQUUkIHNvbSBiZXN0ZW1tZXIgcHJvZHVrc2pvbmVuICRZJCBpIGRlbm5lIG1vZGVsbGVuPwoKMi4gSHZpbGtlbiBzZW50cmFsIGZvcnV0c2V0bmluZyBsaWdnZXIgdGlsIGdydW5uIGZvciBkZXR0ZSByZXN1bHRhdGV0PwoKMy4gR2kgZW4gw7hrb25vbWlzayB0b2xrbmluZyB0aWxrbnl0dGV0IGFkZmVyZGVuIHRpbCBodXNob2xkbmluZ2VuIGJhc2VydCBww6Uga29uc3VtZnVua3Nqb25lbi4KCjQuIEzDuHMgbW9kZWxsZW4gbWhwLiBww6UgJFkkLgoKNS4gw5hrdCBwZXNzaW1pc21lIGkgw7hrb25vbWllbiBnaXIgc2VnIHV0c2xhZyBpIGV0IGxhdmVyZSBpbm50ZWt0c3VhdmhlbmdpZyBrb25zdW0gKCRcb3ZlcmxpbmV7Q30+MCQpLiBIdmlzIGZvcm1lbHQsIGdyYWZpc2sgKGRlcnNvbSBkdSDDuG5za2VyIMOlIGJlbnl0dGUgS2V5bmVza3J5c3NldCkgb2cgdmVyYmFsdCBodm9yZGFuIGRldHRlIGVuZHJlciBsaWtldmVrdGVuIGkgbW9kZWxsZW4uCgo2LiBWaXMgZm9ybWVsdCAodmVkIGRpZmZlcmVuc2llcmluZykgaHZpbGtlIHN0YWJpbGlzZXJpbmdzcG9saXRpc2tlIHZpcmtlbWlkbGVyIGRldCBvZmZlbnRsaWdlIGhhciB0aWxnamVuZ2VsaWcgZm9yIMOlIG1vdHZpcmtlIGRlbiDDuGt0ZSBwZXNzaW1pc21lbi4gSHZpbGtlbiBhdiBkaXNzZSB0aWx0YWtlbmUgdmlsIGhhIHN0ZXJrZXN0IG5lZ2F0aXYgZWZmZWt0IHDDpSBzdGF0c2J1ZHNqZXR0ZXQ/Cgo3LiBBbnRhIG7DpSBhdCByZW50ZW5pdsOlZXQgaSDDuGtvbm9taWVuIGVyIGdpdHQgdmVkIGVuIHJlbnRlcmVnZWwgICRpPSBtXGNkb3QgWSQsICBodm9yICRtPjAkLiBGaW5uIGxpa2V2ZWt0ZW4gZm9yICRZJCBvZyB2dXJkZXIgaHZvcnZpZHRlbiBzbGlrIHJlbnRlcmVnZWwgYmlkcmFyIHRpbCDDpSBzdGFiaWxpc2VyZSBlbGxlciBkZW1wZSBrb25qdW5rdHVyc3ZpbmdpbmdlbmUgKGhpbnQ6IHNhbW1lbmxpa24gbXVsdGlwbGlrYXRvcmVuIGkgbW9kZWxsZW5lIG1lZCBvZyB1dGVuIHJlbnRlcmVnZWwgbWVkIGh2ZXJhbmRyZSkuCgojIyBJUy1MTSBtb2RlbGxlbgoKTGlrdmVrdHNiZXRpbmdlbHNlbiBmb3IgcGVuZ2VtYXJrZWRldCBlciBnaXR0IHZlZAoKJCRNXntTfSA9IExfe2R9ICQkCgpJIHRpbGxlZ2cgdGlsIGFkZmVyZHNsaWduaW5nZW5lIGZyYSBmb3JyaWdlIG9wcGdhdmUsIGhhciB2aSBoZXIgYXQKCiQkTF97ZH0gPSBca2FwcGFcY2RvdCBZIC0gaFxjZG90IGkgXHRleHR7IEh1c2hvbGRuaW5nZW5zIGV0dGVyc3DDuHJzZWwgZXR0ZXIgcGVuZ2VyfSQkCgoKJCRNXntzfT1cZnJhY3tcb3ZlcmxpbmV7TX19e1B9IFx0ZXh0eyA6SHZvciBzZW50cmFsYmFua2VuIGJlc3RlbW1lciB0aWxidWRldCBhdiBiYXNpc3Blbmdlcn0kJAoKMS4gVmlzIHZlZCBkaWZmZXJlbnNpZXJpbmcgIGRpYWdyYW0gb2cgZ2kgZW4gdmVyYmFsIHRvbGtuaW5nIHDDpSBodm9yZm9yIElTLWxpZ25pbmdlbiBlciBzeW5rZW5kZSBvZyBMTS1rdXJ2ZW4gZXIgc3RpZ2VuZGUgCgoxLiBWaXMgdmVkIGhqZWxwIGF2IGVuIGZpZ3VyIGVmZmVrdGVuIGF2IMO4a3Qgb3B0aW1pc21lIHRpbGtueXR0ZXQgcHJpdmF0ZSByZWFsaW52ZXN0aW5nZXIgKCdhbmltYWwgc3Bpcml0cycpLgoKMS4gVmlzIHZlZCBoamVscCBhdiBlbiBmaWd1ciBvZyBmb3JrbGFyIHZlcmJhbHQgZWZmZWt0ZW4gYXYgZW4gcmVkdWtzam9uIGkgcHJpc25pdsOlZXQuCgoxLiBWaXMgZ3JhZmlzayBodm9yZGFuIGxpa2V2ZWt0ZW4gc2VyIHV0IGkgcGVuZ2VtYXJrZWRldCBvZyBJUy1MTSBtb2RlbGxlbiwgZGVyc29tIHNlbnRyYWxiYW5rZW4gZ8OlciBvdmVyIHRpbCAKcmVudGVyZWdlbGVuIChzb20gdmkgc8OlIHDDpSB1bmRlciBLZXluZXMgbW9kZWxsZW4pIGdpdHQgdmVkICRpPSBtXGNkb3QgWSQuCiAKCgo=</div>
+<div id="rmd-source-code">LS0tCm91dHB1dDoKICBodG1sX25vdGVib29rOgogICAgY3NzOiBzZW1pbmFyLmNzcwotLS0KCiMgU2VtaW5hciAyCiMjIEtleW5lcy1tb2RlbGwgZm9yIGVuIGx1a2tldCDDuGtvbm9taQoKVmkgc2VyIGZvciBvc3MgZW4gbHVra2V0IMO4a29ub21pIGh2b3IgYWdncmVnZXJ0IGV0dGVyc3DDuHJzZWwgKEFFKSBlciBnaXR0IHZlZAokJEFFXGVxdWl2IEMgKyBJICsgRyQkCgoKCkh2b3IgJEMkIGVyIGtvbnN1bSwgJEkkIHByaXZhdGUgcmVhbGludmVzdGVyaW5nZXIgb2cKJEckIG9mZmVudGxpZyBmb3JicnVrLgoKSSB0aWxsZWdnIHBvc3R1bGVyZXIgdmkgZsO4bGdlbmRlIGFkZmVyZHNsaWduaW5nZXIgZm9yIGFrdMO4cmVuZSBpIMO4a29ub21pZW46CiQkQyA9IFxvdmVybGluZXtDfSArIGNfezF9KFktVCkgLSBjX3syfVxjZG90IGkgXHRleHR7IDpIdXNob2xkbmluZ2VufSQkCiQkSSA9IFxvdmVybGluZXtJfSAtIGJcY2RvdCBpIFx0ZXh0eyA6UHJpdmF0ZSByZWFsaW52ZXN0ZXJpbmdlcn0kJAokJGkgPSBcb3ZlcmxpbmV7aX0gXHRleHR7IDpzZW50cmFsYmFua2VufSQkCiQkRyA9IFxvdmVybGluZXtHfSBcdGV4dHsgb2cgfSBUPVxvdmVybGluZXtUfSBcdGV4dHs6IG9mZmVudGxpZ2UgbXluZGlnaGV0ZXJ9JCQgCgoKMS4gRXIgZGV0IHByb2R1a3Nqb25lbiAkWSQgc29tIGJlc3RlbW1lciBldHRlcnNww7hyc2VsZW4gJEFFJCwgZWxsZXIgZXR0ZXJzcMO4cnNlbGVuICRBRSQgc29tIGJlc3RlbW1lciBwcm9kdWtzam9uZW4gJFkkIGkgZGVubmUgbW9kZWxsZW4/CgoqUMOlIGtvcnQgc2lrdCBlciBkZXQgZXR0ZXJzcMO4cnNlbGVuIHNvbSBiZXN0ZW1tZXIgcHJvZHVrc2pvbmVuIGkgZXQgbGFuZHMgw7hrb25vbWkqCgoyLiBIdmlsa2VuIHNlbnRyYWwgZm9ydXRzZXRuaW5nIGxpZ2dlciB0aWwgZ3J1bm4gZm9yIGRldHRlIHJlc3VsdGF0ZXQ/CgoqUHJvZHVrdHByaXNlbiBpIG1vZGVsbGVuIGVyIGtvbnN0YW50ZSAoc3RpdmUpKgoKMy4gR2kgZW4gw7hrb25vbWlzayB0b2xrbmluZyB0aWxrbnl0dGV0IGtvbnN1bWZ1bmtzam9uZW4gdGlsIGh1c2hvbGRuaW5nZW4uCgotICokXG92ZXJsaW5le0N9JCBLb25zdW0gc29tIGJsaXIgZ2l0dCB1YXZoZW5naWcgYXYgdmVyZGllbiBww6UgZGUgYW5kcmUgdmFyaWFibGVuZSBpIG1vZGVsbGVuLioKLSAqJGMoWS1UKSQgZm9ydGVsbGVyIG9zcyBodm9yc3RvciBhbmRlbCBhdiBkaXNwb25pbmJlbCBpbm50ZWt0IHNvbSBnw6VyIHRpbCBrb25zdW0qCi0gKiRjX3syfVxjZG90JCBnaXIgcmVudGVuaXbDpWV0cyBww6V2aXJrbmluZyBww6Uga29uc3VtZXQuIEjDuHllcmUgcmVudGUgZsO4cmVyIHRpbCBtaW5kcmUga29uc3VtLCBkZXR0ZSBmb3JkaSBodXNob2xkaW5nZW4gw7huc2tlciDDpSBzcGFyZSBtZXIgbsOlciByZW50YSDDuGtlcioKCjQuIEzDuHMgbW9kZWxsZW4gbWhwLiBww6UgJFkkLgoKKiQkWSA9IFxmcmFjezF9ezEtY197MX19XGxlZnRbXG92ZXJsaW5le0N9LWNfezF9XG92ZXJsaW5le1R9IC0gKGIrY197Mn0pXGNkb3QgaSArIFxvdmVybGluZXtJfSArIEcgIFxyaWdodF0gJCQqCgo1LiDDmGt0IHBlc3NpbWlzbWUgaSDDuGtvbm9taWVuIGdpciBzZWcgdXRzbGFnIGkgZXQgbGF2ZXJlIGlubnRla3RzdWF2aGVuZ2lnIGtvbnN1bSAoJFxvdmVybGluZXtDfTwwJCkuIEh2aXMgZm9ybWVsdCwgZ3JhZmlzayAoZGVyc29tIGR1IMO4bnNrZXIgw6UgYmVueXR0ZSBLZXluZXNrcnlzc2V0KSBvZyB2ZXJiYWx0IGh2b3JkYW4gZGV0dGUgZW5kcmVyIGxpa2V2ZWt0ZW4gaSBtb2RlbGxlbi4KCipGb3JtZWx0OiAkJCAtXGZyYWN7XERlbHRhIFl9e1xEZWx0YSBcb3ZlcmxpbmV7Q319ID0gXGZyYWN7LTF9ezEtY197MX19ID4gMCQkKgoKKktleW5lc2tyeXNzZXQqCgoqVmVyYmFsdDogUmVkdXNlcnQga29uc3VtIG1lZGbDuHJlciBmw7hyc3QgcmVkdXNlcnQgYWdncmVnZXJ0IGV0dGVyc3DDuHJzZWwgb2cgZGVybWVkIG9nc8OlICBwcm9kdWtzam9uIG9nIGlubnRla3QuIERlbiByZWR1c2VydGUgaW5udGVrdGVuIGluaXRpZXJlciBlbiBtdWx0aXBsaWthdG9yZWZmZWt0LCBzaWRlbiByZWR1c2VydCBpbm50ZWt0IG1lZGbDuHJlciByZWR1c2VydCBrb25zdW0sIGV0dGVyc3DDuHJzZWwsIHByb2R1a3Nqb24gb2cgaW5udGVrdCBvc3YuKiAgICAKCjYuIFZpcyBmb3JtZWx0ICh2ZWQgZGlmZmVyZW5zaWVyaW5nKSBodmlsa2Ugc3RhYmlsaXNlcmluZ3Nwb2xpdGlza2Ugdmlya2VtaWRsZXIgZGV0IG9mZmVudGxpZ2UgaGFyIHRpbGdqZW5nZWxpZyBmb3Igw6UgbW90dmlya2UgZGVuIMO4a3RlIHBlc3NpbWlzbWVuLiBIdmlsa2VuIGF2IGRpc3NlIHRpbHRha2VuZSB2aWwgaGEgc3Rlcmtlc3QgbmVnYXRpdiBlZmZla3QgcMOlIHN0YXRzYnVkc2pldHRldD8KCirDmGt0ZSBvZmZlbnRsaWdlIHV0Z2lmdGVyOioKCiokJFxEZWx0YSBZID0gXCBcZnJhY3sxfXsxLWNfezF9fVxsZWZ0W1xEZWx0YSBcb3ZlcmxpbmV7Q30gKyBcRGVsdGEge0d9ICBccmlnaHRdPTAgXFJpZ2h0YXJyb3cgXERlbHRhIFx1bmRlcnNldHsoLSl9e1xvdmVybGluZXtDfSB9PS0gXERlbHRhIFx1bmRlcnNldHsoKyl9e0d9JCQqCgoqUmVkdXNlcnRlIHNrYXR0ZXI6KgoKKiQkXERlbHRhIFkgPSBcIFxmcmFjezF9ezEtY197MX19XGxlZnRbXERlbHRhIFxvdmVybGluZXtDfS1jX3sxfSBcRGVsdGEgXG92ZXJsaW5le1R9ICAgIFxyaWdodF0gXFJpZ2h0YXJyb3cgClxEZWx0YSBcdW5kZXJzZXR7KC0pfXtcb3ZlcmxpbmV7Q319ID0gY197MX0gXERlbHRhIFx1bmRlcnNldHsoLSl9e1xvdmVybGluZXtUfX0kJCoKCipVbmRlcnNrdWRkZXQgcMOlIHN0YXRzYnVkc2pldHRldCBlciBnaXR0IHZlZCAkRy1UJCAob2ZmZW50bGlnZSB1dGdpZnRlciBtaW4gc2thdHRlaW5udGVrdGVyKSogCgoqVXRnaWZ0c8O4a25pbmdlbiB2aWwgdsOmcmUgcMOlICRcRGVsdGEgXG92ZXJsaW5le0N9JCwgbWVucyBza2F0dGVpbm50ZWt0ZW4gdmlsIG3DpXR0ZSByZWR1c2VyZXMgdmVkCiRcRGVsdGEgXG92ZXJsaW5le0N9L2NfezF9JC4gU2lkZW4gJFxEZWx0YSBcb3ZlcmxpbmV7Q30gPCBcRGVsdGEgXG92ZXJsaW5le0N9L2NfezF9JCB2aWwgZGVuIG5lZ2F0aXZlIGVmZmVrdGVuIHDDpSBzdGF0c2J1ZHNqZXR0ZXQgYXYgw6UgZ2rDuHJlIGRldHRlIHZlZCBlbiBza2F0dGVyZWR1a3Nqb24gdsOmcmUgc3TDuHJyZSBlbm4gdmVkIGVuIMO4a25pbmcgaSBvZmZlbnRsaWcgdXRnaWZ0ZXIuKgoKQW50YSBhdCBzZW50cmFsYmFua2VuIGlubmbDuHJlciBlbiByZW50ZXJlZ2VsIHNvbSBlciBnaXR0IHZlZCBhdCAkaT0gbVxjZG90IFkkLiAKCjcuIEZpbm4gbsOlIGzDuHNuaW5nZW4gdGlsIG1vZGVsbGVuIG1ocC4gcMOlIFkKCgoKKiQkWSA9IFxmcmFjezF9ezEtY197MX0rbVxjZG90IGNfezJ9ICsgbVxjZG90IGJ9XGxlZnRbXG92ZXJsaW5le0N9LWNfezF9XG92ZXJsaW5le1R9ICsgXG92ZXJsaW5le0l9ICsgRyAgXHJpZ2h0XSAkJCoKCjguIEJpZHJhciBlbiBzbGlrIHJlbnRlcmVnZWwgdGlsIMOlIHN0YWJpbGlzZXJlIGVsbGVyIGRlbXBlIGtvbmp1bmt0dXJzdmluZ2luZ2VuZSAoaGludDogc2FtbWVubGlrbiBtdWx0aXBsaWthdG9yZW4gaSBkZSB0byBtb2RlbGxlbmUgbWVkIGh2ZXJhbmRyZSk/CgoqVmkgaGFyIGF0ICRcZnJhY3sxfXsxLWNfezF9fT5cZnJhY3sxfXsxLWNfezF9K21cY2RvdCBjX3syfSArIG1cY2RvdCBifSQuIFNpZGVuIG11bHRpcGxpa2F0b3JlbiBlciBtaW5kcmUgaSBtb2RlbGxlbiBtZWQgcmVudGVyZWdlbCx2aWwgcmVnZWxlbiBiaWRyYSB0aWwgw6UgZGVtcGUgZWZmZWt0ZW4gZWtzb2dlbmVuZSBlbmRyaW5nZXIgdmlsIGhhIHDDpSBrb25qdW5rdHVyc3ZpbmduaW5nZW5lKgoKIyMgSVMtTE0gbW9kZWxsZW4KCkxpa3Zla3RzYmV0aW5nZWxzZW4gZm9yIHBlbmdlbWFya2VkZXQgZXIgZ2l0dCB2ZWQKCiQkTV57U30gPSBMX3tkfSQkCgpJIHRpbGxlZ2cgdGlsIGFkZmVyZHNsaWduaW5nZW5lIGZyYSBmb3JyaWdlIG9wcGdhdmUsIGhhciB2aSBoZXIgYXQKCiQkTF97ZH0gPSBca2FwcGFcY2RvdCBZIC0gaFxjZG90IGkgXHRleHR7IEh1c2hvbGRuaW5nZW5zIGV0dGVyc3DDuHJzZWwgZXR0ZXIgcGVuZ2VyfSQkCgoKJCRNXntzfT1cZnJhY3tcb3ZlcmxpbmV7TX19e1B9IFx0ZXh0eyA6SHZvciBzZW50cmFsYmFua2VuIGJlc3RlbW1lciB0aWxidWRldCBhdiBiYXNpc3Blbmdlcn0kJAoKMS4gVmlzIHZlZCBkaWZmZXJlbnNpZXJpbmcgaSBldCAoWSwgaSkgZGlhZ3JhbSBvZyBnaSBlbiDDuGtvbm9taXNrIHRvbGtuaW5nIHDDpSBodm9yZm9yIElTLWxpZ25pbmdlbiBlciBzeW5rZW5kZSBvZyBMTS1rdXJ2ZW4gZXIgc3RpZ2VuZGUgCgoqSVMta3VydmVuKgoqJCRcZnJhY3tcRGVsdGEgWX17XERlbHRhIFxvdmVybGluZXtpfX0gPS1cZnJhY3sxfXsxLWN9KGIgK2NfezJ9KTwwJCQqCgoqw5hrdCByZW50ZSBnaXIgbGF2ZXJlIGludmVzdGVyaW5nZXIgb2cga29uc3VtIHNvbSBmw7hyZXIgdGlsIHJlZHVzZXJ0IGV0dGVyc3DDuHJzZWwuIERldHRlIGluaXRpZXJlciBlbiBuZWdhdGl2IG11bHRpcGxpa2F0b3JlZmZla3QsIGZvcmRpIHJlZHVzZXJ0IGV0dGVyc3DDuHJzZWwgbWVkZsO4cmVyIApsYXZlcmUgcHJvZHVrc2pvbiBvZyBpbm50ZWt0LCAgc29tIGlnamVuIGbDuHJlciB0aWwgcmVkdXNlcnQgZXR0ZXJzcMO4cnNlbCBwZ2EgbGF2ZXJlIGtvbnN1bSwgb3N2LioKCipMTS1rdXJ2ZW4gZmlubmVyIHZpIHZlZCDDpSBkaWZmZXJlbnNpZXJlIGxpa2V2ZWt0c2JldGluZ2Vsc2VuIGZvciBwZW5nZW1hcmtlZGV0IG1ocC4gWSBvZyBpOioKCiokJFxmcmFje1xEZWx0YSBpfXtcRGVsdGEgWX0gPSBcZnJhY3trfXtofT4wJCQqCgoqw5hrdCBpbm50ZWt0IGdpciDDuGt0IGV0dGVyc3DDuHJzZWwgZXR0ZXIgcGVuZ2VyIHBnYSDDuGt0IHRyYW5zYWtzam9uc2JlaG92LiBGb3IgYXQgbWFya2VkZXQgc2thbCB2w6ZyZSBpIGxpa2V2ZWt0LCBtw6UgZGV0dGUgbW90c3ZhcmVzIGF2IGV0IGjDuHllcmUgcmVudGVuaXbDpSoKCjIuIFZpcyB2ZWQgaGplbHAgYXYgZW4gZmlndXIgZWZmZWt0ZW4gYXYgw7hrdCBvcHRpbWlzbWUgKCdhbmltYWwgc3Bpcml0cycpIHRpbGtueXR0ZXQgcHJpdmF0ZSByZWFsaW52ZXN0aW5nZXIgCgozLiBWaXMgb2cgZm9ya2xhciB2ZXJiYWx0IGVmZmVrdGVuIGF2IGVuIHJlZHVrc2pvbiBpIHByaXNuaXbDpWV0LgoKKlNlIGZvcmVsZXNuaW5nc25vdGF0ZXIgKMO4dmVsc2UpKgoKNC4gVmlzIGdyYWZpc2sgaHZvcmRhbiBsaWtldmVrdGVuIHNlciB1dCBpIHBlbmdlbWFya2VkZXQgb2cgSVMtTE0gbW9kZWxsZW4gZGVyc29tIHNlbnRyYWxiYW5rZW4gZ8OlciBvdmVyIHRpbCBlbiByZW50ZXJlZ2VsIGdpdHQgdmVkICAKJGk9IG1cY2RvdCBZJAo=</div>
 
 
 

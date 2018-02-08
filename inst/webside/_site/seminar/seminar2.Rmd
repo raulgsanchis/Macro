@@ -50,4 +50,3 @@ $$M^{s}=\frac{\overline{M}}{P} \text{ :Hvor sentralbanken bestemmer tilbudet av 
 1. Vis grafisk hvordan likevekten ser ut i pengemarkedet og IS-LM modellen, dersom sentralbanken går over til 
 renteregelen (som vi så på under Keynes modellen) gitt ved $i= m\cdot Y$.
  
-

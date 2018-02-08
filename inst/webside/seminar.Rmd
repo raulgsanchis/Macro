@@ -6,6 +6,9 @@
 
 
 <!--
+
+
+
 #[- Med fasit](seminar/seminar2_fasit.nb.html)
 
 [Seminar 3 (uke 8): Grunnleggende basiskunnskaper og enkel Keynes modell](seminar/seminar2)
