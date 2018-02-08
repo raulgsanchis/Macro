@@ -6,18 +6,18 @@ library(grid)
 library(latex2exp)
 #######################################################################################################################
 #keynesexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, i = 2, oI = 10, T = 50), list(Y=c(Iv)))
-iv <- 0:7.5
-islmexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 210,
-                         P=1, h = 10, k =1, Y = 250), list(i=c(iv)))
+iv <- 0:5
+islmexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
+                         P=1, h = 10, k =1, Y = 130), list(i=c(iv)))
 
-eislmexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 220,
-                          P=1, h = 10, k =1, Y = 250), list(i=c(iv)))
+eislmexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 110,
+                          P=1, h = 10, k =1, Y = 130), list(i=c(iv)))
 
-dfislm <- dfgeneric(modell='islm', exoparval = islmexoparvalv, eqsel = c(2,3))
-edfislm <- dfgeneric(modell='islm', exoparval = eislmexoparvalv, eqsel = c(2,3))
+dfislm <- dfgeneric(modell='islm', exoparval = islmexoparvalv, eqsel = c(1,3))
+edfislm <- dfgeneric(modell='islm', exoparval = eislmexoparvalv, eqsel = c(1,3))
 
 #!A
-dfislm$yeae <- c(4,210)
+#dfislm$yeae <- c(4,110)
 
 # Pengemarkedet
 dfkurver <- data.frame(kurve=c("Ld", "Ms"),
@@ -37,7 +37,7 @@ labelslm <- list(title = 'Pengemarkedet',
 lmlikevekt <- genmakrofigure(dfnumeric = dfislm,
                             variables = c(dfislm$varnavn)[c(1,2)],
                             labt = labelslm,
-                            scalejust = list(x=0, y=175))  + coord_flip()
+                            scalejust = list(x=0, y=60))  + coord_flip()
 
 emlmlikevekt <- data.frame(kurve=c("Ms'"),
                          fargel = c('red'),
@@ -49,17 +49,17 @@ elabelslm <- list(title = 'Pengemarkedet',
                     y = 'produksjon, inntekt (Y)',
                     x = 'rentenivå (i)',
                     x0 = c(TeX('$i_{1}}$')),
-                    y0 = c(TeX('$M/P_{1}$')),
+                    y0 = c(TeX('$M_{1}/P_{1}$')),
                     kurver = emlmlikevekt)
 
-edfislm$yeae <- c(3,220)
+edfislm$yeae <- c(2, 110)
 
 lmchangemoney <- cgenmakrofigure(dfnumeric=dfislm,
                                  edfnumeric=edfislm,
                                  variables = c(dfislm$varnavn)[c(1,2)],
                                  labt = labelslm,
                                  elabt = elabelslm,
-                                 scalejust = list(x=0, y=175)) + coord_flip()
+                                 scalejust = list(x=0, y=60)) + coord_flip()
 
 # IS-LM Modellen
 ### Likevekt ###
@@ -106,5 +106,6 @@ islmchangemoney <- cgenmakrofigure(dfnumeric=dfislm,
                                  variables = c(dfislm$varnavn)[c(3,4)],
                                  labt = labelsislm,
                                  elabt = elabelsislm,
-                                 scalejust = list(x=0, y=50)) + coord_flip()
+                                 scalejust = list(x=0, y=75)) + coord_flip()
 
+islmchangemoney
