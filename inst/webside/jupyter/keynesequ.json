@@ -1,1 +1,1 @@
-{"AD": "(T*c_1 - a*i - oC - oG - oI)/(c_1 - 1)", "ID": "a*i + oI", "EQV": "C + G + I", "GD": "oG", "CD": "c_1*(-T + Y) + oC", "YS": "Y"}
+{"ID": "b*i + oI", "AD": "(T*c_1 - b*i - oC - oG - oI)/(c_1 - 1)", "CD": "c_1*(-T + Y) + oC", "EQV": "C + G + I", "YS": "Y", "GD": "oG"}

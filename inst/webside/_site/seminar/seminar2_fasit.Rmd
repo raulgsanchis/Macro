@@ -45,6 +45,10 @@ $$G = \overline{G} \text{ og } T=\overline{T} \text{: offentlige myndigheter}$$
 *Formelt: $$ -\frac{\Delta Y}{\Delta \overline{C}} = \frac{-1}{1-c_{1}} > 0$$*
 
 *Keyneskrysset*
+```{r echo=FALSE}
+ekeynesclikevekt
+```
+
 
 *Verbalt: Redusert konsum medfører først redusert aggregert etterspørsel og dermed også  produksjon og inntekt. Den reduserte inntekten initierer en multiplikatoreffekt, siden redusert inntekt medfører redusert konsum, etterspørsel, produksjon og inntekt osv.*    
 

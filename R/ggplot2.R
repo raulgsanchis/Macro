@@ -2,7 +2,9 @@
 genmakrofigure <- function(dfnumeric = NULL,
                            variables = NULL,
                            labt = labelsadas,
-                           scalejust = list(x=0, y=0)){
+                           scalejust = list(x=50, y=0),
+                           punktvelger = list(x=1,y=2),
+                           limits= list(x=NULL, y=NULL)){
   # Henter dataene
   datainp <- dplyr::filter(dfnumeric$dfmodell, variable %in% variables) %>% dplyr::mutate(kat='naa')
 
@@ -11,13 +13,13 @@ genmakrofigure <- function(dfnumeric = NULL,
     labs(title = labt$title, x = labt$x, y = labt$y) +
     geom_line(data = datainp, aes(x = Iv, y = value, color = factor(variable))) +
     geom_text(data = labt$kurver, aes(x = x, y = y, label = kurve), color = labt$kurver$fargel) +
-    geom_point(aes(x=dfnumeric$yeae[1], y=dfnumeric$yeae[2])) +
-    geom_segment(aes(x = dfnumeric$yeae[1], y = dfnumeric$yeae[2] ,
-                    xend = dfnumeric$yeae[1], yend = scalejust$y), lty = 2) +
-    geom_segment(aes(x = scalejust$x, y = dfnumeric$yeae[2], xend = dfnumeric$yeae[1],
-                     yend = dfnumeric$yeae[2]), lty = 2) +
-    scale_x_continuous(breaks = dfnumeric$yeae[1], labels = labt$x0) +
-    scale_y_continuous(breaks = dfnumeric$yeae[2], labels = labt$y0) +
+    geom_point(aes(x=dfnumeric$yeae[punktvelger$x], y=dfnumeric$yeae[punktvelger$y])) +
+    geom_segment(aes(x = dfnumeric$yeae[punktvelger$x], y = dfnumeric$yeae[punktvelger$y] ,
+                    xend = dfnumeric$yeae[punktvelger$x], yend = scalejust$y), lty = 2) +
+    geom_segment(aes(x = scalejust$x, y = dfnumeric$yeae[punktvelger$y], xend = dfnumeric$yeae[punktvelger$x],
+                     yend = dfnumeric$yeae[punktvelger$y]), lty = 2) +
+    #scale_x_continuous(breaks = dfnumeric$yeae[c(1:length(labt$x0))], limits = limits$x, labels = labt$x0) +
+    #scale_y_continuous(breaks = dfnumeric$yeae[c(punktvelger$y)], limits = limits$y, labels = labt$y0) +
     scale_colour_manual(values = labt$kurver$fargek) +
     theme_classic() +
     theme(legend.position="none")
@@ -30,7 +32,8 @@ cgenmakrofigure <- function(dfnumeric=NULL,
                             variables = NULL,
                             labt = NULL,
                             elabt=NULL,
-                            scalejust = list(x=0, y=0)){
+                            scalejust = list(x=0, y=0),
+                            limits= list(x=NULL, y=NULL)){
 
   # Henter dataene
   datainp <- dplyr::filter(dfnumeric$dfmodell, variable %in% variables) %>% dplyr::mutate(kat='naa')
@@ -57,8 +60,8 @@ cgenmakrofigure <- function(dfnumeric=NULL,
                      xend = edfnumeric$yeae[1], yend = scalejust$y), lty = 2) +
     geom_segment(aes(x = scalejust$x, y = edfnumeric$yeae[2], xend = edfnumeric$yeae[1],
                      yend = edfnumeric$yeae[2]), lty = 2) +
-    scale_x_continuous(breaks = c(dfnumeric$yeae[1], edfnumeric$yeae[1]), labels = c(labt$x0, elabt$x0)) +
-    scale_y_continuous(breaks = c(dfnumeric$yeae[2], edfnumeric$yeae[2]), labels = c(labt$y0, elabt$y0)) +
+    #scale_x_continuous(breaks = c(dfnumeric$yeae[1], edfnumeric$yeae[1]), limits = limits$x, labels = c(labt$x0, elabt$x0)) +
+    #scale_y_continuous(breaks = c(dfnumeric$yeae[2], edfnumeric$yeae[2]), limits = limits$y, labels = c(labt$y0, elabt$y0)) +
     scale_colour_manual(values = labt$kurver$fargek) +
     theme_classic() +
     theme(legend.position="none")
@@ -74,9 +77,9 @@ dfgeneric <- function(modell='adasl',labels = NULL, exoparval=NULL, eqsel = c(1,
     # Keynes
     keynesequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/keynesequ.json'))
     grad45v <- 0:rev(Iv)[1]
-    cdv <- eval(parse(text=keynesequ$CD),exoparval)
-    idv <- eval(parse(text=keynesequ$ID),exoparval)
-    gdv <- eval(parse(text=keynesequ$GD),exoparval)
+    cdv <- eval(parse(text=keynesequ$CD), exoparval)
+    idv <- eval(parse(text=keynesequ$ID), exoparval)
+    gdv <- eval(parse(text=keynesequ$GD), exoparval)
 
     # Linjer
     dfmodellres <- data.frame(Iv, grad45v, cdv, idv, gdv) %>%
@@ -89,7 +92,6 @@ dfgeneric <- function(modell='adasl',labels = NULL, exoparval=NULL, eqsel = c(1,
 
   } else if (modell =='islm'){
     # Leser inn modellen
-
     modellequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/islmequ.json'))
     # Selekterte modellligninger
     ## Enkeltligninger
@@ -99,16 +101,16 @@ dfgeneric <- function(modell='adasl',labels = NULL, exoparval=NULL, eqsel = c(1,
     lmv <- eval(parse(text=modellequ$LMC), exoparval)
 
     ## Samtidig likevekt
-    yss <- 250
-    iss <- 3
-    #y <- c(yss,iss)
-    exoparvalvd <- exoparval[1:length(exoparval)-1]
-    #y <- c(yss, pss)
+    yss <- exoparval$Y
+    iss <- median(exoparval$i)
+    y <- c(yss,iss)
+    # exoparvalvd <- exoparval[1:length(exoparval)-1]
+    # #y <- c(yss, pss)
     optadas <- function(y){
       c(Y1 = y[2] - eval(parse(text=modellequ$ISC), c(exoparvalvd, list(i=y[1]))),
         Y2 = y[2] - eval(parse(text=modellequ$LMC), c(exoparvalvd, list(i=y[1]))))}
 
-    yeae <- nmtaggmodela <- c(rootSolve::multiroot(f = optadas, start = c(iss, yss))$root, exoparvalvd$M)
+    yeae <- c(rootSolve::multiroot(f = optadas, start = c(iss, yss))$root, exoparvalvd$M)
 
     # Linjer
     dfmodellres <- data.frame(Iv, ldv, msv, isv, lmv) %>%
