@@ -101,17 +101,20 @@ dfgeneric <- function(modell='adasl',labels = NULL, exoparval=NULL, eqsel = c(1,
     lmv <- eval(parse(text=modellequ$LMC), exoparval)
 
     ## Samtidig likevekt
+    exoparvalvd <- exoparval[1:length(exoparval)-1]
+    eval(parse(text=modellequ$SEQi), exoparvalvd)
+
     yss <- exoparval$Y
     iss <- median(exoparval$i)
     y <- c(yss,iss)
-    # exoparvalvd <- exoparval[1:length(exoparval)-1]
+    exoparvalvd <- exoparval[1:length(exoparval)-1]
     # #y <- c(yss, pss)
     optadas <- function(y){
       c(Y1 = y[2] - eval(parse(text=modellequ$ISC), c(exoparvalvd, list(i=y[1]))),
         Y2 = y[2] - eval(parse(text=modellequ$LMC), c(exoparvalvd, list(i=y[1]))))}
 
     yeae <- c(rootSolve::multiroot(f = optadas, start = c(iss, yss))$root, exoparvalvd$M)
-
+           modellequ$SEQi
     # Linjer
     dfmodellres <- data.frame(Iv, ldv, msv, isv, lmv) %>%
       reshape2::melt(id.vars = c("Iv"))
