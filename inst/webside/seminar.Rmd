@@ -4,9 +4,9 @@
 
 [Seminar 2 (uke 6): Enkel Keynes og IS-LM modellen](seminar/seminar2.html)
 
-[- Med fasit](seminar/seminar2_fasit.nb.html)
 
 <!--
+#[- Med fasit](seminar/seminar2_fasit.nb.html)
 
 [Seminar 3 (uke 8): Grunnleggende basiskunnskaper og enkel Keynes modell](seminar/seminar2)
 

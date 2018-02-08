@@ -10,7 +10,7 @@ genmakrofigure <- function(dfnumeric = NULL,
   ggplot() +
     labs(title = labt$title, x = labt$x, y = labt$y) +
     geom_line(data = datainp, aes(x = Iv, y = value, color = factor(variable))) +
-    geom_text(data = labt$kurver, aes(x = x, y = y, label = kurve), color = labt$kurver$fargel)
+    geom_text(data = labt$kurver, aes(x = x, y = y, label = kurve), color = labt$kurver$fargel) +
     geom_point(aes(x=dfnumeric$yeae[1], y=dfnumeric$yeae[2])) +
     geom_segment(aes(x = dfnumeric$yeae[1], y = dfnumeric$yeae[2] ,
                     xend = dfnumeric$yeae[1], yend = scalejust$y), lty = 2) +
@@ -65,7 +65,7 @@ cgenmakrofigure <- function(dfnumeric=NULL,
 }
 
 #' @export dfgeneric
-dfgeneric <- function(modell='adasl', labels = NULL ,exoparval=NULL){
+dfgeneric <- function(modell='adasl',labels = NULL, exoparval=NULL, eqsel = c(1,2)){
 
 
   Iv <- as.vector(unlist(rev(exoparval)[1]))
@@ -97,11 +97,9 @@ dfgeneric <- function(modell='adasl', labels = NULL ,exoparval=NULL){
     msv <- eval(parse(text=modellequ$MS), exoparval)
     isv <- eval(parse(text=modellequ$ISC), exoparval)
     lmv <- eval(parse(text=modellequ$LMC), exoparval)
-    #eqlm <-eval(parse(text=modellequ$LMC), exoparval)
-
 
     ## Samtidig likevekt
-    yss <- 300
+    yss <- 250
     iss <- 3
     #y <- c(yss,iss)
     exoparvalvd <- exoparval[1:length(exoparval)-1]
@@ -110,7 +108,7 @@ dfgeneric <- function(modell='adasl', labels = NULL ,exoparval=NULL){
       c(Y1 = y[2] - eval(parse(text=modellequ$ISC), c(exoparvalvd, list(i=y[1]))),
         Y2 = y[2] - eval(parse(text=modellequ$LMC), c(exoparvalvd, list(i=y[1]))))}
 
-    yeae <- nmtaggmodela <- rootSolve::multiroot(f = optadas, start = c(iss, yss))$root
+    yeae <- nmtaggmodela <- c(rootSolve::multiroot(f = optadas, start = c(iss, yss))$root, exoparvalvd$M)
 
     # Linjer
     dfmodellres <- data.frame(Iv, ldv, msv, isv, lmv) %>%
@@ -152,7 +150,7 @@ dfgeneric <- function(modell='adasl', labels = NULL ,exoparval=NULL){
   varnavnminverdi <- subset(dfmodellres, Iv ==Iv[1])
 
 
-  list(dfmodell=dfmodellres, yeae = yeae, varnavn = varnavn,
+  list(dfmodell=dfmodellres, yeae = yeae[eqsel], varnavn = varnavn,
        varnavnmaksverdi = varnavnmaksverdi, varnavnminverdi= varnavnminverdi)
 }
 
@@ -404,3 +402,4 @@ gpdiamdoell2 <- function(data = NULL,
     theme(legend.position="none") +
     coord_cartesian()
 }
+
