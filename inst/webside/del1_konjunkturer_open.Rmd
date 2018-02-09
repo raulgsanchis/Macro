@@ -1,6 +1,3 @@
----
-output: html_notebook 
----
 
 ```{r include=FALSE}
 library(MakroOEKB1115)
@@ -15,15 +12,15 @@ library(latex2exp)
 
 ### Stabiliseringsmål for en åpen økonomi
 
-1. Intern balanse (lukke produksjonsgapet):
+- Intern balanse (lukke produksjonsgapet):
 
 $$(Y-\overline{Y})=0$$
 
-1. Ekstern balanse (rimelig nivå på utenlandsgjelden)
+- Ekstern balanse (rimelig nivå på utenlandsgjelden)
 
 ### Tre fundamentale endringer fra en lukket økonomi:
 
-- Handel med utlandet
+#### Handel med utlandet
 
 $$AE \equiv C+I+G+NX$$
 $NX$ er lagt til definisjonen for aggregert etterspørsel
@@ -31,7 +28,7 @@ $NX$ er lagt til definisjonen for aggregert etterspørsel
 $$NX=EX−R\cdot IM \text{ hvor } R=\frac{E\cdot P}{P^{*}}$$
 Som er definert som eksport $(EX)$ minus import $(R\cdot IM)$. Realvalutakursen $R$ sørger for at alt blir målt i enheter av det innenlandske godet.
 
-- Driftsregnskapet ovenfor utlandet
+#### Utenriksregnskapet
 
 $$ BP = CA + CU + OR=0 $$
 
@@ -39,7 +36,7 @@ CU=Driftsregnskapet: Nettoeksport, Nettofinansinntekter(aksjer og obligasjoner),
 
 CA=Kapitalregnskapet: Nettoendringer i fordringer og gjeld ovenfor utlandet
 
-- Fast eller flytende kurs
+#### Fast eller flytende kurs
 
 - Handel med utlandet (avhenger blant annet av relative prisnivået mellom innenlandske og utenlandske varer)
 
@@ -48,6 +45,8 @@ Realvalutakursen: $R=\frac{EP}{P}$
 - E: Pris (nominell) per enhet av utenlandsk (innenlandsk) valuta E  (1/E)
 
 ### Adferdsligninger
+
+#### Husholdninger og bedrifter
 
 $$IM=X(\underset{(-)}{R}, \underset{(+)}{Y}) =  -m_{1}R + x_{2}Y $$
 $$EX=X(\underset{(+)}{R}, \underset{(+)}{Y^{*}}) = x_{1}R + x_{2}Y^{*}  $$
@@ -61,6 +60,7 @@ Legger til grunn i dette kurset at $\frac{\Delta NX}{\Delta R}/>0$  (i praksis k
 - internasjonale finansmarkeder (renteparitetsbetingelsen)
 
 $$(1+i_{t+1})=(1+i_{t+1}^{*})\frac{E_{t+1}^{e}}{E_{t}}$$
+#### Offentlige myndigheter
 
 - Myndighetene kan velge fast eller flytende kurs
 
@@ -77,6 +77,9 @@ $i =i^{*}$
 #### Fast kurs
 
 #### Flytende kurs
+
+### AD-AS modellen for en åpen økonomi
+
 
 
 <!--

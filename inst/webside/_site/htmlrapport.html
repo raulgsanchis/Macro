@@ -379,14 +379,19 @@ $(document).ready(function () {
 </ul></li>
 <li><a href="#grunnleggende-bakgrunnkunnskaper-1">Grunnleggende bakgrunnkunnskaper</a><ul>
 <li><a href="#stabiliseringsmal-for-en-apen-konomi">Stabiliseringsmål for en åpen økonomi</a></li>
-<li><a href="#tre-fundamentale-endringer-fra-en-lukket-konomi">Tre fundamentale endringer fra en lukket økonomi</a><ul>
+<li><a href="#tre-fundamentale-endringer-fra-en-lukket-konomi">Tre fundamentale endringer fra en lukket økonomi:</a><ul>
 <li><a href="#handel-med-utlandet">Handel med utlandet</a></li>
+<li><a href="#utenriksregnskapet">Utenriksregnskapet</a></li>
 <li><a href="#fast-eller-flytende-kurs">Fast eller flytende kurs</a></li>
+</ul></li>
+<li><a href="#adferdsligninger-1">Adferdsligninger</a><ul>
+<li><a href="#husholdninger-og-bedrifter">Husholdninger og bedrifter</a></li>
 </ul></li>
 <li><a href="#mundell-fleming-modellen">Mundell-Fleming modellen</a><ul>
 <li><a href="#fast-kurs">Fast kurs</a></li>
 <li><a href="#flytende-kurs">Flytende kurs</a></li>
 </ul></li>
+<li><a href="#ad-as-modellen-for-en-apen-konomi">AD-AS modellen for en åpen økonomi</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#referanser">Referanser</a></li>
@@ -1283,21 +1288,24 @@ Likvidering (bail-in)
 <h2>Grunnleggende bakgrunnkunnskaper</h2>
 <div id="stabiliseringsmal-for-en-apen-konomi" class="section level3">
 <h3>Stabiliseringsmål for en åpen økonomi</h3>
-<ol style="list-style-type: decimal">
+<ul>
 <li>Intern balanse (lukke produksjonsgapet):</li>
-</ol>
+</ul>
 <p><span class="math display">\[(Y-\overline{Y})=0\]</span></p>
-<ol style="list-style-type: decimal">
+<ul>
 <li>Ekstern balanse (rimelig nivå på utenlandsgjelden)</li>
-</ol>
+</ul>
 </div>
 <div id="tre-fundamentale-endringer-fra-en-lukket-konomi" class="section level3">
-<h3>Tre fundamentale endringer fra en lukket økonomi</h3>
+<h3>Tre fundamentale endringer fra en lukket økonomi:</h3>
 <div id="handel-med-utlandet" class="section level4">
 <h4>Handel med utlandet</h4>
-<p><span class="math display">\[AE = C+I+G+NX\]</span></p>
-<p><span class="math display">\[ NX=EX−R∗IM \]</span> #### Internasjonale finansmarkeder</p>
-<p><span class="math display">\[ BP = CA + CP + OR=0 \]</span></p>
+<p><span class="math display">\[AE \equiv C+I+G+NX\]</span> <span class="math inline">\(NX\)</span> er lagt til definisjonen for aggregert etterspørsel</p>
+<p><span class="math display">\[NX=EX−R\cdot IM \text{ hvor } R=\frac{E\cdot P}{P^{*}}\]</span> Som er definert som eksport <span class="math inline">\((EX)\)</span> minus import <span class="math inline">\((R\cdot IM)\)</span>. Realvalutakursen <span class="math inline">\(R\)</span> sørger for at alt blir målt i enheter av det innenlandske godet.</p>
+</div>
+<div id="utenriksregnskapet" class="section level4">
+<h4>Utenriksregnskapet</h4>
+<p><span class="math display">\[ BP = CA + CU + OR=0 \]</span></p>
 <p>CU=Driftsregnskapet: Nettoeksport, Nettofinansinntekter(aksjer og obligasjoner), Nettoverføringer</p>
 <p>CA=Kapitalregnskapet: Nettoendringer i fordringer og gjeld ovenfor utlandet</p>
 </div>
@@ -1308,9 +1316,14 @@ Likvidering (bail-in)
 </ul>
 <p>Realvalutakursen: <span class="math inline">\(R=\frac{EP}{P}\)</span></p>
 <ul>
-<li><p>E: Pris (nominell) per enhet av utenlandsk (innenlandsk) valuta E (1/E)</p></li>
-<li><p>Postulerer følgende adferdsligninger for handelsbalansen</p></li>
+<li>E: Pris (nominell) per enhet av utenlandsk (innenlandsk) valuta E (1/E)</li>
 </ul>
+</div>
+</div>
+<div id="adferdsligninger-1" class="section level3">
+<h3>Adferdsligninger</h3>
+<div id="husholdninger-og-bedrifter" class="section level4">
+<h4>Husholdninger og bedrifter</h4>
 <p><span class="math display">\[IM=X(\underset{(-)}{R}, \underset{(+)}{Y}) =  -m_{1}R + x_{2}Y \]</span> <span class="math display">\[EX=X(\underset{(+)}{R}, \underset{(+)}{Y^{*}}) = x_{1}R + x_{2}Y^{*}  \]</span></p>
 <p>Det betyr at</p>
 <ul>
@@ -1320,7 +1333,7 @@ Likvidering (bail-in)
 <ul>
 <li>internasjonale finansmarkeder (renteparitetsbetingelsen)</li>
 </ul>
-<p><span class="math display">\[(1+i_{t+1})=(1+i_{t+1}^{*})\frac{E_{t+1}^{e}}{E_{t}}\]</span></p>
+<p><span class="math display">\[(1+i_{t+1})=(1+i_{t+1}^{*})\frac{E_{t+1}^{e}}{E_{t}}\]</span> #### Offentlige myndigheter</p>
 <ul>
 <li>Myndighetene kan velge fast eller flytende kurs</li>
 </ul>
@@ -1337,6 +1350,10 @@ Likvidering (bail-in)
 </div>
 <div id="flytende-kurs" class="section level4">
 <h4>Flytende kurs</h4>
+</div>
+</div>
+<div id="ad-as-modellen-for-en-apen-konomi" class="section level3">
+<h3>AD-AS modellen for en åpen økonomi</h3>
 <!--
 - 
 1. $$Y = \frac{1}{1-c-R?}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]$$
@@ -1378,7 +1395,6 @@ på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produ
 <!--
 
 -->
-</div>
 </div>
 </div>
 </div>
