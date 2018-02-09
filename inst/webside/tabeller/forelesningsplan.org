@@ -37,7 +37,7 @@
 |     |      | Del I: Konjunktursvingninger                                                             |          |           |
 |   4 | 22.1 | Datatransformering av nasjonalregnskapstall                                              |          | SMU       |
 |   6 |  5.2 | Enkel Keynes og IS-LM modellen                                                           |          | SMU       |
-|   8 | 19.2 | AD-AS (lukket økonomi) og Mundell-Fleming modell under fast kurs                         |          | SMU       |
+|   8 | 19.2 | AD-AS (lukket økonomi) og Keynes modell for en åpen økonomi                              |          | SMU       |
 |  10 |  5.3 | Mundell-Fleming modell under flytende kurs og AD-AS modellen under fast og flytende kurs |          | SMU       |
 |-----+------+------------------------------------------------------------------------------------------+----------+-----------|
 |     |      | Del II: Økonomisk vekst                                                                  |          |           |

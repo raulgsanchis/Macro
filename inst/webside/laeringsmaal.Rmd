@@ -1,3 +1,7 @@
+---
+output: html_notebook 
+---
+
 #Oversikt over fagett
 - Tre hovedtemaer: 
     1. Konjunktursvingninger
@@ -184,8 +188,6 @@ Virkemidler: $G$, $T$ og $M/i$
 Fleksibilitet i P og korrekte prisforventninger Pe
  på mellomlang sikt, fører til at økonomien går tilbake til sitt naturlige produksjons- og ledighetsnivå.
 
-<!--
-
 ### IS-LM modellen for en åpen økonomi: Gode-, penge- og valutakursmarkedet i likevekt
 
 - Tre fundamentale endringer fra en lukket økonomi:
@@ -271,7 +273,7 @@ $G$,$T$ og($E$)
  (Fast kurs)
  
 
-### Mundell-Fleming (IS-LM for en åpne økonomi) modellen 
+### Mundell-Fleming (IS-LM for en åpen økonomi) modellen 
 
 - AS-kurven samme som under en lukket økonomi.
 - AD-kurven er fallende ved at økt priser fører til lavere etterspørsel.

@@ -35,7 +35,7 @@ output:
 **Studentassistent:** Susanna Murati (susanna-007@hotmail.com)
 
 <span style="color:red">
-<p> </p>
+<p>Løsningsforslag til seminaroppgave 2 er nå lagt ut</p>
 </span>
 
 <p style="color:black">Siste gang oppdatert ``r base::Sys.time()`` </p>

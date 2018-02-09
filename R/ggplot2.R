@@ -18,11 +18,12 @@ genmakrofigure <- function(dfnumeric = NULL,
                     xend = dfnumeric$yeae[punktvelger$x], yend = scalejust$y), lty = 2) +
     geom_segment(aes(x = scalejust$x, y = dfnumeric$yeae[punktvelger$y], xend = dfnumeric$yeae[punktvelger$x],
                      yend = dfnumeric$yeae[punktvelger$y]), lty = 2) +
-    # scale_x_continuous(breaks = dfnumeric$yeae[c(1:length(labt$x0))], limits = limits$x, labels = labt$x0) +
-    # scale_y_continuous(breaks = dfnumeric$yeae[c(punktvelger$y)], limits = limits$y, labels = labt$y0) +
+    scale_x_continuous(breaks = dfnumeric$yeae[c(1:length(labt$x0))], limits = limits$x, labels = labt$x0) +
+    scale_y_continuous(breaks = dfnumeric$yeae[c(punktvelger$y)], limits = limits$y, labels = labt$y0) +
     scale_colour_manual(values = labt$kurver$fargek) +
     theme_classic() +
     theme(legend.position="none")
+
 }
 
 #' @export cgenmakrofigure
@@ -59,8 +60,8 @@ cgenmakrofigure <- function(dfnumeric=NULL,
                      xend = edfnumeric$yeae[1], yend = scalejust$y), lty = 2) +
     geom_segment(aes(x = scalejust$x, y = edfnumeric$yeae[2], xend = edfnumeric$yeae[1],
                      yend = edfnumeric$yeae[2]), lty = 2) +
-    #scale_x_continuous(breaks = c(dfnumeric$yeae[1], edfnumeric$yeae[1]), limits = limits$x, labels = c(labt$x0, elabt$x0)) +
-    #scale_y_continuous(breaks = c(dfnumeric$yeae[2], edfnumeric$yeae[2]), limits = limits$y, labels = c(labt$y0, elabt$y0)) +
+    scale_x_continuous(breaks = c(dfnumeric$yeae[1], edfnumeric$yeae[1]), limits = limits$x, labels = c(labt$x0, elabt$x0)) +
+    scale_y_continuous(breaks = c(dfnumeric$yeae[2], edfnumeric$yeae[2]), limits = limits$y, labels = c(labt$y0, elabt$y0)) +
     scale_colour_manual(values = labt$kurver$fargek) +
     theme_classic() +
     theme(legend.position="none")
@@ -98,24 +99,27 @@ dfgeneric <- function(modell='adasl',labels = NULL, exoparval=NULL, eqsel = c(1,
     msv <- eval(parse(text=modellequ$MS), exoparval)
     isv <- eval(parse(text=modellequ$ISC), exoparval)
     lmv <- eval(parse(text=modellequ$LMC), exoparval)
+    #exoparval$m <- 1
+    #
+    rrm <- eval(parse(text=modellequ$RREG), exoparval)
+    rry <-  eval(parse(text=modellequ$RREG), list(m=exoparval$m, Y=isv))
 
     ## Samtidig likevekt
-    exoparvalvd <- exoparval[1:length(exoparval)-1]
     yss <- exoparval$Y
     iss <- median(exoparval$i)
     y <- c(yss,iss)
     exoparvalvd <- exoparval[1:length(exoparval)-1]
+    # #y <- c(yss, pss)
     optadas <- function(y){
       c(Y1 = y[2] - eval(parse(text=modellequ$ISC), c(exoparvalvd, list(i=y[1]))),
         Y2 = y[2] - eval(parse(text=modellequ$LMC), c(exoparvalvd, list(i=y[1]))))}
 
-    yeae <- c(rootSolve::multiroot(f = optadas, start = c(iss, yss))$root, exoparvalvd$M)
-    #yss <- eval(parse(text=modellequ$SEQi), exoparvalvd)
-    #iss <- eval(parse(text=modellequ$SEQY), exoparvalvd)
+    yeae <- c(rootSolve::multiroot(f = optadas, start = c(iss, yss), positive = TRUE)$root, exoparvalvd$M)
 
     # Linjer
-    dfmodellres <- data.frame(Iv, ldv, msv, isv, lmv) %>%
+    dfmodellres <- data.frame(Iv, ldv, msv, isv, lmv, rry) %>%
       reshape2::melt(id.vars = c("Iv"))
+
 
   } else if (modell =='adasl'){
     # Leser inn modellen
@@ -123,8 +127,6 @@ dfgeneric <- function(modell='adasl',labels = NULL, exoparval=NULL, eqsel = c(1,
     # Selekterte modellligninger
     ## Enkeltligninger
     adv <- eval(parse(text=modellequ$AD), exoparval)
-    #exoparval$Pe <- 1
-    #exoparval$Ac <- 20+20
     asv <- eval(parse(text=modellequ$AS), exoparval)
 
     # Melted

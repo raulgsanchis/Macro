@@ -8,10 +8,10 @@ library(latex2exp)
 #keynesexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, i = 2, oI = 10, T = 50), list(Y=c(Iv)))
 iv <- 0:5
 islmexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
-                         P=1, h = 10, k =1, Y = 130), list(i=c(iv)))
+                         P=1, h = 10, k =1, Y = 130, m=1), list(i=c(iv)))
 
 eislmexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 110,
-                          P=1, h = 10, k =1, Y = 130), list(i=c(iv)))
+                          P=1, h = 10, k =1, Y = 130, m=1), list(i=c(iv)))
 
 dfislm <- dfgeneric(modell='islm', exoparval = islmexoparvalv, eqsel = c(1,3))
 edfislm <- dfgeneric(modell='islm', exoparval = eislmexoparvalv, eqsel = c(1,3))

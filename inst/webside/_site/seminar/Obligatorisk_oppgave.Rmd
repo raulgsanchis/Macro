@@ -1,0 +1,20 @@
+---
+output:
+  html_notebook:
+    css: seminar.css
+---
+
+# Obligatorisk oppgave: 
+## Del 1
+
+## Del 2
+
+### IS-LM modellen
+
+### Mundell-Fleming modellen
+
+### AD-AS modellen (lukket)
+
+### AD-AS modellen  (åpen)
+
+## Del 3

@@ -1,0 +1,19 @@
+---
+output:
+  html_notebook:
+    css: seminar2.css
+---
+
+# Seminar 3 (uke): 
+## IS-LM modellen
+*122+123sdfs*
+
+## AD-AS modellen
+*122+123*
+
+## Keynes modell for en åpen økonomi
+*122+123*
+
+
+
+

@@ -1,0 +1,118 @@
+---
+output: html_notebook 
+---
+
+```{r include=FALSE}
+library(MakroOEKB1115)
+library(dplyr)
+library(ggplot2)
+library(gridExtra)
+library(grid)
+library(latex2exp)
+```
+
+## Grunnleggende  bakgrunnkunnskaper
+
+### Stabiliseringsmål for en åpen økonomi
+
+1. Intern balanse (lukke produksjonsgapet):
+
+$$(Y-\overline{Y})=0$$
+
+1. Ekstern balanse (rimelig nivå på utenlandsgjelden)
+
+### Tre fundamentale endringer fra en lukket økonomi:
+
+- Handel med utlandet
+
+$$AE \equiv C+I+G+NX$$
+$NX$ er lagt til definisjonen for aggregert etterspørsel
+
+$$NX=EX−R\cdot IM \text{ hvor } R=\frac{E\cdot P}{P^{*}}$$
+Som er definert som eksport $(EX)$ minus import $(R\cdot IM)$. Realvalutakursen $R$ sørger for at alt blir målt i enheter av det innenlandske godet.
+
+- Driftsregnskapet ovenfor utlandet
+
+$$ BP = CA + CU + OR=0 $$
+
+CU=Driftsregnskapet: Nettoeksport, Nettofinansinntekter(aksjer og obligasjoner), Nettoverføringer
+
+CA=Kapitalregnskapet: Nettoendringer i fordringer og gjeld ovenfor utlandet
+
+- Fast eller flytende kurs
+
+- Handel med utlandet (avhenger blant annet av relative prisnivået mellom innenlandske og utenlandske varer)
+
+Realvalutakursen: $R=\frac{EP}{P}$
+
+- E: Pris (nominell) per enhet av utenlandsk (innenlandsk) valuta E  (1/E)
+
+### Adferdsligninger
+
+$$IM=X(\underset{(-)}{R}, \underset{(+)}{Y}) =  -m_{1}R + x_{2}Y $$
+$$EX=X(\underset{(+)}{R}, \underset{(+)}{Y^{*}}) = x_{1}R + x_{2}Y^{*}  $$
+
+Det betyr at
+
+- $$NX = EX - IM = x_{1}R + x_{2}Y^{*} + m_{1}R - x_{2}Y$$
+
+Legger til grunn i dette kurset at $\frac{\Delta NX}{\Delta R}/>0$  (i praksis kan dette ta litt tid)
+
+- internasjonale finansmarkeder (renteparitetsbetingelsen)
+
+$$(1+i_{t+1})=(1+i_{t+1}^{*})\frac{E_{t+1}^{e}}{E_{t}}$$
+
+- Myndighetene kan velge fast eller flytende kurs
+
+Flytende: 
+
+$E=\frac{(1+i)}{(1+i)}E^{e}$ 
+
+Fast (troverdig $⇒E=E_{e}$): 
+
+$i =i^{*}$
+
+### Mundell-Fleming modellen
+
+#### Fast kurs
+
+#### Flytende kurs
+
+
+<!--
+- 
+1. $$Y = \frac{1}{1-c-R?}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]$$
+1. $$\frac{M}{P}=\kappa\cdot Y + h\cdot i$$
+1. $$E = \frac{1+i^{*}}{1 + i} \text{ Flytende kursregime}$$
+1. $$i = i^{*} \text{ Fastkursregime}$$
+
+- IS-kurven under fast og flytende kurs
+
+Generelt fører lavere rente til høyere produksjon.
+
+Men multiplikatoren blir mindre ved en åpen økonomi, grunnet importlekkasje.
+
+Helningen på kurven er slakere under flytende kurs enn med fast kurs. Det skyldes at lavere rente under flytende kurs fører til en depresiering av den nominelle og realvalutakursen, noe som forbedrer landets konkurranse evne og dermed fører til økt etterspørsel gjennom økt nettoeksport.
+
+- LM modellen stigende under fast og horisontal under fast(?)
+
+- Skiftanalyse (grafisk og verbalt)
+
+Merk: P gir AS-kurven.
+
+- Stabiliseringspolitikk (grafisk og verbalt)
+
+Virkemidler: $G$, $T$ og $M/i$
+ (Flytende) og
+$G$,$T$ og($E$)
+ (Fast kurs)
+ 
+
+### Mundell-Fleming (IS-LM for en åpen økonomi) modellen 
+
+- AS-kurven samme som under en lukket økonomi.
+- AD-kurven er fallende ved at økt priser fører til lavere etterspørsel.
+- Sentralt poeng med modellen – Selvkorrigerende mekanismer:
+
+Fleksibilitet i P og korrekte prisforventninger Pe
+på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.

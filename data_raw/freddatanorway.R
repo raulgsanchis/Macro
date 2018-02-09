@@ -19,13 +19,15 @@ macro.series1 <- fred$series.search("Norway")
 
 # Makrotall
 landgdp <- fred$series.observations(series_id = c('CLVMNACSCAB1GQNO'))
-landunem <- rbind(fred$series.observations(series_id = c('NORURHARMADSMEI')))
+landunem <- fred$series.observations(series_id = c('NORURHARMADSMEI'))
 landpricei <- fred$series.observations(series_id = c('NORCPIALLMINMEI'))
+landexch <- fred$series.observations(series_id = c('DEXNOUS'))
 
 # 2. Cleaning up data
 tlandgdp  <- landgdp %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
 tlandunem <- landunem %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
 tlandpricei <- landpricei %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
+tlandexch <-landexch %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
 
 # 3. Manipulating og transformerer dataene
 molttlandgdp <- tlandgdp %>%

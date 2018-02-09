@@ -13,6 +13,9 @@ bibliography: pensum.bib
 ```{r child = 'del1_konjunkturer.Rmd'}
 ```
 
+```{r child = 'del1_konjunkturer_open.Rmd'}
+```
+
 <!--
 
 -->

@@ -25,7 +25,7 @@ philipusag <- ggplot(data = fusadataI, aes(x = unem, y = cyinflation))  + geom_p
 
 ## Grunnleggende bakgrunnkunnskaper 
 
-### Stabiliseringsmål lukket økonomi 
+### Stabiliseringsmål for en lukket økonomi 
 
 Intern balanse (lukke produksjonsgapet):
 
@@ -160,7 +160,7 @@ $$Y = \frac{1}{1-c}  \left [ \overline{C} -c\cdot \overline{T} + \overline{I} - 
 
 ```{r echo=FALSE}
 Iv <- 0:600
-keynesexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 50, T = 10), list(Y=c(Iv)))
+keynesexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 50, b = 30, i = 0.03, oI = 50, T = 10), list(Y=c(Iv)))
 
 dfkeynes <- dfgeneric(modell='keynes', exoparval = keynesexoparvalv)
 
@@ -205,7 +205,7 @@ $$\Delta Y = \frac{1}{1-c}\Delta  \overline{I}>0 \text{ eller } \frac{\Delta Y}{
 
 ```{r echo=FALSE}
 Iv <- 0:600
-ekeynesexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 50, a = 30, i = 0.03, oI = 100, T = 10), list(Y=c(Iv)))
+ekeynesexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 50, b = 30, i = 0.03, oI = 100, T = 10), list(Y=c(Iv)))
 
 edfkeynes <- dfgeneric(modell='keynes', exoparval = ekeynesexoparvalv)
 
@@ -323,9 +323,9 @@ $$kY -hi = \overline{M}/P$$
 
 ```{r include=FALSE}
 iv <- 0:7.5
-islmexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2, Y = 266), list(i=c(iv)))
+islmexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2, Y = 266, m=1), list(i=c(iv)))
 dfislm <- dfgeneric(modell='islm', exoparval = islmexoparvalv, eqsel = c(1,3))
-eislmexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 275, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
+eislmexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 275, P=1, h = 80, k =2, Y = 300, m=1), list(i=c(iv)))
 edfislm <- dfgeneric(modell='islm', exoparval = eislmexoparvalv,eqsel = c(1,3))
 
 # Pengemarkedet
@@ -381,8 +381,8 @@ $$k\Delta Y -h\Delta i = 0 \Leftrightarrow  \frac{\Delta i}{\Delta Y} = \frac{k}
 ```{r echo=FALSE}
 # IS-LM Modellen
 iv <- 0:7.5
-islmexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
-eislmexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 275, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
+islmexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2, Y = 300, m=1), list(i=c(iv)))
+eislmexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 275, P=1, h = 80, k =2, Y = 300, m=1), list(i=c(iv)))
 
 dfislm <- dfgeneric(modell='islm', exoparval = islmexoparvalv)
 edfislm <- dfgeneric(modell='islm', exoparval = eislmexoparvalv)
@@ -496,53 +496,48 @@ Reduksjon i prisnivået (P)
 
 - **V**erbalt (tolkning utenfor modellen):
 
+---
+
 #### Svar
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
-# IS-LM likevekt
-iv <- 0:7.5
-islmexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 200, P=1, h = 80, k =2, Y = 300), list(i=c(iv)))
-eislmexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 15, oI = 75, T = 10, M= 275, P=0.75, h = 80, k =2, Y = 300), list(i=c(iv)))
+iv <- 0:4
+islmexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
+                         P=1, h = 10, k =1, Y = 130, m=1), list(i=c(iv)))
+
+eislmexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
+                         P=0.75, h = 10, k =1, Y = 130, m=1), list(i=c(iv)))
 
 
 dfislm <- dfgeneric(modell='islm', exoparval = islmexoparvalv)
 edfislm <- dfgeneric(modell='islm', exoparval = eislmexoparvalv)
 
-
-### Likevekt ###
-#!: endogenisere gjetteverdier
-dfkurver <- data.frame(kurve=c("IS", "LM"),
+dfkurverislm <- data.frame(kurve=c("IS", "LM"),
                        fargel = c('red', 'red'),
                        fargek = c('red', 'red'),
                        y = c(dfislm$varnavnminverdi$value[c(3)], dfislm$varnavnmaksverdi$value[c(4)]),
                        x = c(dfislm$varnavnminverdi$Iv[c(3)],dfislm$varnavnmaksverdi$Iv[c(4)]))
 
-labelsislm <- list(title = 'IS-LM modellen',
-                   y = 'produksjon, inntekt (Y)',
-                   x = 'rentenivå (i)',
-                   x0 = c(TeX('$i_{0}}$')),
-                   y0 = c(TeX('$Y_{0}$')),
-                   kurver = dfkurver)
-
-islmlikevekt <- genmakrofigure(dfnumeric=dfislm,
-                               variables = c(dfislm$varnavn)[c(3,4)],
-                               labt = labelsislm,
-                               scalejust = list(x=0, y=75))  + coord_flip()
-
-
-### Komparativ statikk ###
-dfkurverislm <- data.frame(kurve=c("LM'"),
+epdfkurverislm <- data.frame(kurve=c("LM'"),
                            fargel = c('red'),
                            fargek = c('red'),
                            y = c(edfislm$varnavnmaksverdi$value[c(4)]),
                            x = c(edfislm$varnavnmaksverdi$Iv[c(4)]))
+
+labelsislm <- list(title = 'IS-LM modellen',
+                    y = 'produksjon, inntekt (Y)',
+                    x = 'rentenivå (i)',
+                    x0 = c(TeX('$i_{0}}$')),
+                    y0 = c(TeX('$Y_{0}$')),
+                    kurver = dfkurverislm)
+
 
 elabelsislm <- list(title = 'IS-LM modellen',
                     y = 'produksjon, inntekt (Y)',
                     x = 'rentenivå (i)',
                     x0 = c(TeX('$i_{1}}$')),
                     y0 = c(TeX('$Y_{1}$')),
-                    kurver = dfkurverislm)
+                    kurver = epdfkurverislm)
 
 
 islmchangemoney <- cgenmakrofigure(dfnumeric=dfislm,
@@ -550,13 +545,14 @@ islmchangemoney <- cgenmakrofigure(dfnumeric=dfislm,
                                    variables = c(dfislm$varnavn)[c(3,4)],
                                    labt = labelsislm,
                                    elabt = elabelsislm,
-                                   scalejust = list(x=0, y=50),
-                                   limits= list(x=NULL, y=c(50,450))) + coord_flip()
+                                   scalejust = list(x=0, y=100),
+                                   limits= list(x=NULL, y=c(NULL,NULL))) + coord_flip()
 
-Yv <- 50:410 # Guess
-adasexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 100, oI = 75,
-                         T = 75, M= 2000, P=1, h = 2, k =2, Pe=1, mu = 0.1,
-                         l_1=-20,l_2=1, z=1, A=0.5, N=400, alpha = 1, Ac = 2), list(Y=c(Yv)))
+###################################
+Yv <- 100:200 # Guess
+adasexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100, P=1, h = 10,
+                         k =1),list(Pe=1, mu = 0.1, l_1=-20,l_2=1, z=1, A= 5,
+                                    N=400, alpha = 1, Ac = 2), list(Y=c(Yv)))
 
 dfadas <- dfgeneric(modell='adasl', exoparval = adasexoparvalv)
 
@@ -573,22 +569,19 @@ labelsadas <- list(title = 'AD-kurven',
                    y0 = c(TeX('$P_{0}$'), TeX('$P_{1}$')),
                    kurver = dfkurver)
 
-####B
-#P=1
-#P=0.75
 
-dfadas$yeae <- c(dfislm$yeae[2], edfislm$yeae[2], dfislm$yeae[1]-0.3, edfislm$yeae[1]+0.1)
+dfadas$yeae <- c(dfislm$yeae[2], edfislm$yeae[2], 1, 0.75)
 
 adaslikevekt <- genmakrofigure(dfnumeric = dfadas,
                                variables = c(dfadas$varnavn[1]),
                                labt = labelsadas,
-                               scalejust = list(x=50, y=0),
-                               punktvelger = list(x=c(1,2), y=c(3,4)),
-                               limits= list(x=c(50,450), y=NULL))
+                               scalejust = list(x=100, y=0),
+                               punktvelger = list(x=c(1,2), y=c(3,4)))
 
 grid.arrange(islmchangemoney, adaslikevekt, nrow=2)
 ```
 
+---
 
 Tokning: Økte produktpriser reduser realpengemengden. I pengemarkedet fører dette til en økning i rentenivå. Den økte renta medfører redusert etterspørsel pga lavere private realinvesteringer, som initierer en negativ multiplikatoreffekt siden redusert etterspørsel fører til mindre konsum som fører til redusert etterspørsel osv. 
 
@@ -669,12 +662,13 @@ $Y^{n} \approx \overline{Y}$
 Viser den samtidige likevekten i gode-, penge- og arbeidsmarkedet
 
 ```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
-Yv <- 200:250 # Guess
-adasexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 100, oI = 75,
-                           T = 75, M= 2000, P=1, h = 2, k =2, Pe=1, mu = 0.1,
-                           l_1=-20,l_2=1, z=1, A=0.5, N=400, alpha = 1, Ac = 2), list(Y=c(Yv)))
+Yv <- 105:125 # Guess
+adasexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100, P=1, h = 10,
+                         k =1),list(Pe=1, mu = 2, l_1=-5,l_2=1, z=1, A= 1,
+                                    N=400, alpha = 1, Ac = 4), list(Y=c(Yv)))
 
 dfadas <- dfgeneric(modell='adasl', exoparval = adasexoparvalv)
+subset(dfadas$dfmodell, variable = 'asv')
 
 dfkurver = data.frame(kurve=c("AD", "AS"),
                     fargel = c('red', 'red'),
@@ -692,11 +686,13 @@ labelsadas <- list(title = 'AD-AS modellen',
 adaslikevekt <- genmakrofigure(dfnumeric=dfadas,
                       variables = c(dfadas$varnavn),
                       labt = labelsadas,
-                      scalejust = list(x=200, y=0)) 
+                      scalejust = list(x=100, y=0.5))
+
+adaslikevekt
 ```
 
 ```{r echo=FALSE}
-adaslikevekt + geom_line(data=data.frame(x=dfadas$yeae[1], y=0:10), aes(x,y), color ='black', size=0.5) + geom_text(aes(x=221, y= 10,label='LAS'), color = 'red')
+adaslikevekt + geom_line(data=data.frame(x=dfadas$yeae[1], y=0:2.5), aes(x,y), color ='black', size=0.5) + geom_text(aes(x=114, y= 2,label='LAS'), color = 'red')
 ```
 
 ---
@@ -712,12 +708,11 @@ adaslikevekt + geom_line(data=data.frame(x=dfadas$yeae[1], y=0:10), aes(x,y), co
 - Statiske prisforventninger ($P^{e}$ er eksogen)
 Økte private realinvesteringer ('animal spirits'), $\overline{I}>0$
 ```{r echo=FALSE}
-eksYv <- 200:250 # Guess
-eksadasexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 100, oI = 75,
-                            T = 75, M= 2300, P=1, h = 2, k =2, Pe=1, mu = 0.1,
-                            l_1=-20,l_2=1, z=1, A=0.5, N=400, alpha = 1, Ac = 2), list(Y=c(Yv)))
-
-eksdfadas <- dfgeneric(modell='adasl', exoparval = eksadasexoparvalv)
+eYv <- 105:125 # Guess
+eiadasexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 30, T = 50, M= 100, P=1, h = 10,
+                         k =1),list(Pe=1, mu = 2, l_1=-5,l_2=1, z=1, A= 1,
+                                    N=400, alpha = 1, Ac = 4), list(Y=c(eYv)))
+eksdfadas <- dfgeneric(modell='adasl', exoparval = eiadasexoparvalv)
 
 edfkurver = data.frame(kurve=c("AD'", "AS"),
                        fargel = c('red', 'red'),
@@ -732,14 +727,12 @@ elabelsadas <- list(title = 'AD-AS modellen',
                    y0 = c(TeX('$P_{1}$')),
                    kurver = edfkurver)
 
-
 eksadaslikevekt <- cgenmakrofigure(dfnumeric=dfadas,
                                    edfnumeric=eksdfadas,
                                    variables = c(dfadas$varnavn),
                                    labt = labelsadas,
                                    elabt = elabelsadas,
-                                   scalejust = list(x=200, y=0))
-
+                                   scalejust = list(x=105, y=0))
 eksadaslikevekt
 ```
 
@@ -760,12 +753,12 @@ som bidrar til å dempe den opprinnelige etterspørselsøkningen.
 
 
 ```{r echo=FALSE}
-emsYv <- 200:250 # Guess
-emsadasexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 100, oI = 75,
-                            T = 75, M= 2300, P=1, h = 2, k =2, Pe=1.15, mu = 0.1,
-                            l_1=-20,l_2=1, z=1, A=0.5, N=400, alpha = 1, Ac = 2), list(Y=c(Yv)))
+Yv <- 105:125 # Guess
+eiadasexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 30, T = 50, M= 100, P=1, h = 10,
+                           k =1),list(Pe=1.3425, mu = 2, l_1=-5,l_2=1, z=1, A= 1,
+                                      N=400, alpha = 1, Ac = 4), list(Y=c(eYv)))
 
-emsdfadas <- dfgeneric(modell='adasl', exoparval = emsadasexoparvalv)
+emsdfadas <- dfgeneric(modell='adasl', exoparval = eiadasexoparvalv)
 
 emdfkurver = data.frame(kurve=c("AD'", "AS''"),
                        fargel = c('red', 'red'),
@@ -787,18 +780,12 @@ labelsadas <- list(title = 'AD-AS modellen',
                    y0 = c(TeX('$P_{0}$')),
                    kurver = dfkurver)
 
-adaslikevekt <- genmakrofigure(dfnumeric=emsdfadas,
-                               variables = c(dfadas$varnavn),
-                               labt = labelsadas,
-                               scalejust = list(x=200, y=0))
-
-
 emsadaslikevekt <- cgenmakrofigure(dfnumeric=dfadas,
                                    edfnumeric=emsdfadas,
                                    variables = c(dfadas$varnavn),
                                    labt = labelsadas,
                                    elabt = elabelsadas,
-                                   scalejust = list(x=200, y=0)) + geom_line(data=data.frame(x=dfadas$yeae[1], y=0:10), aes(x,y), color ='black', size=0.5) + geom_text(aes(x=221, y= 10,label='LAS'), color = 'red')
+                                   scalejust = list(x=100, y=0)) #+ geom_line(data=data.frame(x=dfadas$yeae[1], y=0:10), aes(x,y), color ='black', size=0.5) + geom_text(aes(x=221, y= 10,label='LAS'), color = 'red')
 
 emsadaslikevekt
 ```
@@ -816,10 +803,10 @@ Tolkning: Korrekte prisforventninger fører til et negativt skift i AS-kuren hel
 Eks. reduksjon i pengemengden ($\overline{M}<0$) 
 
 ```{r echo=FALSE}
-stYv <- 200:250 # Guess
-stadasexoparvalv <- c(list(c_1 = 0.6, oC = 25, oG= 75, b = 100, oI = 75,
-                            T = 75, M= 2300, P=1, h = 2, k =2, Pe=1, mu = 0.1,
-                            l_1=-20,l_2=1, z=1, A=0.5, N=400, alpha = 1, Ac = 2), list(Y=c(stYv)))
+Yv <- 105:125 # Guess
+stadasexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 30, T = 50, M= 100, P=1, h = 10,
+                           k =1),list(Pe=1, mu = 2, l_1=-5,l_2=1, z=1, A= 1,
+                                      N=400, alpha = 1, Ac = 4), list(Y=c(eYv)))
 
 stdfadas <- dfgeneric(modell='adasl', exoparval = stadasexoparvalv)
 
@@ -855,7 +842,7 @@ stadaslikevekt <- cgenmakrofigure(dfnumeric=dfadas,
                                    variables = c(dfadas$varnavn),
                                    labt = llabelsadas,
                                    elabt = slabelsadas,
-                                   scalejust = list(x=200, y=0))
+                                   scalejust = list(x=105, y=0))
 stadaslikevekt
 ```
 
