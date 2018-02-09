@@ -1,7 +1,7 @@
 ---
 output:
   html_notebook:
-    css: seminar.css
+    css: seminar2.css
 ---
 
 # Seminar 3: 

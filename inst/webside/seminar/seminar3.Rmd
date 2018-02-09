@@ -6,13 +6,17 @@ output:
 
 # Seminar 3 (uke): 
 ## IS-LM modellen
-*122+123sdfs*
+1. AD-kurven
+1. Skiftanalyse
 
 ## AD-AS modellen
-*122+123*
+1. AS-kurven 
+1. AD-AS kurven
+1. Skiftanalyse offentlige utgifter
 
 ## Keynes modell for en åpen økonomi
-*122+123*
+1. Nettoeksport
+1. Keynes modell
 
 
 

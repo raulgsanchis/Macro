@@ -6,7 +6,7 @@ output:
 
 # Seminar 3 (uke): 
 ## IS-LM modellen
-*122+123sdfs*
+*122+123*
 
 ## AD-AS modellen
 *122+123*
