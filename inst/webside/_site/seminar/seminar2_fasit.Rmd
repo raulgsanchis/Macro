@@ -187,9 +187,69 @@ lavere produksjon og inntekt,  som igjen fører til redusert etterspørsel pga l
 
 2. Vis ved hjelp av en figur effekten av økt optimisme ('animal spirits') tilknyttet private realinvestinger 
 
+```{r}
+iv <- 0:5
+islmexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
+                         P=1, h = 10, k =1, Y = 130, m=1), list(i=c(iv)))
+
+eislmexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 20, T = 50, M= 100,
+                          P=1, h = 10, k =1, Y = 130, m=1), list(i=c(iv)))
+
+
+dfislm <- dfgeneric(modell='islm', exoparval = islmexoparvalv, eqsel = c(1,2))
+edfislm <- dfgeneric(modell='islm', exoparval = eislmexoparvalv, eqsel = c(1,2))
+
+#!: endogenisere gjetteverdier
+dfkurver <- data.frame(kurve=c("IS", "LM"),
+                       fargel = c('red', 'red'),
+                       fargek = c('red', 'red'),
+                       y = c(dfislm$varnavnminverdi$value[c(3)], dfislm$varnavnmaksverdi$value[c(4)]),
+                       x = c(dfislm$varnavnminverdi$Iv[c(3)],dfislm$varnavnmaksverdi$Iv[c(4)]))
+
+labelsislm <- list(title = 'IS-LM modellen',
+                   y = 'produksjon, inntekt (Y)',
+                   x = 'rentenivå (i)',
+                   x0 = c(TeX('$i_{0}}$')),
+                   y0 = c(TeX('$Y_{0}$')),
+                   kurver = dfkurver)
+
+islmlikevekt <- genmakrofigure(dfnumeric=dfislm,
+                               variables = c(dfislm$varnavn)[c(3,4)],
+                               labt = labelsislm,
+                               scalejust = list(x=0, y=75))  + coord_flip()
+
+
+### Komparativ statikk ###
+dfkurverislm <- data.frame(kurve=c("IS'"),
+                       fargel = c('red'),
+                       fargek = c('red'),
+                       y = c(edfislm$varnavnminverdi$value[c(3)]),
+                       x = c(edfislm$varnavnminverdi$Iv[c(3)]))
+
+elabelsislm <- list(title = 'IS-LM modellen',
+                   y = 'produksjon, inntekt (Y)',
+                   x = 'rentenivå (i)',
+                   x0 = c(TeX('$i_{1}}$')),
+                   y0 = c(TeX('$Y_{1}$')),
+                   kurver = dfkurverislm)
+
+
+islmchangemoney <- cgenmakrofigure(dfnumeric=dfislm,
+                                 edfnumeric=edfislm,
+                                 variables = c(dfislm$varnavn)[c(3,4)],
+                                 labt = labelsislm,
+                                 elabt = elabelsislm,
+                                 scalejust = list(x=0, y=75)) + coord_flip()
+
+islmchangemoney
+```
+
+*Økt optimisme fører til økte private realinvesteringer og økt etterspørsel i økonomien. Den økte etterspørselen initierer en multiplikatoreffekt, siden økt etterspørsel fører til økt produksjon og inntekt. Den økte inntekten øker husholdningens disponible inntekt, som igjen fører til økt etterspørsel, produksjon og inntekt osv. Noe av den totale etterspørselseffekten blir redusert pga. den stigende LM-kurven, siden økt rente bidrar til redusert etterspørsels både fra bedrifter og husholdinger.*
+
+
 3. Vis og forklar verbalt effekten av en reduksjon i prisnivået.
 
-*Se forelesningsnotater (øvelse)*
+*Se forelesningsnotater uke 4  (svar på øvelse)*
 
 4. Vis grafisk hvordan likevekten ser ut i pengemarkedet og IS-LM modellen dersom sentralbanken går over til en renteregel gitt ved  
 $i= m\cdot Y$

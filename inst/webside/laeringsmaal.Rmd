@@ -184,6 +184,8 @@ Virkemidler: $G$, $T$ og $M/i$
 Fleksibilitet i P og korrekte prisforventninger Pe
  på mellomlang sikt, fører til at økonomien går tilbake til sitt naturlige produksjons- og ledighetsnivå.
 
+<!--
+
 ### IS-LM modellen for en åpen økonomi: Gode-, penge- og valutakursmarkedet i likevekt
 
 - Tre fundamentale endringer fra en lukket økonomi:
@@ -278,4 +280,4 @@ $G$,$T$ og($E$)
 Fleksibilitet i P og korrekte prisforventninger Pe
 på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.
 
-
+-->
