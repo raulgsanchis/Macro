@@ -1,0 +1,81 @@
+---
+output:
+  html_notebook:
+    css: seminar2.css
+---
+
+# Seminar 7:
+
+Benytt regneksemplet som ble gitt navnet the BLOOS rule, og finn den forventede avkastningen på egenkapital og statlige overføringer under et egenkapitalkrav på 20 og 99 prosent.
+Svar:
+0,20 gir forventet avkastning på egenkapital på 0,092 og statlige overføringer på 0,84.
+0,99 gir forventet avkastning på egenkapital på 0,05 og statlige overføringer på 0,01.
+
+Tegn to grafer. Begge grafene har graden av egenkapital på den horisontale aksen, mens den første har forventet avkastning på egenkapital på den vertikale aksen mens den andre har forventet statlige overføringer.  Plot inn verdiene du får for egenkapitalkrav på 5, 10, 20 og 99 prosent for de to bankene.     
+Svar:
+Vist under forelesningen.
+I Fronter finn fram regnearket for the Bloos rule.  For forretningsmodell 1, legg inn for tilstand 1 at avkastningen skal være 0,056 mot tidligere 0,0606.
+Svar:
+Endringene må gjøres i celle C57 i filen BloosRuleExcel.xlsk
+Under situasjonen med en 100 prosent bailout garanti, for hvilken egenkapitalnivå  vil bank 2 være indifferent mellom å investere i de to forretningsmodellene?
+Svar:
+Ca. 0,55. Svaret finner man prøve seg fram med litt forskjellig verdier i regnearket BloosRuleExcel.xlsk
+Oppgaver gitt til 10. forelesning
+Ta utgangspunkt i de tre likningene for offentlig sektor
+	      Finansdepartementet
+
+Sentralbanken
+
+Statsgjeld
+
+
+Forsøk å gi en tolkning av hver enkelt likning
+Svar:
+Finansdepartementet
+Gjeld i dag er lik forrige periodes gjeld pluss rentekostnader, pluss underskuddet på den primære budsjettbalansen fratrukket utbytte (seigniorage) fra sentralbanken
+Sentralbanken: 
+Kjøper statsgjeld ved å øke basispengemengden og gir utbetalinger for obligasjonene som utbytte (seigniorage) til finansdepartmentet  
+Statsgjeld: 
+Offentlig gjeld eies av både private aktører og sentralbanken.
+
+Vis ved innsetting at det er mulig å skrive de tre likningene (konsolidert budsjettbetingelse for offentlig sektor) som 
+
+Svar: 
+Kombinere de to første likningene gir
+
+
+
+
+
+Innsetter deretter for likningen for statsgjeld
+
+
+
+
+
+
+
+
+Vi antar null inflasjon, slik at   og  . Omgjør likningen ovenfor på en slik form at 
+
+Svar: 
+
+
+
+
+Vi lar veksten i BNP vær gitt ved en konstant rate :
+Innsetting av dett gir
+
+Vi kan videre bruke at 
+
+
+
+
+
+Vis i en figur den dynamiske utviklingen over tid for  i en situasjon hvor (1+r-g)<1 og  (i) >0  og (ii) <0. Går den offentlige gjeldsandelen mot en steady state i de to tilfellene?
+Svar: Ja, begge modellen går mot en steady state. Se Blanchard boka for grafisk løsning.
+Oppgaver gitt til 11. forelesning
+Hva menes innenfor økonomi med en likviditetsfelle? 
+Svar: En situasjon hvor pengepoltikken ikke lengre kan ha en ekspansiv effekt på økonomien. Dette fordi den nominelle rente er (nær) lik null.
+Ifølge forskning utført av Krugman er det spesielt to forhold som kan lede et land inn i en likviditetsfelle. Nevn disse.
+Svar:

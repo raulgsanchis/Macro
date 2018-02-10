@@ -3,7 +3,7 @@ title: "Innholdsfortegnelse"
 output:
   html_notebook:
     toc: true
-    toc_depth: 5
+    toc_depth: 
 ---
 
 ```{r include=FALSE}

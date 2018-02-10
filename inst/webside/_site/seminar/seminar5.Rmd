@@ -4,15 +4,43 @@ output:
     css: seminar2.css
 ---
 
-# Seminar 3: 
-## IS-LM modellen
+# Seminar 5:
+
+Solow-modellen består av tre komponenter ((1) produktfunksjonen på intensiv form, (2) sparing per innbygger og (3) uttrykk for kapitalakkumulasjon). Utled disse sammenhengene formelt under antagelsen om at   og =n=0 og vis deretter den grafiske løsningen av modellen.
+Svar:
+Se forelesningsnotatene.
+
+Hva menes med at modellen går mot en steady state?
+Svar:
+Uavhengig av startnivået på kapitalen () vil økonomien over tid konvergere mot et konstant nivå på y:   .
+
+Anta nå  =n>0. Finn et utrykk for .
+Svar:
+Vi kan starte først med å differensiere  som gir 
+
+Vi trenger nå et utrykk for . Vi har at
+
+,
+
+og
+
+Det gir 
 
 
-## AD-AS modellen
 
-
-## Keynes modell åpen økonomi
+Ved å sette det siste uttrykket inn i det første utrykket vi utledet får vi:
 
 
 
 
+Hva er produksjonsveksten i denne økonomien i steady state?
+Svar:
+
+
+					Tidsderivasjon gir
+
+Produksjonsveksten vokser med en rate n som er lik befolkningsveksten.
+
+Solow-modellen er uten noen forklaring på hva som skaper teknologisk framgang (parameteren a er bestemt utenfor modellen). Hva mener du kan gjøres for å øke veksten i denne parameteren?
+Svar:
+Utdanning, bedre institusjoner, helsevesen, bedre lover og regler etc.

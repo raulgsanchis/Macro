@@ -34,7 +34,7 @@ $$(Y-\overline{Y})=0$$
 $$AE \equiv C+I+G+NX$$
 $NX$ er nå inkludert i definisjonen for aggregert etterspørsel
 
-NX er definert som eksport $(EX)$ minus import $IM$ målt i enheter av det innenlandske godet:
+NX er definert som eksport $(EX)$ minus import $(R\cdot IM)$ målt i enheter av det innenlandske godet:
 
 $$NX=EX−R\cdot IM \text{ hvor }$$
 Realvalutakursen $R=\frac{E\cdot P^{*}}{P}$ (prisforholdet mellom utenlandske og innenlandske goder målt i enheter av det innenlandske gode) sørger her for at alt blir målt i enheter av det innenlandske godet. 
@@ -45,13 +45,17 @@ Realvalutakursen $R=\frac{E\cdot P^{*}}{P}$ (prisforholdet mellom utenlandske og
 
 $$BP = CA + CU + OR=0$$
 
-$CU=Driftsregnskapet$. 
+$CU=\text{Driftsregnskapet}$. 
 
 Består av nettoeksport (NX), pluss nettofinansinntekter(aksjer og obligasjoner) og nettoverføringer
 
-$CA=Kapitalregnskapet$ 
+$CA=\text{Kapitalregnskapet}$ 
 
 Nettoendringer i fordringer og gjeld ovenfor utlandet
+
+$OR=\text{Endringer i sentralbankens valutareserver}$ 
+
+Vil øke (reduseres) dersom fastkursprisen er svakere (sterkere) enn det som markedet er villig til å betale 
 
 ---
 
@@ -60,7 +64,7 @@ Nettoendringer i fordringer og gjeld ovenfor utlandet
 Renteparitetsbetingelsen
 
 $$(1+i_{t+1})=(1+i_{t+1}^{*})\frac{E_{t+1}^{e}}{E_{t}}$$
-Som forteller oss at den forventede avkastningen er lik mellom å investere i inn- og utland.
+Likevektsbetingelse som forteller oss at den forventede avkastningen er lik mellom å investere i inn- og utland.
 
 Her er $i_{t+1}$ innelandsk avkastning, $i_{t+1}^{*}$ utenlands avkastning, $E_{t}$ er (nominelle) prisen i dag per énhet av utenlandsk valuta og $E_{t+1}^{e}$ den forventede valutakursen én periode frem i tid.  
 
@@ -92,9 +96,10 @@ Legger til grunn i dette kurset at $\frac{\Delta NX}{\Delta R}/>0$  (i praksis k
 
 Myndighetene kan velge mellom fast eller flytende kurs:
 
-- Fast 
+- Fast
 $$i =i^{*} + rp$$
-Er fastkursregime troverdig $\Rightarrow rp = 0$
+
+Anser markedsaktørene faskursregimet som troverdig, har vi at $E=E^{e} \Rightarrow rp=0$
 
 - Flytende 
 
@@ -133,9 +138,14 @@ labelsislm <- list(title = 'IS-LM modellen',
 
 #### Godemarkedet
 
+$$Y = \frac{1}{1-c(1-t)}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G}  \right ]$$
+
 #### Pengemarkedet
 
+$$kY -hi = \overline{M}/P$$
+
 #### BP
+$$i =i^{*} + rp$$
 
 ---
 
@@ -157,9 +167,15 @@ fastmflikevekt
 
 #### Godemarkedet
 
+$$Y = \frac{1}{1-c(1-t)}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G}  \right ]$$
+
 #### Pengemarkedet
 
+$$kY -hi = \overline{M}/P$$
+
 #### BP
+
+$$E=\frac{(1+i)}{(1+i)}E^{e}$$
 
 ---
 

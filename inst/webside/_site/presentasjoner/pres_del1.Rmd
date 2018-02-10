@@ -5,7 +5,7 @@ output:
 #    logo: logo.png
 ---
 
-```{r plan, child = '../del1_konjunkturer.Rmd'}
+```{r plan, child = '../del1_konjunkturer_open.Rmd'}
 #../del1_konjunkturer.Rmd
 ```
 
