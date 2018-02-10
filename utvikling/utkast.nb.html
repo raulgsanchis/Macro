@@ -75,7 +75,6 @@ h6 {
 }
 </style>
 
-<link href="data:text/css;charset=utf-8,EM%20%7B%0Afont%2Dweight%3A%20bold%3B%0Acolor%3A%20blue%3B%0A%0A%7D%0A" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -144,7 +143,7 @@ $(document).ready(function () {
 </style>
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("Obligatorisk_oppgave.Rmd");
+  window.initializeSourceEmbed("utkast.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>
@@ -173,56 +172,469 @@ $(document).ready(function () {
 
 
 <!-- rnb-text-begin -->
-<div id="obligatorisk-oppgave" class="section level1">
-<h1>Obligatorisk oppgave:</h1>
-<div id="del-1" class="section level2">
-<h2>Del 1</h2>
+<button type="button" onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.
+</button>
+<div id="ecn222-anbefalte-oppgaver-med-lsningsforslag" class="section level1">
+<h1>ECN222: Anbefalte oppgaver med løsningsforslag</h1>
+<p><strong>Oppgaver gitt til 1. forelesning (4. september)</strong></p>
+<p>Gjør følgende oppgaver for USA, Japan, Norge og (dersom du har tid) minst ett europeisk land.</p>
+<ul>
+<li>Installer applikasjonen FRED i ditt Excel regneark</li>
+</ul>
+<p><a href="http://research.stlouisfed.org/fred2/" class="uri">http://research.stlouisfed.org/fred2/</a></p>
+<p>Hjelp til hvordan bruke programmet finnes her:</p>
+<p><a href="http://www.youtube.com/watch?v=OAH-wGtP_k8" class="uri">http://www.youtube.com/watch?v=OAH-wGtP_k8</a></p>
+<ul>
+<li>Finn tidsserien til bruttonasjonalproduktet i reelle størrelser.</li>
+<li>Finn tidsserien antall innbyggere</li>
+<li>Konstruer tidsserien bruttonasjonalprodukt per innbygger.</li>
+<li>Transformer serien ved å ta logaritmen.</li>
+<li>Vis serien grafisk.</li>
+<li>Gir serien noen tegn på dype økonomiske kriser? Hvis ja, se om du kan finne (søk på internett) noen kortfattede forklaringer bak disse krisene.</li>
+<li>Finn et mål på inflasjon.</li>
+<li>Finn et mål på ledighet.</li>
+<li>Lag et scatterplot for ledighet og inflasjon (Phillips-kurven).</li>
+<li>Lag et scatterplot for vekst og endring i inflasjon (Okuns lov).</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Har noen laget et regneark på dette? Send det til</em> <a href="mailto:jorn.halvorsen@gmail.com"><em>jorn.halvorsen@gmail.com</em></a><em>, så vil jeg legge det ut til de andre studentene i klassen.</em></p>
+<p><strong>Oppgaver gitt til 2. forelesning</strong></p>
+<p>Kapittel 2, Blanchard, Amighini og Giavazzi</p>
+<ul>
+<li>Question 3.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Ble vist i forelesningen.</em></p>
+<ul>
+<li>Question 4.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Ble vist i forelesningen.</em></p>
+<p><strong>Oppgaver gitt til 3. forelesning</strong></p>
+<p>Ta utgangspunkt i følgende makroøkonomisk modell:</p>
+<p>Z=C+I+G</p>
+<p>Hvor Z er aggregert etterspørsel. C er konsum. I er private realinvesteringer og G er offentlig kjøp av varer og tjenester.</p>
+<p>I tillegg postulerer vi følgende adferdssammenhenger:</p>
+<p>C=c0+c1(Y−T)−c2i</p>
+<p>I=I−b1i</p>
+<p>Hvor T er nettoskatter, i det nominelle rentenivået, og små bokstaver betegner positive parametere.</p>
+<p>Likvektsbetingelsen for varmarkedet er gitt ved</p>
+<p>Y=Z</p>
+<p>Hvor Y betegner produksjonen.</p>
+<ul>
+<li>Nevn tre sentrale forutsetninger som ligger bak en slik modell.</li>
+</ul>
+<p><em>Svar:</em></p>
 <ol style="list-style-type: decimal">
-<li>I makroøkonomi antas produksjonen (BNP) på kort sikt å være bestemt av etterspørselen. Hvilken sentral forutsetning ligger til grunn for dette resultatet? Svar: Stive priser.</li>
-<li>Helningen på IS-kurven under en åpen økonomi med flytende valutakurs kan forklares av fire faktorer, beskriv disse. Svar: (1)+ Lavere rente gir økt investeringer og/eller økt konsum. (2)+ Multiplikatoreffekt: Økt etterspørsel gir økt inntekt og dermed økt konsum etc. (3)- Importlekkasje og (4) lavere rente gir lavere realvalutakurs som gir økt nettoeksport.</li>
-<li>Under AD-AS modellen for en åpen økonomi med flytene kurs, hvilke markeder er operasjonelle? Svar: Varemarkedet, Arbeidsmarkedet, Pengemarkedet og Valutakursmarkedet.</li>
-<li>Hva menes med intern og ekstern balanse? Svar: Intern balansen er produksjon (arbeidsledighet) lik det naturlige produksjonsnivået (arbeidsledighetsnivået). Ekstern balanse har vi når utelandgjelden er på et rimelig nivå (betjenes uten problemer).</li>
-<li>Hvilke to faktorer anses for å være sentrale når det gjelder skape økonomisk vekst, og nevn noen tiltak myndighetene kan ta i bruk for å oppmuntre til dette? Svar: (1) Kapitalakkumulasjon – sparing(+), befolningsvekst(-). (2) Teknologisk framgang – institusjoner, lover og regler etc.</li>
-<li>Hva forstås med innvendige og utvendige penger? Svar: Utvendige penger er den delen av pengemengden som sentralbanken skaper, består av reserver og sedler og mynt. Innvendige penger er den delen av pengemengden som bankene skaper</li>
+<li>(1)<em>Stive priser, )(2) Lukket økonomi og (3) produksjon av kun èn vare</em></li>
 </ol>
-</div>
-<div id="del-2-lukket-konomi" class="section level2">
-<h2>Del 2 Lukket økonomi</h2>
-<div id="is-lm-modellen" class="section level3">
-<h3>IS-LM modellen</h3>
-</div>
-<div id="ad-as-modellen-lukket" class="section level3">
-<h3>AD-AS modellen (lukket)</h3>
+<ul>
+<li>Finn løsningen til modellen med hensyn på Y.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Setter inn for C og I som gir</em></p>
+<p>Y=c0+c1(Y−T)−c2i+I´−b1i+G</p>
+<p><em>Løser uttrykket ovenfor mhp. Y:</em></p>
+<p>Y(1−c1)=c0−c1T−c2i+I´−b1i+G</p>
+<p>Y=1(1−c1)[c0−c1T−c2i+I´−b1i+G]</p>
+<ul>
+<li>Hva skjer når i øker (vis formelt, verbalt og grafisk)?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Formelt:</em></p>
+<p><em>Differensiering av</em> ΔY <em>mhp</em> Δi <em>gir</em></p>
+<p>ΔY=1(1−c1)[−c2Δi−b1Δi]=−1(1−c1)[c2+b1]Δi&lt;0</p>
+<p>ΔYΔi=−1(1−c1)[c2+b1]&lt;0</p>
+<p><em>Grafisk:</em></p>
+<p><em>Se forelesningsnotatene.</em></p>
+<p><em>Verbalt:</em></p>
+<p><em>Økte rente</em> <em></em> <em>laver konsum og investeringer</em> <em></em> <em>redusert etterspørsel</em> <em></em> <em>redusert produksjon</em> <em></em> <em>redusert disponibel inntekt</em> <em> <strong>redusert konsum</strong> </em> <em>redusert etterspørsel</em> <em></em> <em>redusert produksjon…etc.</em></p>
+<ul>
+<li>Anta at sentralbanken innfører en renteregel som tilsier at i=m0Y</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Ved å sette renteregelen inn for i får vi</em></p>
+<p>Y=c0+c1(Y−T)−c2m0Y+I´−b1m0Y+G</p>
+<p><em>Løst mhp. Y gir</em></p>
+<p>Y(1−c1+c2m0+b1m0)=c0−c1T+I´+G</p>
+<p>c(0−c1T+I´+G)Y=1(1−c1+c2m0+b1m0)</p>
+<ul>
+<li>Sammenlikn multiplikatoren i modellen før og etter innføringen av en slik regel. Hvilken er høyest?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p>1(1−c1+c2m0+b1m0)&lt;1(1−c1)</p>
+<p><em>Multiplikatoren blir mindre ved bruk av renteregel.</em></p>
+<ul>
+<li>Gi en verbal på forklaring på hvordan innførselen av en regel virker inn ved en positiv økning i investeringen</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Først vil vi ha at:</em></p>
+<p><em>Økt investeringer</em> ___Økt etterspørsel_ <em></em> <em>Økt produksjon</em></p>
+<p><em>Reglen vil ha en stabiliserende effekt, siden vi etter dett vil ha at</em></p>
+<p>_økt rente <strong></strong> reduserte investeringer og konsum___ <em>Redusert produksjon etc.</em></p>
+<ul>
+<li>Hva menes med the paradox of thrift?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>I en IS-LM modell for en lukket økonomi vil det være investeringer være bestemmende for sparingen (S=I). På lengre sikt (jmf. Solow-modellen) vil det være motsatt, dvs. det er sparinger som er bestemmende for investeringene (dette resultatet er en følge av antagelsen om stive priser)</em></p>
+<p><strong>Oppgaver gitt til 4. forelesning</strong></p>
+<ul>
+<li>Ta utgangspunkt i samme modell som i forrige oppgavesett. Anta i tillegg nå at pengemarkedet er operativt. Pengetilbudet er derfor gitt vedMs=M /P og penge etterspørselen Md=M(Y,i) . Vis likevekten i pengemarkedet under forutsetning om at sentralbanken (a) setter rentenivået, (b) bestemmer pengetilbudet. /P og penge etterspørselen Md=M(Y,i) . Vis likevekten i pengemarkedet under forutsetning om at sentralbanken (a) setter rentenivået, (b) bestemmer pengetilbudet. . Vis likevekten i pengemarkedet under forutsetning om at sentralbanken (a) setter rentenivået, (b) bestemmer pengetilbudet.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Grafisk: Se forelesningsnotatene.</em></p>
+<ul>
+<li>Bestem Y grafisk under (a) og (b) under forutsetning om at både vare- og pengemarkedet er i likevekt (IS-LM modellen).</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Grafisk: Se forelesningsnotatene.</em></p>
+<ul>
+<li>Under (a), hva skjer dersom konsumet øker? Vis grafisk og verbalt.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Grafisk: Se forelesningsnotatene.</em></p>
+<p><em>Verbalt:</em></p>
+<p><em>Under a)</em></p>
+<p><em>Økt konsum</em> <em></em> _økt etterspørsel <strong></strong> økt produksjon <strong></strong> økt disponibel inntekt___ <em>økt konsum etc.</em></p>
+<p><em>Under b)</em></p>
+<p><em>Økt konsum</em> <em></em> _økt etterspørsel <strong></strong> økt produksjon ___ _økt rene__ _ _økt disponibel inntekt(men ikke like sterk som under a)___ <em>økt konsum (men ikke like sterk som under a) etc.</em></p>
+<ul>
+<li>Under (b), ha skjer dersom prisnivået P øker? Vis grafisk og verbalt.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Grafisk: Se forelesningsnotatene.</em></p>
+<p><em>Verbalt:</em></p>
+<p>_Økt priser <strong></strong> Redusert realpengemengde ___ _økt nominell rente__ _ _redusert konsum og investeringer ___ _redusert etterspørsel__ _ _redusert produksjon ___ _redusert disponibel inntekt__ _ <em>redusert konsum etc.</em></p>
+<p><em>For AS-Kurven vil økte priser være assosiert med redusert produksjon.</em></p>
+<ul>
+<li>Diskuter fordeler og ulemper ved pengepolitikk vs. finanspolitikk som stabiliseringspolitiske verktøy.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Pengepolitikk funger raskere enn finanspolitikk.</em></p>
+<p><em>Finanspolitikk kan være svært effektivt i en likvidietsfelle (vi kommer til dette sener)</em></p>
+<p><em>Finanspolitikk øker offentlig sektor på bekostning av privat sektor. Politiske preferanser avgjør om dette er bra eller dårlig.</em></p>
+<p><strong>Oppgaver gitt til 5. forelesning</strong></p>
+<ul>
+<li>Vi tar først utgangspunkt i samme modell som ble satt opp under oppgave gitt til 3. forelesning. Videre tenker vi oss at økonomien er åpen for handel og kapitalbevegelser med utlandet. Dette betyr nå at</li>
+</ul>
+<p>Z=C+I+G+NX</p>
+<p>Y=Z</p>
+<pre><code>                                    NX≡X−R∗ℑ</code></pre>
+<p>E❑=(1+i)(1+i❑)E❑e</p>
+<p>I tillegg postulerer vi at følgende sammenhenger for import og eksport:</p>
+<p>X(R,Y)=A´+−a1R+−a2Y</p>
+<p>ℑ(R,Y)=B´+−s1R+−s2Y</p>
+<pre><code>                            R=EPP</code></pre>
+<p>Anta at parameterne a1,a2,s1ogs2 er positive Bestem og forklar hvilke fortegn (+/-) som bør gjelde for eksport og import likningene ovenfor.</p>
+<p><em>Svar:</em></p>
+<p>X(R,Y)=A´+a1R+a2Y</p>
+<p>ℑ(R,Y)=B´−s1R+s2Y</p>
+<ul>
+<li>Finn et uttrykk for ∆NX∆Y , ∆NX∆R og om mulig avgjør fortegnene. , ∆NX∆R og om mulig avgjør fortegnene. og om mulig avgjør fortegnene.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p>ΔNX=−Rs2∆Y&gt;0</p>
+<p>⇔</p>
+<p>ΔNXΔY=−Rs2&gt;0</p>
+<p>ΔNX=(a1−(B´−s1R+s2Y)+Rs1)∆R&gt;0</p>
+<p>⇔</p>
+<p>ΔNX∆R=(a1−(B´−s1R+s2Y)+Rs1)&gt;0</p>
+<p>Matematiskikkemuligåavgjørefortegnet,menviantar&gt;0</p>
+<p>eroppfyltivåremodeller(Marshall−Lernerbetingelsen) .</p>
+<ul>
+<li>Finn et eksplisitt utrykk for IS likningen under faste kurs (enklest).</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Merk først: Fast kurs betyr at</em> E=Ee_så realvalutakursen R holdes her uendret._</p>
+<p><em>Innsetting for NX gir</em></p>
+<p>Y=c0+c1(Y−T)−c2i+I´−b1i+G</p>
+<p>+[(A´+a1R+Y)−R(B´−s1R+s2Y)]</p>
+<p>Løst mhp. Y:</p>
+<p>B´−s1R(A´+a1R+Y)−RY(1−c1+Rs2)=c0−c1T−c2i+I´−b1i+G+</p>
+<p>c0−c1T−c2i+I´−b1i+G+(A´+a1R+Y)−R(B´−s1R)Y=1(1−c1+Rs2)</p>
+<p>IS-kurven som også gir likevekt i valutakursmarkedet finner vi da ved å differensiere ΔY mph på Δi</p>
+<p>ΔY=−1(1−c1+Rs2)[c2+b2]∆i&gt;0</p>
+<p>⇔</p>
+<p>ΔY∆i=−1(1−c1+Rs2)[c2+b2]&gt;0</p>
+<ul>
+<li>Finn et eksplisitt utrykk for IS likningen under flytende kurs (mer vanskelig).</li>
+</ul>
+<p><em>Svar:</em></p>
+<p>Merk først: Flytende kurs betyr at</p>
+<p>E=1+i1+iEe</p>
+<p>R=1+i1+iEePP</p>
+<p>IS-kurven som også gir likevekt i valutakursmarkedet finner vi da ved å differensiere ΔY mph på Δi</p>
+<p>ΔY=1(1−c1+Rs2)[−c2−b2−∆NX∆R]∆i&gt;0</p>
+<p>⇔</p>
+<p>∆Y∆i=1(1−c1+Rs2)[−c2−b2−∆NX∆R]&gt;0</p>
+<p>Vi får med et ekstra ledd, sammenliknet med løsningen under fast kurs. Dette leddet er gitt ved</p>
+<p>Hvor</p>
+<p>∆NX∆R=[(a1−(B´−s1R+s2Y)+Rs1)]Ee(1+i)&gt;0</p>
+<ul>
+<li>I løpet av forelesningen ble det hevdet at importlekkasje gjør multiplikatoren mindre. I tillegg til dette, vil helningen på IS-kurven (likevekt i vare- og valutakursmarkedet) være brattere i et under fast kurs sammenliknet flytene kurs. Er dette overens med løsningen du fant i de to oppgavene ovenfor?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Ja, det stemmer. Importlekkasjen gitt ved</em> Rs2_dukker opp i nevneren i multiplikatoren. Videre_</p>
+<p><em>Helningen på IS-kurvene er slakere under flytende kurs som en følge av at vi inkluder leddet</em> ∆NX∆R_. Dette leddet reflekterer forbedringen i handelsbalansen som en konsekvens av det lavere rentenivået medfører en depresiering av den nominelle valutakursen._</p>
+<ul>
+<li>Hvilke virkemidler har myndighetene for å stabilisere konjunkturene under henholdsvis et fast og flytende kurs regime?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Flytende kurs: renta (i) og finanspolitikk (G og T)</em></p>
+<p><em>Fast kurs: finanspolitikk (G og T) og E dersom en står utenfor en valutaunion.</em></p>
+<ul>
+<li>Hva menes med intern og ekstern balanse?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Intern balanse vil si produksjon og ledighet er lik sitt naturlige ledighetsnivå.</em></p>
+<p><em>Ekstern balanse vil si at utenlandsgjelden er på et bærekraftig nivå.</em></p>
+<p>_ _</p>
+<p><strong>Oppgaver gitt til 6. forelesning</strong></p>
+<ul>
+<li>Basert på de forutsetningene som har blitt gjort i oppgaver gitt til 5. forelesning, finn ∆NX∆P og avgjør fortegnet. og avgjør fortegnet.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p>ΔNX=(−a1EPP2ΔP+(B´−s1R+s2Y)EPP2ΔP−s1EPP2ΔP)&gt;0</p>
+<p>⇔</p>
+<p>∆NX∆P=(−a1EPP2+(B´−s1R+s2Y)EPP2−s1EPP2)&lt;0</p>
+<ul>
+<li>Finn deretter ∆Y∆P og tegn AD-kurven inn i to diagrammer, et for fast og et for flytende kurs (slapp av, vil ikke bli bedt om å utlede dette formelt på eksamen). og tegn AD-kurven inn i to diagrammer, et for fast og et for flytende kurs (slapp av, vil ikke bli bedt om å utlede dette formelt på eksamen).</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Modellen for varemarkedet løst mhp. Y</em></p>
+<p>c0−c1T−c2i+I´−b1i+G+(A´+a1R+Y)−R(B´−s1R)Y=1(1−c1+Rs2)</p>
+<p><em>Differensiering av</em> ΔY _mhp. _ΔP <em>gir</em></p>
+<p>c0−c1T−c2i+I´−b1i+G+(A´+a1R+Y)−R(B´−s1R)∆P+1(1−c1+Rs2)(−a1EPP2+(B´−s1R+s2Y)EPP2−s1EPP2)ΔP∆Y=s2(1−c1+Rs2)2EPP2</p>
+<p>⇔</p>
+<p>c0−c1T−c2i+I´−b1i+G+(A´+a1R+Y)−R(B´−s1R)+1(1−c1+Rs2)(−a1EPP2+(B´−s1R+s2Y)EPP2−s1EPP2)&lt;0∆Y∆P=s2(1−c1+Rs2)2EPP2</p>
+<p>knyttettilmultiplimatorenMmatematiskikkemuligåavgjøre,menviantaratførsteeffekten</p>
+<p>forimportlekkasjeervesentligmindre(iabsoluttverdi)enndenandreeffekten.</p>
+<ul>
+<li>Tegn til slutt AS-kurven inn i de to diagrammene.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>AS-kurven er som under en lukket økonoi: Økt produksjon fører til økte priser som følge økt lønninger. Sistnevnte er knyttet til bedre forhandlingsposisjon hos arbeiderne som følge av lavere ledighet).</em></p>
+<ul>
+<li>Anta at vi får en sterk økning i C´.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>AD-kurven skifter til høyre, som i en periode gir både høyere produksjon og høyere priser. Økningen i produksjonen stopper opp i det prisforventningene er korrekte</em> P=Pe_<em>Y=Yn_og</em> u=un.</p>
+<ul>
+<li>Hva skjer med handelsbalansen?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Høyere produksjon svekker handelsbalansen:</em></p>
+<p>_ _ ΔNX∆Y=−Rs2&gt;0</p>
+<p><em>Høyere priser svekker handelsbalansen:</em></p>
+<p>∆NX∆P=(−a1EPP2+(B´−s1R+s2Y)EPP2−s1EPP2)&lt;0</p>
+<p><em>(begge disse utrykkene er blitt utledet i tidligere oppgaver)</em></p>
+<ul>
+<li>Hva skjer med utenriksregnskapet?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p>CU+CA=0(utenriksregnskapet)</p>
+<p>ΔCU=ΔNX&lt;0 Nettoeksporten reduseres.</p>
+<p><em>Det motsvares av en tilsvarende økning i nettokapitalimporten (tilsvarer økt låneopptak i utlandet)</em></p>
+<p>ΔCU=ΔNX=−ΔCA</p>
+<p><em>Merk at økt nettokapitalimport fører til økt utenlandsgjeld med tilhørende renteforpliktelser i neste periode. Har landet problemet med å betjene denne gjelden, har vi oppnådd en situasjon med ekstern ubalanse.</em></p>
+<ul>
+<li>Hvorfor vil det under en slik endring være enklere å føre en stabiliseringspolitikk i et flytende vs. et fast kurs regime?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Under fast kurs vil renta måtte brukes til å forsvare valutakursen. Rentenivået vil derfor være bestemt av rentenivået utenlands. Dersom renta som blir satt i utlandet ikke samsvarer med den renta som trengs på hjemmebane, vil rente opphøre å fungere som et politisk stabiliseringsverktøy.</em></p>
+<p><strong>Oppgaver gitt til 7. forelesning</strong></p>
+<ul>
+<li>Solow-modellen består av tre komponenter ((1) produktfunksjonen på intensiv form, (2) sparing per innbygger og (3) uttrykk for kapitalakkumulasjon). Utled disse sammenhengene formelt under antagelsen om at ∆AA=a=0 og ∆NN =n=0 og vis deretter den grafiske løsningen av modellen. og ∆NN =n=0 og vis deretter den grafiske løsningen av modellen. =n=0 og vis deretter den grafiske løsningen av modellen.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Se forelesningsnotatene.</em></p>
+<ul>
+<li>Hva menes med at modellen går mot en steady state?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Uavhengig av startnivået på kapitalen (<em>k0</em>) vil økonomien over tid konvergere mot et konstant nivå på y: <em>yss=Yss/Nss </em>.</em></p>
+<ul>
+<li>Anta nå ∆NN =n&gt;0. Finn et utrykk for ∆k . =n&gt;0. Finn et utrykk for ∆k . .</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Vi kan starte først med å differensiere</em> k=K/N <em>som gir</em></p>
+<p>Δk=ΔKN−KN2ΔN=ΔKN−kn</p>
+<p>Vi trenger nå et utrykk for ΔK/N . Vi har at</p>
+<p>YN=f(k)</p>
+<p>,</p>
+<p>Kt+1=(1−δ)Kt+It</p>
+<p>og</p>
+<p>S=I⇔IN=sYN=sf(k)</p>
+<p>Det gir</p>
+<p>ΔK=−δK+I</p>
+<p>ΔK/N=−δK/N+I/N</p>
+<p>ΔK/N=−δk+sy</p>
+<p>Ved å sette det siste uttrykket inn i det første utrykket vi utledet får vi:</p>
+<p>Δk=−δk+sy−kn=sy−(δ+n)k</p>
+<ul>
+<li>Hva er produksjonsveksten i denne økonomien i steady state?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p>Ylna(ss)−lna(Nss)lna(yss)=</p>
+<p>Ylna(ss)=lna(Nss)</p>
+<p>_ Tidsderivasjon gir_</p>
+<p>Yss´Yss=Nss´Nss=n</p>
+<p><em>Produksjonsveksten vokser med en rate n som er lik befolkningsveksten.</em></p>
+<ul>
+<li>Solow-modellen er uten noen forklaring på hva som skaper teknologisk framgang (parameteren a er bestemt utenfor modellen). Hva mener du kan gjøres for å øke veksten i denne parameteren?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Utdanning, bedre institusjoner, helsevesen, bedre lover og regler etc.</em></p>
+<p><strong>Oppgaver gitt til 8. forelesning</strong></p>
+<ul>
+<li>Finn ved bruk av FRED M0 (M1) og M2 for USA i årene før og etter finanskrisen og vis disse tallene grafisk</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Benytt Fred-Excel plugg inn på ditt regneark.</em></p>
+<ul>
+<li>Fra talleksempelet under system 2, finn for banksektoren som helhet:</li>
+</ul>
+<p>Reserveandelen</p>
+<p>Kapitalandelen</p>
+<p>M0</p>
+<p>M1</p>
+<p><em>Svar:</em></p>
+<p><em>Reserveandelen er gitt ved reserver/innskudd=150/300=0,5 (50 prosent)</em></p>
+<p><em>Kapitalandelen er gitt ved egenkapital/sum balanse = 25/350=0,0833 (8,3 prosent)</em></p>
+<p><em>M0 =200</em></p>
+<p><em>M1=150+200=350</em></p>
+<ul>
+<li>Kvantitative lettelser:</li>
+</ul>
+<p>Ta utgangspunkt i talleksemplet under system 3, anta videre at sentralbanken ved å bruke av seddelpressen ønsker å kjøpe statsobligasjoner til 500 og et bilfirma til 600. Hvordan vil balansene se ut etter en slik endring?</p>
+<p><em>Svar:</em></p>
+<p><em>X=500 og T=600.</em></p>
+<ul>
+<li>Dersom forretningsbank 1 oppnår et bratt fall i sine reserver, hvilke to muligheter gir system 3 for at banken skal kunne øke sin likviditet</li>
+</ul>
+<p><em>Svar:</em></p>
 <ol style="list-style-type: decimal">
-<li>Skift i LAS-kurven</li>
+<li>(1)<em>Interbanklån fra forretningsbank 1 og (2) refinansieringslån fra sentralbanken.</em></li>
 </ol>
-</div>
-</div>
-<div id="del-3-apen-konomi" class="section level2">
-<h2>Del 3: Åpen økonomi</h2>
-<div id="mundell-fleming-modellen" class="section level3">
-<h3>Mundell-Fleming modellen</h3>
-<div id="fast" class="section level4">
-<h4>Fast</h4>
-</div>
-<div id="flytende" class="section level4">
-<h4>Flytende</h4>
-</div>
-</div>
-<div id="ad-as-modellen-apen" class="section level3">
-<h3>AD-AS modellen (åpen)</h3>
-<div id="fast-1" class="section level4">
-<h4>Fast</h4>
-</div>
-<div id="flytende-1" class="section level4">
-<h4>Flytende</h4>
+<ul>
+<li>Refinansieringslån:</li>
+</ul>
+<p>Ta utgangspunkt i talleksemplet under system 3, anta videre at interbankmarkedet er “frosset” grunnet manglene tillit mellom forretningsbankene. Hvordan vil balansen se ut dersom sentralbanken låner forretningsbanken et beløp på 75</p>
+<p><em>Svar:</em></p>
+<p><em>Y1=Y2=75</em></p>
+<ul>
+<li>Hva tror du vil skje med utlånene til banksektoren dersom kapitalkravene for banksektoren øker?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Øke kapitalkrav kan oppnås ved en reduksjon i innskudd. Når innskuddene reduseres må også eiendelssiden reduseres tilsvarende. Holdes reservene konstante, vil dette bety at utlånene går ned (mao. innvendig penger blir redusert).</em></p>
+<p><strong>Oppgaver gitt til 9. forelesning</strong></p>
+<ul>
+<li>Benytt regneksemplet som ble gitt navnet the BLOOS rule, og finn den forventede avkastningen på egenkapital og statlige overføringer under et egenkapitalkrav på 20 og 99 prosent.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>0,20 gir forventet avkastning på egenkapital på 0,092 og statlige overføringer på 0,84.</em></p>
+<p><em>0,99 gir forventet avkastning på egenkapital på 0,05 og statlige overføringer på 0,01.</em></p>
+<ul>
+<li>Tegn to grafer. Begge grafene har graden av egenkapital på den horisontale aksen, mens den første har forventet avkastning på egenkapital på den vertikale aksen mens den andre har forventet statlige overføringer. Plot inn verdiene du får for egenkapitalkrav på 5, 10, 20 og 99 prosent for de to bankene.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Vist under forelesningen.</em></p>
+<ul>
+<li>I Fronter finn fram regnearket for the Bloos rule. For forretningsmodell 1, legg inn for tilstand 1 at avkastningen skal være 0,056 mot tidligere 0,0606.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Endringene må gjøres i celle C57 i filen BloosRuleExcel.xlsk</em></p>
+<ul>
+<li>Under situasjonen med en 100 prosent bailout garanti, for hvilken egenkapitalnivå vil bank 2 være indifferent mellom å investere i de to forretningsmodellene?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Ca. 0,55. Svaret finner man prøve seg fram med litt forskjellig verdier i regnearket BloosRuleExcel.xlsk</em></p>
+<p><strong>Oppgaver gitt til 10. forelesning</strong></p>
+<ul>
+<li><p>Ta utgangspunkt i de tre likningene for offentlig sektor</p>
+<p>Finansdepartementet</p></li>
+</ul>
+<p>Btf=(1+it−1)Bt−1f+(Gt−Tt)−SNGt</p>
+<p>Sentralbanken</p>
+<p>SNGt+∆Btm=∆Mt+it−1Bt−1m</p>
+<p>Statsgjeld</p>
+<p>Bt=Btf−Btm</p>
+<p>Forsøk å gi en tolkning av hver enkelt likning</p>
+<p><em>Svar:</em></p>
+<p><em>Finansdepartementet</em></p>
+<p><em>Gjeld i dag er lik forrige periodes gjeld pluss rentekostnader, pluss underskuddet på den primære budsjettbalansen fratrukket utbytte (seigniorage) fra sentralbanken</em></p>
+<p><em>Sentralbanken:</em></p>
+<p><em>Kjøper statsgjeld ved å øke basispengemengden og gir utbetalinger for obligasjonene som utbytte (seigniorage) til finansdepartmentet </em></p>
+<p><em>Statsgjeld:</em></p>
+<p><em>Offentlig gjeld eies av både private aktører og sentralbanken.</em></p>
+<ul>
+<li>Vis ved innsetting at det er mulig å skrive de tre likningene (konsolidert budsjettbetingelse for offentlig sektor) som</li>
+</ul>
+<p>Bt=(1+it−1)Bt+(Gt−Tt)−ΔMt</p>
+<p><em>Svar:</em></p>
+<p><em>Kombinere de to første likningene gir</em></p>
+<p>Btf=(1+it−1)Bt−1f+(Gt−Tt)−(∆Mt+it−1Bt−1m−∆Btm)</p>
+<p>ΔBtf−ΔBtm=(it−1)Bt−1f−Bt−1m+(Gt−Tt)−∆Mt</p>
+<p>Δ(Btf−Btm)=(it−1)(Bt−1f−Bt−1m)+(Gt−Tt)−∆Mt</p>
+<p><em>Innsetter deretter for likningen for statsgjeld</em></p>
+<p>ΔBt=it−1∙Bt−1+(Gt−Tt)−∆Mt</p>
+<p>Bt−Bt−1=it−1∙Bt−1+(Gt−Tt)−∆Mt</p>
+<p>Bt=(1+it−1)Bt−1+(Gt−Tt)−∆Mt</p>
+<p>Bt=(1+it−1)Bt+(Gt−Tt)−ΔMt</p>
+<ul>
+<li>Vi antar null inflasjon, slik at it=rt og ΔMt=0 . Omgjør likningen ovenfor på en slik form at og ΔMt=0 . Omgjør likningen ovenfor på en slik form at . Omgjør likningen ovenfor på en slik form at</li>
+</ul>
+<p>BtYt=(Gt−Tt)Yt+Bt−1Yt−1(1+r−g)</p>
+<p><em>Svar:</em></p>
+<p>BtYt=(1+r)Bt−1Yt+(Gt−Tt)Yt</p>
+<p>BtYt=(1+r)BtYt−1Yt∙Yt−1+(Gt−Tt)Yt</p>
+<p><em>Vi lar veksten i BNP vær gitt ved en konstant rate</em> g_:_Yt−Yt−1Yt−1=g⇔YtYt−1=g+1</p>
+<p><em>Innsetting av dett gir</em></p>
+<p>BtYt=(1+r)Bt1(1+g)Yt1+(Gt−Tt)Yt</p>
+<p><em>Vi kan videre bruke at</em></p>
+<p>1+r1+g≈1+r−g</p>
+<p>BtYt=(Gt−Tt)Yt+(1+r−g)Bt−1Yt−1</p>
+<ul>
+<li>Vis i en figur den dynamiske utviklingen over tid for BtYt i en situasjon hvor (1+r-g)&lt;1 og (i) (Gt−Tt) &gt;0 og (ii) (Gt−Tt) &lt;0. Går den offentlige gjeldsandelen mot en steady state i de to tilfellene? i en situasjon hvor (1+r-g)&lt;1 og (i) (Gt−Tt) &gt;0 og (ii) (Gt−Tt) &lt;0. Går den offentlige gjeldsandelen mot en steady state i de to tilfellene? &gt;0 og (ii) (Gt−Tt) &lt;0. Går den offentlige gjeldsandelen mot en steady state i de to tilfellene? &lt;0. Går den offentlige gjeldsandelen mot en steady state i de to tilfellene?</li>
+</ul>
+<p><em>Svar: Ja, begge modellen går mot en steady state. Se Blanchard boka for grafisk løsning.</em></p>
+<p><strong>Oppgaver gitt til 11. forelesning</strong></p>
+<ul>
+<li>Hva menes innenfor økonomi med en likviditetsfelle?</li>
+</ul>
+<p><em>Svar: En situasjon hvor pengepoltikken ikke lengre kan ha en ekspansiv effekt på økonomien. Dette fordi den nominelle rente er (nær) lik null.</em></p>
+<ul>
+<li>Ifølge forskning utført av Krugman er det spesielt to forhold som kan lede et land inn i en likviditetsfelle. Nevn disse.</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Demografiske endringer som fører til pessimistiske framtidsutsikter og dermed redusert konsum ( <em>ΔC´&lt;0</em>)</em></p>
+<p><em>Gjeldsnedbygging i privat sektor (Minsky beveglse) (<em>Dlav−DhøyΔDb=</em>)&lt;0)</em></p>
+<ul>
+<li>Hva menes med en Minsky bevegelse (deleveraging shock)?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>Krav om rask nedbetaling av gjeld som en konsekvens av økt usikkerhet tilknyttet husholdningene evne til å betjene gjeld.</em></p>
+<ul>
+<li>Ta utgangspunkt i IS-(LM) modellen benyttet i forelesningen for dette temaet. Hvilken betingelse må være oppfylt for at en økonomi skal havne i en likviditetsfelle som følge av en Minsky bevegelse (deleveraging)</li>
+</ul>
+<p><em>Svar:</em></p>
+<p>_Vi har havnet i en likviditetsfelle__dersom rentereduksjon ikke er tilstrekkelig til å motvirke fallet i konsumetterspørselen_</p>
+<p>(θ∙ΔDb−b´∙Δi0)&lt;0</p>
+<ul>
+<li>Hvorfor kan det oppstå en nær sammenheng mellom en privat og statlig gjeldskrise?</li>
+</ul>
+<p><em>Svar:</em></p>
+<p><em>En privat gjeldskrise som gjør at vi havner i en likviditetsfelle vi bety lavere produksjon og mindre skatteinntekter. Begge er faktorer som vil svekke den primære budsjettbalansen og dermed øke statsgjelden som andel av BNP. Dette kan initiere en statlig gjeldskrise.</em></p>
+<p><strong>Regneregler for differensiering til bruk i dette kurset</strong></p>
+<p>∆∆x(α)=0</p>
+<p>∆∆x(αX)=α∆x</p>
+<p>∆∆x(f(x)g(x))=f'(x)g(x)Δx+f(x)g'(x)Δx</p>
+<p>∆∆x(f(x)g(x))=f'(x)g(x)Δx−f(x)g(x)2g'(x)∆x</p>
 <!-- rnb-text-end -->
 </div>
-</div>
-</div>
-</div>
 
-<div id="rmd-source-code">LS0tCm91dHB1dDoKICBodG1sX25vdGVib29rOgogICAgY3NzOiBzZW1pbmFyLmNzcwotLS0KCiMgT2JsaWdhdG9yaXNrIG9wcGdhdmU6IAojIyBEZWwgMQoxLiBJIG1ha3Jvw7hrb25vbWkgYW50YXMgcHJvZHVrc2pvbmVuIChCTlApIHDDpSBrb3J0IHNpa3Qgw6UgdsOmcmUgYmVzdGVtdCBhdiBldHRlcnNww7hyc2VsZW4uIEh2aWxrZW4gc2VudHJhbCBmb3J1dHNldG5pbmcgbGlnZ2VyIHRpbCBncnVubiBmb3IgZGV0dGUgcmVzdWx0YXRldD8KU3ZhcjogU3RpdmUgcHJpc2VyLgoyLiBIZWxuaW5nZW4gcMOlIElTLWt1cnZlbiB1bmRlciBlbiDDpXBlbiDDuGtvbm9taSBtZWQgZmx5dGVuZGUgdmFsdXRha3VycyBrYW4gZm9ya2xhcmVzIGF2IGZpcmUgZmFrdG9yZXIsIGJlc2tyaXYgZGlzc2UuClN2YXI6ICgxKSsgTGF2ZXJlIHJlbnRlIGdpciDDuGt0IGludmVzdGVyaW5nZXIgb2cvZWxsZXIgw7hrdCBrb25zdW0uICgyKSsgTXVsdGlwbGlrYXRvcmVmZmVrdDogIMOYa3QgZXR0ZXJzcMO4cnNlbCBnaXIgw7hrdCBpbm50ZWt0IG9nIGRlcm1lZCDDuGt0IGtvbnN1bSBldGMuICAoMyktIEltcG9ydGxla2thc2plIG9nICg0KSBsYXZlcmUgcmVudGUgZ2lyIGxhdmVyZSByZWFsdmFsdXRha3VycyBzb20gZ2lyIMO4a3QgbmV0dG9la3Nwb3J0LgozLiBVbmRlciBBRC1BUyBtb2RlbGxlbiBmb3IgZW4gw6VwZW4gw7hrb25vbWkgbWVkIGZseXRlbmUga3VycywgaHZpbGtlIG1hcmtlZGVyIGVyIG9wZXJhc2pvbmVsbGU/ClN2YXI6IFZhcmVtYXJrZWRldCwgQXJiZWlkc21hcmtlZGV0LCBQZW5nZW1hcmtlZGV0IG9nIFZhbHV0YWt1cnNtYXJrZWRldC4KNC4gSHZhIG1lbmVzIG1lZCBpbnRlcm4gb2cgZWtzdGVybiBiYWxhbnNlPwpTdmFyOiBJbnRlcm4gYmFsYW5zZW4gZXIgcHJvZHVrc2pvbiAoYXJiZWlkc2xlZGlnaGV0KSBsaWsgZGV0IG5hdHVybGlnZSBwcm9kdWtzam9uc25pdsOlZXQgKGFyYmVpZHNsZWRpZ2hldHNuaXbDpWV0KS4gRWtzdGVybiBiYWxhbnNlIGhhciB2aSBuw6VyIHV0ZWxhbmRnamVsZGVuIGVyIHDDpSBldCByaW1lbGlnIG5pdsOlIChiZXRqZW5lcyB1dGVuIHByb2JsZW1lcikuCjUuIEh2aWxrZSB0byBmYWt0b3JlciBhbnNlcyBmb3Igw6UgdsOmcmUgc2VudHJhbGUgbsOlciBkZXQgZ2plbGRlciBza2FwZSDDuGtvbm9taXNrIHZla3N0LCBvZyBuZXZuIG5vZW4gdGlsdGFrIG15bmRpZ2hldGVuZSBrYW4gdGEgaSBicnVrIGZvciDDpSBvcHBtdW50cmUgdGlsIGRldHRlPwpTdmFyOiAoMSkgS2FwaXRhbGFra3VtdWxhc2pvbiDigJMgc3BhcmluZygrKSwgYmVmb2xuaW5nc3Zla3N0KC0pLiAoMikgVGVrbm9sb2dpc2sgZnJhbWdhbmcg4oCTIGluc3RpdHVzam9uZXIsIGxvdmVyIG9nIHJlZ2xlciBldGMuCjYuIEh2YSBmb3JzdMOlcyBtZWQgaW5udmVuZGlnZSBvZyB1dHZlbmRpZ2UgcGVuZ2VyPwpTdmFyOiBVdHZlbmRpZ2UgcGVuZ2VyIGVyIGRlbiBkZWxlbiBhdiBwZW5nZW1lbmdkZW4gc29tIHNlbnRyYWxiYW5rZW4gc2thcGVyLCBiZXN0w6VyIGF2IHJlc2VydmVyIG9nIHNlZGxlciBvZyBteW50LiBJbm52ZW5kaWdlIHBlbmdlciBlciBkZW4gZGVsZW4gYXYgcGVuZ2VtZW5nZGVuIHNvbSBiYW5rZW5lIHNrYXBlciAKCiMjIERlbCAyIEx1a2tldCDDuGtvbm9taQojIyMgSVMtTE0gbW9kZWxsZW4KIyMjIEFELUFTIG1vZGVsbGVuIChsdWtrZXQpCjEuIFNraWZ0IGkgTEFTLWt1cnZlbgoKIyMgRGVsIDM6IMOFcGVuIMO4a29ub21pCiMjIyBNdW5kZWxsLUZsZW1pbmcgbW9kZWxsZW4KIyMjIyBGYXN0CiMjIyMgRmx5dGVuZGUKCiMjIyBBRC1BUyBtb2RlbGxlbiAgKMOlcGVuKQojIyMjIEZhc3QKIyMjIyBGbHl0ZW5kZQo=</div>
+<div id="rmd-source-code">LS0tCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KPGJ1dHRvbiB0eXBlPSJidXR0b24iCm9uY2xpY2s9ImRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdkZW1vJykuaW5uZXJIVE1MID0gRGF0ZSgpIj4KQ2xpY2sgbWUgdG8gZGlzcGxheSBEYXRlIGFuZCBUaW1lLjwvYnV0dG9uPgoKIyBFQ04yMjI6IEFuYmVmYWx0ZSBvcHBnYXZlciBtZWQgbMO4c25pbmdzZm9yc2xhZwoKKipPcHBnYXZlciBnaXR0IHRpbCAxLiBmb3JlbGVzbmluZyAoNC4gc2VwdGVtYmVyKSoqCgpHasO4ciBmw7hsZ2VuZGUgb3BwZ2F2ZXIgZm9yIFVTQSwgSmFwYW4sIE5vcmdlIG9nIChkZXJzb20gZHUgaGFyIHRpZCkgbWluc3QgZXR0IGV1cm9wZWlzayBsYW5kLgoKLSBJbnN0YWxsZXIgYXBwbGlrYXNqb25lbiBGUkVEIGkgZGl0dCBFeGNlbCByZWduZWFyawoKW2h0dHA6Ly9yZXNlYXJjaC5zdGxvdWlzZmVkLm9yZy9mcmVkMi9dKGh0dHA6Ly9yZXNlYXJjaC5zdGxvdWlzZmVkLm9yZy9mcmVkMi8pCgpIamVscCB0aWwgaHZvcmRhbiBicnVrZSBwcm9ncmFtbWV0IGZpbm5lcyBoZXI6CgpbaHR0cDovL3d3dy55b3V0dWJlLmNvbS93YXRjaD92PU9BSC13R3RQXF9rOF0oaHR0cDovL3d3dy55b3V0dWJlLmNvbS93YXRjaD92PU9BSC13R3RQX2s4KQoKLSBGaW5uIHRpZHNzZXJpZW4gdGlsIGJydXR0b25hc2pvbmFscHJvZHVrdGV0IGkgcmVlbGxlIHN0w7hycmVsc2VyLgotIEZpbm4gdGlkc3NlcmllbiBhbnRhbGwgaW5uYnlnZ2VyZQotIEtvbnN0cnVlciB0aWRzc2VyaWVuIGJydXR0b25hc2pvbmFscHJvZHVrdCBwZXIgaW5uYnlnZ2VyLgotIFRyYW5zZm9ybWVyIHNlcmllbiB2ZWQgw6UgdGEgbG9nYXJpdG1lbi4KLSBWaXMgc2VyaWVuIGdyYWZpc2suCi0gR2lyIHNlcmllbiBub2VuIHRlZ24gcMOlIGR5cGUgw7hrb25vbWlza2Uga3Jpc2VyPyAgSHZpcyBqYSwgc2Ugb20gZHUga2FuIGZpbm5lIChzw7hrIHDDpSBpbnRlcm5ldHQpIG5vZW4ga29ydGZhdHRlZGUgZm9ya2xhcmluZ2VyIGJhayBkaXNzZSBrcmlzZW5lLgotIEZpbm4gZXQgbcOlbCBww6UgaW5mbGFzam9uLgotIEZpbm4gZXQgbcOlbCBww6UgbGVkaWdoZXQuCi0gTGFnIGV0IHNjYXR0ZXJwbG90IGZvciBsZWRpZ2hldCBvZyBpbmZsYXNqb24gKFBoaWxsaXBzLWt1cnZlbikuCi0gTGFnIGV0IHNjYXR0ZXJwbG90IGZvciB2ZWtzdCBvZyBlbmRyaW5nIGkgaW5mbGFzam9uIChPa3VucyBsb3YpLgoKX1N2YXI6XwoKX0hhciBub2VuIGxhZ2V0IGV0IHJlZ25lYXJrIHDDpSBkZXR0ZT8gU2VuZCBkZXQgdGlsXyBbX2pvcm4uaGFsdm9yc2VuQGdtYWlsLmNvbV9dKG1haWx0bzpqb3JuLmhhbHZvcnNlbkBnbWFpbC5jb20pXywgIHPDpSB2aWwgamVnIGxlZ2dlIGRldCB1dCB0aWwgZGUgYW5kcmUgc3R1ZGVudGVuZSAgaSBrbGFzc2VuLl8KCioqT3BwZ2F2ZXIgZ2l0dCB0aWwgMi4gZm9yZWxlc25pbmcqKgoKS2FwaXR0ZWwgMiwgQmxhbmNoYXJkLCBBbWlnaGluaSBvZyBHaWF2YXp6aQoKLSBRdWVzdGlvbiAzLgoKX1N2YXI6XwoKX0JsZSB2aXN0IGkgZm9yZWxlc25pbmdlbi5fCgotIFF1ZXN0aW9uIDQuCgpfU3ZhcjpfCgpfQmxlIHZpc3QgaSBmb3JlbGVzbmluZ2VuLl8KCioqT3BwZ2F2ZXIgZ2l0dCB0aWwgMy4gZm9yZWxlc25pbmcqKgoKVGEgdXRnYW5nc3B1bmt0IGkgZsO4bGdlbmRlIG1ha3Jvw7hrb25vbWlzayBtb2RlbGw6CgpaPUMrSStHCgpIdm9yIFogZXIgYWdncmVnZXJ0IGV0dGVyc3DDuHJzZWwuIEMgZXIga29uc3VtLiBJIGVyIHByaXZhdGUgcmVhbGludmVzdGVyaW5nZXIgb2cgRyBlciBvZmZlbnRsaWcga2rDuHAgYXYgdmFyZXIgb2cgdGplbmVzdGVyLgoKSSB0aWxsZWdnIHBvc3R1bGVyZXIgdmkgZsO4bGdlbmRlIGFkZmVyZHNzYW1tZW5oZW5nZXI6CgpDPWMwK2MxKFniiJJUKeKIkmMyaQoKST1J4oiSYjFpCgpIdm9yIFQgZXIgbmV0dG9za2F0dGVyLCBpIGRldCBub21pbmVsbGUgcmVudGVuaXbDpWV0LCBvZyBzbcOlIGJva3N0YXZlciBiZXRlZ25lciBwb3NpdGl2ZSBwYXJhbWV0ZXJlLgoKTGlrdmVrdHNiZXRpbmdlbHNlbiBmb3IgdmFybWFya2VkZXQgZXIgZ2l0dCB2ZWQKClk9WgoKSHZvciBZIGJldGVnbmVyIHByb2R1a3Nqb25lbi4KCi0gTmV2biB0cmUgc2VudHJhbGUgZm9ydXRzZXRuaW5nZXIgc29tIGxpZ2dlciBiYWsgZW4gc2xpayBtb2RlbGwuCgpfU3ZhcjpfCgoxLiAoMSlfU3RpdmUgcHJpc2VyLCApKDIpIEx1a2tldCDDuGtvbm9taSBvZyAoMykgcHJvZHVrc2pvbiBhdiBrdW4gw6huIHZhcmVfCgotIEZpbm4gbMO4c25pbmdlbiB0aWwgbW9kZWxsZW4gbWVkIGhlbnN5biBww6UgWS4KCl9TdmFyOl8KCl9TZXR0ZXIgaW5uIGZvciBDIG9nIEkgc29tIGdpcl8KClk9YzArYzEoWeKIklQp4oiSYzJpK0nCtOKIkmIxaStHCgogX0zDuHNlciB1dHRyeWtrZXQgb3ZlbmZvciBtaHAuIFk6XwoKWSgx4oiSYzEpPWMw4oiSYzFU4oiSYzJpK0nCtOKIkmIxaStHCgpZPTEoMeKIkmMxKVtjMOKIkmMxVOKIkmMyaStJwrTiiJJiMWkrR10KCi0gSHZhIHNramVyIG7DpXIgaSDDuGtlciAodmlzIGZvcm1lbHQsIHZlcmJhbHQgb2cgZ3JhZmlzayk/CgpfU3ZhcjpfCgpfRm9ybWVsdDpfCgpfRGlmZmVyZW5zaWVyaW5nIGF2XyDOlFkgX21ocF8gzpRpIF9naXJfCgrOlFk9MSgx4oiSYzEpW+KIkmMyzpRp4oiSYjHOlGldPeKIkjEoMeKIkmMxKVtjMitiMV3OlGkmbHQ7MAoKzpRZzpRpPeKIkjEoMeKIkmMxKVtjMitiMV0mbHQ7MAoKX0dyYWZpc2s6XwoKX1NlIGZvcmVsZXNuaW5nc25vdGF0ZW5lLl8KCl9WZXJiYWx0Ol8KCl/DmGt0ZSByZW50ZV8gX++DoF8gX2xhdmVyIGtvbnN1bSBvZyBpbnZlc3RlcmluZ2VyXyBf74OgXyBfcmVkdXNlcnQgZXR0ZXJzcMO4cnNlbF8gX++DoF8gX3JlZHVzZXJ0IHByb2R1a3Nqb25fIF/vg6BfIF9yZWR1c2VydCBkaXNwb25pYmVsIGlubnRla3RfIF/vg6AgX19yZWR1c2VydCBrb25zdW1fXyDvg6BfIF9yZWR1c2VydCBldHRlcnNww7hyc2VsXyBf74OgXyBfcmVkdXNlcnQgcHJvZHVrc2pvbuKApmV0Yy5fCgotCu+Ct++Ct0FudGEgYXQgc2VudHJhbGJhbmtlbiBpbm5mw7hyZXIgZW4gcmVudGVyZWdlbCBzb20gdGlsc2llciBhdCBpPW0wWQoKX1N2YXI6XwoKX1ZlZCDDpSBzZXR0ZSByZW50ZXJlZ2VsZW4gaW5uIGZvciBpIGbDpXIgdmlfCgpZPWMwK2MxKFniiJJUKeKIkmMybTBZK0nCtOKIkmIxbTBZK0cKCl9Mw7hzdCBtaHAuIFkgZ2lyXwoKWSgx4oiSYzErYzJtMCtiMW0wKT1jMOKIkmMxVCtJwrQrRwoKYygw4oiSYzFUK0nCtCtHKVk9MSgx4oiSYzErYzJtMCtiMW0wKQoKLSBTYW1tZW5saWtuIG11bHRpcGxpa2F0b3JlbiBpIG1vZGVsbGVuIGbDuHIgb2cgZXR0ZXIgaW5uZsO4cmluZ2VuIGF2IGVuIHNsaWsgcmVnZWwuIEh2aWxrZW4gZXIgaMO4eWVzdD8KCl9TdmFyOl8KCjEoMeKIkmMxK2MybTArYjFtMCkmbHQ7MSgx4oiSYzEpCgpfTXVsdGlwbGlrYXRvcmVuIGJsaXIgbWluZHJlIHZlZCBicnVrIGF2IHJlbnRlcmVnZWwuXwoKLSBHaSBlbiB2ZXJiYWwgcMOlIGZvcmtsYXJpbmcgcMOlIGh2b3JkYW4gaW5uZsO4cnNlbGVuIGF2IGVuIHJlZ2VsIHZpcmtlciBpbm4gdmVkIGVuIHBvc2l0aXYgw7hrbmluZyBpIGludmVzdGVyaW5nZW4KCl9TdmFyOl8KCl9Gw7hyc3QgdmlsIHZpIGhhIGF0Ol8KCl/DmGt0IGludmVzdGVyaW5nZXJfIF/vg6BfX8OYa3QgZXR0ZXJzcMO4cnNlbF8gX++DoF8gX8OYa3QgcHJvZHVrc2pvbl8KCl9SZWdsZW4gdmlsIGhhIGVuIHN0YWJpbGlzZXJlbmRlIGVmZmVrdCwgc2lkZW4gdmkgZXR0ZXIgZGV0dCB2aWwgaGEgYXRfCgpfw7hrdCByZW50ZSBfX++DoF9fIHJlZHVzZXJ0ZSBpbnZlc3RlcmluZ2VyIG9nIGtvbnN1bV9f74OgXyBfUmVkdXNlcnQgcHJvZHVrc2pvbiBldGMuXwoKLSBIdmEgbWVuZXMgbWVkIHRoZSBwYXJhZG94IG9mIHRocmlmdD8KCl9TdmFyOl8KCl9JIGVuIElTLUxNIG1vZGVsbCBmb3IgZW4gbHVra2V0IMO4a29ub21pIHZpbCBkZXQgdsOmcmUgaW52ZXN0ZXJpbmdlciB2w6ZyZSBiZXN0ZW1tZW5kZSBmb3Igc3BhcmluZ2VuIChTPUkpLiBQw6UgbGVuZ3JlIHNpa3QgKGptZi4gU29sb3ctbW9kZWxsZW4pIHZpbCBkZXQgdsOmcmUgbW90c2F0dCwgZHZzLiBkZXQgZXIgIHNwYXJpbmdlciBzb20gZXIgYmVzdGVtbWVuZGUgZm9yIGludmVzdGVyaW5nZW5lIChkZXR0ZSByZXN1bHRhdGV0IGVyIGVuIGbDuGxnZSBhdiBhbnRhZ2Vsc2VuIG9tIHN0aXZlIHByaXNlcilfCgoqKk9wcGdhdmVyIGdpdHQgdGlsIDQuIGZvcmVsZXNuaW5nKioKCi0K74K374K3VGEgdXRnYW5nc3B1bmt0IGkgc2FtbWUgbW9kZWxsIHNvbSBpIGZvcnJpZ2Ugb3BwZ2F2ZXNldHQuIEFudGEgaSB0aWxsZWdnIG7DpSBhdCBwZW5nZW1hcmtlZGV0IGVyIG9wZXJhdGl2dC4gUGVuZ2V0aWxidWRldCBlciBkZXJmb3IgZ2l0dCB2ZWRNcz1NCi9QIG9nIHBlbmdlIGV0dGVyc3DDuHJzZWxlbgpNZD1NKFksaSkKLiAgVmlzIGxpa2V2ZWt0ZW4gaSBwZW5nZW1hcmtlZGV0IHVuZGVyIGZvcnV0c2V0bmluZyBvbSBhdCBzZW50cmFsYmFua2VuIChhKSBzZXR0ZXIgcmVudGVuaXbDpWV0LCAoYikgYmVzdGVtbWVyIHBlbmdldGlsYnVkZXQuCi9QIG9nIHBlbmdlIGV0dGVyc3DDuHJzZWxlbiBNZD1NKFksaSkKLiAgVmlzIGxpa2V2ZWt0ZW4gaSBwZW5nZW1hcmtlZGV0IHVuZGVyIGZvcnV0c2V0bmluZyBvbSBhdCBzZW50cmFsYmFua2VuIChhKSBzZXR0ZXIgcmVudGVuaXbDpWV0LCAoYikgYmVzdGVtbWVyIHBlbmdldGlsYnVkZXQuCi4gIFZpcyBsaWtldmVrdGVuIGkgcGVuZ2VtYXJrZWRldCB1bmRlciBmb3J1dHNldG5pbmcgb20gYXQgc2VudHJhbGJhbmtlbiAoYSkgc2V0dGVyIHJlbnRlbml2w6VldCwgKGIpIGJlc3RlbW1lciBwZW5nZXRpbGJ1ZGV0LgoKX1N2YXI6XwoKX0dyYWZpc2s6IFNlIGZvcmVsZXNuaW5nc25vdGF0ZW5lLl8KCi0gQmVzdGVtIFkgZ3JhZmlzayB1bmRlciAoYSkgb2cgKGIpIHVuZGVyIGZvcnV0c2V0bmluZyBvbSBhdCBiw6VkZSB2YXJlLSBvZyBwZW5nZW1hcmtlZGV0IGVyIGkgbGlrZXZla3QgKElTLUxNIG1vZGVsbGVuKS4KCl9TdmFyOl8KCl9HcmFmaXNrOiBTZSBmb3JlbGVzbmluZ3Nub3RhdGVuZS5fCgotIFVuZGVyIChhKSwgaHZhIHNramVyIGRlcnNvbSBrb25zdW1ldCDDuGtlcj8gVmlzIGdyYWZpc2sgb2cgdmVyYmFsdC4KCl9TdmFyOl8KCl9HcmFmaXNrOiBTZSBmb3JlbGVzbmluZ3Nub3RhdGVuZS5fCgpfVmVyYmFsdDpfCgpfVW5kZXIgYSlfCgpfw5hrdCBrb25zdW1fIF/vg6BfIF/DuGt0IGV0dGVyc3DDuHJzZWwgX1/vg6BfXyDDuGt0IHByb2R1a3Nqb24gX1/vg6BfXyDDuGt0IGRpc3BvbmliZWwgaW5udGVrdF9f74OgXyBfw7hrdCBrb25zdW0gZXRjLl8KCl9VbmRlciBiKV8KCl/DmGt0IGtvbnN1bV8gX++DoF8gX8O4a3QgZXR0ZXJzcMO4cnNlbCBfX++DoF9fIMO4a3QgcHJvZHVrc2pvbiBfX++DoF8gX8O4a3QgcmVuZV9fIO+DoF8gX8O4a3QgZGlzcG9uaWJlbCBpbm50ZWt0KG1lbiBpa2tlIGxpa2Ugc3Rlcmsgc29tIHVuZGVyIGEpX1/vg6BfIF/DuGt0IGtvbnN1bSAobWVuIGlra2UgbGlrZSBzdGVyayBzb20gdW5kZXIgYSkgIGV0Yy5fCgotIFVuZGVyIChiKSwgaGEgc2tqZXIgZGVyc29tIHByaXNuaXbDpWV0IFAgw7hrZXI/IFZpcyBncmFmaXNrIG9nIHZlcmJhbHQuCgpfU3ZhcjpfCgpfR3JhZmlzazogU2UgZm9yZWxlc25pbmdzbm90YXRlbmUuXwoKX1ZlcmJhbHQ6XwoKX8OYa3QgcHJpc2VyIF9f74OgX18gUmVkdXNlcnQgcmVhbHBlbmdlbWVuZ2RlIF9f74OgXyBfw7hrdCBub21pbmVsbCByZW50ZV9fIO+DoF8gX3JlZHVzZXJ0IGtvbnN1bSBvZyBpbnZlc3RlcmluZ2VyIF9f74OgXyBfcmVkdXNlcnQgZXR0ZXJzcMO4cnNlbF9fIO+DoF8gX3JlZHVzZXJ0IHByb2R1a3Nqb24gX1/vg6BfIF9yZWR1c2VydCBkaXNwb25pYmVsIGlubnRla3RfXyDvg6BfIF9yZWR1c2VydCBrb25zdW0gZXRjLl8KCl9Gb3IgQVMtS3VydmVuIHZpbCDDuGt0ZSBwcmlzZXIgdsOmcmUgYXNzb3NpZXJ0IG1lZCByZWR1c2VydCBwcm9kdWtzam9uLl8KCi0gRGlza3V0ZXIgZm9yZGVsZXIgb2cgdWxlbXBlciB2ZWQgcGVuZ2Vwb2xpdGlrayB2cy4gZmluYW5zcG9saXRpa2sgc29tIHN0YWJpbGlzZXJpbmdzcG9saXRpc2tlIHZlcmt0w7h5LgoKX1N2YXI6XwoKX1BlbmdlcG9saXRpa2sgZnVuZ2VyIHJhc2tlcmUgZW5uIGZpbmFuc3BvbGl0aWtrLl8KCl9GaW5hbnNwb2xpdGlrayBrYW4gdsOmcmUgc3bDpnJ0IGVmZmVrdGl2dCBpIGVuIGxpa3ZpZGlldHNmZWxsZSAodmkga29tbWVyICB0aWwgZGV0dGUgc2VuZXIpXwoKX0ZpbmFuc3BvbGl0aWtrIMO4a2VyIG9mZmVudGxpZyBzZWt0b3IgcMOlIGJla29zdG5pbmcgYXYgcHJpdmF0IHNla3Rvci4gUG9saXRpc2tlIHByZWZlcmFuc2VyIGF2Z2rDuHIgb20gZGV0dGUgZXIgYnJhIGVsbGVyIGTDpXJsaWcuXwoKKipPcHBnYXZlciBnaXR0IHRpbCA1LiBmb3JlbGVzbmluZyoqCgotIFZpIHRhciBmw7hyc3QgdXRnYW5nc3B1bmt0IGkgc2FtbWUgbW9kZWxsIHNvbSBibGUgc2F0dCBvcHAgdW5kZXIgb3BwZ2F2ZSBnaXR0IHRpbCAzLiBmb3JlbGVzbmluZy4gVmlkZXJlIHRlbmtlciB2aSBvc3MgYXQgw7hrb25vbWllbiBlciDDpXBlbiBmb3IgaGFuZGVsIG9nIGthcGl0YWxiZXZlZ2Vsc2VyIG1lZCB1dGxhbmRldC4gRGV0dGUgYmV0eXIgbsOlIGF0CgpaPUMrSStHK05YCgpZPVoKCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBOWOKJoVjiiJJS4oiX4oSRCgpF4p2RPSgxK2kpKDEraeKdkSlF4p2RZQoKSSB0aWxsZWdnIHBvc3R1bGVyZXIgdmkgYXQgZsO4bGdlbmRlIHNhbW1lbmhlbmdlciBmb3IgaW1wb3J0IG9nIGVrc3BvcnQ6CgpYKFIsWSk9QcK0K+KIkmExUiviiJJhMlkKCuKEkShSLFkpPULCtCviiJJzMVIr4oiSczJZCgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFI9RVBQCgpBbnRhIGF0IHBhcmFtZXRlcm5lIGExLGEyLHMxb2dzMgogZXIgcG9zaXRpdmUgQmVzdGVtIG9nIGZvcmtsYXIgaHZpbGtlIGZvcnRlZ24gKCsvLSkgc29tIGLDuHIgZ2plbGRlIGZvciBla3Nwb3J0IG9nIGltcG9ydCBsaWtuaW5nZW5lIG92ZW5mb3IuCgpfU3ZhcjpfCgpYKFIsWSk9QcK0K2ExUithMlkKCuKEkShSLFkpPULCtOKIknMxUitzMlkKCi0K74K374K3RmlubiBldCB1dHRyeWtrIGZvciDiiIZOWOKIhlkKICwK4oiGTljiiIZSCiBvZyBvbSBtdWxpZyBhdmdqw7hyIGZvcnRlZ25lbmUuCiAsIOKIhk5Y4oiGUgogb2cgb20gbXVsaWcgYXZnasO4ciBmb3J0ZWduZW5lLgogb2cgb20gbXVsaWcgYXZnasO4ciBmb3J0ZWduZW5lLgoKX1N2YXI6XwoKzpROWD3iiJJSczLiiIZZJmd0OzAKCuKHlAoKzpROWM6UWT3iiJJSczImZ3Q7MAoKzpROWD0oYTHiiJIoQsK04oiSczFSK3MyWSkrUnMxKeKIhlImZ3Q7MAoK4oeUCgrOlE5Y4oiGUj0oYTHiiJIoQsK04oiSczFSK3MyWSkrUnMxKSZndDswCgpNYXRlbWF0aXNraWtrZW11bGlnw6Vhdmdqw7hyZWZvcnRlZ25ldCxtZW52aWFudGFyJmd0OzAKCmVyb3BwZnlsdGl2w6VyZW1vZGVsbGVyKE1hcnNoYWxs4oiSTGVybmVyYmV0aW5nZWxzZW4pCi4KCi0gRmlubiBldCBla3NwbGlzaXR0IHV0cnlrayBmb3IgSVMgbGlrbmluZ2VuIHVuZGVyIGZhc3RlIGt1cnMgKGVua2xlc3QpLgoKX1N2YXI6XwoKX01lcmsgZsO4cnN0OiBGYXN0IGt1cnMgYmV0eXIgYXRfIEU9RWVfc8OlIHJlYWx2YWx1dGFrdXJzZW4gUiBob2xkZXMgaGVyIHVlbmRyZXQuXwoKX0lubnNldHRpbmcgZm9yIE5YIGdpcl8KClk9YzArYzEoWeKIklQp4oiSYzJpK0nCtOKIkmIxaStHCgorWyhBwrQrYTFSK1kp4oiSUihCwrTiiJJzMVIrczJZKV0KCiBMw7hzdCBtaHAuIFk6CgpCwrTiiJJzMVIoQcK0K2ExUitZKeKIklJZKDHiiJJjMStSczIpPWMw4oiSYzFU4oiSYzJpK0nCtOKIkmIxaStHKwoKYzDiiJJjMVTiiJJjMmkrScK04oiSYjFpK0crKEHCtCthMVIrWSniiJJSKELCtOKIknMxUilZPTEoMeKIkmMxK1JzMikKCklTLWt1cnZlbiBzb20gb2dzw6UgZ2lyIGxpa2V2ZWt0IGkgdmFsdXRha3Vyc21hcmtlZGV0IGZpbm5lciB2aSBkYSB2ZWQgw6UgZGlmZmVyZW5zaWVyZSDOlFkKbXBoIHDDpQrOlGkKCs6UWT3iiJIxKDHiiJJjMStSczIpW2MyK2IyXeKIhmkmZ3Q7MAoK4oeUCgrOlFniiIZpPeKIkjEoMeKIkmMxK1JzMilbYzIrYjJdJmd0OzAKCi0gRmlubiBldCBla3NwbGlzaXR0IHV0cnlrayBmb3IgSVMgbGlrbmluZ2VuIHVuZGVyIGZseXRlbmRlIGt1cnMgKG1lciB2YW5za2VsaWcpLgoKX1N2YXI6XwoKTWVyayBmw7hyc3Q6IEZseXRlbmRlIGt1cnMgYmV0eXIgYXQKCkU9MStpMStpRWUKClI9MStpMStpRWVQUAoKSVMta3VydmVuIHNvbSBvZ3PDpSBnaXIgbGlrZXZla3QgaSB2YWx1dGFrdXJzbWFya2VkZXQgZmlubmVyIHZpIGRhIHZlZCDDpSBkaWZmZXJlbnNpZXJlIM6UWQptcGggcMOlCs6UaQoKzpRZPTEoMeKIkmMxK1JzMilb4oiSYzLiiJJiMuKIkuKIhk5Y4oiGUl3iiIZpJmd0OzAKCuKHlAoK4oiGWeKIhmk9MSgx4oiSYzErUnMyKVviiJJjMuKIkmIy4oiS4oiGTljiiIZSXSZndDswCgpWaSBmw6VyIG1lZCBldCBla3N0cmEgbGVkZCwgc2FtbWVubGlrbmV0IG1lZCBsw7hzbmluZ2VuIHVuZGVyIGZhc3Qga3Vycy4gRGV0dGUgbGVkZGV0IGVyIGdpdHQgdmVkCgpIdm9yCgriiIZOWOKIhlI9WyhhMeKIkihCwrTiiJJzMVIrczJZKStSczEpXUVlKDEraSkmZ3Q7MAoKLSBJIGzDuHBldCBhdiBmb3JlbGVzbmluZ2VuIGJsZSBkZXQgaGV2ZGV0IGF0IGltcG9ydGxla2thc2plIGdqw7hyIG11bHRpcGxpa2F0b3JlbiBtaW5kcmUuIEkgdGlsbGVnZyB0aWwgZGV0dGUsIHZpbCBoZWxuaW5nZW4gcMOlIElTLWt1cnZlbiAobGlrZXZla3QgaSB2YXJlLSBvZyB2YWx1dGFrdXJzbWFya2VkZXQpIHbDpnJlIGJyYXR0ZXJlIGkgZXQgdW5kZXIgZmFzdCBrdXJzIHNhbW1lbmxpa25ldCBmbHl0ZW5lIGt1cnMuIEVyIGRldHRlIG92ZXJlbnMgbWVkIGzDuHNuaW5nZW4gZHUgZmFudCBpIGRlIHRvIG9wcGdhdmVuZSBvdmVuZm9yPwoKX1N2YXI6XwoKX0phLCBkZXQgc3RlbW1lci4gSW1wb3J0bGVra2FzamVuIGdpdHQgdmVkXyBSczJfZHVra2VyIG9wcCBpIG5ldm5lcmVuIGkgbXVsdGlwbGlrYXRvcmVuLiBWaWRlcmVfCgpfSGVsbmluZ2VuIHDDpSBJUy1rdXJ2ZW5lIGVyIHNsYWtlcmUgdW5kZXIgZmx5dGVuZGUga3VycyBzb20gZW4gZsO4bGdlIGF2IGF0IHZpIGlua2x1ZGVyIGxlZGRldF8g4oiGTljiiIZSXy4gRGV0dGUgbGVkZGV0IHJlZmxla3RlcmVyIGZvcmJlZHJpbmdlbiBpIGhhbmRlbHNiYWxhbnNlbiBzb20gZW4ga29uc2VrdmVucyBhdiBkZXQgbGF2ZXJlIHJlbnRlbml2w6VldCBtZWRmw7hyZXIgZW4gZGVwcmVzaWVyaW5nIGF2IGRlbiBub21pbmVsbGUgdmFsdXRha3Vyc2VuLl8KCi0gSHZpbGtlIHZpcmtlbWlkbGVyIGhhciBteW5kaWdoZXRlbmUgZm9yIMOlIHN0YWJpbGlzZXJlIGtvbmp1bmt0dXJlbmUgdW5kZXIgaGVuaG9sZHN2aXMgZXQgZmFzdCBvZyBmbHl0ZW5kZSBrdXJzIHJlZ2ltZT8KCl9TdmFyOl8KCl9GbHl0ZW5kZSBrdXJzOiByZW50YSAoaSkgb2cgZmluYW5zcG9saXRpa2sgKEcgb2cgVClfCgpfRmFzdCBrdXJzOiBmaW5hbnNwb2xpdGlrayAoRyBvZyBUKSBvZyBFIGRlcnNvbSBlbiBzdMOlciB1dGVuZm9yIGVuIHZhbHV0YXVuaW9uLl8KCi0gSHZhIG1lbmVzIG1lZCBpbnRlcm4gb2cgZWtzdGVybiBiYWxhbnNlPwoKX1N2YXI6XwoKX0ludGVybiBiYWxhbnNlIHZpbCBzaSBwcm9kdWtzam9uIG9nIGxlZGlnaGV0IGVyIGxpayBzaXR0IG5hdHVybGlnZSBsZWRpZ2hldHNuaXbDpS5fCgpfRWtzdGVybiBiYWxhbnNlIHZpbCBzaSBhdCB1dGVubGFuZHNnamVsZGVuIGVyIHDDpSBldCBiw6ZyZWtyYWZ0aWcgbml2w6UuXwoKXyBfCgoqKk9wcGdhdmVyIGdpdHQgdGlsIDYuIGZvcmVsZXNuaW5nKioKCi0K74K374K3QmFzZXJ0IHDDpSBkZSBmb3J1dHNldG5pbmdlbmUgc29tIGhhciBibGl0dCBnam9ydCBpIG9wcGdhdmVyIGdpdHQgdGlsIDUuIGZvcmVsZXNuaW5nLCBmaW5uICDiiIZOWOKIhlAKIG9nIGF2Z2rDuHIgZm9ydGVnbmV0Lgogb2cgYXZnasO4ciBmb3J0ZWduZXQuCgpfU3ZhcjpfCgrOlE5YPSjiiJJhMUVQUDLOlFArKELCtOKIknMxUitzMlkpRVBQMs6UUOKIknMxRVBQMs6UUCkmZ3Q7MAoK4oeUCgriiIZOWOKIhlA9KOKIkmExRVBQMisoQsK04oiSczFSK3MyWSlFUFAy4oiSczFFUFAyKSZsdDswCgotCu+Ct++Ct0Zpbm4gZGVyZXR0ZXIgIOKIhlniiIZQCiBvZyB0ZWduIEFELWt1cnZlbiBpbm4gaSB0byBkaWFncmFtbWVyLCBldCBmb3IgZmFzdCBvZyBldCBmb3IgZmx5dGVuZGUga3VycyAoc2xhcHAgYXYsIHZpbCBpa2tlIGJsaSBiZWR0IG9tIMOlIHV0bGVkZSBkZXR0ZSBmb3JtZWx0IHDDpSBla3NhbWVuKS4KIG9nIHRlZ24gQUQta3VydmVuIGlubiBpIHRvIGRpYWdyYW1tZXIsIGV0IGZvciBmYXN0IG9nIGV0IGZvciBmbHl0ZW5kZSBrdXJzIChzbGFwcCBhdiwgdmlsIGlra2UgYmxpIGJlZHQgb20gw6UgdXRsZWRlIGRldHRlIGZvcm1lbHQgcMOlIGVrc2FtZW4pLgoKX1N2YXI6XwoKX01vZGVsbGVuIGZvciB2YXJlbWFya2VkZXQgbMO4c3QgbWhwLiBZXwoKYzDiiJJjMVTiiJJjMmkrScK04oiSYjFpK0crKEHCtCthMVIrWSniiJJSKELCtOKIknMxUilZPTEoMeKIkmMxK1JzMikKCl9EaWZmZXJlbnNpZXJpbmcgYXZfIM6UWSBfbWhwLiAgX86UUCBfZ2lyXwoKYzDiiJJjMVTiiJJjMmkrScK04oiSYjFpK0crKEHCtCthMVIrWSniiJJSKELCtOKIknMxUiniiIZQKzEoMeKIkmMxK1JzMiko4oiSYTFFUFAyKyhCwrTiiJJzMVIrczJZKUVQUDLiiJJzMUVQUDIpzpRQ4oiGWT1zMigx4oiSYzErUnMyKTJFUFAyCgrih5QKCmMw4oiSYzFU4oiSYzJpK0nCtOKIkmIxaStHKyhBwrQrYTFSK1kp4oiSUihCwrTiiJJzMVIpKzEoMeKIkmMxK1JzMiko4oiSYTFFUFAyKyhCwrTiiJJzMVIrczJZKUVQUDLiiJJzMUVQUDIpJmx0OzDiiIZZ4oiGUD1zMigx4oiSYzErUnMyKTJFUFAyCgprbnl0dGV0dGlsbXVsdGlwbGltYXRvcmVuTW1hdGVtYXRpc2tpa2tlbXVsaWfDpWF2Z2rDuHJlLG1lbnZpYW50YXJhdGbDuHJzdGVlZmZla3RlbgoKZm9yaW1wb3J0bGVra2FzamVlcnZlc2VudGxpZ21pbmRyZShpYWJzb2x1dHR2ZXJkaSllbm5kZW5hbmRyZWVmZmVrdGVuLgoKLSBUZWduIHRpbCBzbHV0dCBBUy1rdXJ2ZW4gaW5uIGkgZGUgdG8gZGlhZ3JhbW1lbmUuCgpfU3ZhcjpfCgpfQVMta3VydmVuIGVyIHNvbSB1bmRlciBlbiBsdWtrZXQgw7hrb25vaTogw5hrdCBwcm9kdWtzam9uIGbDuHJlciB0aWwgw7hrdGUgcHJpc2VyIHNvbSBmw7hsZ2Ugw7hrdCBsw7hubmluZ2VyLiBTaXN0bmV2bnRlIGVyIGtueXR0ZXQgdGlsIGJlZHJlIGZvcmhhbmRsaW5nc3Bvc2lzam9uIGhvcyBhcmJlaWRlcm5lIHNvbSBmw7hsZ2UgYXYgbGF2ZXJlIGxlZGlnaGV0KS5fCgotCu+Ct++Ct0FudGEgYXQgdmkgZsOlciBlbiBzdGVyayDDuGtuaW5nIGkgQ8K0LgoKX1N2YXI6XwoKX0FELWt1cnZlbiBza2lmdGVyIHRpbCBow7h5cmUsIHNvbSBpIGVuIHBlcmlvZGUgZ2lyIGLDpWRlIGjDuHllcmUgcHJvZHVrc2pvbiBvZyBow7h5ZXJlIHByaXNlci4gw5hrbmluZ2VuIGkgcHJvZHVrc2pvbmVuIHN0b3BwZXIgb3BwIGkgZGV0IHByaXNmb3J2ZW50bmluZ2VuZSBlciBrb3JyZWt0ZV8gUD1QZV/vg6BfWT1Zbl9vZ18gdT11bi4KCi0gSHZhIHNramVyIG1lZCBoYW5kZWxzYmFsYW5zZW4/CgpfU3ZhcjpfCgpfSMO4eWVyZSBwcm9kdWtzam9uIHN2ZWtrZXIgaGFuZGVsc2JhbGFuc2VuOl8KCl8gICAgICAgICAgICAgICAgXyDOlE5Y4oiGWT3iiJJSczImZ3Q7MAoKX0jDuHllcmUgcHJpc2VyIHN2ZWtrZXIgaGFuZGVsc2JhbGFuc2VuOl8KCuKIhk5Y4oiGUD0o4oiSYTFFUFAyKyhCwrTiiJJzMVIrczJZKUVQUDLiiJJzMUVQUDIpJmx0OzAKCl8oYmVnZ2UgZGlzc2UgdXRyeWtrZW5lIGVyIGJsaXR0IHV0bGVkZXQgaSB0aWRsaWdlcmUgb3BwZ2F2ZXIpXwoKLSBIdmEgc2tqZXIgbWVkIHV0ZW5yaWtzcmVnbnNrYXBldD8KCl9TdmFyOl8KCkNVK0NBPTAodXRlbnJpa3NyZWduc2thcGV0KQoKzpRDVT3OlE5YJmx0OzAKIE5ldHRvZWtzcG9ydGVuIHJlZHVzZXJlcy4KCl9EZXQgbW90c3ZhcmVzIGF2IGVuIHRpbHN2YXJlbmRlIMO4a25pbmcgaSBuZXR0b2thcGl0YWxpbXBvcnRlbiAodGlsc3ZhcmVyIMO4a3QgbMOlbmVvcHB0YWsgaSB1dGxhbmRldClfCgrOlENVPc6UTlg94oiSzpRDQQoKX01lcmsgYXQgw7hrdCBuZXR0b2thcGl0YWxpbXBvcnQgZsO4cmVyIHRpbCDDuGt0IHV0ZW5sYW5kc2dqZWxkIG1lZCB0aWxow7hyZW5kZSByZW50ZWZvcnBsaWt0ZWxzZXIgaSBuZXN0ZSBwZXJpb2RlLiBIYXIgbGFuZGV0IHByb2JsZW1ldCBtZWQgw6UgYmV0amVuZSBkZW5uZSBnamVsZGVuLCBoYXIgdmkgb3BwbsOlZGQgZW4gc2l0dWFzam9uIG1lZCBla3N0ZXJuIHViYWxhbnNlLl8KCgoKLSBIdm9yZm9yIHZpbCBkZXQgdW5kZXIgZW4gc2xpayBlbmRyaW5nIHbDpnJlIGVua2xlcmUgw6UgZsO4cmUgZW4gc3RhYmlsaXNlcmluZ3Nwb2xpdGlrayBpIGV0IGZseXRlbmRlIHZzLiBldCBmYXN0IGt1cnMgcmVnaW1lPwoKX1N2YXI6XwoKX1VuZGVyIGZhc3Qga3VycyB2aWwgcmVudGEgbcOldHRlIGJydWtlcyB0aWwgw6UgZm9yc3ZhcmUgdmFsdXRha3Vyc2VuLiBSZW50ZW5pdsOlZXQgdmlsIGRlcmZvciB2w6ZyZSBiZXN0ZW10IGF2IHJlbnRlbml2w6VldCB1dGVubGFuZHMuIERlcnNvbSByZW50YSBzb20gYmxpciBzYXR0IGkgdXRsYW5kZXQgaWtrZSBzYW1zdmFyZXIgbWVkIGRlbiByZW50YSBzb20gdHJlbmdzIHDDpSBoamVtbWViYW5lLCB2aWwgcmVudGUgb3BwaMO4cmUgw6UgZnVuZ2VyZSBzb20gZXQgcG9saXRpc2sgc3RhYmlsaXNlcmluZ3N2ZXJrdMO4eS5fCgoqKk9wcGdhdmVyIGdpdHQgdGlsIDcuIGZvcmVsZXNuaW5nKioKCi0K74K374K3U29sb3ctbW9kZWxsZW4gYmVzdMOlciBhdiB0cmUga29tcG9uZW50ZXIgKCgxKSBwcm9kdWt0ZnVua3Nqb25lbiBww6UgaW50ZW5zaXYgZm9ybSwgKDIpIHNwYXJpbmcgcGVyIGlubmJ5Z2dlciBvZyAoMykgdXR0cnlrayBmb3Iga2FwaXRhbGFra3VtdWxhc2pvbikuIFV0bGVkIGRpc3NlIHNhbW1lbmhlbmdlbmUgZm9ybWVsdCB1bmRlciBhbnRhZ2Vsc2VuIG9tIGF0ICDiiIZBQT1hPTAKIG9nCuKIhk5OCj1uPTAgb2cgdmlzIGRlcmV0dGVyIGRlbiBncmFmaXNrZSBsw7hzbmluZ2VuIGF2IG1vZGVsbGVuLgogb2cg4oiGTk4KPW49MCBvZyB2aXMgZGVyZXR0ZXIgZGVuIGdyYWZpc2tlIGzDuHNuaW5nZW4gYXYgbW9kZWxsZW4uCj1uPTAgb2cgdmlzIGRlcmV0dGVyIGRlbiBncmFmaXNrZSBsw7hzbmluZ2VuIGF2IG1vZGVsbGVuLgoKX1N2YXI6XwoKX1NlIGZvcmVsZXNuaW5nc25vdGF0ZW5lLl8KCi0gSHZhIG1lbmVzIG1lZCBhdCBtb2RlbGxlbiBnw6VyIG1vdCBlbiBzdGVhZHkgc3RhdGU/CgpfU3ZhcjpfCgpfVWF2aGVuZ2lnIGF2IHN0YXJ0bml2w6VldCBww6Uga2FwaXRhbGVuIChfazBfKSB2aWwgw7hrb25vbWllbiBvdmVyIHRpZCBrb252ZXJnZXJlIG1vdCBldCBrb25zdGFudCBuaXbDpSBww6UgeTogIF95c3M9WXNzL05zcyBfLl8KCi0K74K374K3QW50YSBuw6UgIOKIhk5OCj1uJmd0OzAuIEZpbm4gZXQgdXRyeWtrIGZvcgriiIZrCi4KPW4mZ3Q7MC4gRmlubiBldCB1dHJ5a2sgZm9yIOKIhmsKLgouCgpfU3ZhcjpfCgpfVmkga2FuIHN0YXJ0ZSBmw7hyc3QgbWVkIMOlIGRpZmZlcmVuc2llcmVfIGs9Sy9OIF9zb20gZ2lyXwoKzpRrPc6US07iiJJLTjLOlE49zpRLTuKIkmtuCgpWaSB0cmVuZ2VyIG7DpSBldCB1dHJ5a2sgZm9yIM6USy9OCi4gVmkgaGFyIGF0CgpZTj1mKGspCgosCgpLdCsxPSgx4oiSzrQpS3QrSXQKCm9nCgpTPUnih5RJTj1zWU49c2YoaykKCkRldCBnaXIKCs6USz3iiJLOtEsrSQoKzpRLL0494oiSzrRLL04rSS9OCgrOlEsvTj3iiJLOtGsrc3kKClZlZCDDpSBzZXR0ZSBkZXQgc2lzdGUgdXR0cnlra2V0IGlubiBpIGRldCBmw7hyc3RlIHV0cnlra2V0IHZpIHV0bGVkZXQgZsOlciB2aToKCs6Uaz3iiJLOtGsrc3niiJJrbj1zeeKIkijOtCtuKWsKCi0gSHZhIGVyIHByb2R1a3Nqb25zdmVrc3RlbiBpIGRlbm5lIMO4a29ub21pZW4gaSBzdGVhZHkgc3RhdGU/CgpfU3ZhcjpfCgpZbG5hKHNzKeKIkmxuYShOc3MpbG5hKHlzcyk9CgpZbG5hKHNzKT1sbmEoTnNzKQoKXyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBUaWRzZGVyaXZhc2pvbiBnaXJfCgpZc3PCtFlzcz1Oc3PCtE5zcz1uCgpfUHJvZHVrc2pvbnN2ZWtzdGVuIHZva3NlciBtZWQgZW4gcmF0ZSBuIHNvbSBlciBsaWsgYmVmb2xrbmluZ3N2ZWtzdGVuLl8KCi0gU29sb3ctbW9kZWxsZW4gZXIgdXRlbiBub2VuIGZvcmtsYXJpbmcgcMOlIGh2YSBzb20gc2thcGVyIHRla25vbG9naXNrIGZyYW1nYW5nIChwYXJhbWV0ZXJlbiBhIGVyIGJlc3RlbXQgdXRlbmZvciBtb2RlbGxlbikuIEh2YSBtZW5lciBkdSBrYW4gZ2rDuHJlcyBmb3Igw6Ugw7hrZSB2ZWtzdGVuIGkgZGVubmUgcGFyYW1ldGVyZW4/CgpfU3ZhcjpfCgpfVXRkYW5uaW5nLCBiZWRyZSBpbnN0aXR1c2pvbmVyLCBoZWxzZXZlc2VuLCBiZWRyZSBsb3ZlciBvZyByZWdsZXIgZXRjLl8KCioqT3BwZ2F2ZXIgZ2l0dCB0aWwgOC4gZm9yZWxlc25pbmcqKgoKLSBGaW5uIHZlZCBicnVrIGF2IEZSRUQgTTAgKE0xKSBvZyBNMiBmb3IgVVNBIGkgw6VyZW5lIGbDuHIgb2cgZXR0ZXIgZmluYW5za3Jpc2VuIG9nIHZpcyBkaXNzZSB0YWxsZW5lIGdyYWZpc2sKCl9TdmFyOl8KCl9CZW55dHQgRnJlZC1FeGNlbCBwbHVnZyBpbm4gcMOlIGRpdHQgcmVnbmVhcmsuXwoKLSBGcmEgdGFsbGVrc2VtcGVsZXQgdW5kZXIgc3lzdGVtIDIsIGZpbm4gZm9yIGJhbmtzZWt0b3JlbiBzb20gaGVsaGV0OgoKUmVzZXJ2ZWFuZGVsZW4KCkthcGl0YWxhbmRlbGVuCgpNMAoKTTEKCl9TdmFyOl8KCl9SZXNlcnZlYW5kZWxlbiBlciBnaXR0IHZlZCByZXNlcnZlci9pbm5za3VkZD0xNTAvMzAwPTAsNSAoNTAgcHJvc2VudClfCgpfS2FwaXRhbGFuZGVsZW4gZXIgZ2l0dCB2ZWQgZWdlbmthcGl0YWwvc3VtIGJhbGFuc2UgPSAgICAgICAgIDI1LzM1MD0wLDA4MzMgKDgsMyBwcm9zZW50KV8KCl9NMCA9MjAwXwoKX00xPTE1MCsyMDA9MzUwXwoKLSBLdmFudGl0YXRpdmUgbGV0dGVsc2VyOgoKVGEgdXRnYW5nc3B1bmt0IGkgdGFsbGVrc2VtcGxldCB1bmRlciBzeXN0ZW0gMywgYW50YSB2aWRlcmUgYXQgc2VudHJhbGJhbmtlbiB2ZWQgw6UgYnJ1a2UgYXYgc2VkZGVscHJlc3NlbiDDuG5za2VyIMOlIGtqw7hwZSBzdGF0c29ibGlnYXNqb25lciB0aWwgNTAwIG9nIGV0IGJpbGZpcm1hIHRpbCA2MDAuIEh2b3JkYW4gdmlsIGJhbGFuc2VuZSBzZSB1dCBldHRlciBlbiBzbGlrIGVuZHJpbmc/CgpfU3ZhcjpfCgpfWD01MDAgb2cgVD02MDAuXwoKLSBEZXJzb20gZm9ycmV0bmluZ3NiYW5rIDEgb3BwbsOlciBldCBicmF0dCBmYWxsIGkgc2luZSByZXNlcnZlciwgaHZpbGtlIHRvIG11bGlnaGV0ZXIgZ2lyIHN5c3RlbSAzIGZvciBhdCBiYW5rZW4gc2thbCBrdW5uZSDDuGtlIHNpbiBsaWt2aWRpdGV0CgpfU3ZhcjpfCgoxLiAoMSlfSW50ZXJiYW5rbMOlbiBmcmEgZm9ycmV0bmluZ3NiYW5rIDEgb2cgKDIpIHJlZmluYW5zaWVyaW5nc2zDpW4gZnJhIHNlbnRyYWxiYW5rZW4uXwoKLSBSZWZpbmFuc2llcmluZ3Nsw6VuOgoKVGEgdXRnYW5nc3B1bmt0IGkgdGFsbGVrc2VtcGxldCB1bmRlciBzeXN0ZW0gMywgYW50YSB2aWRlcmUgYXQgaW50ZXJiYW5rbWFya2VkZXQgZXIgJnF1b3Q7ZnJvc3NldCZxdW90OyBncnVubmV0IG1hbmdsZW5lIHRpbGxpdCBtZWxsb20gZm9ycmV0bmluZ3NiYW5rZW5lLiAgSHZvcmRhbiB2aWwgYmFsYW5zZW4gc2UgdXQgZGVyc29tIHNlbnRyYWxiYW5rZW4gbMOlbmVyIGZvcnJldG5pbmdzYmFua2VuIGV0IGJlbMO4cCBww6UgNzUKCl9TdmFyOl8KCl9ZMT1ZMj03NV8KCi0gSHZhIHRyb3IgZHUgdmlsIHNramUgbWVkIHV0bMOlbmVuZSB0aWwgYmFua3Nla3RvcmVuIGRlcnNvbSBrYXBpdGFsa3JhdmVuZSBmb3IgYmFua3Nla3RvcmVuIMO4a2VyPwoKX1N2YXI6XwoKX8OYa2Uga2FwaXRhbGtyYXYga2FuIG9wcG7DpXMgdmVkIGVuIHJlZHVrc2pvbiBpIGlubnNrdWRkLiBOw6VyIGlubnNrdWRkZW5lIHJlZHVzZXJlcyBtw6Ugb2dzw6UgZWllbmRlbHNzaWRlbiByZWR1c2VyZXMgdGlsc3ZhcmVuZGUuIEhvbGRlcyByZXNlcnZlbmUga29uc3RhbnRlLCB2aWwgZGV0dGUgYmV0eSBhdCB1dGzDpW5lbmUgZ8OlciBuZWQgKG1hby4gaW5udmVuZGlnIHBlbmdlciBibGlyIHJlZHVzZXJ0KS5fCgoqKk9wcGdhdmVyIGdpdHQgdGlsIDkuIGZvcmVsZXNuaW5nKioKCi0gQmVueXR0IHJlZ25la3NlbXBsZXQgc29tIGJsZSBnaXR0IG5hdm5ldCB0aGUgQkxPT1MgcnVsZSwgb2cgZmlubiBkZW4gZm9ydmVudGVkZSBhdmthc3RuaW5nZW4gcMOlIGVnZW5rYXBpdGFsIG9nIHN0YXRsaWdlIG92ZXJmw7hyaW5nZXIgdW5kZXIgZXQgZWdlbmthcGl0YWxrcmF2IHDDpSAyMCBvZyA5OSBwcm9zZW50LgoKX1N2YXI6XwoKXzAsMjAgZ2lyIGZvcnZlbnRldCBhdmthc3RuaW5nIHDDpSBlZ2Vua2FwaXRhbCBww6UgMCwwOTIgb2cgc3RhdGxpZ2Ugb3ZlcmbDuHJpbmdlciBww6UgMCw4NC5fCgpfMCw5OSBnaXIgZm9ydmVudGV0IGF2a2FzdG5pbmcgcMOlIGVnZW5rYXBpdGFsIHDDpSAwLDA1IG9nIHN0YXRsaWdlIG92ZXJmw7hyaW5nZXIgcMOlIDAsMDEuXwoKLSBUZWduIHRvIGdyYWZlci4gQmVnZ2UgZ3JhZmVuZSBoYXIgZ3JhZGVuIGF2IGVnZW5rYXBpdGFsIHDDpSBkZW4gaG9yaXNvbnRhbGUgYWtzZW4sIG1lbnMgZGVuIGbDuHJzdGUgaGFyIGZvcnZlbnRldCBhdmthc3RuaW5nIHDDpSBlZ2Vua2FwaXRhbCBww6UgZGVuIHZlcnRpa2FsZSBha3NlbiBtZW5zIGRlbiBhbmRyZSBoYXIgZm9ydmVudGV0IHN0YXRsaWdlIG92ZXJmw7hyaW5nZXIuICBQbG90IGlubiB2ZXJkaWVuZSBkdSBmw6VyIGZvciBlZ2Vua2FwaXRhbGtyYXYgcMOlIDUsIDEwLCAyMCBvZyA5OSBwcm9zZW50IGZvciBkZSB0byBiYW5rZW5lLgoKX1N2YXI6XwoKX1Zpc3QgdW5kZXIgZm9yZWxlc25pbmdlbi5fCgotIEkgRnJvbnRlciBmaW5uIGZyYW0gcmVnbmVhcmtldCBmb3IgdGhlIEJsb29zIHJ1bGUuICBGb3IgZm9ycmV0bmluZ3Ntb2RlbGwgMSwgbGVnZyBpbm4gZm9yIHRpbHN0YW5kIDEgYXQgYXZrYXN0bmluZ2VuIHNrYWwgdsOmcmUgMCwwNTYgbW90IHRpZGxpZ2VyZSAwLDA2MDYuCgpfU3ZhcjpfCgpfRW5kcmluZ2VuZSBtw6UgZ2rDuHJlcyBpIGNlbGxlIEM1NyBpIGZpbGVuIEJsb29zUnVsZUV4Y2VsLnhsc2tfCgotIFVuZGVyIHNpdHVhc2pvbmVuIG1lZCBlbiAxMDAgcHJvc2VudCBiYWlsb3V0IGdhcmFudGksIGZvciBodmlsa2VuIGVnZW5rYXBpdGFsbml2w6UgIHZpbCBiYW5rIDIgdsOmcmUgaW5kaWZmZXJlbnQgbWVsbG9tIMOlIGludmVzdGVyZSBpIGRlIHRvIGZvcnJldG5pbmdzbW9kZWxsZW5lPwoKX1N2YXI6XwoKX0NhLiAwLDU1LiBTdmFyZXQgZmlubmVyIG1hbiBwcsO4dmUgc2VnIGZyYW0gbWVkIGxpdHQgZm9yc2tqZWxsaWcgdmVyZGllciBpIHJlZ25lYXJrZXQgQmxvb3NSdWxlRXhjZWwueGxza18KCioqT3BwZ2F2ZXIgZ2l0dCB0aWwgMTAuIGZvcmVsZXNuaW5nKioKCi0gVGEgdXRnYW5nc3B1bmt0IGkgZGUgdHJlIGxpa25pbmdlbmUgZm9yIG9mZmVudGxpZyBzZWt0b3IKCiAgICAgICBGaW5hbnNkZXBhcnRlbWVudGV0CgpCdGY9KDEraXTiiJIxKUJ04oiSMWYrKEd04oiSVHQp4oiSU05HdAoKU2VudHJhbGJhbmtlbgoKU05HdCviiIZCdG094oiGTXQraXTiiJIxQnTiiJIxbQoKU3RhdHNnamVsZAoKQnQ9QnRm4oiSQnRtCgpGb3Jzw7hrIMOlIGdpIGVuIHRvbGtuaW5nIGF2IGh2ZXIgZW5rZWx0IGxpa25pbmcKCl9TdmFyOl8KCl9GaW5hbnNkZXBhcnRlbWVudGV0XwoKX0dqZWxkIGkgZGFnIGVyIGxpayBmb3JyaWdlIHBlcmlvZGVzIGdqZWxkIHBsdXNzIHJlbnRla29zdG5hZGVyLCBwbHVzcyB1bmRlcnNrdWRkZXQgcMOlIGRlbiBwcmltw6ZyZSBidWRzamV0dGJhbGFuc2VuIGZyYXRydWtrZXQgdXRieXR0ZSAoc2VpZ25pb3JhZ2UpIGZyYSBzZW50cmFsYmFua2VuXwoKX1NlbnRyYWxiYW5rZW46XwoKX0tqw7hwZXIgc3RhdHNnamVsZCB2ZWQgw6Ugw7hrZSBiYXNpc3BlbmdlbWVuZ2RlbiBvZyBnaXIgdXRiZXRhbGluZ2VyIGZvciBvYmxpZ2Fzam9uZW5lIHNvbSB1dGJ5dHRlIChzZWlnbmlvcmFnZSkgdGlsIGZpbmFuc2RlcGFydG1lbnRldCAgXwoKX1N0YXRzZ2plbGQ6XwoKX09mZmVudGxpZyBnamVsZCBlaWVzIGF2IGLDpWRlIHByaXZhdGUgYWt0w7hyZXIgb2cgc2VudHJhbGJhbmtlbi5fCgotIFZpcyB2ZWQgaW5uc2V0dGluZyBhdCBkZXQgZXIgbXVsaWcgw6Ugc2tyaXZlIGRlIHRyZSBsaWtuaW5nZW5lIChrb25zb2xpZGVydCBidWRzamV0dGJldGluZ2Vsc2UgZm9yIG9mZmVudGxpZyBzZWt0b3IpIHNvbQoKQnQ9KDEraXTiiJIxKUJ0KyhHdOKIklR0KeKIks6UTXQKCl9TdmFyOl8KCl9Lb21iaW5lcmUgZGUgdG8gZsO4cnN0ZSBsaWtuaW5nZW5lIGdpcl8KCkJ0Zj0oMStpdOKIkjEpQnTiiJIxZisoR3TiiJJUdCniiJIo4oiGTXQraXTiiJIxQnTiiJIxbeKIkuKIhkJ0bSkKCs6UQnRm4oiSzpRCdG09KGl04oiSMSlCdOKIkjFm4oiSQnTiiJIxbSsoR3TiiJJUdCniiJLiiIZNdAoKzpQoQnRm4oiSQnRtKT0oaXTiiJIxKShCdOKIkjFm4oiSQnTiiJIxbSkrKEd04oiSVHQp4oiS4oiGTXQKCl9Jbm5zZXR0ZXIgZGVyZXR0ZXIgZm9yIGxpa25pbmdlbiBmb3Igc3RhdHNnamVsZF8KCs6UQnQ9aXTiiJIx4oiZQnTiiJIxKyhHdOKIklR0KeKIkuKIhk10CgpCdOKIkkJ04oiSMT1pdOKIkjHiiJlCdOKIkjErKEd04oiSVHQp4oiS4oiGTXQKCkJ0PSgxK2l04oiSMSlCdOKIkjErKEd04oiSVHQp4oiS4oiGTXQKCkJ0PSgxK2l04oiSMSlCdCsoR3TiiJJUdCniiJLOlE10CgotCu+Ct++Ct1ZpIGFudGFyIG51bGwgaW5mbGFzam9uLCBzbGlrIGF0ICBpdD1ydAogb2cKzpRNdD0wCiAuIE9tZ2rDuHIgbGlrbmluZ2VuIG92ZW5mb3IgcMOlIGVuIHNsaWsgZm9ybSBhdAogb2cgzpRNdD0wCiAuIE9tZ2rDuHIgbGlrbmluZ2VuIG92ZW5mb3IgcMOlIGVuIHNsaWsgZm9ybSBhdAogLiBPbWdqw7hyIGxpa25pbmdlbiBvdmVuZm9yIHDDpSBlbiBzbGlrIGZvcm0gYXQKCkJ0WXQ9KEd04oiSVHQpWXQrQnTiiJIxWXTiiJIxKDErcuKIkmcpCgpfU3ZhcjpfCgpCdFl0PSgxK3IpQnTiiJIxWXQrKEd04oiSVHQpWXQKCkJ0WXQ9KDErcilCdFl04oiSMVl04oiZWXTiiJIxKyhHdOKIklR0KVl0CgpfVmkgbGFyIHZla3N0ZW4gaSBCTlAgdsOmciBnaXR0IHZlZCBlbiBrb25zdGFudCByYXRlXyBnXzpfWXTiiJJZdOKIkjFZdOKIkjE9Z+KHlFl0WXTiiJIxPWcrMQoKX0lubnNldHRpbmcgYXYgZGV0dCBnaXJfCgpCdFl0PSgxK3IpQnQxKDErZylZdDErKEd04oiSVHQpWXQKCl9WaSBrYW4gdmlkZXJlIGJydWtlIGF0XwoKMStyMStn4omIMSty4oiSZwoKQnRZdD0oR3TiiJJUdClZdCsoMSty4oiSZylCdOKIkjFZdOKIkjEKCi0K74K374K3VmlzIGkgZW4gZmlndXIgZGVuIGR5bmFtaXNrZSB1dHZpa2xpbmdlbiBvdmVyIHRpZCBmb3IgQnRZdAogaSBlbiBzaXR1YXNqb24gaHZvciAoMStyLWcpJmx0OzEgb2cgIChpKQooR3TiiJJUdCkKJmd0OzAgIG9nIChpaSkKKEd04oiSVHQpCiZsdDswLiBHw6VyIGRlbiBvZmZlbnRsaWdlIGdqZWxkc2FuZGVsZW4gbW90IGVuIHN0ZWFkeSBzdGF0ZSBpIGRlIHRvIHRpbGZlbGxlbmU/CiBpIGVuIHNpdHVhc2pvbiBodm9yICgxK3ItZykmbHQ7MSBvZyAgKGkpIChHdOKIklR0KQomZ3Q7MCAgb2cgKGlpKQooR3TiiJJUdCkKJmx0OzAuIEfDpXIgZGVuIG9mZmVudGxpZ2UgZ2plbGRzYW5kZWxlbiBtb3QgZW4gc3RlYWR5IHN0YXRlIGkgZGUgdG8gdGlsZmVsbGVuZT8KJmd0OzAgIG9nIChpaSkgKEd04oiSVHQpCiZsdDswLiBHw6VyIGRlbiBvZmZlbnRsaWdlIGdqZWxkc2FuZGVsZW4gbW90IGVuIHN0ZWFkeSBzdGF0ZSBpIGRlIHRvIHRpbGZlbGxlbmU/CiZsdDswLiBHw6VyIGRlbiBvZmZlbnRsaWdlIGdqZWxkc2FuZGVsZW4gbW90IGVuIHN0ZWFkeSBzdGF0ZSBpIGRlIHRvIHRpbGZlbGxlbmU/CgpfU3ZhcjogSmEsIGJlZ2dlIG1vZGVsbGVuIGfDpXIgbW90IGVuIHN0ZWFkeSBzdGF0ZS4gU2UgQmxhbmNoYXJkIGJva2EgZm9yIGdyYWZpc2sgbMO4c25pbmcuXwoKKipPcHBnYXZlciBnaXR0IHRpbCAxMS4gZm9yZWxlc25pbmcqKgoKLSBIdmEgbWVuZXMgaW5uZW5mb3Igw7hrb25vbWkgbWVkIGVuIGxpa3ZpZGl0ZXRzZmVsbGU/CgpfU3ZhcjogRW4gc2l0dWFzam9uIGh2b3IgcGVuZ2Vwb2x0aWtrZW4gaWtrZSBsZW5ncmUga2FuIGhhIGVuIGVrc3BhbnNpdiBlZmZla3QgcMOlIMO4a29ub21pZW4uIERldHRlIGZvcmRpIGRlbiBub21pbmVsbGUgcmVudGUgZXIgKG7DpnIpIGxpayBudWxsLl8KCi0gSWbDuGxnZSBmb3Jza25pbmcgdXRmw7hydCBhdiBLcnVnbWFuIGVyIGRldCBzcGVzaWVsdCB0byBmb3Job2xkIHNvbSBrYW4gbGVkZSBldCBsYW5kIGlubiBpIGVuIGxpa3ZpZGl0ZXRzZmVsbGUuIE5ldm4gZGlzc2UuCgpfU3ZhcjpfCgpfRGVtb2dyYWZpc2tlIGVuZHJpbmdlciBzb20gZsO4cmVyIHRpbCBwZXNzaW1pc3Rpc2tlIGZyYW10aWRzdXRzaWt0ZXIgb2cgZGVybWVkIHJlZHVzZXJ0IGtvbnN1bSAoICBfzpRDwrQmbHQ7MF8pXwoKX0dqZWxkc25lZGJ5Z2dpbmcgaSBwcml2YXQgc2VrdG9yIChNaW5za3kgYmV2ZWdsc2UpIChfRGxhduKIkkRow7h5zpREYj1fKSZsdDswKV8KCi0gSHZhIG1lbmVzIG1lZCBlbiBNaW5za3kgYmV2ZWdlbHNlIChkZWxldmVyYWdpbmcgc2hvY2spPwoKX1N2YXI6XwoKX0tyYXYgb20gcmFzayBuZWRiZXRhbGluZyBhdiBnamVsZCBzb20gZW4ga29uc2VrdmVucyBhdiDDuGt0IHVzaWtrZXJoZXQgdGlsa255dHRldCBodXNob2xkbmluZ2VuZSBldm5lIHRpbCDDpSBiZXRqZW5lIGdqZWxkLl8KCi0gVGEgdXRnYW5nc3B1bmt0IGkgSVMtKExNKSBtb2RlbGxlbiBiZW55dHRldCBpIGZvcmVsZXNuaW5nZW4gZm9yIGRldHRlIHRlbWFldC4gSHZpbGtlbiBiZXRpbmdlbHNlIG3DpSB2w6ZyZSBvcHBmeWx0IGZvciBhdCBlbiDDuGtvbm9taSBza2FsIGhhdm5lIGkgZW4gbGlrdmlkaXRldHNmZWxsZSBzb20gZsO4bGdlIGF2IGVuIE1pbnNreSBiZXZlZ2Vsc2UgKGRlbGV2ZXJhZ2luZykKCl9TdmFyOl8KCl9WaSBoYXIgaGF2bmV0IGkgZW4gbGlrdmlkaXRldHNmZWxsZV9fZGVyc29tIHJlbnRlcmVkdWtzam9uIGlra2UgZXIgdGlsc3RyZWtrZWxpZyB0aWwgw6UgbW90dmlya2UgZmFsbGV0IGkga29uc3VtZXR0ZXJzcMO4cnNlbGVuXwoKKM644oiZzpREYuKIkmLCtOKImc6UaTApJmx0OzAKCi0gSHZvcmZvciBrYW4gZGV0IG9wcHN0w6UgZW4gbsOmciBzYW1tZW5oZW5nIG1lbGxvbSBlbiBwcml2YXQgb2cgc3RhdGxpZyBnamVsZHNrcmlzZT8KCl9TdmFyOl8KCl9FbiBwcml2YXQgZ2plbGRza3Jpc2Ugc29tIGdqw7hyIGF0IHZpIGhhdm5lciBpIGVuIGxpa3ZpZGl0ZXRzZmVsbGUgdmkgYmV0eSBsYXZlcmUgcHJvZHVrc2pvbiBvZyAgbWluZHJlIHNrYXR0ZWlubnRla3Rlci4gQmVnZ2UgZXIgZmFrdG9yZXIgc29tIHZpbCBzdmVra2UgZGVuIHByaW3DpnJlIGJ1ZHNqZXR0YmFsYW5zZW4gb2cgZGVybWVkIMO4a2Ugc3RhdHNnamVsZGVuIHNvbSBhbmRlbCBhdiBCTlAuIERldHRlIGthbiBpbml0aWVyZSBlbiBzdGF0bGlnIGdqZWxkc2tyaXNlLl8KCioqUmVnbmVyZWdsZXIgZm9yIGRpZmZlcmVuc2llcmluZyB0aWwgYnJ1ayBpIGRldHRlIGt1cnNldCoqCgriiIbiiIZ4KM6xKT0wCgriiIbiiIZ4KM6xWCk9zrHiiIZ4CgriiIbiiIZ4KGYoeClnKHgpKT1mJiMzOTsoeClnKHgpzpR4K2YoeClnJiMzOTsoeCnOlHgKCuKIhuKIhngoZih4KWcoeCkpPWYmIzM5Oyh4KWcoeCnOlHjiiJJmKHgpZyh4KTJnJiMzOTsoeCniiIZ4Cg==</div>
 
 
 

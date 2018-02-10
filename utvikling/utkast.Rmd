@@ -1,3 +1,10 @@
+---
+output: html_notebook
+---
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
 # ECN222: Anbefalte oppgaver med løsningsforslag
 
 **Oppgaver gitt til 1. forelesning (4. september)**

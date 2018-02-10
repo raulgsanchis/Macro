@@ -4,20 +4,33 @@ output:
     css: seminar2.css
 ---
 
-# Seminar 3 (uke): 
-## IS-LM modellen
-1. AD-kurven
-1. Skiftanalyse
+# Seminar 3 (uke):
+Ta utgangspunkt i samme modell som ble gitt i seminar 2.
 
 ## AD-AS modellen
-1. AS-kurven 
+Vi tar først utgangspunkt i samme modell som ble gitt i seminar
+1. Forklar hvorfor AD-kurven er fallene
 1. AD-AS kurven
 1. Skiftanalyse offentlige utgifter
+1. Diskuter fordeler og ulemper ved pengepolitikk vs. finanspolitikk som stabiliseringspolitiske verktøy
+Fordelingseffekter
 
 ## Keynes modell for en åpen økonomi
-1. Nettoeksport
-1. Keynes modell
+I tillegg antar vi atøkonomien er åpen for handel og kapitalbevegelser med utlandet. Det betyr at aggregert etterspørsel
 
+$$AE\equiv C+I+G+NX$$
+og nettoeksporten er
 
+$$NX = EX - IM$$
+I tillegg postulerer vi følgende adferdsligninger for import og eksport:
 
+$$IM= R + Y $$
 
+$$EX =R + Y $$
+
+Bestem og gi en økonomisk forklaring på
+$\pm 123$
+
+2. Løs modellen hensyn på godemarkedet
+
+3. Sammenlign multiplikatoren med den som ble gitt i oppgave 2. Hvorfor er den mindre?

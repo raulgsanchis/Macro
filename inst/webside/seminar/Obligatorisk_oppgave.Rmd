@@ -22,6 +22,7 @@ Svar: Utvendige penger er den delen av pengemengden som sentralbanken skaper, be
 ## Del 2 Lukket økonomi
 ### IS-LM modellen
 ### AD-AS modellen (lukket)
+1. Skift i LAS-kurven
 
 ## Del 3: Åpen økonomi
 ### Mundell-Fleming modellen

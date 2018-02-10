@@ -70,6 +70,8 @@ cgenmakrofigure <- function(dfnumeric=NULL,
 #' @export dfgeneric
 dfgeneric <- function(modell='adasl',labels = NULL, exoparval=NULL, eqsel = c(1,2)){
 
+  #browser()
+
 
   Iv <- as.vector(unlist(rev(exoparval)[1]))
 
@@ -144,7 +146,54 @@ dfgeneric <- function(modell='adasl',labels = NULL, exoparval=NULL, eqsel = c(1,
 
     yeae <- rootSolve::multiroot(f = optadas, start = c(yss, pss))$root
 
-  } else {
+  }
+    else if (modell =='islmo'){
+
+      modellequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/islmocequ.json'))
+      isv <- eval(parse(text=modellequ$ISC), exoparval)
+      lmv <- eval(parse(text=modellequ$BPCFA), exoparval)
+
+      # Melted
+      dfmodellres <- data.frame(Iv, isv, lmv) %>%
+        reshape2::melt(id.vars = c("Iv"))
+
+      # Samtidig likevekt
+      yss <- median(exoparval$Y)
+      pss <- exoparval$P
+      exoparvalvd <- exoparval[1:length(exoparval)-1]
+      y <- c(yss, pss)
+      optadas <- function(y){
+        c(Y1 = y[2] - eval(parse(text=modellequ$AD), c(exoparvalvd, list(Y=y[1]))),
+          Y2 = y[2] - eval(parse(text=modellequ$AS), c(exoparvalvd, list(Y=y[1]))))}
+
+      yeae <- c(1,2,3)#rootSolve::multiroot(f = optadas, start = c(yss, pss))$root
+
+
+  }
+    else if (modell =='adaso'){
+
+      modellequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/adascequ.json'))
+      # Selekterte modellligninger
+      ## Enkeltligninger
+      adv <- eval(parse(text=modellequ$AD), exoparval)
+      asv <- eval(parse(text=modellequ$AS), exoparval)
+
+      # Melted
+      dfmodellres <- data.frame(Iv, adv, asv) %>%
+        reshape2::melt(id.vars = c("Iv"))
+
+      # Samtidig likevekt
+      yss <- median(exoparval$Y)
+      pss <- exoparval$P
+      exoparvalvd <- exoparval[1:length(exoparval)-1]
+      #y <- c(yss, pss)
+      optadas <- function(y){
+        c(Y1 = y[2] - eval(parse(text=modellequ$AD), c(exoparvalvd, list(Y=y[1]))),
+          Y2 = y[2] - eval(parse(text=modellequ$AS), c(exoparvalvd, list(Y=y[1]))))}
+
+      yeae <- rootSolve::multiroot(f = optadas, start = c(yss, pss))$root
+  }
+    else {
     print('Modell ikke funnet!')
   }
 

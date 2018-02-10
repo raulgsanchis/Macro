@@ -1,17 +1,17 @@
 ---
 title: "Innholdsfortegnelse"
 output:
-  html_document:
+  html_notebook:
     toc: true
     toc_depth: 4
-bibliography: pensum.bib
+#bibliography: pensum.bib
 ---
 
 ```{r child = 'innledning.Rmd'}
 ```
 
 # Del 1: lukket økonomi
-```{r child = 'del1_konjunkturer.Rmd'}
+```{r child = 'del1_konjunkturer_lukket.Rmd'}
 ```
 
 # Del 1: åpen økonomi

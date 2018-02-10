@@ -11,6 +11,7 @@ library(mFilter)
 library(MASS)
 library(latex2exp)
 library(xts)
+library(plotly)
 
 api.key = 'd62b9d8d4ce53e56ea04049dc463ac51'  # substitute ... with your API key
 fred <- FredR(api.key)
@@ -97,6 +98,9 @@ names(lmoltmacronor)
 okuns <-qplot(data = lmoltmacronor, x = cunem, y = ggdp) + geom_smooth(method = "lm", se = FALSE) +
   labs(title= 'Okuns lov - Norge', x='Endring i ledighet', y = 'Vekst i BNP (real)')
 
+#testplotly <- ggplotly(okuns)
+
+ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/sem1/okunsnorpng'))
 ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/sem1/okunsnor.png.png'))
 
 phillips <- qplot(x = unem, y = cinflation, data = lmoltmacronor, geom = c('point')) +
