@@ -61,6 +61,7 @@ lmchangemoney <- cgenmakrofigure(dfnumeric=dfislm,
                                  elabt = elabelslm,
                                  scalejust = list(x=0, y=60)) + coord_flip()
 
+lmchangemoney
 # IS-LM Modellen
 ### Likevekt ###
 dfislm <- dfgeneric(modell='islml', exoparval = islmexoparvalv, eqsel = c(1,2))
@@ -85,27 +86,27 @@ islmlikevekt <- genmakrofigure(dfnumeric=dfislm,
                                labt = labelsislm,
                                scalejust = list(x=0, y=75))  + coord_flip()
 
-
+islmlikevekt
 ### Komparativ statikk ###
 dfkurverislm <- data.frame(kurve=c("LM'"),
-                       fargel = c('red'),
-                       fargek = c('red'),
-                       y = c(edfislm$varnavnmaksverdi$value[c(4)]),
-                       x = c(edfislm$varnavnmaksverdi$Iv[c(4)]))
+                           fargel = c('red'),
+                           fargek = c('red'),
+                           y = c(edfislm$varnavnmaksverdi$value[c(4)]),
+                           x = c(edfislm$varnavnmaksverdi$Iv[c(4)]))
 
 elabelsislm <- list(title = 'IS-LM modellen',
-                   y = 'produksjon, inntekt (Y)',
-                   x = 'rentenivå (i)',
-                   x0 = c(TeX('$i_{1}}$')),
-                   y0 = c(TeX('$Y_{1}$')),
-                   kurver = dfkurverislm)
+                    y = 'produksjon, inntekt (Y)',
+                    x = 'rentenivå (i)',
+                    x0 = c(TeX('$i_{1}}$')),
+                    y0 = c(TeX('$Y_{1}$')),
+                    kurver = dfkurverislm)
 
 
 islmchangemoney <- cgenmakrofigure(dfnumeric=dfislm,
-                                 edfnumeric=edfislm,
-                                 variables = c(dfislm$varnavn)[c(3,4)],
-                                 labt = labelsislm,
-                                 elabt = elabelsislm,
-                                 scalejust = list(x=0, y=75)) + coord_flip()
+                                   edfnumeric=edfislm,
+                                   variables = c(dfislm$varnavn)[c(3,4)],
+                                   labt = labelsislm,
+                                   elabt = elabelsislm,
+                                   scalejust = list(x=0, y=75)) + coord_flip()
 
 islmchangemoney

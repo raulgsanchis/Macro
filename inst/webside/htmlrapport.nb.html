@@ -433,25 +433,27 @@ $(document).ready(function () {
 <li><a href="#del-1-apen-konomi">Del 1: åpen økonomi</a><ul>
 <li><a href="#grunnleggende-bakgrunnkunnskaper-1">Grunnleggende bakgrunnkunnskaper</a><ul>
 <li><a href="#stabiliseringsmal-for-en-apen-konomi">Stabiliseringsmål for en åpen økonomi</a></li>
-<li><a href="#tre-fundamentale-endringer-fra-en-lukket-konomi">Tre fundamentale endringer fra en lukket økonomi:</a><ul>
+<li><a href="#tre-fundamentale-endringer-fra-en-lukket-konomi">Tre fundamentale endringer fra en lukket økonomi</a><ul>
 <li><a href="#handel-med-utlandet">(1) Handel med utlandet</a></li>
 <li><a href="#utenriksregnskapet">(2) Utenriksregnskapet</a></li>
 <li><a href="#fast-eller-flytende-kurs">(3) Fast eller flytende kurs</a></li>
 </ul></li>
+</ul></li>
+<li><a href="#mundell-fleming-modellen">Mundell-Fleming modellen</a><ul>
 <li><a href="#adferdsligninger-1">Adferdsligninger</a><ul>
 <li><a href="#husholdninger-og-bedrifter">Husholdninger og bedrifter</a></li>
 <li><a href="#offentlige-myndigheter-2">Offentlige myndigheter</a></li>
 </ul></li>
-<li><a href="#mundell-fleming-modellen">Mundell-Fleming modellen</a><ul>
-<li><a href="#lsning-under-fast-kurs">Løsning under fast kurs</a></li>
-<li><a href="#lsning-under-flytende-kurs">Løsning under flytende kurs</a></li>
+</ul></li>
+<li><a href="#mundell-fleming-modellen-under-fast-kurs">Mundell-Fleming modellen under fast kurs</a><ul>
+<li><a href="#godemarkedet">Godemarkedet</a></li>
+<li><a href="#pengemarkedet">Pengemarkedet</a></li>
+<li><a href="#bp">BP</a></li>
+<li><a href="#grafisk">Grafisk</a></li>
 <li><a href="#komparativ-statikk-skiftanalyse-3">Komparativ statikk (skiftanalyse)</a></li>
-<li><a href="#stabiliseringspolitikk">Stabiliseringspolitikk</a></li>
-</ul></li>
-<li><a href="#ad-as-modellen-for-en-apen-konomi">AD-AS modellen for en åpen økonomi</a><ul>
+<li><a href="#stabiliseringspolitikk-g-og-t">Stabiliseringspolitikk (G og T)</a></li>
 <li><a href="#komparativ-statikk-skiftanalyse-4">Komparativ statikk (skiftanalyse)</a></li>
-<li><a href="#stabiliseringspolitikk-1">Stabiliseringspolitikk</a></li>
-</ul></li>
+<li><a href="#stabiliseringspolitikk-mi-g-og-t">Stabiliseringspolitikk (M/(i), G og T)</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#referanser">Referanser</a></li>
@@ -938,6 +940,15 @@ Likvidering (bail-in)
 <h1>Del 1: lukket økonomi</h1>
 <!-- rnb-text-end -->
 <!-- rnb-text-begin -->
+<!--
+---
+title: "Innholdsfortegnelse"
+output:
+  html_notebook:
+    toc: true
+    toc_depth: 
+---
+-->
 <!-- rnb-text-end -->
 <!-- rnb-text-begin -->
 <div id="grunnleggende-bakgrunnkunnskaper" class="section level2">
@@ -1419,6 +1430,15 @@ Likvidering (bail-in)
 <h1>Del 1: åpen økonomi</h1>
 <!-- rnb-text-end -->
 <!-- rnb-text-begin -->
+<!--
+---
+title: "Innholdsfortegnelse"
+output:
+  html_notebook:
+    toc: true
+    toc_depth: 5
+---
+-->
 <!-- rnb-text-end -->
 <!-- rnb-text-begin -->
 <div id="grunnleggende-bakgrunnkunnskaper-1" class="section level2">
@@ -1430,35 +1450,40 @@ Likvidering (bail-in)
 </ul>
 <p><span class="math display">\[(Y-\overline{Y})=0\]</span></p>
 <ul>
-<li>Ekstern balanse (rimelig nivå på utenlandsgjelden - utenlandsgjelden skal kunne betjenes uten problemer)</li>
+<li>Ekstern balanse (rimelig nivå på utenlandsgjelden - gjelden skal kunne betjenes uten problemer)</li>
 </ul>
+<hr />
 </div>
 <div id="tre-fundamentale-endringer-fra-en-lukket-konomi" class="section level3">
-<h3>Tre fundamentale endringer fra en lukket økonomi:</h3>
+<h3>Tre fundamentale endringer fra en lukket økonomi</h3>
 <div id="handel-med-utlandet" class="section level4">
 <h4>(1) Handel med utlandet</h4>
-<p><span class="math display">\[AE \equiv C+I+G+NX\]</span> <span class="math inline">\(NX\)</span> er lagt til definisjonen for aggregert etterspørsel</p>
-<p><span class="math display">\[NX=EX−R\cdot IM \text{ hvor } R=\frac{E\cdot P}{P^{*}}\]</span> Som er definert som eksport <span class="math inline">\((EX)\)</span> minus import <span class="math inline">\((R\cdot IM)\)</span>. Realvalutakursen <span class="math inline">\(R\)</span> sørger for at alt blir målt i enheter av det innenlandske godet.</p>
+<p><span class="math display">\[AE \equiv C+I+G+NX\]</span> <span class="math inline">\(NX\)</span> er nå inkludert i definisjonen for aggregert etterspørsel</p>
+<p>NX er definert som eksport <span class="math inline">\((EX)\)</span> minus import <span class="math inline">\((R\cdot IM)\)</span> målt i enheter av det innenlandske godet:</p>
+<p><span class="math display">\[NX=EX−R\cdot IM \text{ hvor }\]</span> Realvalutakursen <span class="math inline">\(R=\frac{E\cdot P^{*}}{P}\)</span> (prisforholdet mellom utenlandske og innenlandske goder målt i enheter av det innenlandske gode) sørger her for at alt blir målt i enheter av det innenlandske godet.</p>
+<hr />
 </div>
 <div id="utenriksregnskapet" class="section level4">
 <h4>(2) Utenriksregnskapet</h4>
 <p><span class="math display">\[BP = CA + CU + OR=0\]</span></p>
-<p>CU=Driftsregnskapet: Nettoeksport (<span class="math inline">\(NX\)</span>), Nettofinansinntekter(aksjer og obligasjoner), Nettoverføringer</p>
-<p>CA=Kapitalregnskapet: Nettoendringer i fordringer og gjeld ovenfor utlandet</p>
+<p><span class="math inline">\(CU=\text{Driftsregnskapet}\)</span>.</p>
+<p>Består av nettoeksport (NX), pluss nettofinansinntekter(aksjer og obligasjoner) og nettoverføringer</p>
+<p><span class="math inline">\(CA=\text{Kapitalregnskapet}\)</span></p>
+<p>Nettoendringer i fordringer og gjeld ovenfor utlandet</p>
+<p><span class="math inline">\(OR=\text{Endringer i sentralbankens valutareserver}\)</span></p>
+<p>Vil øke (reduseres) dersom fastkursprisen er svakere (sterkere) enn det som markedet er villig til å betale</p>
+<hr />
 </div>
 <div id="fast-eller-flytende-kurs" class="section level4">
 <h4>(3) Fast eller flytende kurs</h4>
-<ul>
-<li>Handel med utlandet (avhenger blant annet av relative prisnivået mellom innenlandske og utenlandske varer)</li>
-</ul>
-<p>Realvalutakursen: $R=$</p>
-<ul>
-<li><p>E: Pris (nominell) per énhet av utenlandsk (innenlandsk) valuta E (1/E)</p></li>
-<li><p>internasjonale finansmarkeder (renteparitetsbetingelsen)</p></li>
-</ul>
-<p><span class="math display">\[(1+i_{t+1})=(1+i_{t+1}^{*})\frac{E_{t+1}^{e}}{E_{t}}\]</span></p>
+<p>Renteparitetsbetingelsen</p>
+<p><span class="math display">\[(1+i_{t+1})=(1+i_{t+1}^{*})\frac{E_{t+1}^{e}}{E_{t}}\]</span> Likevektsbetingelse som forteller oss at den forventede avkastningen er lik mellom å investere i inn- og utland.</p>
+<p>Her er <span class="math inline">\(i_{t+1}\)</span> innelandsk avkastning, <span class="math inline">\(i_{t+1}^{*}\)</span> utenlands avkastning, <span class="math inline">\(E_{t}\)</span> er (nominelle) prisen i dag per énhet av utenlandsk valuta og <span class="math inline">\(E_{t+1}^{e}\)</span> den forventede valutakursen én periode frem i tid.</p>
 </div>
 </div>
+</div>
+<div id="mundell-fleming-modellen" class="section level2">
+<h2>Mundell-Fleming modellen</h2>
 <div id="adferdsligninger-1" class="section level3">
 <h3>Adferdsligninger</h3>
 <div id="husholdninger-og-bedrifter" class="section level4">
@@ -1467,75 +1492,125 @@ Likvidering (bail-in)
 <p><span class="math display">\[IM=  -m_{1}R + m_{2}Y \]</span></p>
 <p>Bedriftenes eksport (<span class="math inline">\(EX\)</span>) av innenlandske goder er gitt ved</p>
 <p><span class="math display">\[EX=x_{1}R + x_{2}Y^{*}  \]</span></p>
+<hr />
 <p>Ved å sett inn for uttrykkene ovenfor, kan vi skrive nettoeksporten som</p>
-<p><span class="math display">\[NX = EX - IM = x_{1}R + x_{2}Y^{*} + m_{1}R - x_{2}Y\]</span></p>
-<p>Legger til grunn i dette kurset at <span class="math inline">\(\frac{\Delta NX}{\Delta R}/&gt;0\)</span> (i praksis kan dette ta litt tid)</p>
+<p><span class="math display">\[NX = EX - R\cdot IM = x_{1}R + x_{2}Y^{*} - R\cdot (m_{1}R + m_{2}Y)\]</span></p>
+<p>Legger til grunn i dette kurset at priseffekten dominerer innteksteffekten (Marshall-Lerner betingelsen):</p>
+<p><span class="math display">\[\frac{\Delta NX}{\Delta R}= x_{1} - IM + m_{1}R &gt; 0 \text{ (i praksis vil dette ta litt tid)}\]</span></p>
+<hr />
 </div>
 <div id="offentlige-myndigheter-2" class="section level4">
 <h4>Offentlige myndigheter</h4>
 <p>Myndighetene kan velge mellom fast eller flytende kurs:</p>
 <ul>
-<li><p>Fast <span class="math display">\[i =i^{*} + rp\]</span> Er fastkursregime troverdig <span class="math inline">\(\Rightarrow rp = 0\)</span></p></li>
-<li><p>Flytende</p></li>
+<li>Fast <span class="math display">\[i =i^{*} + rp\]</span></li>
+</ul>
+<p>Anser markedsaktørene faskursregimet som troverdig, har vi at <span class="math inline">\(E=E^{e} \Rightarrow rp=0\)</span></p>
+<ul>
+<li>Flytende</li>
 </ul>
 <p><span class="math display">\[E=\frac{(1+i)}{(1+i)}E^{e}\]</span></p>
-</div>
-</div>
-<div id="mundell-fleming-modellen" class="section level3">
-<h3>Mundell-Fleming modellen</h3>
-<div id="lsning-under-fast-kurs" class="section level4">
-<h4>Løsning under fast kurs</h4>
-<div id="godemarkedet" class="section level5">
-<h5>Godemarkedet</h5>
-</div>
-<div id="pengemarkedet" class="section level5">
-<h5>Pengemarkedet</h5>
-</div>
-<div id="bp" class="section level5">
-<h5>BP</h5>
+<hr />
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMisyXG5gYGAifQ== -->
-<pre class="r"><code>2+2</code></pre>
-<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
 </div>
-<div id="lsning-under-flytende-kurs" class="section level4">
-<h4>Løsning under flytende kurs</h4>
-<div id="godemarkedet-1" class="section level5">
-<h5>Godemarkedet</h5>
 </div>
-<div id="pengemarkedet-1" class="section level5">
-<h5>Pengemarkedet</h5>
+<div id="mundell-fleming-modellen-under-fast-kurs" class="section level2">
+<h2>Mundell-Fleming modellen under fast kurs</h2>
+<!-- rnb-text-end -->
+<!-- rnb-text-begin -->
+<div id="godemarkedet" class="section level3">
+<h3>Godemarkedet</h3>
+<p><span class="math display">\[Y = \frac{1}{1-c(1-t) + m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX + R\cdot m_{1} \right]\]</span></p>
 </div>
-<div id="bp-1" class="section level5">
-<h5>BP</h5>
+<div id="pengemarkedet" class="section level3">
+<h3>Pengemarkedet</h3>
+<p><span class="math display">\[kY -hi = \overline{M}/P\]</span></p>
 </div>
+<div id="bp" class="section level3">
+<h3>BP</h3>
+<p><span class="math display">\[i =i^{*} + rp\]</span></p>
+<hr />
 </div>
-<div id="komparativ-statikk-skiftanalyse-3" class="section level4">
-<h4>Komparativ statikk (skiftanalyse)</h4>
+<div id="grafisk" class="section level3">
+<h3>Grafisk</h3>
+<p>Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet (fast kurs)</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<hr />
 </div>
-<div id="stabiliseringspolitikk" class="section level4">
-<h4>Stabiliseringspolitikk</h4>
-<ul>
-<li>Finanspolitikk</li>
-<li>Pengepolitikk</li>
-</ul>
+<div id="komparativ-statikk-skiftanalyse-3" class="section level3">
+<h3>Komparativ statikk (skiftanalyse)</h3>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZW11ZmxmYXN0bGlrZXZla3RcbmBgYCJ9 -->
+<pre class="r"><code>emuflfastlikevekt</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<hr />
 </div>
+<div id="stabiliseringspolitikk-g-og-t" class="section level3">
+<h3>Stabiliseringspolitikk (G og T)</h3>
+<!--
+
+## Mundell-Fleming modellen under flytende kurs
+
+### Godemarkedet
+
+$$Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX + R\cdot m_{1} \right]$$
+
+### Pengemarkedet
+
+$$kY -hi = \overline{M}/P$$
+
+### BP
+
+$$E=\frac{(1+i)}{(1+i)}E^{e}$$
+
+---
+
+### Grafisk
+
+Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet (flytende kurs)
+
+
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<hr />
 </div>
-<div id="ad-as-modellen-for-en-apen-konomi" class="section level3">
-<h3>AD-AS modellen for en åpen økonomi</h3>
-<div id="komparativ-statikk-skiftanalyse-4" class="section level4">
-<h4>Komparativ statikk (skiftanalyse)</h4>
+<div id="komparativ-statikk-skiftanalyse-4" class="section level3">
+<h3>Komparativ statikk (skiftanalyse)</h3>
+<hr />
 </div>
-<div id="stabiliseringspolitikk-1" class="section level4">
-<h4>Stabiliseringspolitikk</h4>
-<ul>
-<li>Finanspolitikk</li>
-<li>Pengepolitikk</li>
-</ul>
+<div id="stabiliseringspolitikk-mi-g-og-t" class="section level3">
+<h3>Stabiliseringspolitikk (M/(i), G og T)</h3>
+<!--
+
+### AD-AS modellen for en åpen økonomi
+
+#### Samtidig likevekt
+
+#### Komparativ statikk (skiftanalyse)
+
+#### Stabiliseringspolitikk 
+- Finanspolitikk
+- Pengepolitikk
+
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<p id="demo"></p>
+
+-->
 <!--
 - 
 1. $$Y = \frac{1}{1-c-R?}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]$$
@@ -1583,14 +1658,13 @@ på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produ
 </div>
 </div>
 </div>
-</div>
 <div id="referanser" class="section level1">
 <h1>Referanser</h1>
 <p><font color="white">Smith cited <span class="citation">[@gartner2016macroeconomics]</span></font></p>
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiSW5uaG9sZHNmb3J0ZWduZWxzZSIKb3V0cHV0OgogIGh0bWxfbm90ZWJvb2s6CiAgICB0b2M6IHRydWUKICAgIHRvY19kZXB0aDogNAojYmlibGlvZ3JhcGh5OiBwZW5zdW0uYmliCi0tLQoKYGBge3IgY2hpbGQgPSAnaW5ubGVkbmluZy5SbWQnfQpgYGAKCiMgRGVsIDE6IGx1a2tldCDDuGtvbm9taQpgYGB7ciBjaGlsZCA9ICdkZWwxX2tvbmp1bmt0dXJlcl9sdWtrZXQuUm1kJ30KYGBgCgojIERlbCAxOiDDpXBlbiDDuGtvbm9taQpgYGB7ciBjaGlsZCA9ICdkZWwxX2tvbmp1bmt0dXJlcl9vcGVuLlJtZCd9CmBgYAoKPCEtLQojIERlbCAyIMOYa29ub21pc2sgdmVrc3QKIyBEZWwgMyDDmGtvbm9taXNrIHZla3N0Ci0tPgoKIyBSZWZlcmFuc2VyCgo8Zm9udCBjb2xvcj0id2hpdGUiPlNtaXRoIGNpdGVkIFtAZ2FydG5lcjIwMTZtYWNyb2Vjb25vbWljc108L2ZvbnQ+Cg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiSW5uaG9sZHNmb3J0ZWduZWxzZSIKb3V0cHV0OgogIGh0bWxfZG9jdW1lbnQ6CiAgICBkZl9wcmludDogcGFnZWQKICAgIHRvYzogeWVzCiAgICB0b2NfZGVwdGg6ICc0JwogIGh0bWxfbm90ZWJvb2s6CiAgICB0b2M6IHllcwogICAgdG9jX2RlcHRoOiA0Ci0tLQoKYGBge3IgY2hpbGQgPSAnaW5ubGVkbmluZy5SbWQnfQpgYGAKCiMgRGVsIDE6IGx1a2tldCDDuGtvbm9taQpgYGB7ciBjaGlsZCA9ICdkZWwxX2tvbmp1bmt0dXJlcl9sdWtrZXQuUm1kJ30KYGBgCgojIERlbCAxOiDDpXBlbiDDuGtvbm9taQpgYGB7ciBjaGlsZCA9ICdkZWwxX2tvbmp1bmt0dXJlcl9vcGVuLlJtZCd9CmBgYAoKPCEtLQojIERlbCAyIMOYa29ub21pc2sgdmVrc3QKIyBEZWwgMyDDmGtvbm9taXNrIHZla3N0Ci0tPgoKIyBSZWZlcmFuc2VyCgo8Zm9udCBjb2xvcj0id2hpdGUiPlNtaXRoIGNpdGVkIFtAZ2FydG5lcjIwMTZtYWNyb2Vjb25vbWljc108L2ZvbnQ+Cg==</div>
 
 
 

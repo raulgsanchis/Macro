@@ -56,7 +56,7 @@ dfgeneric <- function(modell='adasl',labels = NULL, exoparval=NULL, eqsel = c(1,
 
   } else if (modell =='adasl'){
 
-    browser()
+    #browser()
 
     # Leser inn modellen
     modellequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/adascequ.json'))
@@ -69,16 +69,18 @@ dfgeneric <- function(modell='adasl',labels = NULL, exoparval=NULL, eqsel = c(1,
     dfmodellres <- data.frame(Iv, adv, asv) %>%
       reshape2::melt(id.vars = c("Iv"))
 
-    # Samtidig likevekt
-    yss <- median(exoparval$Y)
-    pss <- exoparval$P
+    ## Samtidig likevekt
+    yss <- exoparval$Y
+    iss <- median(exoparval$i)
+    y <- c(yss,iss)
     exoparvalvd <- exoparval[1:length(exoparval)-1]
-    #y <- c(yss, pss)
+    # #y <- c(yss, pss)
     optadas <- function(y){
-      c(Y1 = y[2] - eval(parse(text=modellequ$AD), c(exoparvalvd, list(Y=y[1]))),
-        Y2 = y[2] - eval(parse(text=modellequ$AS), c(exoparvalvd, list(Y=y[1]))))}
+      c(Y1 = y[2] - eval(parse(text=modellequ$ISC), c(exoparvalvd, list(i=y[1]))),
+        Y2 = y[2] - eval(parse(text=modellequ$LMC), c(exoparvalvd, list(i=y[1]))))}
 
-    yeae <- rootSolve::multiroot(f = optadas, start = c(yss, pss))$root
+    yeae <- c(rootSolve::multiroot(f = optadas, start = c(iss, yss), positive = TRUE)$root, exoparvalvd$M)
+
 
   }
   else if (modell =='islmo'){
@@ -88,23 +90,28 @@ dfgeneric <- function(modell='adasl',labels = NULL, exoparval=NULL, eqsel = c(1,
     modellequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/islmocequ.json'))
     isv <- eval(parse(text=modellequ$ISC), exoparval)
     lmv <- eval(parse(text=modellequ$LMC), exoparval)
-      #eval(parse(text=modellequ$BPCFA), exoparval)
+    bpv <- eval(parse(text=modellequ$EQU), exoparval)
 
     # Melted
-    dfmodellres <- data.frame(Iv, isv, lmv) %>%
+    dfmodellres <- data.frame(Iv, isv, lmv, bpv) %>%
       reshape2::melt(id.vars = c("Iv"))
 
+
     # Samtidig likevekt
-    yss <- median(exoparval$Y)
-    pss <- exoparval$P
+    ## Samtidig likevekt
+    # yss <- exoparval$Y
+    # iss <- median(exoparval$i)
+    # y <- c(yss,iss)
     exoparvalvd <- exoparval[1:length(exoparval)-1]
-    y <- c(yss, pss)
-    optadas <- function(y){
-      c(Y1 = y[2] - eval(parse(text=modellequ$AD), c(exoparvalvd, list(Y=y[1]))),
-        Y2 = y[2] - eval(parse(text=modellequ$AS), c(exoparvalvd, list(Y=y[1]))))}
+    # # #y <- c(yss, pss)
+    # optadas <- function(y){
+    #   c(Y1 = y[2] - eval(parse(text=modellequ$ISC), c(exoparvalvd, list(i=y[1]))),
+    #     Y2 = y[2] - eval(parse(text=modellequ$LMC), c(exoparvalvd, list(i=y[1]))))}
+    #
+    #yeae <- c(rootSolve::multiroot(f = optadas, start = c(iss, yss), positive = TRUE)$root, exoparvalvd$M)
+    #exoparvalvd
 
-    yeae <- c(1,2,3)#rootSolve::multiroot(f = optadas, start = c(yss, pss))$root
-
+    yeae <- c(eval(parse(text=modellequ$SEQFasti), exoparval), eval(parse(text=modellequ$SEQFastY), exoparval))
 
   }
   else if (modell =='adaso'){
@@ -152,9 +159,10 @@ genmakrofigure <- function(dfnumeric = NULL,
                            labt = labelsadas,
                            scalejust = list(x=0, y=0),
                            punktvelger = list(x=1,y=2),
-                           limits= list(x=NULL, y=NULL)){
+                           limits= list(x=NULL, y=NULL),
+                           linjetype = NULL){
   # Henter dataene
-  datainp <- dplyr::filter(dfnumeric$dfmodell, variable %in% variables) %>% dplyr::mutate(kat='naa')
+  datainp <- dplyr::filter(dfnumeric$dfmodell, variable %in% variables) #%>% dplyr::mutate(kat='naa')
 
   # Grafikk
   ggplot() +

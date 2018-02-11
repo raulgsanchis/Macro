@@ -1,10 +1,13 @@
 ---
 title: "Innholdsfortegnelse"
 output:
+  html_document:
+    df_print: paged
+    toc: yes
+    toc_depth: '4'
   html_notebook:
-    toc: true
+    toc: yes
     toc_depth: 4
-#bibliography: pensum.bib
 ---
 
 ```{r child = 'innledning.Rmd'}

@@ -117,17 +117,17 @@ sdfkurver = data.frame(kurve=c("AD'", "AS"),
                        y = stdfadas$varnavnmaksverdi$value)
 
 ldfkurver = data.frame(kurve=c("AD=AD''", "AS"),
-                      fargel = c('red', 'red'),
-                      fargek = c('red', 'red'),
-                      x = dfadas$varnavnmaksverdi$Iv,
-                      y = dfadas$varnavnmaksverdi$value)
+                       fargel = c('red', 'red'),
+                       fargek = c('red', 'red'),
+                       x = dfadas$varnavnmaksverdi$Iv,
+                       y = dfadas$varnavnmaksverdi$value)
 
 llabelsadas <- list(title = 'AD-AS modellen',
-                   x = 'produksjon, inntekt (Y)',
-                   y = 'prisnivå (P)',
-                   x0 = c(TeX('$Y_{0}=Y_{2}=Y^{N}$')),
-                   y0 = c(TeX('$P_{0}=$P_{2}$')),
-                   kurver = ldfkurver)
+                    x = 'produksjon, inntekt (Y)',
+                    y = 'prisnivå (P)',
+                    x0 = c(TeX('$Y_{0}=Y_{2}=Y^{N}$')),
+                    y0 = c(TeX('$P_{0}=$P_{2}$')),
+                    kurver = ldfkurver)
 
 
 slabelsadas <- list(title = 'AD-AS modellen',
@@ -138,9 +138,9 @@ slabelsadas <- list(title = 'AD-AS modellen',
                     kurver = sdfkurver)
 
 stadaslikevekt <- cgenmakrofigure(dfnumeric=dfadas,
-                                   edfnumeric=stdfadas,
-                                   variables = c(dfadas$varnavn),
-                                   labt = llabelsadas,
-                                   elabt = slabelsadas,
-                                   scalejust = list(x=105, y=0))
+                                  edfnumeric=stdfadas,
+                                  variables = c(dfadas$varnavn),
+                                  labt = llabelsadas,
+                                  elabt = slabelsadas,
+                                  scalejust = list(x=105, y=0))
 stadaslikevekt
