@@ -86,9 +86,11 @@ $$EX=x_{1}R + x_{2}Y^{*}  $$
 
 Ved å sett inn for uttrykkene ovenfor, kan vi skrive nettoeksporten som  
 
-$$NX = EX - IM = x_{1}R + x_{2}Y^{*} + m_{1}R - x_{2}Y$$
+$$NX = EX - R\cdot IM = x_{1}R + x_{2}Y^{*} - R\cdot (m_{1}R + m_{2}Y)$$
 
-Legger til grunn i dette kurset at $\frac{\Delta NX}{\Delta R}/>0$  (i praksis kan dette ta litt tid)
+Legger til grunn i dette kurset at priseffekten dominerer innteksteffekten (Marshall-Lerner betingelsen):
+
+$$\frac{\Delta NX}{\Delta R}= x_{1} - IM + m_{1}R > 0 \text{ (i praksis vil dette ta litt tid)}$$  
 
 ---
 
@@ -138,7 +140,7 @@ labelsislm <- list(title = 'IS-LM modellen',
 
 #### Godemarkedet
 
-$$Y = \frac{1}{1-c(1-t)}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G}  \right ]$$
+$$Y = \frac{1}{1-c(1-t) + m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX + R\cdot m_{1} \right]$$
 
 #### Pengemarkedet
 
@@ -167,7 +169,7 @@ fastmflikevekt
 
 #### Godemarkedet
 
-$$Y = \frac{1}{1-c(1-t)}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G}  \right ]$$
+$$Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX + R\cdot m_{1} \right]$$
 
 #### Pengemarkedet
 

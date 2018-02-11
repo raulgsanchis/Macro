@@ -37,11 +37,13 @@ labelsislm <- list(title = 'IS-LM modellen',
                    y0 = c(TeX('$Y_{0}$')),
                    kurver = dfkurver)
 
+# Fast kurs
 fastmflikevekt <- genmakrofigure(dfnumeric=dfislm,
                                variables = c(dfislm$varnavn)[c(1,2)],
                                labt = labelsislm,
                                scalejust = list(x=0, y=75))  + coord_flip()
 
+# Flytende kurs
 flytmflikevekt <- genmakrofigure(dfnumeric=dfislm,
                                  variables = c(dfislm$varnavn)[c(1,2)],
                                  labt = labelsislm,
