@@ -63,8 +63,8 @@ lmchangemoney <- cgenmakrofigure(dfnumeric=dfislm,
 
 # IS-LM Modellen
 ### Likevekt ###
-dfislm <- dfgeneric(modell='islm', exoparval = islmexoparvalv, eqsel = c(1,2))
-edfislm <- dfgeneric(modell='islm', exoparval = eislmexoparvalv, eqsel = c(1,2))
+dfislm <- dfgeneric(modell='islml', exoparval = islmexoparvalv, eqsel = c(1,2))
+edfislm <- dfgeneric(modell='islml', exoparval = eislmexoparvalv, eqsel = c(1,2))
 
 #!: endogenisere gjetteverdier
 dfkurver <- data.frame(kurve=c("IS", "LM"),

@@ -83,11 +83,12 @@ dfgeneric <- function(modell='adasl',labels = NULL, exoparval=NULL, eqsel = c(1,
   }
   else if (modell =='islmo'){
 
-    browser()
+    #browser()
 
     modellequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/islmocequ.json'))
     isv <- eval(parse(text=modellequ$ISC), exoparval)
-    lmv <- eval(parse(text=modellequ$BPCFA), exoparval)
+    lmv <- eval(parse(text=modellequ$LMC), exoparval)
+      #eval(parse(text=modellequ$BPCFA), exoparval)
 
     # Melted
     dfmodellres <- data.frame(Iv, isv, lmv) %>%

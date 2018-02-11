@@ -68,7 +68,8 @@ Likevektsbetingelse som forteller oss at den forventede avkastningen er lik mell
 
 Her er $i_{t+1}$ innelandsk avkastning, $i_{t+1}^{*}$ utenlands avkastning, $E_{t}$ er (nominelle) prisen i dag per énhet av utenlandsk valuta og $E_{t+1}^{e}$ den forventede valutakursen én periode frem i tid.  
 
----
+
+## Mundell-Fleming modellen
 
 ### Adferdsligninger
 
@@ -136,68 +137,70 @@ labelsislm <- list(title = 'IS-LM modellen',
                    kurver = dfkurver)
 ```
 
-### Mundell-Fleming modellen under fast kurs
+## Mundell-Fleming modellen under fast kurs
 
-#### Godemarkedet
+### Godemarkedet
 
 $$Y = \frac{1}{1-c(1-t) + m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX + R\cdot m_{1} \right]$$
 
-#### Pengemarkedet
+### Pengemarkedet
 
 $$kY -hi = \overline{M}/P$$
 
-#### BP
+### BP
 $$i =i^{*} + rp$$
 
 ---
 
-#### Grafisk
+### Grafisk
 
 Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet (fast kurs)
 
 ```{r echo=FALSE, warning=FALSE}
-fastmflikevekt <- genmakrofigure(dfnumeric=dfislm,
-                               variables = c(dfislm$varnavn)[c(1,2)],
-                               labt = labelsislm,
-                               scalejust = list(x=0, y=75))  + coord_flip()
-fastmflikevekt
+muflfastlikevekt
 ```
 
 ---
 
-### Mundell-Fleming modellen under flytende kurs
+### Komparativ statikk (skiftanalyse)
 
-#### Godemarkedet
+---
+
+### Stabiliseringspolitikk (G og T)
+
+
+## Mundell-Fleming modellen under flytende kurs
+
+### Godemarkedet
 
 $$Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX + R\cdot m_{1} \right]$$
 
-#### Pengemarkedet
+### Pengemarkedet
 
 $$kY -hi = \overline{M}/P$$
 
-#### BP
+### BP
 
 $$E=\frac{(1+i)}{(1+i)}E^{e}$$
 
 ---
 
-#### Grafisk
+### Grafisk
 
 Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet (flytende kurs)
 
 ```{r echo=FALSE, warning=FALSE}
-fastmflikevekt
+#fastmflikevekt
+muflflytendelikevekt
 ```
 
 ---
 
-#### Komparativ statikk (skiftanalyse)
+### Komparativ statikk (skiftanalyse)
 
 ---
 
-#### Stabiliseringspolitikk 
-- Finanspolitikk
-- Pengepolitikk
+### Stabiliseringspolitikk  (M/(i), G og T) 
 
 <!--
 
