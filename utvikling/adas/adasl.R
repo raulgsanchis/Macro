@@ -8,14 +8,14 @@ library(latex2exp)
 # AD-Kurven
 iv <- 0:4
 islmexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
-                         P=1, h = 10, k =1, Y = 130), list(i=c(iv)))
+                         P=1, h = 10, k =1, Y = 130, m=1), list(i=c(iv)))
 
 eislmexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
-                         P=0.75, h = 10, k =1, Y = 130), list(i=c(iv)))
+                         P=0.75, h = 10, k =1, Y = 130,m=1), list(i=c(iv)))
 
 
-dfislm <- dfgeneric(modell='islm', exoparval = islmexoparvalv)
-edfislm <- dfgeneric(modell='islm', exoparval = eislmexoparvalv)
+dfislm <- dfgeneric(modell='islml', exoparval = islmexoparvalv)
+edfislm <- dfgeneric(modell='islml', exoparval = eislmexoparvalv)
 
 dfkurverislm <- data.frame(kurve=c("IS", "LM"),
                        fargel = c('red', 'red'),

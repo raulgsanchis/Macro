@@ -1,14 +1,4 @@
----
-title: "Innholdsfortegnelse"
-output:
-  html_document:
-    df_print: paged
-    toc: yes
-    toc_depth: '4'
-  html_notebook:
-    toc: yes
-    toc_depth: 4
----
+
 
 ```{r child = 'innledning.Rmd'}
 ```

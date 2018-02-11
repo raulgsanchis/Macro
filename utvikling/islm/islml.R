@@ -38,6 +38,7 @@ lmlikevekt <- genmakrofigure(dfnumeric = dfislm,
                             variables = c(dfislm$varnavn)[c(1,2)],
                             labt = labelslm,
                             scalejust = list(x=0, y=60))  + coord_flip()
+lmlikevekt
 
 emlmlikevekt <- data.frame(kurve=c("Ms'"),
                          fargel = c('red'),

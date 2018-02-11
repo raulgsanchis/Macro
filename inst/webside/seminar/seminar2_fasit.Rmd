@@ -38,7 +38,18 @@ $$G = \overline{G} \text{ og } T=\overline{T} \text{: offentlige myndigheter}$$
 
 4. Løs modellen mhp. på $Y$.
 
-*$$Y = \frac{1}{1-c_{1}}\left[\overline{C}-c_{1}\overline{T} - (b+c_{2})\cdot i + \overline{I} + G  \right] $$*
+*Starter først med å sett inn for alle etterspørselskomponentene:*
+
+*$$Y = C+I+G+NX = \\
+(\overline{C} + c_{1}(Y-T) - c_{2}\cdot \overline{i}) + (\overline{I} - b\cdot i ) + \overline{G}$$*
+
+*Flytter alt som har med Y å gjøre på venstre siden av likhetstegnet:*
+
+*$$Y(1-c_{1}) = \overline{C} - c_{1}T + \overline{I} - b\cdot i + \overline{G}$$* 
+
+*Deler med $\frac{1}{\left[1-c_{1}\right]}$ på begge sider av likhetstegnet gir oss*
+
+*$$Y = \frac{1}{(1-c_{1})}\left[\overline{C}-c_{1}\overline{T} - (b+c_{2})\cdot i + \overline{I} + G  \right] $$*
 
 5. Økt pessimisme i økonomien gir seg utslag i et lavere inntektsuavhengig konsum ($\overline{C}<0$). Hvis formelt, grafisk (dersom du ønsker å benytte Keyneskrysset) og verbalt hvordan dette endrer likevekten i modellen.
 
@@ -82,7 +93,7 @@ ekeynesclikevekt <- cgenmakrofigure(dfnumeric=dfkeynes,
                 elabt = elabelskeynes,
                 scalejust = list(x=0, y=0))
 
-ekeynesclikevekt
+#ekeynesclikevekt
 ###########################################################################################################
 ###########################################################################################################
 Iv <- 0:600
@@ -187,7 +198,7 @@ lavere produksjon og inntekt,  som igjen fører til redusert etterspørsel pga l
 
 2. Vis ved hjelp av en figur effekten av økt optimisme ('animal spirits') tilknyttet private realinvestinger 
 
-```{r}
+```{r echo=FALSE}
 iv <- 0:5
 islmexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
                          P=1, h = 10, k =1, Y = 130, m=1), list(i=c(iv)))
@@ -196,8 +207,8 @@ eislmexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 20, T = 50, M
                           P=1, h = 10, k =1, Y = 130, m=1), list(i=c(iv)))
 
 
-dfislm <- dfgeneric(modell='islm', exoparval = islmexoparvalv, eqsel = c(1,2))
-edfislm <- dfgeneric(modell='islm', exoparval = eislmexoparvalv, eqsel = c(1,2))
+dfislm <- dfgeneric(modell='islml', exoparval = islmexoparvalv, eqsel = c(1,2))
+edfislm <- dfgeneric(modell='islml', exoparval = eislmexoparvalv, eqsel = c(1,2))
 
 #!: endogenisere gjetteverdier
 dfkurver <- data.frame(kurve=c("IS", "LM"),
@@ -257,11 +268,11 @@ $i= m\cdot Y$
 ```{r echo=FALSE}
 iv <- 0:5
 islmexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
-                         P=1, h = 10, k =1, Y = 130, m=2), list(i=c(iv)))
+                         P=1, h = 10, k =1, Y = 130, m=2, t=0), list(i=c(iv)))
 
-dfislm <- dfgeneric(modell='islm', exoparval = islmexoparvalv, eqsel = c(1,2))
+dfislm <- dfgeneric(modell='islml', exoparval = islmexoparvalv, eqsel = c(1,2))
 
-dplyr::filter(dfislm$dfmodell, variable %in% c(dfislm$varnavn)[c(3,5)])
+#dplyr::filter(dfislm$dfmodell, variable %in% c(dfislm$varnavn)[c(3,5)])
 
 # Pengemarkedet
 dfkurver <- data.frame(kurve=c("Ld", "i-renteregel"),

@@ -283,6 +283,15 @@ $(document).ready(function () {
 </div>
 
 
+<!--
+---
+title: "Innholdsfortegnelse"
+output:
+  html_notebook:
+    toc: true
+    toc_depth: 5
+---
+-->
 <div id="grunnleggende-bakgrunnkunnskaper" class="section level2">
 <h2>Grunnleggende bakgrunnkunnskaper</h2>
 <div id="stabiliseringsmal-for-en-apen-konomi" class="section level3">
@@ -292,115 +301,187 @@ $(document).ready(function () {
 </ul>
 <p><span class="math display">\[(Y-\overline{Y})=0\]</span></p>
 <ul>
-<li>Ekstern balanse (rimelig nivå på utenlandsgjelden)</li>
+<li>Ekstern balanse (rimelig nivå på utenlandsgjelden - gjelden skal kunne betjenes uten problemer)</li>
 </ul>
+<hr />
 </div>
 <div id="tre-fundamentale-endringer-fra-en-lukket-konomi" class="section level3">
-<h3>Tre fundamentale endringer fra en lukket økonomi:</h3>
+<h3>Tre fundamentale endringer fra en lukket økonomi</h3>
 <div id="handel-med-utlandet" class="section level4">
 <h4>(1) Handel med utlandet</h4>
-<p><span class="math display">\[AE \equiv C+I+G+NX\]</span> <span class="math inline">\(NX\)</span> er lagt til definisjonen for aggregert etterspørsel</p>
-<p><span class="math display">\[NX=EX−R\cdot IM \text{ hvor } R=\frac{E\cdot P}{P^{*}}\]</span> Som er definert som eksport <span class="math inline">\((EX)\)</span> minus import <span class="math inline">\((R\cdot IM)\)</span>. Realvalutakursen <span class="math inline">\(R\)</span> sørger for at alt blir målt i enheter av det innenlandske godet.</p>
-</div>
-<div id="utenriksregnskapet" class="section level4">
-<h4>(2) Utenriksregnskapet</h4>
-<p><span class="math display">\[ BP = CA + CU + OR=0 \]</span></p>
-<p>CU=Driftsregnskapet: Nettoeksport, Nettofinansinntekter(aksjer og obligasjoner), Nettoverføringer</p>
-<p>CA=Kapitalregnskapet: Nettoendringer i fordringer og gjeld ovenfor utlandet</p>
+<p><span class="math display">\[AE \equiv C+I+G+NX\]</span> <span class="math inline">\(NX\)</span> er nå inkludert i definisjonen for aggregert etterspørsel</p>
+<p>NX er definert som eksport <span class="math inline">\((EX)\)</span> minus import <span class="math inline">\((R\cdot IM)\)</span> målt i enheter av det innenlandske godet:</p>
+<p><span class="math display">\[NX=EX−R\cdot IM \text{ hvor }\]</span> Realvalutakursen <span class="math inline">\(R=\frac{E\cdot P^{*}}{P}\)</span> (prisforholdet mellom utenlandske og innenlandske goder målt i enheter av det innenlandske gode) sørger her for at alt blir målt i enheter av det innenlandske godet.</p>
+<hr />
 </div>
 <div id="fast-eller-flytende-kurs" class="section level4">
-<h4>(3 Fast eller flytende kurs</h4>
-<ul>
-<li>Handel med utlandet (avhenger blant annet av relative prisnivået mellom innenlandske og utenlandske varer)</li>
-</ul>
-<p>Realvalutakursen: <span class="math inline">\(R=\frac{EP}{P}\)</span></p>
-<ul>
-<li>E: Pris (nominell) per enhet av utenlandsk (innenlandsk) valuta E (1/E)</li>
-</ul>
+<h4>(2) Fast eller flytende kurs</h4>
+<p>Renteparitetsbetingelsen</p>
+<p><span class="math display">\[(1+i_{t+1})=(1+i_{t+1}^{*})\frac{E_{t+1}^{e}}{E_{t}}\]</span> Likevektsbetingelse som forteller oss at den forventede avkastningen er lik mellom å investere i inn- og utland.</p>
+<p>Her er <span class="math inline">\(i_{t+1}\)</span> innelandsk avkastning, <span class="math inline">\(i_{t+1}^{*}\)</span> utenlands avkastning, <span class="math inline">\(E_{t}\)</span> er (nominelle) prisen i dag per énhet av utenlandsk valuta og <span class="math inline">\(E_{t+1}^{e}\)</span> den forventede valutakursen én periode frem i tid.</p>
+</div>
+<div id="utenriksregnskapet-bop" class="section level4">
+<h4>(2) Utenriksregnskapet (BoP)</h4>
+<p><span class="math display">\[BP = CA + CU + OR=0\]</span></p>
+<p><span class="math inline">\(CU=\text{Driftsregnskapet}\)</span>.</p>
+<p>Består av nettoeksport (NX), pluss nettofinansinntekter(aksjer og obligasjoner) og nettoverføringer</p>
+<p><span class="math inline">\(CA=\text{Kapitalregnskapet}\)</span></p>
+<p>Nettoendringer i fordringer og gjeld ovenfor utlandet</p>
+<p><span class="math inline">\(OR=\text{Endringer i sentralbankens valutareserver}\)</span></p>
+<p>Vil øke (reduseres) dersom fastkursprisen er svakere (sterkere) enn det som markedet er villig til å betale</p>
+<hr />
 </div>
 </div>
+</div>
+<div id="mundell-fleming-modellen" class="section level2">
+<h2>Mundell-Fleming modellen</h2>
 <div id="adferdsligninger" class="section level3">
 <h3>Adferdsligninger</h3>
 <div id="husholdninger-og-bedrifter" class="section level4">
 <h4>Husholdninger og bedrifter</h4>
-<p><span class="math display">\[IM=X(\underset{(-)}{R}, \underset{(+)}{Y}) =  -m_{1}R + x_{2}Y \]</span> <span class="math display">\[EX=X(\underset{(+)}{R}, \underset{(+)}{Y^{*}}) = x_{1}R + x_{2}Y^{*}  \]</span></p>
-<p>Det betyr at</p>
-<ul>
-<li><span class="math display">\[NX = EX - IM = x_{1}R + x_{2}Y^{*} + m_{1}R - x_{2}Y\]</span></li>
-</ul>
-<p>Legger til grunn i dette kurset at <span class="math inline">\(\frac{\Delta NX}{\Delta R}/&gt;0\)</span> (i praksis kan dette ta litt tid)</p>
-<ul>
-<li>internasjonale finansmarkeder (renteparitetsbetingelsen)</li>
-</ul>
-<p><span class="math display">\[(1+i_{t+1})=(1+i_{t+1}^{*})\frac{E_{t+1}^{e}}{E_{t}}\]</span></p>
+<p>Husholdningene import (<span class="math inline">\(IM\)</span>) av utenlandske goder er gitt ved</p>
+<p><span class="math display">\[IM=  -m_{1}R + m_{2}Y \]</span></p>
+<p>Bedriftenes eksport (<span class="math inline">\(EX\)</span>) av innenlandske goder er gitt ved</p>
+<p><span class="math display">\[EX=x_{1}R + x_{2}Y^{*}  \]</span></p>
+<hr />
+<p>Ved å sett inn for uttrykkene ovenfor, kan vi skrive nettoeksporten som</p>
+<p><span class="math display">\[NX = EX - R\cdot IM = x_{1}R + x_{2}Y^{*} - R\cdot (m_{1}R + m_{2}Y)\]</span></p>
+<p>Legger til grunn i dette kurset at priseffekten dominerer innteksteffekten (Marshall-Lerner betingelsen):</p>
+<p><span class="math display">\[\frac{\Delta NX}{\Delta R}= x_{1} - IM + m_{1}R &gt; 0 \text{ (i praksis vil dette ta litt tid)}\]</span></p>
+<hr />
 </div>
 <div id="offentlige-myndigheter" class="section level4">
 <h4>Offentlige myndigheter</h4>
+<p>Myndighetene kan velge mellom fast eller flytende kurs:</p>
 <ul>
-<li>Myndighetene kan velge fast eller flytende kurs</li>
+<li>Fast <span class="math display">\[i =i^{*} + rp\]</span></li>
 </ul>
-<p>Flytende:</p>
-<p><span class="math inline">\(E=\frac{(1+i)}{(1+i)}E^{e}\)</span></p>
-<p>Fast (troverdig <span class="math inline">\(⇒E=E_{e}\)</span>):</p>
-<p><span class="math inline">\(i =i^{*}\)</span></p>
-</div>
-</div>
-<div id="mundell-fleming-modellen" class="section level3">
-<h3>Mundell-Fleming modellen</h3>
-<div id="fast-kurs" class="section level4">
-<h4>Fast kurs</h4>
-</div>
-<div id="flytende-kurs" class="section level4">
-<h4>Flytende kurs</h4>
-</div>
-<div id="komparativ-statikk-skiftanalyse" class="section level4">
-<h4>Komparativ statikk (skiftanalyse)</h4>
-</div>
-<div id="stabiliseringspolitikk" class="section level4">
-<h4>Stabiliseringspolitikk</h4>
-</div>
-</div>
-<div id="ad-as-modellen-for-en-apen-konomi" class="section level3">
-<h3>AD-AS modellen for en åpen økonomi</h3>
-<div id="komparativ-statikk-skiftanalyse-1" class="section level4">
-<h4>Komparativ statikk (skiftanalyse)</h4>
-</div>
-<div id="stabiliseringspolitikk-1" class="section level4">
-<h4>Stabiliseringspolitikk</h4>
-</div>
-</div>
-</div>
-<div id="section" class="section level2">
-<h2>&lt;!–</h2>
-<ol style="list-style-type: decimal">
-<li><span class="math display">\[Y = \frac{1}{1-c-R?}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]\]</span></li>
-<li><span class="math display">\[\frac{M}{P}=\kappa\cdot Y + h\cdot i\]</span></li>
-<li><span class="math display">\[E = \frac{1+i^{*}}{1 + i} \text{ Flytende kursregime}\]</span></li>
-<li><span class="math display">\[i = i^{*} \text{ Fastkursregime}\]</span></li>
-</ol>
+<p>Anser markedsaktørene faskursregimet som troverdig, har vi at <span class="math inline">\(E=E^{e} \Rightarrow rp=0\)</span></p>
 <ul>
-<li>IS-kurven under fast og flytende kurs</li>
+<li>Flytende</li>
 </ul>
-<p>Generelt fører lavere rente til høyere produksjon.</p>
-<p>Men multiplikatoren blir mindre ved en åpen økonomi, grunnet importlekkasje.</p>
-<p>Helningen på kurven er slakere under flytende kurs enn med fast kurs. Det skyldes at lavere rente under flytende kurs fører til en depresiering av den nominelle og realvalutakursen, noe som forbedrer landets konkurranse evne og dermed fører til økt etterspørsel gjennom økt nettoeksport.</p>
-<ul>
-<li><p>LM modellen stigende under fast og horisontal under fast(?)</p></li>
-<li><p>Skiftanalyse (grafisk og verbalt)</p></li>
-</ul>
-<p>Merk: P gir AS-kurven.</p>
-<ul>
-<li>Stabiliseringspolitikk (grafisk og verbalt)</li>
-</ul>
-<p>Virkemidler: <span class="math inline">\(G\)</span>, <span class="math inline">\(T\)</span> og <span class="math inline">\(M/i\)</span> (Flytende) og <span class="math inline">\(G\)</span>,<span class="math inline">\(T\)</span> og(<span class="math inline">\(E\)</span>) (Fast kurs)</p>
-<div id="mundell-fleming-is-lm-for-en-apen-konomi-modellen" class="section level3">
-<h3>Mundell-Fleming (IS-LM for en åpen økonomi) modellen</h3>
-<ul>
-<li>AS-kurven samme som under en lukket økonomi.</li>
-<li>AD-kurven er fallende ved at økt priser fører til lavere etterspørsel.</li>
-<li>Sentralt poeng med modellen – Selvkorrigerende mekanismer:</li>
-</ul>
-<p>Fleksibilitet i P og korrekte prisforventninger Pe på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.</p>
+<p><span class="math display">\[E=\frac{(1+i)}{(1+i)}E^{e}\]</span></p>
+<hr />
+</div>
+</div>
+</div>
+<div id="mundell-fleming-modellen-under-fast-kurs" class="section level2">
+<h2>Mundell-Fleming modellen under fast kurs</h2>
+<div id="godemarkedet" class="section level3">
+<h3>Godemarkedet</h3>
+<p><span class="math display">\[Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX + R^{2}\cdot m_{1} \right]\]</span></p>
+</div>
+<div id="pengemarkedet" class="section level3">
+<h3>Pengemarkedet</h3>
+<p><span class="math display">\[kY -hi = \overline{M}/P\]</span></p>
+</div>
+<div id="valutakursmarkedet" class="section level3">
+<h3>Valutakursmarkedet</h3>
+<p><span class="math display">\[i =i^{*} + rp\]</span></p>
+<hr />
+</div>
+<div id="grafisk" class="section level3">
+<h3>Grafisk</h3>
+<p>Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet (fast kurs)</p>
+<p><img src="del1_konjunkturer_open_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="komparativ-statikk-skiftanalyse" class="section level3">
+<h3>Komparativ statikk (skiftanalyse)</h3>
+<p><img src="del1_konjunkturer_open_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="stabiliseringspolitikk-g-og-t" class="section level3">
+<h3>Stabiliseringspolitikk (G og T)</h3>
+<!--
+
+## Mundell-Fleming modellen under flytende kurs
+
+### Godemarkedet
+
+$$Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX + R\cdot m_{1} \right]$$
+
+### Pengemarkedet
+
+$$kY -hi = \overline{M}/P$$
+
+### BP
+
+$$E=\frac{(1+i)}{(1+i)}E^{e}$$
+
+---
+
+### Grafisk
+
+Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet (flytende kurs)
+
+<img src="del1_konjunkturer_open_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+
+---
+
+### Komparativ statikk (skiftanalyse)
+
+---
+
+### Stabiliseringspolitikk  (M/(i), G og T) 
+
+<!--
+
+### AD-AS modellen for en åpen økonomi
+
+#### Samtidig likevekt
+
+#### Komparativ statikk (skiftanalyse)
+
+#### Stabiliseringspolitikk 
+- Finanspolitikk
+- Pengepolitikk
+
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<p id="demo"></p>
+
+-->
+<!--
+- 
+1. $$Y = \frac{1}{1-c-R?}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]$$
+1. $$\frac{M}{P}=\kappa\cdot Y + h\cdot i$$
+1. $$E = \frac{1+i^{*}}{1 + i} \text{ Flytende kursregime}$$
+1. $$i = i^{*} \text{ Fastkursregime}$$
+
+- IS-kurven under fast og flytende kurs
+
+Generelt fører lavere rente til høyere produksjon.
+
+Men multiplikatoren blir mindre ved en åpen økonomi, grunnet importlekkasje.
+
+Helningen på kurven er slakere under flytende kurs enn med fast kurs. Det skyldes at lavere rente under flytende kurs fører til en depresiering av den nominelle og realvalutakursen, noe som forbedrer landets konkurranse evne og dermed fører til økt etterspørsel gjennom økt nettoeksport.
+
+- LM modellen stigende under fast og horisontal under fast(?)
+
+- Skiftanalyse (grafisk og verbalt)
+
+Merk: P gir AS-kurven.
+
+- Stabiliseringspolitikk (grafisk og verbalt)
+
+Virkemidler: $G$, $T$ og $M/i$
+ (Flytende) og
+$G$,$T$ og($E$)
+ (Fast kurs)
+ 
+
+### Mundell-Fleming (IS-LM for en åpen økonomi) modellen 
+
+- AS-kurven samme som under en lukket økonomi.
+- AD-kurven er fallende ved at økt priser fører til lavere etterspørsel.
+- Sentralt poeng med modellen – Selvkorrigerende mekanismer:
+
+Fleksibilitet i P og korrekte prisforventninger Pe
+på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.
+-->
 </div>
 </div>
 
