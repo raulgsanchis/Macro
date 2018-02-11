@@ -25,12 +25,17 @@ muflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M=
                          P=1, h = 10, k =1, Y = 130, m=1, t=0.4), openpar, list(i=c(iv)))
 
 eopenpar <- list(i_s=1.0, rp=0)
-emuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 110,
+emuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 45, b = 10, oI = 10, T = 50, M= 110,
                           P=1, h = 10, k =1, Y = 130, m=1, t=0.4), eopenpar, list(i=c(iv)))
 
+seopenpar <- list(i_s=1.0, rp=0)
+semuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 30, b = 10, oI = 10, T = 50, M= 110,
+                          P=1, h = 10, k =1, Y = 130, m=1, t=0.4), eopenpar, list(i=c(iv)))
+
+
 dfmufl <- dfgeneric(modell='islmo', exoparval = muflexoparvalv, eqsel = c(1,2))
-#dfmufl$varnavn
 edfmufl <- dfgeneric(modell='islmo', exoparval = emuflexoparvalv, eqsel = c(1,2))
+sedfmufl <- dfgeneric(modell='islmo', exoparval = semuflexoparvalv, eqsel = c(1,2))
 
 # Fast kurs
 dfkurvermffast <- data.frame(kurve=c("IS", ""),
@@ -79,6 +84,34 @@ emuflfastlikevekt <- cgenmakrofigure(dfnumeric=dfmufl,
   geom_text(aes(x=edfmufl$yeae[1], y=165+3 ,label="BoP'"), color = 'red')
 
 emuflfastlikevekt
+
+# Fast kurs, endring i stabiliseringspolitikk
+sedfkurvermffast <- data.frame(kurve=c("IS'", ""),
+                              fargel = c('red', 'red'),
+                              fargek = c('red', 'red'),
+                              y = c(sedfmufl$varnavnminverdi$value[c(1)], sedfmufl$varnavnmaksverdi$value[c(2)]),
+                              x = c(sedfmufl$varnavnminverdi$Iv[c(1)], sedfmufl$varnavnmaksverdi$Iv[c(2)]))
+
+selabelsmufl <- list(title = 'Mundell-Fleming modellen - fast kurs',
+                    y = 'produksjon, inntekt (Y)',
+                    x = 'rentenivå (i=i*+rp)',
+                    x0 = c(TeX('$i_{2}}$')),
+                    y0 = c(TeX('$Y_{2}$')),
+                    kurver = sedfkurvermffast)
+
+
+semuflfastlikevekt <- cgenmakrofigure(dfnumeric=dfmufl,
+                                     edfnumeric=sedfmufl,
+                                     variables = c(dfmufl$varnavn)[c(1)],
+                                     labt = labelsmufl,
+                                     elabt = selabelsmufl,
+                                     scalejust = list(x=0, y=75)) + coord_flip() +
+  geom_line(data=data.frame(x=dfmufl$yeae[1], y=90:165), aes(x,y), color ='black', size=0.5) +
+  geom_text(aes(x=dfmufl$yeae[1], y=165+3 ,label='BoP'), color = 'red') +
+  geom_line(data=data.frame(x=edfmufl$yeae[1], y=90:165), aes(x,y), color ='black', size=0.5) +
+  geom_text(aes(x=edfmufl$yeae[1], y=165+3 ,label="BoP'"), color = 'red')
+
+semuflfastlikevekt
 #################################################################################
 #
 # # Flytende kurs
