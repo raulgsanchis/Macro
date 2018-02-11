@@ -55,6 +55,9 @@ dfgeneric <- function(modell='adasl',labels = NULL, exoparval=NULL, eqsel = c(1,
 
 
   } else if (modell =='adasl'){
+
+    browser()
+
     # Leser inn modellen
     modellequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/adascequ.json'))
     # Selekterte modellligninger
@@ -79,6 +82,8 @@ dfgeneric <- function(modell='adasl',labels = NULL, exoparval=NULL, eqsel = c(1,
 
   }
   else if (modell =='islmo'){
+
+    browser()
 
     modellequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/islmocequ.json'))
     isv <- eval(parse(text=modellequ$ISC), exoparval)
