@@ -80,9 +80,16 @@ molttlandpricei <- tlandpricei %>%
   dplyr::mutate(kat = 'inf')
 
 ## Samler alle dataene for land
+<<<<<<< HEAD
 moltmacroger <- rbind(molttlandunem, molttlandgdp, molttlandpricei) %>% dplyr::mutate(land='ger') %>%
   dplyr::mutate(freqm = substring(date,6,7))
 
+=======
+moltmacroger <- rbind(molttlandunem, molttlandgdp, molttlandpricei) %>% dplyr::mutate(land='nor') %>%
+  dplyr::mutate(freqm = substring(date,6,7))
+
+
+>>>>>>> kontoret
 # 4. Saving data in Rda-format
 devtools::use_data(moltmacroger, overwrite = TRUE)
 
@@ -102,4 +109,11 @@ phillips <- qplot(x = unem, y = cinflation, data = lmoltmacroger, geom = c('poin
   geom_smooth(method = "lm", se = FALSE) +
   labs(title= 'Phillips-kurven - Tyskland', x='Ledighetsrate', y = 'Endring i inflation')
 
+<<<<<<< HEAD
 ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/sem1/phillipsger.png'))
+=======
+
+ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/sem1/phillipsger.png'))
+
+
+>>>>>>> kontoret

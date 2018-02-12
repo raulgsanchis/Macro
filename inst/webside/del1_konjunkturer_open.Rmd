@@ -1,0 +1,342 @@
+
+```{r include=FALSE}
+library(MakroOEKB1115)
+library(dplyr)
+library(ggplot2)
+library(gridExtra)
+library(grid)
+library(latex2exp)
+```
+
+## Grunnleggende  bakgrunnkunnskaper
+
+### Stabiliseringsmål for en åpen økonomi
+
+- Intern balanse (lukke produksjonsgapet):
+
+$$(Y-\overline{Y})=0$$
+
+- Ekstern balanse (rimelig nivå på utenlandsgjelden - gjelden skal kunne betjenes uten problemer)
+
+---
+
+### Tre fundamentale endringer fra en lukket økonomi
+
+#### (1) Handel med utlandet
+
+$$AE \equiv C+I+G+NX$$
+$NX$ er nå inkludert i definisjonen for aggregert etterspørsel
+
+NX er definert som eksport $(EX)$ minus import $(R\cdot IM)$ målt i enheter av det innenlandske godet:
+
+$$NX=EX−R\cdot IM \text{ hvor }$$
+Realvalutakursen $R=\frac{E\cdot P^{*}}{P}$ (prisforholdet mellom utenlandske og innenlandske goder målt i enheter av det innenlandske gode) sørger her for at alt blir målt i enheter av det innenlandske godet. 
+
+---
+
+
+#### (2) Fast eller flytende kurs
+
+Renteparitetsbetingelsen
+
+$$(1+i_{t+1})=(1+i_{t+1}^{*})\frac{E_{t+1}^{e}}{E_{t}}$$
+Likevektsbetingelse som forteller oss at den forventede avkastningen er lik mellom å investere i inn- og utland.
+
+Her er $i_{t+1}$ innelandsk avkastning, $i_{t+1}^{*}$ utenlands avkastning, $E_{t}$ er (nominelle) prisen i dag per énhet av utenlandsk valuta og $E_{t+1}^{e}$ den forventede valutakursen én periode frem i tid.  
+
+---
+
+#### (3) Utenriksregnskapet (BoP)
+
+$$BP = CA + CU + OR=0$$
+
+$CU=\text{Driftsregnskapet}$. 
+
+Består av nettoeksport (NX), pluss nettofinansinntekter(aksjer og obligasjoner) og nettoverføringer
+
+$CA=\text{Kapitalregnskapet}$ 
+
+Nettoendringer i fordringer og gjeld ovenfor utlandet
+
+$OR=\text{Endringer i sentralbankens valutareserver}$ 
+
+Vil øke (reduseres) dersom fastkursprisen er svakere (sterkere) enn det som markedet er villig til å betale 
+
+## Mundell-Fleming modellen
+
+### Adferdsligninger
+
+#### Husholdninger og bedrifter
+
+Husholdningene import ($IM$) av utenlandske goder er gitt ved
+
+$$IM=  -m_{1}R + m_{2}Y $$
+
+Bedriftenes eksport ($EX$) av innenlandske goder er gitt ved
+
+$$EX=x_{1}R + x_{2}Y^{*}  $$
+
+---
+
+Ved å sett inn for uttrykkene ovenfor, kan vi skrive nettoeksporten som  
+
+$$NX = EX - R\cdot IM = x_{1}R + x_{2}Y^{*} - R\cdot (m_{1}R + m_{2}Y)$$
+
+Legger til grunn i dette kurset at priseffekten dominerer innteksteffekten ([Marshall-Lerner betingelsen](https://en.wikipedia.org/wiki/Marshall%E2%80%93Lerner_condition)
+):
+
+$$\frac{\Delta NX}{\Delta R}= x_{1} - IM + m_{1}R > 0 \text{ (i praksis vil dette ta litt tid)}$$  
+
+---
+
+#### Offentlige myndigheter
+
+Myndighetene kan velge mellom fast eller flytende kurs:
+
+- Fast
+$$i =i^{*} + rp$$
+
+Anser markedsaktørene faskursregimet som troverdig, har vi at $E=E^{e} \Rightarrow rp=0$
+
+- Flytende 
+
+$$E=\frac{(1+i^{*})}{(1+i)}E^{e}$$
+
+
+```{r include=FALSE}
+iv <- 0:5
+openpar <- list(i_s=1.5, rp=0)
+muflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
+                         P=1, h = 10, k =1, Y = 130, m=1, t=0.4), openpar, list(i=c(iv)))
+
+eopenpar <- list(i_s=1.0, rp=0)
+emuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 110,
+                          P=1, h = 10, k =1, Y = 130, m=1, t=0.4), eopenpar, list(i=c(iv)))
+
+seopenpar <- list(i_s=1.0, rp=0)
+semuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 45, b = 10, oI = 10, T = 50, M= 110,
+                          P=1, h = 10, k =1, Y = 130, m=1, t=0.4), eopenpar, list(i=c(iv)))
+
+dfmufl <- dfgeneric(modell='islmo', exoparval = muflexoparvalv, eqsel = c(1,2))
+edfmufl <- dfgeneric(modell='islmo', exoparval = emuflexoparvalv, eqsel = c(1,2))
+sedfmufl <- dfgeneric(modell='islmo', exoparval = semuflexoparvalv, eqsel = c(1,2))
+
+# Fast kurs
+dfkurvermffast <- data.frame(kurve=c("IS", ""),
+                             fargel = c('red', 'red'),
+                             fargek = c('red', 'red'),
+                             y = c(dfmufl$varnavnminverdi$value[c(1)], dfmufl$varnavnmaksverdi$value[c(2)]),
+                             x = c(dfmufl$varnavnminverdi$Iv[c(1)],dfmufl$varnavnmaksverdi$Iv[c(2)]))
+
+labelsmufl <- list(title = 'Mundell-Fleming modellen - fast kurs',
+                   y = 'produksjon, inntekt (Y)',
+                   x = 'rentenivå (i=i*+rp)',
+                   x0 = c(TeX('$i_{0}}$')),
+                   y0 = c(TeX('$Y_{0}$')),
+                   kurver = dfkurvermffast)
+
+muflfastlikevekt <- genmakrofigure(dfnumeric=dfmufl,
+                                   variables = c(dfmufl$varnavn)[c(1)],
+                                   labt = labelsmufl,
+                                   scalejust = list(x=0, y=90))  + coord_flip() +
+  geom_line(data=data.frame(x=dfmufl$yeae[1], y=90:165), aes(x,y), color ='black', size=0.5) +
+  geom_text(aes(x=dfmufl$yeae[1], y=165+3 ,label='BoP'), color = 'red')
+
+# Fast kurs, endring i utenlandsrenta
+edfkurvermffast <- data.frame(kurve=c("IS", ""),
+                              fargel = c('red', 'red'),
+                              fargek = c('red', 'red'),
+                              y = c(dfmufl$varnavnminverdi$value[c(1)], dfmufl$varnavnmaksverdi$value[c(2)]),
+                              x = c(dfmufl$varnavnminverdi$Iv[c(1)],dfmufl$varnavnmaksverdi$Iv[c(2)]))
+
+elabelsmufl <- list(title = 'Mundell-Fleming modellen - fast kurs',
+                    y = 'produksjon, inntekt (Y)',
+                    x = 'rentenivå (i=i*+rp)',
+                    x0 = c(TeX('$i_{1}}$')),
+                    y0 = c(TeX('$Y_{1}$')),
+                    kurver = edfkurvermffast)
+
+emuflfastlikevekt <- cgenmakrofigure(dfnumeric=dfmufl,
+                                     edfnumeric=edfmufl,
+                                     variables = c(dfmufl$varnavn)[c(1)],
+                                     labt = labelsmufl,
+                                     elabt = elabelsmufl,
+                                     scalejust = list(x=0, y=75)) + coord_flip() +
+  geom_line(data=data.frame(x=dfmufl$yeae[1], y=90:165), aes(x,y), color ='black', size=0.5) +
+  geom_text(aes(x=dfmufl$yeae[1], y=165+3 ,label='BoP'), color = 'red') +
+  geom_line(data=data.frame(x=edfmufl$yeae[1], y=90:165), aes(x,y), color ='black', size=0.5) +
+  geom_text(aes(x=edfmufl$yeae[1], y=165+3 ,label="BoP'"), color = 'red')
+
+emuflfastlikevekt
+
+
+
+sedfkurvermffast <- data.frame(kurve=c("IS'", ""),
+                              fargel = c('red', 'red'),
+                              fargek = c('red', 'red'),
+                              y = c(sedfmufl$varnavnminverdi$value[c(1)], sedfmufl$varnavnmaksverdi$value[c(2)]),
+                              x = c(sedfmufl$varnavnminverdi$Iv[c(1)], sedfmufl$varnavnmaksverdi$Iv[c(2)]))
+
+selabelsmufl <- list(title = 'Mundell-Fleming modellen - fast kurs',
+                    y = 'produksjon, inntekt (Y)',
+                    x = 'rentenivå (i=i*+rp)',
+                    x0 = c(TeX('$i_{2}}$')),
+                    y0 = c(TeX('$Y_{2}$')),
+                    kurver = sedfkurvermffast)
+
+
+semuflfastlikevekt <- cgenmakrofigure(dfnumeric=dfmufl,
+                                     edfnumeric=sedfmufl,
+                                     variables = c(dfmufl$varnavn)[c(1)],
+                                     labt = labelsmufl,
+                                     elabt = selabelsmufl,
+                                     scalejust = list(x=0, y=75)) + coord_flip() +
+  geom_line(data=data.frame(x=dfmufl$yeae[1], y=90:165), aes(x,y), color ='black', size=0.5) +
+  geom_text(aes(x=dfmufl$yeae[1], y=165+3 ,label='BoP'), color = 'red') +
+  geom_line(data=data.frame(x=edfmufl$yeae[1], y=90:165), aes(x,y), color ='black', size=0.5) +
+  geom_text(aes(x=edfmufl$yeae[1], y=165+3 ,label="BoP'"), color = 'red')
+
+semuflfastlikevekt
+
+```
+
+## Mundell-Fleming modellen under fast kurs
+
+### Godemarkedet
+
+$$Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX + R^{2}\cdot m_{1} \right]$$
+
+### Pengemarkedet
+
+$$kY -hi = \overline{M}/P$$
+
+### Valutakursmarkedet
+$$i =i^{*} + rp$$
+
+---
+
+### Grafisk
+
+Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet (fast kurs)
+
+```{r echo=FALSE, warning=FALSE}
+muflfastlikevekt
+```
+
+---
+
+### Komparativ statikk (skiftanalyse)
+
+```{r echo=FALSE}
+emuflfastlikevekt
+```
+
+
+---
+
+### Stabiliseringspolitikk (G og T)
+
+Eks. reduksjon i offentlig utgifter
+
+```{r echo=FALSE}
+semuflfastlikevekt
+```
+
+---
+
+Merk: Under fast kurs er renta bundet til å holde fastkursen stabil, det gjør at finanspolitikk (endring i utgifter og skatter) står igjen som de eneste virkemidelene som kan stabillisere konjunkturbevegelsene.
+
+
+<!--
+
+## Mundell-Fleming modellen under flytende kurs
+
+### Godemarkedet
+
+$$Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX + R\cdot m_{1} \right]$$
+
+### Pengemarkedet
+
+$$kY -hi = \overline{M}/P$$
+
+### BP
+
+$$E=\frac{(1+i)}{(1+i)}E^{e}$$
+
+---
+
+### Grafisk
+
+Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet (flytende kurs)
+
+```{r echo=FALSE, warning=FALSE}
+#fastmflikevekt
+emuflfastlikevekt
+```
+
+---
+
+### Komparativ statikk (skiftanalyse)
+
+---
+
+### Stabiliseringspolitikk  (M/(i), G og T) 
+
+<!--
+
+### AD-AS modellen for en åpen økonomi
+
+#### Samtidig likevekt
+
+#### Komparativ statikk (skiftanalyse)
+
+#### Stabiliseringspolitikk 
+- Finanspolitikk
+- Pengepolitikk
+
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<p id="demo"></p>
+
+-->
+
+<!--
+- 
+1. $$Y = \frac{1}{1-c-R?}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]$$
+1. $$\frac{M}{P}=\kappa\cdot Y + h\cdot i$$
+1. $$E = \frac{1+i^{*}}{1 + i} \text{ Flytende kursregime}$$
+1. $$i = i^{*} \text{ Fastkursregime}$$
+
+- IS-kurven under fast og flytende kurs
+
+Generelt fører lavere rente til høyere produksjon.
+
+Men multiplikatoren blir mindre ved en åpen økonomi, grunnet importlekkasje.
+
+Helningen på kurven er slakere under flytende kurs enn med fast kurs. Det skyldes at lavere rente under flytende kurs fører til en depresiering av den nominelle og realvalutakursen, noe som forbedrer landets konkurranse evne og dermed fører til økt etterspørsel gjennom økt nettoeksport.
+
+- LM modellen stigende under fast og horisontal under fast(?)
+
+- Skiftanalyse (grafisk og verbalt)
+
+Merk: P gir AS-kurven.
+
+- Stabiliseringspolitikk (grafisk og verbalt)
+
+Virkemidler: $G$, $T$ og $M/i$
+ (Flytende) og
+$G$,$T$ og($E$)
+ (Fast kurs)
+ 
+
+### Mundell-Fleming (IS-LM for en åpen økonomi) modellen 
+
+- AS-kurven samme som under en lukket økonomi.
+- AD-kurven er fallende ved at økt priser fører til lavere etterspørsel.
+- Sentralt poeng med modellen – Selvkorrigerende mekanismer:
+
+Fleksibilitet i P og korrekte prisforventninger Pe
+på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.
+-->

@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">ØKB1115 Makroøkonomi</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Kursinformasjon
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="forelesningsplan.html">Forelesningsplan</a>
+    </li>
+    <li>
+      <a href="laeringsmaal.html">Læringsmål</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Forelesninger
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="presentasjoner/pres_innledning.html">Introduksjon</a>
+    </li>
+    <li>
+      <a href="del1_konjunkturerF.html">Del I: Konjunktursvingninger</a>
+    </li>
+    <li>
+      <a href="del2_vekstF.html">Del II: Økonomisk vekst</a>
+    </li>
+    <li>
+      <a href="del3_kriserF.html">Del III: Økonomiske kriser</a>
+    </li>
+    <li>
+      <a href="case_euro.html">Applikasjon: Krisen i Eurosonen</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Oppgaver
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="seminar.html">Seminaroppgaver</a>
+    </li>
+    <li>
+      <a href="formler.html">Regneregler for differensialer</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Lenker
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="nyhetslinker.html">Supplerende kursinformasjon</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Utskrifter
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="htmlrapport.html">Forelesningsnotater</a>
+    </li>
+    <li>
+      <a href="symbolliste.html">Variabeldefinisjoner</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a></a>
+</li>
+<li>
+  <a href="https://www.hvl.no/person/?user=3601450">
+    <span class="ion ion-android-contact"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<div id="grunnleggende-bakgrunnkunnskaper" class="section level2">
+<h2>Grunnleggende bakgrunnkunnskaper</h2>
+<div id="stabiliseringsmal-for-en-apen-konomi" class="section level3">
+<h3>Stabiliseringsmål for en åpen økonomi</h3>
+<ul>
+<li>Intern balanse (lukke produksjonsgapet):</li>
+</ul>
+<p><span class="math display">\[(Y-\overline{Y})=0\]</span></p>
+<ul>
+<li>Ekstern balanse (rimelig nivå på utenlandsgjelden - gjelden skal kunne betjenes uten problemer)</li>
+</ul>
+<hr />
+</div>
+<div id="tre-fundamentale-endringer-fra-en-lukket-konomi" class="section level3">
+<h3>Tre fundamentale endringer fra en lukket økonomi</h3>
+<div id="handel-med-utlandet" class="section level4">
+<h4>(1) Handel med utlandet</h4>
+<p><span class="math display">\[AE \equiv C+I+G+NX\]</span> <span class="math inline">\(NX\)</span> er nå inkludert i definisjonen for aggregert etterspørsel</p>
+<p>NX er definert som eksport <span class="math inline">\((EX)\)</span> minus import <span class="math inline">\((R\cdot IM)\)</span> målt i enheter av det innenlandske godet:</p>
+<p><span class="math display">\[NX=EX−R\cdot IM \text{ hvor }\]</span> Realvalutakursen <span class="math inline">\(R=\frac{E\cdot P^{*}}{P}\)</span> (prisforholdet mellom utenlandske og innenlandske goder målt i enheter av det innenlandske gode) sørger her for at alt blir målt i enheter av det innenlandske godet.</p>
+<hr />
+</div>
+<div id="fast-eller-flytende-kurs" class="section level4">
+<h4>(2) Fast eller flytende kurs</h4>
+<p>Renteparitetsbetingelsen</p>
+<p><span class="math display">\[(1+i_{t+1})=(1+i_{t+1}^{*})\frac{E_{t+1}^{e}}{E_{t}}\]</span> Likevektsbetingelse som forteller oss at den forventede avkastningen er lik mellom å investere i inn- og utland.</p>
+<p>Her er <span class="math inline">\(i_{t+1}\)</span> innelandsk avkastning, <span class="math inline">\(i_{t+1}^{*}\)</span> utenlands avkastning, <span class="math inline">\(E_{t}\)</span> er (nominelle) prisen i dag per énhet av utenlandsk valuta og <span class="math inline">\(E_{t+1}^{e}\)</span> den forventede valutakursen én periode frem i tid.</p>
+<hr />
+</div>
+<div id="utenriksregnskapet-bop" class="section level4">
+<h4>(3) Utenriksregnskapet (BoP)</h4>
+<p><span class="math display">\[BP = CA + CU + OR=0\]</span></p>
+<p><span class="math inline">\(CU=\text{Driftsregnskapet}\)</span>.</p>
+<p>Består av nettoeksport (NX), pluss nettofinansinntekter(aksjer og obligasjoner) og nettoverføringer</p>
+<p><span class="math inline">\(CA=\text{Kapitalregnskapet}\)</span></p>
+<p>Nettoendringer i fordringer og gjeld ovenfor utlandet</p>
+<p><span class="math inline">\(OR=\text{Endringer i sentralbankens valutareserver}\)</span></p>
+<p>Vil øke (reduseres) dersom fastkursprisen er svakere (sterkere) enn det som markedet er villig til å betale</p>
+</div>
+</div>
+</div>
+<div id="mundell-fleming-modellen" class="section level2">
+<h2>Mundell-Fleming modellen</h2>
+<div id="adferdsligninger" class="section level3">
+<h3>Adferdsligninger</h3>
+<div id="husholdninger-og-bedrifter" class="section level4">
+<h4>Husholdninger og bedrifter</h4>
+<p>Husholdningene import (<span class="math inline">\(IM\)</span>) av utenlandske goder er gitt ved</p>
+<p><span class="math display">\[IM=  -m_{1}R + m_{2}Y \]</span></p>
+<p>Bedriftenes eksport (<span class="math inline">\(EX\)</span>) av innenlandske goder er gitt ved</p>
+<p><span class="math display">\[EX=x_{1}R + x_{2}Y^{*}  \]</span></p>
+<hr />
+<p>Ved å sett inn for uttrykkene ovenfor, kan vi skrive nettoeksporten som</p>
+<p><span class="math display">\[NX = EX - R\cdot IM = x_{1}R + x_{2}Y^{*} - R\cdot (m_{1}R + m_{2}Y)\]</span></p>
+<p>Legger til grunn i dette kurset at priseffekten dominerer innteksteffekten (<a href="https://en.wikipedia.org/wiki/Marshall%E2%80%93Lerner_condition">Marshall-Lerner betingelsen</a> ):</p>
+<p><span class="math display">\[\frac{\Delta NX}{\Delta R}= x_{1} - IM + m_{1}R &gt; 0 \text{ (i praksis vil dette ta litt tid)}\]</span></p>
+<hr />
+</div>
+<div id="offentlige-myndigheter" class="section level4">
+<h4>Offentlige myndigheter</h4>
+<p>Myndighetene kan velge mellom fast eller flytende kurs:</p>
+<ul>
+<li>Fast <span class="math display">\[i =i^{*} + rp\]</span></li>
+</ul>
+<p>Anser markedsaktørene faskursregimet som troverdig, har vi at <span class="math inline">\(E=E^{e} \Rightarrow rp=0\)</span></p>
+<ul>
+<li>Flytende</li>
+</ul>
+<p><span class="math display">\[E=\frac{(1+i^{*})}{(1+i)}E^{e}\]</span></p>
+</div>
+</div>
+</div>
+<div id="mundell-fleming-modellen-under-fast-kurs" class="section level2">
+<h2>Mundell-Fleming modellen under fast kurs</h2>
+<div id="godemarkedet" class="section level3">
+<h3>Godemarkedet</h3>
+<p><span class="math display">\[Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX + R^{2}\cdot m_{1} \right]\]</span></p>
+</div>
+<div id="pengemarkedet" class="section level3">
+<h3>Pengemarkedet</h3>
+<p><span class="math display">\[kY -hi = \overline{M}/P\]</span></p>
+</div>
+<div id="valutakursmarkedet" class="section level3">
+<h3>Valutakursmarkedet</h3>
+<p><span class="math display">\[i =i^{*} + rp\]</span></p>
+<hr />
+</div>
+<div id="grafisk" class="section level3">
+<h3>Grafisk</h3>
+<p>Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet (fast kurs)</p>
+<p><img src="del1_konjunkturer_open_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="komparativ-statikk-skiftanalyse" class="section level3">
+<h3>Komparativ statikk (skiftanalyse)</h3>
+<p><img src="del1_konjunkturer_open_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<hr />
+</div>
+<div id="stabiliseringspolitikk-g-og-t" class="section level3">
+<h3>Stabiliseringspolitikk (G og T)</h3>
+<p>Eks. reduksjon i offentlig utgifter</p>
+<p><img src="del1_konjunkturer_open_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<hr />
+<p>Merk: Under fast kurs er renta bundet til å holde fastkursen stabil, det gjør at finanspolitikk (endring i utgifter og skatter) står igjen som de eneste virkemidelene som kan stabillisere konjunkturbevegelsene.</p>
+<!--
+
+## Mundell-Fleming modellen under flytende kurs
+
+### Godemarkedet
+
+$$Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX + R\cdot m_{1} \right]$$
+
+### Pengemarkedet
+
+$$kY -hi = \overline{M}/P$$
+
+### BP
+
+$$E=\frac{(1+i)}{(1+i)}E^{e}$$
+
+---
+
+### Grafisk
+
+Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet (flytende kurs)
+
+<img src="del1_konjunkturer_open_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+
+---
+
+### Komparativ statikk (skiftanalyse)
+
+---
+
+### Stabiliseringspolitikk  (M/(i), G og T) 
+
+<!--
+
+### AD-AS modellen for en åpen økonomi
+
+#### Samtidig likevekt
+
+#### Komparativ statikk (skiftanalyse)
+
+#### Stabiliseringspolitikk 
+- Finanspolitikk
+- Pengepolitikk
+
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<p id="demo"></p>
+
+-->
+<!--
+- 
+1. $$Y = \frac{1}{1-c-R?}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]$$
+1. $$\frac{M}{P}=\kappa\cdot Y + h\cdot i$$
+1. $$E = \frac{1+i^{*}}{1 + i} \text{ Flytende kursregime}$$
+1. $$i = i^{*} \text{ Fastkursregime}$$
+
+- IS-kurven under fast og flytende kurs
+
+Generelt fører lavere rente til høyere produksjon.
+
+Men multiplikatoren blir mindre ved en åpen økonomi, grunnet importlekkasje.
+
+Helningen på kurven er slakere under flytende kurs enn med fast kurs. Det skyldes at lavere rente under flytende kurs fører til en depresiering av den nominelle og realvalutakursen, noe som forbedrer landets konkurranse evne og dermed fører til økt etterspørsel gjennom økt nettoeksport.
+
+- LM modellen stigende under fast og horisontal under fast(?)
+
+- Skiftanalyse (grafisk og verbalt)
+
+Merk: P gir AS-kurven.
+
+- Stabiliseringspolitikk (grafisk og verbalt)
+
+Virkemidler: $G$, $T$ og $M/i$
+ (Flytende) og
+$G$,$T$ og($E$)
+ (Fast kurs)
+ 
+
+### Mundell-Fleming (IS-LM for en åpen økonomi) modellen 
+
+- AS-kurven samme som under en lukket økonomi.
+- AD-kurven er fallende ved at økt priser fører til lavere etterspørsel.
+- Sentralt poeng med modellen – Selvkorrigerende mekanismer:
+
+Fleksibilitet i P og korrekte prisforventninger Pe
+på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.
+-->
+</div>
+</div>
+
+<html>
+<body>
+<!--
+<footer>
+  <p>Publisert av: <a href="mailto:jorn.inge.halvorsen@hvl.no">jorn.inge.halvorsen@hvl.no</a>.</p>
+</footer>
+-->
+</body>
+</html>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

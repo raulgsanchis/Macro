@@ -1,0 +1,52 @@
+# Seminar 2: Enkel Keynes og IS-LM modellen
+## Keynes modell for en lukket økonomi
+
+Vi ser for oss en lukket økonomi hvor aggregert etterspørsel (AE) er gitt ved
+$$AE\equiv C + I + G$$
+
+Hvor $C$ er konsum, $I$ private realinvesteringer og
+$G$ offentlig forbruk.
+
+I tillegg postulerer vi følgende adferdsligninger for aktørene i økonomien:
+$$C = \overline{C} + c_{1}(Y-T) - c_{2}\cdot i \text{ :Husholdningen}$$
+$$I = \overline{I} - b\cdot i \text{ :Private realinvesteringer}$$
+$$i = \overline{i} \text{ :sentralbanken}$$
+$$G = \overline{G} \text{ og } T=\overline{T} \text{: offentlige myndigheter}$$ 
+
+
+1. Er det produksjonen $Y$ som bestemmer etterspørselen $AE$, eller etterspørselen $AE$ som bestemmer produksjonen $Y$ i denne modellen?
+
+2. Hvilken sentral forutsetning ligger til grunn for dette resultatet?
+
+3. Gi en økonomisk tolkning tilknyttet adferden til husholdningen basert på konsumfunksjonen.
+
+4. Løs modellen mhp. på $Y$.
+
+5. Økt pessimisme i økonomien gir seg utslag i et lavere inntektsuavhengig konsum ($\overline{C}<0$). Hvis formelt, grafisk (dersom du ønsker å benytte Keyneskrysset) og verbalt hvordan dette endrer likevekten i modellen.
+
+6. Vis formelt (ved differensiering) hvilke stabiliseringspolitiske virkemidler det offentlige myndigheter har tilgjengelig for å motvirke den økte pessimismen. Hvilken av disse tiltakene vil ha sterkest negativ effekt på statsbudsjettet?
+
+7. Anta nå at rentenivået i økonomien er gitt ved en renteregel  $i= m\cdot Y$,  hvor $m>0$. Finn likevekten for $Y$ og vurder hvorvidten slik renteregel bidrar til å stabilisere eller dempe konjunktursvingingene (hint: sammenlikn multiplikatoren i modellene med og uten renteregel med hverandre).
+
+## IS-LM modellen
+
+Likvektsbetingelsen for pengemarkedet er gitt ved
+
+$$M^{S} = L_{d} $$
+
+I tillegg til adferdsligningene fra forrige oppgave, har vi her at
+
+$$L_{d} = \kappa\cdot Y - h\cdot i \text{ Husholdningens etterspørsel etter penger}$$
+
+
+$$M^{s}=\frac{\overline{M}}{P} \text{ :Hvor sentralbanken bestemmer tilbudet av basispenger}$$
+
+1. Vis ved differensiering  diagram og gi en verbal tolkning på hvorfor IS-ligningen er synkende og LM-kurven er stigende 
+
+1. Forklar effekten av økt optimisme tilknyttet private realinvestinger ('animal spirits') ved hjep av en figur
+
+1. Vis ved hjelp av en figur og forklar verbalt effekten av en reduksjon i prisnivået.
+
+1. Vis grafisk hvordan likevekten ser ut i pengemarkedet og IS-LM modellen, dersom sentralbanken går over til 
+renteregelen (som vi så på under Keynes modellen) gitt ved $i= m\cdot Y$.
+ 

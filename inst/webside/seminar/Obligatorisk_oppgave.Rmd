@@ -1,0 +1,34 @@
+---
+output:
+  html_notebook:
+    css: seminar.css
+---
+
+# Obligatorisk oppgave: 
+## Del 1
+1. I makroøkonomi antas produksjonen (BNP) på kort sikt å være bestemt av etterspørselen. Hvilken sentral forutsetning ligger til grunn for dette resultatet?
+Svar: Stive priser.
+2. Helningen på IS-kurven under en åpen økonomi med flytende valutakurs kan forklares av fire faktorer, beskriv disse.
+Svar: (1)+ Lavere rente gir økt investeringer og/eller økt konsum. (2)+ Multiplikatoreffekt:  Økt etterspørsel gir økt inntekt og dermed økt konsum etc.  (3)- Importlekkasje og (4) lavere rente gir lavere realvalutakurs som gir økt nettoeksport.
+3. Under AD-AS modellen for en åpen økonomi med flytene kurs, hvilke markeder er operasjonelle?
+Svar: Varemarkedet, Arbeidsmarkedet, Pengemarkedet og Valutakursmarkedet.
+4. Hva menes med intern og ekstern balanse?
+Svar: Intern balansen er produksjon (arbeidsledighet) lik det naturlige produksjonsnivået (arbeidsledighetsnivået). Ekstern balanse har vi når utelandgjelden er på et rimelig nivå (betjenes uten problemer).
+5. Hvilke to faktorer anses for å være sentrale når det gjelder skape økonomisk vekst, og nevn noen tiltak myndighetene kan ta i bruk for å oppmuntre til dette?
+Svar: (1) Kapitalakkumulasjon – sparing(+), befolningsvekst(-). (2) Teknologisk framgang – institusjoner, lover og regler etc.
+6. Hva forstås med innvendige og utvendige penger?
+Svar: Utvendige penger er den delen av pengemengden som sentralbanken skaper, består av reserver og sedler og mynt. Innvendige penger er den delen av pengemengden som bankene skaper 
+
+## Del 2 Lukket økonomi
+### IS-LM modellen
+### AD-AS modellen (lukket)
+1. Skift i LAS-kurven
+
+## Del 3: Åpen økonomi
+### Mundell-Fleming modellen
+#### Fast
+#### Flytende
+
+### AD-AS modellen  (åpen)
+#### Fast
+#### Flytende

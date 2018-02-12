@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 # Del I: Konjunktursvingninger
 ## Seminar 1: Datatransformering av nasjonalregnskapstall
+=======
 
-### Installering av FRED applikasjon til Excel
+# Seminar 1: Datatransformering av nasjonalregnskapstall
+>>>>>>> kontoret
+
+## Installering av FRED applikasjon til Excel
 - Installer applikasjonen FRED (fra Federal Reserve Bank of St. Louis)  i ditt Excel regneark [Windows](https://research.stlouisfed.org/fred-addin/install_windows.html) og [Mac](https://research.stlouisfed.org/fred-addin/install_mac.html)
 
 - Hjelp og tips til bruk av programmet finnes her:
@@ -10,7 +15,7 @@
 - Har du problemer med installeringen med applikasjonen, er en annen framgangsmåte at du søker opp tallene direkte ved bruk av denne [lenken](https://fred.stlouisfed.org/). Etter at du gjort bruk av søkefeltet, klikker du på den tidsserien du ønsker å benytte. I det nye vinduet som da åpner seg har du mulighet til å laste ned (download-knappen) tidsserien som Excel-fil (merk: edit graph-knappen gir deg mulighet til å velge ulike frekvenser for tidsserien)   
 
 
-### Tidsserier
+## Tidsserier
 Gjør følgende oppgaver for Norge, Tyskland og enten for Hellas, Italia, Portual eller Spania 
 
 - Hent tidsserien til bruttonasjonalproduktet i real størrelser
@@ -20,13 +25,31 @@ Gjør følgende oppgaver for Norge, Tyskland og enten for Hellas, Italia, Portua
 - Vis tidsseriene grafisk
 - Gir serien noen indikasjoner på dype økonomiske kriser?  Hvis ja, se om du kan finne (ved søk på internett) noen kortfattede økonomiske forklaringer bak disse krisene
 
-### Okuns lov og Phillips-kurven
+## Okuns lov og Phillips-kurven
 - Finn et mål på inflasjon (årlig)
 - Finn et mål på ledighet (årlig)
 - Lag et scatterplot for endring i ledighet og vekst i BNP (Okuns lov)
 - Lag et scatterplot for ledighet og endring i inflasjon (Phillips-kurven).
 - For de to scatterplottene, se om du klarer å estimere en linje (dvs. finn korrelasjonskoeffisienten) for graden av lineær korrelasjon
 - Er resultaten du finner i tråd med de empirisk regularitetene som ble diskutert i forelesningen?
+
+[Trykk her for Excel data](excel/dataoppgaveseminar1.xlsx)
+
+## Okuns lov
+```{r echo=FALSE, out.width="50%", out.height="50%"}
+mappe <- paste0(devtools::as.package(".")$path)
+
+sem1figurer <- list.files(paste0(mappe,'/inst/webside/figurer/sem1/'), pattern = ".png", full.names = TRUE)
+knitr::include_graphics(sem1figurer[c(1:3)])
+```
+
+## Phillips-kurven
+```{r echo=FALSE, out.width="50%", out.height="50%"}
+mappe <- paste0(devtools::as.package(".")$path)
+
+sem1figurer <- list.files(paste0(mappe,'/inst/webside/figurer/sem1/'), pattern = ".png", full.names = TRUE)
+knitr::include_graphics(sem1figurer[c(4:6)])
+```
 
 <!--
 [Trykk her for Excel data](excel/dataoppgaveseminar1.xlsx)
@@ -48,4 +71,29 @@ knitr::include_graphics(sem1figurer[c(4:6)])
 # Del II: Økonomisk vekst
 
 # Del III: Økonomiske kriser
+-->
+
+
+<!--
+# Del I: Konjunktursvingninger
+
+[Seminar1](seminar/seminar1)
+
+[Seminar2](seminar/se)
+
+[Seminar3](seminar/se)
+
+[Seminar4](seminar/se)
+
+# Del II: Økonomisk vekst
+
+[Seminar5](seminar/se)
+
+# Del III: Økonomiske kriser
+
+[Seminar6](seminar/se)
+
+# Obligatorisk innleveringsoppgave
+
+[Seminar7](seminar/se)
 -->

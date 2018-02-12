@@ -1,0 +1,31 @@
+---
+output:
+  html_document:
+    css: abc.css
+---
+
+# Del 1: Småspørsmål
+(@) A list whose numbering
+(@) A list whose numbering
+(@) A list whose numbering
+1.
+1.
+1.
+1. Solow-modellen
+
+# Del 2: Lukket økonomi (skattereformen i USA)
+1.
+1.
+1.
+1.
+1.
+
+# Del 3: Åpen økonomi (AD-AS og risikopremie)
+1.
+1.
+1.
+1.
+1.
+
+
+<div, class='losning'> abc  </div>

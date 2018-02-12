@@ -11,6 +11,10 @@ library(mFilter)
 library(MASS)
 library(latex2exp)
 library(xts)
+<<<<<<< HEAD
+=======
+library(plotly)
+>>>>>>> kontoret
 
 api.key = 'd62b9d8d4ce53e56ea04049dc463ac51'  # substitute ... with your API key
 fred <- FredR(api.key)
@@ -19,13 +23,23 @@ macro.series1 <- fred$series.search("Norway")
 
 # Makrotall
 landgdp <- fred$series.observations(series_id = c('CLVMNACSCAB1GQNO'))
+<<<<<<< HEAD
 landunem <- rbind(fred$series.observations(series_id = c('NORURHARMADSMEI')))
 landpricei <- fred$series.observations(series_id = c('NORCPIALLMINMEI'))
+=======
+landunem <- fred$series.observations(series_id = c('NORURHARMADSMEI'))
+landpricei <- fred$series.observations(series_id = c('NORCPIALLMINMEI'))
+landexch <- fred$series.observations(series_id = c('DEXNOUS'))
+>>>>>>> kontoret
 
 # 2. Cleaning up data
 tlandgdp  <- landgdp %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
 tlandunem <- landunem %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
 tlandpricei <- landpricei %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
+<<<<<<< HEAD
+=======
+tlandexch <-landexch %>% dplyr::select(-1, -2) %>% dplyr::mutate(date = as.Date(date), value = as.numeric(value)) %>% arrange(date)
+>>>>>>> kontoret
 
 # 3. Manipulating og transformerer dataene
 molttlandgdp <- tlandgdp %>%
@@ -91,6 +105,7 @@ devtools::use_data(moltmacronor, overwrite = TRUE)
 # Henter datasett
 lmoltmacronor <- reshape2::dcast(moltmacronor, date  + land ~ variable )
 names(lmoltmacronor)
+<<<<<<< HEAD
 
 okuns <-qplot(data = lmoltmacronor, x = cunem, y = ggdp) + geom_smooth(method = "lm", se = FALSE) +
   labs(title= 'Okuns lov - Norge', x='Endring i ledighet', y = 'Vekst i BNP (real)')
@@ -104,3 +119,19 @@ phillips <- qplot(x = unem, y = cinflation, data = lmoltmacronor, geom = c('poin
 ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/sem1/okunsnor.png'))
 
 #
+=======
+
+okuns <-qplot(data = lmoltmacronor, x = cunem, y = ggdp) + geom_smooth(method = "lm", se = FALSE) +
+  labs(title= 'Okuns lov - Norge', x='Endring i ledighet', y = 'Vekst i BNP (real)')
+
+#testplotly <- ggplotly(okuns)
+
+ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/sem1/okunsnorpng'))
+ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/sem1/okunsnor.png.png'))
+
+phillips <- qplot(x = unem, y = cinflation, data = lmoltmacronor, geom = c('point')) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title= 'Phillips-kurven - Norge', x='Ledighetsrate', y = 'Endring i inflation')
+
+ggsave(paste0(devtools::as.package(".")$path,'/inst/webside/figurer/sem1/phillipsnor.png'))
+>>>>>>> kontoret

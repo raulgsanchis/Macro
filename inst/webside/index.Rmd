@@ -1,13 +1,20 @@
+---
+output:
+  html_document:
+    css: abc.css
+---
+
 
 ```{r eval=FALSE, include=FALSE}
 #html-rapportering  
-#ans/hsh.no/home/jiha
+#ans/hsh.no/home/jihah
 # Kursbeskrivelse
 # Bottom header
 # Foreløpig 
 # Læringsmål
 #Jeg legger merke til at du ikke har satt såkalt HTML "Title" på hovedsiden.... derfor kommer den opp med "Redirecting" som title... I Chrome så blir dette vist i TAB'en (Arkfanen) ... så det ser litt rart ut.
 # sudo cp -R /home/joernih/gitclones/teaching/MakroOEKB1115/inst/webside/_site /var/www/abc
+#https://www.brainyquote.com/quotes/abraham_lincoln_110340
 
 ```
 
@@ -27,9 +34,11 @@
 
 **Studentassistent:** Susanna Murati (susanna-007@hotmail.com)
 
-<span style="color:red">Forlesningsnotatene til uke 4 er nå lagt ut</span>
+<span style="color:red">
+<p>Forlesningsnotater uke 7 og oppgaver til seminar 2 (uke 8) er nå lagt ut</p>
+</span>
 
-Siste gang oppdatert ``r base::Sys.time()`` 
+<p style="color:black">Siste gang oppdatert ``r base::Sys.time()`` </p>
 
 ```{r eval=FALSE, include=FALSE}
 gitinfo <- list(base::system('git log --oneline', intern=TRUE),base::system('git rev-list --count HEAD'
@@ -54,9 +63,3 @@ keynesequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/websid
 ```
 
 <!--susanna-007@hotmail.com  -->    
-
-
-<!--
-(dvs. tilby lån til kundene ved å øke pengemengden)
-The argument that banks originate loans and thereby create money and additional demand was once a commonplace position. But in the 1950s, American Neoclassicals in particular began to push the view that banks are effectively just intermediaries between savers and investors; the view that banks were uniquely important in capitalism became a fringe view. I cover this history and the revival of the endogenous money approach by Basil Moore, Augusto Graziani and others
--->

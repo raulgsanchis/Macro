@@ -1,0 +1,20 @@
+---
+output:
+  html_notebook:
+    css: seminar2.css
+---
+
+# Seminar 3: 
+## IS-LM modellen
+*abc*
+
+*$$2+2$$*
+
+## AD-AS modellen
+
+
+## Keynes modell åpen økonomi
+
+
+
+

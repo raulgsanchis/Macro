@@ -3,7 +3,7 @@
 output: html_notebook
 ---
 -->
-# Del 2: Økonomisk vekst
+# Del II: Økonomisk vekst
 <img id='grere' src="bilder/poverty.jpg" height="75px" width="300px" />
 <img id='grede' src="bilder/growth.jpg" height="75px" width="300px" />
 

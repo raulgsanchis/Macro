@@ -32,22 +32,22 @@
 **Rom: Auditorium A**. **Tidspunkt: 12:15-15:00 på tirsdager, med unntak av uke 12 hvor forelesningen er lagt til en fredag**
 
 ** Oppgaveseminar
-| Uke | Dato | Tema                                                                       | Oppgaver | Ansvarlig |
-|-----+------+----------------------------------------------------------------------------+----------+-----------|
-|     |      | Del I: Konjunktursvingninger                                               |          |           |
-|   4 | 22.1 | Datatransformering av nasjonalregnskapstall                                |          | SMU       |
-|   6 |  5.2 | IS-LM modellen                                                             |          | SMU       |
-|   8 | 19.2 | Arbeidsmarkedet (AS-kurven) og Mundell-Fleming under fast og flytende kurs |          | SMU       |
-|  10 |  5.3 | Mundell-Fleming og AD-AS modellen under fast og flytende kurs              |          | SMU       |
-|-----+------+----------------------------------------------------------------------------+----------+-----------|
-|     |      | Del II: Økonomisk vekst                                                    |          |           |
-|  12 | 19.3 | Solow-modellen                                                             |          | SMU       |
-|-----+------+----------------------------------------------------------------------------+----------+-----------|
-|  16 | 16.4 | Gjennomgang av obligatorisk oppgave                                        |          | JIH       |
-|-----+------+----------------------------------------------------------------------------+----------+-----------|
-|     |      | Del III: Økonomiske kriser                                                 |          |           |
-|  17 | 23.4 | Penger, banker, kapitalkrav, statsgjeldskrise og likviditetsfellen         |          | SMU/JIH   |
-|-----+------+----------------------------------------------------------------------------+----------+-----------|
+| Uke | Dato | Tema                                                                                     | Oppgaver | Ansvarlig |
+|-----+------+------------------------------------------------------------------------------------------+----------+-----------|
+|     |      | Del I: Konjunktursvingninger                                                             |          |           |
+|   4 | 22.1 | Datatransformering av nasjonalregnskapstall                                              |          | SMU       |
+|   6 |  5.2 | Enkel Keynes og IS-LM modellen                                                           |          | SMU       |
+|   8 | 19.2 | AD-AS (lukket økonomi) og Keynes-modell for en åpen økonomi                              |          | SMU       |
+|  10 |  5.3 | Mundell-Fleming modell under flytende kurs og AD-AS modellen under fast og flytende kurs |          | SMU       |
+|-----+------+------------------------------------------------------------------------------------------+----------+-----------|
+|     |      | Del II: Økonomisk vekst                                                                  |          |           |
+|  12 | 19.3 | Solow-modellen                                                                           |          | SMU       |
+|-----+------+------------------------------------------------------------------------------------------+----------+-----------|
+|  16 | 16.4 | Gjennomgang av obligatorisk oppgave                                                      |          | JIH       |
+|-----+------+------------------------------------------------------------------------------------------+----------+-----------|
+|     |      | Del III: Økonomiske kriser                                                               |          |           |
+|  17 | 23.4 | Penger, banker, kapitalkrav, statsgjeldskrise og likviditetsfellen                       |          | SMU/JIH   |
+|-----+------+------------------------------------------------------------------------------------------+----------+-----------|
 **Rom: Sørhauggaten 100. Rom 1 og 2**. **Tidspunkt: 12:00-14:00 (mandager)**
 
 ** Obligatorisk oppgave

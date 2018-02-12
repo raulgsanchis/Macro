@@ -23,8 +23,8 @@ navbar:
       href: case_euro.html
   - text: Oppgaver
     menu:
-    - text: Oppgaver
-      href: oppgaver.html
+    - text: Seminaroppgaver
+      href: seminar.html
     - text: Regneregler for differensialer
       href: formler.html
   - text: Lenker

@@ -1,0 +1,26 @@
+
+
+[Seminar 1 (uke 4): Grunnleggende basiskunnskaper og enkel Keynes modell](seminar/seminar1.html)
+
+[Seminar 2 (uke 6): Enkel Keynes og IS-LM modellen](seminar/seminar2.html)
+
+[- Med fasit](seminar/seminar2_fasit.nb.html)
+
+[Seminar 4 (uke 8): AD-AS (lukket økonomi) og Keynes-modell for en åpen økonomi](seminar/seminar3.nb.html)
+
+<!--
+
+
+
+#[- Med fasit](seminar/seminar2_fasit.nb.html)
+
+[Seminar 3 (uke 8): Grunnleggende basiskunnskaper og enkel Keynes modell](seminar/seminar2)
+
+[Seminar 4 (uke 10): Grunnleggende basiskunnskaper og enkel Keynes modell](seminar/seminar2)
+
+[Seminar 4 (uke 12): Grunnleggende basiskunnskaper og enkel Keynes modell](seminar/seminar2)
+
+[Seminar 4 (uke 16): Grunnleggende basiskunnskaper og enkel Keynes modell](seminar/seminar2)
+
+[Seminar 4 (uke 17): Grunnleggende basiskunnskaper og enkel Keynes modell](seminar/seminar2)
+-->

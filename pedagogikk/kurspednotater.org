@@ -140,7 +140,7 @@ G og T
 1. Finanspolitikk fungerer med lagg
 ** Forelesning uke 4: IS-LM modell (for en lukket, eller globalisert økonomi)
 *** Repetisjon
-**** Oppgave
+**** Seminaroppgave
 **** Keynes modell som gir oss IS-Kurven
 **** Tall 
 **** Empiri på G,I og T
@@ -182,7 +182,222 @@ Friedman
 **** Øvelse
 Hva skjer med Y når P går opp. Tegn og forklar
 ** Forelesning uke 5: Arbeidsmarkedet, ledighet og AS-kurven
-*** Repetison av forrige øvelse og skissere AS-kurvenen
+*** Oppgaveseminar neste mandag
+*** Struktur/dansing
+*** Forstå ligninger (foreløpig ikke pugg)
+    1. [ ] Tar tid første gangen -- tåke
+    2. [ ] Tving deg selv til å forklar det høyt til deg selv eller en venn
+*** Likevekt (skjæringspunktet)
+*** Samtidig likevekt
+- [ ] Keynes modell -> Y
+- [ ] IS-LM modell -> Y,i
+- [ ] AD-AS modell -> Y, i, P
+*** Skiftanalyse
+- [] De som står på aksene på figuren
+- [] IS-LM
+- [] Formler
+- [] Utenom aksene (skift)
+- [] Skift IS-LM
+- [] Formelt eller stå på aksene
+
+*** 
+*** Læreboka ikke pensum, kun forelesningsnotater
+
+
+*** Repetison av forrige øvelse og skissere AD-kurven
+*** http://wifi.espressohouse.se:8880/guest/s/default/?id=8c:70:5a:bb:fe:f0&ap=04:18:d6:20:fb:2d&t=1517224641&url=http://www.vg.no%2f&ssid=espressohouseTenke rundt dette med økt arbeidskraft og medium term
+*** Lønnsoppgjør
+*** Gjøre noe annet den siste halvtimen
+*** Hartz
+
+#+OPTIONS: num:nil
+#+OPTIONS: toc:nil
+#+TITLE: Pednotater
+* Globale parametre
+1. Politisk
+1. Eksamen og MAGS   
+1. Tavla
+1. Læreboka
+1. Erfaring fra bra kurs
+1. E. språk
+1. David A.
+1. Kursbeskrivelse
+
+* Introduksjon
+** Forelesning uke 2: Oversikt over faget
+*** Kursinfo
+*** Nettside
+- Instruksjoner om å komme fram i salen
+- Presentasjon av meg selv (skrive navnet på tavla med e-post adresse og kurskode)
+- Ikke fronter, men egen nettside med passord
+- Vise først hovedoverskrifter
+- Detaljert om forelesningsplan og pensum
+- video inn
+- Gå raskt igjennom de andre tingene 
+- Hovedside
+- Makroøkonomi: Studio av et lands økonomi som helhet (skrive ned)
+Egen erfaringer
+- Løst: Del 1
+Egen erfaringer: sånn det blir på jobben
+Daglig informasjon
+Penger viktig lehman brothersca
+- Løst: Del 2
+Hvilken av disse landene har høyest levestandard?
+Kan det ene landet ta igjen det andre, hvor lang tid tar
+Hva forklarer veksten?
+- Løst: Del 3
+Likt:
+Lehman Brothers gikk konkurs -> nedgangskonjunktur -> flere banker konkurs -> massearbeidsledighet
+The Bank of America -> nedgangskonjunktur -> bail-out -> stor arbeidsledighet og mistanke 
+￼
+# Høres spennede ut?
+Sjansen får du ikke igjen!
+# Tips
+- Start med en gang (modningsfag)
+- Gå på seminar
+- Gå på forelesninger
+- Følg med i nyhetsbildet
+- Tidlig eksamen
+
+*** Introduksjon
+*** Definere makro
+VIS: - Makroøkonomi: Studio av et lands økonomi som helhet 
+*** Introdouksjon
+**** Tre grunnluggende spørsmål forsøkt besvart
+1. Konjunktursvingninger EKS: USA
+1. Vekst EKS: Nord og Sør Kora 
+1. Økonomiske kriser EKS: USA
+**** Hvilken rolle bør offentlige myndigheter spille
+1. Offentlig myndigheter
+1. Konjunktursvingninger: Aktiv eller passiv
+1. Vekst: Kapitalisme vs. offentlig sektor !!
+1. Økonomiske kriser: Stabiliseringspolitikk (bail-out) EKS: Hjelpepakker
+   
+**** Keynes/Krugman, Minsky og Hayesk forståelse av de tre grunnleggende spørsmålene og offentlige myndighetene rolle
+1. Hørt om noen av disse?
+Tips: politisk: venstre høyre akse
+EKS: Dialog
+1. Hva forårsaker konjunktursvigninger
+1. Hva forårsaker kriser
+1. Krisepolitikk
+1. Stabiliseringspolitikk
+
+*** Modellering
+1. Ockhams barberkniv
+1. Benytter matematikk
+1. Aktører VIS
+1. Markedene VIS
+1. Størrelsen på økonomien VIS
+1. Av og på i del I, del II og del III VIS:Oversiktskart  
+
+* Del 1: Konjunktursvingninger
+** Forelesning uke 3: Grunnlegende basiskunnskaper og enkel Keynes modell..
+*** Repetisjon (45 min)
+1. Oppgaveseminar - åpen økonomi
+2. De som ikke var her forrige gang
+3. Repetisjon VIS:skisse av en konjunktursykel
+4. Why do we care? (1) ledighet og (2) inflasjon
+5. Repetisjon: ledighet, tabell 
+6. USA: (1): Generelt om økonomi  (2): Obligasjonsmarkedet i USA tyder på økt inflasjon
+7. Abstraksjon -> Oversiktskart - VIS:Ovelseskart
+*** Nasjonalregnsaksbegreper og empiri for en lukket økonomi
+1. Mål: Intern balanse (gapet mellom faktisk og potensiell produksjon lukkes) 'In the long run we are all dead'
+2. Hva er BNP?
+3. Hvordan bestemmes BNP?
+4. Kort sikt
+5. Mellomlang sikt (2-4)
+6. Lang sikt 
+Kort sikt: Etterspørsel -> Produksjon pga stive priser 
+Mellomlang: Tilbud  Kursbeskrivelse
+Lang sikt:    
+1. Ledighet
+2. Inflasjon
+3. Okuns lov
+4. Phillips-kurven
+*** Enkel Keynes-modell
+*** Oversikt
+**** Aktører
++ Husholdninger
++ Bedrifter
++ Sentralbanken
++ Offentlig myndigheter
+**** Markeder
++ Godemarkedet (vare- og tjenstemarkedet)
+*** Modellering
+**** Husholdninger
+Må konsumere for å overlevere
+**** Bedrifter
+Nåverdi
+**** Sentralbank
+i
+Eksogen
+**** Offentlig myndigheter
+G
+G og T
+**** Godemarkdet 
+1. Y = C + I + G (Generalbudsjettligningen lukket økonomi)
+**** Løsning av modellen 
+1. Setter inn for C, I, G
+1. Løser modellen mhp Y
+1. Endogene og eksogene
+1. Ligninger
+1. Grafisk
+**** Komparativ statikk
+1. (F)ormelt: Endring i investeringer ()
+1. (G)rafisk: 
+1. (V)erbalt møte
+**** Stabiliseringspolitikk
+1. Endring i finanspolitikk
+1. Finanspolitikk fungerer med lagg
+** Forelesning uke 4: IS-LM modell (for en lukket, eller globalisert økonomi)
+*** Repetisjon
+**** Seminaroppgave
+**** Keynes modell som gir oss IS-Kurven
+**** Tall 
+**** Empiri på G,I og T
+*** IS-LM modellen
+*** Oversikt
+**** Aktører
++ Husholdninger
++ Bedrifter
++ Sentralbanken
++ Offentlig myndigheter
+**** Markeder
++ Godemarkedet (varer og tjenester)
++ Pengemarkedet
+*** Modellering (repitisjon + nye ting)
+**** Husholdninger
+1. Pengeetterspørsel
+**** Bedrifter
+**** Sentralbank
+1. Pengetilbud (eksogen)
+**** Offentlig myndigheter
+1. Skatt
+T = 0 
+**** Markeder
+***** Godemarkedet 
+1. Y = C + I + G (Generalbudsjettligningen lukket økonomi)
+***** Pengemarkedet
+**** Løsning av modellen
+IS-kurven
+LM-kurven
+**** Komparativ statikk
+Friedman
+1. (G) Skift i LM-kurven 
+1. (V) Verbal beskrivelse
+**** Stabiliseringspolitikk
+1. Holde pengemengden lik prisveksten (Friedman)
+-> viktig kilde til konjktursvingninger forsvinner
+-> idag morphed into inflation targeting
+**** Øvelse
+Hva skjer med Y når P går opp. Tegn og forklar
+** Forelesning uke 5: Arbeidsmarkedet, ledighet og AS-kurven
+*** Oppgaveseminar neste mandag
+*** Struktur/dansing
+*** Forstå ligninger (foreløpig ikke pugg)
+    1. [ ] Tar tid første gangen -- tåke
+    2. [ ] Tving deg selv til å forklar det høyt til deg selv, eller en venn
+*** Likevekt
 ** Forelesning uke 6: AD-AS modellen (for en lukket, eller globalisert økonomi)  
 *** Repetisjon
 
@@ -523,3 +738,196 @@ Likviditetsfellen
   
 
 
+
+
+
+
+
+#+OPTIONS: num:nil
+#+OPTIONS: toc:nil
+#+TITLE: Pednotater
+* Globale parametre
+1. Politisk
+1. Eksamen og MAGS   
+1. Tavla
+1. Læreboka
+1. Erfaring fra bra kurs
+1. E. språk
+1. David A.
+1. Kursbeskrivelse
+
+* Introduksjon
+** Forelesning uke 2: Oversikt over faget
+*** Kursinfo
+*** Nettside
+- Instruksjoner om å komme fram i salen
+- Presentasjon av meg selv (skrive navnet på tavla med e-post adresse og kurskode)
+- Ikke fronter, men egen nettside med passord
+- Vise først hovedoverskrifter
+- Detaljert om forelesningsplan og pensum
+- video inn
+- Gå raskt igjennom de andre tingene 
+- Hovedside
+- Makroøkonomi: Studio av et lands økonomi som helhet (skrive ned)
+Egen erfaringer
+- Løst: Del 1
+Egen erfaringer: sånn det blir på jobben
+Daglig informasjon
+Penger viktig lehman brothersca
+- Løst: Del 2
+Hvilken av disse landene har høyest levestandard?
+Kan det ene landet ta igjen det andre, hvor lang tid tar
+Hva forklarer veksten?
+- Løst: Del 3
+Likt:
+Lehman Brothers gikk konkurs -> nedgangskonjunktur -> flere banker konkurs -> massearbeidsledighet
+The Bank of America -> nedgangskonjunktur -> bail-out -> stor arbeidsledighet og mistanke 
+￼
+# Høres spennede ut?
+Sjansen får du ikke igjen!
+# Tips
+- Start med en gang (modningsfag)
+- Gå på seminar
+- Gå på forelesninger
+- Følg med i nyhetsbildet
+- Tidlig eksamen
+
+*** Introduksjon
+*** Definere makro
+VIS: - Makroøkonomi: Studio av et lands økonomi som helhet 
+*** Introdouksjon
+**** Tre grunnluggende spørsmål forsøkt besvart
+1. Konjunktursvingninger EKS: USA
+1. Vekst EKS: Nord og Sør Kora 
+1. Økonomiske kriser EKS: USA
+**** Hvilken rolle bør offentlige myndigheter spille
+1. Offentlig myndigheter
+1. Konjunktursvingninger: Aktiv eller passiv
+1. Vekst: Kapitalisme vs. offentlig sektor !!
+1. Økonomiske kriser: Stabiliseringspolitikk (bail-out) EKS: Hjelpepakker
+   
+**** Keynes/Krugman, Minsky og Hayesk forståelse av de tre grunnleggende spørsmålene og offentlige myndighetene rolle
+1. Hørt om noen av disse?
+Tips: politisk: venstre høyre akse
+EKS: Dialog
+1. Hva forårsaker konjunktursvigninger
+1. Hva forårsaker kriser
+1. Krisepolitikk
+1. Stabiliseringspolitikk
+
+*** Modellering
+1. Ockhams barberkniv
+1. Benytter matematikk
+1. Aktører VIS
+1. Markedene VIS
+1. Størrelsen på økonomien VIS
+1. Av og på i del I, del II og del III VIS:Oversiktskart  
+
+* Del 1: Konjunktursvingninger
+** Forelesning uke 3: Grunnlegende basiskunnskaper og enkel Keynes modell..
+*** Repetisjon (45 min)
+1. Oppgaveseminar - åpen økonomi
+2. De som ikke var her forrige gang
+3. Repetisjon VIS:skisse av en konjunktursykel
+4. Why do we care? (1) ledighet og (2) inflasjon
+5. Repetisjon: ledighet, tabell 
+6. USA: (1): Generelt om økonomi  (2): Obligasjonsmarkedet i USA tyder på økt inflasjon
+7. Abstraksjon -> Oversiktskart - VIS:Ovelseskart
+*** Nasjonalregnsaksbegreper og empiri for en lukket økonomi
+1. Mål: Intern balanse (gapet mellom faktisk og potensiell produksjon lukkes) 'In the long run we are all dead'
+2. Hva er BNP?
+3. Hvordan bestemmes BNP?
+4. Kort sikt
+5. Mellomlang sikt (2-4)
+6. Lang sikt 
+Kort sikt: Etterspørsel -> Produksjon pga stive priser 
+Mellomlang: Tilbud  Kursbeskrivelse
+Lang sikt:    
+1. Ledighet
+2. Inflasjon
+3. Okuns lov
+4. Phillips-kurven
+*** Enkel Keynes-modell
+*** Oversikt
+**** Aktører
++ Husholdninger
++ Bedrifter
++ Sentralbanken
++ Offentlig myndigheter
+**** Markeder
++ Godemarkedet (vare- og tjenstemarkedet)
+*** Modellering
+**** Husholdninger
+Må konsumere for å overlevere
+**** Bedrifter
+Nåverdi
+**** Sentralbank
+i
+Eksogen
+**** Offentlig myndigheter
+G
+G og T
+**** Godemarkdet 
+1. Y = C + I + G (Generalbudsjettligningen lukket økonomi)
+**** Løsning av modellen 
+1. Setter inn for C, I, G
+1. Løser modellen mhp Y
+1. Endogene og eksogene
+1. Ligninger
+1. Grafisk
+**** Komparativ statikk
+1. (F)ormelt: Endring i investeringer ()
+1. (G)rafisk: 
+1. (V)erbalt møte
+**** Stabiliseringspolitikk
+1. Endring i finanspolitikk
+1. Finanspolitikk fungerer med lagg
+** Forelesning uke 4: IS-LM modell (for en lukket, eller globalisert økonomi)
+*** Repetisjon
+**** Seminaroppgave
+**** Keynes modell som gir oss IS-Kurven
+**** Tall 
+**** Empiri på G,I og T
+*** IS-LM modellen
+*** Oversikt
+**** Aktører
++ Husholdninger
++ Bedrifter
++ Sentralbanken
++ Offentlig myndigheter
+**** Markeder
++ Godemarkedet (varer og tjenester)
++ Pengemarkedet
+*** Modellering (repitisjon + nye ting)
+**** Husholdninger
+1. Pengeetterspørsel
+**** Bedrifter
+**** Sentralbank
+1. Pengetilbud (eksogen)
+**** Offentlig myndigheter
+1. Skatt
+T = 0 
+**** Markeder
+***** Godemarkedet 
+1. Y = C + I + G (Generalbudsjettligningen lukket økonomi)
+***** Pengemarkedet
+**** Løsning av modellen
+IS-kurven
+LM-kurven
+**** Komparativ statikk
+Friedman
+1. (G) Skift i LM-kurven 
+1. (V) Verbal beskrivelse
+**** Stabiliseringspolitikk
+1. Holde pengemengden lik prisveksten (Friedman)
+-> viktig kilde til konjktursvingninger forsvinner
+-> idag morphed into inflation targeting
+**** Øvelse
+Hva skjer med Y når P går opp. Tegn og forklar
+** Forelesning uke 5: Arbeidsmarkedet, ledighet og AS-kurven
+*** Oppgaveseminar neste mandag
+*** Struktur/dansing
+*** Forstå ligninger (foreløpig ikke pugg)
+    1. [ ] Tar tid første gangen -- tåke
+    2. [ ] Tving deg selv til å forklar det høyt til deg selv eller en venn
+*** Likevekt

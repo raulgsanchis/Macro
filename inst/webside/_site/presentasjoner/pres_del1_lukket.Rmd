@@ -1,0 +1,21 @@
+---
+title: "Forelesning ØKB1115 Makroøkonomi: Del I Konjunktursvingninger - lukket økonomi"
+output:
+  ioslides_presentation: default
+#    logo: logo.png
+---
+
+<<<<<<< HEAD:inst/webside/presentasjoner/pres_del1.Rmd
+```{r plan, child = '../del1_konjunkturer.Rmd'}
+=======
+
+```{r plan, child = '../del1_konjunkturer_open.Rmd'}
+#../del1_konjunkturer.Rmd
+>>>>>>> kontoret:inst/webside/presentasjoner/pres_del1_lukket.Rmd
+```
+
+
+
+<!-- http://rmarkdown.rstudio.com/ioslides_presentation_format.html -->
+
+

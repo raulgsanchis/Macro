@@ -9,23 +9,26 @@
 |----------------+--------------------------------------------------------------------------------------|
 | Y              | Bruttonasjonalprodukt (reelt)                                                        |
 | $\overline{Y}$ | Potensiell produkusjon                                                               |
+| $Y^{n}$        | Det naturlige produksjonsnivået                                                      |
 | LY             | Nominelt bruttonasjonalprodukt                                                       |
 | $Y_{d}$        | Disponibel inntekt (inntekt etter skatt er betalt)                                   |
 | N              | Arbeidsstyrken                                                                       |
 | L              | Sysselsatte personer                                                                 |
 | U              | Antall utenfor arbeid                                                                |
 | u              | Ledighetsrate                                                                        |
+| u^{n}          | Den naturlige ledighetsraten                                                         |
 | P              | Det aggregerte prisnivået (innenlandsk)                                              |
 | $\pi$          | Inflasjon                                                                            |
 | Z              | Aggregert etterspørsel (utgifter)                                                    |
 | C              | Aggregert konsum                                                                     |
-| $\overline{C}$ | Innteksuavhengig konsum                                                              |
+| $\overline{C}$ | Inntektsuavhengig konsum                                                             |
 | c              | Den marginale konsumtilbøyeligheten                                                  |
 | I              | Private realinvesteringer                                                            |
 | $\overline{I}$ | Konstantledd tilhørende private realinvesteringer                                    |
 | b              | Rentefølsomheten tilknyttet investeringer                                            |
 | i              | Det nominelle rentenivået                                                            |
 | G              | Offentlig konsum og realinvestiringer                                                |
+| M^{s}          | Tilbud av penger (reelt)                                                             |
 | M              | Tilbud av penger (nominelt)                                                          |
 | $L_{m}$        | Etterspørsel etter penger (realverdi)                                                |
 | $\kappa$       | Pengeetterspørselens inntektsfølsomhet                                               |
@@ -33,10 +36,14 @@
 | K              | Nivået på realkapital                                                                |
 | $\text{P}^{e}$ | Prisforventninger                                                                    |
 | $\mu$          | Påslag (i prosent) på det aggregerte prisnivået                                      |
+| FS             | Forhandlingsstyrke tilknyttet lønnsforhandlingene                                    |
 | NX             | Netto eksport                                                                        |
+| EX             | Eksport                                                                              |
+| IM             | Import                                                                               |
 | R              | Real valutakurs (pris for én enhet av utenlandsk gode i enhenter av innenlansk gode) |
 | E              | Nominell valutakurs (pris for én enhet av utenlandsk valuta)                         |
-| $\text{P}^{*}$ | Aggregerte prisnivået (innenlandsk)                                                  |
+| rp             | Risikopremie (eksogen)                                                               |
+| $\text{P}^{*}$ | Aggregerte prisnivået i utlandet                                                     |
 | $\text{i}^{*}$ | Det nominelle rentenivået i utlandet                                                 |
 | BP             | Utenriksregnskapet                                                                   |
 | CU             | Driftsregnskapet ovenfor utlandet                                                    |

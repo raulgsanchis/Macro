@@ -1,0 +1,66 @@
+---
+output:
+  html_notebook:
+    css: seminar2.css
+  html_document:
+    df_print: paged
+---
+
+# Seminar 3 (uke 8):
+Vi benyttter samme modell som gitt under seminar 2:
+$$C = \overline{C} + c_{1}(Y-T) - c_{2}\cdot i \text{ :Husholdningen}$$
+$$I = \overline{I} - b\cdot i \text{ :Private realinvesteringer}$$
+$$G = \overline{G} \text{ og } T=\overline{T} \text{: offentlige myndigheter}$$ 
+
+## AD-AS modellen for en lukket økonomi
+I tillegg til modellen øverst, har vi her at:
+
+$$AE\equiv C+I+G \text{: aggregert etterspørsel}$$$
+
+$$kY -hi = \overline{M}/P \text{: fra pengemarkedet}$$
+
+$$W=P^{e}F(\underset{(-)}{u}, \underset{(+)}{z}) \text{: lønnsforhandlingene}$$
+$$Y=AL^{\alpha}  \text{: produktfunksjonen tilhørende bedriften}$$
+
+$$P=(1+μ)W  \text{: markup-faktor på produktprisene}$$
+
+$$u=\frac{U}{N}=1−\frac{L}{N}  \text{: bestemmer arbeidsledigheten}$$
+
+
+
+1. Vis og forklar hvorfor AD-kurven er fallende
+1. Utled og tolk AS-kurven basert på 
+1. Vis at den langsiktige tilbudskurven er vertikal dersom $P=P^{e}$ (korrekte prisforventninger)
+1. Foreta en skiftanalyse i AD-AS modellen som en følge av økte offentlige utgifter
+1. Diskuter fordeler og ulemper ved pengepolitikk vs. finanspolitikk som stabiliseringspolitiske verktøy
+
+## Keynes modell for en åpen økonomi
+I tillegg til modellen øverst, har vi her at aggregert etterspørsel er gitt ved
+
+$$AE\equiv C+I+G+NX$$
+Hvor nettoeksporten $NX = EX - R\cdot IM$
+
+I tillegg postulerer vi følgende adferdsligninger for eksport ($EX$) og import ($IM$)
+
+
+$$EX = \pm x_{1}\cdot R \pm x_{2}\cdot Y^{*} $$
+$$IM= \pm m_{1}\cdot R \pm m_{2}\cdot Y$$
+
+$$i = \overline{i} \text{ :sentralbanken}$$
+
+1. Bestem og gi en økonomisk forklaring på
+$\pm 123$?
+
+2. Løs modellen hensyn på godemarkedet
+*Starter først med å sett inn for alle etterspørselskomponentene:*
+*$$Y = C+I+G+NX = \\
+(\overline{C} + c_{1}(Y-T) - c_{2}\cdot \overline{i}) + (\overline{I} - b\cdot i ) + \overline{G} \\  + \left[x_{1}\cdot R + x_{2}\cdot Y^{*} - R(-m_{1}R+m_{2}Y)\right]$$*
+*Flytter alt som har med Y å gjøre på venstre siden av likhetstegnet:*
+*$$Y\left[1-c_{1}+R\cdot b{1}\right] = \overline{C} - c_{1}T + \overline{I} - b\cdot i + \overline{G} \\
++ x_{1}\cdot R + x_{2}\cdot Y^{*} + R^{2}m_{1}$$*
+*Deler med $\frac{1}{\left[1-c_{1}+R\cdot b{1}\right]}$ på begge sider av likhetstegnet gir oss*
+*$$Y= \frac{1}{\left[1-c_{1}+R\cdot b{1}\right]}\big[\overline{C} - c_{1}T + \overline{I} - b\cdot i + \overline{G} \\ + x_{1}\cdot R + x_{2}\cdot Y^{*} + R^{2}m_{1}\big]$$*
+
+3. Sammenlign multiplikatoren med den som ble gitt i oppgave 2. Er den mindre eller større? Hva forklarer forskjellen?
+
+*Multiplikatoren for Keynes modellen under åpen økonomi er $\frac{1}{\left(1-c_{1}+R\cdot b{1}\right)}<\frac{1}{\left(1-c_{1}\right)}$ for en lukket økonomi. Ekstraledddet i telleren $R\cdot b_{1}$ kalles importlekkasje, og demper multiplikatoreffekten fordi deler av inntekstøkningen som husholdningen mottar går til import av utenlandske goder.* 
