@@ -20,15 +20,15 @@ library(latex2exp)
 #                           P=1, h = 10, k =1, Y = 130, m=1), list(i=c(iv)))
 #######################################################################################################################
 iv <- 0:5
-openpar <- list(i_s=1.5, rp=0)
+openpar <- list(i_s=1.5, rp=0, E=1, Ps=1, x1=0, x2=0, m1=0, m2=0, Ys=0, rp=0)
 muflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
                          P=1, h = 10, k =1, Y = 130, m=1, t=0.4), openpar, list(i=c(iv)))
 
-eopenpar <- list(i_s=1.0, rp=0)
+eopenpar <- list(i_s=1.0, rp=0, E=1, Ps=1, x1=0, x2=0, m1=0, m2=0, Ys=0, rp=0)
 emuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 45, b = 10, oI = 10, T = 50, M= 110,
                           P=1, h = 10, k =1, Y = 130, m=1, t=0.4), eopenpar, list(i=c(iv)))
 
-seopenpar <- list(i_s=1.0, rp=0)
+seopenpar <- list(i_s=1.0, rp=0, E=1, Ps=1, x1=0, x2=0, m1=0, m2=0, Ys=0, rp=0)
 semuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 30, b = 10, oI = 10, T = 50, M= 110,
                           P=1, h = 10, k =1, Y = 130, m=1, t=0.4), eopenpar, list(i=c(iv)))
 

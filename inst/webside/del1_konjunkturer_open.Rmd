@@ -1,3 +1,7 @@
+---
+output: html_notebook
+---
+
 
 ```{r include=FALSE}
 library(MakroOEKB1115)
@@ -246,8 +250,6 @@ semuflfastlikevekt
 
 Merk: Under fast kurs er renta bundet til å holde fastkursen stabil, det gjør at finanspolitikk (endring i utgifter og skatter) står igjen som de eneste virkemidelene som kan stabillisere konjunkturbevegelsene.
 
-
-<!--
 
 ## Mundell-Fleming modellen under flytende kurs
 
