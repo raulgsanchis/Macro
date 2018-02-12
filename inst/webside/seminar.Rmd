@@ -6,10 +6,10 @@
 
 [- Med fasit](seminar/seminar2_fasit.nb.html)
 
+[Seminar 4 (uke 8): AD-AS (lukket økonomi) og Keynes-modell for en åpen økonomi](seminar/seminar3.nb.html)
 
 <!--
 
-[Seminar 4 (uke 8): AD-AS (lukket økonomi) og Keynes-modell for en åpen økonomi](seminar/seminar3.nb.html)
 
 
 #[- Med fasit](seminar/seminar2_fasit.nb.html)

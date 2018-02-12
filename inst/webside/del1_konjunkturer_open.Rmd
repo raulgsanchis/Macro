@@ -1,12 +1,3 @@
-<!--
----
-title: "Innholdsfortegnelse"
-output:
-  html_notebook:
-    toc: true
-    toc_depth: 5
----
--->
 
 ```{r include=FALSE}
 library(MakroOEKB1115)
@@ -53,7 +44,9 @@ Likevektsbetingelse som forteller oss at den forventede avkastningen er lik mell
 
 Her er $i_{t+1}$ innelandsk avkastning, $i_{t+1}^{*}$ utenlands avkastning, $E_{t}$ er (nominelle) prisen i dag per énhet av utenlandsk valuta og $E_{t+1}^{e}$ den forventede valutakursen én periode frem i tid.  
 
-#### (2) Utenriksregnskapet (BoP)
+---
+
+#### (3) Utenriksregnskapet (BoP)
 
 $$BP = CA + CU + OR=0$$
 
@@ -68,10 +61,6 @@ Nettoendringer i fordringer og gjeld ovenfor utlandet
 $OR=\text{Endringer i sentralbankens valutareserver}$ 
 
 Vil øke (reduseres) dersom fastkursprisen er svakere (sterkere) enn det som markedet er villig til å betale 
-
----
-
-
 
 ## Mundell-Fleming modellen
 
@@ -93,7 +82,8 @@ Ved å sett inn for uttrykkene ovenfor, kan vi skrive nettoeksporten som
 
 $$NX = EX - R\cdot IM = x_{1}R + x_{2}Y^{*} - R\cdot (m_{1}R + m_{2}Y)$$
 
-Legger til grunn i dette kurset at priseffekten dominerer innteksteffekten (Marshall-Lerner betingelsen):
+Legger til grunn i dette kurset at priseffekten dominerer innteksteffekten ([Marshall-Lerner betingelsen](https://en.wikipedia.org/wiki/Marshall%E2%80%93Lerner_condition)
+):
 
 $$\frac{\Delta NX}{\Delta R}= x_{1} - IM + m_{1}R > 0 \text{ (i praksis vil dette ta litt tid)}$$  
 
@@ -110,9 +100,8 @@ Anser markedsaktørene faskursregimet som troverdig, har vi at $E=E^{e} \Rightar
 
 - Flytende 
 
-$$E=\frac{(1+i)}{(1+i)}E^{e}$$
+$$E=\frac{(1+i^{*})}{(1+i)}E^{e}$$
 
----
 
 ```{r include=FALSE}
 iv <- 0:5
@@ -252,6 +241,8 @@ Eks. reduksjon i offentlig utgifter
 ```{r echo=FALSE}
 semuflfastlikevekt
 ```
+
+---
 
 Merk: Under fast kurs er renta bundet til å holde fastkursen stabil, det gjør at finanspolitikk (endring i utgifter og skatter) står igjen som de eneste virkemidelene som kan stabillisere konjunkturbevegelsene.
 

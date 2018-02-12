@@ -75,7 +75,7 @@ h6 {
 }
 </style>
 
-<link href="data:text/css;charset=utf-8,EM%20%7B%0Afont%2Dweight%3A%20bold%3B%0Acolor%3A%20blue%3B%0Afont%2Dsize%3A%20100%25%20%3B%0A%7D%0A" rel="stylesheet" type="text/css" />
+<link href="data:text/css;charset=utf-8,EM%20%7B%0Afont%2Dweight%3A%20bold%3B%0Acolor%3A%20blue%3B%0Afont%2Dsize%3A%20150%25%20%3B%0A%7D%0A" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -144,7 +144,7 @@ $(document).ready(function () {
 </style>
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("seminar3.Rmd");
+  window.initializeSourceEmbed("seminar3fasit.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>
@@ -175,42 +175,49 @@ $(document).ready(function () {
 <!-- rnb-text-begin -->
 <div id="seminar-3-uke-8" class="section level1">
 <h1>Seminar 3 (uke 8):</h1>
-<p>Vi benyttter samme modell som gitt under seminar 2: <span class="math display">\[C = \overline{C} + c_{1}(Y-T) - c_{2}\cdot i \text{ :husholdningen}\]</span> <span class="math display">\[I = \overline{I} - b\cdot i \text{ :private realinvesteringer}\]</span> <span class="math display">\[G = \overline{G} \text{ og } T=\overline{T} \text{: offentlige myndigheter}\]</span></p>
-<div id="ad-as-modellen-for-en-lukket-konomi" class="section level2">
-<h2>AD-AS modellen for en lukket økonomi</h2>
+<p>Vi benyttter samme modell som gitt under seminar 2: <span class="math display">\[C = \overline{C} + c_{1}(Y-T) - c_{2}\cdot i \text{ :Husholdningen}\]</span> <span class="math display">\[I = \overline{I} - b\cdot i \text{ :Private realinvesteringer}\]</span> <span class="math display">\[G = \overline{G} \text{ og } T=\overline{T} \text{: offentlige myndigheter}\]</span></p>
+<div id="ad-as-modellen" class="section level2">
+<h2>AD-AS modellen</h2>
 <p>I tillegg til modellen øverst, har vi her at:</p>
-<p><span class="math display">\[AE\equiv C+I+G \text{: aggregert etterspørsel}\]</span></p>
+<p><span class="math display">\[AE\equiv C+I+G \text{: aggregert etterspørsel}\]</span>$</p>
 <p><span class="math display">\[kY -hi = \overline{M}/P \text{: fra pengemarkedet}\]</span></p>
 <p><span class="math display">\[W=P^{e}F(\underset{(-)}{u}, \underset{(+)}{z}) \text{: lønnsforhandlingene}\]</span> <span class="math display">\[Y=AL^{\alpha}  \text{: produktfunksjonen tilhørende bedriften}\]</span></p>
 <p><span class="math display">\[P=(1+μ)W  \text{: markup-faktor på produktprisene}\]</span></p>
 <p><span class="math display">\[u=\frac{U}{N}=1−\frac{L}{N}  \text{: bestemmer arbeidsledigheten}\]</span></p>
 <ol style="list-style-type: decimal">
-<li>Vis og forklar hvorfor AD-kurven er fallende.</li>
-<li>Utled og tolk hvorfor AS-kurven stiger i pris når produksjonen øker.</li>
-<li>Vis at den langsiktige tilbudskurven (LAS) er vertikal (stabilitetsbetingelsen) dersom <span class="math inline">\(P=P^{e}\)</span> (korrekte prisforventninger).</li>
-<li>Foreta en skiftanalyse i AD-AS modellen som en følge av økte offentlige utgifter.</li>
-<li>Diskuter fordeler og ulemper ved pengepolitikk vs. finanspolitikk som stabiliseringspolitiske verktøy.</li>
+<li>Vis og forklar hvorfor AD-kurven er fallende</li>
+<li>Utled og tolk AS-kurven basert på</li>
+<li>Vis at den langsiktige tilbudskurven er vertikal dersom <span class="math inline">\(P=P^{e}\)</span> (korrekte prisforventninger)</li>
+<li>Foreta en skiftanalyse i AD-AS modellen som en følge av økte offentlige utgifter</li>
+<li>Diskuter fordeler og ulemper ved pengepolitikk vs. finanspolitikk som stabiliseringspolitiske verktøy</li>
 </ol>
 </div>
 <div id="keynes-modell-for-en-apen-konomi" class="section level2">
-<h2>Keynes-modell for en åpen økonomi</h2>
+<h2>Keynes modell for en åpen økonomi</h2>
 <p>I tillegg til modellen øverst, har vi her at aggregert etterspørsel er gitt ved</p>
-<p><span class="math display">\[AE\equiv C+I+G+NX\]</span> Rente er eksogen satt</p>
-<p><span class="math display">\[i = \overline{i} \text{ :sentralbanken}\]</span></p>
-<p>Hvor nettoeksporten <span class="math inline">\(NX\)</span> er gitt ved</p>
-<p><span class="math display">\[NX = EX - R\cdot IM\]</span></p>
+<p><span class="math display">\[AE\equiv C+I+G+NX\]</span> Hvor nettoeksporten <span class="math inline">\(NX = EX - R\cdot IM\)</span></p>
 <p>I tillegg postulerer vi følgende adferdsligninger for eksport (<span class="math inline">\(EX\)</span>) og import (<span class="math inline">\(IM\)</span>)</p>
-<p><span class="math display">\[EX = \pm x_{1}\cdot R \pm x_{2}\cdot Y^{*} \]</span> <span class="math display">\[IM= \pm m_{1}\cdot R \pm m_{2}\cdot Y\]</span> Parameterne <span class="math inline">\(m_{1}\)</span>, <span class="math inline">\(m_{2}\)</span>, <span class="math inline">\(x_{1}\)</span> og <span class="math inline">\(x_{2}\)</span> er alle positive.</p>
+<p><span class="math display">\[EX = \pm x_{1}\cdot R \pm x_{2}\cdot Y^{*} \]</span> <span class="math display">\[IM= \pm m_{1}\cdot R \pm m_{2}\cdot Y\]</span></p>
+<p><span class="math display">\[i = \overline{i} \text{ :sentralbanken}\]</span></p>
 <ol style="list-style-type: decimal">
-<li><p>Avgjør hvorvidt det skal være pluss eller minus og gi en økonomisk forklaring tilhørende de ulike parameterne tilhørende nettoeksporten</p></li>
-<li><p>Løs modellen hensyn på produksjonen <span class="math inline">\(Y\)</span></p></li>
-<li><p>Sammenlign multiplikatoren med den som du kom fram til under seminar 2 (uten renteregel). Er den mindre eller større? Hva forklarer forskjellen?</p></li>
+<li><p>Bestem og gi en økonomisk forklaring på <span class="math inline">\(\pm 123\)</span>?</p></li>
+<li>Løs modellen hensyn på godemarkedet <em>Starter først med å sett inn for alle etterspørselskomponentene:</em> <em><span class="math display">\[Y = C+I+G+NX = \\
+(\overline{C} + c_{1}(Y-T) - c_{2}\cdot \overline{i}) + (\overline{I} - b\cdot i ) + \overline{G} \\  + \left[x_{1}\cdot R + x_{2}\cdot Y^{*} - R(-m_{1}R+m_{2}Y)\right]\]</span></em> <em>Flytter alt som har med Y å gjøre på venstre siden av likhetstegnet:</em> *$$Y=  - c_{1}T +  - bi +  \</li>
 </ol>
+<ul>
+<li>x_{1}R + x_{2}Y^{<em>} + R^{2}m_{1}<span class="math display">\[*
+*Deler med $\frac{1}{\left[1-c_{1}+R\cdot b{1}\right]}$ på begge sider av likhetstegnet gir oss*
+*\]</span>Y= $$</em></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Sammenlign multiplikatoren med den som ble gitt i oppgave 2. Er den mindre eller større? Hva forklarer forskjellen?</li>
+</ol>
+<p><em>Multiplikatoren for Keynes modellen under åpen økonomi er <span class="math inline">\(\frac{1}{\left(1-c_{1}+R\cdot b{1}\right)}&lt;\frac{1}{\left(1-c_{1}\right)}\)</span> for en lukket økonomi. Ekstraledddet i telleren <span class="math inline">\(R\cdot b_{1}\)</span> kalles importlekkasje, og demper multiplikatoreffekten fordi deler av inntekstøkningen som husholdningen mottar går til import av utenlandske goder.</em></p>
 <!-- rnb-text-end -->
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCm91dHB1dDoKICBodG1sX25vdGVib29rOgogICAgY3NzOiBzZW1pbmFyMi5jc3MKLS0tCgojIFNlbWluYXIgMyAodWtlIDgpOgpWaSBiZW55dHR0ZXIgc2FtbWUgbW9kZWxsIHNvbSBnaXR0IHVuZGVyIHNlbWluYXIgMjoKJCRDID0gXG92ZXJsaW5le0N9ICsgY197MX0oWS1UKSAtIGNfezJ9XGNkb3QgaSBcdGV4dHsgOmh1c2hvbGRuaW5nZW59JCQKJCRJID0gXG92ZXJsaW5le0l9IC0gYlxjZG90IGkgXHRleHR7IDpwcml2YXRlIHJlYWxpbnZlc3RlcmluZ2VyfSQkCiQkRyA9IFxvdmVybGluZXtHfSBcdGV4dHsgb2cgfSBUPVxvdmVybGluZXtUfSBcdGV4dHs6IG9mZmVudGxpZ2UgbXluZGlnaGV0ZXJ9JCQgCgojIyBBRC1BUyBtb2RlbGxlbiBmb3IgZW4gbHVra2V0IMO4a29ub21pCkkgdGlsbGVnZyB0aWwgbW9kZWxsZW4gw7h2ZXJzdCwgaGFyIHZpIGhlciBhdDoKCiQkQUVcZXF1aXYgQytJK0cgXHRleHR7OiBhZ2dyZWdlcnQgZXR0ZXJzcMO4cnNlbH0kJAoKJCRrWSAtaGkgPSBcb3ZlcmxpbmV7TX0vUCBcdGV4dHs6IGZyYSBwZW5nZW1hcmtlZGV0fSQkCgokJFc9UF57ZX1GKFx1bmRlcnNldHsoLSl9e3V9LCBcdW5kZXJzZXR7KCspfXt6fSkgXHRleHR7OiBsw7hubnNmb3JoYW5kbGluZ2VuZX0kJAokJFk9QUxee1xhbHBoYX0gIFx0ZXh0ezogcHJvZHVrdGZ1bmtzam9uZW4gdGlsaMO4cmVuZGUgYmVkcmlmdGVufSQkCgokJFA9KDErzrwpVyAgXHRleHR7OiBtYXJrdXAtZmFrdG9yIHDDpSBwcm9kdWt0cHJpc2VuZX0kJAoKJCR1PVxmcmFje1V9e059PTHiiJJcZnJhY3tMfXtOfSAgXHRleHR7OiBiZXN0ZW1tZXIgYXJiZWlkc2xlZGlnaGV0ZW59JCQKCgoKMS4gVmlzIG9nIGZvcmtsYXIgaHZvcmZvciBBRC1rdXJ2ZW4gZXIgZmFsbGVuZGUuCjEuIFV0bGVkIG9nIHRvbGsgaHZvcmZvciBBUy1rdXJ2ZW4gc3RpZ2VyIGkgcHJpcyBuw6VyIHByb2R1a3Nqb25lbiDDuGtlci4KMS4gVmlzIGF0IGRlbiBsYW5nc2lrdGlnZSB0aWxidWRza3VydmVuIChMQVMpIGVyIHZlcnRpa2FsIChzdGFiaWxpdGV0c2JldGluZ2Vsc2VuKSBkZXJzb20gJFA9UF57ZX0kIChrb3JyZWt0ZSBwcmlzZm9ydmVudG5pbmdlcikuCjEuIEZvcmV0YSBlbiBza2lmdGFuYWx5c2UgaSBBRC1BUyBtb2RlbGxlbiBzb20gZW4gZsO4bGdlIGF2IMO4a3RlIG9mZmVudGxpZ2UgdXRnaWZ0ZXIuCjEuIERpc2t1dGVyIGZvcmRlbGVyIG9nIHVsZW1wZXIgdmVkIHBlbmdlcG9saXRpa2sgdnMuIGZpbmFuc3BvbGl0aWtrIHNvbSBzdGFiaWxpc2VyaW5nc3BvbGl0aXNrZSB2ZXJrdMO4eS4KCiMjIEtleW5lcy1tb2RlbGwgZm9yIGVuIMOlcGVuIMO4a29ub21pCkkgdGlsbGVnZyB0aWwgbW9kZWxsZW4gw7h2ZXJzdCwgaGFyIHZpIGhlciBhdCBhZ2dyZWdlcnQgZXR0ZXJzcMO4cnNlbCBlciBnaXR0IHZlZAoKJCRBRVxlcXVpdiBDK0krRytOWCQkClJlbnRlIGVyIGVrc29nZW4gc2F0dCAKCiQkaSA9IFxvdmVybGluZXtpfSBcdGV4dHsgOnNlbnRyYWxiYW5rZW59JCQKCkh2b3IgbmV0dG9la3Nwb3J0ZW4gJE5YJCBlciBnaXR0IHZlZAoKJCROWCA9IEVYIC0gUlxjZG90IElNJCQKCkkgdGlsbGVnZyBwb3N0dWxlcmVyIHZpIGbDuGxnZW5kZSBhZGZlcmRzbGlnbmluZ2VyIGZvciBla3Nwb3J0ICgkRVgkKSBvZyBpbXBvcnQgKCRJTSQpCgokJEVYID0gXHBtIHhfezF9XGNkb3QgUiBccG0geF97Mn1cY2RvdCBZXnsqfSAkJAokJElNPSBccG0gbV97MX1cY2RvdCBSIFxwbSBtX3syfVxjZG90IFkkJApQYXJhbWV0ZXJuZSAkbV97MX0kLCAkbV97Mn0kLCAkeF97MX0kIG9nICR4X3syfSQgZXIgYWxsZSBwb3NpdGl2ZS4KCjEuIEF2Z2rDuHIgaHZvcnZpZHQgZGV0IHNrYWwgdsOmcmUgcGx1c3MgZWxsZXIgbWludXMgb2cgZ2kgZW4gw7hrb25vbWlzayBmb3JrbGFyaW5nIHRpbGjDuHJlbmRlIGRlIHVsaWtlIHBhcmFtZXRlcm5lIHRpbGjDuHJlbmRlIG5ldHRvZWtzcG9ydGVuCgoyLiBMw7hzIG1vZGVsbGVuIGhlbnN5biBww6UgcHJvZHVrc2pvbmVuICRZJAoKMy4gU2FtbWVubGlnbiBtdWx0aXBsaWthdG9yZW4gbWVkIGRlbiBzb20gZHUga29tIGZyYW0gdGlsIHVuZGVyIHNlbWluYXIgMiAodXRlbiByZW50ZXJlZ2VsKS4gRXIgZGVuIG1pbmRyZSBlbGxlciBzdMO4cnJlPyBIdmEgZm9ya2xhcmVyIGZvcnNramVsbGVuPwo=</div>
+<div id="rmd-source-code">LS0tCm91dHB1dDoKICBodG1sX2RvY3VtZW50OgogICAgZGZfcHJpbnQ6IHBhZ2VkCiAgaHRtbF9ub3RlYm9vazoKICAgIGNzczogc2VtaW5hcjIuY3NzCi0tLQoKIyBTZW1pbmFyIDMgKHVrZSA4KToKVmkgYmVueXR0dGVyIHNhbW1lIG1vZGVsbCBzb20gZ2l0dCB1bmRlciBzZW1pbmFyIDI6CiQkQyA9IFxvdmVybGluZXtDfSArIGNfezF9KFktVCkgLSBjX3syfVxjZG90IGkgXHRleHR7IDpIdXNob2xkbmluZ2VufSQkCiQkSSA9IFxvdmVybGluZXtJfSAtIGJcY2RvdCBpIFx0ZXh0eyA6UHJpdmF0ZSByZWFsaW52ZXN0ZXJpbmdlcn0kJAokJEcgPSBcb3ZlcmxpbmV7R30gXHRleHR7IG9nIH0gVD1cb3ZlcmxpbmV7VH0gXHRleHR7OiBvZmZlbnRsaWdlIG15bmRpZ2hldGVyfSQkIAoKIyMgQUQtQVMgbW9kZWxsZW4KSSB0aWxsZWdnIHRpbCBtb2RlbGxlbiDDuHZlcnN0LCBoYXIgdmkgaGVyIGF0OgoKJCRBRVxlcXVpdiBDK0krRyBcdGV4dHs6IGFnZ3JlZ2VydCBldHRlcnNww7hyc2VsfSQkJAoKJCRrWSAtaGkgPSBcb3ZlcmxpbmV7TX0vUCBcdGV4dHs6IGZyYSBwZW5nZW1hcmtlZGV0fSQkCgokJFc9UF57ZX1GKFx1bmRlcnNldHsoLSl9e3V9LCBcdW5kZXJzZXR7KCspfXt6fSkgXHRleHR7OiBsw7hubnNmb3JoYW5kbGluZ2VuZX0kJAokJFk9QUxee1xhbHBoYX0gIFx0ZXh0ezogcHJvZHVrdGZ1bmtzam9uZW4gdGlsaMO4cmVuZGUgYmVkcmlmdGVufSQkCgokJFA9KDErzrwpVyAgXHRleHR7OiBtYXJrdXAtZmFrdG9yIHDDpSBwcm9kdWt0cHJpc2VuZX0kJAoKJCR1PVxmcmFje1V9e059PTHiiJJcZnJhY3tMfXtOfSAgXHRleHR7OiBiZXN0ZW1tZXIgYXJiZWlkc2xlZGlnaGV0ZW59JCQKCgoKMS4gVmlzIG9nIGZvcmtsYXIgaHZvcmZvciBBRC1rdXJ2ZW4gZXIgZmFsbGVuZGUKMS4gVXRsZWQgb2cgdG9sayBBUy1rdXJ2ZW4gYmFzZXJ0IHDDpSAKMS4gVmlzIGF0IGRlbiBsYW5nc2lrdGlnZSB0aWxidWRza3VydmVuIGVyIHZlcnRpa2FsIGRlcnNvbSAkUD1QXntlfSQgKGtvcnJla3RlIHByaXNmb3J2ZW50bmluZ2VyKQoxLiBGb3JldGEgZW4gc2tpZnRhbmFseXNlIGkgQUQtQVMgbW9kZWxsZW4gc29tIGVuIGbDuGxnZSBhdiDDuGt0ZSBvZmZlbnRsaWdlIHV0Z2lmdGVyCjEuIERpc2t1dGVyIGZvcmRlbGVyIG9nIHVsZW1wZXIgdmVkIHBlbmdlcG9saXRpa2sgdnMuIGZpbmFuc3BvbGl0aWtrIHNvbSBzdGFiaWxpc2VyaW5nc3BvbGl0aXNrZSB2ZXJrdMO4eQoKIyMgS2V5bmVzIG1vZGVsbCBmb3IgZW4gw6VwZW4gw7hrb25vbWkKSSB0aWxsZWdnIHRpbCBtb2RlbGxlbiDDuHZlcnN0LCBoYXIgdmkgaGVyIGF0IGFnZ3JlZ2VydCBldHRlcnNww7hyc2VsIGVyIGdpdHQgdmVkCgokJEFFXGVxdWl2IEMrSStHK05YJCQKSHZvciBuZXR0b2Vrc3BvcnRlbiAkTlggPSBFWCAtIFJcY2RvdCBJTSQKCkkgdGlsbGVnZyBwb3N0dWxlcmVyIHZpIGbDuGxnZW5kZSBhZGZlcmRzbGlnbmluZ2VyIGZvciBla3Nwb3J0ICgkRVgkKSBvZyBpbXBvcnQgKCRJTSQpCgoKJCRFWCA9IFxwbSB4X3sxfVxjZG90IFIgXHBtIHhfezJ9XGNkb3QgWV57Kn0gJCQKJCRJTT0gXHBtIG1fezF9XGNkb3QgUiBccG0gbV97Mn1cY2RvdCBZJCQKCiQkaSA9IFxvdmVybGluZXtpfSBcdGV4dHsgOnNlbnRyYWxiYW5rZW59JCQKCjEuIEJlc3RlbSBvZyBnaSBlbiDDuGtvbm9taXNrIGZvcmtsYXJpbmcgcMOlCiRccG0gMTIzJD8KCjIuIEzDuHMgbW9kZWxsZW4gaGVuc3luIHDDpSBnb2RlbWFya2VkZXQKKlN0YXJ0ZXIgZsO4cnN0IG1lZCDDpSBzZXR0IGlubiBmb3IgYWxsZSBldHRlcnNww7hyc2Vsc2tvbXBvbmVudGVuZToqCiokJFkgPSBDK0krRytOWCA9IFxcCihcb3ZlcmxpbmV7Q30gKyBjX3sxfShZLVQpIC0gY197Mn1cY2RvdCBcb3ZlcmxpbmV7aX0pICsgKFxvdmVybGluZXtJfSAtIGJcY2RvdCBpICkgKyBcb3ZlcmxpbmV7R30gXFwgICsgXGxlZnRbeF97MX1cY2RvdCBSICsgeF97Mn1cY2RvdCBZXnsqfSAtIFIoLW1fezF9UittX3syfVkpXHJpZ2h0XSQkKgoqRmx5dHRlciBhbHQgc29tIGhhciBtZWQgWSDDpSBnasO4cmUgcMOlIHZlbnN0cmUgc2lkZW4gYXYgbGlraGV0c3RlZ25ldDoqCiokJFlcbGVmdFsxLWNfezF9K1JcY2RvdCBiezF9XHJpZ2h0XSA9IFxvdmVybGluZXtDfSAtIGNfezF9VCArIFxvdmVybGluZXtJfSAtIGJcY2RvdCBpICsgXG92ZXJsaW5le0d9IFxcCisgeF97MX1cY2RvdCBSICsgeF97Mn1cY2RvdCBZXnsqfSArIFJeezJ9bV97MX0kJCoKKkRlbGVyIG1lZCAkXGZyYWN7MX17XGxlZnRbMS1jX3sxfStSXGNkb3QgYnsxfVxyaWdodF19JCBww6UgYmVnZ2Ugc2lkZXIgYXYgbGlraGV0c3RlZ25ldCBnaXIgb3NzKgoqJCRZPSBcZnJhY3sxfXtcbGVmdFsxLWNfezF9K1JcY2RvdCBiezF9XHJpZ2h0XX1cYmlnW1xvdmVybGluZXtDfSAtIGNfezF9VCArIFxvdmVybGluZXtJfSAtIGJcY2RvdCBpICsgXG92ZXJsaW5le0d9IFxcICsgeF97MX1cY2RvdCBSICsgeF97Mn1cY2RvdCBZXnsqfSArIFJeezJ9bV97MX1cYmlnXSQkKgoKMy4gU2FtbWVubGlnbiBtdWx0aXBsaWthdG9yZW4gbWVkIGRlbiBzb20gYmxlIGdpdHQgaSBvcHBnYXZlIDIuIEVyIGRlbiBtaW5kcmUgZWxsZXIgc3TDuHJyZT8gSHZhIGZvcmtsYXJlciBmb3Jza2plbGxlbj8KCipNdWx0aXBsaWthdG9yZW4gZm9yIEtleW5lcyBtb2RlbGxlbiB1bmRlciDDpXBlbiDDuGtvbm9taSBlciAkXGZyYWN7MX17XGxlZnQoMS1jX3sxfStSXGNkb3QgYnsxfVxyaWdodCl9PFxmcmFjezF9e1xsZWZ0KDEtY197MX1ccmlnaHQpfSQgZm9yIGVuIGx1a2tldCDDuGtvbm9taS4gRWtzdHJhbGVkZGRldCBpIHRlbGxlcmVuICRSXGNkb3QgYl97MX0kIGthbGxlcyBpbXBvcnRsZWtrYXNqZSwgb2cgZGVtcGVyIG11bHRpcGxpa2F0b3JlZmZla3RlbiBmb3JkaSBkZWxlciBhdiBpbm50ZWtzdMO4a25pbmdlbiBzb20gaHVzaG9sZG5pbmdlbiBtb3R0YXIgZ8OlciB0aWwgaW1wb3J0IGF2IHV0ZW5sYW5kc2tlIGdvZGVyLiogCg==</div>
 
 
 

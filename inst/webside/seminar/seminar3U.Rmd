@@ -13,7 +13,7 @@ $$G = \overline{G} \text{ og } T=\overline{T} \text{: offentlige myndigheter}$$
 ## AD-AS modellen for en lukket økonomi
 I tillegg til modellen øverst, har vi her at:
 
-$$AE\equiv C+I+G \text{: aggregert etterspørsel}$$
+$$AE\equiv C+I+G \text{: aggregert etterspørsel}$$$
 
 $$kY -hi = \overline{M}/P \text{: fra pengemarkedet}$$
 

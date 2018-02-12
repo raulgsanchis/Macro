@@ -283,15 +283,6 @@ $(document).ready(function () {
 </div>
 
 
-<!--
----
-title: "Innholdsfortegnelse"
-output:
-  html_notebook:
-    toc: true
-    toc_depth: 5
----
--->
 <div id="grunnleggende-bakgrunnkunnskaper" class="section level2">
 <h2>Grunnleggende bakgrunnkunnskaper</h2>
 <div id="stabiliseringsmal-for-en-apen-konomi" class="section level3">
@@ -319,9 +310,10 @@ output:
 <p>Renteparitetsbetingelsen</p>
 <p><span class="math display">\[(1+i_{t+1})=(1+i_{t+1}^{*})\frac{E_{t+1}^{e}}{E_{t}}\]</span> Likevektsbetingelse som forteller oss at den forventede avkastningen er lik mellom å investere i inn- og utland.</p>
 <p>Her er <span class="math inline">\(i_{t+1}\)</span> innelandsk avkastning, <span class="math inline">\(i_{t+1}^{*}\)</span> utenlands avkastning, <span class="math inline">\(E_{t}\)</span> er (nominelle) prisen i dag per énhet av utenlandsk valuta og <span class="math inline">\(E_{t+1}^{e}\)</span> den forventede valutakursen én periode frem i tid.</p>
+<hr />
 </div>
 <div id="utenriksregnskapet-bop" class="section level4">
-<h4>(2) Utenriksregnskapet (BoP)</h4>
+<h4>(3) Utenriksregnskapet (BoP)</h4>
 <p><span class="math display">\[BP = CA + CU + OR=0\]</span></p>
 <p><span class="math inline">\(CU=\text{Driftsregnskapet}\)</span>.</p>
 <p>Består av nettoeksport (NX), pluss nettofinansinntekter(aksjer og obligasjoner) og nettoverføringer</p>
@@ -329,7 +321,6 @@ output:
 <p>Nettoendringer i fordringer og gjeld ovenfor utlandet</p>
 <p><span class="math inline">\(OR=\text{Endringer i sentralbankens valutareserver}\)</span></p>
 <p>Vil øke (reduseres) dersom fastkursprisen er svakere (sterkere) enn det som markedet er villig til å betale</p>
-<hr />
 </div>
 </div>
 </div>
@@ -346,7 +337,7 @@ output:
 <hr />
 <p>Ved å sett inn for uttrykkene ovenfor, kan vi skrive nettoeksporten som</p>
 <p><span class="math display">\[NX = EX - R\cdot IM = x_{1}R + x_{2}Y^{*} - R\cdot (m_{1}R + m_{2}Y)\]</span></p>
-<p>Legger til grunn i dette kurset at priseffekten dominerer innteksteffekten (Marshall-Lerner betingelsen):</p>
+<p>Legger til grunn i dette kurset at priseffekten dominerer innteksteffekten (<a href="https://en.wikipedia.org/wiki/Marshall%E2%80%93Lerner_condition">Marshall-Lerner betingelsen</a> ):</p>
 <p><span class="math display">\[\frac{\Delta NX}{\Delta R}= x_{1} - IM + m_{1}R &gt; 0 \text{ (i praksis vil dette ta litt tid)}\]</span></p>
 <hr />
 </div>
@@ -360,8 +351,7 @@ output:
 <ul>
 <li>Flytende</li>
 </ul>
-<p><span class="math display">\[E=\frac{(1+i)}{(1+i)}E^{e}\]</span></p>
-<hr />
+<p><span class="math display">\[E=\frac{(1+i^{*})}{(1+i)}E^{e}\]</span></p>
 </div>
 </div>
 </div>
@@ -395,6 +385,7 @@ output:
 <h3>Stabiliseringspolitikk (G og T)</h3>
 <p>Eks. reduksjon i offentlig utgifter</p>
 <p><img src="del1_konjunkturer_open_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<hr />
 <p>Merk: Under fast kurs er renta bundet til å holde fastkursen stabil, det gjør at finanspolitikk (endring i utgifter og skatter) står igjen som de eneste virkemidelene som kan stabillisere konjunkturbevegelsene.</p>
 <!--
 

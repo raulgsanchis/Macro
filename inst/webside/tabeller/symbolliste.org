@@ -43,7 +43,7 @@
 | R              | Real valutakurs (pris for én enhet av utenlandsk gode i enhenter av innenlansk gode) |
 | E              | Nominell valutakurs (pris for én enhet av utenlandsk valuta)                         |
 | rp             | Risikopremie (eksogen)                                                               |
-| $\text{P}^{*}$ | Aggregerte prisnivået (innenlandsk)                                                  |
+| $\text{P}^{*}$ | Aggregerte prisnivået i utlandet                                                     |
 | $\text{i}^{*}$ | Det nominelle rentenivået i utlandet                                                 |
 | BP             | Utenriksregnskapet                                                                   |
 | CU             | Driftsregnskapet ovenfor utlandet                                                    |

@@ -1,4 +1,11 @@
-
+---
+title: "Innholdsfortegnelse"
+output:
+  html_document:
+    toc: true
+    toc_depth: 4
+bibliography: pensum.bib
+---
 
 ```{r child = 'innledning.Rmd'}
 ```
