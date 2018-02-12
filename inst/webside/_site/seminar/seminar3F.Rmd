@@ -56,10 +56,12 @@ $\pm 123$?
 *$$Y = C+I+G+NX = \\
 (\overline{C} + c_{1}(Y-T) - c_{2}\cdot \overline{i}) + (\overline{I} - b\cdot i ) + \overline{G} \\  + \left[x_{1}\cdot R + x_{2}\cdot Y^{*} - R(-m_{1}R+m_{2}Y)\right]$$*
 *Flytter alt som har med Y å gjøre på venstre siden av likhetstegnet:*
+
 *$$Y\left[1-c_{1}+R\cdot b{1}\right] = \overline{C} - c_{1}T + \overline{I} - b\cdot i + \overline{G} \\
 + x_{1}\cdot R + x_{2}\cdot Y^{*} + R^{2}m_{1}$$*
+
 *Deler med $\frac{1}{\left[1-c_{1}+R\cdot b{1}\right]}$ på begge sider av likhetstegnet gir oss*
-*$$Y= \frac{1}{\left[1-c_{1}+R\cdot b{1}\right]}\big[\overline{C} - c_{1}T + \overline{I} - b\cdot i + \overline{G} \\ + x_{1}\cdot R + x_{2}\cdot Y^{*} + R^{2}m_{1}\big]$$*
+*$$Y= \frac{1}{\left[1-c_{1}+R\cdot b{1}\right]}\big[\overline{C} - c_{1}T + \overline{I} - b\cdot i + \overline{G} \\ + x_{1}\cdot R + x_{2}\cdot big]$$*
 
 3. Sammenlign multiplikatoren med den som ble gitt i oppgave 2. Er den mindre eller større? Hva forklarer forskjellen?
 

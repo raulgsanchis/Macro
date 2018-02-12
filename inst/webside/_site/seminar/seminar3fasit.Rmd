@@ -1,10 +1,89 @@
 ---
 output:
-  html_document:
-    df_print: paged
   html_notebook:
     css: seminar2.css
+  html_document:
+    df_print: paged
 ---
+
+# Seminar 3 (uke 8):
+Vi benyttter samme modell som gitt under seminar 2:
+$$C = \overline{C} + c_{1}(Y-T) - c_{2}\cdot i \text{ :husholdningen}$$
+$$I = \overline{I} - b\cdot i \text{ :private realinvesteringer}$$
+$$G = \overline{G} \text{ og } T=\overline{T} \text{: offentlige myndigheter}$$ 
+
+## AD-AS modellen for en lukket økonomi
+I tillegg til modellen øverst, har vi her at:
+
+$$AE\equiv C+I+G \text{: aggregert etterspørsel}$$
+
+$$kY -hi = \overline{M}/P \text{: fra pengemarkedet}$$
+
+$$W=P^{e}F(\underset{(-)}{u}, \underset{(+)}{z}) \text{: lønnsforhandlingene}$$
+$$Y=AL^{\alpha}  \text{: produktfunksjonen tilhørende bedriften}$$
+
+$$P=(1+μ)W  \text{: markup-faktor på produktprisene}$$
+
+$$u=\frac{U}{N}=1−\frac{L}{N}  \text{: bestemmer arbeidsledigheten}$$
+
+
+
+1. Vis og forklar hvorfor AD-kurven er fallende.
+
+*Økte produktpriser reduser realpengemengden. I pengemarkedet fører dette til en økning i rentenivå. Den økte renta medfører redusert etterspørsel pga lavere private realinvesteringer **og konsum**, som initierer en negativ multiplikatoreffekt siden redusert etterspørsel fører til mindre konsum som fører til redusert etterspørsel osv.*
+
+1. Utled og tolk hvorfor AS-kurven stiger i pris når produksjonen øker.
+*Setter først for lønnsbetingelsen i betingelsen for produktprisen:*
+
+*$$P=(1+\mu)W=(1+\mu)P^{e}F(u,z)$$*
+
+*Definisjonen av arbeidsledighet sammen med produktunksjonen gir*
+*$$u = 1- \frac{L}{N} = 1 - \frac{(Y/A)^{1/\alpha}}{N}$$*
+
+*Setter dette utrrykket inn i uttrykket ovenfor for arbeudsledighet*
+*$$P=(1+\mu)P^{e}F(1-\frac{(Y/A)^{1/\alpha}}{N},z)$$*
+
+*Differensierer (derriverer) så $P$ mhp $Y$*
+
+$$\Delta P=(1+\mu)P^{e}F(1-\frac{(Y/A)^{1/\alpha}}{N},z)(-\alpha \frac{(Y/A)^{1/\alpha-1}}{N}\frac{1}{A} ) > 0$$
+
+
+
+1. Vis at den langsiktige tilbudskurven (LAS) er vertikal (stabilitetsbetingelsen) dersom $P=P^{e}$ (korrekte prisforventninger).
+
+1. Foreta en skiftanalyse i AD-AS modellen som en følge av økte offentlige utgifter.
+
+1. Diskuter fordeler og ulemper ved pengepolitikk vs. finanspolitikk som stabiliseringspolitiske verktøy.
+
+## Keynes-modell for en åpen økonomi
+I tillegg til modellen øverst, har vi her at aggregert etterspørsel er gitt ved
+
+$$AE\equiv C+I+G+NX$$
+Rente er eksogen satt 
+
+$$i = \overline{i} \text{ :sentralbanken}$$
+
+Hvor nettoeksporten $NX$ er gitt ved
+
+$$NX = EX - R\cdot IM$$
+
+I tillegg postulerer vi følgende adferdsligninger for eksport ($EX$) og import ($IM$)
+
+$$EX = \pm x_{1}\cdot R \pm x_{2}\cdot Y^{*} $$
+$$IM= \pm m_{1}\cdot R \pm m_{2}\cdot Y$$
+Parameterne $m_{1}$, $m_{2}$, $x_{1}$ og $x_{2}$ er alle positive.
+
+1. Avgjør hvorvidt det skal være pluss eller minus og gi en økonomisk forklaring tilhørende de ulike parameterne tilhørende nettoeksporten
+
+2. Løs modellen hensyn på produksjonen $Y$
+
+3. Sammenlign multiplikatoren med den som du kom fram til under seminar 2 (uten renteregel). Er den mindre eller større? Hva forklarer forskjellen?
+
+
+<!--
+
+
+
 
 # Seminar 3 (uke 8):
 Vi benyttter samme modell som gitt under seminar 2:
@@ -64,3 +143,4 @@ $\pm 123$?
 3. Sammenlign multiplikatoren med den som ble gitt i oppgave 2. Er den mindre eller større? Hva forklarer forskjellen?
 
 *Multiplikatoren for Keynes modellen under åpen økonomi er $\frac{1}{\left(1-c_{1}+R\cdot b{1}\right)}<\frac{1}{\left(1-c_{1}\right)}$ for en lukket økonomi. Ekstraledddet i telleren $R\cdot b_{1}$ kalles importlekkasje, og demper multiplikatoreffekten fordi deler av inntekstøkningen som husholdningen mottar går til import av utenlandske goder.* 
+-->
