@@ -1,5 +1,8 @@
 ---
-output: html_notebook
+output:
+  html_notebook:
+    toc: true
+    toc_depth: 4
 ---
 
 

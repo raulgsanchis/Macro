@@ -1,5 +1,8 @@
 ---
-output: html_notebook
+output:
+  html_notebook:
+    toc: true
+    toc_depth: 4
 ---
 
 
@@ -205,6 +208,7 @@ semuflfastlikevekt
 ```
 
 ## Mundell-Fleming modellen under fast kurs
+Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet under fast kurs
 
 ### Godemarkedet
 
@@ -219,9 +223,16 @@ $$i =i^{*} + rp$$
 
 ---
 
-### Grafisk
+**Formelt**
 
-Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet (fast kurs)
+$$\frac{\Delta Y}{\Delta \overline{i}} =\left[\frac{-b}{1-c(1-t) + R\cdot m_{1}}\right ] 
+< 0 \text{ :IS-kurven}$$
+
+$$i =i^{*} + rp \text{ BoP-kurven}$$
+
+
+**Grafisk**
+
 
 ```{r echo=FALSE, warning=FALSE}
 muflfastlikevekt
@@ -252,6 +263,7 @@ Merk: Under fast kurs er renta bundet til å holde fastkursen stabil, det gjør 
 
 
 ## Mundell-Fleming modellen under flytende kurs
+Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet under flytende kurs.
 
 ### Godemarkedet
 
@@ -263,11 +275,17 @@ $$kY -hi = \overline{M}/P$$
 
 ### BP
 
-$$E=\frac{(1+i)}{(1+i)}E^{e}$$
+$$E=\frac{(1+i^{*})}{(1+i)}E^{e}$$
 
 ---
 
-### Grafisk
+**Formelt**
+
+$$\underset{Flytende-kurs (IS-BoP-kurven)}{\frac{\Delta Y}{\Delta \overline{i}}} < \underset{Fast-kurs (IS-kurven)}{\frac{\Delta Y}{\Delta \overline{i}}}  =\left[\frac{-b}{1-c(1-t) + R\cdot m_{1}}\right ] 
+< 0$$
+
+
+**Grafisk**
 
 Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet (flytende kurs)
 
