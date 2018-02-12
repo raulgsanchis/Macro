@@ -1,0 +1,1 @@
+{"SEQi": "(M*c_1 - M + NX*P*k - P*T*c_1*k + P*k*oC + P*k*oG + P*k*oI)/(P*(b*k - c_1*h + h))", "AD": "M*b/(-NX*h + T*c_1*h + Y*b*k - Y*c_1*h + Y*h - h*oC - h*oG - h*oI)", "ISC": "(-NX + T*c_1 + b*i - oC - oG - oI)/(c_1 - 1)", "SEQY": "(M*b + NX*P*h - P*T*c_1*h + P*h*oC + P*h*oG + P*h*oI)/(P*(b*k - c_1*h + h))", "LMC": "(M + P*h*i)/(P*k)"}
