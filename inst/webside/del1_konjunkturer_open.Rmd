@@ -36,7 +36,7 @@ $NX$ er nå inkludert i definisjonen for aggregert etterspørsel
 
 NX er definert som eksport $(EX)$ minus import $(R\cdot IM)$ målt i enheter av det innenlandske godet:
 
-$$NX=EX−R\cdot IM \text{ hvor }$$
+$$NX=EX−R\cdot IM \text{ }$$
 Realvalutakursen $R=\frac{E\cdot P^{*}}{P}$ (prisforholdet mellom utenlandske og innenlandske goder målt i enheter av det innenlandske gode) sørger her for at alt blir målt i enheter av det innenlandske godet. 
 
 ---
@@ -92,7 +92,7 @@ $$NX = EX - R\cdot IM = x_{1}R + x_{2}Y^{*} - R\cdot (m_{1}R + m_{2}Y)$$
 Legger til grunn i dette kurset at priseffekten dominerer innteksteffekten ([Marshall-Lerner betingelsen](https://en.wikipedia.org/wiki/Marshall%E2%80%93Lerner_condition)
 ):
 
-$$\frac{\Delta NX}{\Delta R}= x_{1} - IM + m_{1}R > 0 \text{ (i praksis vil dette ta litt tid)}$$  
+$$\frac{\Delta NX}{\Delta R}= \underset{priseffekt}{x_{1}} - \underset{inntektseffekt}{IM} + \underset{priseffekt}{m_{1}R} > 0 \text{ (i praksis vil dette ta litt tid)}$$  
 
 ---
 
@@ -259,7 +259,7 @@ semuflfastlikevekt
 
 ---
 
-Merk: Under fast kurs er renta bundet til å holde fastkursen stabil, det gjør at finanspolitikk (endring i utgifter og skatter) står igjen som de eneste virkemidelene som kan stabillisere konjunkturbevegelsene.
+Merk: Under fast kurs er renta bundet til å holde fastkursen stabil, det gjør at finanspolitikk (endring i offentlige utgifter og skatter) står igjen som de eneste virkemidelene som kan stabillisere konjunkturbevegelsene.
 
 
 ## Mundell-Fleming modellen under flytende kurs
