@@ -97,7 +97,7 @@ emsadaslikevekt <- cgenmakrofigure(dfnumeric=dfadas,
                                    variables = c(dfadas$varnavn),
                                    labt = labelsadas,
                                    elabt = elabelsadas,
-                                   scalejust = list(x=100, y=0)) #+ geom_line(data=data.frame(x=dfadas$yeae[1], y=0:10), aes(x,y), color ='black', size=0.5) + geom_text(aes(x=221, y= 10,label='LAS'), color = 'red')
+                                   scalejust = list(x=100, y=0)) + geom_line(data=data.frame(x=dfadas$yeae[1], y=0:3), aes(x,y), color ='black', size=0.5) + geom_text(aes(x=110, y= 3,label='LAS'), color = 'red')
 
 emsadaslikevekt
 

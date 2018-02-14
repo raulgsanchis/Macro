@@ -4,31 +4,17 @@ library(ggplot2)
 library(gridExtra)
 library(grid)
 library(latex2exp)
-# # Declaring variables
-# ## Endogenous
-# Y, C, I, G, Ld, Ms, P, M, NX, R, IM, EX, E = sympy.symbols('Y C I G L_d M_s  P M NX R IM EX E')
-# ## Parametere og konstantledd
-# oC, c1, b, oI, k, h, t, m, m1, m2, x1, x2, P, Ps = sympy.symbols('oC c_1 b oI k h t m m1 m2 x1 x2 P Ps')
-# ## Exogene styringsvariableh
-# oG, i, T, Ys, rp, i_s = sympy.symbols('oG i T Ys rp i_s')
-# iv <- 0:5
-# islmexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
-#                          P=1, h = 10, k =1, Y = 130, m=1, E=1, Ps=1,
-#                          m1=0.5, m2=0.5, x1=0.5, x2=0.5, Ys=100, i_s=3, rp=0, t=0), list(i=c(iv)))
-
-# eislmexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 110,
-#                           P=1, h = 10, k =1, Y = 130, m=1), list(i=c(iv)))
 #######################################################################################################################
 iv <- 0:5
-openpar <- list(i_s=1.5, rp=0, E=1, Ps=1, x1=0, x2=0, m1=0, m2=0, Ys=0, rp=0)
+openpar <- list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0)
 muflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
                          P=1, h = 10, k =1, Y = 130, m=1, t=0.4), openpar, list(i=c(iv)))
 
-eopenpar <- list(i_s=1.0, rp=0, E=1, Ps=1, x1=0, x2=0, m1=0, m2=0, Ys=0, rp=0)
-emuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 45, b = 10, oI = 10, T = 50, M= 110,
+eopenpar <- list(i_s=1, rp=0, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0)
+emuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
                           P=1, h = 10, k =1, Y = 130, m=1, t=0.4), eopenpar, list(i=c(iv)))
 
-seopenpar <- list(i_s=1.0, rp=0, E=1, Ps=1, x1=0, x2=0, m1=0, m2=0, Ys=0, rp=0)
+seopenpar <- list(i_s=1.0, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0)
 semuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 30, b = 10, oI = 10, T = 50, M= 110,
                           P=1, h = 10, k =1, Y = 130, m=1, t=0.4), eopenpar, list(i=c(iv)))
 
@@ -54,9 +40,9 @@ labelsmufl <- list(title = 'Mundell-Fleming modellen - fast kurs',
 muflfastlikevekt <- genmakrofigure(dfnumeric=dfmufl,
                                    variables = c(dfmufl$varnavn)[c(1)],
                                    labt = labelsmufl,
-                                   scalejust = list(x=0, y=90))  + coord_flip() +
-  geom_line(data=data.frame(x=dfmufl$yeae[1], y=90:165), aes(x,y), color ='black', size=0.5) +
-  geom_text(aes(x=dfmufl$yeae[1], y=165+3 ,label='BoP'), color = 'red')
+                                   scalejust = list(x=0, y=150))  + coord_flip() +
+  geom_line(data=data.frame(x=dfmufl$yeae[1], y=150:230), aes(x,y), color ='black', size=0.5) +
+  geom_text(aes(x=dfmufl$yeae[1], y=240 ,label='BoP'), color = 'red')
 
 # Fast kurs, endring i utenlandsrenta
 edfkurvermffast <- data.frame(kurve=c("IS", ""),
@@ -78,10 +64,10 @@ emuflfastlikevekt <- cgenmakrofigure(dfnumeric=dfmufl,
                                      labt = labelsmufl,
                                      elabt = elabelsmufl,
                                      scalejust = list(x=0, y=75)) + coord_flip() +
-  geom_line(data=data.frame(x=dfmufl$yeae[1], y=90:165), aes(x,y), color ='black', size=0.5) +
-  geom_text(aes(x=dfmufl$yeae[1], y=165+3 ,label='BoP'), color = 'red') +
-  geom_line(data=data.frame(x=edfmufl$yeae[1], y=90:165), aes(x,y), color ='black', size=0.5) +
-  geom_text(aes(x=edfmufl$yeae[1], y=165+3 ,label="BoP'"), color = 'red')
+  geom_line(data=data.frame(x=dfmufl$yeae[1], y=75:220), aes(x,y), color ='black', size=0.5) +
+  geom_text(aes(x=dfmufl$yeae[1], y=220+3 ,label='BoP'), color = 'red') +
+  geom_line(data=data.frame(x=edfmufl$yeae[1], y=75:240), aes(x,y), color ='black', size=0.5) +
+  geom_text(aes(x=edfmufl$yeae[1], y=240+3 ,label="BoP'"), color = 'red')
 
 emuflfastlikevekt
 
@@ -106,10 +92,10 @@ semuflfastlikevekt <- cgenmakrofigure(dfnumeric=dfmufl,
                                      labt = labelsmufl,
                                      elabt = selabelsmufl,
                                      scalejust = list(x=0, y=75)) + coord_flip() +
-  geom_line(data=data.frame(x=dfmufl$yeae[1], y=90:165), aes(x,y), color ='black', size=0.5) +
-  geom_text(aes(x=dfmufl$yeae[1], y=165+3 ,label='BoP'), color = 'red') +
-  geom_line(data=data.frame(x=edfmufl$yeae[1], y=90:165), aes(x,y), color ='black', size=0.5) +
-  geom_text(aes(x=edfmufl$yeae[1], y=165+3 ,label="BoP'"), color = 'red')
+  geom_line(data=data.frame(x=dfmufl$yeae[1], y=75:220), aes(x,y), color ='black', size=0.5) +
+  geom_text(aes(x=dfmufl$yeae[1], y=220+3 ,label='BoP'), color = 'red') +
+  geom_line(data=data.frame(x=edfmufl$yeae[1], y=75:240), aes(x,y), color ='black', size=0.5) +
+  geom_text(aes(x=edfmufl$yeae[1], y=240+3 ,label="BoP'"), color = 'red')
 
 semuflfastlikevekt
 #################################################################################
