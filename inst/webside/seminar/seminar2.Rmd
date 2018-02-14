@@ -1,4 +1,5 @@
-# Seminar 2: Enkel Keynes og IS-LM modellen
+# Seminar 2: Enkel Keynes og IS-LM modellen (uke 4)
+
 ## Keynes modell for en lukket økonomi
 
 Vi ser for oss en lukket økonomi hvor aggregert etterspørsel (AE) er gitt ved

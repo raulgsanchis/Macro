@@ -96,7 +96,7 @@ $$\frac{\Delta NX}{\Delta R}= \underset{priseffekt}{x_{1}} - \underset{inntektse
 
 ---
 
-#### Offentlige myndigheter
+#### Offentlige myndigheter (instruering) og sentralbanken (implementering)
 
 Myndighetene kan velge mellom fast eller flytende kurs:
 
