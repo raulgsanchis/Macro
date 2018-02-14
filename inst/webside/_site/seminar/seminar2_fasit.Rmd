@@ -4,7 +4,8 @@ output:
     css: seminar2.css
 ---
 
-# Seminar 2
+# Seminar 2: Enkel Keynes og IS-LM modellen (uke 4)
+
 ## Keynes-modell for en lukket økonomi
 
 Vi ser for oss en lukket økonomi hvor aggregert etterspørsel (AE) er gitt ved
@@ -44,6 +45,8 @@ $$G = \overline{G} \text{ og } T=\overline{T} \text{: offentlige myndigheter}$$
 (\overline{C} + c_{1}(Y-T) - c_{2}\cdot \overline{i}) + (\overline{I} - b\cdot i ) + \overline{G}$$*
 
 *Flytter alt som har med Y å gjøre på venstre siden av likhetstegnet:*
+
+*$$Y-Yc_{1} = \overline{C} - c_{1}T + \overline{I} - b\cdot i + \overline{G}$$* 
 
 *$$Y(1-c_{1}) = \overline{C} - c_{1}T + \overline{I} - b\cdot i + \overline{G}$$* 
 

@@ -9,14 +9,14 @@
 |----------------+--------------------------------------------------------------------------------------|
 | Y              | Bruttonasjonalprodukt (reelt)                                                        |
 | $\overline{Y}$ | Potensiell produkusjon                                                               |
-| $Y^{n}$        | Det naturlige produksjonsnivået                                                      |
+| $Y^{N}$        | Det naturlige produksjonsnivået                                                      |
 | LY             | Nominelt bruttonasjonalprodukt                                                       |
 | $Y_{d}$        | Disponibel inntekt (inntekt etter skatt er betalt)                                   |
 | N              | Arbeidsstyrken                                                                       |
 | L              | Sysselsatte personer                                                                 |
 | U              | Antall utenfor arbeid                                                                |
 | u              | Ledighetsrate                                                                        |
-| u^{n}          | Den naturlige ledighetsraten                                                         |
+| u^{N}          | Den naturlige ledighetsraten                                                         |
 | P              | Det aggregerte prisnivået (innenlandsk)                                              |
 | $\pi$          | Inflasjon                                                                            |
 | Z              | Aggregert etterspørsel (utgifter)                                                    |

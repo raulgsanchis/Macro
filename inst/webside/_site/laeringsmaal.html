@@ -225,7 +225,7 @@ $(document).ready(function () {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="oppgaver.html">Oppgaver</a>
+      <a href="seminar.html">Seminaroppgaver</a>
     </li>
     <li>
       <a href="formler.html">Regneregler for differensialer</a>
@@ -283,18 +283,13 @@ $(document).ready(function () {
 </div>
 
 
-<!--
----
-output: html_notebook
----
--->
 <div id="oversikt-over-faget" class="section level1">
 <h1>Oversikt over faget</h1>
 <ul>
 <li>Tre hovedtemaer:
 <ol style="list-style-type: decimal">
 <li>Konjunktursvingninger</li>
-<li>Økonomiske vekst</li>
+<li>Økonomisk vekst</li>
 <li>Økonomiske kriser</li>
 </ol></li>
 <li>Tilknyttet dette ønsker vi å undersøke
@@ -365,7 +360,7 @@ output: html_notebook
 <p><span class="math inline">\(AE \equiv C + I + G\)</span></p>
 <div id="likevekt-i-godemarkedet-varer-og-tjenester" class="section level3">
 <h3>Likevekt i godemarkedet (varer og tjenester)</h3>
-<p>Hvor vi postulerer følgene adferdlikninger</p>
+<p>Hvor vi postulerer følgene adferdlikginger</p>
 <ul>
 <li>Husholdningene: <span class="math display">\[C = \overline{C} + c(Y-T)\]</span></li>
 <li><p>Bedriftene: <span class="math display">\[I = \overline{I} - b\cdot i\]</span></p></li>
@@ -414,317 +409,134 @@ output: html_notebook
 <li><p>Skiftanalyse (grafisk og verbalt) Merk: P gir AD-kurven</p></li>
 <li><p>Stabiliseringspolitikk (grafisk og verbalt) Virkemidler: <span class="math inline">\(G, T, M/i\)</span></p></li>
 </ul>
-<!--
-- Adferdslikninger
-- Likevekt
-- Skiftanalyse
-- Stabiliseringspolitikk
-
-
-### IS-LM modellen:
-
-
--->
-<!--
-### AD-AS modellen:
-
-## Åpen Økonomi
-- Tre fundamentale endringer:
-    1. Handel med utlandet
-    1. Internasjonale finansmarkeder
-    1. Fast eller flytende kurs
-    
-- To stabiliseringsmål
-    
-$Z \equiv C + I + G + NX \\
-NX \equiv X - R\cdot IM \\
-CU + CA \equiv 0 \\$
-
-### Mundell-Flemming modellen (IS-LM for en åpen øonomi)
-- Fast kurs 
-- Flytende kurs
-### AD-AS
-- Fast kurs 
-- Flytende kurs
-
-<!--
-Del 1: Økonomiske svingninger på kort sikt
-Grunnleggende bakgrunnskunnskap 
-    Mål på aggregert produksjon: BNP
-(1) Verdien til alle sluttgodene (varer og tjenester) som blir produsert i en bestemt tidsperiode.
-(2) Summen av all merverdi for en bestemte tidsperiode.
-(3) Summen av all inntekt for en bestemte tidsperiode.
-    Nominell BNP (LY)
-LY=PY
-    Reel BNP (Y)
-   Y=LY/P
-    Ledighet (U) og ledighetsrate (u)
-U=L-N hvor N antall i arbeid og U antall utenfor arbeid
-u=U/L=(N-L)/L=N/L-1
-    Inflasjon (π)
- π=ΔP/P=(P_t-P_(t-1))/P_(t-1) 
-    Okuns lov:
-Negativ korrelasjon mellom vekst i produksjonen (BNP) og endring i ledighetsraten. 
-    Phillips-kuven: 
-Negativ korrelasjon mellom endring i inflasjon og ledighetsraten.
-    Hva bestemmer aggregert BNP?
-    Kort sikt: Etterspørsel bestemmer produksjonen (pga. stive stive priser)
-Mellomlang sikt: Tilgangen på innsatsfaktorer (arbeidskraft, teknologi og kapital) bestemmer etterspørselen.
-    Lang sikt: Teknologisk framgang og kapital akkumulasjon (avhenger av sparing, befolkningsvekst (fødselsrater + nettoinnvandring)).
-Likevekt i vare-  og tjenestemarkedet 
-     Aggregert etterspørsel (Z) i en lukket økonomi    
-Z ≡ C+I+G 
-    Hvor vi postulerer følgene adferdlikninger
-C= C ̅-c(Y-T)
-I =I ̅-b∙i
-og likevektsbetingelsen
-Y=Z
-    Løser denne mhp på Y gir oss IS-likningen (kombinasjoner av i og Y som er forenlig med likevekt i varemarkedet)
-Y=1/(1-c) [C ̅+cT+I ̅-b∙i+G]
-    Skiftanalyse (matematisk, figur, og verbalt): Endring i ΔY som følge av en økning i  Δ ̅I 
-    Matematisk 
-ΔY=  1/(1-c)  Δ I ̅>0 eller (Δ Y)/(Δ I ̅ )=  1/(1-c)  >0
-    Verbalt  (skisse – utenfor modellen)
-Økte investeringer  økt produksjon  multiplikatoreffekt:    økt disponibel inntekt 
- økt konsum  økt produkson etc.
-    Stabiliseringspolitikk: ∆G<0 
-ΔY=1/(1-c) [Δ I ̅+ΔG]
-Hvor vi sørger for at ΔG=Δ ̅I □(⇒)  ΔY=0 
-
-Likevekt i pengemarkedet 
-    Ser foreløpig kun på utvendige penger M=M_0 (M_1): Sedler og mynt pluss bankenes innskuddskontoer i sentralbanken. Dette nivået blir bestemt av sentralbanken.
-    Etterspørsel etter penger.
-M^D (Y┬((∓)),i┬((-)))  
-    Likevekt i pengemarkedet: 
-M/P=M^D (Y,i)
-    Sentralbanken bestemmer hva som skjer i pengemarkedet ved
-    Endre tilbudet av penger (vanlig tidligere) eller (2) å endre rentenivået (vanlig i dag).
-IS-LM modellen for en lukket økonomi: Gode- og pengemarkedet i likevekt
-    Modellen 
-Y=1/(1-c) [C ̅+cT+I ̅-b∙i+G] ∶Varemarkedet
-M/P=M^D (Y,i):Pengemarkedet
-Grafisk tegning bestemmer her Yog i samtidig 
-    Skiftanalyse (grafisk og verbalt)
-Merk: P gir AS-kurven.
-    Stabiliseringspolitikk (grafisk og verbalt)
-Virkemidler: G,T og M/i
-
-
-AD-AS modellen for en lukket økonomi: Gode, penge og arbeidsmarkedet i likevekt
-    Husholdningene: Tilbyr arbeid
-W=P^e F(u┬((-)),z┬((+)))
-    Bedrifter: Etterspør arbeidskraft og tilbyr produktet i et marked med monopolistisk konkurranse
- Y=AN
-    
-P=(1+μ)W
-    Ledighet
-u =U/L=(L-N)/L  =1-N/L=1-Y/AL
-    Kombinere dett gir oss AS-kurven (verdier av P og Y som gir likevekt i arbeidsmarkedet)
-P=(1+μ) P^e F(1-Y/AL,z)
-    AD-AS-modellen  
-Y=1/(1-c) [C ̅+cT+I ̅-b∙i+G] ∶Varemarkedet
-M/P=M^D (Y,L):Pengemarkedet
-P=(1+μ) P^e F(1-Y/AL,z):Arbeidsmarkedet
-Merk: P=P^e⇒Y=Y^n=u=u^n Naturlige produksjons- og ledighetsnivået,
-Grafisk tegning bestemmer her P, Yog i samtidig 
-    Skiftanalyse (grafisk og verbalt)
-    Stabiliseringspolitikk (grafisk og verbalt)
-Virkemidler: G,T og M/i
-    Sentral poeng med modellen – Selvkorrigerende mekanismer:
-Fleksibilitet i P og korrekte prisforventninger P^e på mellomlang sikt, fører til at økonomien går tilbake til sitt naturlige produksjons- og ledighetsnivå.  
-IS-LM modellen for en åpen økonomi: Gode-, penge- og valutakursmarkedet i likevekt 
-    Tre fundamentale endringer:
-(1) Handel med utlandet. 
-(2) Internasjonale finansmarkeder. 
-(3) Fast eller flytende kurs.
-
-Z=C+I+G+NX; 
-NX = X-R*IM
-CU+CA=0
-CU=Driftsregnskapet: Nettoeksport, Nettofinansinntekter(aksjer og obligasjoner), Nettoverføringer
-CA=Kapitalregnskapet: Nettoendringer i fordringer og gjeld ovenfor utlandet
-    To stabiliseringsmål: 
-(I) Intern balanse (produksjon lik naturlig produksjonsnivå).
-(II) Ekstern balanse (rimelig nivå på utenlandsgjelden).
-    (1) Handel med utlandet (avhenger blant annet av relative prisnivået mellom innenlandske og utenlandske varer)
-Realvalutakursen: R=(EP^*)/P  
-    E: Pris per enhet av utenlandsk (innenlandsk) valuta E  (1/E)
-    Postulerer følgende sammenhenger for handelsbalansen
-X=X(R┬((∓)),(Y^*)┬((∓)))
-IM = IM(R┬((-)),Y┬((∓)))
-    NX(R,Y,Y*)= X(R,Y*)-R∙IM(R,Y)
-Antar at dNX/dR > 0 (men dette kan ta litt tid)
-    (2) internasjonale finansmarkeder (renteparitetsbetingelsen)
-
-(1+i_(t+1))=((1+i_(t+1)^* ) E_(t+1)^e)/(E_t)
-    (3) Fast eller flytende kurs
-Flytende:
-
-E=(1+i*)/(1+i) E^e  
-Fast: (troverdig  ⇒E=E^e):
-
-    
-i=i^*
-
-    Modellen 
-Y=1/(1-c+Rb_2 ) [C ̅+cT+I ̅-b∙i+G] ∶Varemarkedet.
-M/P=M^D (Y,L):Pengemarkedet.
-
-E=(1+i*)/(1+i) E^e: Flytende-kursregime.
-
-i=i^*: Fast-kursregime.
-
-    IS-kurven under fast og flytende kurs
-Generelt fører lavere rente til høyere produksjon.
-Men multiplikatoren blir mindre ved en åpen økonomi, grunnet importlekkasje.
-Helningen på kurven er slakere under flytende kurs enn med fast kurs. Det skyldes at lavere rente under fast kurs fører til en depresiering av den nominelle og realvalutakursen, noe som forbedrer landets konkurranse evne og dermed fører til økt etterspørsel gjennom økt nettoeksport.
-    LM modellen samme som tidligere.
-    Skiftanalyse (grafisk og verbalt)
-Merk: P gir AS-kurven.
-    Stabiliseringspolitikk (grafisk og verbalt)
-Virkemidler: G,T og M/i (Flytende) og G,T og (E) (Fast kurs)
-AD-AS modellen for en åpen økonomi
-    AS-kurven samme som under en lukket økonomi.
-    AD-kurven er fallende ved at økt priser fører til lavere etterspørsel.
-    Sentral poeng med modellen – Selvkorrigerende mekanismer:
-Fleksibilitet i P og korrekte prisforventninger P^e på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.  
-
-#Del 2
-<!--
-Del 2: Økonomisk vekst 
-Introduksjon økonomisk vekst
-    Y/L↑⇒"Høyere levestendard ⇒" "Lykke(?)" 
-    Empiriske observasjoner:
-Rike land: Har vokst og BNP per innbygger har konvergert. 
-Fattige land: Ingen slik klar sammenheng.
-    Forklaringer: 
-Institusjoner, korrupsjon, sterk befolkningsvekst etc.
-Solow model for økonomisk vekst 
-    Hvordan forstå vekst?  Benytte Solow modellen som består av tre komponenter:
-    (1)Produktfunksjonen på intensiv form
-Y=F(K,AL)   F_k^'>0,F_kk^'<0,F_L^'>0, F_LL^'<0 
-Konstant skalautbytte 
-y=f(k) f’k>0,f’’k<0
-    (2) Sparing
-Lukket økonomi (uten offentlig sektor)
-I=S
-I=S=sY⇔I/N=sY/N=sf(k)
-    (3) Kapitalakkumulasjon
-Enkel utgave (uten teknologisk framgang og befolkningsvekst):
-ΔK=-δ K+I 
-ΔK/N=-δ K/N +I/N  
-Δk=sf(k)-δk
-Vanlig utgave (med teknologisk framgang, a, og befolkningsvekst, n,):
-Δk=sf(k)-(δ+n+a)k
-    Modellens prediksjon (bør også kunne vises grafisk):
-Uavhengig av det initiale kapitalnivået vil økonomien på sikt konvergere mot en steady state:
-sf(k^ss )=(δ+n+a) k^ss
-y^ss=f(k^ss)
-I den enkle versjonen vil veksten i produksjonen (BNP) våre lik null.
-I den vanlige versjonen vil veksten i produksjonen (BNP) våre lik befolkningsveksten pluss teknologiveksten. 
-
-    Skiftanalyse (bør også kunne vises grafisk)
-Økt sparing vil gi en ny og høyere steady state.
-Befolkningsvekst (fødselsrater + nettoinnvandring)) vil gi en ny og lavere steady state.
-## Introduksjon
-## Solow-modellen for økonomisk vekst
-#Del 3
-<!--
-Del 3: Økonomiske kriser
-Tema 1: Penger, kreditt og bankadferd
-Pengens funksjoner 
-    Penger som gjeld
-Utvendige penger (M0(M1)): 
-Skapt av sentralbanken og består av sedler, mynt pluss forretningsbankenes innskuddskontoer i sentralbanken. 
-
-Innvendige penger(M1(M2)-M0(M1)) : 
-Skapt av bankene ved at de krediterer sine innskuddskontoer.
-Tre arketyper for banksystemets forskjellige utforminger 
-    System 1: Lånebasert økonomi 
-Problemer:
-Uelastisk kredittilbud.
-Kostnader ved å flytte reserver mellom forretningsbankene.
-
-    System 2: Fraksjonsbasert bankvirksomhet uten sentralbank
-Problemer:
-Åpne for løp på bankene.
-Kostnader ved å flytte reserver mellom forretningsbankene.
-
-    System 3: Fraksjonsbasert bankvirksomhet med sentralbank og fiat penger
-Problemer:
-Systemrisiko.
-Vilkårlig omfordeling av formue.
-Banker og systemrisiko  
-    Bloos rule: Innskuddsgaranti gjør det mer lønnsomt å velge prosjekter med unødvendig 
-Dersom alle banker går får en slik løsning  Systemrisiko.
-    Høyere egenkapitalkrav til bankene vil føre (1)Lavere forventede utbetalinger ved systemrisiko (2) Gradvis substitusjon over fra forretningsmodeller med overdreven risiko. 
-Tema 2: Statsgjeld
-Konsolidert budsjettbetingelse for offentlig sektor
-Offentlig sektor
-B_t^f=(1+i_(t-1) ) B_(t-1)^f+(G_t-T_t )-SNG_t    
-Sentralbanken
-i_(t-1) B_(t-1)^m  +∆B_t^m=∆M_t+SNG_t
-Statsgjeld
-B_t=B_t^f-B_t^m
-    Ved å kombinere uttrykkene ovenfor får vi den konsoliderte budsjettbetingelsen for offentlig sektor
-
-B_t=(1+i_(t-1 ) ) B_t+(G_t-T_t )-ΔM_t
-
-Dynamikken i statsgjelden over tid
-    Ved null inflasjon og  i_t=r_t og ΔM_t=0, kan uttrykket ovenfor skrives som 
-
-B_t/Y_t =((G_t-T_t))/Y_t +  B_(t-1)/Y_(t-1) (1+r-g)
-    Grafisk analyse for fire tifeller:
-Viktigst:  
-(1+r-g)>1 og  (i) (G_t-T_t)>0  og (ii) (G_t-T_t)<0 
-Mindre viktig:
- (1+r-g)<1 og  (iii) (G_t-T_t)>0  og (iv) (G_t-T_t)<0
-Mulig tiltak for å forhindre en statsgjeldskrise
-    Kutte i primærbudsjettet (øke T eller redusere G)
-    Mislighold
-    Inflasjon ( man må gjøre sentralbanken mindre uavhengig)
-Tema 3: Likviditetsfellen og privat gjeld
-Hva er likviditetsfellen?
-    Sitasjon hvor pengepolitikken ikke lengre kan påvirke realøkonomien på en ekspansiv måte: Kortsiktig nominell rente er (nær) lik null.
-    Beskrevet først av Keynes i “General Theory” på 1930-tallet. Men blitt aktualisert etter den globale finanskrisen
-
-Hvordan havner man i en likviditetsfelle?
-    Case 1: Demografiske endringer (Krugman, 1998) ⇒Δ ̅C<0 (eks. spare mere til alderdommen)
-
-ΔY=1/((1-c(1-t)) (Δ ̅C)<0
-Likviditetsfelle dersom rentereduksjonen ikke klarer å veie opp for nedgangen i konsumet som er en følge av de demografiske endringene: 
-(Δ C ̅-b∙Δ i^0)<0
-⇒ΔY=1/((1-c(1-t))(Δ C ̅-b∙Δ i^0)<0
-
-
-    Case 2: Privat gjeldsreduksjon (Krugman og EggertsSon, 2012)⇒ΔD^b<0 (Minsky moment)
-
-
-ΔY=1/((1-¯c(1-t)) (θ∙Δ ̅D^b )<0
-Likviditetsfelle dersom rentereduksjonen ikke klarer å veie opp for nedgangen i konsumet som er en følge av gjeldsreduksjonen:
- (θ∙Δ D^b-¯b  ∙Δ i^0)<0
-⇒ΔY=1/((1-¯c  (1-t))(θ∙Δ D^b-b∙Δ i^0)<0
-
-    Likviditetsfelle  Y<Y^n T=tY   går ned. Redusert BNP og redusert skatter  B_t/Y_t øker. Gitt at sentralbanken ikke gis muligheten til å øke pengemengden for å kjøpe statsobligasjoner, vil en overgang til en likviditetsfelle lett kunne smitte over i en statsgjeldskrise.  
-Hvordan komme ut av en likviditetsfelle?
-    Den lukkede økonomi modellen forteller oss at finanspolitikken kan betraktes som en gratis lunsj:
-    Vil kunne lukke produksjonsgapet.
-    Vil stabilisere prisene
-    Rentekostnader ved å gjøre dette vil være (tilnærmet) lik null. 
-    For en åpen økonomi er ikke situasjonen like enkel.  Dette vil bli forklart nærmere under forelesningen om krisen i eurosonen. 
-
-#Krisen i Eurosonen 
--->
-<!--
-
-
-
-## Tema 1: Penger, kreditt og bankadferd
-## Tema 2: Statsgjeld
-## Tema 3: Likviditetsfellen og privat gjeld
-
-[![Alt text](https://img.youtube.com/vi/XZ7hE4lQAYs/0.jpg)](https://www.youtube.com/watch?v=XZ7hE4lQAYs)
--->
+<div id="ad-as-modellen-for-en-lukket-konomi-gode-penge-og-arbeidsmarkedet-i-likevekt" class="section level3">
+<h3>AD-AS modellen for en lukket økonomi: Gode, penge og arbeidsmarkedet i likevekt</h3>
+<ul>
+<li>Husholdningene: Tilbyr arbeid</li>
+</ul>
+<p><span class="math display">\[W=P^{e}F(\underset{(-)}{u}, \underset{(+)}{z})\]</span></p>
+<ul>
+<li>Bedrifter: Etterspør arbeidskraft og tilbyr produktet i et marked med monopolistisk konkurranse</li>
+</ul>
+<p><span class="math display">\[Y=AL\]</span></p>
+<p><span class="math display">\[P=(1+μ)W\]</span></p>
+<ul>
+<li>Ledighet</li>
+</ul>
+<p><span class="math display">\[u=\frac{U}{N}=\frac{N-L}{N}=1−\frac{L}{N}=1−\frac{Y/A}{N}=1 - \frac{Y}{AN}\]</span></p>
+<ul>
+<li>Kombinere dett gir oss AS-kurven (verdier av P og Y som gir likevekt i arbeidsmarkedet)</li>
+</ul>
+<p><span class="math display">\[P=(1+μ)P^{e}F(1 - \frac{Y}{AN},z)\]</span></p>
+<ul>
+<li>AD-AS-modellen</li>
+</ul>
+<p><span class="math display">\[Y = \frac{1}{1-c}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]\text{ :Godemarkedet}\]</span></p>
+<p><span class="math display">\[\frac{\overline{M}}{P}=\kappa Y - h\cdot i  \text{ :Pengemarkedet}\]</span></p>
+<p><span class="math display">\[P=(1+μ)P^{e}F(1−\frac{Y}{AN},z) \text{ :Arbeidsmarkedet}\]</span></p>
+<p>Merk: <span class="math inline">\(P=Pe⇒Y=Yn=u=un\)</span>: Naturlige produksjons- og ledighetsnivået,</p>
+<p>Grafisk tegning bestemmer her P, Y og i samtidig</p>
+<ul>
+<li>Skiftanalyse (grafisk og verbalt)</li>
+<li>Stabiliseringspolitikk (grafisk og verbalt)</li>
+</ul>
+<p>Virkemidler: <span class="math inline">\(G\)</span>, <span class="math inline">\(T\)</span> og <span class="math inline">\(M/i\)</span></p>
+<ul>
+<li>Sentral poeng med modellen – Selvkorrigerende mekanismer:</li>
+</ul>
+<p>Fleksibilitet i P og korrekte prisforventninger Pe på mellomlang sikt, fører til at økonomien går tilbake til sitt naturlige produksjons- og ledighetsnivå.</p>
+</div>
+<div id="is-lm-modellen-for-en-apen-konomi-gode--penge--og-valutakursmarkedet-i-likevekt" class="section level3">
+<h3>IS-LM modellen for en åpen økonomi: Gode-, penge- og valutakursmarkedet i likevekt</h3>
+<ul>
+<li>To stabiliseringsmål:</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li><p>Intern balanse (produksjon lik naturlig produksjonsnivå)</p></li>
+<li><p>Ekstern balanse (rimelig nivå på utenlandsgjelden)</p></li>
+</ol>
+<ul>
+<li>Tre fundamentale endringer fra en lukket økonomi:</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li><p>Handel med utlandet</p></li>
+<li><p>Fast eller flytende kurs</p></li>
+<li><p>Internasjonale finansmarkeder</p></li>
+</ol>
+<p><span class="math display">\[AE = C+I+G+NX\]</span></p>
+<p><span class="math display">\[ NX=EX−R∗IM    \]</span></p>
+<p><span class="math display">\[ BP = CA + CP + OR=0 \]</span></p>
+<p>CU=Driftsregnskapet: Nettoeksport, Nettofinansinntekter(aksjer og obligasjoner), Nettoverføringer</p>
+<p>CA=Kapitalregnskapet: Nettoendringer i fordringer og gjeld ovenfor utlandet</p>
+<ul>
+<li>Handel med utlandet (avhenger blant annet av relative prisnivået mellom innenlandske og utenlandske varer)</li>
+</ul>
+<p>Realvalutakursen: <span class="math inline">\(R=\frac{EP}{P}\)</span></p>
+<ul>
+<li><p>E: Pris (nominell) per enhet av utenlandsk (innenlandsk) valuta E (1/E)</p></li>
+<li><p>Postulerer følgende adferdsligninger for handelsbalansen</p></li>
+</ul>
+<p><span class="math display">\[IM=X(\underset{(-)}{R}, \underset{(+)}{Y}) =  -m_{1}R + x_{2}Y \]</span> <span class="math display">\[EX=X(\underset{(+)}{R}, \underset{(+)}{Y^{*}}) = x_{1}R + x_{2}Y^{*}  \]</span></p>
+<p>Det betyr at</p>
+<ul>
+<li><span class="math display">\[NX = EX - IM = x_{1}R + x_{2}Y^{*} + R(-m_{1}R + x_{2}Y)\]</span></li>
+</ul>
+<p>Legger til grunn (i praksis kan dette ta litt tid) i dette kurset at <span class="math inline">\(\frac{\Delta NX}{\Delta R}&gt;0\)</span> (depresiering av realvalutakursen forbedrer nettoeksporten)</p>
+<ul>
+<li>internasjonale finansmarkeder (renteparitetsbetingelsen)</li>
+</ul>
+<p><span class="math display">\[(1+i_{t+1})=(1+i_{t+1}^{*})\frac{E_{t+1}^{e}}{E_{t}}\]</span></p>
+<ul>
+<li>Myndighetene kan velge mellom fast eller flytende kurs</li>
+</ul>
+<p>Fast:</p>
+<p><span class="math inline">\(i =i^{*} + rp\)</span></p>
+<p>Troverdig kurs vil si at <span class="math inline">\(E=E_{e} \Rightarrow rp=0\)</span></p>
+<p>Flytende:</p>
+<p><span class="math inline">\(E=\frac{(1+i)}{(1+i)}E^{e}\)</span></p>
+<ul>
+<li>Modellen</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li><span class="math display">\[Y = \frac{1}{1-c-R?}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]\]</span></li>
+<li><span class="math display">\[\frac{M}{P}=\kappa\cdot Y + h\cdot i\]</span></li>
+<li><span class="math display">\[i = i^{*} + rp \text{ Fastkursregime}\]</span></li>
+<li><span class="math display">\[E = \frac{1+i^{*}}{1 + i} \text{ Flytende kursregime}\]</span></li>
+</ol>
+<ul>
+<li>IS-kurven under fast og flytende kurs</li>
+</ul>
+<p>Generelt fører lavere rente til høyere produksjon.</p>
+<p>Men multiplikatoren blir mindre enn ved en lukket økonomi, grunnet importlekkasje.</p>
+<p>Helningen på kurven er slakere under flytende kurs enn med fast kurs. Det skyldes at lavere rente under flytende kurs fører til en depresiering av den nominelle og realvalutakursen, noe som forbedrer landets konkurranse evne og dermed fører til økt etterspørsel gjennom økt nettoeksport.</p>
+<ul>
+<li><p>LM modellen stigende under fast og horisontal under fast(?)</p></li>
+<li><p>Skiftanalyse (grafisk og verbalt)</p></li>
+</ul>
+<p>Merk: P gir AS-kurven.</p>
+<ul>
+<li>Stabiliseringspolitikk (grafisk og verbalt)</li>
+</ul>
+<p>Virkemidler: <span class="math inline">\(G\)</span>, <span class="math inline">\(T\)</span> og <span class="math inline">\(M/i\)</span> (Flytende) og <span class="math inline">\(G\)</span>,<span class="math inline">\(T\)</span> og(<span class="math inline">\(E\)</span>) (Fast kurs)</p>
+</div>
+<div id="mundell-fleming-is-lm-for-en-apen-konomi-modellen" class="section level3">
+<h3>Mundell-Fleming (IS-LM for en åpen økonomi) modellen</h3>
+<ul>
+<li>AS-kurven samme som under en lukket økonomi.</li>
+<li>AD-kurven er fallende ved at økt priser fører til lavere etterspørsel.</li>
+<li>Sentralt poeng med modellen – Selvkorrigerende mekanismer:</li>
+</ul>
+<p>Fleksibilitet i P og korrekte prisforventninger Pe på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.</p>
+</div>
+<div id="ad-as-modellen-for-en-apen-konomi" class="section level3">
+<h3>AD-AS modellen for en åpen økonomi</h3>
+<ul>
+<li>AS-kurven samme som under en lukket økonomi.</li>
+<li>AD-kurven er fallende ved at økt priser fører til lavere etterspørsel.</li>
+<li>Sentral poeng med modellen – Selvkorrigerende mekanismer:</li>
+</ul>
+<p>Fleksibilitet i P og korrekte prisforventninger Pe på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.</p>
+</div>
 </div>
 </div>
 

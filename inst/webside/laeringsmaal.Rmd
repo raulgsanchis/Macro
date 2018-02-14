@@ -1,4 +1,4 @@
-#Oversikt over fagett
+#Oversikt over faget
 - Tre hovedtemaer: 
     1. Konjunktursvingninger
     1. Økonomisk vekst
@@ -250,18 +250,11 @@ $E=\frac{(1+i)}{(1+i)}E^{e}$
 1. $$i = i^{*} + rp \text{ Fastkursregime}$$
 1. $$E = \frac{1+i^{*}}{1 + i} \text{ Flytende kursregime}$$
 
-<!--
-
 - IS-kurven under fast og flytende kurs
-
 
 Generelt fører lavere rente til høyere produksjon.
 
 Men multiplikatoren blir mindre enn ved en lukket økonomi, grunnet importlekkasje.
-
--->
-<!--
-
 
 Helningen på kurven er slakere under flytende kurs enn med fast kurs. Det skyldes at lavere rente under flytende kurs fører til en depresiering av den nominelle og realvalutakursen, noe som forbedrer landets konkurranse evne og dermed fører til økt etterspørsel gjennom økt nettoeksport.
 
@@ -278,7 +271,6 @@ Virkemidler: $G$, $T$ og $M/i$
 $G$,$T$ og($E$)
  (Fast kurs)
  
-
 ### Mundell-Fleming (IS-LM for en åpen økonomi) modellen 
 
 - AS-kurven samme som under en lukket økonomi.
@@ -287,4 +279,13 @@ $G$,$T$ og($E$)
 
 Fleksibilitet i P og korrekte prisforventninger Pe
 på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.
--->
+
+### AD-AS modellen for en åpen økonomi
+
+- AS-kurven samme som under en lukket økonomi.
+- AD-kurven er fallende ved at økt priser fører til lavere etterspørsel.
+- Sentral poeng med modellen – Selvkorrigerende mekanismer:
+
+Fleksibilitet i P og korrekte prisforventninger Pe
+ på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.
+

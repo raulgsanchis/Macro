@@ -2,8 +2,6 @@
 dfgeneric <- function(modell='adasl',labels = NULL, exoparval=NULL, eqsel = c(1,2)){
 
   #browser()
-
-
   Iv <- as.vector(unlist(rev(exoparval)[1]))
 
   if (modell =='keynes'){
@@ -84,12 +82,20 @@ dfgeneric <- function(modell='adasl',labels = NULL, exoparval=NULL, eqsel = c(1,
     #browser()
 
     modellequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/islmocequ.json'))
-    isv <- eval(parse(text=modellequ$ISC), exoparval)
-    lmv <- eval(parse(text=modellequ$LMC), exoparval)
-    bpv <- eval(parse(text=modellequ$EQU), exoparval)
+
+    # Fast kurs
+    iisv <- eval(parse(text=modellequ$FastISC), exoparval)
+    ilmv <- eval(parse(text=modellequ$FastLMC), exoparval)
+    ibpv <- eval(parse(text=modellequ$FastBoP), exoparval)
+
+    # Flytende kurs
+    fisv <- eval(parse(text=modellequ$FlytISC), exoparval)
+    flmv <- eval(parse(text=modellequ$FlytLMC), exoparval)
+    fbpv <- eval(parse(text=modellequ$FastBoP), exoparval)
+    fisbpv <- eval(parse(text=modellequ$FlytISCBoP), exoparval)
 
     # Melted
-    dfmodellres <- data.frame(Iv, isv, lmv, bpv) %>%
+    dfmodellres <- data.frame(Iv, iisv, ilmv, ibpv, fisv, flmv, fbpv, fisbpv) %>%
       reshape2::melt(id.vars = c("Iv"))
 
 
@@ -104,10 +110,11 @@ dfgeneric <- function(modell='adasl',labels = NULL, exoparval=NULL, eqsel = c(1,
     #   c(Y1 = y[2] - eval(parse(text=modellequ$ISC), c(exoparvalvd, list(i=y[1]))),
     #     Y2 = y[2] - eval(parse(text=modellequ$LMC), c(exoparvalvd, list(i=y[1]))))}
     #
-    #yeae <- c(rootSolve::multiroot(f = optadas, start = c(iss, yss), positive = TRUE)$root, exoparvalvd$M)
+    #yeae <- c(1,1) #c(rootSolve::multiroot(f = optadas, start = c(iss, yss), positive = TRUE)$root, exoparvalvd$M)
     #exoparvalvd
 
-    yeae <- c(eval(parse(text=modellequ$SEQFasti), exoparval), eval(parse(text=modellequ$SEQFastY), exoparval))
+    yeae <- c(eval(parse(text=modellequ$SEQFasti), exoparval), eval(parse(text=modellequ$SEQFastY), exoparval),
+              eval(parse(text=modellequ$SEQFlytY), exoparval), eval(parse(text=modellequ$SEQFlytY), exoparval))
 
   }
   else if (modell =='adaso'){

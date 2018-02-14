@@ -6,17 +6,17 @@ library(grid)
 library(latex2exp)
 #######################################################################################################################
 iv <- 0:5
-openpar <- list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0)
+openpar <- list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0,Ee=1)
 muflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
                          P=1, h = 10, k =1, Y = 130, m=1, t=0.4), openpar, list(i=c(iv)))
 
-eopenpar <- list(i_s=1, rp=0, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0)
+eopenpar <- list(i_s=1, rp=0, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
 emuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
                           P=1, h = 10, k =1, Y = 130, m=1, t=0.4), eopenpar, list(i=c(iv)))
 
-seopenpar <- list(i_s=1.0, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0)
+seopenpar <- list(i_s=1.0, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
 semuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 30, b = 10, oI = 10, T = 50, M= 110,
-                          P=1, h = 10, k =1, Y = 130, m=1, t=0.4), eopenpar, list(i=c(iv)))
+                          P=1, h = 10, k =1, Y = 130, m=1, t=0.4), seopenpar, list(i=c(iv)))
 
 
 dfmufl <- dfgeneric(modell='islmo', exoparval = muflexoparvalv, eqsel = c(1,2))
@@ -99,23 +99,84 @@ semuflfastlikevekt <- cgenmakrofigure(dfnumeric=dfmufl,
 
 semuflfastlikevekt
 #################################################################################
-#
-# # Flytende kurs
-# dfkurvermffast <- data.frame(kurve=c("IS", "LM"),
-#                              fargel = c('red', 'red'),
-#                              fargek = c('red', 'red'),
-#                              y = c(dfmufl$varnavnminverdi$value[c(1)], dfmufl$varnavnmaksverdi$value[c(2)]),
-#                              x = c(dfmufl$varnavnminverdi$Iv[c(1)],dfmufl$varnavnmaksverdi$Iv[c(2)]))
-#
-# labelsmufl <- list(title = 'Mundell-Fleming modellen - flytende kurs',
-#                    y = 'produksjon, inntekt (Y)',
-#                    x = 'rentenivå (i)',
-#                    x0 = c(TeX('$i_{0}}$')),
-#                    y0 = c(TeX('$Y_{0}$')),
-#                    kurver = dfkurvermffast)
-#
-# muflflytenmuflfastlikevektdelikevekt <- genmakrofigure(dfnumeric=dfmufl,
-#                                                        variables = c(dfmufl$varnavn)[c(1,2)],
-#                                                        labt = labelsmufl,
-#                                                        scalejust = list(x=0, y=75))  + coord_flip()
-# muflflytenmuflfastlikevektdelikevekt
+# Flytende kurs
+iv <- 0:5
+eopenpar <- list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+emuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
+                         P=1, h = 10, k =1, Y = 130, m=1, t=0.4), eopenpar, list(i=c(iv)))
+
+eeopenpar <- list(i_s=1, rp=0, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+eemuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
+                          P=1, h = 10, k =1, Y = 130, m=1, t=0.4), eeopenpar, list(i=c(iv)))
+
+eseopenpar <- list(i_s=1.0, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+esemuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 30, b = 10, oI = 10, T = 50, M= 110,
+                           P=1, h = 10, k =1, Y = 130, m=1, t=0.4), eseopenpar, list(i=c(iv)))
+
+edfmufl <- dfgeneric(modell='islmo', exoparval = emuflexoparvalv, eqsel = c(1,2))
+eedfmufl <- dfgeneric(modell='islmo', exoparval = eemuflexoparvalv, eqsel = c(1,2))
+esedfmufl <- dfgeneric(modell='islmo', exoparval = esemuflexoparvalv, eqsel = c(1,2))
+
+
+edfkurvermffast <- data.frame(kurve=c("IS", "LM"),
+                             fargel = c('red', 'red'),
+                             fargek = c('red', 'red'),
+                             y = c(edfmufl$varnavnminverdi$value[c(1)], edfmufl$varnavnmaksverdi$value[c(2)]),
+                             x = c(edfmufl$varnavnminverdi$Iv[c(1)],edfmufl$varnavnmaksverdi$Iv[c(2)]))
+
+elabelsmufl <- list(title = 'Mundell-Fleming modellen - fast kurs',
+                   y = 'produksjon, inntekt (Y)',
+                   x = 'rentenivå (i)',
+                   x0 = c(TeX('$i_{0}}$')),
+                   y0 = c(TeX('$Y_{0}$')),
+                   kurver = edfkurvermffast)
+
+muflflytendelikevekt <- genmakrofigure(dfnumeric=edfmufl,
+                                                       variables = c(edfmufl$varnavn)[c(1,2)],
+                                                       labt = elabelsmufl,
+                                                       scalejust = list(x=0, y=75))  + coord_flip()
+
+## Endring
+edfkurvermffast <- data.frame(kurve=c("IS", ""),
+                              fargel = c('red', 'red'),
+                              fargek = c('red', 'red'),
+                              y = c(edfmufl$varnavnminverdi$value[c(1)], edfmufl$varnavnmaksverdi$value[c(2)]),
+                              x = c(edfmufl$varnavnminverdi$Iv[c(1)],edfmufl$varnavnmaksverdi$Iv[c(2)]))
+
+eelabelsmufl <- list(title = 'Mundell-Fleming modellen - fast kurs',
+                    y = 'produksjon, inntekt (Y)',
+                    x = 'rentenivå (i=i*+rp)',
+                    x0 = c(TeX('$i_{1}}$')),
+                    y0 = c(TeX('$Y_{1}$')),
+                    kurver = edfkurvermffast)
+
+emuflfastlikevekt <- cgenmakrofigure(dfnumeric=edfmufl,
+                                     edfnumeric=eedfmufl,
+                                     variables = c(edfmufl$varnavn)[c(1,2)],
+                                     labt = elabelsmufl,
+                                     elabt = eelabelsmufl,
+                                     scalejust = list(x=0, y=75)) + coord_flip()
+
+
+## Stabiliseringspolitkk
+sedfkurvermffast <- data.frame(kurve=c("IS", ""),
+                              fargel = c('red', 'red'),
+                              fargek = c('red', 'red'),
+                              y = c(sedfmufl$varnavnminverdi$value[c(1)], sedfmufl$varnavnmaksverdi$value[c(2)]),
+                              x = c(sedfmufl$varnavnminverdi$Iv[c(1)],sedfmufl$varnavnmaksverdi$Iv[c(2)]))
+
+seelabelsmufl <- list(title = 'Mundell-Fleming modellen - fast kurs',
+                     y = 'produksjon, inntekt (Y)',
+                     x = 'rentenivå (i=i*+rp)',
+                     x0 = c(TeX('$i_{1}}$')),
+                     y0 = c(TeX('$Y_{1}$')),
+                     kurver = sedfkurvermffast)
+
+semuflfastlikevekt <- cgenmakrofigure(dfnumeric=edfmufl,
+                                     edfnumeric=sedfmufl,
+                                     variables = c(edfmufl$varnavn)[c(1,2)],
+                                     labt = elabelsmufl,
+                                     elabt = seelabelsmufl,
+                                     scalejust = list(x=0, y=75)) + coord_flip()
+
+semuflfastlikevekt
