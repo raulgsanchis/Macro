@@ -10,6 +10,15 @@ output: html_notebook
 > A society that puts equality before freedom will get neither. A society that puts freedom before equality will get a high degree of both.” 
 ― Milton Friedman
 
+
+Geografi
+Kultur
+Institusjoner
+Extracting institusjoner
+
+Bolsjevik freedom and eqaulity
+pluralist institusjoner
+
 <!--
 
 ## Introduksjon

@@ -80,7 +80,6 @@ dfgeneric <- function(modell='adasl',labels = NULL, exoparval=NULL, eqsel = c(1,
   else if (modell =='islmo'){
 
     #browser()
-
     modellequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/islmocequ.json'))
 
     # Fast kurs
@@ -89,13 +88,13 @@ dfgeneric <- function(modell='adasl',labels = NULL, exoparval=NULL, eqsel = c(1,
     ibpv <- eval(parse(text=modellequ$FastBoP), exoparval)
 
     # Flytende kurs
-    fisv <- eval(parse(text=modellequ$FlytISC), exoparval)
-    flmv <- eval(parse(text=modellequ$FlytLMC), exoparval)
-    fbpv <- eval(parse(text=modellequ$FastBoP), exoparval)
-    fisbpv <- eval(parse(text=modellequ$FlytISCBoP), exoparval)
+    eisv <- eval(parse(text=modellequ$FlytISC), exoparval)
+    elmv <- eval(parse(text=modellequ$FlytLMC), exoparval)
+    ebpv <- eval(parse(text=modellequ$FastBoP), exoparval)
+    eisbpv <- eval(parse(text=modellequ$FlytISCBoP), exoparval)
 
     # Melted
-    dfmodellres <- data.frame(Iv, iisv, ilmv, ibpv, fisv, flmv, fbpv, fisbpv) %>%
+    dfmodellres <- data.frame(Iv, iisv, ilmv, ibpv, eisv, elmv, ebpv, eisbpv) %>%
       reshape2::melt(id.vars = c("Iv"))
 
 

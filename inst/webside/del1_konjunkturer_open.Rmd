@@ -251,7 +251,7 @@ emuflfastlikevekt
 
 ### Stabiliseringspolitikk (G og T)
 
-Eks. reduksjon i offentlig utgifter
+Eks. reduksjon i offentlig utgifter ($\overline{G}<0$)
 
 ```{r echo=FALSE}
 semuflfastlikevekt
@@ -298,9 +298,14 @@ emuflfastlikevekt
 
 ### Komparativ statikk (skiftanalyse)
 
+Økning i det utenlandske rentenivået ($i^{*}$)
+
 ---
 
 ### Stabiliseringspolitikk  (M/(i), G og T) 
+
+Eks. reduksjon i pengmengden ($\overline{M}<0$)
+
 
 <!--
 

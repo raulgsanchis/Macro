@@ -80,11 +80,7 @@ molttlandpricei <- tlandpricei %>%
   dplyr::mutate(kat = 'inf')
 
 ## Samler alle dataene for land
-<<<<<<< HEAD
-moltmacrohel <- rbind(molttlandunem, molttlandgdp, molttlandpricei) %>% dplyr::mutate(land='ger') %>%
-=======
 moltmacrohel <- rbind(molttlandunem, molttlandgdp, molttlandpricei) %>% dplyr::mutate(land='nor') %>%
->>>>>>> kontoret
   dplyr::mutate(freqm = substring(date,6,7))
 
 # 4. Saving data in Rda-format
@@ -92,7 +88,6 @@ devtools::use_data(moltmacrohel, overwrite = TRUE)
 
 # # Appendiks: grafikk
 # Henter datasett
-
 lmoltmacrohel <- reshape2::dcast(moltmacrohel, date  + land ~ variable )
 names(lmoltmacrohel)
 

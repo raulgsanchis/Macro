@@ -1,11 +1,75 @@
-<!--
 ---
 output: html_notebook
 ---
--->
+
 # Applikasjon: Krisen i Eurosonen: 
 
 <img id='grere' src="bilder/eurozone.jpg" height="75px" width="300px" />
 
 
 [Halvorsen (2014)](artikler/Krisen_i_eurosonen_JIH_2014.pdf)
+
+
+```{r}
+library(ggplot2)
+library(plotly)
+
+mappe <- paste0(devtools::as.package(".")$path)
+moltmacrohel
+lmoltmacrohel <- reshape2::dcast(moltmacrohel, date  + land ~ variable )
+names(lmoltmacrohel)
+
+okuns <-
+  qplot(data = lmoltmacrohel, x = cunem, y = ggdp) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title= 'Okuns lov - Hellas', x='Endring i ledighet', y = 'Vekst i BNP (real)') +
+  theme_bw()
+
+phillips <- qplot(x = unem, y = cinflation, data = lmoltmacrohel, geom = c('point')) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title= 'Phillips-kurven - Hellas', x='Ledighetsrate', y = 'Endring i inflation')
+
+a <- ggplotly(okuns)
+b <- ggplotly(phillips)
+```
+
+
+
+```{r}
+library(MakroOEKB1115)
+library(dplyr)
+library(ggplot2)
+library(gridExtra)
+library(grid)
+
+# Henter datasett
+moltmacrousa <- MakroOEKB1115::moltmacrousa
+unique(moltmacrousa$variable)
+
+varinavng <- c('BNP', 'BNP-trend (hp-filter)')
+
+hpg <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendg'), katv = c('gdp'), startp = "1929-04-01", endp =" 2016-12-12", variabeln = varinavng, labt = list(y='BNP realpriser (log)', x = 'År'))
+gdg <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendg'), katv = c('gdp'), startp = "1929-04-01", endp =" 1941-01-01", variabeln = varinavng, labt = list(y='BNP realpriser (log)', x = 'År'))
+grg <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendg'), katv = c('gdp'), startp = "2007-01-01", endp =" 2016-12-12", variabeln = varinavng, labt = list(y='BNP realpriser (log)', x = 'År'))
+mpg <- gpmakro(moltmacrousa, variables = c('lngdp', 'hptrendg'), katv = c('gdp'), startp = "1945-01-01", endp =" 2016-12-12", variabeln = varinavng,labt = list(y='BNP realpriser (log)', x = 'År'))
+
+varinavnu <- c('Ledighetsrate', 'Snitt (normalperioden)')
+
+hpu <- gpmakro(moltmacrousa, variables = c('unem', 'trendu'), katv = c('unem')
+, startp = "1929-04-01", endp =" 2016-12-12", variabeln = varinavnu
+,labt = list(y='Ledighetsrate', x = 'År'))
+gdu <- gpmakro(moltmacrousa, variables = c('unem', 'trendu'), katv = c('unem')
+, startp = "1929-04-01", variabeln = varinavnu
+,endp =" 1941-01-01", labt = list(y='Ledighetsrate', x = 'År'))
+gru <- gpmakro(moltmacrousa, variables = c('unem', 'trendu'), katv = c('unem')
+, startp = "2007-01-01", endp =" 2016-12-12", variabeln = varinavnu
+,labt = list(y='Ledighetsrate', x = 'År'))
+mpu <- gpmakro(moltmacrousa, variables = c('unem', 'trendu'), katv = c('unem')
+,startp = "1945-01-01", endp =" 2007-01-01", variabeln = varinavnu
+,labt = list(y='Ledighetsrate', x = 'År'))
+
+plotly::subplot(a, b)
+
+#plotly(hpg)
+```
+
