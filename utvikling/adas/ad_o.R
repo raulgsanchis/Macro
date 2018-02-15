@@ -18,7 +18,6 @@ eislmexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M
 
 dfislmo <- dfgeneric(modell='islmo', exoparval = islmoexoparvalv)
 edfislmo <- dfgeneric(modell='islmo', exoparval = eislmexoparvalv)
-################
 
 # Fast kurs
 idfkurverislmo <- data.frame(kurve=c("", "IS"),
@@ -35,7 +34,7 @@ ilabelsislm <- list(title = 'Mundell-Fleming modellen - fast kurs',
                     y0 = c(TeX('$Y_{0}$')),
                     kurver = idfkurverislmo)
 
-eidfkurverislmo <- data.frame(kurve=c("", "IS"),
+eidfkurverislmo <- data.frame(kurve=c("", "IS'"),
                              fargel = c('red', 'red'),
                              fargek = c('red', 'red'),
                              y = c(filter(edfislmo$varnavnminverdi, variable=='ibpv')[,3], filter(edfislmo$varnavnminverdi, variable=='iisv')[,3]),
@@ -55,19 +54,31 @@ islmochangepricei <- cgenmakrofigure(dfnumeric=dfislmo,
                                    variables = c('iisv'),
                                    labt = ilabelsislm,
                                    elabt = eilabelsislm,
-                                   scalejust = list(x=0, y=75),
-                                   limits= list(x=NULL, y=NULL)) + coord_flip() +
+                                   scalejust = list(x=0, y=0),
+                                   limits= list(x=NULL, y=c(150,250))) + coord_flip() +
   geom_line(data=data.frame(x=dfislmo$yeae[1], y=75:230), aes(x,y), color ='black', size=0.5) +
   geom_text(aes(x=dfislmo$yeae[1], y=240 ,label='BoP'), color = 'red')
 
 islmochangepricei
 
 # Flytende kurs
+iv <- 1.5:10
+openpar <- list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0,Ee=1)
+islmoexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
+                          P=1, h = 10, k =1, Y = 130, m=1, t=0.4), openpar, list(i=c(iv)))
+
+eopenpar <- list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0,Ee=1)
+eislmexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
+                          P=0.75, h = 10, k =1, Y = 130, m=1, t=0.4), eopenpar, list(i=c(iv)))
+
+dfislmo <- dfgeneric(modell='islmo', exoparval = islmoexoparvalv)
+edfislmo <- dfgeneric(modell='islmo', exoparval = eislmexoparvalv)
+
 edfkurverislmo <- data.frame(kurve=c("LM", "IS-BoP"),
                              fargel = c('red', 'red'),
                              fargek = c('red', 'red'),
-                             y = c(filter(dfislmo$varnavnminverdi, variable=='eisbpv')[,3], filter(dfislmo$varnavnminverdi, variable=='elmv')[,3]),
-                             x = c(filter(dfislmo$varnavnminverdi, variable=='eisbpv')[,1], filter(dfislmo$varnavnminverdi, variable=='elmv')[,1]))
+                             y = c(filter(dfislmo$varnavnmaksverdi, variable=='elmv')[,3], filter(dfislmo$varnavnminverdi, variable=='eisbpv')[,3]),
+                             x = c(filter(dfislmo$varnavnmaksverdi, variable=='elmv')[,1], filter(dfislmo$varnavnminverdi, variable=='eisbpv')[,1]))
 
 
 elabelsislm <- list(title = 'Mundell-Fleming modellen - fast kurs',
@@ -77,11 +88,11 @@ elabelsislm <- list(title = 'Mundell-Fleming modellen - fast kurs',
                     y0 = c(TeX('$Y_{0}$')),
                     kurver = edfkurverislmo)
 
-eedfkurverislmo <- data.frame(kurve=c("LM", "IS"),
+eedfkurverislmo <- data.frame(kurve=c("LM'", "IS-BoP'"),
                               fargel = c('red', 'red'),
                               fargek = c('red', 'red'),
-                              y = c(filter(edfislmo$varnavnminverdi, variable=='eisbpv')[,3], filter(edfislmo$varnavnminverdi, variable=='elmv')[,3]),
-                              x = c(filter(edfislmo$varnavnminverdi, variable=='eisbpv')[,1], filter(edfislmo$varnavnminverdi, variable=='elmv')[,1]))
+                              y = c(filter(edfislmo$varnavnmaksverdi, variable=='elmv')[,3], filter(edfislmo$varnavnminverdi, variable=='eisbpv')[,3]),
+                              x = c(filter(edfislmo$varnavnmaksverdi, variable=='elmv')[,1], filter(edfislmo$varnavnminverdi, variable=='eisbpv')[,1]))
 
 
 eelabelsislm <- list(title = 'Mundell-Fleming modellen - fast kurs',
@@ -92,6 +103,10 @@ eelabelsislm <- list(title = 'Mundell-Fleming modellen - fast kurs',
                      kurver = eedfkurverislmo)
 
 
+dfislmo$yeae <- c(4.75, 143)
+edfislmo$yeae <- c(3, 175)
+
+
 islmochangepricee <- cgenmakrofigure(dfnumeric=dfislmo,
                                     edfnumeric=edfislmo,
                                     variables = c('eisbpv','elmv'),
@@ -99,13 +114,23 @@ islmochangepricee <- cgenmakrofigure(dfnumeric=dfislmo,
                                     elabt = eelabelsislm,
                                     scalejust = list(x=0, y=75),
                                     limits= list(x=NULL, y=NULL)) + coord_flip()
+islmochangepricee
+
+
+
+
+
+
+
+
 ###################################
+# AD-Kurven flytende kurs
 Yv <- 100:200 # Guess
 adasexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100, P=1, h = 10,
                          k =1),list(Pe=1, mu = 0.1, l_1=-20,l_2=1, z=1, A= 5,
                                     N=400, alpha = 1, Ac = 2), list(Y=c(Yv)))
 
-dfadas <- dfgeneric(modell='adaso', exoparval = adasexoparvalv)
+dfadas <- dfgeneric(modell='adasl', exoparval = adasexoparvalv)
 
 dfkurver = data.frame(kurve=c("AD"),
                       fargel = c('red'),
