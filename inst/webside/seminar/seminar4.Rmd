@@ -4,17 +4,38 @@ output:
     css: seminar2.css
 ---
 
-# Seminar 3: 
-## IS-LM modellen
-*abc*
+# Seminar 4 (uke 10): Mundell-Fleming og AD-AS modellen under fast og flytende kurs 
+## Åpen økonomi
+- Hvilke virkemidler har myndighetene for å stabilisere konjunkturene under henholdsvis et fast og flytende kurs regime?
 
-*$$2+2$$*
+- Hva menes med intern og ekstern balanse?
+
+- Marshall- Lerner betingelsen
+
+- Hva menes med en liten åpen økonomi?
+
+- Tre fundementale likninger
+
+## Mundell-Fleming modellen
+- Adferdsligninger i 
+### Fast-kurs
+- Still opp likvektsbetingelsen som gjelder for fast kurs
+- Skiftanalyse
+- Stabiliseringspolitikk
+### Flytende kurs
+- Still opp likvektsbetingelsen som gjelder for flytende kurs
+- Skiftanalyse
+- Stabiliseringspolitikk
 
 ## AD-AS modellen
+### Fast-kurs
+- Skiftanalyse
+- Stabiliseringspolitikk
 
+### Flytende kurs
+- Skiftanalyse
+- Stabiliseringspolitikk
 
-## Keynes modell åpen økonomi
+Helningen på IS-kurvene er slakere under flytende kurs som en følge av at vi inkluder leddet
 
-
-
-
+Devaluering og revaluering

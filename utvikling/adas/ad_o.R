@@ -105,7 +105,7 @@ adasexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M=
                          k =1),list(Pe=1, mu = 0.1, l_1=-20,l_2=1, z=1, A= 5,
                                     N=400, alpha = 1, Ac = 2), list(Y=c(Yv)))
 
-dfadas <- dfgeneric(modell='adasl', exoparval = adasexoparvalv)
+dfadas <- dfgeneric(modell='adaso', exoparval = adasexoparvalv)
 
 dfkurver = data.frame(kurve=c("AD"),
                       fargel = c('red'),
