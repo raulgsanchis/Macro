@@ -100,31 +100,31 @@ semuflfastlikevekt <- cgenmakrofigure(dfnumeric=dfmufl,
 semuflfastlikevekt
 #################################################################################
 # Flytende kurs
-iv <- 0:10
+iv <- 2:7.5
 eopenpar <- list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
 emuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
                          P=1, h = 10, k =1, Y = 130, m=1, t=0.4), eopenpar, list(i=c(iv)))
 
-iv <- 0:10
+iv <- 2:7.5
 eeopenpar <- list(i_s=1.0, rp=0, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
 eemuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 75, b = 10, oI = 10, T = 50, M= 100,
                           P=1, h = 10, k =1, Y = 130, m=1, t=0.4), eeopenpar, list(i=c(iv)))
 
-iv <- 0:20
+iv <- 2:7.5
 eseopenpar <- list(i_s=1.0, rp=0, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
-esemuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 75, b = 10, oI = 10, T = 50, M= 75,
+esemuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 75, b = 10, oI = 10, T = 50, M= 80,
                             P=1, h = 10, k =1, Y = 130, m=1, t=0.4), eeopenpar, list(i=c(iv)))
 
 edfmufl <- dfgeneric(modell='islmo', exoparval = emuflexoparvalv, eqsel = c(3,4))
 eedfmufl <- dfgeneric(modell='islmo', exoparval = eemuflexoparvalv, eqsel = c(3,4))
-esedfmufl <- dfgeneric(modell='islmo', exoparval = esemuflexoparvalv, eqsel = c(3,4))
+sedfmufl <- dfgeneric(modell='islmo', exoparval = esemuflexoparvalv, eqsel = c(3,4))
 
 
 edfkurvermffast <- data.frame(kurve=c("IS-BoP", "LM"),
                              fargel = c('red', 'red'),
                              fargek = c('red', 'red'),
-                             y = c(edfmufl$varnavnminverdi$value[c(4)], edfmufl$varnavnmaksverdi$value[c(5)]),
-                             x = c(edfmufl$varnavnminverdi$Iv[c(4)], edfmufl$varnavnmaksverdi$Iv[c(5)]))
+                             y = c(filter(edfmufl$varnavnminverdi, variable=='eisbpv')[,3], filter(edfmufl$varnavnmaksverdi, variable=='elmv')[,3]),
+                             x = c(filter(edfmufl$varnavnminverdi, variable=='eisbpv')[,1], filter(edfmufl$varnavnmaksverdi, variable=='elmv')[,1]))
 
 elabelsmufl <- list(title = 'Mundell-Fleming modellen - flytende kurs',
                    y = 'produksjon, inntekt (Y)',
@@ -133,12 +133,12 @@ elabelsmufl <- list(title = 'Mundell-Fleming modellen - flytende kurs',
                    y0 = c(TeX('$Y_{0}$')),
                    kurver = edfkurvermffast)
 
-edfmufl$yeae <- c(5.2,152)
+edfmufl$yeae <- c(4.4,144)
 
 muflflytendelikevekt <- genmakrofigure(dfnumeric=edfmufl,
-                                       variables = c(edfmufl$varnavn)[c(1,2)],
+                                       variables = c('eisbpv','elmv'),
                                        labt = elabelsmufl,
-                                       scalejust = list(x=0, y=75))  + coord_flip()
+                                       scalejust = list(x=0, y=100))  + coord_flip()
 
 muflflytendelikevekt
 
@@ -146,8 +146,8 @@ muflflytendelikevekt
 edfkurvermffast <- data.frame(kurve=c("IS-BoP'", "LM"),
                               fargel = c('red', 'red'),
                               fargek = c('red', 'red'),
-                              y = c(edfmufl$varnavnminverdi$value[c(4)], edfmufl$varnavnmaksverdi$value[c(5)]),
-                              x = c(edfmufl$varnavnminverdi$Iv[c(4)],edfmufl$varnavnmaksverdi$Iv[c(5)]))
+                              y = c(filter(eedfmufl$varnavnminverdi, variable=='eisbpv')[,3], filter(eedfmufl$varnavnmaksverdi, variable=='elmv')[,3]),
+                              x = c(filter(eedfmufl$varnavnminverdi, variable=='eisbpv')[,1], filter(eedfmufl$varnavnmaksverdi, variable=='elmv')[,1]))
 
 eelabelsmufl <- list(title = 'Mundell-Fleming modellen - flytende kurs',
                     y = 'produksjon, inntekt (Y)',
@@ -156,12 +156,12 @@ eelabelsmufl <- list(title = 'Mundell-Fleming modellen - flytende kurs',
                     y0 = c(TeX('$Y_{1}$')),
                     kurver = edfkurvermffast)
 
-edfmufl$yeae <- c(5.2,152)
-eedfmufl$yeae <- c(6.7, 167)
+edfmufl$yeae <- c(4.4,144)
+eedfmufl$yeae <- c(5.7, 157)
 
 emuflfastlikevekt <- cgenmakrofigure(dfnumeric=edfmufl,
                                      edfnumeric=eedfmufl,
-                                     variables = c(edfmufl$varnavn)[c(1,2)],
+                                     variables = c('eisbpv','elmv'),
                                      labt = elabelsmufl,
                                      elabt = eelabelsmufl,
                                      scalejust = list(x=0, y=75)) + coord_flip()
@@ -172,8 +172,8 @@ emuflfastlikevekt
 sedfkurvermffast <- data.frame(kurve=c("IS-BoP'", "LM'"),
                               fargel = c('red', 'red'),
                               fargek = c('red', 'red'),
-                              y = c(sedfmufl$varnavnminverdi$value[c(1)], sedfmufl$varnavnmaksverdi$value[c(2)]),
-                              x = c(sedfmufl$varnavnminverdi$Iv[c(1)],sedfmufl$varnavnmaksverdi$Iv[c(2)]))
+                              y = c(filter(sedfmufl$varnavnminverdi, variable=='eisbpv')[,3], filter(sedfmufl$varnavnmaksverdi, variable=='elmv')[,3]),
+                              x = c(filter(sedfmufl$varnavnminverdi, variable=='eisbpv')[,1], filter(sedfmufl$varnavnmaksverdi, variable=='elmv')[,1]))
 
 seelabelsmufl <- list(title = 'Mundell-Fleming modellen - fast flytende kurs',
                      y = 'produksjon, inntekt (Y)',
@@ -182,11 +182,11 @@ seelabelsmufl <- list(title = 'Mundell-Fleming modellen - fast flytende kurs',
                      y0 = c(TeX('$Y_{1}$')),
                      kurver = sedfkurvermffast)
 
-sedfmufl$yeae <- c(3.6, 147)
+sedfmufl$yeae <- c(6.5, 144)
 
 semuflfastlikevekt <- cgenmakrofigure(dfnumeric=edfmufl,
                                      edfnumeric=sedfmufl,
-                                     variables = c(edfmufl$varnavn)[c(1,2)],
+                                     variables = c('eisbpv','elmv'),
                                      labt = elabelsmufl,
                                      elabt = seelabelsmufl,
                                      scalejust = list(x=0, y=75)) + coord_flip()

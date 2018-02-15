@@ -5,55 +5,100 @@ library(gridExtra)
 library(grid)
 library(latex2exp)
 ###########################################################################################################
-# AD-Kurven
+# AD-Kurven fast-kurs
 iv <- 0:4
-islmexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
-                         P=1, h = 10, k =1, Y = 130, m=1), list(i=c(iv)))
+openpar <- list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0,Ee=1)
+islmoexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
+                         P=1, h = 10, k =1, Y = 130, m=1, t=0.4), openpar, list(i=c(iv)))
 
+eopenpar <- list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0,Ee=1)
 eislmexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
-                         P=0.75, h = 10, k =1, Y = 130,m=1), list(i=c(iv)))
+                         P=0.75, h = 10, k =1, Y = 130, m=1, t=0.4), eopenpar, list(i=c(iv)))
 
 
-dfislm <- dfgeneric(modell='islml', exoparval = islmexoparvalv)
-edfislm <- dfgeneric(modell='islml', exoparval = eislmexoparvalv)
+dfislmo <- dfgeneric(modell='islmo', exoparval = islmoexoparvalv)
+edfislmo <- dfgeneric(modell='islmo', exoparval = eislmexoparvalv)
+################
 
-dfkurverislm <- data.frame(kurve=c("IS", "LM"),
-                       fargel = c('red', 'red'),
-                       fargek = c('red', 'red'),
-                       y = c(dfislm$varnavnminverdi$value[c(3)], dfislm$varnavnmaksverdi$value[c(4)]),
-                       x = c(dfislm$varnavnminverdi$Iv[c(3)],dfislm$varnavnmaksverdi$Iv[c(4)]))
+# Fast kurs
+idfkurverislmo <- data.frame(kurve=c("", "IS"),
+                           fargel = c('red', 'red'),
+                           fargek = c('red', 'red'),
+                           y = c(filter(dfislmo$varnavnminverdi, variable=='ibpv')[,3], filter(dfislmo$varnavnminverdi, variable=='iisv')[,3]),
+                           x = c(filter(dfislmo$varnavnminverdi, variable=='ibpv')[,1], filter(dfislmo$varnavnminverdi, variable=='iisv')[,1]))
 
-epdfkurverislm <- data.frame(kurve=c("LM'"),
-                           fargel = c('red'),
-                           fargek = c('red'),
-                           y = c(edfislm$varnavnmaksverdi$value[c(4)]),
-                           x = c(edfislm$varnavnmaksverdi$Iv[c(4)]))
 
-labelsislm <- list(title = 'IS-LM modellen',
+ilabelsislm <- list(title = 'Mundell-Fleming modellen - fast kurs',
                     y = 'produksjon, inntekt (Y)',
                     x = 'rentenivå (i)',
                     x0 = c(TeX('$i_{0}}$')),
                     y0 = c(TeX('$Y_{0}$')),
-                    kurver = dfkurverislm)
+                    kurver = idfkurverislmo)
+
+eidfkurverislmo <- data.frame(kurve=c("", "IS"),
+                             fargel = c('red', 'red'),
+                             fargek = c('red', 'red'),
+                             y = c(filter(edfislmo$varnavnminverdi, variable=='ibpv')[,3], filter(edfislmo$varnavnminverdi, variable=='iisv')[,3]),
+                             x = c(filter(edfislmo$varnavnminverdi, variable=='ibpv')[,1], filter(edfislmo$varnavnminverdi, variable=='iisv')[,1]))
 
 
-elabelsislm <- list(title = 'IS-LM modellen',
+eilabelsislm <- list(title = 'Mundell-Fleming modellen - flytende kurs',
                     y = 'produksjon, inntekt (Y)',
                     x = 'rentenivå (i)',
                     x0 = c(TeX('$i_{1}}$')),
                     y0 = c(TeX('$Y_{1}$')),
-                    kurver = epdfkurverislm)
+                    kurver = eidfkurverislmo)
 
 
-islmchangemoney <- cgenmakrofigure(dfnumeric=dfislm,
-                                   edfnumeric=edfislm,
-                                   variables = c(dfislm$varnavn)[c(3,4)],
-                                   labt = labelsislm,
-                                   elabt = elabelsislm,
-                                   scalejust = list(x=0, y=100),
-                                   limits= list(x=NULL, y=c(NULL,NULL))) + coord_flip()
+islmochangepricei <- cgenmakrofigure(dfnumeric=dfislmo,
+                                   edfnumeric=edfislmo,
+                                   variables = c('iisv'),
+                                   labt = ilabelsislm,
+                                   elabt = eilabelsislm,
+                                   scalejust = list(x=0, y=75),
+                                   limits= list(x=NULL, y=NULL)) + coord_flip() +
+  geom_line(data=data.frame(x=dfislmo$yeae[1], y=75:230), aes(x,y), color ='black', size=0.5) +
+  geom_text(aes(x=dfislmo$yeae[1], y=240 ,label='BoP'), color = 'red')
 
-islmchangemoney
+islmochangepricei
+
+# Flytende kurs
+edfkurverislmo <- data.frame(kurve=c("LM", "IS-BoP"),
+                             fargel = c('red', 'red'),
+                             fargek = c('red', 'red'),
+                             y = c(filter(dfislmo$varnavnminverdi, variable=='eisbpv')[,3], filter(dfislmo$varnavnminverdi, variable=='elmv')[,3]),
+                             x = c(filter(dfislmo$varnavnminverdi, variable=='eisbpv')[,1], filter(dfislmo$varnavnminverdi, variable=='elmv')[,1]))
+
+
+elabelsislm <- list(title = 'Mundell-Fleming modellen - fast kurs',
+                    y = 'produksjon, inntekt (Y)',
+                    x = 'rentenivå (i)',
+                    x0 = c(TeX('$i_{0}}$')),
+                    y0 = c(TeX('$Y_{0}$')),
+                    kurver = edfkurverislmo)
+
+eedfkurverislmo <- data.frame(kurve=c("LM", "IS"),
+                              fargel = c('red', 'red'),
+                              fargek = c('red', 'red'),
+                              y = c(filter(edfislmo$varnavnminverdi, variable=='eisbpv')[,3], filter(edfislmo$varnavnminverdi, variable=='elmv')[,3]),
+                              x = c(filter(edfislmo$varnavnminverdi, variable=='eisbpv')[,1], filter(edfislmo$varnavnminverdi, variable=='elmv')[,1]))
+
+
+eelabelsislm <- list(title = 'Mundell-Fleming modellen - fast kurs',
+                     y = 'produksjon, inntekt (Y)',
+                     x = 'rentenivå (i)',
+                     x0 = c(TeX('$i_{1}}$')),
+                     y0 = c(TeX('$Y_{1}$')),
+                     kurver = eedfkurverislmo)
+
+
+islmochangepricee <- cgenmakrofigure(dfnumeric=dfislmo,
+                                    edfnumeric=edfislmo,
+                                    variables = c('eisbpv','elmv'),
+                                    labt = elabelsislm,
+                                    elabt = eelabelsislm,
+                                    scalejust = list(x=0, y=75),
+                                    limits= list(x=NULL, y=NULL)) + coord_flip()
 ###################################
 Yv <- 100:200 # Guess
 adasexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100, P=1, h = 10,
@@ -84,4 +129,4 @@ adaslikevekt <- genmakrofigure(dfnumeric = dfadas,
                                scalejust = list(x=100, y=0),
                                punktvelger = list(x=c(1,2), y=c(3,4)))
 
-grid.arrange(islmchangemoney, adaslikevekt, nrow=2)
+grid.arrange(islmochangepricei, islmochangepricee, adaslikevekt, adaslikevekt, nrow=2)

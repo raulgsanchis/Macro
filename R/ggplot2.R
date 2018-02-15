@@ -86,12 +86,10 @@ dfgeneric <- function(modell='adasl',labels = NULL, exoparval=NULL, eqsel = c(1,
     iisv <- eval(parse(text=modellequ$FastISC), exoparval)
     ilmv <- eval(parse(text=modellequ$FastLMC), exoparval)
     ibpv <- eval(parse(text=modellequ$FastBoP), exoparval)
-
-    # Flytende kurs
-    eisv <- eval(parse(text=modellequ$FlytISC), exoparval)
     elmv <- eval(parse(text=modellequ$FlytLMC), exoparval)
-    ebpv <- eval(parse(text=modellequ$FastBoP), exoparval)
+    eisv <- eval(parse(text=modellequ$FlytISC), exoparval)
     eisbpv <- eval(parse(text=modellequ$FlytISCBoP), exoparval)
+    ebpv <- eval(parse(text=modellequ$FastBoP), exoparval)
 
     # Melted
     dfmodellres <- data.frame(Iv, iisv, ilmv, ibpv, eisv, elmv, ebpv, eisbpv) %>%

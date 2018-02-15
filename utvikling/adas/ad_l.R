@@ -53,6 +53,7 @@ islmchangemoney <- cgenmakrofigure(dfnumeric=dfislm,
                                    scalejust = list(x=0, y=100),
                                    limits= list(x=NULL, y=c(NULL,NULL))) + coord_flip()
 
+islmchangemoney
 ###################################
 Yv <- 100:200 # Guess
 adasexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100, P=1, h = 10,
