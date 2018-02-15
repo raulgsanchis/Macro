@@ -105,20 +105,22 @@ eopenpar <- list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=2
 emuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
                          P=1, h = 10, k =1, Y = 130, m=1, t=0.4), eopenpar, list(i=c(iv)))
 
-eeopenpar <- list(i_s=1, rp=0, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
-eemuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 100, b = 10, oI = 10, T = 50, M= 100,
+iv <- 0:10
+eeopenpar <- list(i_s=1.0, rp=0, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+eemuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 75, b = 10, oI = 10, T = 50, M= 100,
                           P=1, h = 10, k =1, Y = 130, m=1, t=0.4), eeopenpar, list(i=c(iv)))
 
-eseopenpar <- list(i_s=1.0, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
-esemuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 30, b = 10, oI = 10, T = 50, M= 110,
-                           P=1, h = 10, k =1, Y = 130, m=1, t=0.4), eseopenpar, list(i=c(iv)))
+iv <- 0:20
+eseopenpar <- list(i_s=1.0, rp=0, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+esemuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 75, b = 10, oI = 10, T = 50, M= 75,
+                            P=1, h = 10, k =1, Y = 130, m=1, t=0.4), eeopenpar, list(i=c(iv)))
 
 edfmufl <- dfgeneric(modell='islmo', exoparval = emuflexoparvalv, eqsel = c(3,4))
 eedfmufl <- dfgeneric(modell='islmo', exoparval = eemuflexoparvalv, eqsel = c(3,4))
 esedfmufl <- dfgeneric(modell='islmo', exoparval = esemuflexoparvalv, eqsel = c(3,4))
 
 
-edfkurvermffast <- data.frame(kurve=c("IS", "LM"),
+edfkurvermffast <- data.frame(kurve=c("IS-BoP", "LM"),
                              fargel = c('red', 'red'),
                              fargek = c('red', 'red'),
                              y = c(edfmufl$varnavnminverdi$value[c(4)], edfmufl$varnavnmaksverdi$value[c(5)]),
@@ -131,15 +133,17 @@ elabelsmufl <- list(title = 'Mundell-Fleming modellen - flytende kurs',
                    y0 = c(TeX('$Y_{0}$')),
                    kurver = edfkurvermffast)
 
-edfmufl$yeae <- c(5,160)
+edfmufl$yeae <- c(5.2,152)
 
 muflflytendelikevekt <- genmakrofigure(dfnumeric=edfmufl,
                                        variables = c(edfmufl$varnavn)[c(1,2)],
                                        labt = elabelsmufl,
                                        scalejust = list(x=0, y=75))  + coord_flip()
 
+muflflytendelikevekt
+
 ## Endring
-edfkurvermffast <- data.frame(kurve=c("IS", ""),
+edfkurvermffast <- data.frame(kurve=c("IS-BoP'", "LM"),
                               fargel = c('red', 'red'),
                               fargek = c('red', 'red'),
                               y = c(edfmufl$varnavnminverdi$value[c(4)], edfmufl$varnavnmaksverdi$value[c(5)]),
@@ -152,8 +156,8 @@ eelabelsmufl <- list(title = 'Mundell-Fleming modellen - flytende kurs',
                     y0 = c(TeX('$Y_{1}$')),
                     kurver = edfkurvermffast)
 
-eedfmufl$yeae <- c(5,160)
-
+edfmufl$yeae <- c(5.2,152)
+eedfmufl$yeae <- c(6.7, 167)
 
 emuflfastlikevekt <- cgenmakrofigure(dfnumeric=edfmufl,
                                      edfnumeric=eedfmufl,
@@ -165,7 +169,7 @@ emuflfastlikevekt <- cgenmakrofigure(dfnumeric=edfmufl,
 emuflfastlikevekt
 
 ## Stabiliseringspolitkk
-sedfkurvermffast <- data.frame(kurve=c("IS", ""),
+sedfkurvermffast <- data.frame(kurve=c("IS-BoP'", "LM'"),
                               fargel = c('red', 'red'),
                               fargek = c('red', 'red'),
                               y = c(sedfmufl$varnavnminverdi$value[c(1)], sedfmufl$varnavnmaksverdi$value[c(2)]),
@@ -177,6 +181,8 @@ seelabelsmufl <- list(title = 'Mundell-Fleming modellen - fast flytende kurs',
                      x0 = c(TeX('$i_{1}}$')),
                      y0 = c(TeX('$Y_{1}$')),
                      kurver = sedfkurvermffast)
+
+sedfmufl$yeae <- c(3.6, 147)
 
 semuflfastlikevekt <- cgenmakrofigure(dfnumeric=edfmufl,
                                      edfnumeric=sedfmufl,
