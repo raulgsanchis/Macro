@@ -196,3 +196,8 @@ semuflfastlikevekt
 
 
 # NX = EX - R*IM
+
+
+################## Skisse objektorientert
+
+

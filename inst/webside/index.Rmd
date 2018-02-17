@@ -12,7 +12,6 @@ output:
 # Bottom header
 # Foreløpig 
 # Læringsmål
-#Jeg legger merke til at du ikke har satt såkalt HTML "Title" på hovedsiden.... derfor kommer den opp med "Redirecting" som title... I Chrome så blir dette vist i TAB'en (Arkfanen) ... så det ser litt rart ut.
 # sudo cp -R /home/joernih/gitclones/teaching/MakroOEKB1115/inst/webside/_site /var/www/abc
 #https://www.brainyquote.com/quotes/abraham_lincoln_110340
 

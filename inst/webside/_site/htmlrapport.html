@@ -392,14 +392,13 @@ $(document).ready(function () {
 <li><a href="#mundell-fleming-modellen">Mundell-Fleming modellen</a><ul>
 <li><a href="#adferdsligninger-1">Adferdsligninger</a><ul>
 <li><a href="#husholdninger-og-bedrifter">Husholdninger og bedrifter</a></li>
-<li><a href="#offentlige-myndigheter-2">Offentlige myndigheter</a></li>
+<li><a href="#offentlige-myndigheter-instruering-og-sentralbanken-implementering">Offentlige myndigheter (instruering) og sentralbanken (implementering)</a></li>
 </ul></li>
 </ul></li>
 <li><a href="#mundell-fleming-modellen-under-fast-kurs">Mundell-Fleming modellen under fast kurs</a><ul>
 <li><a href="#godemarkedet">Godemarkedet</a></li>
 <li><a href="#pengemarkedet">Pengemarkedet</a></li>
 <li><a href="#valutakursmarkedet-1">Valutakursmarkedet</a></li>
-<li><a href="#grafisk">Grafisk</a></li>
 <li><a href="#komparativ-statikk-skiftanalyse-3">Komparativ statikk (skiftanalyse)</a></li>
 <li><a href="#stabiliseringspolitikk-g-og-t">Stabiliseringspolitikk (G og T)</a></li>
 </ul></li>
@@ -1319,7 +1318,7 @@ Likvidering (bail-in)
 <h4>(1) Handel med utlandet</h4>
 <p><span class="math display">\[AE \equiv C+I+G+NX\]</span> <span class="math inline">\(NX\)</span> er nå inkludert i definisjonen for aggregert etterspørsel</p>
 <p>NX er definert som eksport <span class="math inline">\((EX)\)</span> minus import <span class="math inline">\((R\cdot IM)\)</span> målt i enheter av det innenlandske godet:</p>
-<p><span class="math display">\[NX=EX−R\cdot IM \text{ hvor }\]</span> Realvalutakursen <span class="math inline">\(R=\frac{E\cdot P^{*}}{P}\)</span> (prisforholdet mellom utenlandske og innenlandske goder målt i enheter av det innenlandske gode) sørger her for at alt blir målt i enheter av det innenlandske godet.</p>
+<p><span class="math display">\[NX=EX−R\cdot IM \text{ }\]</span> Realvalutakursen <span class="math inline">\(R=\frac{E\cdot P^{*}}{P}\)</span> (prisforholdet mellom utenlandske og innenlandske goder målt i enheter av det innenlandske gode) sørger her for at alt blir målt i enheter av det innenlandske godet.</p>
 <hr />
 </div>
 <div id="fast-eller-flytende-kurs" class="section level4">
@@ -1355,11 +1354,11 @@ Likvidering (bail-in)
 <p>Ved å sett inn for uttrykkene ovenfor, kan vi skrive nettoeksporten som</p>
 <p><span class="math display">\[NX = EX - R\cdot IM = x_{1}R + x_{2}Y^{*} - R\cdot (m_{1}R + m_{2}Y)\]</span></p>
 <p>Legger til grunn i dette kurset at priseffekten dominerer innteksteffekten (<a href="https://en.wikipedia.org/wiki/Marshall%E2%80%93Lerner_condition">Marshall-Lerner betingelsen</a> ):</p>
-<p><span class="math display">\[\frac{\Delta NX}{\Delta R}= x_{1} - IM + m_{1}R &gt; 0 \text{ (i praksis vil dette ta litt tid)}\]</span></p>
+<p><span class="math display">\[\frac{\Delta NX}{\Delta R}= \underset{priseffekt}{x_{1}} - \underset{inntektseffekt}{IM} + \underset{priseffekt}{m_{1}R} &gt; 0 \text{ (i praksis vil dette ta litt tid)}\]</span></p>
 <hr />
 </div>
-<div id="offentlige-myndigheter-2" class="section level4">
-<h4>Offentlige myndigheter</h4>
+<div id="offentlige-myndigheter-instruering-og-sentralbanken-implementering" class="section level4">
+<h4>Offentlige myndigheter (instruering) og sentralbanken (implementering)</h4>
 <p>Myndighetene kan velge mellom fast eller flytende kurs:</p>
 <ul>
 <li>Fast <span class="math display">\[i =i^{*} + rp\]</span></li>
@@ -1374,6 +1373,7 @@ Likvidering (bail-in)
 </div>
 <div id="mundell-fleming-modellen-under-fast-kurs" class="section level2">
 <h2>Mundell-Fleming modellen under fast kurs</h2>
+<p>Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet under fast kurs</p>
 <div id="godemarkedet" class="section level3">
 <h3>Godemarkedet</h3>
 <p><span class="math display">\[Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX + R^{2}\cdot m_{1} \right]\]</span></p>
@@ -1386,10 +1386,11 @@ Likvidering (bail-in)
 <h3>Valutakursmarkedet</h3>
 <p><span class="math display">\[i =i^{*} + rp\]</span></p>
 <hr />
-</div>
-<div id="grafisk" class="section level3">
-<h3>Grafisk</h3>
-<p>Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet (fast kurs)</p>
+<p><strong>Formelt</strong></p>
+<p><span class="math display">\[\frac{\Delta Y}{\Delta \overline{i}} =\left[\frac{-b}{1-c(1-t) + R\cdot m_{1}}\right ] 
+&lt; 0 \text{ :IS-kurven}\]</span></p>
+<p><span class="math display">\[i =i^{*} + rp \text{ BoP-kurven}\]</span></p>
+<p><strong>Grafisk</strong></p>
 <p><img src="htmlrapport_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
 <hr />
 </div>
@@ -1400,99 +1401,10 @@ Likvidering (bail-in)
 </div>
 <div id="stabiliseringspolitikk-g-og-t" class="section level3">
 <h3>Stabiliseringspolitikk (G og T)</h3>
-<p>Eks. reduksjon i offentlig utgifter</p>
+<p>Eks. reduksjon i offentlig utgifter (<span class="math inline">\(\overline{G}&lt;0\)</span>)</p>
 <p><img src="htmlrapport_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
 <hr />
-<p>Merk: Under fast kurs er renta bundet til å holde fastkursen stabil, det gjør at finanspolitikk (endring i utgifter og skatter) står igjen som de eneste virkemidelene som kan stabillisere konjunkturbevegelsene.</p>
-<!--
-
-## Mundell-Fleming modellen under flytende kurs
-
-### Godemarkedet
-
-$$Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX + R\cdot m_{1} \right]$$
-
-### Pengemarkedet
-
-$$kY -hi = \overline{M}/P$$
-
-### BP
-
-$$E=\frac{(1+i)}{(1+i)}E^{e}$$
-
----
-
-### Grafisk
-
-Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet (flytende kurs)
-
-<img src="htmlrapport_files/figure-html/unnamed-chunk-29-1.png" width="672" />
-
----
-
-### Komparativ statikk (skiftanalyse)
-
----
-
-### Stabiliseringspolitikk  (M/(i), G og T) 
-
-<!--
-
-### AD-AS modellen for en åpen økonomi
-
-#### Samtidig likevekt
-
-#### Komparativ statikk (skiftanalyse)
-
-#### Stabiliseringspolitikk 
-- Finanspolitikk
-- Pengepolitikk
-
-<button type="button"
-onclick="document.getElementById('demo').innerHTML = Date()">
-Click me to display Date and Time.</button>
-
-<p id="demo"></p>
-
--->
-<!--
-- 
-1. $$Y = \frac{1}{1-c-R?}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]$$
-1. $$\frac{M}{P}=\kappa\cdot Y + h\cdot i$$
-1. $$E = \frac{1+i^{*}}{1 + i} \text{ Flytende kursregime}$$
-1. $$i = i^{*} \text{ Fastkursregime}$$
-
-- IS-kurven under fast og flytende kurs
-
-Generelt fører lavere rente til høyere produksjon.
-
-Men multiplikatoren blir mindre ved en åpen økonomi, grunnet importlekkasje.
-
-Helningen på kurven er slakere under flytende kurs enn med fast kurs. Det skyldes at lavere rente under flytende kurs fører til en depresiering av den nominelle og realvalutakursen, noe som forbedrer landets konkurranse evne og dermed fører til økt etterspørsel gjennom økt nettoeksport.
-
-- LM modellen stigende under fast og horisontal under fast(?)
-
-- Skiftanalyse (grafisk og verbalt)
-
-Merk: P gir AS-kurven.
-
-- Stabiliseringspolitikk (grafisk og verbalt)
-
-Virkemidler: $G$, $T$ og $M/i$
- (Flytende) og
-$G$,$T$ og($E$)
- (Fast kurs)
- 
-
-### Mundell-Fleming (IS-LM for en åpen økonomi) modellen 
-
-- AS-kurven samme som under en lukket økonomi.
-- AD-kurven er fallende ved at økt priser fører til lavere etterspørsel.
-- Sentralt poeng med modellen – Selvkorrigerende mekanismer:
-
-Fleksibilitet i P og korrekte prisforventninger Pe
-på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.
--->
+<p>Merk: Under fast kurs er renta bundet til å holde fastkursen stabil, det gjør at finanspolitikk (endring i offentlige utgifter og skatter) står igjen som de eneste virkemidelene som kan stabillisere konjunkturbevegelsene.</p>
 <!--
 # Del 2 Økonomisk vekst
 # Del 3 Økonomisk vekst

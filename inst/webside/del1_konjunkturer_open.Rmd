@@ -8,7 +8,7 @@ output:
 
 ```{r include=FALSE}
 library(MakroOEKB1115)
-library(dplyr)
+  library(dplyr)
 library(ggplot2)
 library(gridExtra)
 library(grid)
@@ -112,17 +112,18 @@ $$E=\frac{(1+i^{*})}{(1+i)}E^{e}$$
 
 ```{r include=FALSE}
 iv <- 0:5
-openpar <- list(i_s=1.5, rp=0)
+openpar <- list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0,Ee=1)
 muflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
                          P=1, h = 10, k =1, Y = 130, m=1, t=0.4), openpar, list(i=c(iv)))
 
-eopenpar <- list(i_s=1.0, rp=0)
-emuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 110,
+eopenpar <- list(i_s=1, rp=0, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+emuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
                           P=1, h = 10, k =1, Y = 130, m=1, t=0.4), eopenpar, list(i=c(iv)))
 
-seopenpar <- list(i_s=1.0, rp=0)
-semuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 45, b = 10, oI = 10, T = 50, M= 110,
-                          P=1, h = 10, k =1, Y = 130, m=1, t=0.4), eopenpar, list(i=c(iv)))
+seopenpar <- list(i_s=1.0, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+semuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 30, b = 10, oI = 10, T = 50, M= 110,
+                          P=1, h = 10, k =1, Y = 130, m=1, t=0.4), seopenpar, list(i=c(iv)))
+
 
 dfmufl <- dfgeneric(modell='islmo', exoparval = muflexoparvalv, eqsel = c(1,2))
 edfmufl <- dfgeneric(modell='islmo', exoparval = emuflexoparvalv, eqsel = c(1,2))
@@ -260,7 +261,6 @@ semuflfastlikevekt
 ---
 
 Merk: Under fast kurs er renta bundet til å holde fastkursen stabil, det gjør at finanspolitikk (endring i offentlige utgifter og skatter) står igjen som de eneste virkemidelene som kan stabillisere konjunkturbevegelsene.
-
 
 ## Mundell-Fleming modellen under flytende kurs
 Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet under flytende kurs.
@@ -780,3 +780,5 @@ Fleksibilitet i P og korrekte prisforventninger Pe
 på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.
 -->
 -->
+
+

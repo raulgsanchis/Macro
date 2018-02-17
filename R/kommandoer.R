@@ -8,7 +8,7 @@ inst <- function(){
   rmarkdown::render(paste0(devtools::as.package(".")$path,'/inst/webside/seminar/seminar1.Rmd'))
   rmarkdown::render(paste0(devtools::as.package(".")$path,'/inst/webside/seminar/seminar2.Rmd'))
   rmarkdown::render_site(paste0(devtools::as.package(".")$path,'/inst/webside/'))
-  #system('cd ..')
+    #system('cd ..')
   #system('pwd')
   #system('R CMD INSTALL --no-multiarch --with-keep.source MakroOEKB1115')
 }

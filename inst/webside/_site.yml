@@ -2,6 +2,7 @@ name: Makro
 output_dir: _site
 navbar:
   title: ØKB1115 Makroøkonomi
+  subtitle: Våren 2018
   left:
   - text: Kursinformasjon
     menu:
