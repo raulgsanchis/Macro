@@ -23,8 +23,9 @@ Makrofigur$methods(numerisk=function(endvar=NULL ,lukketpar=NULL, openpar=NULL, 
 
   exoparval <- c(lukketpar, openpar, endrvar)
 
-  #browser()
+  browser()
 
+  plotvectorend <<- list()
   for(mvar in endvar){
     # mvar <- endvar[2]
     endv <- list(eval(parse(text=  modellatr[[modell]][[mvar]]), exoparval))
@@ -35,9 +36,7 @@ Makrofigur$methods(numerisk=function(endvar=NULL ,lukketpar=NULL, openpar=NULL, 
 
   DFmodellres <- data.frame(Iv= endrvar[[1]], plotvectorend) %>% reshape2::melt(id.vars = c("Iv"))
 
-  dfmodellres <<- append(dfmodellres, list(DFmodellres))
-
-  names(dfmodellres)[length(dfmodellres)]  <<- c(kat)
+  dfmodellres[[kat]] <<- DFmodellres
 
 })
 
@@ -60,7 +59,9 @@ Makrofigur$methods(grafisknum=function(samlikv=list(x=NULL, y=NULL), dftekst=NUL
 
 })
 
-Makrofigur$methods(grafisknumappend=function(samlikve=list(x=400, y=400), manuell=1){
+Makrofigur$methods(grafisknumappend=function(samlikve=list(x=400, y=400),  dftekst=NULL, manuell=1){
+
+  browser()
 
   samlikvedf <- data.frame(x=samlikve$x, y=samlikve$y)
 
@@ -70,8 +71,9 @@ Makrofigur$methods(grafisknumappend=function(samlikve=list(x=400, y=400), manuel
                      xend = x, yend = 0), lty = 2) +
     geom_segment(data=samlikvedf, aes(x = x, y = y ,
                      xend = 0, yend = y), lty = 2) +
-    geom_line(data = dfmodellres[[length(dfmodellres)]],
-                aes(x = Iv, y = value, color = factor(variable)))
+    geom_line(data = dfmodellres[['endringG']],
+                aes(x = Iv, y = value, color = factor(variable))) +
+    geom_text(data=dftekst, aes(x, y, label=kurve), color=dftekst$farge)
 
   ggtyper <<- append(ggtyper,list(ggobjnumapp))
 
@@ -113,7 +115,6 @@ islmo$numerisk(endvar=c('FlytISCBoP','FlytLMC'), lukketpar=vislmopar, openpar=vo
 islmo$numerisk(endvar=c('FlytISCBoP','FlytLMC'), lukketpar=evislmopar, openpar=evopenpar, endrvar=iv, kat='endringG')
 islmo$numerisk(endvar=c('FlytISCBoP','FlytLMC'), lukketpar=svislmopar, openpar=svopenpar, endrvar=iv, kat='stabM')
 
-
 islmodftekst <- data.frame(kurve=c('IS-BoP','LM'),
                       farge=c('red', 'red'),
                       x = c(2,7),
@@ -122,9 +123,20 @@ islmodftekst <- data.frame(kurve=c('IS-BoP','LM'),
                       ylim=0)
 
 islmo$grafisknum(samlikv=list(x=c(4.4), y=c(144)), dftekst=islmodftekst ,manuell=1)
+
 islmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
                      skaleringx=list(label=c(TeX('$i_{0}}$')), breaks=c(4.4)),
-                     skaleringy=list(label=c(TeX('$Y_{0}}$')), breaks=c(150)))
+                     skaleringy=list(label=c(TeX('$Y_{0}}$')), breaks=c(144)))
+
+eislmodftekst <- data.frame(kurve=c("IS-BoP'","LM"),
+                           farge=c('red', 'red'),
+                           x = c(2,7),
+                           y = c(189, 170),
+                           xlim=100,
+                           ylim=0)
+
+islmo$grafisknumappend(samlikv=list(x=c(4.4), y=c(144)), dftekst=eislmodftekst ,manuell=1)
+
 
 
 #islmo$ggtyper[[2]] + coord_flip()

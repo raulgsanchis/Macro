@@ -1,0 +1,371 @@
+---
+output:
+  html_notebook:
+    toc: true
+    toc_depth: 4
+---
+
+
+```{r include=FALSE}
+library(MakroOEKB1115)
+  library(dplyr)
+library(ggplot2)
+library(gridExtra)
+library(grid)
+library(latex2exp)
+
+library(ggplot2)
+library(dplyr)
+
+Makrofigur <- setRefClass("Makrofigur", fields = list(modell='vector', modellatr ='list',
+                                                      plotvectorend='list', dfmodellres='list',
+                                                      ggtyper='list'))
+
+Makrofigur$methods(initialize=function(modellnavn=NULL){
+
+  keynes <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/keynesequ.json'))
+  islml <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/islmequ.json'))
+  islmo <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/islmocequ.json'))
+  adasl <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/adascequ.json'))
+  adaso <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/adasoequ.json'))
+
+  modellatr <<- list(keynes=keynes, islml=islml, islmo=islmo, adasl=adasl, adaso=adaso)
+
+  modell <<- c(modellnavn)
+
+})
+
+Makrofigur$methods(numerisk=function(endvar=NULL ,lukketpar=NULL, openpar=NULL, endrvar = NULL, kat=NULL){
+
+  exoparval <- c(lukketpar, openpar, endrvar)
+
+  #browser()
+
+  for(mvar in endvar){
+    # mvar <- endvar[2]
+    endv <- list(eval(parse(text=  modellatr[[modell]][[mvar]]), exoparval))
+    plotvectorend <<- append(plotvectorend, endv)
+  }
+
+  names(plotvectorend) <<- endvar
+
+  DFmodellres <- data.frame(Iv= endrvar[[1]], plotvectorend) %>% reshape2::melt(id.vars = c("Iv"))
+
+  dfmodellres <<- append(dfmodellres, list(DFmodellres))
+
+  names(dfmodellres)[length(dfmodellres)]  <<- c(kat)
+
+})
+
+
+Makrofigur$methods(grafisknum=function(samlikv=list(x=NULL, y=NULL), dftekst=NULL, manuell=1){
+
+  #browser()
+
+  ggobjnum <- ggplot() + geom_line(data = dfmodellres[[1]], aes(x = Iv, y = value, color = factor(variable))) +
+    geom_point(aes(x=samlikv$x, y=samlikv$y)) +
+    geom_segment(aes(x = samlikv$x, y = samlikv$y ,
+                      xend = samlikv$x, yend = dftekst$xlim[1]), lty = 2) +
+    geom_segment(aes(x = samlikv$x, y = samlikv$y ,
+                     xend = dftekst$ylim[1], yend = samlikv$y), lty = 2) +
+    geom_text(data=dftekst, aes(x, y, label=kurve), color=dftekst$farge)
+
+  #browser()
+
+  ggtyper <<- list(ggobjnum)
+
+})
+
+Makrofigur$methods(grafisknumappend=function(samlikve=list(x=400, y=400), manuell=1){
+
+  samlikvedf <- data.frame(x=samlikve$x, y=samlikve$y)
+
+  ggobjnumapp <- ggtyper[[length(ggtyper)]] +
+    geom_point(data=samlikvedf,aes(x=x, y=y)) +
+    geom_segment(data=samlikvedf,aes(x = x, y = y ,
+                     xend = x, yend = 0), lty = 2) +
+    geom_segment(data=samlikvedf, aes(x = x, y = y ,
+                     xend = 0, yend = y), lty = 2) +
+    geom_line(data = dfmodellres[[length(dfmodellres)]],
+                aes(x = Iv, y = value, color = factor(variable)))
+
+  ggtyper <<- append(ggtyper,list(ggobjnumapp))
+
+})
+
+Makrofigur$methods(grafiskstyle=function(labs=list(title=NULL, x=NULL, y=NULL),
+                                                   skaleringx=NULL,
+                                                   skaleringy=NULL,
+                                                   fargelinje=c('black','black')){
+
+  #browser()
+
+  ggobjsty <- ggtyper[[length(ggtyper)]] + labs(title = labs$title, x = labs$x, y = labs$y) +
+    scale_x_continuous(labels = skaleringx$label, breaks=skaleringx$breaks, limits=skaleringx$limits) +
+    scale_y_continuous(labels = skaleringy$label, breaks=skaleringy$breaks, limits=skaleringy$limits) +
+    scale_colour_manual(values =fargelinje) +
+    theme_classic() +
+    theme(legend.position="none")
+
+  ggtyper <<- append(ggtyper,list(ggobjsty))
+
+})
+```
+
+## Grunnleggende  bakgrunnkunnskaper
+
+### Stabiliseringsmål for en åpen økonomi
+
+- Intern balanse (lukke produksjonsgapet):
+
+$$(Y-\overline{Y})=0$$
+
+- Ekstern balanse (rimelig nivå på utenlandsgjelden - gjelden skal kunne betjenes uten problemer)
+
+---
+
+### Tre fundamentale endringer fra en lukket økonomi
+
+#### (1) Handel med utlandet
+
+$$AE \equiv C+I+G+NX$$
+$NX$ er nå inkludert i definisjonen for aggregert etterspørsel
+
+NX er definert som eksport $(EX)$ minus import $(R\cdot IM)$ målt i enheter av det innenlandske godet:
+
+$$NX=EX−R\cdot IM \text{ }$$
+Realvalutakursen $R=\frac{E\cdot P^{*}}{P}$ (prisforholdet mellom utenlandske og innenlandske goder målt i enheter av det innenlandske gode) sørger her for at alt blir målt i enheter av det innenlandske godet. 
+
+---
+
+
+#### (2) Fast eller flytende kurs
+
+Renteparitetsbetingelsen
+
+$$(1+i_{t+1})=(1+i_{t+1}^{*})\frac{E_{t+1}^{e}}{E_{t}}$$
+Likevektsbetingelse som forteller oss at den forventede avkastningen er lik mellom å investere i inn- og utland.
+
+Her er $i_{t+1}$ innelandsk avkastning, $i_{t+1}^{*}$ utenlands avkastning, $E_{t}$ er (nominelle) prisen i dag per énhet av utenlandsk valuta og $E_{t+1}^{e}$ den forventede valutakursen én periode frem i tid.  
+
+---
+
+#### (3) Utenriksregnskapet (BoP)
+
+$$BP = CA + CU + OR=0$$
+
+$CU=\text{Driftsregnskapet}$. 
+
+Består av nettoeksport (NX), pluss nettofinansinntekter(aksjer og obligasjoner) og nettoverføringer
+
+$CA=\text{Kapitalregnskapet}$ 
+
+Nettoendringer i fordringer og gjeld ovenfor utlandet
+
+$OR=\text{Endringer i sentralbankens valutareserver}$ 
+
+Vil øke (reduseres) dersom fastkursprisen er svakere (sterkere) enn det som markedet er villig til å betale 
+
+## Mundell-Fleming modellen
+
+### Adferdsligninger
+
+#### Husholdninger og bedrifter
+
+Husholdningene import ($IM$) av utenlandske goder er gitt ved
+
+$$IM=  -m_{1}R + m_{2}Y $$
+
+Bedriftenes eksport ($EX$) av innenlandske goder er gitt ved
+
+$$EX=x_{1}R + x_{2}Y^{*}  $$
+
+---
+
+Ved å sett inn for uttrykkene ovenfor, kan vi skrive nettoeksporten som  
+
+$$NX = EX - R\cdot IM = x_{1}R + x_{2}Y^{*} - R\cdot (m_{1}R + m_{2}Y)$$
+
+Legger til grunn i dette kurset at priseffekten dominerer innteksteffekten ([Marshall-Lerner betingelsen](https://en.wikipedia.org/wiki/Marshall%E2%80%93Lerner_condition)
+):
+
+$$\frac{\Delta NX}{\Delta R}= \underset{priseffekt}{x_{1}} - \underset{inntektseffekt}{IM} + \underset{priseffekt}{m_{1}R} > 0 \text{ (i praksis vil dette ta litt tid)}$$  
+
+---
+
+#### Offentlige myndigheter (instruering) og sentralbanken (implementering)
+
+Myndighetene kan velge mellom fast eller flytende kurs:
+
+- Fast
+$$i =i^{*} + rp$$
+
+Anser markedsaktørene faskursregimet som troverdig, har vi at $E=E^{e} \Rightarrow rp=0$
+
+- Flytende 
+
+$$E=\frac{(1+i^{*})}{(1+i)}E^{e}$$
+
+
+```{r include=FALSE}
+iv <- 0:5
+openpar <- list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0,Ee=1)
+muflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
+                         P=1, h = 10, k =1, Y = 130, m=1, t=0.4), openpar, list(i=c(iv)))
+
+eopenpar <- list(i_s=1, rp=0, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+emuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
+                          P=1, h = 10, k =1, Y = 130, m=1, t=0.4), eopenpar, list(i=c(iv)))
+
+seopenpar <- list(i_s=1.0, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+semuflexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 30, b = 10, oI = 10, T = 50, M= 110,
+                          P=1, h = 10, k =1, Y = 130, m=1, t=0.4), seopenpar, list(i=c(iv)))
+
+
+dfmufl <- dfgeneric(modell='islmo', exoparval = muflexoparvalv, eqsel = c(1,2))
+edfmufl <- dfgeneric(modell='islmo', exoparval = emuflexoparvalv, eqsel = c(1,2))
+sedfmufl <- dfgeneric(modell='islmo', exoparval = semuflexoparvalv, eqsel = c(1,2))
+
+# Fast kurs
+dfkurvermffast <- data.frame(kurve=c("IS", ""),
+                             fargel = c('red', 'red'),
+                             fargek = c('red', 'red'),
+                             y = c(dfmufl$varnavnminverdi$value[c(1)], dfmufl$varnavnmaksverdi$value[c(2)]),
+                             x = c(dfmufl$varnavnminverdi$Iv[c(1)],dfmufl$varnavnmaksverdi$Iv[c(2)]))
+
+labelsmufl <- list(title = 'Mundell-Fleming modellen - fast kurs',
+                   y = 'produksjon, inntekt (Y)',
+                   x = 'rentenivå (i=i*+rp)',
+                   x0 = c(TeX('$i_{0}}$')),
+                   y0 = c(TeX('$Y_{0}$')),
+                   kurver = dfkurvermffast)
+
+muflfastlikevekt <- genmakrofigure(dfnumeric=dfmufl,
+                                   variables = c(dfmufl$varnavn)[c(1)],
+                                   labt = labelsmufl,
+                                   scalejust = list(x=0, y=90))  + coord_flip() +
+  geom_line(data=data.frame(x=dfmufl$yeae[1], y=90:165), aes(x,y), color ='black', size=0.5) +
+  geom_text(aes(x=dfmufl$yeae[1], y=165+3 ,label='BoP'), color = 'red')
+
+# Fast kurs, endring i utenlandsrenta
+edfkurvermffast <- data.frame(kurve=c("IS", ""),
+                              fargel = c('red', 'red'),
+                              fargek = c('red', 'red'),
+                              y = c(dfmufl$varnavnminverdi$value[c(1)], dfmufl$varnavnmaksverdi$value[c(2)]),
+                              x = c(dfmufl$varnavnminverdi$Iv[c(1)],dfmufl$varnavnmaksverdi$Iv[c(2)]))
+
+elabelsmufl <- list(title = 'Mundell-Fleming modellen - fast kurs',
+                    y = 'produksjon, inntekt (Y)',
+                    x = 'rentenivå (i=i*+rp)',
+                    x0 = c(TeX('$i_{1}}$')),
+                    y0 = c(TeX('$Y_{1}$')),
+                    kurver = edfkurvermffast)
+
+emuflfastlikevekt <- cgenmakrofigure(dfnumeric=dfmufl,
+                                     edfnumeric=edfmufl,
+                                     variables = c(dfmufl$varnavn)[c(1)],
+                                     labt = labelsmufl,
+                                     elabt = elabelsmufl,
+                                     scalejust = list(x=0, y=75)) + coord_flip() +
+  geom_line(data=data.frame(x=dfmufl$yeae[1], y=90:165), aes(x,y), color ='black', size=0.5) +
+  geom_text(aes(x=dfmufl$yeae[1], y=165+3 ,label='BoP'), color = 'red') +
+  geom_line(data=data.frame(x=edfmufl$yeae[1], y=90:165), aes(x,y), color ='black', size=0.5) +
+  geom_text(aes(x=edfmufl$yeae[1], y=165+3 ,label="BoP'"), color = 'red')
+
+emuflfastlikevekt
+
+
+
+sedfkurvermffast <- data.frame(kurve=c("IS'", ""),
+                              fargel = c('red', 'red'),
+                              fargek = c('red', 'red'),
+                              y = c(sedfmufl$varnavnminverdi$value[c(1)], sedfmufl$varnavnmaksverdi$value[c(2)]),
+                              x = c(sedfmufl$varnavnminverdi$Iv[c(1)], sedfmufl$varnavnmaksverdi$Iv[c(2)]))
+
+selabelsmufl <- list(title = 'Mundell-Fleming modellen - fast kurs',
+                    y = 'produksjon, inntekt (Y)',
+                    x = 'rentenivå (i=i*+rp)',
+                    x0 = c(TeX('$i_{2}}$')),
+                    y0 = c(TeX('$Y_{2}$')),
+                    kurver = sedfkurvermffast)
+
+
+semuflfastlikevekt <- cgenmakrofigure(dfnumeric=dfmufl,
+                                     edfnumeric=sedfmufl,
+                                     variables = c(dfmufl$varnavn)[c(1)],
+                                     labt = labelsmufl,
+                                     elabt = selabelsmufl,
+                                     scalejust = list(x=0, y=75)) + coord_flip() +
+  geom_line(data=data.frame(x=dfmufl$yeae[1], y=90:165), aes(x,y), color ='black', size=0.5) +
+  geom_text(aes(x=dfmufl$yeae[1], y=165+3 ,label='BoP'), color = 'red') +
+  geom_line(data=data.frame(x=edfmufl$yeae[1], y=90:165), aes(x,y), color ='black', size=0.5) +
+  geom_text(aes(x=edfmufl$yeae[1], y=165+3 ,label="BoP'"), color = 'red')
+
+semuflfastlikevekt
+
+```
+
+## Mundell-Fleming modellen under fast kurs
+Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet under fast kurs
+
+### Godemarkedet
+
+$$Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX + R^{2}\cdot m_{1} \right]$$
+
+### Pengemarkedet
+
+$$kY -hi = \overline{M}/P$$
+
+### Valutakursmarkedet
+$$i =i^{*} + rp$$
+
+---
+
+**Formelt**
+
+$$\frac{\Delta Y}{\Delta \overline{i}} =\left[\frac{-b}{1-c(1-t) + R\cdot m_{1}}\right ] 
+< 0 \text{ :IS-kurven}$$
+
+$$i =i^{*} + rp \text{ BoP-kurven}$$
+
+
+**Grafisk**
+
+
+
+
+```{r}
+## IS-LM åpen
+iv <- list(i=2:7.5)
+vopenpar <- list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+vislmopar <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
+                    P=1, h = 10, k =1, Y = 130, m=1, t=0.4))
+evopenpar <- list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+evislmopar <- c(list(c_1 = 0.6, oC = 50, oG= 75, b = 10, oI = 10, T = 50, M= 100,
+                    P=1, h = 10, k =1, Y = 130, m=1, t=0.4))
+svopenpar <- list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+svislmopar <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 80,
+                    P=1, h = 10, k =1, Y = 130, m=1, t=0.4))
+
+islmo <- Makrofigur(modellnavn='islmo')
+#names(islmo$modellatr$islmo)
+islmo$numerisk(endvar=c('FlytISCBoP','FlytLMC'), lukketpar=vislmopar, openpar=vopenpar, endrvar=iv, kat='init')
+islmo$numerisk(endvar=c('FlytISCBoP','FlytLMC'), lukketpar=evislmopar, openpar=evopenpar, endrvar=iv, kat='endringG')
+islmo$numerisk(endvar=c('FlytISCBoP','FlytLMC'), lukketpar=svislmopar, openpar=svopenpar, endrvar=iv, kat='stabM')
+
+
+islmodftekst <- data.frame(kurve=c('IS-BoP','LM'),
+                      farge=c('red', 'red'),
+                      x = c(2,7),
+                      y = c(189, 170),
+                      xlim=100,
+                      ylim=0)
+
+islmo$grafisknum(samlikv=list(x=c(4.4), y=c(144)), dftekst=islmodftekst ,manuell=1)
+islmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+                     skaleringx=list(label=c(TeX('$i_{0}}$')), breaks=c(4.4)),
+                     skaleringy=list(label=c(TeX('$Y_{0}}$')), breaks=c(144)))
+
+islmo$ggtyper[[2]] + coord_flip()
+```
+
