@@ -23,8 +23,6 @@ Makrofigur$methods(numerisk=function(endvar=NULL ,lukketpar=NULL, openpar=NULL, 
 
   exoparval <- c(lukketpar, openpar, endrvar)
 
-  browser()
-
   plotvectorend <<- list()
   for(mvar in endvar){
     # mvar <- endvar[2]
@@ -59,19 +57,19 @@ Makrofigur$methods(grafisknum=function(samlikv=list(x=NULL, y=NULL), dftekst=NUL
 
 })
 
-Makrofigur$methods(grafisknumappend=function(samlikve=list(x=400, y=400),  dftekst=NULL, manuell=1){
+Makrofigur$methods(grafisknumappend=function(samlikve=list(x=4, y=175),  dftekst=NULL, manuell=1, tilstand=NULL){
 
-  browser()
+  #browser()
 
   samlikvedf <- data.frame(x=samlikve$x, y=samlikve$y)
 
   ggobjnumapp <- ggtyper[[length(ggtyper)]] +
     geom_point(data=samlikvedf,aes(x=x, y=y)) +
     geom_segment(data=samlikvedf,aes(x = x, y = y ,
-                     xend = x, yend = 0), lty = 2) +
+                     xend = x, yend =  dftekst$xlim[1]), lty = 2) +
     geom_segment(data=samlikvedf, aes(x = x, y = y ,
-                     xend = 0, yend = y), lty = 2) +
-    geom_line(data = dfmodellres[['endringG']],
+                     xend = dftekst$ylim[1], yend = y), lty = 2) +
+    geom_line(data = dfmodellres[[tilstand]],
                 aes(x = Iv, y = value, color = factor(variable))) +
     geom_text(data=dftekst, aes(x, y, label=kurve), color=dftekst$farge)
 
@@ -82,11 +80,13 @@ Makrofigur$methods(grafisknumappend=function(samlikve=list(x=400, y=400),  dftek
 Makrofigur$methods(grafiskstyle=function(labs=list(title=NULL, x=NULL, y=NULL),
                                                    skaleringx=NULL,
                                                    skaleringy=NULL,
-                                                   fargelinje=c('black','black')){
+                                                   fargelinje=c('black','black'),
+                                                   figurnr = NULL){
 
   #browser()
+  nrfigur <- c(length(ggtyper), figurnr)[ifelse(is.null(figurnr)==TRUE,1,2)]
 
-  ggobjsty <- ggtyper[[length(ggtyper)]] + labs(title = labs$title, x = labs$x, y = labs$y) +
+  ggobjsty <- ggtyper[[nrfigur]] + labs(title = labs$title, x = labs$x, y = labs$y) +
     scale_x_continuous(labels = skaleringx$label, breaks=skaleringx$breaks, limits=skaleringx$limits) +
     scale_y_continuous(labels = skaleringy$label, breaks=skaleringy$breaks, limits=skaleringy$limits) +
     scale_colour_manual(values =fargelinje) +
@@ -122,24 +122,75 @@ islmodftekst <- data.frame(kurve=c('IS-BoP','LM'),
                       xlim=100,
                       ylim=0)
 
-islmo$grafisknum(samlikv=list(x=c(4.4), y=c(144)), dftekst=islmodftekst ,manuell=1)
-
-islmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
-                     skaleringx=list(label=c(TeX('$i_{0}}$')), breaks=c(4.4)),
-                     skaleringy=list(label=c(TeX('$Y_{0}}$')), breaks=c(144)))
-
 eislmodftekst <- data.frame(kurve=c("IS-BoP'","LM"),
                            farge=c('red', 'red'),
                            x = c(2,7),
-                           y = c(189, 170),
+                           y = c(220, 170),
                            xlim=100,
                            ylim=0)
 
-islmo$grafisknumappend(samlikv=list(x=c(4.4), y=c(144)), dftekst=eislmodftekst ,manuell=1)
+sislmodftekst <- data.frame(kurve=c("IS-BoP'","LM'"),
+                            farge=c('red', 'red'),
+                            x = c(2,7),
+                            y = c(220, 150),
+                            xlim=100,
+                            ylim=0)
+
+islmo$grafisknum(samlikv=list(x=c(4.4), y=c(144)), dftekst=islmodftekst, manuell=1)
+
+islmo$ggtyper[[1]]  + coord_flip()
+
+islmo$grafisknumappend(samlikv=list(x=c(5.75), y=c(158)), dftekst=eislmodftekst, manuell=1, tilstand='endringG')
+
+islmo$ggtyper[[2]]  + coord_flip()
+
+islmo$grafisknumappend(samlikv=list(x=c(6.5), y=c(144)), dftekst=sislmodftekst, manuell=1, tilstand='stabM')
+
+islmo$ggtyper[[3]]  + coord_flip()
+
+islmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+                   skaleringx=list(label=c(TeX('$i_{0}}$')), breaks=c(4.4)),
+                   skaleringy=list(label=c(TeX('$Y_{0}}$')), breaks=c(144)),
+                   figurnr=1)
+
+islmo$ggtyper[[4]]  + coord_flip()
+
+islmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+                   skaleringx=list(label=c(TeX('$i_{1}}$')), breaks=c(4.4)),
+                   skaleringy=list(label=c(TeX('$Y_{1}}$')), breaks=c(144)),
+                   figurnr=2)
+
+islmo$ggtyper[[5]]  + coord_flip()
+
+islmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+                   skaleringx=list(label=c(TeX('$i_{2}}$')), breaks=c(7.25)),
+                   skaleringy=list(label=c(TeX('$Y_{2}}$')), breaks=c(145)),
+                   figurnr=3)
+
+islmo$ggtyper[[6]]  + coord_flip()
 
 
 
-#islmo$ggtyper[[2]] + coord_flip()
+#
+# islmo$grafisknumappend(samlikv=list(x=c(5.75), y=c(158)), dftekst=eislmodftekst, manuell=1, tilstand='endringG',
+#                        figurnr = 1)
+
+
+
+# islmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+#                       skaleringx=list(label=c(TeX('$i_{0}}$')), breaks=c(4.4)),
+#                       skaleringy=list(label=c(TeX('$Y_{0}}$')), breaks=c(144)))
+# #
+# eislmodftekst <- data.frame(kurve=c("IS-BoP'","LM"),
+#                            farge=c('red', 'red'),
+#                            x = c(2,7),
+#                            y = c(220, 170),
+#                            xlim=100,
+#                            ylim=0)
+#
+#
+# islmo$ggtyper[[3]] + coord_flip()
+#
 #islmo$grafisknumappend(samlikv=list(x=c(5.7), y=c(157)), manuell=1)
 
 #islmo$ggtyper[[1]]
