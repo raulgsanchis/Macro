@@ -199,5 +199,3 @@ semuflfastlikevekt
 
 
 ################## Skisse objektorientert
-
-
