@@ -192,10 +192,3 @@ semuflfastlikevekt <- cgenmakrofigure(dfnumeric=edfmufl,
                                      scalejust = list(x=0, y=75)) + coord_flip()
 
 semuflfastlikevekt
-
-
-
-# NX = EX - R*IM
-
-
-################## Skisse objektorientert

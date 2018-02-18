@@ -165,6 +165,8 @@ genmakrofigure <- function(dfnumeric = NULL,
   # Henter dataene
   datainp <- dplyr::filter(dfnumeric$dfmodell, variable %in% variables) #%>% dplyr::mutate(kat='naa')
 
+  browser()
+
   # Grafikk
   ggplot() +
     labs(title = labt$title, x = labt$x, y = labt$y) +
