@@ -165,7 +165,7 @@ genmakrofigure <- function(dfnumeric = NULL,
   # Henter dataene
   datainp <- dplyr::filter(dfnumeric$dfmodell, variable %in% variables) #%>% dplyr::mutate(kat='naa')
 
-  browser()
+  #browser()
 
   # Grafikk
   ggplot() +
