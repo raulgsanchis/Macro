@@ -8,15 +8,11 @@ output:
 
 ```{r include=FALSE}
 library(MakroOEKB1115)
-  library(dplyr)
+library(dplyr)
 library(ggplot2)
 library(gridExtra)
 library(grid)
 library(latex2exp)
-
-library(ggplot2)
-library(dplyr)
-
 Makrofigur <- setRefClass("Makrofigur", fields = list(modell='vector', modellatr ='list',
                                                       plotvectorend='list', dfmodellres='list',
                                                       ggtyper='list'))
@@ -37,10 +33,11 @@ Makrofigur$methods(initialize=function(modellnavn=NULL){
 
 Makrofigur$methods(numerisk=function(endvar=NULL ,lukketpar=NULL, openpar=NULL, endrvar = NULL, kat=NULL){
 
-  exoparval <- c(lukketpar, openpar, endrvar)
-
   #browser()
 
+  exoparval <- c(lukketpar, openpar, endrvar)
+
+  plotvectorend <<- list()
   for(mvar in endvar){
     # mvar <- endvar[2]
     endv <- list(eval(parse(text=  modellatr[[modell]][[mvar]]), exoparval))
@@ -51,12 +48,28 @@ Makrofigur$methods(numerisk=function(endvar=NULL ,lukketpar=NULL, openpar=NULL, 
 
   DFmodellres <- data.frame(Iv= endrvar[[1]], plotvectorend) %>% reshape2::melt(id.vars = c("Iv"))
 
-  dfmodellres <<- append(dfmodellres, list(DFmodellres))
-
-  names(dfmodellres)[length(dfmodellres)]  <<- c(kat)
+  dfmodellres[[kat]] <<- DFmodellres
 
 })
 
+Makrofigur$methods(numerisk=function(endvar=NULL ,lukketpar=NULL, openpar=NULL, endrvar = NULL, kat=NULL){
+
+  exoparval <- c(lukketpar, openpar, endrvar)
+
+  plotvectorend <<- list()
+  for(mvar in endvar){
+    # mvar <- endvar[2]
+    endv <- list(eval(parse(text=  modellatr[[modell]][[mvar]]), exoparval))
+    plotvectorend <<- append(plotvectorend, endv)
+  }
+
+  names(plotvectorend) <<- endvar
+
+  DFmodellres <- data.frame(Iv= endrvar[[1]], plotvectorend) %>% reshape2::melt(id.vars = c("Iv"))
+
+  dfmodellres[[kat]] <<- DFmodellres
+
+})
 
 Makrofigur$methods(grafisknum=function(samlikv=list(x=NULL, y=NULL), dftekst=NULL, manuell=1){
 
@@ -65,7 +78,7 @@ Makrofigur$methods(grafisknum=function(samlikv=list(x=NULL, y=NULL), dftekst=NUL
   ggobjnum <- ggplot() + geom_line(data = dfmodellres[[1]], aes(x = Iv, y = value, color = factor(variable))) +
     geom_point(aes(x=samlikv$x, y=samlikv$y)) +
     geom_segment(aes(x = samlikv$x, y = samlikv$y ,
-                      xend = samlikv$x, yend = dftekst$xlim[1]), lty = 2) +
+                     xend = samlikv$x, yend = dftekst$xlim[1]), lty = 2) +
     geom_segment(aes(x = samlikv$x, y = samlikv$y ,
                      xend = dftekst$ylim[1], yend = samlikv$y), lty = 2) +
     geom_text(data=dftekst, aes(x, y, label=kurve), color=dftekst$farge)
@@ -76,40 +89,53 @@ Makrofigur$methods(grafisknum=function(samlikv=list(x=NULL, y=NULL), dftekst=NUL
 
 })
 
-Makrofigur$methods(grafisknumappend=function(samlikve=list(x=400, y=400), manuell=1){
+Makrofigur$methods(grafisknumappend=function(samlikve=list(x=0, y=0),  dftekst=NULL, manuell=1,
+                                             tilstand=NULL){
+
+  #browser()
 
   samlikvedf <- data.frame(x=samlikve$x, y=samlikve$y)
 
   ggobjnumapp <- ggtyper[[length(ggtyper)]] +
     geom_point(data=samlikvedf,aes(x=x, y=y)) +
     geom_segment(data=samlikvedf,aes(x = x, y = y ,
-                     xend = x, yend = 0), lty = 2) +
+                                     xend = x, yend =  dftekst$xlim[1]), lty = 2) +
     geom_segment(data=samlikvedf, aes(x = x, y = y ,
-                     xend = 0, yend = y), lty = 2) +
-    geom_line(data = dfmodellres[[length(dfmodellres)]],
-                aes(x = Iv, y = value, color = factor(variable)))
+                                      xend = dftekst$ylim[1], yend = y), lty = 2) +
+    geom_line(data = dfmodellres[[tilstand]],
+              aes(x = Iv, y = value, color = factor(variable))) +
+    geom_text(data=dftekst, aes(x, y, label=kurve), color=dftekst$farge)
 
   ggtyper <<- append(ggtyper,list(ggobjnumapp))
 
 })
 
 Makrofigur$methods(grafiskstyle=function(labs=list(title=NULL, x=NULL, y=NULL),
-                                                   skaleringx=NULL,
-                                                   skaleringy=NULL,
-                                                   fargelinje=c('black','black')){
+                                         skaleringx=NULL,
+                                         skaleringy=NULL,
+                                         fargelinje=c('black','black'),
+                                         figurnr = NULL){
 
   #browser()
+  nrfigur <- c(length(ggtyper), figurnr)[ifelse(is.null(figurnr)==TRUE,1,2)]
 
-  ggobjsty <- ggtyper[[length(ggtyper)]] + labs(title = labs$title, x = labs$x, y = labs$y) +
+  ggobjsty <- ggtyper[[nrfigur]] + labs(title = labs$title, x = labs$x, y = labs$y) +
     scale_x_continuous(labels = skaleringx$label, breaks=skaleringx$breaks, limits=skaleringx$limits) +
     scale_y_continuous(labels = skaleringy$label, breaks=skaleringy$breaks, limits=skaleringy$limits) +
     scale_colour_manual(values =fargelinje) +
-    theme_classic() +
-    theme(legend.position="none")
+  theme_classic() + theme(legend.position="none")
 
   ggtyper <<- append(ggtyper,list(ggobjsty))
 
 })
+
+Makrofigur$methods(dftransform=function(){
+  paste0('Hello world')
+  browser()
+
+  dfmodellres[['init']]
+})
+
 ```
 
 ## Grunnleggende  bakgrunnkunnskaper
@@ -332,40 +358,111 @@ $$i =i^{*} + rp \text{ BoP-kurven}$$
 **Grafisk**
 
 
-
-
-```{r}
-## IS-LM åpen
-iv <- list(i=2:7.5)
-vopenpar <- list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
-vislmopar <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
-                    P=1, h = 10, k =1, Y = 130, m=1, t=0.4))
-evopenpar <- list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
-evislmopar <- c(list(c_1 = 0.6, oC = 50, oG= 75, b = 10, oI = 10, T = 50, M= 100,
-                    P=1, h = 10, k =1, Y = 130, m=1, t=0.4))
-svopenpar <- list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
-svislmopar <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 80,
-                    P=1, h = 10, k =1, Y = 130, m=1, t=0.4))
-
-islmo <- Makrofigur(modellnavn='islmo')
-#names(islmo$modellatr$islmo)
-islmo$numerisk(endvar=c('FlytISCBoP','FlytLMC'), lukketpar=vislmopar, openpar=vopenpar, endrvar=iv, kat='init')
-islmo$numerisk(endvar=c('FlytISCBoP','FlytLMC'), lukketpar=evislmopar, openpar=evopenpar, endrvar=iv, kat='endringG')
-islmo$numerisk(endvar=c('FlytISCBoP','FlytLMC'), lukketpar=svislmopar, openpar=svopenpar, endrvar=iv, kat='stabM')
-
-
-islmodftekst <- data.frame(kurve=c('IS-BoP','LM'),
-                      farge=c('red', 'red'),
-                      x = c(2,7),
-                      y = c(189, 170),
-                      xlim=100,
-                      ylim=0)
-
-islmo$grafisknum(samlikv=list(x=c(4.4), y=c(144)), dftekst=islmodftekst ,manuell=1)
-islmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
-                     skaleringx=list(label=c(TeX('$i_{0}}$')), breaks=c(4.4)),
-                     skaleringy=list(label=c(TeX('$Y_{0}}$')), breaks=c(144)))
-
-islmo$ggtyper[[2]] + coord_flip()
+```{r echo=FALSE, warning=FALSE}
+muflfastlikevekt
 ```
+
+---
+
+### Komparativ statikk (skiftanalyse)
+
+```{r echo=FALSE}
+emuflfastlikevekt
+```
+
+
+---
+
+### Stabiliseringspolitikk (G og T)
+
+Eks. reduksjon i offentlig utgifter ($\overline{G}<0$)
+
+```{r echo=FALSE}
+semuflfastlikevekt
+```
+
+---
+
+Merk: Under fast kurs er renta bundet til å holde fastkursen stabil, det gjør at finanspolitikk (endring i offentlige utgifter og skatter) står igjen som de eneste virkemidelene som kan stabillisere konjunkturbevegelsene.
+
+## Mundell-Fleming modellen under flytende kurs
+Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet under flytende kurs.
+
+```{r include=FALSE}
+iv <- list(i=2:7.5)
+openpar <- eopenpar <- sopenpar <-list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+lukketpar <- elukketpar <- slukketpar <-  c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
+                    P=1, h = 10, k =1, Y = 130, m=1, t=0.4))
+islmo <- Makrofigur(modellnavn='islmo')
+```
+
+
+
+
+### Godemarkedet
+
+$$Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX + R\cdot m_{1} \right]$$
+
+### Pengemarkedet
+
+$$kY -hi = \overline{M}/P$$
+
+### BP
+
+$$E=\frac{(1+i^{*})}{(1+i)}E^{e}$$
+
+---
+
+**Formelt**
+
+$$\underset{Flytende-kurs (IS-BoP-kurven)}{\frac{\Delta Y}{\Delta \overline{i}}} < \underset{Fast-kurs (IS-kurven)}{\frac{\Delta Y}{\Delta \overline{i}}}  =\left[\frac{-b}{1-c(1-t) + R\cdot m_{1}}\right ] 
+< 0$$
+
+
+**Grafisk**
+
+Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet (flytende kurs)
+
+```{r warning=FALSE, include=FALSE}
+islmo$numerisk(endvar=c('FlytISCBoP','FlytLMC'), lukketpar=lukketpar, openpar=openpar, endrvar=iv, kat='init')
+islmodftekst <- data.frame(kurve=c('IS-BoP','LM'), farge=c('red', 'red'), x = c(2,7), y = c(189, 170), xlim=100, ylim=0)
+islmo$grafisknum(samlikv=list(x=c(4.4), y=c(144)), dftekst=islmodftekst, manuell=1)
+islmo$ggtyper[[1]]  + coord_flip()
+islmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+                   skaleringx=list(label=c(TeX('$i_{0}}$')), breaks=c(4.4)),
+                   skaleringy=list(label=c(TeX('$Y_{0}}$')), breaks=c(144)),
+                   figurnr=1)
+```
+
+```{r echo=FALSE}
+islmo$ggtyper[[2]]  + coord_flip()
+```
+
+---
+
+### Komparativ statikk (skiftanalyse)
+
+Reduksjon i det utenlandske rentenivået ($i^{*}>0$)
+
+```{r echo=FALSE}
+lukketpar$oG<- 75
+islmo$numerisk(endvar=c('FlytISCBoP','FlytLMC'), lukketpar=elukketpar, openpar=eopenpar, endrvar=iv, kat='init')
+eislmodftekst <- data.frame(kurve=c("IS-BoP'","LM"), farge=c('red', 'red'), x = c(2,7), y = c(220, 170), xlim=100, ylim=0)
+islmo$grafisknumappend(samlikv=list(x=c(5.75), y=c(158)), dftekst=eislmodftekst, manuell=1, tilstand='endringG')
+
+islmo$ggtyper
+
+```
+
+
+---
+
+### Stabiliseringspolitikk  (M/(i), G og T) 
+
+Eks. reduksjon i pengmengden ($\overline{M}<0$)
+
+```{r echo=FALSE}
+semuflfastlikevekt
+```
+
 
