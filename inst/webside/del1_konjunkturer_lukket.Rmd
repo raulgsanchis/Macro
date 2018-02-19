@@ -281,7 +281,7 @@ Likevekstsbetingelsen for godemarkedet
 $$Y = AE \equiv C + I + G$$ 
 Likevekstsbetingelsen for pengemarkedet
 
-$$M^{s} = L_{m}$$
+$$M^{s} = L_{d}$$
 
 ---
 

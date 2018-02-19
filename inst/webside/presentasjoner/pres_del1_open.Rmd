@@ -1,5 +1,5 @@
 ---
-title: "Forelesning ØKB1115 Makroøkonomi: Del I Konjunktursvingninger - åpen økonomi"
+title: "Forelesning ØKB1115 Makroøkonomi: Del I Konjunktursvingninger - liten åpen økonomi"
 output:
   ioslides_presentation: default
 #    logo: logo.png

@@ -208,7 +208,9 @@ $$NX = EX - R\cdot IM = x_{1}R + x_{2}Y^{*} - R\cdot (m_{1}R + m_{2}Y)$$
 Legger til grunn i dette kurset at priseffekten dominerer innteksteffekten ([Marshall-Lerner betingelsen](https://en.wikipedia.org/wiki/Marshall%E2%80%93Lerner_condition)
 ):
 
-$$\frac{\Delta NX}{\Delta R}= \underset{priseffekt}{x_{1}} - \underset{inntektseffekt}{IM} + \underset{priseffekt}{m_{1}R} > 0 \text{ (i praksis vil dette ta litt tid)}$$  
+$$\frac{\Delta NX}{\Delta R}= \underset{priseffekt}{x_{1}} - \underset{inntektseffekt}{IM} + \underset{priseffekt}{m_{1}R} > 0  \\ \text{ (i dette kurset antar vi at dette holder, men i praksis vil det ta litt tid)}$$  
+
+
 
 ---
 
@@ -227,6 +229,58 @@ $$E=\frac{(1+i^{*})}{(1+i)}E^{e}$$
 
 
 ```{r include=FALSE}
+## IS-LM åpen fast kurs
+#############################################################################################################
+iv <- list(i=2:7.5)
+openpar <- eopenpar <- sopenpar <- list(i_s=3.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+lukketpar <- elukketpar <- slukketpar <-  c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100, P=1, h = 10, k =1, Y = 130, m=1, t=0.4))
+
+fastislmo <- Makrofigur(modellnavn='islmo')
+
+# Samtidig
+fastislmo$numerisk(endvar=c('FastISC'), lukketpar=lukketpar, openpar=openpar, endrvar=iv, kat='init')
+fastislmotekst <- data.frame(kurve=c('IS','BoP'), farge=c('red', 'red'), x = c(2,openpar$i_s+openpar$rp+0.25), y = c(190, 190), xlim=100, ylim=2)
+fastislmo$grafisknum(samlikv=list(x=c(openpar$i_s+openpar$rp), y=c(172)), dftekst=fastislmotekst, manuell=1)
+fastislmo$ggtyper[[1]] + coord_flip()
+
+# Skift
+eopenpar$i_s <- 3
+fastislmo$numerisk(endvar=c('FastISC'), lukketpar=elukketpar, openpar=eopenpar, endrvar=iv, kat='endringP')
+efastislmotekst <-  data.frame(kurve=c("IS","BoP'"), farge=c('red', 'red'), x = c(2,eopenpar$i_s+openpar$rp+0.25), y = c(190, 190), xlim=100, ylim=2)
+fastislmo$grafisknumappend(samlikv=list(x=c(eopenpar$i_s+openpar$rp), y=c(179)), dftekst=efastislmotekst, manuell=1, tilstand='endringP')
+fastislmo$ggtyper[[2]] + coord_flip()
+
+# Stabilisering
+slukketpar$oG <- 44
+fastislmo$numerisk(endvar=c('FastISC'), lukketpar=slukketpar, openpar=eopenpar, endrvar=iv, kat='stabG')
+sfastislmotekst <-  data.frame(kurve=c("IS'","BoP'"), farge=c('red', 'red'), x = c(2,eopenpar$i_s+openpar$rp+0.25), y = c(190, 190), xlim=100, ylim=2)
+fastislmo$grafisknumappend(samlikv=list(x=c(eopenpar$i_s+openpar$rp), y=c(179)), dftekst=sfastislmotekst, manuell=1, tilstand='stabG')
+fastislmo$ggtyper[[3]] + coord_flip()
+
+# Styling
+fastislmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - fast kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+                         skaleringx=list(label=c(TeX('$i_{0}}$')), breaks=c(3.75)),
+                         skaleringy=list(label=c(TeX('$Y_{0}}$')), breaks=c(172)),
+                         figurnr=1)
+
+samtidigfastislm <- fastislmo$ggtyper[[4]]  + coord_flip() + geom_line(data=data.frame(x=openpar$i_s+openpar$rp, y=110:200), aes(x,y), color ='black', size=0.5)
+
+
+
+fastislmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - fast kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+                         skaleringx=list(label=c(TeX('$i_{0}}$'),TeX('$i_{1}}$')), breaks=c(openpar$i_s+openpar$rp, eopenpar$i_s+openpar$rp)),
+                         skaleringy=list(label=c(TeX('$Y_{0}}$'),TeX('$Y_{1}}$')), breaks=c(172, 179)),
+                         figurnr=2)
+
+skiftfastislm <- fastislmo$ggtyper[[5]]  + coord_flip() + geom_line(data=data.frame(x=openpar$i_s+openpar$rp, y=110:200), aes(x,y), color ='black', size=0.5) + geom_line(data=data.frame(x=eopenpar$i_s+openpar$rp, y=110:200), aes(x,y), color ='black', size=0.5)
+skiftfastislm
+
+fastislmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - fast kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+                       skaleringx=list(label=c(TeX('$i_{0,2}}$'),TeX('$i_{1}}$')), breaks=c(openpar$i_s+openpar$rp, eopenpar$i_s+openpar$rp)),
+                       skaleringy=list(label=c(TeX('$Y_{0,2}}$'),TeX('$Y_{1}}$')), breaks=c(172, 179)),
+                       figurnr=3)
+
+stabfastislm <- fastislmo$ggtyper[[6]]  + coord_flip() + geom_line(data=data.frame(x=openpar$i_s+openpar$rp, y=110:200), aes(x,y), color ='black', size=0.5) + geom_line(data=data.frame(x=eopenpar$i_s+openpar$rp, y=110:200), aes(x,y), color ='black', size=0.5)
 
 ```
 
@@ -235,11 +289,13 @@ Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet under fast 
 
 ### Godemarkedet
 
-$$Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX + R^{2}\cdot m_{1} \right]$$
+$$Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX \\ + R^{2}\cdot m_{1} \right]$$
 
 ### Pengemarkedet
 
 $$kY -hi = \overline{M}/P$$
+
+---
 
 ### Valutakursmarkedet
 $$i =i^{*} + rp$$
@@ -253,12 +309,13 @@ $$\frac{\Delta Y}{\Delta \overline{i}} =\left[\frac{-b}{1-c(1-t) + R\cdot m_{1}}
 
 $$i =i^{*} + rp \text{ BoP-kurven}$$
 
+---
 
 **Grafisk**
 
 
 ```{r echo=FALSE, warning=FALSE}
-#samtidigfastislm
+samtidigfastislm
 ```
 
 ---
@@ -266,7 +323,7 @@ $$i =i^{*} + rp \text{ BoP-kurven}$$
 ### Komparativ statikk (skiftanalyse)
 
 ```{r echo=FALSE}
-#stabfastislm
+skiftfastislm
 ```
 
 
@@ -277,57 +334,124 @@ $$i =i^{*} + rp \text{ BoP-kurven}$$
 Eks. reduksjon i offentlig utgifter ($\overline{G}<0$)
 
 ```{r echo=FALSE}
-#semuflfastlikevekt
+stabfastislm
 ```
 
 ---
 
-Merk: Under fast kurs er renta bundet til å holde fastkursen stabil, det gjør at finanspolitikk (endring i offentlige utgifter og skatter) står igjen som de eneste virkemidelene som kan stabillisere konjunkturbevegelsene.
+Merk: Under fast kurs er renta bundet til å holde fastkursen stabil, det gjør at finanspolitikk (endring i offentlige utgifter og skatter) står igjen som de *eneste* virkemdlene til å stabillisere konjunktursvingnigene
+
+
+```{r include=FALSE}
+## IS-LM åpen flytende kurs
+#############################################################################################################
+iv <- list(i=2:7.5)
+openpar <- eopenpar <- sopenpar <- list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+lukketpar <- elukketpar <- slukketpar <-  c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100, P=1, h = 10, k =1, Y = 130, m=1, t=0.4))
+flytislmo <- Makrofigur(modellnavn='islmo')
+
+# Samtidig
+flytislmo$numerisk(endvar=c('FlytISCBoP','FlytLMC'), lukketpar=lukketpar, openpar=openpar, endrvar=iv, kat='init')
+flytislmotekst <- data.frame(kurve=c('IS-BoP','LM'), farge=c('red', 'red'), x = c(2,7), y = c(200, 170), xlim=100, ylim=2)
+flytislmo$grafisknum(samlikv=list(x=c(4.4), y=c(144)), dftekst=flytislmotekst, manuell=1)
+flytislmo$ggtyper[[1]] + coord_flip()
+
+# Skift
+elukketpar$oG <- 75
+flytislmo$numerisk(endvar=c('FlytISCBoP','FlytLMC'), lukketpar=elukketpar, openpar=eopenpar, endrvar=iv, kat='endringG')
+eflytislmotekst <- data.frame(kurve=c("IS-BoP'",""), farge=c('red', 'red'), x = c(2,3), y = c(220, 220), xlim=100, ylim=2)
+flytislmo$grafisknumappend(samlikv=list(x=c(5.75), y=c(158)), dftekst=eflytislmotekst, manuell=1, tilstand='endringG')
+flytislmo$ggtyper[[2]] + coord_flip()
+
+# Stabilisering
+slukketpar$M <- 79
+flytislmo$numerisk(endvar=c('FlytISCBoP','FlytLMC'), lukketpar=slukketpar, openpar=sopenpar, endrvar=iv, kat='stabM')
+sflytislmotekst <- data.frame(kurve=c("IS-BoP'","LM'"), farge=c('red', 'red'), x = c(2,7), y = c(220, 150), xlim=100, ylim=0)
+flytislmo$grafisknumappend(samlikv=list(x=c(6.55), y=c(144)), dftekst=sflytislmotekst, manuell=1, tilstand='stabM')
+flytislmo$ggtyper[[3]] + coord_flip()
+
+# Styling
+flytislmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+                       skaleringx=list(label=c(TeX('$i_{0}}$')), breaks=c(4.4)),
+                       skaleringy=list(label=c(TeX('$Y_{0}}$')), breaks=c(144)),
+                       figurnr=1)
+
+samtidigflytislm <- flytislmo$ggtyper[[4]]  + coord_flip()
+samtidigflytislm
+
+flytislmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+                       skaleringx=list(label=c(TeX('$i_{0}}$'),TeX('$i_{1}}$')), breaks=c(4.4, 5.75)),
+                       skaleringy=list(label=c(TeX('$Y_{0}}$'),TeX('$Y_{1}}$')), breaks=c(144,158)),
+                       figurnr=2)
+
+skiftflytendeislm <- flytislmo$ggtyper[[5]]  + coord_flip()
+skiftflytendeislm
+
+flytislmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+                       skaleringx=list(label=c(TeX('$i_{0=2}}$'),TeX('$i_{1}}$')), breaks=c(4.4, 5.75)),
+                       skaleringy=list(label=c(TeX('$Y_{0=2}}$'),TeX('$Y_{1}}$')), breaks=c(144,158)),
+                       figurnr=3)
+
+stabflytendeislm <- flytislmo$ggtyper[[6]]  + coord_flip()
+stabflytendeislm
+```
 
 ## Mundell-Fleming modellen under flytende kurs
 Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet under flytende kurs.
 
-```{r include=FALSE}
-
-```
-
 
 ### Godemarkedet
 
-$$Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX + R\cdot m_{1} \right]$$
+$$Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX \\ + R\cdot m_{1} \right]$$
+
+---
 
 ### Pengemarkedet
 
 $$kY -hi = \overline{M}/P$$
 
-### BP
+### Valutakursmarkedet
 
 $$E=\frac{(1+i^{*})}{(1+i)}E^{e}$$
 
 ---
 
+### Valuta- og godemarkedet
+
+For å lette den grafisk analysen, ønsker vi å finne et uttrykk som gir oss den samtidige likevekten i valuta- og godemarkedet. Vi starter først med å skrive (på generell form) den nominelle valutakursen som $E=E(\underset{(-)}{i},\underset{(+)}{i^{*}},\underset{(+)}{E^{e}})$. Setter vi så denne funksjonen inn i definisjonen for realvalutakursen får vi 
+
+$$R=\frac{E(i,i^{*},E^{e})\cdot P^{*}}{P}=R(\frac{P^{*}}{P},i,i^{*},E^{e})$$
+
+---
+
+Ved å sette det generelle utryyket for $R$ inn likevektsbetingelsen for godemarkedet, finner vi den samtidige likevekten i gode- og valutakursmarkedet:
+
+$$Y = \frac{1}{1-c(1-t) + R(\frac{P^{*}}{P},i,i^{*},E^{e}) \cdot m_{2}}  \left [ \overline{C} + \overline{I} \\ - b\cdot \overline{i} + \overline{G} + EX(R\Big(\frac{P^{*}}{P},i,i^{*},E^{e}\Big)) + R(\frac{P^{*}}{P},i,i^{*},E^{e})\cdot m_{1} \right]$$
+
+Dersom Marhsall-Lerner betingelsen holder, er det mulig å vise (ikke pensum i dette kurset) at IS-BoP-kurven (flytende kurs)  er slakere enn IS-kurven (fast-kurs) 
+
 **Formelt**
 
-$$\underset{Flytende-kurs (IS-BoP-kurven)}{\frac{\Delta Y}{\Delta \overline{i}}} < \underset{Fast-kurs (IS-kurven)}{\frac{\Delta Y}{\Delta \overline{i}}}  =\left[\frac{-b}{1-c(1-t) + R\cdot m_{1}}\right ] 
-< 0$$
+$$\underset{IS-BoP-kurven ( flytende-kurs)}{\frac{\Delta Y}{\Delta \overline{i}}} < \underset{IS-kurven (fast-kurs)}{\frac{\Delta Y}{\Delta \overline{i}}} < 0 $$
 
+---
 
 **Grafisk**
 
 Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet (flytende kurs)
 
 ```{r echo=FALSE, warning=FALSE}
-#muflflytendelikevekt
+samtidigflytislm
 ```
 
 ---
 
 ### Komparativ statikk (skiftanalyse)
 
-Økning i det utenlandske rentenivået ($i^{*}>0$)
+Økning i offentlige utgifter ($\overline{G}>0$)
 
 ```{r echo=FALSE}
-#emuflfastlikevekt
+skiftflytendeislm
 ```
 
 
@@ -338,374 +462,112 @@ Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet (flytende k
 Eks. reduksjon i pengmengden ($\overline{M}<0$)
 
 ```{r echo=FALSE}
-#semuflfastlikevekt
+stabflytendeislm
 ```
 
+---
+
+Merk: I motsetning til under fastkurs,  har man under flytende kurs muligheten til å benytte pengepolikken til å stabilisere konjunktursvingningne. I Norge i dag er dette rådende pengepoltiske regimet, mens vi på 90-tallet og i etterkrigserioden praktiserte ulike former for fastkursregimer (ovenfor veid snitt av europeiske valutaer).
+
+
 <!--
+
 
 ### AD-AS modellen for en åpen økonomi
 
-## AD- likningen under fast og flytende kurs
+#### AD- likningen under fast og flytende kurs
 
-```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
-iv <- 0:4
-openpar <- list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0,Ee=1)
-islmoexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
-                         P=1, h = 10, k =1, Y = 130, m=1, t=0.4), openpar, list(i=c(iv)))
+```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+## AD fast kurs
+#############################################################################################################
+iv <- list(i=2:6)
+openpar <- eopenpar <- sopenpar <- list(i_s=3.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+lukketpar <- elukketpar <- slukketpar <-  c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100, P=1, h = 10, k =1, Y = 130, m=1, t=0.4))
+fastislmoad <- Makrofigur(modellnavn='islmo')
 
-eopenpar <- list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0,Ee=1)
-eislmexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
-                         P=0.75, h = 10, k =1, Y = 130, m=1, t=0.4), eopenpar, list(i=c(iv)))
+# Samtidig
+fastislmoad$numerisk(endvar=c('FastISC'), lukketpar=lukketpar, openpar=openpar, endrvar=iv, kat='init')
+fastislmoadtekst <- data.frame(kurve=c('IS','BoP'), farge=c('red', 'red'), x = c(2,openpar$i_s+openpar$rp+0.1), y = c(190, 205), xlim=130, ylim=2)
+fastislmoad$grafisknum(samlikv=list(x=c(openpar$i_s+openpar$rp), y=c(172)), dftekst=fastislmoadtekst, manuell=1)
+fastislmoad$ggtyper[[1]] + coord_flip()
 
+# Skift
+elukketpar$P <- 0.75
+fastislmoad$numerisk(endvar=c('FastISC'), lukketpar=elukketpar, openpar=eopenpar, endrvar=iv, kat='endringP')
+efastislmoadtekst <- data.frame(kurve=c("IS'",""), farge=c('red', 'red'), x = c(2,6), y = c(207, 200), xlim=130, ylim=2)
+fastislmoad$grafisknumappend(samlikv=list(x=c(openpar$i_s+openpar$rp), y=c(188)), dftekst=efastislmoadtekst, manuell=1, tilstand='endringP')
+fastislmoad$ggtyper[[2]] + coord_flip()
 
-dfislmo <- dfgeneric(modell='islmo', exoparval = islmoexoparvalv)
-edfislmo <- dfgeneric(modell='islmo', exoparval = eislmexoparvalv)
+# Styling
+fastislmoad$grafiskstyle(labs=list(title='Mundell-Fleming modellen - fast kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+                         skaleringx=list(label=c(TeX('$i_{0}}$')), breaks=c(3.75)),
+                         skaleringy=list(label=c(TeX('$Y_{0}}$')), breaks=c(172)),
+                         figurnr=1)
 
-# Fast kurs
-idfkurverislmo <- data.frame(kurve=c("", "IS"),
-                           fargel = c('red', 'red'),
-                           fargek = c('red', 'red'),
-                           y = c(filter(dfislmo$varnavnminverdi, variable=='ibpv')[,3], filter(dfislmo$varnavnminverdi, variable=='iisv')[,3]),
-                           x = c(filter(dfislmo$varnavnminverdi, variable=='ibpv')[,1], filter(dfislmo$varnavnminverdi, variable=='iisv')[,1]))
+samtidigfastislmad <- fastislmoad$ggtyper[[3]]  + coord_flip() + geom_line(data=data.frame(x=openpar$i_s+openpar$rp, y=130:200), aes(x,y), color ='black', size=0.5)
+samtidigfastislmad
 
+fastislmoad$grafiskstyle(labs=list(title='Mundell-Fleming modellen - fast kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+                         skaleringx=list(label=c(TeX('$i_{0}}$'),TeX('$i_{1}}$')), breaks=c(3.75, 3.75)),
+                         skaleringy=list(label=c(TeX('$Y_{0}}$'),TeX('$Y_{1}}$')), breaks=c(172, 188)),
+                         figurnr=2)
 
-ilabelsislm <- list(title = 'Mundell-Fleming modellen - fast kurs',
-                    y = 'produksjon, inntekt (Y)',
-                    x = 'rentenivå (i)',
-                    x0 = c(TeX('$i_{0}}$')),
-                    y0 = c(TeX('$Y_{0}$')),
-                    kurver = idfkurverislmo)
-
-eidfkurverislmo <- data.frame(kurve=c("", "IS'"),
-                             fargel = c('red', 'red'),
-                             fargek = c('red', 'red'),
-                             y = c(filter(edfislmo$varnavnminverdi, variable=='ibpv')[,3], filter(edfislmo$varnavnminverdi, variable=='iisv')[,3]),
-                             x = c(filter(edfislmo$varnavnminverdi, variable=='ibpv')[,1], filter(edfislmo$varnavnminverdi, variable=='iisv')[,1]))
-
-
-eilabelsislm <- list(title = 'Mundell-Fleming modellen - flytende kurs',
-                    y = 'produksjon, inntekt (Y)',
-                    x = 'rentenivå (i)',
-                    x0 = c(TeX('$i_{1}}$')),
-                    y0 = c(TeX('$Y_{1}$')),
-                    kurver = eidfkurverislmo)
+skiftfastislmad <- fastislmoad$ggtyper[[4]]  + coord_flip() + geom_line(data=data.frame(x=openpar$i_s+openpar$rp, y=130:210), aes(x,y), color ='black', size=0.5)
+skiftfastislmad
 
 
-islmochangepricei <- cgenmakrofigure(dfnumeric=dfislmo,
-                                   edfnumeric=edfislmo,
-                                   variables = c('iisv'),
-                                   labt = ilabelsislm,
-                                   elabt = eilabelsislm,
-                                   scalejust = list(x=0, y=0),
-                                   limits= list(x=NULL, y=c(150,250))) + coord_flip() +
-  geom_line(data=data.frame(x=dfislmo$yeae[1], y=75:230), aes(x,y), color ='black', size=0.5) +
-  geom_text(aes(x=dfislmo$yeae[1], y=240 ,label='BoP'), color = 'red')
+## AD åpen flytende kurs
+#############################################################################################################
+iv <- list(i=2:7.5)
+openpar <- eopenpar <- sopenpar <- list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+lukketpar <- elukketpar <- slukketpar <-  c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100, P=1, h = 10, k =1, Y = 130, m=1, t=0.4))
+flytislmoad <- Makrofigur(modellnavn='islmo')
 
-islmochangepricei
+# Samtidig
+flytislmoad$numerisk(endvar=c('FlytISCBoP','FlytLMC'), lukketpar=lukketpar, openpar=openpar, endrvar=iv, kat='init')
+flytislmoadtekst <- data.frame(kurve=c('IS-BoP','LM'), farge=c('red', 'red'), x = c(2,7), y = c(190, 170), xlim=100, ylim=2)
+flytislmoad$grafisknum(samlikv=list(x=c(4.4), y=c(144)), dftekst=flytislmoadtekst, manuell=1)
+flytislmoad$ggtyper[[1]] + coord_flip()
 
-# Flytende kurs
-iv <- 1.5:10
-openpar <- list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0,Ee=1)
-islmoexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
-                          P=1, h = 10, k =1, Y = 130, m=1, t=0.4), openpar, list(i=c(iv)))
+# Skift
+elukketpar$P <- 0.75
+flytislmoad$numerisk(endvar=c('FlytISCBoP','FlytLMC'), lukketpar=elukketpar, openpar=eopenpar, endrvar=iv, kat='endringG')
+eflytislmoadtekst <- data.frame(kurve=c("IS-BoP'","LM'"), farge=c('red', 'red'), x = c(2,7), y = c(207, 200), xlim=100, ylim=2)
+flytislmoad$grafisknumappend(samlikv=list(x=c(3.4), y=c(168)), dftekst=eflytislmoadtekst, manuell=1, tilstand='endringG')
+flytislmoad$ggtyper[[2]] + coord_flip()
 
-eopenpar <- list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0,Ee=1)
-eislmexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100,
-                          P=0.75, h = 10, k =1, Y = 130, m=1, t=0.4), eopenpar, list(i=c(iv)))
+# Styling
+flytislmoad$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+                         skaleringx=list(label=c(TeX('$i_{0}}$')), breaks=c(4.4)),
+                         skaleringy=list(label=c(TeX('$Y_{0}}$')), breaks=c(144)),
+                         figurnr=1)
 
-dfislmo <- dfgeneric(modell='islmo', exoparval = islmoexoparvalv)
-edfislmo <- dfgeneric(modell='islmo', exoparval = eislmexoparvalv)
-
-edfkurverislmo <- data.frame(kurve=c("LM", "IS-BoP"),
-                             fargel = c('red', 'red'),
-                             fargek = c('red', 'red'),
-                             y = c(filter(dfislmo$varnavnmaksverdi, variable=='elmv')[,3], filter(dfislmo$varnavnminverdi, variable=='eisbpv')[,3]),
-                             x = c(filter(dfislmo$varnavnmaksverdi, variable=='elmv')[,1], filter(dfislmo$varnavnminverdi, variable=='eisbpv')[,1]))
+samtidigflytislmad <- flytislmoad$ggtyper[[3]]  + coord_flip()
 
 
-elabelsislm <- list(title = 'Mundell-Fleming modellen - fast kurs',
-                    y = 'produksjon, inntekt (Y)',
-                    x = 'rentenivå (i)',
-                    x0 = c(TeX('$i_{0}}$')),
-                    y0 = c(TeX('$Y_{0}$')),
-                    kurver = edfkurverislmo)
+flytislmoad$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+                         skaleringx=list(label=c(TeX('$i_{0}}$'),TeX('$i_{1}}$')), breaks=c(4.4, 3.4)),
+                         skaleringy=list(label=c(TeX('$Y_{0}}$'),TeX('$Y_{1}}$')), breaks=c(144, 168)),
+                         figurnr=2)
 
-eedfkurverislmo <- data.frame(kurve=c("LM'", "IS-BoP'"),
-                              fargel = c('red', 'red'),
-                              fargek = c('red', 'red'),
-                              y = c(filter(edfislmo$varnavnmaksverdi, variable=='elmv')[,3], filter(edfislmo$varnavnminverdi, variable=='eisbpv')[,3]),
-                              x = c(filter(edfislmo$varnavnmaksverdi, variable=='elmv')[,1], filter(edfislmo$varnavnminverdi, variable=='eisbpv')[,1]))
+skiftflytislmad <- flytislmoad$ggtyper[[4]]  + coord_flip()
+skiftflytislmad
 
-
-eelabelsislm <- list(title = 'Mundell-Fleming modellen - fast kurs',
-                     y = 'produksjon, inntekt (Y)',
-                     x = 'rentenivå (i)',
-                     x0 = c(TeX('$i_{1}}$')),
-                     y0 = c(TeX('$Y_{1}$')),
-                     kurver = eedfkurverislmo)
-
-
-dfislmo$yeae <- c(4.75, 143)
-edfislmo$yeae <- c(3, 175)
-
-
-islmochangepricee <- cgenmakrofigure(dfnumeric=dfislmo,
-                                    edfnumeric=edfislmo,
-                                    variables = c('eisbpv','elmv'),
-                                    labt = elabelsislm,
-                                    elabt = eelabelsislm,
-                                    scalejust = list(x=0, y=75),
-                                    limits= list(x=NULL, y=NULL)) + coord_flip()
-islmochangepricee
-
-
-
-
-
-
-
-
-###################################
-# AD-Kurven flytende kurs
-Yv <- 100:200 # Guess
-adasexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100, P=1, h = 10,
-                         k =1),list(Pe=1, mu = 0.1, l_1=-20,l_2=1, z=1, A= 5,
-                                    N=400, alpha = 1, Ac = 2), list(Y=c(Yv)))
-
-dfadas <- dfgeneric(modell='adasl', exoparval = adasexoparvalv)
-
-dfkurver = data.frame(kurve=c("AD"),
-                      fargel = c('red'),
-                      fargek = c('red'),
-                      x = dfadas$varnavnmaksverdi$Iv[1],
-                      y = dfadas$varnavnmaksverdi$value[1])
-
-labelsadas <- list(title = 'AD-kurven',
-                   x = 'produksjon, inntekt (Y)',
-                   y = 'prisnivå (P)',
-                   x0 = c(TeX('$Y_{0$'), TeX('$Y_{1}$')),
-                   y0 = c(TeX('$P_{0}$'), TeX('$P_{1}$')),
-                   kurver = dfkurver)
-
-
-#dfadas$yeae <- c(dfislm$yeae[2], edfislm$yeae[2], 1, 0.75)
-
-adaslikevekt <- genmakrofigure(dfnumeric = dfadas,
-                               variables = c(dfadas$varnavn[1]),
-                               labt = labelsadas,
-                               scalejust = list(x=100, y=0),
-                               punktvelger = list(x=c(1,2), y=c(3,4)))
-
-grid.arrange(islmochangepricei, islmochangepricee, adaslikevekt, adaslikevekt, nrow=2)
 ```
 
-
-#### Samtidig likevekt
 
 ```{r echo=FALSE}
-library(MakroOEKB1115)
-library(dplyr)
-library(ggplot2)
-library(gridExtra)
-library(grid)
-library(latex2exp)
-# AD-AS likevekt
-###########################################################################################################
-Yv <- 105:125 # Guess
-adasexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100, P=1, h = 10,
-                         k =1),list(Pe=1, mu = 2, l_1=-5,l_2=1, z=1, A= 1,
-                                    N=400, alpha = 1, Ac = 4), list(Y=c(Yv)))
-
-dfadas <- dfgeneric(modell='adasl', exoparval = adasexoparvalv)
-
-subset(dfadas$dfmodell, variable = 'asv')
-
-dfkurver = data.frame(kurve=c("AD", "AS"),
-                    fargel = c('red', 'red'),
-                    fargek = c('red', 'red'),
-                    x = dfadas$varnavnmaksverdi$Iv,
-                    y = dfadas$varnavnmaksverdi$value)
-
-labelsadas <- list(title = 'AD-AS modellen',
-                   x = 'produksjon, inntekt (Y)',
-                   y = 'prisnivå (P)',
-                   x0 = c(TeX('$Y_{0}=Y^{N}$')),
-                   y0 = c(TeX('$P_{0}$')),
-                   kurver = dfkurver)
-
-adaslikevekt <- genmakrofigure(dfnumeric=dfadas,
-                      variables = c(dfadas$varnavn),
-                      labt = labelsadas,
-                      scalejust = list(x=100, y=0.5))
-
-adaslikevekt
+grid.arrange(skiftflytislmad,skiftfastislmad, ncol=2)
 ```
 
 
-#### Komparativ statikk (skiftanalyse)
-```{r}
-## AD-AS komparativ statikk (skiftanalyse)
-# ###########################################################################################################
-# ### Kort sikt
-eYv <- 105:125 # Guess
-eiadasexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 30, T = 50, M= 100, P=1, h = 10,
-                         k =1),list(Pe=1, mu = 2, l_1=-5,l_2=1, z=1, A= 1,
-                                    N=400, alpha = 1, Ac = 4), list(Y=c(eYv)))
-eksdfadas <- dfgeneric(modell='adasl', exoparval = eiadasexoparvalv)
+#### AS kurven
 
-edfkurver = data.frame(kurve=c("AD'", "AS"),
-                       fargel = c('red', 'red'),
-                       fargek = c('red', 'red'),
-                       x = eksdfadas$varnavnmaksverdi$Iv,
-                       y = eksdfadas$varnavnmaksverdi$value)
-
-elabelsadas <- list(title = 'AD-AS modellen',
-                   x = 'produksjon, inntekt (Y)',
-                   y = 'prisnivå (P)',
-                   x0 = c(TeX('$Y_{1}$')),
-                   y0 = c(TeX('$P_{1}$')),
-                   kurver = edfkurver)
-
-eksadaslikevekt <- cgenmakrofigure(dfnumeric=dfadas,
-                                   edfnumeric=eksdfadas,
-                                   variables = c(dfadas$varnavn),
-                                   labt = labelsadas,
-                                   elabt = elabelsadas,
-                                   scalejust = list(x=110, y=0))
-
-#### Mellomlang sikt ###
-Yv <- 105:125 # Guess
-eiadasexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 30, T = 50, M= 100, P=1, h = 10,
-                           k =1),list(Pe=1.3425, mu = 2, l_1=-5,l_2=1, z=1, A= 1,
-                                      N=400, alpha = 1, Ac = 4), list(Y=c(eYv)))
-
-emsdfadas <- dfgeneric(modell='adasl', exoparval = eiadasexoparvalv)
-
-emdfkurver = data.frame(kurve=c("AD'", "AS''"),
-                       fargel = c('red', 'red'),
-                       fargek = c('red', 'red'),
-                       x = emsdfadas$varnavnmaksverdi$Iv,
-                       y = emsdfadas$varnavnmaksverdi$value)
-
-elabelsadas <- list(title = 'AD-AS modellen',
-                    x = 'produksjon, inntekt (Y)',
-                    y = 'prisnivå (P)',
-                    x0 = c(TeX('$$')),
-                    y0 = c(TeX('$P_{2}$')),
-                    kurver = emdfkurver)
-
-labelsadas <- list(title = 'AD-AS modellen',
-                   x = 'produksjon, inntekt (Y)',
-                   y = 'prisnivå (P)',
-                   x0 = c(TeX('$Y_{0}=$Y_{2}=Y^{N}$')),
-                   y0 = c(TeX('$P_{0}$')),
-                   kurver = dfkurver)
-
-emsadaslikevekt <- cgenmakrofigure(dfnumeric=dfadas,
-                                   edfnumeric=emsdfadas,
-                                   variables = c(dfadas$varnavn),
-                                   labt = labelsadas,
-                                   elabt = elabelsadas,
-                                   scalejust = list(x=100, y=0)) + geom_line(data=data.frame(x=dfadas$yeae[1], y=0:3), aes(x,y), color ='black', size=0.5) + geom_text(aes(x=110, y= 3,label='LAS'), color = 'red')
-
-emsadaslikevekt
-```
-
-
-#### Stabiliseringspolitikk 
-- Finanspolitikk
-- Pengepolitikk
-
-```{r}
-# ## AD-AS stabiliseringspolitikk
-# ###########################################################################################################
-Yv <- 105:125 # Guess
-stadasexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 30, T = 50, M= 100, P=1, h = 10,
-                           k =1),list(Pe=1, mu = 2, l_1=-5,l_2=1, z=1, A= 1,
-                                      N=400, alpha = 1, Ac = 4), list(Y=c(eYv)))
-
-stdfadas <- dfgeneric(modell='adasl', exoparval = stadasexoparvalv)
-
-sdfkurver = data.frame(kurve=c("AD'", "AS"),
-                       fargel = c('red', 'red'),
-                       fargek = c('red', 'red'),
-                       x = stdfadas$varnavnmaksverdi$Iv,
-                       y = stdfadas$varnavnmaksverdi$value)
-
-ldfkurver = data.frame(kurve=c("AD=AD''", "AS"),
-                       fargel = c('red', 'red'),
-                       fargek = c('red', 'red'),
-                       x = dfadas$varnavnmaksverdi$Iv,
-                       y = dfadas$varnavnmaksverdi$value)
-
-llabelsadas <- list(title = 'AD-AS modellen',
-                    x = 'produksjon, inntekt (Y)',
-                    y = 'prisnivå (P)',
-                    x0 = c(TeX('$Y_{0}=Y_{2}=Y^{N}$')),
-                    y0 = c(TeX('$P_{0}=$P_{2}$')),
-                    kurver = ldfkurver)
-
-
-slabelsadas <- list(title = 'AD-AS modellen',
-                    x = 'produksjon, inntekt (Y)',
-                    y = 'prisnivå (P)',
-                    x0 = c(TeX('$Y_{1}$')),
-                    y0 = c(TeX('$P_{1}$')),
-                    kurver = sdfkurver)
-
-stadaslikevekt <- cgenmakrofigure(dfnumeric=dfadas,
-                                  edfnumeric=stdfadas,
-                                  variables = c(dfadas$varnavn),
-                                  labt = llabelsadas,
-                                  elabt = slabelsadas,
-                                  scalejust = list(x=105, y=0))
-stadaslikevekt
-```
+Adferdsligningene er de samme som for en lukket økonomi
 
 <!--
+#### AD-AS modellen for en fast valutakurs
 
+#### AD-AS modellen for en flytende valutakurs
 
-
-<button type="button"
-onclick="document.getElementById('demo').innerHTML = Date()">
-Click me to display Date and Time.</button>
-
-<p id="demo"></p>
-
-- 
-1. $$Y = \frac{1}{1-c-R?}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]$$
-1. $$\frac{M}{P}=\kappa\cdot Y + h\cdot i$$
-1. $$E = \frac{1+i^{*}}{1 + i} \text{ Flytende kursregime}$$
-1. $$i = i^{*} \text{ Fastkursregime}$$
-
-- IS-kurven under fast og flytende kurs
-
-Generelt fører lavere rente til høyere produksjon.
-
-Men multiplikatoren blir mindre ved en åpen økonomi, grunnet importlekkasje.
-
-Helningen på kurven er slakere under flytende kurs enn med fast kurs. Det skyldes at lavere rente under flytende kurs fører til en depresiering av den nominelle og realvalutakursen, noe som forbedrer landets konkurranse evne og dermed fører til økt etterspørsel gjennom økt nettoeksport.
-
-- LM modellen stigende under fast og horisontal under fast(?)
-
-- Skiftanalyse (grafisk og verbalt)
-
-Merk: P gir AS-kurven.
-
-- Stabiliseringspolitikk (grafisk og verbalt)
-
-Virkemidler: $G$, $T$ og $M/i$
- (Flytende) og
-$G$,$T$ og($E$)
- (Fast kurs)
- 
-
-### Mundell-Fleming (IS-LM for en åpen økonomi) modellen 
-
-- AS-kurven samme som under en lukket økonomi.
-- AD-kurven er fallende ved at økt priser fører til lavere etterspørsel.
-- Sentralt poeng med modellen – Selvkorrigerende mekanismer:
-
-Fleksibilitet i P og korrekte prisforventninger Pe
-på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.
 -->

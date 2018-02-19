@@ -1,3 +1,4 @@
+
 #Oversikt over faget
 - Tre hovedtemaer: 
     1. Konjunktursvingninger
@@ -183,8 +184,10 @@ Virkemidler: $G$, $T$ og $M/i$
 
 Fleksibilitet i P og korrekte prisforventninger Pe
  på mellomlang sikt, fører til at økonomien går tilbake til sitt naturlige produksjons- og ledighetsnivå.
+ 
+ <!--
 
-### IS-LM modellen for en åpen økonomi: Gode-, penge- og valutakursmarkedet i likevekt
+### Mundell-Fleming modellen (IS-LM modellen for en åpen økonom)i: Gode-, penge- og valutakursmarkedet i likevekt
 
 - To stabiliseringsmål:
 
@@ -196,26 +199,26 @@ Fleksibilitet i P og korrekte prisforventninger Pe
 
 1. Handel med utlandet
 
-1. Fast eller flytende kurs
+- Handel med utlandet (avhenger blant annet av relative prisnivået mellom innenlandske og utenlandske varer)
 
-1. Internasjonale finansmarkeder
+Realvalutakursen: $R=\frac{EP}{P}$
+
+- E: Pris (nominell) per enhet av utenlandsk (innenlandsk) valuta E  (1/E)
 
 
 $$AE = C+I+G+NX$$
 
-$$ NX=EX−R∗IM    $$
+$$ NX=EX−R∗IM$$
+
+1. Fast eller flytende kurs
+
+1. Utenriksregnskapet
 
 $$ BP = CA + CP + OR=0 $$
 
 CU=Driftsregnskapet: Nettoeksport, Nettofinansinntekter(aksjer og obligasjoner), Nettoverføringer
 
 CA=Kapitalregnskapet: Nettoendringer i fordringer og gjeld ovenfor utlandet
-
-- Handel med utlandet (avhenger blant annet av relative prisnivået mellom innenlandske og utenlandske varer)
-
-Realvalutakursen: $R=\frac{EP}{P}$
-
-- E: Pris (nominell) per enhet av utenlandsk (innenlandsk) valuta E  (1/E)
 
 - Postulerer følgende adferdsligninger for handelsbalansen
 
@@ -236,13 +239,13 @@ $$(1+i_{t+1})=(1+i_{t+1}^{*})\frac{E_{t+1}^{e}}{E_{t}}$$
 
 Fast: 
 
-$i =i^{*} + rp$
+$$i =i^{*} + rp$$
 
 Troverdig kurs vil si at $E=E_{e} \Rightarrow rp=0$
 
 Flytende: 
 
-$E=\frac{(1+i)}{(1+i)}E^{e}$ 
+$$E=\frac{(1+i)}{(1+i)}E^{e}$$ 
 
 - Modellen
 1. $$Y = \frac{1}{1-c-R?}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]$$
@@ -256,13 +259,13 @@ Generelt fører lavere rente til høyere produksjon.
 
 Men multiplikatoren blir mindre enn ved en lukket økonomi, grunnet importlekkasje.
 
-Helningen på kurven er slakere under flytende kurs enn med fast kurs. Det skyldes at lavere rente under flytende kurs fører til en depresiering av den nominelle og realvalutakursen, noe som forbedrer landets konkurranse evne og dermed fører til økt etterspørsel gjennom økt nettoeksport.
+Helningen på kurven er slakere under flytende kurs (dersom en kombinerer denne med likevektsbetingelsen fra valutakursmarkedet) enn med fast kurs. Det skyldes at lavere rente under flytende kurs fører til en depresiering av den nominelle og realvalutakursen, noe som forbedrer landets konkurranse evne og dermed fører til økt etterspørsel gjennom økt nettoeksport.
 
-- LM modellen stigende under fast og horisontal under fast(?)
+- LM modellen stigende under flytende og fast
 
 - Skiftanalyse (grafisk og verbalt)
 
-Merk: P gir AS-kurven.
+Merk: P gir AD-kurven.
 
 - Stabiliseringspolitikk (grafisk og verbalt)
 
@@ -271,15 +274,9 @@ Virkemidler: $G$, $T$ og $M/i$
 $G$,$T$ og($E$)
  (Fast kurs)
  
-### Mundell-Fleming (IS-LM for en åpen økonomi) modellen 
 
-- AS-kurven samme som under en lukket økonomi.
-- AD-kurven er fallende ved at økt priser fører til lavere etterspørsel.
-- Sentralt poeng med modellen – Selvkorrigerende mekanismer:
-
-Fleksibilitet i P og korrekte prisforventninger Pe
-på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.
-
+<!--
+ 
 ### AD-AS modellen for en åpen økonomi
 
 - AS-kurven samme som under en lukket økonomi.
@@ -289,3 +286,4 @@ på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produ
 Fleksibilitet i P og korrekte prisforventninger Pe
  på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.
 
+-->

@@ -405,7 +405,8 @@ $(document).ready(function () {
 <li><a href="#mundell-fleming-modellen-under-flytende-kurs">Mundell-Fleming modellen under flytende kurs</a><ul>
 <li><a href="#godemarkedet-1">Godemarkedet</a></li>
 <li><a href="#pengemarkedet-1">Pengemarkedet</a></li>
-<li><a href="#bp">BP</a></li>
+<li><a href="#valutakursmarkedet-2">Valutakursmarkedet</a></li>
+<li><a href="#valuta--og-godemarkedet">Valuta- og godemarkedet</a></li>
 <li><a href="#komparativ-statikk-skiftanalyse-4">Komparativ statikk (skiftanalyse)</a></li>
 <li><a href="#stabiliseringspolitikk-mi-g-og-t">Stabiliseringspolitikk (M/(i), G og T)</a></li>
 </ul></li>
@@ -1044,7 +1045,7 @@ Likvidering (bail-in)
 <h3>Markeder i likevekt: Gode- og pengemarkedet</h3>
 <p>Likevekstsbetingelsen for godemarkedet</p>
 <p><span class="math display">\[Y = AE \equiv C + I + G\]</span> Likevekstsbetingelsen for pengemarkedet</p>
-<p><span class="math display">\[M^{s} = L_{m}\]</span></p>
+<p><span class="math display">\[M^{s} = L_{d}\]</span></p>
 <hr />
 </div>
 <div id="adferdsligninger-bare-endringer-og-nye-ligninger-er-lagt-til-her" class="section level3">
@@ -1361,7 +1362,7 @@ Likvidering (bail-in)
 <p>Ved å sett inn for uttrykkene ovenfor, kan vi skrive nettoeksporten som</p>
 <p><span class="math display">\[NX = EX - R\cdot IM = x_{1}R + x_{2}Y^{*} - R\cdot (m_{1}R + m_{2}Y)\]</span></p>
 <p>Legger til grunn i dette kurset at priseffekten dominerer innteksteffekten (<a href="https://en.wikipedia.org/wiki/Marshall%E2%80%93Lerner_condition">Marshall-Lerner betingelsen</a> ):</p>
-<p><span class="math display">\[\frac{\Delta NX}{\Delta R}= \underset{priseffekt}{x_{1}} - \underset{inntektseffekt}{IM} + \underset{priseffekt}{m_{1}R} &gt; 0 \text{ (i praksis vil dette ta litt tid)}\]</span></p>
+<p><span class="math display">\[\frac{\Delta NX}{\Delta R}= \underset{priseffekt}{x_{1}} - \underset{inntektseffekt}{IM} + \underset{priseffekt}{m_{1}R} &gt; 0  \\ \text{ (i dette kurset antar vi at dette holder, men i praksis vil det ta litt tid)}\]</span></p>
 <hr />
 </div>
 <div id="offentlige-myndigheter-instruering-og-sentralbanken-implementering" class="section level4">
@@ -1383,11 +1384,12 @@ Likvidering (bail-in)
 <p>Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet under fast kurs</p>
 <div id="godemarkedet" class="section level3">
 <h3>Godemarkedet</h3>
-<p><span class="math display">\[Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX + R^{2}\cdot m_{1} \right]\]</span></p>
+<p><span class="math display">\[Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX \\ + R^{2}\cdot m_{1} \right]\]</span></p>
 </div>
 <div id="pengemarkedet" class="section level3">
 <h3>Pengemarkedet</h3>
 <p><span class="math display">\[kY -hi = \overline{M}/P\]</span></p>
+<hr />
 </div>
 <div id="valutakursmarkedet-1" class="section level3">
 <h3>Valutakursmarkedet</h3>
@@ -1397,18 +1399,22 @@ Likvidering (bail-in)
 <p><span class="math display">\[\frac{\Delta Y}{\Delta \overline{i}} =\left[\frac{-b}{1-c(1-t) + R\cdot m_{1}}\right ] 
 &lt; 0 \text{ :IS-kurven}\]</span></p>
 <p><span class="math display">\[i =i^{*} + rp \text{ BoP-kurven}\]</span></p>
+<hr />
 <p><strong>Grafisk</strong></p>
+<p><img src="htmlrapport_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
 <hr />
 </div>
 <div id="komparativ-statikk-skiftanalyse-3" class="section level3">
 <h3>Komparativ statikk (skiftanalyse)</h3>
+<p><img src="htmlrapport_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
 <hr />
 </div>
 <div id="stabiliseringspolitikk-g-og-t" class="section level3">
 <h3>Stabiliseringspolitikk (G og T)</h3>
 <p>Eks. reduksjon i offentlig utgifter (<span class="math inline">\(\overline{G}&lt;0\)</span>)</p>
+<p><img src="htmlrapport_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
 <hr />
-<p>Merk: Under fast kurs er renta bundet til å holde fastkursen stabil, det gjør at finanspolitikk (endring i offentlige utgifter og skatter) står igjen som de eneste virkemidelene som kan stabillisere konjunkturbevegelsene.</p>
+<p>Merk: Under fast kurs er renta bundet til å holde fastkursen stabil, det gjør at finanspolitikk (endring i offentlige utgifter og skatter) står igjen som de <em>eneste</em> virkemdlene til å stabillisere konjunktursvingnigene</p>
 </div>
 </div>
 <div id="mundell-fleming-modellen-under-flytende-kurs" class="section level2">
@@ -1416,264 +1422,68 @@ Likvidering (bail-in)
 <p>Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet under flytende kurs.</p>
 <div id="godemarkedet-1" class="section level3">
 <h3>Godemarkedet</h3>
-<p><span class="math display">\[Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX + R\cdot m_{1} \right]\]</span></p>
+<p><span class="math display">\[Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX \\ + R\cdot m_{1} \right]\]</span></p>
+<hr />
 </div>
 <div id="pengemarkedet-1" class="section level3">
 <h3>Pengemarkedet</h3>
 <p><span class="math display">\[kY -hi = \overline{M}/P\]</span></p>
 </div>
-<div id="bp" class="section level3">
-<h3>BP</h3>
+<div id="valutakursmarkedet-2" class="section level3">
+<h3>Valutakursmarkedet</h3>
 <p><span class="math display">\[E=\frac{(1+i^{*})}{(1+i)}E^{e}\]</span></p>
 <hr />
+</div>
+<div id="valuta--og-godemarkedet" class="section level3">
+<h3>Valuta- og godemarkedet</h3>
+<p>For å lette den grafisk analysen, ønsker vi å finne et uttrykk som gir oss den samtidige likevekten i valuta- og godemarkedet. Vi starter først med å skrive (på generell form) den nominelle valutakursen som <span class="math inline">\(E=E(\underset{(-)}{i},\underset{(+)}{i^{*}},\underset{(+)}{E^{e}})\)</span>. Setter vi så denne funksjonen inn i definisjonen for realvalutakursen får vi</p>
+<p><span class="math display">\[R=\frac{E(i,i^{*},E^{e})\cdot P^{*}}{P}=R(\frac{P^{*}}{P},i,i^{*},E^{e})\]</span></p>
+<hr />
+<p>Ved å sette det generelle utryyket for <span class="math inline">\(R\)</span> inn likevektsbetingelsen for godemarkedet, finner vi den samtidige likevekten i gode- og valutakursmarkedet:</p>
+<p><span class="math display">\[Y = \frac{1}{1-c(1-t) + R(\frac{P^{*}}{P},i,i^{*},E^{e}) \cdot m_{2}}  \left [ \overline{C} + \overline{I} \\ - b\cdot \overline{i} + \overline{G} + EX(R\Big(\frac{P^{*}}{P},i,i^{*},E^{e}\Big)) + R(\frac{P^{*}}{P},i,i^{*},E^{e})\cdot m_{1} \right]\]</span></p>
+<p>Dersom Marhsall-Lerner betingelsen holder, er det mulig å vise (ikke pensum i dette kurset) at IS-BoP-kurven (flytende kurs) er slakere enn IS-kurven (fast-kurs)</p>
 <p><strong>Formelt</strong></p>
-<p><span class="math display">\[\underset{Flytende-kurs (IS-BoP-kurven)}{\frac{\Delta Y}{\Delta \overline{i}}} &lt; \underset{Fast-kurs (IS-kurven)}{\frac{\Delta Y}{\Delta \overline{i}}}  =\left[\frac{-b}{1-c(1-t) + R\cdot m_{1}}\right ] 
-&lt; 0\]</span></p>
+<p><span class="math display">\[\underset{IS-BoP-kurven ( flytende-kurs)}{\frac{\Delta Y}{\Delta \overline{i}}} &lt; \underset{IS-kurven (fast-kurs)}{\frac{\Delta Y}{\Delta \overline{i}}} &lt; 0 \]</span></p>
+<hr />
 <p><strong>Grafisk</strong></p>
 <p>Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet (flytende kurs)</p>
+<p><img src="htmlrapport_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
 <hr />
 </div>
 <div id="komparativ-statikk-skiftanalyse-4" class="section level3">
 <h3>Komparativ statikk (skiftanalyse)</h3>
-<p>Økning i det utenlandske rentenivået (<span class="math inline">\(i^{*}&gt;0\)</span>)</p>
+<p>Økning i offentlige utgifter (<span class="math inline">\(\overline{G}&gt;0\)</span>)</p>
+<p><img src="htmlrapport_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
 <hr />
 </div>
 <div id="stabiliseringspolitikk-mi-g-og-t" class="section level3">
 <h3>Stabiliseringspolitikk (M/(i), G og T)</h3>
 <p>Eks. reduksjon i pengmengden (<span class="math inline">\(\overline{M}&lt;0\)</span>)</p>
+<p><img src="htmlrapport_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<hr />
+<p>Merk: I motsetning til under fastkurs, har man under flytende kurs muligheten til å benytte pengepolikken til å stabilisere konjunktursvingningne. I Norge i dag er dette rådende pengepoltiske regimet, mens vi på 90-tallet og i etterkrigserioden praktiserte ulike former for fastkursregimer (ovenfor veid snitt av europeiske valutaer).</p>
 <!--
+
 
 ### AD-AS modellen for en åpen økonomi
 
-## AD- likningen under fast og flytende kurs
-
-<img src="htmlrapport_files/figure-html/unnamed-chunk-33-1.png" width="672" /><img src="htmlrapport_files/figure-html/unnamed-chunk-33-2.png" width="672" /><img src="htmlrapport_files/figure-html/unnamed-chunk-33-3.png" width="672" />
+#### AD- likningen under fast og flytende kurs
 
 
-#### Samtidig likevekt
 
-
-```
-##     Iv variable    value
-## 1  105      adv 1.492537
-## 2  106      adv 1.461988
-## 3  107      adv 1.432665
-## 4  108      adv 1.404494
-## 5  109      adv 1.377410
-## 6  110      adv 1.351351
-## 7  111      adv 1.326260
-## 8  112      adv 1.302083
-## 9  113      adv 1.278772
-## 10 114      adv 1.256281
-## 11 115      adv 1.234568
-## 12 116      adv 1.213592
-## 13 117      adv 1.193317
-## 14 118      adv 1.173709
-## 15 119      adv 1.154734
-## 16 120      adv 1.136364
-## 17 121      adv 1.118568
-## 18 122      adv 1.101322
-## 19 123      adv 1.084599
-## 20 124      adv 1.068376
-## 21 125      adv 1.052632
-## 22 105      asv 0.937500
-## 23 106      asv 0.975000
-## 24 107      asv 1.012500
-## 25 108      asv 1.050000
-## 26 109      asv 1.087500
-## 27 110      asv 1.125000
-## 28 111      asv 1.162500
-## 29 112      asv 1.200000
-## 30 113      asv 1.237500
-## 31 114      asv 1.275000
-## 32 115      asv 1.312500
-## 33 116      asv 1.350000
-## 34 117      asv 1.387500
-## 35 118      asv 1.425000
-## 36 119      asv 1.462500
-## 37 120      asv 1.500000
-## 38 121      asv 1.537500
-## 39 122      asv 1.575000
-## 40 123      asv 1.612500
-## 41 124      asv 1.650000
-## 42 125      asv 1.687500
-```
 
 <img src="htmlrapport_files/figure-html/unnamed-chunk-34-1.png" width="672" />
 
 
-#### Komparativ statikk (skiftanalyse)
+#### AS kurven
 
-```r
-## AD-AS komparativ statikk (skiftanalyse)
-# ###########################################################################################################
-# ### Kort sikt
-eYv <- 105:125 # Guess
-eiadasexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 30, T = 50, M= 100, P=1, h = 10,
-                         k =1),list(Pe=1, mu = 2, l_1=-5,l_2=1, z=1, A= 1,
-                                    N=400, alpha = 1, Ac = 4), list(Y=c(eYv)))
-eksdfadas <- dfgeneric(modell='adasl', exoparval = eiadasexoparvalv)
-
-edfkurver = data.frame(kurve=c("AD'", "AS"),
-                       fargel = c('red', 'red'),
-                       fargek = c('red', 'red'),
-                       x = eksdfadas$varnavnmaksverdi$Iv,
-                       y = eksdfadas$varnavnmaksverdi$value)
-
-elabelsadas <- list(title = 'AD-AS modellen',
-                   x = 'produksjon, inntekt (Y)',
-                   y = 'prisnivå (P)',
-                   x0 = c(TeX('$Y_{1}$')),
-                   y0 = c(TeX('$P_{1}$')),
-                   kurver = edfkurver)
-
-eksadaslikevekt <- cgenmakrofigure(dfnumeric=dfadas,
-                                   edfnumeric=eksdfadas,
-                                   variables = c(dfadas$varnavn),
-                                   labt = labelsadas,
-                                   elabt = elabelsadas,
-                                   scalejust = list(x=110, y=0))
-
-#### Mellomlang sikt ###
-Yv <- 105:125 # Guess
-eiadasexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 30, T = 50, M= 100, P=1, h = 10,
-                           k =1),list(Pe=1.3425, mu = 2, l_1=-5,l_2=1, z=1, A= 1,
-                                      N=400, alpha = 1, Ac = 4), list(Y=c(eYv)))
-
-emsdfadas <- dfgeneric(modell='adasl', exoparval = eiadasexoparvalv)
-
-emdfkurver = data.frame(kurve=c("AD'", "AS''"),
-                       fargel = c('red', 'red'),
-                       fargek = c('red', 'red'),
-                       x = emsdfadas$varnavnmaksverdi$Iv,
-                       y = emsdfadas$varnavnmaksverdi$value)
-
-elabelsadas <- list(title = 'AD-AS modellen',
-                    x = 'produksjon, inntekt (Y)',
-                    y = 'prisnivå (P)',
-                    x0 = c(TeX('$$')),
-                    y0 = c(TeX('$P_{2}$')),
-                    kurver = emdfkurver)
-
-labelsadas <- list(title = 'AD-AS modellen',
-                   x = 'produksjon, inntekt (Y)',
-                   y = 'prisnivå (P)',
-                   x0 = c(TeX('$Y_{0}=$Y_{2}=Y^{N}$')),
-                   y0 = c(TeX('$P_{0}$')),
-                   kurver = dfkurver)
-
-emsadaslikevekt <- cgenmakrofigure(dfnumeric=dfadas,
-                                   edfnumeric=emsdfadas,
-                                   variables = c(dfadas$varnavn),
-                                   labt = labelsadas,
-                                   elabt = elabelsadas,
-                                   scalejust = list(x=100, y=0)) + geom_line(data=data.frame(x=dfadas$yeae[1], y=0:3), aes(x,y), color ='black', size=0.5) + geom_text(aes(x=110, y= 3,label='LAS'), color = 'red')
-
-emsadaslikevekt
-```
-
-<img src="htmlrapport_files/figure-html/unnamed-chunk-35-1.png" width="672" />
-
-
-#### Stabiliseringspolitikk 
-- Finanspolitikk
-- Pengepolitikk
-
-
-```r
-# ## AD-AS stabiliseringspolitikk
-# ###########################################################################################################
-Yv <- 105:125 # Guess
-stadasexoparvalv <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 30, T = 50, M= 100, P=1, h = 10,
-                           k =1),list(Pe=1, mu = 2, l_1=-5,l_2=1, z=1, A= 1,
-                                      N=400, alpha = 1, Ac = 4), list(Y=c(eYv)))
-
-stdfadas <- dfgeneric(modell='adasl', exoparval = stadasexoparvalv)
-
-sdfkurver = data.frame(kurve=c("AD'", "AS"),
-                       fargel = c('red', 'red'),
-                       fargek = c('red', 'red'),
-                       x = stdfadas$varnavnmaksverdi$Iv,
-                       y = stdfadas$varnavnmaksverdi$value)
-
-ldfkurver = data.frame(kurve=c("AD=AD''", "AS"),
-                       fargel = c('red', 'red'),
-                       fargek = c('red', 'red'),
-                       x = dfadas$varnavnmaksverdi$Iv,
-                       y = dfadas$varnavnmaksverdi$value)
-
-llabelsadas <- list(title = 'AD-AS modellen',
-                    x = 'produksjon, inntekt (Y)',
-                    y = 'prisnivå (P)',
-                    x0 = c(TeX('$Y_{0}=Y_{2}=Y^{N}$')),
-                    y0 = c(TeX('$P_{0}=$P_{2}$')),
-                    kurver = ldfkurver)
-
-
-slabelsadas <- list(title = 'AD-AS modellen',
-                    x = 'produksjon, inntekt (Y)',
-                    y = 'prisnivå (P)',
-                    x0 = c(TeX('$Y_{1}$')),
-                    y0 = c(TeX('$P_{1}$')),
-                    kurver = sdfkurver)
-
-stadaslikevekt <- cgenmakrofigure(dfnumeric=dfadas,
-                                  edfnumeric=stdfadas,
-                                  variables = c(dfadas$varnavn),
-                                  labt = llabelsadas,
-                                  elabt = slabelsadas,
-                                  scalejust = list(x=105, y=0))
-stadaslikevekt
-```
-
-<img src="htmlrapport_files/figure-html/unnamed-chunk-36-1.png" width="672" />
+Adferdsligningene er de samme som for en lukket økonomi
 
 <!--
+#### AD-AS modellen for en fast valutakurs
 
+#### AD-AS modellen for en flytende valutakurs
 
-
-<button type="button"
-onclick="document.getElementById('demo').innerHTML = Date()">
-Click me to display Date and Time.</button>
-
-<p id="demo"></p>
-
-- 
-1. $$Y = \frac{1}{1-c-R?}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]$$
-1. $$\frac{M}{P}=\kappa\cdot Y + h\cdot i$$
-1. $$E = \frac{1+i^{*}}{1 + i} \text{ Flytende kursregime}$$
-1. $$i = i^{*} \text{ Fastkursregime}$$
-
-- IS-kurven under fast og flytende kurs
-
-Generelt fører lavere rente til høyere produksjon.
-
-Men multiplikatoren blir mindre ved en åpen økonomi, grunnet importlekkasje.
-
-Helningen på kurven er slakere under flytende kurs enn med fast kurs. Det skyldes at lavere rente under flytende kurs fører til en depresiering av den nominelle og realvalutakursen, noe som forbedrer landets konkurranse evne og dermed fører til økt etterspørsel gjennom økt nettoeksport.
-
-- LM modellen stigende under fast og horisontal under fast(?)
-
-- Skiftanalyse (grafisk og verbalt)
-
-Merk: P gir AS-kurven.
-
-- Stabiliseringspolitikk (grafisk og verbalt)
-
-Virkemidler: $G$, $T$ og $M/i$
- (Flytende) og
-$G$,$T$ og($E$)
- (Fast kurs)
- 
-
-### Mundell-Fleming (IS-LM for en åpen økonomi) modellen 
-
-- AS-kurven samme som under en lukket økonomi.
-- AD-kurven er fallende ved at økt priser fører til lavere etterspørsel.
-- Sentralt poeng med modellen – Selvkorrigerende mekanismer:
-
-Fleksibilitet i P og korrekte prisforventninger Pe
-på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.
 -->
 <!--
 # Del 2 Økonomisk vekst
