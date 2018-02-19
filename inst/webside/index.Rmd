@@ -34,7 +34,7 @@ output:
 **Studentassistent:** Susanna Murati (susanna-007@hotmail.com)
 
 <span style="color:red">
-<p>Forlesningsnotater uke 7 og oppgaver til seminar 2 (uke 8) er nå lagt ut</p>
+<p>Forlesningsnotater (delvis) uke 8  er nå lagt ut</p>
 </span>
 
 <p style="color:black">Siste gang oppdatert ``r base::Sys.time()`` </p>

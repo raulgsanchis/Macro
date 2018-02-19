@@ -130,7 +130,7 @@ iv <- list(i=2:7.5)
 openpar <- eopenpar <- sopenpar <- list(i_s=3.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
 lukketpar <- elukketpar <- slukketpar <-  c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100, P=1, h = 10, k =1, Y = 130, m=1, t=0.4))
 
-flytislmo <- Makrofigur(modellnavn='islmo')
+fastislmo <- Makrofigur(modellnavn='islmo')
 
 # Samtidig
 fastislmo$numerisk(endvar=c('FastISC'), lukketpar=lukketpar, openpar=openpar, endrvar=iv, kat='init')
@@ -175,17 +175,59 @@ fastislmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende kurs
                        skaleringy=list(label=c(TeX('$Y_{0,2}}$'),TeX('$Y_{1}}$')), breaks=c(172, 179)),
                        figurnr=3)
 
-skiftfastislm <- fastislmo$ggtyper[[6]]  + coord_flip() + geom_line(data=data.frame(x=openpar$i_s+openpar$rp, y=110:200), aes(x,y), color ='black', size=0.5) + geom_line(data=data.frame(x=eopenpar$i_s+openpar$rp, y=110:200), aes(x,y), color ='black', size=0.5)
+stabfastislm <- fastislmo$ggtyper[[6]]  + coord_flip() + geom_line(data=data.frame(x=openpar$i_s+openpar$rp, y=110:200), aes(x,y), color ='black', size=0.5) + geom_line(data=data.frame(x=eopenpar$i_s+openpar$rp, y=110:200), aes(x,y), color ='black', size=0.5)
 
+## IS-LM åpen flytende kurs
+#############################################################################################################
+iv <- list(i=2:7.5)
+openpar <- eopenpar <- sopenpar <- list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+lukketpar <- elukketpar <- slukketpar <-  c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100, P=1, h = 10, k =1, Y = 130, m=1, t=0.4))
+flytislmo <- Makrofigur(modellnavn='islmo')
 
+# Samtidig
+flytislmo$numerisk(endvar=c('FlytISCBoP','FlytLMC'), lukketpar=lukketpar, openpar=openpar, endrvar=iv, kat='init')
+flytislmotekst <- data.frame(kurve=c('IS-BoP','LM'), farge=c('red', 'red'), x = c(2,7), y = c(200, 170), xlim=100, ylim=2)
+flytislmo$grafisknum(samlikv=list(x=c(4.4), y=c(144)), dftekst=flytislmotekst, manuell=1)
+flytislmo$ggtyper[[1]] + coord_flip()
 
+# Skift
+elukketpar$oG <- 75
+flytislmo$numerisk(endvar=c('FlytISCBoP','FlytLMC'), lukketpar=elukketpar, openpar=eopenpar, endrvar=iv, kat='endringG')
+eflytislmotekst <- data.frame(kurve=c("IS-BoP","LM'"), farge=c('red', 'red'), x = c(3,5.25), y = c(200, 230), xlim=100, ylim=2)
+flytislmo$grafisknumappend(samlikv=list(x=c(5.75), y=c(158)), dftekst=eislmodftekst, manuell=1, tilstand='endringG')
+flytislmo$ggtyper[[2]] + coord_flip()
 
+# Stabilisering
+slukketpar$M <- 79
+flytislmo$numerisk(endvar=c('FlytISCBoP','FlytLMC'), lukketpar=slukketpar, openpar=sopenpar, endrvar=iv, kat='stabM')
+sflytislmotekst <- data.frame(kurve=c("IS-BoP'","LM'"), farge=c('red', 'red'), x = c(2,7), y = c(220, 150), xlim=100, ylim=0)
+flytislmo$grafisknumappend(samlikv=list(x=c(6.55), y=c(144)), dftekst=sflytislmotekst, manuell=1, tilstand='stabM')
+flytislmo$ggtyper[[3]] + coord_flip()
 
+# Styling
+flytislmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+                       skaleringx=list(label=c(TeX('$i_{0}}$')), breaks=c(4.4)),
+                       skaleringy=list(label=c(TeX('$Y_{0}}$')), breaks=c(144)),
+                       figurnr=1)
 
+samtidigfastislm <- flytislmo$ggtyper[[4]]  + coord_flip()
+samtidigfastislm
 
+flytislmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+                       skaleringx=list(label=c(TeX('$i_{0}}$'),TeX('$i_{1}}$')), breaks=c(4.4, 5.75)),
+                       skaleringy=list(label=c(TeX('$Y_{0}}$'),TeX('$Y_{1}}$')), breaks=c(144,158)),
+                       figurnr=2)
 
+skiftflytendeislm <- flytislmo$ggtyper[[5]]  + coord_flip()
+skiftflytendeislm
 
+flytislmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+                       skaleringx=list(label=c(TeX('$i_{0=2}}$'),TeX('$i_{1}}$')), breaks=c(4.4, 5.75)),
+                       skaleringy=list(label=c(TeX('$Y_{0=2}}$'),TeX('$Y_{1}}$')), breaks=c(144,158)),
+                       figurnr=3)
 
+stabfltyendeislm <- flytislmo$ggtyper[[6]]  + coord_flip()
+stabfltyendeislm
 
 ## AD fast kurs
 #############################################################################################################
@@ -224,56 +266,6 @@ fastislmoad$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende ku
 skiftfastislmad <- fastislmoad$ggtyper[[4]]  + coord_flip() + geom_line(data=data.frame(x=openpar$i_s+openpar$rp, y=110:200), aes(x,y), color ='black', size=0.5)
 skiftfastislmad
 
-## IS-LM åpen flytende kurs
-#############################################################################################################
-iv <- list(i=2:7.5)
-openpar <- eopenpar <- sopenpar <- list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
-lukketpar <- elukketpar <- slukketpar <-  c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100, P=1, h = 10, k =1, Y = 130, m=1, t=0.4))
-flytislmo <- Makrofigur(modellnavn='islmo')
-
-# Samtidig
-flytislmo$numerisk(endvar=c('FlytISCBoP','FlytLMC'), lukketpar=lukketpar, openpar=openpar, endrvar=iv, kat='init')
-flytislmotekst <- data.frame(kurve=c('IS-BoP','LM'), farge=c('red', 'red'), x = c(2,7), y = c(200, 170), xlim=100, ylim=2)
-flytislmo$grafisknum(samlikv=list(x=c(4.4), y=c(144)), dftekst=flytislmotekst, manuell=1)
-flytislmo$ggtyper[[1]] + coord_flip()
-
-# Skift
-elukketpar$oG <- 75
-flytislmo$numerisk(endvar=c('FlytISCBoP','FlytLMC'), lukketpar=elukketpar, openpar=eopenpar, endrvar=iv, kat='endringG')
-eflytislmotekst <- data.frame(kurve=c("IS-BoP","LM'"), farge=c('red', 'red'), x = c(3,5.25), y = c(200, 230), xlim=100, ylim=2)
-flytislmo$grafisknumappend(samlikv=list(x=c(5.75), y=c(158)), dftekst=eislmodftekst, manuell=1, tilstand='endringG')
-flytislmo$ggtyper[[2]] + coord_flip()
-
-# Stabilisering
-slukketpar$M <- 80
-flytislmo$numerisk(endvar=c('FlytISCBoP','FlytLMC'), lukketpar=slukketpar, openpar=sopenpar, endrvar=iv, kat='stabM')
-sflytislmotekst <- data.frame(kurve=c("IS-BoP'","LM'"), farge=c('red', 'red'), x = c(2,7), y = c(220, 150), xlim=100, ylim=0)
-flytislmo$grafisknumappend(samlikv=list(x=c(6.55), y=c(144)), dftekst=sflytislmotekst, manuell=1, tilstand='stabM')
-flytislmo$ggtyper[[3]] + coord_flip()
-
-# Styling
-flytislmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
-                       skaleringx=list(label=c(TeX('$i_{0}}$')), breaks=c(4.4)),
-                       skaleringy=list(label=c(TeX('$Y_{0}}$')), breaks=c(144)),
-                       figurnr=1)
-
-samtidigfastislm <- flytislmo$ggtyper[[4]]  + coord_flip()
-
-
-flytislmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
-                       skaleringx=list(label=c(TeX('$i_{0}}$'),TeX('$i_{1}}$')), breaks=c(4.4, 5.75)),
-                       skaleringy=list(label=c(TeX('$Y_{0}}$'),TeX('$Y_{1}}$')), breaks=c(144,158)),
-                       figurnr=2)
-
-skiftfastislm <- flytislmo$ggtyper[[5]]  + coord_flip()
-
-
-flytislmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
-                       skaleringx=list(label=c(TeX('$i_{0=2}}$'),TeX('$i_{1}}$')), breaks=c(4.4, 5.75)),
-                       skaleringy=list(label=c(TeX('$Y_{0=2}}$'),TeX('$Y_{1}}$')), breaks=c(144,158)),
-                       figurnr=3)
-
-stabfastislm <- flytislmo$ggtyper[[6]]  + coord_flip()
 
 ## AD åpen flytende kurs
 #############################################################################################################

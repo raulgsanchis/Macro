@@ -1,1 +1,1 @@
-{"ID": "I^{d} = b i + oI", "AD": "Y = \\frac{1}{c_{1} - 1} \\left(T c_{1} - b i - oC - oG - oI\\right)", "CD": "C = c_{1} \\left(- T + Y\\right) + oC", "EQV": "Y = C + G + I", "YS": "Y^{s} = Y", "GD": "G = oG"}
+{"CD": "C = c_{1} \\left(- T + Y\\right) + oC", "AD": "Y = \\frac{1}{c_{1} - 1} \\left(T c_{1} - b i - oC - oG - oI\\right)", "EQV": "Y = C + G + I", "ID": "I^{d} = b i + oI", "YS": "Y^{s} = Y", "GD": "G = oG", "IDPGDPCD": "IDpGDpCD = - T c_{1} + Y c_{1} + b i + oC + oG + oI", "IDPGD": "IDpGD = b i + oG + oI"}
