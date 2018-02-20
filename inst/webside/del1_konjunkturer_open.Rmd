@@ -208,7 +208,7 @@ $$NX = EX - R\cdot IM = x_{1}R + x_{2}Y^{*} - R\cdot (m_{1}R + m_{2}Y)$$
 Legger til grunn i dette kurset at priseffekten dominerer innteksteffekten ([Marshall-Lerner betingelsen](https://en.wikipedia.org/wiki/Marshall%E2%80%93Lerner_condition)
 ):
 
-$$\frac{\Delta NX}{\Delta R}= \underset{priseffekt}{x_{1}} - \underset{inntektseffekt}{IM} + \underset{priseffekt}{m_{1}R} > 0  \\ \text{ (i dette kurset antar vi at dette holder, men i praksis vil det ta litt tid)}$$  
+$$\frac{\Delta NX}{\Delta R}= \underset{priseffekt}{x_{1}} - \underset{inntektseffekt}{IM} + \underset{priseffekt}{m_{1}R} > 0  \\~ \text{ (i dette kurset antar vi at dette holder, men i praksis vil det ta litt tid)}$$  
 
 
 
@@ -289,7 +289,7 @@ Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet under fast 
 
 ### Godemarkedet
 
-$$Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX \\ + R^{2}\cdot m_{1} \right]$$
+$$Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX \\~ + R^{2}\cdot m_{1} \right]$$
 
 ### Pengemarkedet
 
@@ -402,7 +402,7 @@ Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet under flyte
 
 ### Godemarkedet
 
-$$Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX \\ + R\cdot m_{1} \right]$$
+$$Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX \\~ + R\cdot m_{1} \right]$$
 
 ---
 
@@ -426,7 +426,7 @@ $$R=\frac{E(i,i^{*},E^{e})\cdot P^{*}}{P}=R(\frac{P^{*}}{P},i,i^{*},E^{e})$$
 
 Ved å sette det generelle utryyket for $R$ inn likevektsbetingelsen for godemarkedet, finner vi den samtidige likevekten i gode- og valutakursmarkedet:
 
-$$Y = \frac{1}{1-c(1-t) + R(\frac{P^{*}}{P},i,i^{*},E^{e}) \cdot m_{2}}  \left [ \overline{C} + \overline{I} \\ - b\cdot \overline{i} + \overline{G} + EX(R\Big(\frac{P^{*}}{P},i,i^{*},E^{e}\Big)) + R(\frac{P^{*}}{P},i,i^{*},E^{e})\cdot m_{1} \right]$$
+$$Y = \frac{1}{1-c(1-t) + R(\frac{P^{*}}{P},i,i^{*},E^{e}) \cdot m_{2}}  \left [ \overline{C} + \overline{I} \\~ - b\cdot \overline{i} + \overline{G} + EX(R\Big(\frac{P^{*}}{P},i,i^{*},E^{e}\Big)) + R(\frac{P^{*}}{P},i,i^{*},E^{e})\cdot m_{1} \right]$$
 
 Dersom Marhsall-Lerner betingelsen holder, er det mulig å vise (ikke pensum i dette kurset) at IS-BoP-kurven (flytende kurs)  er slakere enn IS-kurven (fast-kurs) 
 
@@ -559,6 +559,7 @@ skiftflytislmad
 
 
 ```{r echo=FALSE}
+library(ggplot2)
 a <- ggplot2::ggplot() + geom_label() + geom_line() + labs(title = 'AD-kurven', x = 'produksjon, inntekt (Y)', y = 'pris (P)') + theme_classic() + theme(legend.position="none")
 b <- ggplot2::ggplot() + geom_label() + labs(title = 'AD-kurven', x = 'produksjon, inntekt (Y)', y = 'pris (P)') +  theme_classic() + theme(legend.position="none")
 grid.arrange(skiftfastislmad,skiftflytislmad, a, b, ncol=2)
