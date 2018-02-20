@@ -14,7 +14,7 @@ bibliography: pensum.bib
 ```{r child = 'del1_konjunkturer_lukket.Rmd'}
 ```
 
-# Del 1: åpen økonomi
+# Del 1: liten åpen økonomi
 ```{r child = 'del1_konjunkturer_open.Rmd'}
 ```
 

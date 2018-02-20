@@ -469,13 +469,15 @@ stabflytendeislm
 
 Merk: I motsetning til under fastkurs,  har man under flytende kurs muligheten til å benytte pengepolikken til å stabilisere konjunktursvingningne. I Norge i dag er dette rådende pengepoltiske regimet, mens vi på 90-tallet og i etterkrigserioden praktiserte ulike former for fastkursregimer (ovenfor veid snitt av europeiske valutaer).
 
+---
 
-<!--
+## AD-AS modellen for en åpen økonomi
 
+### AD- likningen under fast og flytende kurs
 
-### AD-AS modellen for en åpen økonomi
+Utleder AD-kuren ved å se på effekten av prisreduksjon ($\Delta P<0$) i Mundell-Fleming modellen
+under fast og flytende kurs
 
-#### AD- likningen under fast og flytende kurs
 
 ```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
 ## AD fast kurs
@@ -557,17 +559,25 @@ skiftflytislmad
 
 
 ```{r echo=FALSE}
-grid.arrange(skiftflytislmad,skiftfastislmad, ncol=2)
+a <- ggplot2::ggplot() + geom_label() + geom_line() + labs(title = 'AD-kurven', x = 'produksjon, inntekt (Y)', y = 'pris (P)') + theme_classic() + theme(legend.position="none")
+b <- ggplot2::ggplot() + geom_label() + labs(title = 'AD-kurven', x = 'produksjon, inntekt (Y)', y = 'pris (P)') +  theme_classic() + theme(legend.position="none")
+grid.arrange(skiftfastislmad,skiftflytislmad, a, b, ncol=2)
 ```
 
+---
 
-#### AS kurven
+- Fast kurs
+    + Forbedrer nettoeksporten gjennom en depressierng av realvalutakursen
+  
+- Flytende kurs
+    + Forbedrer nettoeksporten gjennom en depressierng av realvalutakursen
+    + Høyere realpengemenge reduserer renta som igjen øker produksjonen  (samme som under lukket økonomi)
+
+---
+
+### AS kurven
 
 Adferdsligningene er de samme som for en lukket økonomi
 
-<!--
-#### AD-AS modellen for en fast valutakurs
+### AD-AS modellen under fast og flytende valutakursregime
 
-#### AD-AS modellen for en flytende valutakurs
-
--->
