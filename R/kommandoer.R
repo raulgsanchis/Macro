@@ -13,6 +13,12 @@ inst <- function(){
   #system('R CMD INSTALL --no-multiarch --with-keep.source MakroOEKB1115')
 }
 
+publisering <- function(){
+#  scp -r /home/joernih/R/x86_64-pc-linux-gnu-library/3.4/MakroOEKB1115/webside/_site adasextended@login.domeneshop.no:www/
+  #attom-46-langt-Lagge-anode#
+  #ssh adasextended@login.domeneshop.no
+}
+
 
 # system('/home/joernih/gitclones/teaching/ R CMD INSTALL --no-multiarch --with-keep.source MakroOEKB1115')
 

@@ -402,7 +402,7 @@ Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet under flyte
 
 ### Godemarkedet
 
-$$Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX \\~ + R\cdot m_{1} \right]$$
+$$Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX \\~ + R^{2}\cdot m_{1} \right]$$
 
 ---
 
@@ -426,7 +426,7 @@ $$R=\frac{E(i,i^{*},E^{e})\cdot P^{*}}{P}=R(\frac{P^{*}}{P},i,i^{*},E^{e})$$
 
 Ved å sette det generelle utryyket for $R$ inn likevektsbetingelsen for godemarkedet, finner vi den samtidige likevekten i gode- og valutakursmarkedet:
 
-$$Y = \frac{1}{1-c(1-t) + R(\frac{P^{*}}{P},i,i^{*},E^{e}) \cdot m_{2}}  \left [ \overline{C} + \overline{I} \\~ - b\cdot \overline{i} + \overline{G} + EX(R\Big(\frac{P^{*}}{P},i,i^{*},E^{e}\Big)) + R(\frac{P^{*}}{P},i,i^{*},E^{e})\cdot m_{1} \right]$$
+$$Y = \frac{1}{1-c(1-t) + R(\frac{P^{*}}{P},i,i^{*},E^{e}) \cdot m_{2}}  \left [ \overline{C} + \overline{I} \\~ - b\cdot \overline{i} + \overline{G} + EX(R\Big(\frac{P^{*}}{P},i,i^{*},E^{e}\Big)) + R^{2}(\frac{P^{*}}{P},i,i^{*},E^{e})\cdot m_{1} \right]$$
 
 Dersom Marhsall-Lerner betingelsen holder, er det mulig å vise (ikke pensum i dette kurset) at IS-BoP-kurven (flytende kurs)  er slakere enn IS-kurven (fast-kurs) 
 
@@ -558,6 +558,9 @@ skiftflytislmad
 ```
 
 
+---
+
+
 ```{r echo=FALSE}
 library(ggplot2)
 a <- ggplot2::ggplot() + geom_label() + geom_line() + labs(title = 'AD-kurven', x = 'produksjon, inntekt (Y)', y = 'pris (P)') + theme_classic() + theme(legend.position="none")
@@ -567,11 +570,13 @@ grid.arrange(skiftfastislmad,skiftflytislmad, a, b, ncol=2)
 
 ---
 
+Helningen på kurven kan forklares på bakgrunn av:
+
 - Fast kurs
-    + Forbedrer nettoeksporten gjennom en depressierng av realvalutakursen
+    + Forbedrer nettoeksporten gjennom en depressierng av realvalutakursen (Marshall-Lerner betingelsen)
   
 - Flytende kurs
-    + Forbedrer nettoeksporten gjennom en depressierng av realvalutakursen
+    + Forbedrer nettoeksporten gjennom en depressierng av realvalutakursen (Marshall-Lerner betingelsen)
     + Høyere realpengemenge reduserer renta som igjen øker produksjonen  (samme som under lukket økonomi)
 
 ---
@@ -579,6 +584,8 @@ grid.arrange(skiftfastislmad,skiftflytislmad, a, b, ncol=2)
 ### AS kurven
 
 Adferdsligningene er de samme som for en lukket økonomi
+
+<!--
 
 ### AD-AS modellen under fast og flytende valutakursregime
 

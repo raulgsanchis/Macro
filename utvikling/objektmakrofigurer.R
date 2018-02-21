@@ -100,6 +100,61 @@ Makrofigur$methods(grafiskstyle=function(labs=list(title=NULL, x=NULL, y=NULL),
 
 })
 
+## AD fast kurs
+#############################################################################################################
+iv <- list(i=2:6)
+openpar <- eopenpar <- sopenpar <- list(i_s=3.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+lukketpar <- elukketpar <- slukketpar <-  c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100, h = 10, k =1, Y = 130, m=1, t=0.4))
+fastislmoad <- Makrofigur(modellnavn='islmo')
+
+# Samtidig
+fastislmoad$numerisk(endvar=c('FastISC'), lukketpar=lukketpar, openpar=openpar, endrvar=iv, kat='init')
+fastislmoadtekst <- data.frame(kurve=c('IS','BoP'), farge=c('red', 'red'), x = c(2,openpar$i_s+openpar$rp+0.1), y = c(190, 205), xlim=130, ylim=2)
+fastislmoad$grafisknum(samlikv=list(x=c(openpar$i_s+openpar$rp), y=c(172)), dftekst=fastislmoadtekst, manuell=1)
+fastislmoad$ggtyper[[1]] + coord_flip()
+
+# Skift
+elukketpar$P <- 0.75
+fastislmoad$numerisk(endvar=c('FastISC'), lukketpar=elukketpar, openpar=eopenpar, endrvar=iv, kat='endringP')
+efastislmoadtekst <- data.frame(kurve=c("IS'",""), farge=c('red', 'red'), x = c(2,6), y = c(207, 200), xlim=130, ylim=2)
+fastislmoad$grafisknumappend(samlikv=list(x=c(openpar$i_s+openpar$rp), y=c(188)), dftekst=efastislmoadtekst, manuell=1, tilstand='endringP')
+fastislmoad$ggtyper[[2]] + coord_flip()
+
+# Styling
+fastislmoad$grafiskstyle(labs=list(title='Mundell-Fleming modellen - fast kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+                         skaleringx=list(label=c(TeX('$i_{0}}$')), breaks=c(3.75)),
+                         skaleringy=list(label=c(TeX('$Y_{0}}$')), breaks=c(172)),
+                         figurnr=1)
+
+samtidigfastislmad <- fastislmoad$ggtyper[[3]]  + coord_flip() + geom_line(data=data.frame(x=openpar$i_s+openpar$rp, y=130:200), aes(x,y), color ='black', size=0.5)
+samtidigfastislmad
+
+fastislmoad$grafiskstyle(labs=list(title='Mundell-Fleming modellen - fast kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+                         skaleringx=list(label=c(TeX('$i_{0}}$'),TeX('$i_{1}}$')), breaks=c(3.75, 3.75)),
+                         skaleringy=list(label=c(TeX('$Y_{0}}$'),TeX('$Y_{1}}$')), breaks=c(172, 188)),
+                         figurnr=2)
+
+skiftfastislmad <- fastislmoad$ggtyper[[4]]  + coord_flip() + geom_line(data=data.frame(x=openpar$i_s+openpar$rp, y=130:210), aes(x,y), color ='black', size=0.5)
+skiftfastislmad
+
+###########33
+
+## AD- AS fast kurs
+#############################################################################################################
+iv <- list(P=1:1.01)
+openpar <- eopenpar <- sopenpar <- list(i_s=3.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+lukketpar <- elukketpar <- slukketpar <-  c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100, h = 10, k =1, Y = 130, m=1, t=0.4))
+
+fastadlmo <- Makrofigur(modellnavn='adaso')
+fastadlmo$numerisk(endvar=c('SEQFastY','SEQFlytY'), lukketpar=lukketpar, openpar=openpar, endrvar=iv, kat='init')
+fastadlmotekst <- data.frame(kurve=c('AS'), farge=c('red'), x = c(3), y = c(150), xlim=c(145,150), ylim=c(3,4))
+fastadlmo$grafisknum(samlikv=list(x=3, y=150), dftekst=fastadlmotekst, manuell=1)
+fastadlmo$ggtyper[[1]] + coord_flip()
+fastadlmo$dfmodellres
+
+
+
+
 ## AD åpen flytende kurs
 #############################################################################################################
 iv <- list(i=2:7.5)
@@ -136,22 +191,6 @@ flytislmoad$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende ku
 
 skiftflytislmad <- flytislmoad$ggtyper[[4]]  + coord_flip()
 skiftflytislmad
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## IS-LM åpen flytende kurs
 #############################################################################################################
@@ -324,25 +363,6 @@ skiftfastislmad
 
 
 
-
-## AD- AS fast kurs
-#############################################################################################################
-iv <- list(P=2:4)
-
-openpar <- eopenpar <- sopenpar <- list(i_s=3.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
-lukketpar <- elukketpar <- slukketpar <-  c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100, h = 10,
-                                                 k =1, Y = 130, m=1, t=0.4,Pe=1, mu = 0.1, l_1=-20,l_2=1, z=1, A= 5,
-                                                 N=30, alpha = 1, Ac = 2))
-
-fastadlmo <- Makrofigur(modellnavn='adaso')
-fastadlmo$numerisk(endvar=c('SEQFastY','SEQFlytY'), lukketpar=lukketpar, openpar=openpar, endrvar=iv, kat='init')
-fastadlmotekst <- data.frame(kurve=c('AS'), farge=c('red'), x = c(3), y = c(150), xlim=c(145,150), ylim=c(3,4))
-fastadlmo$grafisknum(samlikv=list(x=3, y=150), dftekst=fastadlmotekst, manuell=1)
-fastadlmo$ggtyper[[1]] + coord_flip()
-
-
-fastadlmo$dfmodellres
-fastadlmo$dftransform()
 
 # #####################################################################################################################
 # #####################################################################################################################

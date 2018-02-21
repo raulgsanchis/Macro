@@ -398,7 +398,7 @@ $(document).ready(function () {
 <p>Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet under flytende kurs.</p>
 <div id="godemarkedet-1" class="section level3">
 <h3>Godemarkedet</h3>
-<p><span class="math display">\[Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX \\~ + R\cdot m_{1} \right]\]</span></p>
+<p><span class="math display">\[Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX \\~ + R^{2}\cdot m_{1} \right]\]</span></p>
 <hr />
 </div>
 <div id="pengemarkedet-1" class="section level3">
@@ -416,7 +416,7 @@ $(document).ready(function () {
 <p><span class="math display">\[R=\frac{E(i,i^{*},E^{e})\cdot P^{*}}{P}=R(\frac{P^{*}}{P},i,i^{*},E^{e})\]</span></p>
 <hr />
 <p>Ved å sette det generelle utryyket for <span class="math inline">\(R\)</span> inn likevektsbetingelsen for godemarkedet, finner vi den samtidige likevekten i gode- og valutakursmarkedet:</p>
-<p><span class="math display">\[Y = \frac{1}{1-c(1-t) + R(\frac{P^{*}}{P},i,i^{*},E^{e}) \cdot m_{2}}  \left [ \overline{C} + \overline{I} \\~ - b\cdot \overline{i} + \overline{G} + EX(R\Big(\frac{P^{*}}{P},i,i^{*},E^{e}\Big)) + R(\frac{P^{*}}{P},i,i^{*},E^{e})\cdot m_{1} \right]\]</span></p>
+<p><span class="math display">\[Y = \frac{1}{1-c(1-t) + R(\frac{P^{*}}{P},i,i^{*},E^{e}) \cdot m_{2}}  \left [ \overline{C} + \overline{I} \\~ - b\cdot \overline{i} + \overline{G} + EX(R\Big(\frac{P^{*}}{P},i,i^{*},E^{e}\Big)) + R^{2}(\frac{P^{*}}{P},i,i^{*},E^{e})\cdot m_{1} \right]\]</span></p>
 <p>Dersom Marhsall-Lerner betingelsen holder, er det mulig å vise (ikke pensum i dette kurset) at IS-BoP-kurven (flytende kurs) er slakere enn IS-kurven (fast-kurs)</p>
 <p><strong>Formelt</strong></p>
 <p><span class="math display">\[\underset{IS-BoP-kurven ( flytende-kurs)}{\frac{\Delta Y}{\Delta \overline{i}}} &lt; \underset{IS-kurven (fast-kurs)}{\frac{\Delta Y}{\Delta \overline{i}}} &lt; 0 \]</span></p>
@@ -446,16 +446,18 @@ $(document).ready(function () {
 <div id="ad--likningen-under-fast-og-flytende-kurs" class="section level3">
 <h3>AD- likningen under fast og flytende kurs</h3>
 <p>Utleder AD-kuren ved å se på effekten av prisreduksjon (<span class="math inline">\(\Delta P&lt;0\)</span>) i Mundell-Fleming modellen under fast og flytende kurs</p>
+<hr />
 <p><img src="del1_konjunkturer_open_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 <hr />
+<p>Helningen på kurven kan forklares på bakgrunn av:</p>
 <ul>
 <li>Fast kurs
 <ul>
-<li>Forbedrer nettoeksporten gjennom en depressierng av realvalutakursen</li>
+<li>Forbedrer nettoeksporten gjennom en depressierng av realvalutakursen (Marshall-Lerner betingelsen)</li>
 </ul></li>
 <li>Flytende kurs
 <ul>
-<li>Forbedrer nettoeksporten gjennom en depressierng av realvalutakursen</li>
+<li>Forbedrer nettoeksporten gjennom en depressierng av realvalutakursen (Marshall-Lerner betingelsen)</li>
 <li>Høyere realpengemenge reduserer renta som igjen øker produksjonen (samme som under lukket økonomi)</li>
 </ul></li>
 </ul>
@@ -464,6 +466,7 @@ $(document).ready(function () {
 <div id="as-kurven" class="section level3">
 <h3>AS kurven</h3>
 <p>Adferdsligningene er de samme som for en lukket økonomi</p>
+<p>&lt;!–</p>
 </div>
 <div id="ad-as-modellen-under-fast-og-flytende-valutakursregime" class="section level3">
 <h3>AD-AS modellen under fast og flytende valutakursregime</h3>
