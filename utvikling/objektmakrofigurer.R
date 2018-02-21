@@ -108,33 +108,45 @@ Makrofigur$methods(dftransform=function(){
   dfmodellres[['init']]
 })
 ##############################################################################################################################
-##############################################################################################################################
-iv <- list(i=2:6)
-iv2 <- list(P=seq(0.6,1.75, 0.05))
 openpar <- eopenpar <- sopenpar <- list(i_s=3.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
 lukketpar <- elukketpar <- slukketpar <-  c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50,P=1, M= 100, h = 10, k =1, Y = 130, m=1, t=0.4))
 fastislmoad <- Makrofigur(modellnavn='islmo')
 fastadas <- Makrofigur(modellnavn='adaso')
 flytadas <- Makrofigur(modellnavn='adaso')
-
+iv <- list(i=2:6)
 fastislmoad$numerisk(endvar=c('FastISC'), lukketpar=lukketpar, openpar=openpar, endrvar=iv, kat='init')
+iv2 <- list(P=seq(0.6,1.75, 0.05))
 lukketpar[lukketpar=c('P')] <- NULL
 fastadas$numerisk(endvar=c('SEQFastY'), lukketpar=lukketpar, openpar=openpar, endrvar=iv2, kat='init')
+iv3 <- list(P=seq(1,1.75, 0.05))
+flytadas$numerisk(endvar=c('SEQFlytY'), lukketpar=lukketpar, openpar=openpar, endrvar=iv3, kat='init')
+
+# Fast
 fastadas$dfmodellres
-
-flytadas$numerisk(endvar=c('SEQFlytendeY'), lukketpar=lukketpar, openpar=openpar, endrvar=iv2, kat='init')
-
-fastadasteksk <- data.frame(kurve=c("AD"), farge=c('red'), x=c(1.5), y=c(165), xlim=c(150,150),ylim=c(1.5,0.75))
-fastadas$grafisknum(samlikv=list(x=c(1,0.75), y=c(175,191)), dftekst=fastadasteksk)
+fastadastekst <- data.frame(kurve=c("AD-kurven fast kurs"), farge=c('red'), x=c(1.5), y=c(165), xlim=c(150,150), ylim=c(1.5,0.75))
+fastadas$grafisknum(samlikv=list(x=c(1,0.75), y=c(175,191)), dftekst=fastadastekst)
 fastadas$ggtyper[[1]] + coord_flip()
 
+# Flytende
+flytadas$dfmodellres
+flytadastekst <- data.frame(kurve=c("AD-kurven flytende kurs"), farge=c('red'), x=c(1.5), y=c(165), xlim=c(150,150),ylim=c(1.5,0.75))
+flytadas$grafisknum(samlikv=list(x=c(1,0.75), y=c(175,191)), dftekst=flytadastekst)
+flytadas$ggtyper[[1]] + coord_flip()
+
 # Samtidig
-fastislmoadtekst <- data.frame(kurve=c('IS','BoP'), farge=c('red', 'red'), x = c(2,openpar$i_s+openpar$rp+0.1),
-                               y = c(190, 195), xlim=150, ylim=2)
+fastislmoadtekst <- data.frame(kurve=c('IS','BoP'), farge=c('red', 'red'), x = c(2,openpar$i_s+openpar$rp+0.1), y = c(190, 195),
+                               xlim=150, ylim=2)
 fastislmoad$grafisknum(samlikv=list(x=c(openpar$i_s+openpar$rp), y=c(172)), dftekst=fastislmoadtekst, manuell=1)
 fastislmoad$ggtyper[[1]] + coord_flip()
 
-grid.arrange(fastislmoad$ggtyper[[1]] + coord_flip(), fastadas$ggtyper[[1]] + coord_flip())
+flytislmoadtekst <- data.frame(kurve=c('IS-BoP','LM'), farge=c('red', 'red'), x = c(2,7), y = c(190, 170),
+                               xlim=100, ylim=2)
+flytislmoad$grafisknum(samlikv=list(x=c(4.4), y=c(144)), dftekst=flytislmoadtekst, manuell=1)
+flytislmoad$ggtyper[[1]] + coord_flip()
+
+
+grid.arrange(fastislmoad$ggtyper[[1]] + coord_flip(), flytislmoad$ggtyper[[1]] + coord_flip(),
+             fastadas$ggtyper[[1]] + coord_flip(), flytadas$ggtyper[[1]] + coord_flip(), ncol = 2)
 
 
 # Skift
@@ -144,7 +156,11 @@ efastislmoadtekst <- data.frame(kurve=c("IS'",""), farge=c('red', 'red'), x = c(
 fastislmoad$grafisknumappend(samlikv=list(x=c(openpar$i_s+openpar$rp), y=c(188)), dftekst=efastislmoadtekst, manuell=1, tilstand='endringP')
 fastislmoad$ggtyper[[2]] + coord_flip()
 
-grid.arrange(fastislmoad$ggtyper[[2]] + coord_flip(), fastadas$ggtyper[[1]] + coord_flip())
+elukketpar$P <- 0.75
+flytislmoad$numerisk(endvar=c('FlytISCBoP','FlytLMC'), lukketpar=elukketpar, openpar=eopenpar, endrvar=iv, kat='endringG')
+eflytislmoadtekst <- data.frame(kurve=c("IS-BoP'","LM'"), farge=c('red', 'red'), x = c(2,7), y = c(207, 200), xlim=100, ylim=2)
+flytislmoad$grafisknumappend(samlikv=list(x=c(3.4), y=c(168)), dftekst=eflytislmoadtekst, manuell=1, tilstand='endringG')
+flytislmoad$ggtyper[[2]] + coord_flip()
 
 # Styling
 fastadas$grafiskstyle(labs=list(title='AD-ligningen', x='Prisnivå (P)', y='produksjon, inntekt (Y)'),
@@ -152,19 +168,29 @@ fastadas$grafiskstyle(labs=list(title='AD-ligningen', x='Prisnivå (P)', y='prod
                       skaleringy=list(label=c(TeX('$Y_{0}}$'),TeX('$Y_{1}}$')), breaks=c(172,180)),
                       figurnr=1)
 
-fastadkurve <- fastadas$ggtyper[[2]] + coord_flip()
 
 fastislmoad$grafiskstyle(labs=list(title='Mundell-Fleming modellen - fast kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
                          skaleringx=list(label=c(TeX('$i_{0}}$'),TeX('$i_{1}}$')), breaks=c(3.75, 3.75)),
                          skaleringy=list(label=c(TeX('$Y_{0}}$'),TeX('$Y_{1}}$')), breaks=c(172, 188)),
                          figurnr=2)
 
-skiftfastislmad <- fastislmoad$ggtyper[[4]]  + coord_flip() + geom_line(data=data.frame(x=openpar$i_s+openpar$rp, y=130:210), aes(x,y), color ='black', size=0.5)
-skiftfastislmad
+flytadas$grafiskstyle(labs=list(title='AD-ligningen', x='Prisnivå (P)', y='produksjon, inntekt (Y)'),
+                      skaleringx=list(label=c(TeX('$P_{0}}$'), TeX('$P_{1}}$')), breaks=c(1, 0.75)),
+                      skaleringy=list(label=c(TeX('$Y_{0}}$'),TeX('$Y_{1}}$')), breaks=c(172,180)),
+                      figurnr=1)
 
-grid.arrange(fastislmoad$ggtyper[[2]] + coord_flip(), fastadas$ggtyper[[1]] + coord_flip())
+flytislmoad$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+                         skaleringx=list(label=c(TeX('$i_{0}}$')), breaks=c(4.4)),
+                         skaleringy=list(label=c(TeX('$Y_{0}}$')), breaks=c(144)),
+                         figurnr=1)
 
-grid.arrange(skiftfastislmad,fastadkurve)
+
+samtidigflytislmad <- flytislmoad$ggtyper[[3]]  + coord_flip()
+skiftfastislmad <- fastislmoad$ggtyper[[3]]  + coord_flip() + geom_line(data=data.frame(x=openpar$i_s+openpar$rp, y=130:210), aes(x,y), color ='black', size=0.5)
+
+
+grid.arrange(skiftfastislmad,samtidigflytislmad,
+             fastadkurve, flytadkurve, ncol = 2)
 
 #
 #
