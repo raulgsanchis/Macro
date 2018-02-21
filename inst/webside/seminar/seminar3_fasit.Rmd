@@ -2,7 +2,6 @@
 output:
   html_notebook:
     css: seminar2.css
-  pdf_document: default
 ---
 
 <!--
@@ -44,7 +43,7 @@ $$u=\frac{U}{N}=1−\frac{L}{N}  \text{: bestemmer arbeidsledigheten}$$
 *Definisjonen av arbeidsledighet sammen med produktunksjonen gir*
 *$$u = 1- \frac{L}{N} = 1 - \frac{(Y/A)^{1/\alpha}}{N}$$*
 
-*Setter dette utrrykket inn i uttrykket ovenfor for arbeudsledighet*
+*Setter dette utrrykket inn i uttrykket ovenfor for arbeidsledighet*
 *$$P=(1+\mu)P^{e}F(1-\frac{(Y/A)^{1/\alpha}}{N},z)$$*
 
 *Differensierer (derriverer) så $P$ mhp $Y$*
