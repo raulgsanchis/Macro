@@ -7,6 +7,7 @@ library(ggplot2)
 library(gridExtra)
 library(grid)
 library(latex2exp)
+
 Makrofigur <- setRefClass("Makrofigur", fields = list(modell='vector', modellatr ='list',
                                                       plotvectorend='list', dfmodellres='list',
                                                       ggtyper='list'))

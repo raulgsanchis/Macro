@@ -23,7 +23,6 @@ publisering <- function(){
 # system('/home/joernih/gitclones/teaching/ R CMD INSTALL --no-multiarch --with-keep.source MakroOEKB1115')
 
 # Bygg nettside
-#
 # rmarkdown::render("test.Rmd", "html_document")
 # R CMD INSTALL --no-multiarch --with-keep.source MakroOEKB1115
 
