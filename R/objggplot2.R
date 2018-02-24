@@ -1,3 +1,8 @@
+#' A class description
+#'
+#' @import methods
+#' @export Makrofigur
+#' @exportClass Makrofigur
 Makrofigur <- setRefClass("Makrofigur", fields = list(modell='vector', modellatr ='list',
                                                       plotvectorend='list', dfmodellres='list',
                                                       ggtyper='list',
@@ -23,9 +28,11 @@ Makrofigur$methods(numerisk=function(endvar=NULL ,lukketpar=NULL, openpar=NULL, 
 
   exoparval <<- c(lukketpar, openpar, endrvar)
 
+  #browser()
+
   plotvectorend <<- list()
   for(mvar in endvar){
-    # mvar <- endvar[2]
+    # mvar <- endvar[1]
     endv <- list(eval(parse(text=  modellatr[[modell]][[mvar]]), exoparval))
     plotvectorend <<- append(plotvectorend, endv)
   }
@@ -64,11 +71,9 @@ Makrofigur$methods(grafisknumappend=function(samlikve=list(x=0, y=0),  dftekst=N
   samlikvedf <- data.frame(x=samlikve$x, y=samlikve$y)
 
   ggobjnumapp <- ggtyper[[length(ggtyper)]] +
-    geom_point(data=samlikvedf,aes(x=x, y=y)) +
-    geom_segment(data=samlikvedf,aes(x = x, y = y ,
-                                     xend = x, yend =  dftekst$xlim[1]), lty = 2) +
-    geom_segment(data=samlikvedf, aes(x = x, y = y ,
-                                      xend = dftekst$ylim[1], yend = y), lty = 2) +
+      geom_point(data=samlikvedf,aes(x=x, y=y)) +
+      geom_segment(data=samlikvedf,aes(x = x, y = y ,xend = x, yend =  dftekst$xlim[1]), lty = 2) +
+      geom_segment(data=samlikvedf, aes(x = x, y = y ,xend = dftekst$ylim[1], yend = y), lty = 2) +
     geom_line(data = dfmodellres[[tilstand]],
               aes(x = Iv, y = value, color = factor(variable))) +
     geom_text(data=dftekst, aes(x, y, label=kurve), color=dftekst$farge)

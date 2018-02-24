@@ -5,6 +5,81 @@ library(gridExtra)
 library(grid)
 library(latex2exp)
 ####################################
+# AD-AS
+openpar <- eopenpar <- sopenpar <- list(i_s=3.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+lukketpar <- elukketpar <- slukketpar <-  c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50,P=1, M= 100, h = 10, k =1, Y = 130, m=1, t=0.4,
+                                                 Pe=1, mu = 0.3, l_1=-5,l_2=1, z=1, A= 5,Ac = 2,
+                                                 N=48, alpha = 1))
+lukketpar[lukketpar=c('P')] <- NULL
+
+fastadas <- Makrofigur(modellnavn='adaso')
+flytadas <- Makrofigur(modellnavn='adaso')
+iv2 <- list(P=seq(0.6,1.5, 0.05))
+fastadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=openpar, endrvar=iv2, kat='init')
+iv3 <- list(P=seq(1,1.75, 0.05))
+flytadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=openpar, endrvar=iv3, kat='init')
+
+optverdier <- fastadas$optimering(tovectorlabel=c('SEQFastY', 'IAS', startv=c(1,100)))
+fastadastekst <- data.frame(kurve=c("AD-AS modellen"), farge=c('red'), x=c(1.5), y=c(165), xlim=c(150,150), ylim=c(0,0.))
+fastadas$grafisknum(samlikv=list(x=optverdier[[1]][1], y=optverdier[[1]][2]), dftekst=fastadastekst)
+fastadas$ggtyper[[1]]+coord_flip()
+
+# Kort sikt
+lukketpar$oG <- 60
+fastadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=openpar, endrvar=iv2, kat='endringG')
+fastadas$optimering(tovectorlabel=c('SEQFastY', 'IAS', startv=c(1,100)))
+efastadastekst <- data.frame(kurve=c("AD-AS modellen"), farge=c('red'), x=c(0), y=c(165), xlim=c(150,150), ylim=c(0,0))
+fastadas$grafisknumappend(samlikv=list(x=fastadas$optimeringv[[2]][1], y=fastadas$optimeringv[[2]][2]),
+                          dftekst=efastadastekst, manuell=1, tilstand='endringG')
+fastadas$ggtyper[[2]]+coord_flip()
+
+
+# Lang sikt
+lukketpar$Pe <- 1.2
+fastadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=openpar, endrvar=iv2, kat='oppdateringPe')
+fastadas$optimering(tovectorlabel=c('SEQFastY', 'IAS', startv=c(1,100)))
+efastadastekst <- data.frame(kurve=c("AD-AS modellen"), farge=c('red'), x=c(0), y=c(165), xlim=c(150,150), ylim=c(0,0))
+fastadas$grafisknumappend(samlikv=list(x=fastadas$optimeringv[[3]][1], y=fastadas$optimeringv[[3]][2]),
+                          dftekst=efastadastekst, manuell=1, tilstand='oppdateringPe')
+fastadas$ggtyper[[3]]+coord_flip()
+
+openpar$rp <- 0.5
+fastadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=openpar, endrvar=iv2, kat='endringRP')
+fastadas$optimering(tovectorlabel=c('SEQFastY', 'IAS', startv=c(1,100)))
+efastadastekst <- data.frame(kurve=c("AD-AS modellen"), farge=c('red'), x=c(0), y=c(165), xlim=c(150,150), ylim=c(0,0))
+fastadas$grafisknumappend(samlikv=list(x=fastadas$optimeringv[[4]][1], y=fastadas$optimeringv[[4]][2]),
+                          dftekst=efastadastekst, manuell=1, tilstand='endringRP')
+
+fastadas$ggtyper[[4]]+coord_flip()
+
+openpar$rp <- 1.2
+fastadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=openpar, endrvar=iv2, kat='oppdateringPe2')
+fastadas$optimering(tovectorlabel=c('SEQFastY', 'IAS', startv=c(1,100)))
+efastadastekst <- data.frame(kurve=c("AD-AS modellen"), farge=c('red'), x=c(0), y=c(165), xlim=c(150,150), ylim=c(0,0))
+fastadas$grafisknumappend(samlikv=list(x=fastadas$optimeringv[[4]][1], y=fastadas$optimeringv[[4]][2]),
+                          dftekst=efastadastekst, manuell=1, tilstand='oppdateringPe2')
+
+fastadas$ggtyper[[5]]+coord_flip()
+
+##################################################
+flytadastekst <- data.frame(kurve=c("AD-AS modellen"), farge=c('red'), x=c(1.5), y=c(165), xlim=c(150,150), ylim=c(1.5,0.75))
+flytadas$grafisknum(samlikv=list(x=c(1,0.75), y=c(175,191)), dftekst=flytadastekst)
+flytadas$optimering(tovectorlabel=c('SEQFastY', 'IAS', startv=c(1,100)))
+flytadas$grafisknum(samlikv=list(x=c(optverdier[1]), y=c(optverdier[2])), dftekst=fastadastekst)
+flytadas$ggtyper[[1]] + coord_flip()
+
+
+
+
+
+
+
+
+
+
+
+
+
 openpar <- eopenpar <- sopenpar <- list(i_s=3.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
 lukketpar <- elukketpar <- slukketpar <-  c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50,P=1, M= 100, h = 10, k =1, Y = 130, m=1, t=0.4))
 fastislmoad <- Makrofigur(modellnavn='islmo')

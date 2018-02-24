@@ -10,27 +10,26 @@ output:
 
 - Hva menes med intern og ekstern balanse?
 
-- Marshall- Lerner betingelsen
+- Marshall-Lerner betingelsen
 
 - Hva menes med en liten åpen økonomi?
 
 - Tre fundementale likninger
 
+- Ekstern balanse og fast kurs
+
 ## Mundell-Fleming modellen
-- Adferdsligninger i 
-### Fast-kurs
-- Still opp likvektsbetingelsen som gjelder for fast kurs
-- Skiftanalyse
-- Stabiliseringspolitikk
 ### Flytende kurs
 - Still opp likvektsbetingelsen som gjelder for flytende kurs
 - Skiftanalyse
+```{r}
+flytadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=openpar, endrvar=iv3, kat='init')
+
+```
+
 - Stabiliseringspolitikk
 
 ## AD-AS modellen
-### Fast-kurs
-- Skiftanalyse
-- Stabiliseringspolitikk
 
 ### Flytende kurs
 - Skiftanalyse

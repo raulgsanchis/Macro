@@ -1,4 +1,6 @@
-
+---
+output: html_notebook
+---
 
 ```{r include=FALSE}
 library(MakroOEKB1115)
@@ -7,124 +9,6 @@ library(ggplot2)
 library(gridExtra)
 library(grid)
 library(latex2exp)
-
-Makrofigur <- setRefClass("Makrofigur", fields = list(modell='vector', modellatr ='list',
-                                                      plotvectorend='list', dfmodellres='list',
-                                                      ggtyper='list',
-                                                      exoparval='vector',
-                                                      optimeringv='list'))
-
-Makrofigur$methods(initialize=function(modellnavn=NULL){
-
-  keynes <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/keynesequ.json'))
-  islml <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/islmequ.json'))
-  islmo <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/islmocequ.json'))
-  adasl <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/adascequ.json'))
-  adaso <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/inst/webside/jupyter/adasoequ.json'))
-
-  modellatr <<- list(keynes=keynes, islml=islml, islmo=islmo, adasl=adasl, adaso=adaso)
-
-  modell <<- c(modellnavn)
-
-})
-
-
-Makrofigur$methods(numerisk=function(endvar=NULL ,lukketpar=NULL, openpar=NULL, endrvar = NULL, kat=NULL){
-
-  exoparval <<- c(lukketpar, openpar, endrvar)
-
-  plotvectorend <<- list()
-  for(mvar in endvar){
-    # mvar <- endvar[2]
-    endv <- list(eval(parse(text=  modellatr[[modell]][[mvar]]), exoparval))
-    plotvectorend <<- append(plotvectorend, endv)
-  }
-
-  names(plotvectorend) <<- endvar
-
-  DFmodellres <- data.frame(Iv= endrvar[[1]], plotvectorend) %>% reshape2::melt(id.vars = c("Iv"))
-
-  dfmodellres[[kat]] <<- DFmodellres
-
-})
-
-Makrofigur$methods(grafisknum=function(samlikv=list(x=NULL, y=NULL), dftekst=NULL, manuell=1){
-
-  #browser()
-
-  ggobjnum <- ggplot() + geom_line(data = dfmodellres[[1]], aes(x = Iv, y = value, color = factor(variable))) +
-  geom_point(aes(x=samlikv$x, y=samlikv$y)) +
-  geom_segment(aes(x = samlikv$x, y = samlikv$y ,
-                   xend = samlikv$x, yend = dftekst$xlim[1]), lty = 2) +
-  geom_segment(aes(x = samlikv$x, y = samlikv$y ,
-                   xend = dftekst$ylim[1], yend = samlikv$y), lty = 2) +
-  geom_text(data=dftekst, aes(x, y, label=kurve), color=dftekst$farge)
-
-  #browser()
-
-  ggtyper <<- list(ggobjnum)
-
-})
-
-Makrofigur$methods(grafisknumappend=function(samlikve=list(x=0, y=0),  dftekst=NULL, manuell=1,
-                                             tilstand=NULL){
-
-  #browser()
-
-  samlikvedf <- data.frame(x=samlikve$x, y=samlikve$y)
-
-  ggobjnumapp <- ggtyper[[length(ggtyper)]] +
-    geom_point(data=samlikvedf,aes(x=x, y=y)) +
-    geom_segment(data=samlikvedf,aes(x = x, y = y ,
-                                     xend = x, yend =  dftekst$xlim[1]), lty = 2) +
-    geom_segment(data=samlikvedf, aes(x = x, y = y ,
-                                      xend = dftekst$ylim[1], yend = y), lty = 2) +
-    geom_line(data = dfmodellres[[tilstand]],
-              aes(x = Iv, y = value, color = factor(variable))) +
-    geom_text(data=dftekst, aes(x, y, label=kurve), color=dftekst$farge)
-
-  ggtyper <<- append(ggtyper,list(ggobjnumapp))
-
-})
-
-Makrofigur$methods(grafiskstyle=function(labs=list(title=NULL, x=NULL, y=NULL),
-                                         skaleringx=NULL,
-                                         skaleringy=NULL,
-                                         fargelinje=c('black','black'),
-                                         figurnr = NULL){
-
-  #browser()
-  nrfigur <- c(length(ggtyper), figurnr)[ifelse(is.null(figurnr)==TRUE,1,2)]
-
-  ggobjsty <- ggtyper[[nrfigur]] + labs(title = labs$title, x = labs$x, y = labs$y) +
-    scale_x_continuous(labels = skaleringx$label, breaks=skaleringx$breaks, limits=skaleringx$limits) +
-    scale_y_continuous(labels = skaleringy$label, breaks=skaleringy$breaks, limits=skaleringy$limits) +
-    scale_colour_manual(values =fargelinje) +
-    theme_classic() + theme(legend.position="none")
-
-  ggtyper <<- append(ggtyper,list(ggobjsty))
-
-})
-
-Makrofigur$methods(optimering=function(tovectorlabel=c('SEQFastY', 'IAS'), startv=c(1,100)){
-
-  #browser()
-
-  rearexoparval <- rev(exoparval)[-1]
-  y <- c(startv[1], startv[2])
-  optolign <- function(y){
-
-    sokevar <- setNames(as.list(c(y[1])), c(names(rev(exoparval)[1])))
-
-    c(Y1 = y[2] - eval(parse(text=modellatr[[modell]][tovectorlabel[1]]), c(rearexoparval, sokevar)),
-      Y2 = y[2] - eval(parse(text=modellatr[[modell]][tovectorlabel[2]]), c(rearexoparval, sokevar)))
-  }
-
-  yeae <- c(rootSolve::multiroot(f = optolign, start = y, positive = TRUE)$root)
-
-  optimeringv <<- append(optimeringv,list(yeae))
-
-})
 ```
 
 ## Grunnleggende  bakgrunnkunnskaper
@@ -469,6 +353,8 @@ Merk: I motsetning til under fastkurs,  har man under flytende kurs muligheten t
 
 ## AD-AS modellen for en åpen økonomi
 
+---
+
 ### AD- likningen under fast og flytende kurs
 
 Utleder AD-kuren ved å se på effekten av prisreduksjon ($\Delta P<0$) i Mundell-Fleming modellen
@@ -597,9 +483,34 @@ Helningen på AD-kurven styres av:
 
 Adferdsligningene er de samme som for en lukket økonomi
 
-<!--
-
 ### AD-AS modellen under fast og flytende valutakursregime
 
 
--->
+```{r}
+# AD-AS
+openpar <- eopenpar <- sopenpar <- list(i_s=3.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+lukketpar <- elukketpar <- slukketpar <-  c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50,P=1, M= 100, h = 10, k =1, Y = 130, m=1, t=0.4,
+                                                 Pe=1, mu = 0.3, l_1=-5,l_2=1, z=1, A= 5,Ac = 2,
+                                                 N=48, alpha = 1))
+lukketpar[lukketpar=c('P')] <- NULL
+
+fastadas <- Makrofigur(modellnavn='adaso')
+flytadas <- Makrofigur(modellnavn='adaso')
+iv2 <- list(P=seq(0.6,1.5, 0.05))
+fastadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=openpar, endrvar=iv2, kat='init')
+iv3 <- list(P=seq(1,1.75, 0.05))
+
+flytadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=openpar, endrvar=iv3, kat='init')
+optverdier <- fastadas$optimering(tovectorlabel=c('SEQFastY', 'IAS', startv=c(1,100)))
+fastadastekst <- data.frame(kurve=c("AD-AS modellen"), farge=c('red'), x=c(1.5), y=c(165), xlim=c(150,150), ylim=c(1.5,0.75))
+fastadas$grafisknum(samlikv=list(x=c(optverdier[1]), y=c(optverdier[2])), dftekst=fastadastekst)
+
+#fastadas$ggtyper[[1]] + coord_flip()
+
+flytadastekst <- data.frame(kurve=c("AD-AS modellen"), farge=c('red'), x=c(1.5), y=c(165), xlim=c(150,150), ylim=c(1.5,0.75))
+flytadas$grafisknum(samlikv=list(x=c(1,0.75), y=c(175,191)), dftekst=flytadastekst)
+flytadas$optimering(tovectorlabel=c('SEQFastY', 'IAS', startv=c(1,100)))
+flytadas$grafisknum(samlikv=list(x=c(optverdier[1]), y=c(optverdier[2])), dftekst=fastadastekst)
+flytadas$ggtyper[[1]] + coord_flip()
+```
+

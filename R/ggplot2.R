@@ -265,3 +265,4 @@ gpmakro <- function(data = moltmacrousa, variables = c('lngdp', 'hptrendg'), kat
     labs(color = "Variabel:",x = labt$x, y = labt$y) +
     labs(x = labt$x, y = labt$y)
 }
+

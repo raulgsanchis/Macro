@@ -10,7 +10,9 @@ output: html_notebook
 > A society that puts equality before freedom will get neither. A society that puts freedom before equality will get a high degree of both.” 
 ― Milton Friedman
 
+<!--
 [Forelesning uke 9: Stiliserte fakta om økonomisk vekst]()
 
 [Forelesning uke 10: Solow-Modellen for økonomisk vekst]()
 
+-->
