@@ -47,13 +47,13 @@ Makrofigur$methods(grafisknum=function(samlikv=list(x=NULL, y=NULL), dftekst=NUL
 
   #browser()
 
-  ggobjnum <- ggplot() + geom_line(data = dfmodellres[[1]], aes(x = Iv, y = value, color = factor(variable))) +
-    geom_point(aes(x=samlikv$x, y=samlikv$y)) +
-    geom_segment(aes(x = samlikv$x, y = samlikv$y ,
-                     xend = samlikv$x, yend = dftekst$xlim[1]), lty = 2) +
-    geom_segment(aes(x = samlikv$x, y = samlikv$y ,
-                     xend = dftekst$ylim[1], yend = samlikv$y), lty = 2) +
-    geom_text(data=dftekst, aes(x, y, label=kurve), color=dftekst$farge)
+  ggobjnum <- ggplot() + geom_line(data = dfmodellres[[1]], aes(x = Iv, y = value, color = factor(variable))) #+
+    #geom_point(aes(x=samlikv$x, y=samlikv$y)) +
+    #geom_segment(aes(x = samlikv$x, y = samlikv$y ,
+    #                 xend = samlikv$x, yend = dftekst$xlim[1]), lty = 2) +
+    #geom_segment(aes(x = samlikv$x, y = samlikv$y ,
+    #                 xend = dftekst$ylim[1], yend = samlikv$y), lty = 2) +
+    #geom_text(data=dftekst, aes(x, y, label=kurve), color=dftekst$farge)
 
   #browser()
 
@@ -107,29 +107,62 @@ Makrofigur$methods(dftransform=function(){
 
   dfmodellres[['init']]
 })
+
+##############################################################################################################################
+# AD-AS
+openpar <- eopenpar <- sopenpar <- list(i_s=3.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+lukketpar <- elukketpar <- slukketpar <-  c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50,P=1, M= 100, h = 10, k =1, Y = 130, m=1, t=0.4,
+                                                 Pe=1, mu = 0.3, l_1=-5,l_2=1, z=1, A= 5,Ac = 2,
+                                                 N=48, alpha = 1))
+lukketpar[lukketpar=c('P')] <- NULL
+
+fastadas <- Makrofigur(modellnavn='adaso')
+flytadas <- Makrofigur(modellnavn='adaso')
+iv2 <- list(P=seq(0.6,1.5, 0.05))
+fastadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=openpar, endrvar=iv2, kat='init')
+iv3 <- list(P=seq(1,1.75, 0.05))
+flytadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=openpar, endrvar=iv3, kat='init')
+
+fastadastekst <- data.frame(kurve=c("AD-AS modellen"), farge=c('red'), x=c(1.5), y=c(165), xlim=c(150,150), ylim=c(1.5,0.75))
+fastadas$grafisknum(samlikv=list(x=c(1,0.75), y=c(175,191)), dftekst=fastadastekst)
+fastadas$ggtyper[[1]] + coord_flip()
+
+flytadastekst <- data.frame(kurve=c("AD-AS modellen"), farge=c('red'), x=c(1.5), y=c(165), xlim=c(150,150), ylim=c(1.5,0.75))
+flytadas$grafisknum(samlikv=list(x=c(1,0.75), y=c(175,191)), dftekst=flytadastekst)
+flytadas$ggtyper[[1]] + coord_flip()
+
+
+
+
 ##############################################################################################################################
 openpar <- eopenpar <- sopenpar <- list(i_s=3.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
 lukketpar <- elukketpar <- slukketpar <-  c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50,P=1, M= 100, h = 10, k =1, Y = 130, m=1, t=0.4))
 fastislmoad <- Makrofigur(modellnavn='islmo')
+flytislmoad <- Makrofigur(modellnavn='islmo')
 fastadas <- Makrofigur(modellnavn='adaso')
 flytadas <- Makrofigur(modellnavn='adaso')
 iv <- list(i=2:6)
 fastislmoad$numerisk(endvar=c('FastISC'), lukketpar=lukketpar, openpar=openpar, endrvar=iv, kat='init')
+flytislmoad$numerisk(endvar=c('FlytISCBoP','FlytLMC'), lukketpar=lukketpar, openpar=openpar, endrvar=iv, kat='init')
 iv2 <- list(P=seq(0.6,1.75, 0.05))
 lukketpar[lukketpar=c('P')] <- NULL
 fastadas$numerisk(endvar=c('SEQFastY'), lukketpar=lukketpar, openpar=openpar, endrvar=iv2, kat='init')
 iv3 <- list(P=seq(1,1.75, 0.05))
 flytadas$numerisk(endvar=c('SEQFlytY'), lukketpar=lukketpar, openpar=openpar, endrvar=iv3, kat='init')
 
+
+
+
 # Fast
 fastadas$dfmodellres
-fastadastekst <- data.frame(kurve=c("AD-kurven fast kurs"), farge=c('red'), x=c(1.5), y=c(165), xlim=c(150,150), ylim=c(1.5,0.75))
+fastadastekst <- data.frame(kurve=c("AD-kurven"), farge=c('red'), x=c(1.5), y=c(165), xlim=c(150,150), ylim=c(1.5,0.75))
 fastadas$grafisknum(samlikv=list(x=c(1,0.75), y=c(175,191)), dftekst=fastadastekst)
 fastadas$ggtyper[[1]] + coord_flip()
 
+
 # Flytende
 flytadas$dfmodellres
-flytadastekst <- data.frame(kurve=c("AD-kurven flytende kurs"), farge=c('red'), x=c(1.5), y=c(165), xlim=c(150,150),ylim=c(1.5,0.75))
+flytadastekst <- data.frame(kurve=c("AD-kurven"), farge=c('red'), x=c(1.5), y=c(165), xlim=c(150,150),ylim=c(1.5,0.75))
 flytadas$grafisknum(samlikv=list(x=c(1,0.75), y=c(175,191)), dftekst=flytadastekst)
 flytadas$ggtyper[[1]] + coord_flip()
 
@@ -148,7 +181,6 @@ flytislmoad$ggtyper[[1]] + coord_flip()
 grid.arrange(fastislmoad$ggtyper[[1]] + coord_flip(), flytislmoad$ggtyper[[1]] + coord_flip(),
              fastadas$ggtyper[[1]] + coord_flip(), flytadas$ggtyper[[1]] + coord_flip(), ncol = 2)
 
-
 # Skift
 elukketpar$P <- 0.75
 fastislmoad$numerisk(endvar=c('FastISC'), lukketpar=elukketpar, openpar=eopenpar, endrvar=iv, kat='endringP')
@@ -163,33 +195,37 @@ flytislmoad$grafisknumappend(samlikv=list(x=c(3.4), y=c(168)), dftekst=eflytislm
 flytislmoad$ggtyper[[2]] + coord_flip()
 
 # Styling
-fastadas$grafiskstyle(labs=list(title='AD-ligningen', x='Prisnivå (P)', y='produksjon, inntekt (Y)'),
+fastadas$grafiskstyle(labs=list(title='AD-kurven - fast kurs', x='Prisnivå (P)', y='produksjon, inntekt (Y)'),
                       skaleringx=list(label=c(TeX('$P_{0}}$'), TeX('$P_{1}}$')), breaks=c(1, 0.75)),
                       skaleringy=list(label=c(TeX('$Y_{0}}$'),TeX('$Y_{1}}$')), breaks=c(172,180)),
                       figurnr=1)
 
+fastadkurve <- fastadas$ggtyper[[2]]
 
 fastislmoad$grafiskstyle(labs=list(title='Mundell-Fleming modellen - fast kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
                          skaleringx=list(label=c(TeX('$i_{0}}$'),TeX('$i_{1}}$')), breaks=c(3.75, 3.75)),
                          skaleringy=list(label=c(TeX('$Y_{0}}$'),TeX('$Y_{1}}$')), breaks=c(172, 188)),
                          figurnr=2)
 
-flytadas$grafiskstyle(labs=list(title='AD-ligningen', x='Prisnivå (P)', y='produksjon, inntekt (Y)'),
+flytadas$grafiskstyle(labs=list(title='AD-kurven flytende kurs', x='Prisnivå (P)', y='produksjon, inntekt (Y)'),
                       skaleringx=list(label=c(TeX('$P_{0}}$'), TeX('$P_{1}}$')), breaks=c(1, 0.75)),
                       skaleringy=list(label=c(TeX('$Y_{0}}$'),TeX('$Y_{1}}$')), breaks=c(172,180)),
                       figurnr=1)
 
+flytadkurve <- flytadas$ggtyper[[2]]
+
+
 flytislmoad$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
                          skaleringx=list(label=c(TeX('$i_{0}}$')), breaks=c(4.4)),
                          skaleringy=list(label=c(TeX('$Y_{0}}$')), breaks=c(144)),
-                         figurnr=1)
+                         figurnr=2)
 
 
-samtidigflytislmad <- flytislmoad$ggtyper[[3]]  + coord_flip()
 skiftfastislmad <- fastislmoad$ggtyper[[3]]  + coord_flip() + geom_line(data=data.frame(x=openpar$i_s+openpar$rp, y=130:210), aes(x,y), color ='black', size=0.5)
+skiftflytislmad <- flytislmoad$ggtyper[[3]]  + coord_flip()
 
 
-grid.arrange(skiftfastislmad,samtidigflytislmad,
+grid.arrange(skiftfastislmad, skiftflytislmad,
              fastadkurve, flytadkurve, ncol = 2)
 
 #

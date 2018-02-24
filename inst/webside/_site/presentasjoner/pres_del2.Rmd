@@ -5,6 +5,6 @@ output:
 ---
 
 
-```{r plan, child = '../abc.Rmd'}
-
+```{r plan, child = '../del2_vekst.Rmd'}
+#../del1_konjunkturer.Rmd
 ```

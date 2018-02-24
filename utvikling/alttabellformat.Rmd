@@ -1,0 +1,96 @@
+---
+title: "Regresjonsmodelltabeller"
+output:
+  pdf_document: default
+  word_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+library(texreg)
+library(knitr)
+require(memisc)
+library(pryr)
+opts_chunk$set(echo = TRUE)
+rmd_format <- opts_knit$get("rmarkdown.pandoc.to")
+## returns "html" or "latex"
+```
+
+```{r}
+lm0 <- lm(sr ~ pop15 + pop75,              data = LifeCycleSavings)
+lm1 <- lm(sr ~                 dpi + ddpi, data = LifeCycleSavings)
+lm2 <- lm(sr ~ pop15 + pop75 + dpi + ddpi, data = LifeCycleSavings)
+```
+
+
+
+```{r, echo = FALSE}
+report_regression <- function(model, format, ...){
+#        print(paste("format: ", rmd_format))
+#       print(paste("dots: ", pryr::named_dots()))
+#        print(paste("model: ", model))
+
+  if(format == "html"){
+    require(texreg)
+    htmlreg(model,  ...)
+  } else if(format == "latex"){
+    require(stargazer)
+    stargazer(model, notes="stargazer html", ...)
+  } else if(format == "docx") {
+    require(memisc)
+    require(readr)
+   
+    m <- mtable(lm0, lm1, lm2, coef.style="stat", summary.stats=c("R-squared","N"))
+#    m <- mtable(lm0,lm1,lm2)
+    t <- paste(memisc::mtable_format_delim(m), collapse = "")
+    t <- read_delim(t, delim = "\t",  
+                    escape_backslash = TRUE, 
+                    na = character(), 
+                    col_names = TRUE)
+    names(t)[1] <- ""
+    kable(t)
+  } else {
+          print("Only html, latex and docx supported.")
+  }
+}
+```
+
+
+##Datene
+
+## This section contains a table, not ugly text
+```{r tab1, results = "asis", echo = FALSE}
+
+
+report_regression(model=list(lm0, lm1, lm2), format = rmd_format)
+```
+
+
+
+```{r}
+y <- function(x=2, ...){
+  cat(x)
+  a <- list(...)
+}
+
+t <- y(a=1,b=2, c=10, x=12)
+t
+
+require(graphics)
+
+# create a plotting structure
+pts <- list(x = cars[,1], y = cars[,2])
+plot(pts)
+
+is.pairlist(.Options)  # a user-level pairlist
+
+## "pre-allocate" an empty list of length 5
+vector("list", 5)
+
+# Argument lists
+# Note the specification of a "..." argument:
+a <- formals(y) <- alist(x = , ... = list(a=1,b=2) )
+y
+```
+
