@@ -5,6 +5,78 @@ library(gridExtra)
 library(grid)
 library(latex2exp)
 ####################################
+# Samtidig likevekt
+ropenpar <- list(i_s=3.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+rlukketpar <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50,P=1, M= 100, h = 10, k =1, Y = 130, m=1, t=0.4,
+                     Pe=1.5, mu = 0.3, l_1=-5,l_2=1, z=1, A= 5,Ac = 2,
+                     N=48, alpha = 1))
+riv2 <- list(P=seq(0.6,1.75, 0.05))
+
+rfastadas <- Makrofigur(modellnavn='adaso')
+
+rfastadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=rlukketpar, openpar=ropenpar, endrvar=riv2, kat='initrev')
+rfastadas$dfmodellres
+
+rfastadas$optimering(tovectorlabel=c('SEQFastY', 'IAS', startv=c(1,100)))
+
+rfastadastekst <- data.frame(kurve=c("AD", "AS"), farge=c('red'), x=c(0.65,1.5), y=c(210,205), xlim=c(150,150),
+                             ylim=c(0.5,0))
+fastadas$grafisknum(samlikv=list(x=optverdier[[1]][1], y=optverdier[[1]][2]), dftekst=rfastadastekst)
+
+fastadas$ggtyper[[1]]+coord_flip()
+
+
+
+# Kort sikt
+openpar$rp <- 2
+fastadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=openpar, endrvar=iv2, kat='redG')
+fastadas$optimering(tovectorlabel=c('SEQFastY', 'IAS', startv=c(1,100)))
+efastadastekst <- data.frame(kurve=c("AD'", "AS"), farge=c('red'), x=c(0.65,1.5), y=c(220,205), xlim=c(150,150),
+                             ylim=c(0.5,0))
+fastadas$grafisknumappend(samlikv=list(x=fastadas$optimeringv[[2]][1], y=fastadas$optimeringv[[2]][2]),
+                          dftekst=efastadastekst, manuell=1, tilstand='endringG')
+
+fastadas$ggtyper[[2]]+coord_flip()
+
+# Lang sikt
+lukketpar$Pe <- 0.85
+fastadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=openpar, endrvar=iv2, kat='oppdateringPe')
+fastadas$optimering(tovectorlabel=c('SEQFastY', 'IAS', startv=c(1,100)))
+efastadastekst <- data.frame(kurve=c("AD'", "AS'"), farge=c('red'), x=c(0.65,1.5), y=c(220,185), xlim=c(150,150),
+                             ylim=c(0.5,0))
+fastadas$grafisknumappend(samlikv=list(x=fastadas$optimeringv[[3]][1], y=fastadas$optimeringv[[3]][2]),
+                          dftekst=efastadastekst, manuell=1, tilstand='oppdateringPe')
+
+fastadas$ggtyper[[3]]+coord_flip()
+
+## Styling
+fastadas$grafiskstyle(labs=list(title='AD-AS modellen - fast kurs', x='prisnivå (P)', y='produksjon, inntekt (Y)'),
+                      skaleringx=list(label=c(TeX('$P_{3}}$')), breaks=c(fastadas$optimeringv[[1]][1])),
+                      skaleringy=list(label=c(TeX('$Y_{3}}$')), breaks=c(fastadas$optimeringv[[1]][2])),
+                      figurnr=1)
+
+samtidigr <- fastadas$ggtyper[[4]]+coord_flip()
+
+
+fastadas$grafiskstyle(labs=list(title='AD-AS modellen - fast kurs', x='prisnivå (P)', y='produksjon, inntekt (Y)'),
+                      skaleringx=list(label=c(TeX('$P_{0}}$'), TeX('$P_{1}}$')), breaks=c(fastadas$optimeringv[[1]][1], fastadas$optimeringv[[2]][1])),
+                      skaleringy=list(label=c(TeX('$Y_{0}}$'), TeX('$Y_{1}}$')), breaks=c(fastadas$optimeringv[[1]][2], fastadas$optimeringv[[2]][2])),
+                      figurnr=2)
+
+skiftris <- fastadas$ggtyper[[5]] + coord_flip()
+
+
+fastadas$grafiskstyle(labs=list(title='AD-AS modellen - fast kurs', x='prisnivå (P)', y='produksjon, inntekt (Y)'),
+                      skaleringx=list(label=c(TeX('P^{N}$'), TeX('$P_{1}}$'), TeX('$P_{2}}$')),
+                                      breaks=c(fastadas$optimeringv[[1]][1], fastadas$optimeringv[[2]][1], 1.37)),
+                      skaleringy=list(label=c(TeX('$Y_{3}=Y^{N}$'), TeX('$Y_{1}}$')), breaks=c(fastadas$optimeringv[[1]][2], fastadas$optimeringv[[2]][2])),
+                      figurnr=3)
+
+stabinteks <- fastadas$ggtyper[[6]] + coord_flip()
+stabinteks
+
+
+
 # AD-AS
 openpar <- eopenpar <- sopenpar <- list(i_s=3.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
 lukketpar <- elukketpar <- slukketpar <-  c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50,P=1, M= 100, h = 10, k =1, Y = 130, m=1, t=0.4,
@@ -19,8 +91,10 @@ fastadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=open
 iv3 <- list(P=seq(1,1.75, 0.05))
 flytadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=openpar, endrvar=iv3, kat='init')
 
+# Samtidig likevekt
 optverdier <- fastadas$optimering(tovectorlabel=c('SEQFastY', 'IAS', startv=c(1,100)))
-fastadastekst <- data.frame(kurve=c("AD-AS modellen"), farge=c('red'), x=c(1.5), y=c(165), xlim=c(150,150), ylim=c(0,0.))
+fastadastekst <- data.frame(kurve=c("AD", "AS"), farge=c('red'), x=c(0.65,1.5), y=c(210,205), xlim=c(150,150),
+                            ylim=c(0.5,0))
 fastadas$grafisknum(samlikv=list(x=optverdier[[1]][1], y=optverdier[[1]][2]), dftekst=fastadastekst)
 fastadas$ggtyper[[1]]+coord_flip()
 
@@ -28,20 +102,68 @@ fastadas$ggtyper[[1]]+coord_flip()
 lukketpar$oG <- 60
 fastadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=openpar, endrvar=iv2, kat='endringG')
 fastadas$optimering(tovectorlabel=c('SEQFastY', 'IAS', startv=c(1,100)))
-efastadastekst <- data.frame(kurve=c("AD-AS modellen"), farge=c('red'), x=c(0), y=c(165), xlim=c(150,150), ylim=c(0,0))
+efastadastekst <- data.frame(kurve=c("AD'", "AS"), farge=c('red'), x=c(0.65,1.5), y=c(220,205), xlim=c(150,150),
+                             ylim=c(0.5,0))
 fastadas$grafisknumappend(samlikv=list(x=fastadas$optimeringv[[2]][1], y=fastadas$optimeringv[[2]][2]),
                           dftekst=efastadastekst, manuell=1, tilstand='endringG')
+
 fastadas$ggtyper[[2]]+coord_flip()
 
-
 # Lang sikt
-lukketpar$Pe <- 1.2
+lukketpar$Pe <- 1.5
 fastadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=openpar, endrvar=iv2, kat='oppdateringPe')
 fastadas$optimering(tovectorlabel=c('SEQFastY', 'IAS', startv=c(1,100)))
-efastadastekst <- data.frame(kurve=c("AD-AS modellen"), farge=c('red'), x=c(0), y=c(165), xlim=c(150,150), ylim=c(0,0))
+efastadastekst <- data.frame(kurve=c("AD'", "AS'"), farge=c('red'), x=c(0.65,1.5), y=c(220,185), xlim=c(150,150),
+                             ylim=c(0.5,0))
 fastadas$grafisknumappend(samlikv=list(x=fastadas$optimeringv[[3]][1], y=fastadas$optimeringv[[3]][2]),
                           dftekst=efastadastekst, manuell=1, tilstand='oppdateringPe')
+
 fastadas$ggtyper[[3]]+coord_flip()
+
+## Styling
+#x0 = c(TeX('$Y_{0}=Y^{N}$')),
+fastadas$grafiskstyle(labs=list(title='AD-AS modellen - fast kurs', x='prisnivå (P)', y='produksjon, inntekt (Y)'),
+                      skaleringx=list(label=c(TeX('$P_{0}}$')), breaks=c(fastadas$optimeringv[[1]][1])),
+                      skaleringy=list(label=c(TeX('$Y_{0}}$')), breaks=c(fastadas$optimeringv[[1]][2])),
+                      figurnr=1)
+
+
+samtidig <- fastadas$ggtyper[[4]]+coord_flip()
+samtidig
+
+fastadas$grafiskstyle(labs=list(title='AD-AS modellen - fast kurs', x='prisnivå (P)', y='produksjon, inntekt (Y)'),
+                      skaleringx=list(label=c(TeX('$P_{0}}$'), TeX('$P_{1}}$')), breaks=c(fastadas$optimeringv[[1]][1], fastadas$optimeringv[[2]][1])),
+                      skaleringy=list(label=c(TeX('$Y_{0}}$'), TeX('$Y_{1}}$')), breaks=c(fastadas$optimeringv[[1]][2], fastadas$optimeringv[[2]][2])),
+                      figurnr=2)
+
+skiftoff <- fastadas$ggtyper[[5]] + coord_flip()
+skiftoff
+
+fastadas$grafiskstyle(labs=list(title='AD-AS modellen - fast kurs', x='prisnivå (P)', y='produksjon, inntekt (Y)'),
+                      skaleringx=list(label=c(TeX('P^{N}$'), TeX('$P_{1}}$'), TeX('$P_{2}}$')),
+                                      breaks=c(fastadas$optimeringv[[1]][1], fastadas$optimeringv[[2]][1], 1.37)),
+                      skaleringy=list(label=c(TeX('$Y_{3}=Y^{N}$'), TeX('$Y_{1}}$')), breaks=c(fastadas$optimeringv[[1]][2], fastadas$optimeringv[[2]][2])),
+                      figurnr=3)
+
+staboff <- fastadas$ggtyper[[6]] + coord_flip()
+staboff
+
+
+###
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 openpar$rp <- 0.5
 fastadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=openpar, endrvar=iv2, kat='endringRP')

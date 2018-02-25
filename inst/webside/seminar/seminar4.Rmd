@@ -4,7 +4,7 @@ output:
     css: seminar2.css
 ---
 
-# Seminar 4 (uke 10): Mundell-Fleming og AD-AS modellen under fast og flytende kurs 
+# Seminar 4 (uke 10): Mundell-Fleming og AD ligningen under fast og flytende kurs 
 ## Åpen økonomi
 
 1. Hvilke virkemidler har myndighetene for å stabilisere konjunkturene under henholdsvis et fast og flytende kurs regime?
@@ -59,6 +59,15 @@ $$EX = x_{1}\cdot R + x_{2}\cdot Y^{*} \text{: eksport}$$
 ### Samtidig likevekt
 
 6. Løs for likevektsbetingelsen under hhv. fast og flytende kurs og vis grafisk den samtidige likevekten
+
+*Fast kurs:*
+$$\text{IS}$$
+$$\text{BoP}$$
+
+*Flytende kursen:*
+$$\text{IS}$$
+$$\text{LM}$$
+$$\text{BoP}$$
 
 7. Hvor er helningen på IS-BoP ligningen (flytende kurs) slakere enn IS-kurven?
 

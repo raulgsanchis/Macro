@@ -101,7 +101,6 @@ $$Y = AE \equiv  C + I + G$$
 ---
 
 ### Adferdsligninger
-
 #### Husholdninger
 
 $$C =  \overline{C} + c(Y - T)$$
@@ -822,7 +821,7 @@ emsadaslikevekt
 
 Tolkning: Korrekte prisforventninger fører til et negativt skift i AS-kuren helt produksjonen og arbeidsledigheten er tilbake til sitt naturlige likvektsnivå.
 
-- Sentralt poeng: Korrekte prisforventninger medfører at modellen innehar selvkorrigerende mekanismer
+- Sentralt poeng: Korrekte prisforventninger medfører at modellen innehar selvkorrigerende mekanismer mot intern balanse
 
 ---
  
