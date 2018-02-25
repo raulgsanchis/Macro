@@ -6,35 +6,88 @@ output:
 
 # Seminar 4 (uke 10): Mundell-Fleming og AD-AS modellen under fast og flytende kurs 
 ## Åpen økonomi
-- Hvilke virkemidler har myndighetene for å stabilisere konjunkturene under henholdsvis et fast og flytende kurs regime?
 
-- Hva menes med intern og ekstern balanse?
+1. Hvilke virkemidler har myndighetene for å stabilisere konjunkturene under henholdsvis et fast og flytende kurs regime?
 
-- Marshall-Lerner betingelsen
+*Fast kurs: Endringer i offentlige utgifter (G), Endringer i skatter (T)* 
+*Flytende kurs: Endringer i offentlige utgifter (G), Endringer i skatter (T) og  Pengepolitikk (M/(i))*
 
-- Hva menes med en liten åpen økonomi?
+2. Hva menes med intern og ekstern balanse?
 
-- Tre fundementale likninger
+*Intern balanse: Produksjonsgapet er lukket $Y-Y^{*}=0$*
 
-- Ekstern balanse og fast kurs
+*Ekstern balanse: Utenlandsgjelden er på et bærekraftig nivå (kan betjenes uten problemer)*
+
+3. Hva menes med en liten åpen økonomi?
+
+*Liten: Det som skjer i utlandet påvirker landets økonomi, men ikke omvendt*
+
+*Åpner: Handler med andre land i form av import og eksport av varer og tjenester*
+
+
+4. Hvis at partietsbetingelsen kan omformuleres til:
+
+$$E=\frac{(1+i^{*})}{(1+i)}E^{e}\text{ flytende kurs}$$
+
+
+$$i=i^{*} \text{ fast kurs (troverdig)}$$
+
+5. Hva skjer i de to regimene dersom denne betingelsen ikke holder med likhet?
+
+*Flytende kurs: $E>\frac{(1+i^{*})}{(1+i)}E^{e} \Leftrightarrow (1+i)>\frac{E^{e}}{E}(1+i^{*})$*
+
+*Høyere avkastning av å investere i innlandet sammenlignet med utlandet. Investorene vil derfor reallokere sine portefølje
+ved å plassere mer i norsk valuta. Dette vil øke etterspørselen etter norske kroner, og med det presse kronekursen oppover (appresiering) inntil lbetingelsen igjen er oppfylt med likhet. Resonnmentet bli motsatt dersom ulikheten er gitt ved <.*
+
+*Fast kurs: $i>i^{*}$*
+
+*Her vil forventet avkastning av å investere i innlandet være høyere enn utlandet, men ingen aktør vil 
+selge til den oppgitte valutakursen (fordi det medfører tap) annet enn sentralbanken (som er forpliktet).
+Sentralbankens valutareserver vil derfor måtte øke, eller tømmes dersom fortegnet for ulikheten er motsatt (<).
+På litt sikt kan ikke denne ulikheten holde, og sentralbanken må enten foreta en oppskrivning (realappresiering) 
+eller nedskrivning (devaluering) av kronekursen, eller forlate hele fastkursregimet.*
 
 ## Mundell-Fleming modellen
-### Flytende kurs
-- Still opp likvektsbetingelsen som gjelder for flytende kurs
-- Skiftanalyse
-```{r}
-flytadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=openpar, endrvar=iv3, kat='init')
 
-```
+Vi benyttter samme modell som gitt under seminar 2 og 3:
+$$C = \overline{C} + c_{1}(Y-T) - c_{2}\cdot i \text{ :husholdningen}$$
+$$I = \overline{I} - b\cdot i \text{ :private realinvesteringer}$$
+$$G = \overline{G} \text{ og } T=\overline{T} \text{: offentlige myndigheter}$$ 
+$$EX = x_{1}\cdot R + x_{2}\cdot Y^{*} \text{: eksport}$$
+*$$IM= - m_{1}\cdot R + m_{2}\cdot Y \text{: import}$$
 
-- Stabiliseringspolitikk
+### Samtidig likevekt
+
+6. Løs for likevektsbetingelsen under hhv. fast og flytende kurs og vis grafisk den samtidige likevekten
+
+7. Hvor er helningen på IS-BoP ligningen (flytende kurs) slakere enn IS-kurven?
+
+*Det skyldes at en lavere (høyere) rente gir en depresiering (appresiering) av valutakursen 
+som følge av udekke renteparitet (see oppgave). Økt depresiering bidrar til en svekkelse av 
+realvalutakursen som gir en økningen i nettoeksporten (Marshall-Lerner betingelsen). Det er denne etterspørseløkningen
+som gjør at kurven blir slakere*
+
+8. Under et flytende kurs regime, se for deg en situasjon med økte private realinvesteringer $\Delta I>0$ ('animal spirits') som etterhvert  motvirket av en kontraktiv pengepolitikk og illustrer dette grafisk et diagram ved bruk av Mundell-Fleming modellen.
+
+*Grafisk løsning kommer litt senere*
 
 ## AD-AS modellen
 
-### Flytende kurs
-- Skiftanalyse
-- Stabiliseringspolitikk
+# AD-kurven
 
-Helningen på IS-kurvene er slakere under flytende kurs som en følge av at vi inkluder leddet
+9. Vis og forklar hvorfor AD-kurven er fallende under et fast og flytende kurs regime.
 
-Devaluering og revaluering
+*Fast kurs*
+
+*(1) Økt nettoeksport: Lavere produktpriser fører til en en svekkelse (depresiering) av 
+realvalutakursen som gir en økningen i nettoeksporten (Marshall-Lerner betingelsen)*
+
+*Flytende kurs:*
+
+*(1) Økt nettoeksport: Lavere produktpriser fører til en en svekkelse (depresiering) av 
+realvalutakursen som gir en økningen i nettoeksporten (Marshall-Lerner betingelsen)*
+
+*(2) Økt realpengemengde (samme forklaring som under lukket økonomi): Reduserte produktpriser øker realpengemengden. I pengemarkedet fører dette til en redusert rentenivå. Den reduserte renta medfører økt etterspørsel pga lavere private realinvesteringer og konsum (merk: dette poenget er nytt, sammenlignet med den modellen som ble satt opp i forelesningen), som initierer en positiv multiplikatoreffekt siden økt  etterspørsel fører til mindre konsum som fører til redusert etterspørsel osv.*
+
+*Se forelesningsnotatene for grafisk løsning*
+

@@ -177,52 +177,68 @@ $(document).ready(function () {
 <h1>Seminar 4 (uke 10): Mundell-Fleming og AD-AS modellen under fast og flytende kurs</h1>
 <div id="apen-konomi" class="section level2">
 <h2>Åpen økonomi</h2>
-<ul>
-<li><p>Hvilke virkemidler har myndighetene for å stabilisere konjunkturene under henholdsvis et fast og flytende kurs regime?</p></li>
-<li><p>Hva menes med intern og ekstern balanse?</p></li>
-<li><p>Marshall-Lerner betingelsen</p></li>
-<li><p>Hva menes med en liten åpen økonomi?</p></li>
-<li><p>Tre fundementale likninger</p></li>
-<li><p>Ekstern balanse og fast kurs</p></li>
-</ul>
+<ol style="list-style-type: decimal">
+<li>Hvilke virkemidler har myndighetene for å stabilisere konjunkturene under henholdsvis et fast og flytende kurs regime?</li>
+</ol>
+<p><em>Fast kurs: Endringer i offentlige utgifter (G), Endringer i skatter (T)</em> <em>Flytende kurs: Endringer i offentlige utgifter (G), Endringer i skatter (T) og Pengepolitikk (M/(i))</em></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Hva menes med intern og ekstern balanse?</li>
+</ol>
+<p><em>Intern balanse: Produksjonsgapet er lukket <span class="math inline">\(Y-Y^{*}=0\)</span></em></p>
+<p><em>Ekstern balanse: Utenlandsgjelden er på et bærekraftig nivå (kan betjenes uten problemer)</em></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Hva menes med en liten åpen økonomi?</li>
+</ol>
+<p><em>Liten: Det som skjer i utlandet påvirker landets økonomi, men ikke omvendt</em></p>
+<p><em>Åpner: Handler med andre land i form av import og eksport av varer og tjenester</em></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Hvis at partietsbetingelsen kan omformuleres til:</li>
+</ol>
+<p><span class="math display">\[E=\frac{(1+i^{*})}{(1+i)}E^{e}\text{ flytende kurs}\]</span></p>
+<p><span class="math display">\[i=i^{*} \text{ fast kurs (troverdig)}\]</span></p>
+<ol start="5" style="list-style-type: decimal">
+<li>Hva skjer i de to regimene dersom denne betingelsen ikke holder med likhet?</li>
+</ol>
+<p><em>Flytende kurs: <span class="math inline">\(E&gt;\frac{(1+i^{*})}{(1+i)}E^{e} \Leftrightarrow (1+i)&gt;\frac{E^{e}}{E}(1+i^{*})\)</span></em></p>
+<p><em>Høyere avkastning av å investere i innlandet sammenlignet med utlandet. Investorene vil derfor reallokere sine portefølje ved å plassere mer i norsk valuta. Dette vil øke etterspørselen etter norske kroner, og med det presse kronekursen oppover (appresiering) inntil lbetingelsen igjen er oppfylt med likhet. Resonnmentet bli motsatt dersom ulikheten er gitt ved &lt;.</em></p>
+<p><em>Fast kurs: <span class="math inline">\(i&gt;i^{*}\)</span></em></p>
+<p><em>Her vil forventet avkastning av å investere i innlandet være høyere enn utlandet, men ingen aktør vil selge til den oppgitte valutakursen (fordi det medfører tap) annet enn sentralbanken (som er forpliktet). Sentralbankens valutareserver vil derfor måtte øke, eller tømmes dersom fortegnet for ulikheten er motsatt (&lt;). På litt sikt kan ikke denne ulikheten holde, og sentralbanken må enten foreta en oppskrivning (realappresiering) eller nedskrivning (devaluering) av kronekursen, eller forlate hele fastkursregimet.</em></p>
 </div>
 <div id="mundell-fleming-modellen" class="section level2">
 <h2>Mundell-Fleming modellen</h2>
-<div id="flytende-kurs" class="section level3">
-<h3>Flytende kurs</h3>
-<ul>
-<li>Still opp likvektsbetingelsen som gjelder for flytende kurs</li>
-<li>Skiftanalyse</li>
-</ul>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmx5dGFkYXMkbnVtZXJpc2soZW5kdmFyPWMoJ1NFUUZhc3RZJywgJ0lBUycpLCBsdWtrZXRwYXI9bHVra2V0cGFyLCBvcGVucGFyPW9wZW5wYXIsIGVuZHJ2YXI9aXYzLCBrYXQ9J2luaXQnKVxuXG5gYGAifQ== -->
-<pre class="r"><code>flytadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=openpar, endrvar=iv3, kat='init')
-</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<ul>
-<li>Stabiliseringspolitikk</li>
-</ul>
+<p>Vi benyttter samme modell som gitt under seminar 2 og 3: <span class="math display">\[C = \overline{C} + c_{1}(Y-T) - c_{2}\cdot i \text{ :husholdningen}\]</span> <span class="math display">\[I = \overline{I} - b\cdot i \text{ :private realinvesteringer}\]</span> <span class="math display">\[G = \overline{G} \text{ og } T=\overline{T} \text{: offentlige myndigheter}\]</span> <span class="math display">\[EX = x_{1}\cdot R + x_{2}\cdot Y^{*} \text{: eksport}\]</span> *<span class="math display">\[IM= - m_{1}\cdot R + m_{2}\cdot Y \text{: import}\]</span></p>
+<div id="samtidig-likevekt" class="section level3">
+<h3>Samtidig likevekt</h3>
+<ol start="6" style="list-style-type: decimal">
+<li><p>Løs for likevektsbetingelsen under hhv. fast og flytende kurs og vis grafisk den samtidige likevekten</p></li>
+<li><p>Hvor er helningen på IS-BoP ligningen (flytende kurs) slakere enn IS-kurven?</p></li>
+</ol>
+<p><em>Det skyldes at en lavere (høyere) rente gir en depresiering (appresiering) av valutakursen som følge av udekke renteparitet (see oppgave). Økt depresiering bidrar til en svekkelse av realvalutakursen som gir en økningen i nettoeksporten (Marshall-Lerner betingelsen). Det er denne etterspørseløkningen som gjør at kurven blir slakere</em></p>
+<ol start="8" style="list-style-type: decimal">
+<li>Under et flytende kurs regime, se for deg en situasjon med økte private realinvesteringer <span class="math inline">\(\Delta I&gt;0\)</span> (‘animal spirits’) som etterhvert motvirket av en kontraktiv pengepolitikk og illustrer dette grafisk et diagram ved bruk av Mundell-Fleming modellen.</li>
+</ol>
+<p><em>Grafisk løsning kommer litt senere</em></p>
 </div>
 </div>
 <div id="ad-as-modellen" class="section level2">
 <h2>AD-AS modellen</h2>
-<div id="flytende-kurs-1" class="section level3">
-<h3>Flytende kurs</h3>
-<ul>
-<li>Skiftanalyse</li>
-<li>Stabiliseringspolitikk</li>
-</ul>
-<p>Helningen på IS-kurvene er slakere under flytende kurs som en følge av at vi inkluder leddet</p>
-<p>Devaluering og revaluering</p>
+</div>
+</div>
+<div id="ad-kurven" class="section level1">
+<h1>AD-kurven</h1>
+<ol start="9" style="list-style-type: decimal">
+<li>Vis og forklar hvorfor AD-kurven er fallende under et fast og flytende kurs regime.</li>
+</ol>
+<p><em>Fast kurs</em></p>
+<p><em>(1) Økt nettoeksport: Lavere produktpriser fører til en en svekkelse (depresiering) av realvalutakursen som gir en økningen i nettoeksporten (Marshall-Lerner betingelsen)</em></p>
+<p><em>Flytende kurs:</em></p>
+<p><em>(1) Økt nettoeksport: Lavere produktpriser fører til en en svekkelse (depresiering) av realvalutakursen som gir en økningen i nettoeksporten (Marshall-Lerner betingelsen)</em></p>
+<p><em>(2) Økt realpengemengde (samme forklaring som under lukket økonomi): Reduserte produktpriser øker realpengemengden. I pengemarkedet fører dette til en redusert rentenivå. Den reduserte renta medfører økt etterspørsel pga lavere private realinvesteringer og konsum (merk: dette poenget er nytt, sammenlignet med den modellen som ble satt opp i forelesningen), som initierer en positiv multiplikatoreffekt siden økt etterspørsel fører til mindre konsum som fører til redusert etterspørsel osv.</em></p>
+<p><em>Se forelesningsnotatene for grafisk løsning</em></p>
 <!-- rnb-text-end -->
 </div>
-</div>
-</div>
 
-<div id="rmd-source-code">LS0tCm91dHB1dDoKICBodG1sX25vdGVib29rOgogICAgY3NzOiBzZW1pbmFyMi5jc3MKLS0tCgojIFNlbWluYXIgNCAodWtlIDEwKTogTXVuZGVsbC1GbGVtaW5nIG9nIEFELUFTIG1vZGVsbGVuIHVuZGVyIGZhc3Qgb2cgZmx5dGVuZGUga3VycyAKIyMgw4VwZW4gw7hrb25vbWkKLSBIdmlsa2Ugdmlya2VtaWRsZXIgaGFyIG15bmRpZ2hldGVuZSBmb3Igw6Ugc3RhYmlsaXNlcmUga29uanVua3R1cmVuZSB1bmRlciBoZW5ob2xkc3ZpcyBldCBmYXN0IG9nIGZseXRlbmRlIGt1cnMgcmVnaW1lPwoKLSBIdmEgbWVuZXMgbWVkIGludGVybiBvZyBla3N0ZXJuIGJhbGFuc2U/CgotIE1hcnNoYWxsLUxlcm5lciBiZXRpbmdlbHNlbgoKLSBIdmEgbWVuZXMgbWVkIGVuIGxpdGVuIMOlcGVuIMO4a29ub21pPwoKLSBUcmUgZnVuZGVtZW50YWxlIGxpa25pbmdlcgoKLSBFa3N0ZXJuIGJhbGFuc2Ugb2cgZmFzdCBrdXJzCgojIyBNdW5kZWxsLUZsZW1pbmcgbW9kZWxsZW4KIyMjIEZseXRlbmRlIGt1cnMKLSBTdGlsbCBvcHAgbGlrdmVrdHNiZXRpbmdlbHNlbiBzb20gZ2plbGRlciBmb3IgZmx5dGVuZGUga3VycwotIFNraWZ0YW5hbHlzZQpgYGB7cn0KZmx5dGFkYXMkbnVtZXJpc2soZW5kdmFyPWMoJ1NFUUZhc3RZJywgJ0lBUycpLCBsdWtrZXRwYXI9bHVra2V0cGFyLCBvcGVucGFyPW9wZW5wYXIsIGVuZHJ2YXI9aXYzLCBrYXQ9J2luaXQnKQoKYGBgCgotIFN0YWJpbGlzZXJpbmdzcG9saXRpa2sKCiMjIEFELUFTIG1vZGVsbGVuCgojIyMgRmx5dGVuZGUga3VycwotIFNraWZ0YW5hbHlzZQotIFN0YWJpbGlzZXJpbmdzcG9saXRpa2sKCkhlbG5pbmdlbiBww6UgSVMta3VydmVuZSBlciBzbGFrZXJlIHVuZGVyIGZseXRlbmRlIGt1cnMgc29tIGVuIGbDuGxnZSBhdiBhdCB2aSBpbmtsdWRlciBsZWRkZXQKCkRldmFsdWVyaW5nIG9nIHJldmFsdWVyaW5nCg==</div>
+<div id="rmd-source-code">LS0tCm91dHB1dDoKICBodG1sX25vdGVib29rOgogICAgY3NzOiBzZW1pbmFyMi5jc3MKLS0tCgojIFNlbWluYXIgNCAodWtlIDEwKTogTXVuZGVsbC1GbGVtaW5nIG9nIEFELUFTIG1vZGVsbGVuIHVuZGVyIGZhc3Qgb2cgZmx5dGVuZGUga3VycyAKIyMgw4VwZW4gw7hrb25vbWkKCjEuIEh2aWxrZSB2aXJrZW1pZGxlciBoYXIgbXluZGlnaGV0ZW5lIGZvciDDpSBzdGFiaWxpc2VyZSBrb25qdW5rdHVyZW5lIHVuZGVyIGhlbmhvbGRzdmlzIGV0IGZhc3Qgb2cgZmx5dGVuZGUga3VycyByZWdpbWU/CgoqRmFzdCBrdXJzOiBFbmRyaW5nZXIgaSBvZmZlbnRsaWdlIHV0Z2lmdGVyIChHKSwgRW5kcmluZ2VyIGkgc2thdHRlciAoVCkqIAoqRmx5dGVuZGUga3VyczogRW5kcmluZ2VyIGkgb2ZmZW50bGlnZSB1dGdpZnRlciAoRyksIEVuZHJpbmdlciBpIHNrYXR0ZXIgKFQpIG9nICBQZW5nZXBvbGl0aWtrIChNLyhpKSkqCgoyLiBIdmEgbWVuZXMgbWVkIGludGVybiBvZyBla3N0ZXJuIGJhbGFuc2U/CgoqSW50ZXJuIGJhbGFuc2U6IFByb2R1a3Nqb25zZ2FwZXQgZXIgbHVra2V0ICRZLVleeyp9PTAkKgoKKkVrc3Rlcm4gYmFsYW5zZTogVXRlbmxhbmRzZ2plbGRlbiBlciBww6UgZXQgYsOmcmVrcmFmdGlnIG5pdsOlIChrYW4gYmV0amVuZXMgdXRlbiBwcm9ibGVtZXIpKgoKMy4gSHZhIG1lbmVzIG1lZCBlbiBsaXRlbiDDpXBlbiDDuGtvbm9taT8KCipMaXRlbjogRGV0IHNvbSBza2plciBpIHV0bGFuZGV0IHDDpXZpcmtlciBsYW5kZXRzIMO4a29ub21pLCBtZW4gaWtrZSBvbXZlbmR0KgoKKsOFcG5lcjogSGFuZGxlciBtZWQgYW5kcmUgbGFuZCBpIGZvcm0gYXYgaW1wb3J0IG9nIGVrc3BvcnQgYXYgdmFyZXIgb2cgdGplbmVzdGVyKgoKCjQuIEh2aXMgYXQgcGFydGlldHNiZXRpbmdlbHNlbiBrYW4gb21mb3JtdWxlcmVzIHRpbDoKCiQkRT1cZnJhY3soMStpXnsqfSl9eygxK2kpfUVee2V9XHRleHR7IGZseXRlbmRlIGt1cnN9JCQKCgokJGk9aV57Kn0gXHRleHR7IGZhc3Qga3VycyAodHJvdmVyZGlnKX0kJAoKNS4gSHZhIHNramVyIGkgZGUgdG8gcmVnaW1lbmUgZGVyc29tIGRlbm5lIGJldGluZ2Vsc2VuIGlra2UgaG9sZGVyIG1lZCBsaWtoZXQ/CgoqRmx5dGVuZGUga3VyczogJEU+XGZyYWN7KDEraV57Kn0pfXsoMStpKX1FXntlfSBcTGVmdHJpZ2h0YXJyb3cgKDEraSk+XGZyYWN7RV57ZX19e0V9KDEraV57Kn0pJCoKCipIw7h5ZXJlIGF2a2FzdG5pbmcgYXYgw6UgaW52ZXN0ZXJlIGkgaW5ubGFuZGV0IHNhbW1lbmxpZ25ldCBtZWQgdXRsYW5kZXQuIEludmVzdG9yZW5lIHZpbCBkZXJmb3IgcmVhbGxva2VyZSBzaW5lIHBvcnRlZsO4bGplCnZlZCDDpSBwbGFzc2VyZSBtZXIgaSBub3JzayB2YWx1dGEuIERldHRlIHZpbCDDuGtlIGV0dGVyc3DDuHJzZWxlbiBldHRlciBub3Jza2Uga3JvbmVyLCBvZyBtZWQgZGV0IHByZXNzZSBrcm9uZWt1cnNlbiBvcHBvdmVyIChhcHByZXNpZXJpbmcpIGlubnRpbCBsYmV0aW5nZWxzZW4gaWdqZW4gZXIgb3BwZnlsdCBtZWQgbGlraGV0LiBSZXNvbm5tZW50ZXQgYmxpIG1vdHNhdHQgZGVyc29tIHVsaWtoZXRlbiBlciBnaXR0IHZlZCA8LioKCipGYXN0IGt1cnM6ICRpPmleeyp9JCoKCipIZXIgdmlsIGZvcnZlbnRldCBhdmthc3RuaW5nIGF2IMOlIGludmVzdGVyZSBpIGlubmxhbmRldCB2w6ZyZSBow7h5ZXJlIGVubiB1dGxhbmRldCwgbWVuIGluZ2VuIGFrdMO4ciB2aWwgCnNlbGdlIHRpbCBkZW4gb3BwZ2l0dGUgdmFsdXRha3Vyc2VuIChmb3JkaSBkZXQgbWVkZsO4cmVyIHRhcCkgYW5uZXQgZW5uIHNlbnRyYWxiYW5rZW4gKHNvbSBlciBmb3JwbGlrdGV0KS4KU2VudHJhbGJhbmtlbnMgdmFsdXRhcmVzZXJ2ZXIgdmlsIGRlcmZvciBtw6V0dGUgw7hrZSwgZWxsZXIgdMO4bW1lcyBkZXJzb20gZm9ydGVnbmV0IGZvciB1bGlraGV0ZW4gZXIgbW90c2F0dCAoPCkuClDDpSBsaXR0IHNpa3Qga2FuIGlra2UgZGVubmUgdWxpa2hldGVuIGhvbGRlLCBvZyBzZW50cmFsYmFua2VuIG3DpSBlbnRlbiBmb3JldGEgZW4gb3Bwc2tyaXZuaW5nIChyZWFsYXBwcmVzaWVyaW5nKSAKZWxsZXIgbmVkc2tyaXZuaW5nIChkZXZhbHVlcmluZykgYXYga3JvbmVrdXJzZW4sIGVsbGVyIGZvcmxhdGUgaGVsZSBmYXN0a3Vyc3JlZ2ltZXQuKgoKIyMgTXVuZGVsbC1GbGVtaW5nIG1vZGVsbGVuCgpWaSBiZW55dHR0ZXIgc2FtbWUgbW9kZWxsIHNvbSBnaXR0IHVuZGVyIHNlbWluYXIgMiBvZyAzOgokJEMgPSBcb3ZlcmxpbmV7Q30gKyBjX3sxfShZLVQpIC0gY197Mn1cY2RvdCBpIFx0ZXh0eyA6aHVzaG9sZG5pbmdlbn0kJAokJEkgPSBcb3ZlcmxpbmV7SX0gLSBiXGNkb3QgaSBcdGV4dHsgOnByaXZhdGUgcmVhbGludmVzdGVyaW5nZXJ9JCQKJCRHID0gXG92ZXJsaW5le0d9IFx0ZXh0eyBvZyB9IFQ9XG92ZXJsaW5le1R9IFx0ZXh0ezogb2ZmZW50bGlnZSBteW5kaWdoZXRlcn0kJCAKJCRFWCA9IHhfezF9XGNkb3QgUiArIHhfezJ9XGNkb3QgWV57Kn0gXHRleHR7OiBla3Nwb3J0fSQkCiokJElNPSAtIG1fezF9XGNkb3QgUiArIG1fezJ9XGNkb3QgWSBcdGV4dHs6IGltcG9ydH0kJAoKIyMjIFNhbXRpZGlnIGxpa2V2ZWt0Cgo2LiBMw7hzIGZvciBsaWtldmVrdHNiZXRpbmdlbHNlbiB1bmRlciBoaHYuIGZhc3Qgb2cgZmx5dGVuZGUga3VycyBvZyB2aXMgZ3JhZmlzayBkZW4gc2FtdGlkaWdlIGxpa2V2ZWt0ZW4KCjcuIEh2b3IgZXIgaGVsbmluZ2VuIHDDpSBJUy1Cb1AgbGlnbmluZ2VuIChmbHl0ZW5kZSBrdXJzKSBzbGFrZXJlIGVubiBJUy1rdXJ2ZW4/CgoqRGV0IHNreWxkZXMgYXQgZW4gbGF2ZXJlIChow7h5ZXJlKSByZW50ZSBnaXIgZW4gZGVwcmVzaWVyaW5nIChhcHByZXNpZXJpbmcpIGF2IHZhbHV0YWt1cnNlbiAKc29tIGbDuGxnZSBhdiB1ZGVra2UgcmVudGVwYXJpdGV0IChzZWUgb3BwZ2F2ZSkuIMOYa3QgZGVwcmVzaWVyaW5nIGJpZHJhciB0aWwgZW4gc3Zla2tlbHNlIGF2IApyZWFsdmFsdXRha3Vyc2VuIHNvbSBnaXIgZW4gw7hrbmluZ2VuIGkgbmV0dG9la3Nwb3J0ZW4gKE1hcnNoYWxsLUxlcm5lciBiZXRpbmdlbHNlbikuIERldCBlciBkZW5uZSBldHRlcnNww7hyc2Vsw7hrbmluZ2VuCnNvbSBnasO4ciBhdCBrdXJ2ZW4gYmxpciBzbGFrZXJlKgoKOC4gVW5kZXIgZXQgZmx5dGVuZGUga3VycyByZWdpbWUsIHNlIGZvciBkZWcgZW4gc2l0dWFzam9uIG1lZCDDuGt0ZSBwcml2YXRlIHJlYWxpbnZlc3RlcmluZ2VyICRcRGVsdGEgST4wJCAoJ2FuaW1hbCBzcGlyaXRzJykgc29tIGV0dGVyaHZlcnQgIG1vdHZpcmtldCBhdiBlbiBrb250cmFrdGl2IHBlbmdlcG9saXRpa2sgb2cgaWxsdXN0cmVyIGRldHRlIGdyYWZpc2sgZXQgZGlhZ3JhbSB2ZWQgYnJ1ayBhdiBNdW5kZWxsLUZsZW1pbmcgbW9kZWxsZW4uCgoqR3JhZmlzayBsw7hzbmluZyBrb21tZXIgbGl0dCBzZW5lcmUqCgojIyBBRC1BUyBtb2RlbGxlbgoKIyBBRC1rdXJ2ZW4KCjkuIFZpcyBvZyBmb3JrbGFyIGh2b3Jmb3IgQUQta3VydmVuIGVyIGZhbGxlbmRlIHVuZGVyIGV0IGZhc3Qgb2cgZmx5dGVuZGUga3VycyByZWdpbWUuCgoqRmFzdCBrdXJzKgoKKigxKSDDmGt0IG5ldHRvZWtzcG9ydDogTGF2ZXJlIHByb2R1a3RwcmlzZXIgZsO4cmVyIHRpbCBlbiBlbiBzdmVra2Vsc2UgKGRlcHJlc2llcmluZykgYXYgCnJlYWx2YWx1dGFrdXJzZW4gc29tIGdpciBlbiDDuGtuaW5nZW4gaSBuZXR0b2Vrc3BvcnRlbiAoTWFyc2hhbGwtTGVybmVyIGJldGluZ2Vsc2VuKSoKCipGbHl0ZW5kZSBrdXJzOioKCiooMSkgw5hrdCBuZXR0b2Vrc3BvcnQ6IExhdmVyZSBwcm9kdWt0cHJpc2VyIGbDuHJlciB0aWwgZW4gZW4gc3Zla2tlbHNlIChkZXByZXNpZXJpbmcpIGF2IApyZWFsdmFsdXRha3Vyc2VuIHNvbSBnaXIgZW4gw7hrbmluZ2VuIGkgbmV0dG9la3Nwb3J0ZW4gKE1hcnNoYWxsLUxlcm5lciBiZXRpbmdlbHNlbikqCgoqKDIpIMOYa3QgcmVhbHBlbmdlbWVuZ2RlIChzYW1tZSBmb3JrbGFyaW5nIHNvbSB1bmRlciBsdWtrZXQgw7hrb25vbWkpOiBSZWR1c2VydGUgcHJvZHVrdHByaXNlciDDuGtlciByZWFscGVuZ2VtZW5nZGVuLiBJIHBlbmdlbWFya2VkZXQgZsO4cmVyIGRldHRlIHRpbCBlbiByZWR1c2VydCByZW50ZW5pdsOlLiBEZW4gcmVkdXNlcnRlIHJlbnRhIG1lZGbDuHJlciDDuGt0IGV0dGVyc3DDuHJzZWwgcGdhIGxhdmVyZSBwcml2YXRlIHJlYWxpbnZlc3RlcmluZ2VyIG9nIGtvbnN1bSAobWVyazogZGV0dGUgcG9lbmdldCBlciBueXR0LCBzYW1tZW5saWduZXQgbWVkIGRlbiBtb2RlbGxlbiBzb20gYmxlIHNhdHQgb3BwIGkgZm9yZWxlc25pbmdlbiksIHNvbSBpbml0aWVyZXIgZW4gcG9zaXRpdiBtdWx0aXBsaWthdG9yZWZmZWt0IHNpZGVuIMO4a3QgIGV0dGVyc3DDuHJzZWwgZsO4cmVyIHRpbCBtaW5kcmUga29uc3VtIHNvbSBmw7hyZXIgdGlsIHJlZHVzZXJ0IGV0dGVyc3DDuHJzZWwgb3N2LioKCipTZSBmb3JlbGVzbmluZ3Nub3RhdGVuZSBmb3IgZ3JhZmlzayBsw7hzbmluZyoKCg==</div>
 
 
 
