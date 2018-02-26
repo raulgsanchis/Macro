@@ -18,6 +18,9 @@
 
 [Forelesning uke 8: Mundell-Fleming (IS-LM åpen økonomi) for en åpen økonomi med flytende valutakurs](presentasjoner/pres_del1_open.html#16)
 
+[Forelesning uke 9: AD-AS modellen for en åpen økonomi med fast og flytende valutakurs](presentasjoner/pres_del1_open.html#24)
+
+
 
 <!--
 [Arbeidsmarkedet, ledighet og AS-kurven](presentasjoner/pres_del1.html#25)
