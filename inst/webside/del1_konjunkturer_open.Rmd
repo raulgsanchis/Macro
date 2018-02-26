@@ -496,14 +496,12 @@ fastadas <- Makrofigur(modellnavn='adaso')
 flytadas <- Makrofigur(modellnavn='adaso')
 iv2 <- list(P=seq(0.6,1.5, 0.05))
 fastadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=openpar, endrvar=iv2, kat='init')
-iv3 <- list(P=seq(1,1.75, 0.05))
-flytadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=openpar, endrvar=iv3, kat='init')
 
 # Samtidig likevekt
-optverdier <- fastadas$optimering(tovectorlabel=c('SEQFastY', 'IAS', startv=c(1,100)))
+optverdier <- fastadas$optimering(tovectorlabel=c('SEQFastY', 'IAS', startv=c(1.2,100)))
 fastadastekst <- data.frame(kurve=c("AD", "AS"), farge=c('red'), x=c(0.65,1.5), y=c(210,205), xlim=c(150,150),
                             ylim=c(0.5,0))
-fastadas$grafisknum(samlikv=list(x=optverdier[[1]][1], y=optverdier[[1]][2]), dftekst=fastadastekst)
+fastadas$grafisknum(samlikv=list(x=optverdier[[1]][1]-0.025, y=optverdier[[1]][2]-1), dftekst=fastadastekst)
 fastadas$ggtyper[[1]]+coord_flip()
 
 # Kort sikt
@@ -512,18 +510,18 @@ fastadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=open
 fastadas$optimering(tovectorlabel=c('SEQFastY', 'IAS', startv=c(1,100)))
 efastadastekst <- data.frame(kurve=c("AD'", "AS"), farge=c('red'), x=c(0.65,1.5), y=c(220,205), xlim=c(150,150),
                              ylim=c(0.5,0))
-fastadas$grafisknumappend(samlikv=list(x=fastadas$optimeringv[[2]][1], y=fastadas$optimeringv[[2]][2]),
+fastadas$grafisknumappend(samlikv=list(x=fastadas$optimeringv[[2]][1]-0.05, y=fastadas$optimeringv[[2]][2]-2),
                           dftekst=efastadastekst, manuell=1, tilstand='endringG')
 
 fastadas$ggtyper[[2]]+coord_flip()
 
 # Lang sikt
-lukketpar$Pe <- 1.5
+lukketpar$Pe <- 1.4
 fastadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=openpar, endrvar=iv2, kat='oppdateringPe')
 fastadas$optimering(tovectorlabel=c('SEQFastY', 'IAS', startv=c(1,100)))
 efastadastekst <- data.frame(kurve=c("AD'", "AS'"), farge=c('red'), x=c(0.65,1.5), y=c(220,185), xlim=c(150,150),
                              ylim=c(0.5,0))
-fastadas$grafisknumappend(samlikv=list(x=fastadas$optimeringv[[3]][1], y=fastadas$optimeringv[[3]][2]),
+fastadas$grafisknumappend(samlikv=list(x=fastadas$optimeringv[[3]][1]-0.07, y=fastadas$optimeringv[[3]][2]-2),
                           dftekst=efastadastekst, manuell=1, tilstand='oppdateringPe')
 
 fastadas$ggtyper[[3]]+coord_flip()
@@ -545,15 +543,18 @@ fastadas$grafiskstyle(labs=list(title='AD-AS modellen - fast kurs', x='prisnivå
                       figurnr=2)
 
 skiftoff <- fastadas$ggtyper[[5]] + coord_flip()
-
+skiftoff
 
 fastadas$grafiskstyle(labs=list(title='AD-AS modellen - fast kurs', x='prisnivå (P)', y='produksjon, inntekt (Y)'),
                       skaleringx=list(label=c(TeX('P^{N}$'), TeX('$P_{1}}$'), TeX('$P_{2}}$')),
-                                      breaks=c(fastadas$optimeringv[[1]][1], fastadas$optimeringv[[2]][1], 1.37)),
+                                      breaks=c(fastadas$optimeringv[[1]][1]-0.025,
+                                               fastadas$optimeringv[[2]][1]-0.025,
+                                               fastadas$optimeringv[[3]][1])-0.035),
                       skaleringy=list(label=c(TeX('$Y_{3}=Y^{N}$'), TeX('$Y_{1}}$')), breaks=c(fastadas$optimeringv[[1]][2], fastadas$optimeringv[[2]][2])),
                       figurnr=3)
 
 staboff <- fastadas$ggtyper[[6]] + coord_flip()
+staboff
 ```
 
 
@@ -589,7 +590,7 @@ Tolkning: Korrekte prisforventninger fører til et negativt skift i AS-kuren hel
 
 - Sentralt poeng: Korrekte prisforventninger medfører at modellen innehar selvkorrigerende mekanismer mot intern balanse
 
-Men målet om ekstern balanse er ikke alltid oppfylt
+- Men situasonen trenger ikke være stabil mhp målet om ekstern balanse 
 
 ```{r include=FALSE}
 openpar <-list(i_s=3.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
@@ -611,7 +612,7 @@ rfastadas$optimeringv
 rfastadastekst <- data.frame(kurve=c("AD", "AS"), farge=c('red'), x=c(0.65,1.5), y=c(210,205), xlim=c(150,150),
                              ylim=c(0.5,0))
 
-rfastadas$grafisknum(samlikv=list(x=rfastadas$optimeringv[[1]][1], y=rfastadas$optimeringv[[1]][2]), dftekst=rfastadastekst)
+rfastadas$grafisknum(samlikv=list(x=rfastadas$optimeringv[[1]][1]-0.02, y=rfastadas$optimeringv[[1]][2]-1), dftekst=rfastadastekst)
 
 rfastadas$ggtyper[[1]]+coord_flip()
 
@@ -623,22 +624,22 @@ rfastadas$dfmodellres[[2]]
 
 rfastadas$optimering(tovectorlabel=c('SEQFastY', 'IAS', startv=c(1,100)))
 
-refastadastekst <- data.frame(kurve=c("AD'", "AS"), farge=c('red'), x=c(0.65,1.5), y=c(220,205), xlim=c(150,150),
+refastadastekst <- data.frame(kurve=c("AD'", "AS"), farge=c('red'), x=c(0.65,1.5), y=c(195,205), xlim=c(150,150),
                               ylim=c(0.5,0))
-rfastadas$grafisknumappend(samlikv=list(x=rfastadas$optimeringv[[2]][1]-0.25, y=rfastadas$optimeringv[[2]][2]),
+rfastadas$grafisknumappend(samlikv=list(x=rfastadas$optimeringv[[2]][1]-0.125, y=rfastadas$optimeringv[[2]][2]-5),
                            dftekst=refastadastekst, manuell=1, tilstand='endringRP')
 
 rfastadas$ggtyper[[2]]+coord_flip()
 
 # Lang sikt
-lukketpar$Pe <- 0.75
+lukketpar$Pe <- 0.82
 rfastadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=openpar, endrvar=iv2, kat='intekst')
 rfastadas$dfmodellres[[3]]
 rfastadas$optimering(tovectorlabel=c('SEQFastY', 'IAS', startv=c(1,100)))
 
-refastadastekst <- data.frame(kurve=c("AD'", "AS"), farge=c('red'), x=c(0.65,1.5), y=c(220,205), xlim=c(150,150),
+refastadastekst <- data.frame(kurve=c("", "AS'"), farge=c('red'), x=c(0.65,1.5), y=c(220,215), xlim=c(150,150),
                               ylim=c(0.5,0))
-rfastadas$grafisknumappend(samlikv=list(x=rfastadas$optimeringv[[3]][1], y=rfastadas$optimeringv[[3]][2]),
+rfastadas$grafisknumappend(samlikv=list(x=rfastadas$optimeringv[[3]][1]-0.1, y=rfastadas$optimeringv[[3]][2]-5),
                            dftekst=refastadastekst, manuell=1, tilstand='intekst')
 
 rfastadas$ggtyper[[3]]+coord_flip()
@@ -646,19 +647,28 @@ rfastadas$ggtyper[[3]]+coord_flip()
 
 ## Styling
 rfastadas$grafiskstyle(labs=list(title='AD-AS modellen - fast kurs', x='prisnivå (P)', y='produksjon, inntekt (Y)'),
-              skaleringx=list(label=c(TeX('$P_{0}}$')), breaks=c(rfastadas$optimeringv[[1]][1])),
-              skaleringy=list(label=c(TeX('$Y_{0}}$')), breaks=c(rfastadas$optimeringv[[1]][2])),
-              figurnr=2)
+                       skaleringx=list(label=c(TeX('$P_{3}}$'),TeX('$P_{4}}$')), breaks=c(rfastadas$optimeringv[[1]][1],
+                                       rfastadas$optimeringv[[1]][1]-0.15)),
+                       skaleringy=list(label=c(TeX('$Y_{3}}$'),TeX('$P_{4}}$')), breaks=c(rfastadas$optimeringv[[1]][2],
+                                                                                          rfastadas$optimeringv[[1]][2]-5)),
+                       figurnr=2)
 
 risikopremiefig <- rfastadas$ggtyper[[4]]+coord_flip()
+risikopremiefig
 
 rfastadas$grafiskstyle(labs=list(title='AD-AS modellen - fast kurs', x='prisnivå (P)', y='produksjon, inntekt (Y)'),
-                       skaleringx=list(label=c(TeX('$P_{0}}$')), breaks=c(rfastadas$optimeringv[[1]][1])),
-                       skaleringy=list(label=c(TeX('$Y_{0}}$')), breaks=c(rfastadas$optimeringv[[1]][2])),
+                       skaleringx=list(label=c(TeX('$P_{3}}$'),TeX('$P_{4}}$'),TeX('$P^{E}}=$P_{5}}$')),
+                                       breaks=c(rfastadas$optimeringv[[1]][1],
+                                                rfastadas$optimeringv[[1]][1]-0.1,
+                                                rfastadas$optimeringv[[1]][1]-0.2)),
+                       skaleringy=list(label=c(TeX('$Y^{N}=Y_{3}=Y_{5}}$'),TeX('$Y_{4}}$')), breaks=c(rfastadas$optimeringv[[1]][2],
+                                                                                          rfastadas$optimeringv[[1]][2]-5)),
                        figurnr=3)
 
 
-intekstfig <- rfastadas$ggtyper[[5]]+coord_flip()
+intekstfig <- rfastadas$ggtyper[[5]] + coord_flip() + geom_line(aes(y=177.57,x=seq(0.5,1.4,0.01)),color ='black', size=0.5) +
+  geom_text(aes(y=177.57, x= 1.5,label='LAS'), color = 'red')
+intekstfig
 ```
 
 
@@ -675,11 +685,19 @@ intekstfig
 
 Vi antar her at målet om ekstern balanse automatisk blir sikret gjennom endringer i den nominelle valutakursen som følge av endringer i valutakursforventningene. Analysen blir her således av samme form (isomorfisk) som for en lukket økonomi.
 
-Milton Friedman gir  "The Case for Flexible Exchange Rates" by Milton Friedman, published in Friedman's Essays in Positive Economics, University of Chicago Press, 1953.
+--
+
+### Flytende kurs vs. fast kurs
 
 > The argument for a flexible exchange rate is, strange to say, very nearly identical with the argument for daylight savings time. Isn't it absurd to change the clock in summer when exactly the same result could be achieved by having each individual change his habits? All that is required is that everyone decide to come to his office an hour earlier, have lunch an hour earlier, etc. But obviously it is much simpler to change the clock that guides all than to have each individual separately change his pattern of reaction to the clock, even though all want to do so. The situation is exactly the same in the exchange market. It is far simpler to allow one price to change, namely, the price of foreign exchange, than to rely upon changes in the multitude of prices that together constitute the internal price structure.
 
-― Milton Friedman *The Case for Flexible Exchange Rates*  page 173
+- Milton Friedman *The Case for Flexible Exchange Rates*,  page 173
+
+<img id='grere' src="bilder/klokke.jpeg" height="25px" width="200px" />
+<img id='grere' src="bilder/penger.jpg" height="25px" width="200px" />
+
+
+
 
 <!--
 > If internal prices were as flexible as exchange rates, it would make little economic difference whether adjustments were brought about by changes in exchange rates or equivalent changes in internal prices. But this condition is clearly not fulfilled. The exchange rate is potentially flexible in the absence of administrative action to freeze it. At least in the modern world, internal prices are highly inflexible. They are more flexible upward that downward, but even on the upswing all prices are not equally flexible. The inflexibility of prices, or different degrees of flexibility, means a distortion of adjustments in response to changes in external conditions. The adjustment taes the form primarily of price changes in some sectors, primarily of output changes in others.

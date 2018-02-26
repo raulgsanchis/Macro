@@ -25,7 +25,7 @@ output:
 *Åpner: Handler med andre land i form av import og eksport av varer og tjenester*
 
 
-4. Hvis at partietsbetingelsen kan omformuleres til:
+4. Vis at partietsbetingelsen kan omformuleres til:
 
 $$E=\frac{(1+i^{*})}{(1+i)}E^{e}\text{ flytende kurs}$$
 
