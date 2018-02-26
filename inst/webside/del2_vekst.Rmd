@@ -1,3 +1,7 @@
+---
+bibliography: pensum.bib
+---
+
 ## Introduksjon til økonomisk vekst
 
 - Vi er opptatt av økonomisk vekst i et land,  fordi dette øker velstandsnivået blant landets innbyggere over tid
@@ -18,11 +22,11 @@
 
 ---
 
-###  Inkluderende og ekstraktive offentlige institusjoner (Acemoglu og Robinson, 2013)
+###  Inklusive og ekstraktive offentlige institusjoner [@acemoglu2013nations]
 
-Institusjonene kan kalles **ekstraktive** ved at en elite benytter disse til å ekstrahere verdier fra flertallet, 
+Institusjonene kan kalles **ekstraktive** ved at en elite benytter disse til å ekstrahere verdier fra flertallet. 
 
-Institusjonene kan kalles **inklusive”** dersom de sørger for privat eiendomsrett, borgerrettigheter, upartisk 
+Institusjonene kan kalles **inklusive** dersom de sørger for privat eiendomsrett, borgerrettigheter, upartisk 
 rettsvesen, fri etableringsrett og karrierevalg
 
 Øvelse: Les artikkelen [Venezuela Is Starving Its People](artikler/del2_venezuela.pdf) og noter ned de eksemplene du finner på ekstraktive institusjoner 

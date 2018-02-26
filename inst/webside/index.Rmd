@@ -62,5 +62,3 @@ rmarkdown::render("index.Rmd", rmarkdown::pdf_document())
 keyneslatex <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/webside/jupyter/keynestex.json'))
 keynesequ <- rjson::fromJSON(file=paste0(devtools::as.package(".")$path,'/webside/jupyter/keynesequ.json'))
 ```
-
-<!--susanna-007@hotmail.com  -->    

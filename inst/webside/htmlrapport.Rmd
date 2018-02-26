@@ -1,4 +1,6 @@
 ---
+nocite: | 
+  @gartner2016macroeconomics
 title: "Innholdsfortegnelse"
 output:
   html_document:
@@ -23,4 +25,5 @@ bibliography: pensum.bib
 ```{r child = 'del2_vekst.Rmd'}
 ```
 
--->
+# Referanser
+

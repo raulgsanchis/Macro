@@ -338,7 +338,7 @@ $(document).ready(function () {
 <p>Ved å sett inn for uttrykkene ovenfor, kan vi skrive nettoeksporten som</p>
 <p><span class="math display">\[NX = EX - R\cdot IM = x_{1}R + x_{2}Y^{*} - R\cdot (m_{1}R + m_{2}Y)\]</span></p>
 <p>Legger til grunn i dette kurset at priseffekten dominerer innteksteffekten (<a href="https://en.wikipedia.org/wiki/Marshall%E2%80%93Lerner_condition">Marshall-Lerner betingelsen</a> ):</p>
-<p><span class="math display">\[\frac{\Delta NX}{\Delta R}= \underset{priseffekt}{x_{1}} - \underset{inntektseffekt}{IM} + \underset{priseffekt}{m_{1}R} &gt; 0  \\~ \text{ (i dette kurset antar vi at dette holder, men i praksis vil det ta litt tid)}\]</span></p>
+<p><span class="math display">\[\frac{\Delta NX}{\Delta R}= \underset{priseffekt}{x_{1}} - \underset{inntektseffekt}{IM} + \underset{priseffekt}{m_{1}R} &gt; 0   \text{ (i dette kurset antar vi at dette holder, men i praksis vil det ta litt tid)}\]</span></p>
 <hr />
 </div>
 <div id="offentlige-myndigheter-instruering-og-sentralbanken-implementering" class="section level4">
@@ -360,7 +360,7 @@ $(document).ready(function () {
 <p>Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet under fast kurs</p>
 <div id="godemarkedet" class="section level3">
 <h3>Godemarkedet</h3>
-<p><span class="math display">\[Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX \\~ + R^{2}\cdot m_{1} \right]\]</span></p>
+<p><span class="math display">\[Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX  + R^{2}\cdot m_{1} \right]\]</span></p>
 </div>
 <div id="pengemarkedet" class="section level3">
 <h3>Pengemarkedet</h3>
@@ -398,7 +398,7 @@ $(document).ready(function () {
 <p>Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet under flytende kurs.</p>
 <div id="godemarkedet-1" class="section level3">
 <h3>Godemarkedet</h3>
-<p><span class="math display">\[Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX \\~ + R^{2}\cdot m_{1} \right]\]</span></p>
+<p><span class="math display">\[Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX  + R^{2}\cdot m_{1} \right]\]</span></p>
 <hr />
 </div>
 <div id="pengemarkedet-1" class="section level3">
@@ -416,7 +416,7 @@ $(document).ready(function () {
 <p><span class="math display">\[R=\frac{E(i,i^{*},E^{e})\cdot P^{*}}{P}=R(\frac{P^{*}}{P},i,i^{*},E^{e})\]</span></p>
 <hr />
 <p>Ved å sette det generelle utryyket for <span class="math inline">\(R\)</span> inn likevektsbetingelsen for godemarkedet, finner vi den samtidige likevekten i gode- og valutakursmarkedet:</p>
-<p><span class="math display">\[Y = \frac{1}{1-c(1-t) + R(\frac{P^{*}}{P},i,i^{*},E^{e}) \cdot m_{2}}  \left [ \overline{C} + \overline{I} \\~ - b\cdot \overline{i} + \overline{G} + EX(R\Big(\frac{P^{*}}{P},i,i^{*},E^{e}\Big)) + R^{2}(\frac{P^{*}}{P},i,i^{*},E^{e})\cdot m_{1} \right]\]</span></p>
+<p><span class="math display">\[Y = \frac{1}{1-c(1-t) + R(\frac{P^{*}}{P},i,i^{*},E^{e}) \cdot m_{2}}  \left [ \overline{C} + \overline{I}  - b\cdot \overline{i} + \overline{G} + EX(R\Big(\frac{P^{*}}{P},i,i^{*},E^{e}\Big)) + R^{2}(\frac{P^{*}}{P},i,i^{*},E^{e})\cdot m_{1} \right]\]</span></p>
 <p>Dersom Marhsall-Lerner betingelsen holder, er det mulig å vise (ikke pensum i dette kurset) at IS-BoP-kurven (flytende kurs) er slakere enn IS-kurven (fast-kurs)</p>
 <p><strong>Formelt</strong></p>
 <p><span class="math display">\[\underset{IS-BoP-kurven ( flytende-kurs)}{\frac{\Delta Y}{\Delta \overline{i}}} &lt; \underset{IS-kurven (fast-kurs)}{\frac{\Delta Y}{\Delta \overline{i}}} &lt; 0 \]</span></p>
@@ -476,20 +476,21 @@ $(document).ready(function () {
 <hr />
 <div id="komparativ-statikk-skiftanalyse-2" class="section level3">
 <h3>Komparativ statikk (skiftanalyse)</h3>
-<div id="kort-sikt-del1-intern-balanse" class="section level4">
-<h4>Kort sikt (del1): intern balanse</h4>
+<div id="del-1-kort-sikt---intern-balanse" class="section level4">
+<h4>Del 1: Kort sikt - intern balanse</h4>
 <ul>
 <li>Statiske prisforventninger (<span class="math inline">\(P^{e}\)</span> er eksogen) Økte offentlige utgifter, <span class="math inline">\(\overline{G}&gt;0\)</span></li>
 </ul>
 <p><img src="del1_konjunkturer_open_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
 <hr />
 </div>
-<div id="mellomlang-sikt-del1-intern-balanse" class="section level4">
-<h4>Mellomlang sikt (del1): intern balanse</h4>
+<div id="del-1-mellomlang-sikt---intern-balanse" class="section level4">
+<h4>Del 1: Mellomlang sikt - intern balanse</h4>
 <ul>
 <li>Korrekte prisforventninger (<span class="math inline">\(P^{e}=P\)</span>)</li>
 </ul>
 <p><img src="del1_konjunkturer_open_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<hr />
 <p>Tolkning: Korrekte prisforventninger fører til et negativt skift i AS-kuren helt produksjonen og arbeidsledigheten er tilbake til sitt naturlige likevektsnivå.</p>
 <hr />
 <ul>
@@ -499,14 +500,14 @@ $(document).ready(function () {
 </ul>
 <hr />
 </div>
-<div id="kort-sikt-del2-intern-og-ekstern-balanse" class="section level4">
-<h4>Kort sikt (del2): intern og ekstern balanse</h4>
+<div id="del2-kort-sikt---intern-og-ekstern-balanse" class="section level4">
+<h4>Del2: Kort sikt - intern og ekstern balanse</h4>
 <p>Økt r, <span class="math inline">\(\overline{G}&gt;0\)</span></p>
 <p><img src="del1_konjunkturer_open_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 <hr />
 </div>
-<div id="mellomlang-sikt-del2-intern-og-ekstern-balanse" class="section level4">
-<h4>Mellomlang sikt (del2): intern og ekstern balanse</h4>
+<div id="del2-mellomlang-sikt---intern-og-ekstern-balanse" class="section level4">
+<h4>Del2: Mellomlang sikt - intern og ekstern balanse</h4>
 <p><img src="del1_konjunkturer_open_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
 <hr />
 </div>
@@ -522,10 +523,11 @@ $(document).ready(function () {
 <p><strong>The argument for a flexible exchange rate is, strange to say, very nearly identical with the argument for daylight savings time.</strong> Isn’t it absurd to change the clock in summer when exactly the same result could be achieved by having each individual change his habits? All that is required is that everyone decide to come to his office an hour earlier, have lunch an hour earlier, etc. But obviously <strong>it is much simpler to change the clock that guides all than to have each individual separately change his pattern of reaction to the clock</strong>, even though all want to do so. <strong>The situation is exactly the same in the exchange market</strong>. <strong>It is far simpler to allow one price to change, namely, the price of foreign exchange, than to rely upon changes in the multitude of prices that together constitute the internal price structure.</strong></p>
 </blockquote>
 <ul>
-<li>Milton Friedman <em>The Case for Flexible Exchange Rates</em>, page 173</li>
+<li><span class="citation">[@friedman1953case, page 173]</span></li>
 </ul>
 <hr />
-<p><img id='grere' src="bilder/klokke.jpeg" height="25px" width="200px" /> <img id='grere' src="bilder/valuta.jpeg" height="25px" width="200px" /></p>
+<p><img id='grere' src="bilder/klokke.jpg" height="25px" width="200px" /> <img id='grere' src="bilder/valuta.jpg" height="25px" width="200px" /></p>
+<hr />
 <!--
 > If internal prices were as flexible as exchange rates, it would make little economic difference whether adjustments were brought about by changes in exchange rates or equivalent changes in internal prices. But this condition is clearly not fulfilled. The exchange rate is potentially flexible in the absence of administrative action to freeze it. At least in the modern world, internal prices are highly inflexible. They are more flexible upward that downward, but even on the upswing all prices are not equally flexible. The inflexibility of prices, or different degrees of flexibility, means a distortion of adjustments in response to changes in external conditions. The adjustment taes the form primarily of price changes in some sectors, primarily of output changes in others.
 -->

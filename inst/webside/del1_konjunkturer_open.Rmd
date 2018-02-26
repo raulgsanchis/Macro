@@ -85,7 +85,7 @@ $$NX = EX - R\cdot IM = x_{1}R + x_{2}Y^{*} - R\cdot (m_{1}R + m_{2}Y)$$
 Legger til grunn i dette kurset at priseffekten dominerer innteksteffekten ([Marshall-Lerner betingelsen](https://en.wikipedia.org/wiki/Marshall%E2%80%93Lerner_condition)
 ):
 
-$$\frac{\Delta NX}{\Delta R}= \underset{priseffekt}{x_{1}} - \underset{inntektseffekt}{IM} + \underset{priseffekt}{m_{1}R} > 0  \\~ \text{ (i dette kurset antar vi at dette holder, men i praksis vil det ta litt tid)}$$  
+$$\frac{\Delta NX}{\Delta R}= \underset{priseffekt}{x_{1}} - \underset{inntektseffekt}{IM} + \underset{priseffekt}{m_{1}R} > 0   \text{ (i dette kurset antar vi at dette holder, men i praksis vil det ta litt tid)}$$  
 
 
 
@@ -166,7 +166,7 @@ Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet under fast 
 
 ### Godemarkedet
 
-$$Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX \\~ + R^{2}\cdot m_{1} \right]$$
+$$Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX  + R^{2}\cdot m_{1} \right]$$
 
 ### Pengemarkedet
 
@@ -279,7 +279,7 @@ Viser den samtidige likevekten i gode-, penge- og valutakursmarkedet under flyte
 
 ### Godemarkedet
 
-$$Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX \\~ + R^{2}\cdot m_{1} \right]$$
+$$Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX  + R^{2}\cdot m_{1} \right]$$
 
 ---
 
@@ -303,7 +303,7 @@ $$R=\frac{E(i,i^{*},E^{e})\cdot P^{*}}{P}=R(\frac{P^{*}}{P},i,i^{*},E^{e})$$
 
 Ved å sette det generelle utryyket for $R$ inn likevektsbetingelsen for godemarkedet, finner vi den samtidige likevekten i gode- og valutakursmarkedet:
 
-$$Y = \frac{1}{1-c(1-t) + R(\frac{P^{*}}{P},i,i^{*},E^{e}) \cdot m_{2}}  \left [ \overline{C} + \overline{I} \\~ - b\cdot \overline{i} + \overline{G} + EX(R\Big(\frac{P^{*}}{P},i,i^{*},E^{e}\Big)) + R^{2}(\frac{P^{*}}{P},i,i^{*},E^{e})\cdot m_{1} \right]$$
+$$Y = \frac{1}{1-c(1-t) + R(\frac{P^{*}}{P},i,i^{*},E^{e}) \cdot m_{2}}  \left [ \overline{C} + \overline{I}  - b\cdot \overline{i} + \overline{G} + EX(R\Big(\frac{P^{*}}{P},i,i^{*},E^{e}\Big)) + R^{2}(\frac{P^{*}}{P},i,i^{*},E^{e})\cdot m_{1} \right]$$
 
 Dersom Marhsall-Lerner betingelsen holder, er det mulig å vise (ikke pensum i dette kurset) at IS-BoP-kurven (flytende kurs)  er slakere enn IS-kurven (fast-kurs) 
 
@@ -565,7 +565,7 @@ realvalutakursen $R^{E}=\frac{\overline{E}\cdot P^{*}}{P^{E}} \Rightarrow NX = 0
 ---
 
 ### Komparativ statikk (skiftanalyse)
-#### Kort sikt (del1): intern balanse 
+#### Del 1: Kort sikt - intern balanse 
 - Statiske prisforventninger ($P^{e}$ er eksogen)
 Økte offentlige utgifter, $\overline{G}>0$
 
@@ -575,12 +575,14 @@ skiftoff
 
 ---
 
-#### Mellomlang sikt (del1): intern balanse
+#### Del 1: Mellomlang sikt - intern balanse
 - Korrekte prisforventninger ($P^{e}=P$)
 
 ```{r echo=FALSE}
 staboff
 ```
+
+---
 
 Tolkning: Korrekte prisforventninger fører til et negativt skift i AS-kuren helt produksjonen og arbeidsledigheten er tilbake til sitt naturlige likevektsnivå.
 
@@ -595,7 +597,7 @@ realvalutakursen $R_{3}=\frac{\overline{E}\cdot P^{*}}{P_{3}} \Rightarrow NX < 0
 
 ---
 
-#### Kort sikt (del2): intern og ekstern balanse
+#### Del2: Kort sikt - intern og ekstern balanse
 
 Økt r, $\overline{G}>0$
 
@@ -685,7 +687,7 @@ risikopremiefig
 
 ---
 
-#### Mellomlang sikt (del2): intern og ekstern balanse
+#### Del2: Mellomlang sikt - intern og ekstern balanse
 
 ```{r echo=FALSE}
 intekstfig
@@ -703,13 +705,14 @@ Antar her at målet om ekstern balanse automatisk blir sikret gjennom endringer 
 
 > **The argument for a flexible exchange rate is, strange to say, very nearly identical with the argument for daylight savings time.** Isn't it absurd to change the clock in summer when exactly the same result could be achieved by having each individual change his habits? All that is required is that everyone decide to come to his office an hour earlier, have lunch an hour earlier, etc. But obviously **it is much simpler to change the clock that guides all than to have each individual separately change his pattern of reaction to the clock**, even though all want to do so. **The situation is exactly the same in the exchange market**. **It is far simpler to allow one price to change, namely, the price of foreign exchange, than to rely upon changes in the multitude of prices that together constitute the internal price structure.**
 
-- Milton Friedman *The Case for Flexible Exchange Rates*,  page 173
+- [@friedman1953case, page 173]
 
 ---
 
-<img id='grere' src="bilder/klokke.jpeg" height="25px" width="200px" />
-<img id='grere' src="bilder/valuta.jpeg" height="25px" width="200px" />
+<img id='grere' src="bilder/klokke.jpg" height="25px" width="200px" />
+<img id='grere' src="bilder/valuta.jpg" height="25px" width="200px" />
 
+---
 
 <!--
 > If internal prices were as flexible as exchange rates, it would make little economic difference whether adjustments were brought about by changes in exchange rates or equivalent changes in internal prices. But this condition is clearly not fulfilled. The exchange rate is potentially flexible in the absence of administrative action to freeze it. At least in the modern world, internal prices are highly inflexible. They are more flexible upward that downward, but even on the upswing all prices are not equally flexible. The inflexibility of prices, or different degrees of flexibility, means a distortion of adjustments in response to changes in external conditions. The adjustment taes the form primarily of price changes in some sectors, primarily of output changes in others.
