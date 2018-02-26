@@ -7,10 +7,11 @@
 
 [- Med fasit](seminar/seminar2_fasit.nb.html)
 
-[Seminar 4 (uke 8): AD-AS (lukket økonomi) og Keynes-modell for en åpen økonomi](seminar/seminar3.nb.html)
+[Seminar 3 (uke 8): AD-AS (lukket økonomi) og Keynes-modell for en åpen økonomi](seminar/seminar3.nb.html)
 
 [- Med fasit](seminar/seminar3_fasit.nb.html)
 
+[Seminar 4 (uke 10): Mundell-Fleming og AD-ligningen under fast og flytende kurs](seminar/seminar4.nb.html)
 
 # Eksamensoppgaver
 

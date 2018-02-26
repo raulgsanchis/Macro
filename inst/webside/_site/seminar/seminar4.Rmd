@@ -1,7 +1,7 @@
 ---
 output:
   html_notebook:
-    css: seminar2.css
+    css: seminarAV.css
 ---
 
 # Seminar 4 (uke 10): Mundell-Fleming og AD ligningen under fast og flytende kurs 
@@ -32,7 +32,7 @@ $$E=\frac{(1+i^{*})}{(1+i)}E^{e}\text{ flytende kurs}$$
 
 $$i=i^{*} \text{ fast kurs (troverdig)}$$
 
-5. Hva skjer i de to regimene dersom denne betingelsen ikke holder med likhet?
+5. Gi en økonomisk tolkning på hva som skjer i de to regimene dersom denne betingelsen ikke holder med likhet?
 
 *Flytende kurs: $E>\frac{(1+i^{*})}{(1+i)}E^{e} \Leftrightarrow (1+i)>\frac{E^{e}}{E}(1+i^{*})$*
 
@@ -61,13 +61,13 @@ $$EX = x_{1}\cdot R + x_{2}\cdot Y^{*} \text{: eksport}$$
 6. Løs for likevektsbetingelsen under hhv. fast og flytende kurs og vis grafisk den samtidige likevekten
 
 *Fast kurs:*
-$$\text{IS}$$
-$$\text{BoP}$$
+*$$\text{IS}$$*
+*$$\text{BoP}$$*
 
 *Flytende kursen:*
-$$\text{IS}$$
-$$\text{LM}$$
-$$\text{BoP}$$
+*$$\text{IS}$$*
+*$$\text{LM}$$*
+*$$\text{BoP}$$*
 
 7. Hvor er helningen på IS-BoP ligningen (flytende kurs) slakere enn IS-kurven?
 

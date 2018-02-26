@@ -1,7 +1,7 @@
 ---
 output:
   html_notebook:
-    css: seminar2.css
+    css: seminarAV.css
 ---
 
 # Seminar 4 (uke 10): Mundell-Fleming og AD ligningen under fast og flytende kurs 
@@ -32,12 +32,12 @@ $$E=\frac{(1+i^{*})}{(1+i)}E^{e}\text{ flytende kurs}$$
 
 $$i=i^{*} \text{ fast kurs (troverdig)}$$
 
-5. Hva skjer i de to regimene dersom denne betingelsen ikke holder med likhet?
+5. Gi en økonomisk tolkning på hva som skjer i de to regimene dersom denne betingelsen ikke holder med likhet?
 
 *Flytende kurs: $E>\frac{(1+i^{*})}{(1+i)}E^{e} \Leftrightarrow (1+i)>\frac{E^{e}}{E}(1+i^{*})$*
 
 *Høyere avkastning av å investere i innlandet sammenlignet med utlandet. Investorene vil derfor reallokere sine portefølje
-ved å plassere mer i norsk valuta. Dette vil øke etterspørselen etter norske kroner, og med det presse kronekursen oppover (appresiering) inntil lbetingelsen igjen er oppfylt med likhet. Resonnmentet bli motsatt dersom ulikheten er gitt ved <.*
+ved å plassere mer i norsk valuta. Dette vil øke etterspørselen etter norske kroner, og med det presse kronekursen oppover (appresiering) inntil betingelsen igjen er oppfylt med likhet. Resonnementet bli motsatt dersom ulikheten er gitt ved <.*
 
 *Fast kurs: $i>i^{*}$*
 
@@ -61,19 +61,19 @@ $$EX = x_{1}\cdot R + x_{2}\cdot Y^{*} \text{: eksport}$$
 6. Løs for likevektsbetingelsen under hhv. fast og flytende kurs og vis grafisk den samtidige likevekten
 
 *Fast kurs:*
-$$\text{IS}$$
-$$\text{BoP}$$
+*$$\text{IS}$$*
+*$$\text{BoP}$$*
 
 *Flytende kursen:*
-$$\text{IS}$$
-$$\text{LM}$$
-$$\text{BoP}$$
+*$$\text{IS}$$*
+*$$\text{LM}$$*
+*$$\text{BoP}$$*
 
 7. Hvor er helningen på IS-BoP ligningen (flytende kurs) slakere enn IS-kurven?
 
 *Det skyldes at en lavere (høyere) rente gir en depresiering (appresiering) av valutakursen 
 som følge av udekke renteparitet (see oppgave). Økt depresiering bidrar til en svekkelse av 
-realvalutakursen som gir en økningen i nettoeksporten (Marshall-Lerner betingelsen). Det er denne etterspørseløkningen
+realvalutakursen som gir en økningen i nettoeksporten (Marshall-Lerner betingelsen). Det er denne etterspørselsøkningen
 som gjør at kurven blir slakere*
 
 8. Under et flytende kurs regime, se for deg en situasjon med økte private realinvesteringer $\Delta I>0$ ('animal spirits') som etterhvert  motvirket av en kontraktiv pengepolitikk og illustrer dette grafisk et diagram ved bruk av Mundell-Fleming modellen.
@@ -99,4 +99,5 @@ realvalutakursen som gir en økningen i nettoeksporten (Marshall-Lerner betingel
 *(2) Økt realpengemengde (samme forklaring som under lukket økonomi): Reduserte produktpriser øker realpengemengden. I pengemarkedet fører dette til en redusert rentenivå. Den reduserte renta medfører økt etterspørsel pga lavere private realinvesteringer og konsum (merk: dette poenget er nytt, sammenlignet med den modellen som ble satt opp i forelesningen), som initierer en positiv multiplikatoreffekt siden økt  etterspørsel fører til mindre konsum som fører til redusert etterspørsel osv.*
 
 *Se forelesningsnotatene for grafisk løsning*
+
 

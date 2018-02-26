@@ -39,10 +39,10 @@
 |   4 | 22.1 | Datatransformering av nasjonalregnskapstall                                              |          | SMU       |
 |   6 |  5.2 | Enkel Keynes og IS-LM modellen                                                           |          | SMU       |
 |   8 | 19.2 | AD-AS (lukket økonomi) og Keynes-modell for en åpen økonomi                              |          | SMU       |
-|  10 |  5.3 | Mundell-Fleming og AD-AS modellen under fast og flytende kurs                            |          | SMU       |
+|  10 |  5.3 | Mundell-Fleming og AD ligningen under fast og flytende kurs                                                                                         |          | SMU       |
 |-----+------+------------------------------------------------------------------------------------------+----------+-----------|
-|     |      | Del II: Økonomisk vekst                                                                  |          |           |
-|  12 | 19.3 | Solow-modellen                                                                           |          | SMU       |
+|     |      | Del I-II: Konjunktursvigninger og Økonomisk vekst                                        |          |           |
+|  12 | 19.3 | AD-AS modellen og Solow-modellen                                                         |          | SMU       |
 |-----+------+------------------------------------------------------------------------------------------+----------+-----------|
 |  16 | 16.4 | Gjennomgang av obligatorisk oppgave                                                      |          | JIH       |
 |-----+------+------------------------------------------------------------------------------------------+----------+-----------|

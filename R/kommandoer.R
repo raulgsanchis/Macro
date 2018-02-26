@@ -7,6 +7,8 @@ inst <- function(){
   rmarkdown::render(paste0(devtools::as.package(".")$path,'/inst/webside/presentasjoner/pres_del1_open.Rmd'))
   rmarkdown::render(paste0(devtools::as.package(".")$path,'/inst/webside/seminar/seminar1.Rmd'))
   rmarkdown::render(paste0(devtools::as.package(".")$path,'/inst/webside/seminar/seminar2.Rmd'))
+  rmarkdown::render(paste0(devtools::as.package(".")$path,'/inst/webside/seminar/seminar3.Rmd'))
+  rmarkdown::render(paste0(devtools::as.package(".")$path,'/inst/webside/seminar/seminar4.Rmd'))
   rmarkdown::render_site(paste0(devtools::as.package(".")$path,'/inst/webside/'))
   #system('cd ..')
   #system('pwd')

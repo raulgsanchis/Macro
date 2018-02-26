@@ -1,5 +1,7 @@
 ## Artikler
 
+### Del 1
+
 [U.S. Economy Notches Solid 3 percent Growth,
 Despite Hurricane](artikler/del1_growthusa3.pdf)
 
@@ -14,6 +16,10 @@ Despite Hurricane](artikler/del1_growthusa3.pdf)
 [The FED's point's man on productivity](artikler/del1_USA_TFPg.pdf)
 
 [U.S. Consumer Prices Rose in January](artikler/del1_CPI_USA.pdf)
+
+### Del 2
+
+[Venezuela Is Starving Its People](artikler/del2_venezuela.pdf)
 
 
 ## Videoer
