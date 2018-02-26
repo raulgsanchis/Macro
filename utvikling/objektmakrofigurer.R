@@ -5,25 +5,101 @@ library(gridExtra)
 library(grid)
 library(latex2exp)
 ####################################
-# Samtidig likevekt
-ropenpar <- list(i_s=3.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
-rlukketpar <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50,P=1, M= 100, h = 10, k =1, Y = 130, m=1, t=0.4,
-                     Pe=1.5, mu = 0.3, l_1=-5,l_2=1, z=1, A= 5,Ac = 2,
-                     N=48, alpha = 1))
-riv2 <- list(P=seq(0.6,1.75, 0.05))
+openpar <-list(i_s=3.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+lukketpar <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50,P=1, M= 100, h = 10, k =1, Y = 130, m=1, t=0.4,
+                    Pe=1, mu = 0.3, l_1=-5,l_2=1, z=1, A= 5,Ac = 2,
+                    N=48, alpha = 1))
+lukketpar[lukketpar=c('P')] <- NULL
+iv2 <- list(P=seq(0.6,1.5, 0.05))
 
+
+rfastadas <- Makrofigur(modellnavn='adaso')
+
+rfastadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=openpar, endrvar=iv2, kat='initrev')
+rfastadas$dfmodellres
+
+rfastadas$optimering(tovectorlabel=c('SEQFastY', 'IAS', startv=c(1,100)))
+rfastadas$optimeringv
+
+rfastadastekst <- data.frame(kurve=c("AD", "AS"), farge=c('red'), x=c(0.65,1.5), y=c(210,205), xlim=c(150,150),
+                             ylim=c(0.5,0))
+
+rfastadas$grafisknum(samlikv=list(x=rfastadas$optimeringv[[1]][1], y=rfastadas$optimeringv[[1]][2]), dftekst=rfastadastekst)
+
+rfastadas$ggtyper[[1]]+coord_flip()
+
+# Kort sikt
+openpar$rp <- 1
+
+rfastadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=openpar, endrvar=iv2, kat='endringRP')
+rfastadas$dfmodellres[[2]]
+
+rfastadas$optimering(tovectorlabel=c('SEQFastY', 'IAS', startv=c(1,100)))
+
+refastadastekst <- data.frame(kurve=c("AD'", "AS"), farge=c('red'), x=c(0.65,1.5), y=c(220,205), xlim=c(150,150),
+                              ylim=c(0.5,0))
+rfastadas$grafisknumappend(samlikv=list(x=rfastadas$optimeringv[[2]][1]-0.25, y=rfastadas$optimeringv[[2]][2]),
+                           dftekst=refastadastekst, manuell=1, tilstand='endringRP')
+
+rfastadas$ggtyper[[2]]+coord_flip()
+
+# Lang sikt
+lukketpar$Pe <- 0.75
+rfastadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=lukketpar, openpar=openpar, endrvar=iv2, kat='intekst')
+rfastadas$dfmodellres[[3]]
+rfastadas$optimering(tovectorlabel=c('SEQFastY', 'IAS', startv=c(1,100)))
+
+refastadastekst <- data.frame(kurve=c("AD'", "AS"), farge=c('red'), x=c(0.65,1.5), y=c(220,205), xlim=c(150,150),
+                              ylim=c(0.5,0))
+rfastadas$grafisknumappend(samlikv=list(x=rfastadas$optimeringv[[3]][1], y=rfastadas$optimeringv[[3]][2]),
+                           dftekst=refastadastekst, manuell=1, tilstand='intekst')
+
+rfastadas$ggtyper[[3]]+coord_flip()
+
+
+## Styling
+rfastadas$grafiskstyle(labs=list(title='AD-AS modellen - fast kurs', x='prisnivå (P)', y='produksjon, inntekt (Y)'),
+              skaleringx=list(label=c(TeX('$P_{0}}$')), breaks=c(rfastadas$optimeringv[[1]][1])),
+              skaleringy=list(label=c(TeX('$Y_{0}}$')), breaks=c(rfastadas$optimeringv[[1]][2])),
+              figurnr=2)
+
+risikopremie <- rfastadas$ggtyper[[4]]+coord_flip()
+
+rfastadas$grafiskstyle(labs=list(title='AD-AS modellen - fast kurs', x='prisnivå (P)', y='produksjon, inntekt (Y)'),
+                       skaleringx=list(label=c(TeX('$P_{0}}$')), breaks=c(rfastadas$optimeringv[[1]][1])),
+                       skaleringy=list(label=c(TeX('$Y_{0}}$')), breaks=c(rfastadas$optimeringv[[1]][2])),
+                       figurnr=3)
+
+
+intekst <- rfastadas$ggtyper[[5]]+coord_flip()
+intekst
+
+
+###############################3
+
+# Samtidig likevekt
+# ropenpar <- list(i_s=3.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+# rlukketpar <- c(list(c_1 = 0.6, oC = 50, oG= 40, b = 10, oI = 10, T = 50,P=1, M= 100, h = 10, k =1, Y = 130, m=1, t=0.4,
+#                      Pe=1.5, mu = 0.3, l_1=-5,l_2=1, z=1, A= 5,Ac = 2,
+#                      N=48, alpha = 1))
+# riv2 <- list(P=seq(0.6,1.75, 0.05))
+# rlukketpar[rlukketpar=c('P')] <- NULL
 rfastadas <- Makrofigur(modellnavn='adaso')
 
 rfastadas$numerisk(endvar=c('SEQFastY', 'IAS'), lukketpar=rlukketpar, openpar=ropenpar, endrvar=riv2, kat='initrev')
 rfastadas$dfmodellres
 
 rfastadas$optimering(tovectorlabel=c('SEQFastY', 'IAS', startv=c(1,100)))
+rfastadas$optimeringv
 
 rfastadastekst <- data.frame(kurve=c("AD", "AS"), farge=c('red'), x=c(0.65,1.5), y=c(210,205), xlim=c(150,150),
                              ylim=c(0.5,0))
-fastadas$grafisknum(samlikv=list(x=optverdier[[1]][1], y=optverdier[[1]][2]), dftekst=rfastadastekst)
 
-fastadas$ggtyper[[1]]+coord_flip()
+rfastadas$grafisknum(samlikv=list(x=rfastadas$optimeringv[[1]][1], y=rfastadas$optimeringv[[1]][2]), dftekst=rfastadastekst)
+
+rfastadas$ggtyper[[1]]+coord_flip()
+
+
 
 
 

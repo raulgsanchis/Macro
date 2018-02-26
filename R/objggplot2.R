@@ -120,3 +120,4 @@ Makrofigur$methods(optimering=function(tovectorlabel=c('SEQFastY', 'IAS'), start
   optimeringv <<- append(optimeringv,list(yeae))
 
 })
+
