@@ -34,7 +34,9 @@ output:
 **Studentassistent:** Susanna Murati (susanna-007@hotmail.com)
 
 <span style="color:red">
-<p>Løsningsforslag på seminaroppgave 3 (uke 8) er nå lagt ut.</p>
+<p>Forelesningsnotater uke 9 er nå lagt ut</p>
+<p>Seminaroppgaver uke 10 er lagt ut</p>
+<p>Eksamen 2013, Handelshøyskolen UMB er nå lagt ut (under oppgavefane)</p>
 </span>
 
 <p style="color:black">Siste gang oppdatert ``r base::Sys.time()`` </p>

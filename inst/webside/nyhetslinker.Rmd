@@ -1,6 +1,6 @@
 ## Artikler
 
-### Del 1
+### Del 1: Konjunktursvingninger
 
 [U.S. Economy Notches Solid 3 percent Growth,
 Despite Hurricane](artikler/del1_growthusa3.pdf)
@@ -17,7 +17,7 @@ Despite Hurricane](artikler/del1_growthusa3.pdf)
 
 [U.S. Consumer Prices Rose in January](artikler/del1_CPI_USA.pdf)
 
-### Del 2
+### Del 2: Økonomisk vekst
 
 [Venezuela Is Starving Its People](artikler/del2_venezuela.pdf)
 
@@ -43,7 +43,7 @@ h-->
 [The Shifts and the Shocks: What We've Learned--and Have Still to Learn--from the Financial Crisis](https://www.audible.com/pd/Nonfiction/The-Shifts-and-the-Shocks-Audiobook/B00NHBLBKC)
 
 
-## Øknomisk debatt
+## Økonomisk debatt
 
 [Project Syndicate](https://www.project-syndicate.org/)
 

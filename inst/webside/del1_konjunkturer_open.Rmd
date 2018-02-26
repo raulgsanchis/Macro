@@ -8,7 +8,7 @@ library(grid)
 library(latex2exp)
 ```
 
-## Grunnleggende  bakgrunnkunnskaper
+## Grunnleggende  bakgrunnskunnskaper
 
 ### Stabiliseringsmål for en åpen økonomi
 
@@ -42,7 +42,7 @@ Renteparitetsbetingelsen
 $$(1+i_{t+1})=(1+i_{t+1}^{*})\frac{E_{t+1}^{e}}{E_{t}}$$
 Likevektsbetingelse som forteller oss at den forventede avkastningen er lik mellom å investere i inn- og utland.
 
-Her er $i_{t+1}$ innelandsk avkastning, $i_{t+1}^{*}$ utenlands avkastning, $E_{t}$ er (nominelle) prisen i dag per énhet av utenlandsk valuta og $E_{t+1}^{e}$ den forventede valutakursen én periode frem i tid.  
+Her er $i_{t+1}$ innenlandsk avkastning, $i_{t+1}^{*}$ utenlands avkastning, $E_{t}$ er (nominelle) prisen i dag per énhet av utenlandsk valuta og $E_{t+1}^{e}$ den forventede valutakursen én periode frem i tid.  
 
 ---
 
@@ -56,7 +56,7 @@ Består av nettoeksport (NX), pluss nettofinansinntekter(aksjer og obligasjoner)
 
 $CA=\text{Kapitalregnskapet}$ 
 
-Nettoendringer i fordringer og gjeld ovenfor utlandet
+Nettoendringer i fordringer og gjeld overfor utlandet
 
 $OR=\text{Endringer i sentralbankens valutareserver}$ 
 
@@ -216,7 +216,7 @@ stabfastislm
 
 ---
 
-Merk: Under fast kurs er renta bundet til å holde fastkursen stabil, det gjør at finanspolitikk (endring i offentlige utgifter og skatter) står igjen som de *eneste* virkemdlene til å stabillisere konjunktursvingnigene
+Merk: Under fast kurs er renta bundet til å holde fastkursen stabil, det gjør at finanspolitikk (endring i offentlige utgifter og skatter) står igjen som de *eneste* virkemidlene til å stabilisere konjunktursvingningene
 
 
 ```{r include=FALSE}
@@ -344,7 +344,7 @@ stabflytendeislm
 
 ---
 
-Merk: I motsetning til under fastkurs,  har man under flytende kurs muligheten til å benytte pengepolikken til å stabilisere konjunktursvingningne. I Norge i dag er dette rådende pengepoltiske regimet, mens vi på 90-tallet og i etterkrigserioden praktiserte ulike former for fastkursregimer (ovenfor veid snitt av europeiske valutaer).
+Merk: I motsetning til under fastkurs,  har man under flytende kurs muligheten til å benytte pengepolitikken til å stabilisere konjunktursvingningene. I Norge i dag er dette rådende pengepolitiske regimet, mens vi på 90-tallet og i etterkrigsperioden praktiserte ulike former for fastkursregimer (ovenfor veid snitt av europeiske valutaer).
 
 ## AD-AS modellen for en åpen økonomi
 
@@ -466,10 +466,10 @@ grid.arrange(skiftfastislmad, skiftflytislmad,
 Helningen på AD-kurven styres av:
 
 - Fast kurs
-    + Forbedrer nettoeksporten gjennom en depressierng av realvalutakursen (Marshall-Lerner betingelsen)
+    + Forbedrer nettoeksporten gjennom en depresiering av realvalutakursen (Marshall-Lerner betingelsen)
   
 - Flytende kurs
-    + Forbedrer nettoeksporten gjennom en depressierng av realvalutakursen (Marshall-Lerner betingelsen)
+    + Forbedrer nettoeksporten gjennom en depresiering av realvalutakursen (Marshall-Lerner betingelsen)
     + Høyere realpengemenge reduserer renta som igjen øker produksjonen  (samme som under lukket økonomi)
 
 
@@ -582,16 +582,16 @@ skiftoff
 staboff
 ```
 
-Tolkning: Korrekte prisforventninger fører til et negativt skift i AS-kuren helt produksjonen og arbeidsledigheten er tilbake til sitt naturlige likvektsnivå.
+Tolkning: Korrekte prisforventninger fører til et negativt skift i AS-kuren helt produksjonen og arbeidsledigheten er tilbake til sitt naturlige likevektsnivå.
 
 ---
 
 - Sentralt poeng: Korrekte prisforventninger medfører at modellen innehar selvkorrigerende mekanismer mot intern balanse
 
 - Men ikke forenlig med målet om ekstern balanse. Prisnivået $P_{3}$ sikrer nivået på 
-realvalutakursen $R_{3}=\frac{\overline{E}\cdot P^{*}}{P_{3}} \Rightarrow NX < 0 \Leftrightarrow IM > EX$. Noe som gjør nettogjelden ovenfor utlandet øker (jmf. utenriksregnskapet).
+realvalutakursen $R_{3}=\frac{\overline{E}\cdot P^{*}}{P_{3}} \Rightarrow NX < 0 \Leftrightarrow IM > EX$. Noe som gjør nettogjelden overfor utlandet øker (jmf. utenriksregnskapet).
 
-- Dersom offentlige myndigheter ikke gjør noe med denne situajonen ($\Delta G<0$ eller $\Delta T >0$), vil markedskreftene etterhvert løse situasjonen på egenhånd gjennom økt risikopremie ($\Delta rp> 0$).  
+- Dersom offentlige myndigheter ikke gjør noe med denne situasjonen ($\Delta G<0$ eller $\Delta T >0$), vil markedskreftene etterhvert løse situasjonen på egenhånd gjennom økt risikopremie ($\Delta rp> 0$).  
 
 ---
 
@@ -714,3 +714,5 @@ Antar her at målet om ekstern balanse automatisk blir sikret gjennom endringer 
 <!--
 > If internal prices were as flexible as exchange rates, it would make little economic difference whether adjustments were brought about by changes in exchange rates or equivalent changes in internal prices. But this condition is clearly not fulfilled. The exchange rate is potentially flexible in the absence of administrative action to freeze it. At least in the modern world, internal prices are highly inflexible. They are more flexible upward that downward, but even on the upswing all prices are not equally flexible. The inflexibility of prices, or different degrees of flexibility, means a distortion of adjustments in response to changes in external conditions. The adjustment taes the form primarily of price changes in some sectors, primarily of output changes in others.
 -->
+
+
