@@ -1,5 +1,5 @@
 ---
-title: "Innledning"
+title: ""
 output:
   ioslides_presentation: default
 ---

@@ -18,17 +18,9 @@ bibliography: pensum.bib
 ```{r child = 'del1_konjunkturer_open.Rmd'}
 ```
 
-<!--
 # Del 2 Økonomisk vekst
 
 ```{r child = 'del2_vekst.Rmd'}
 ```
 
 -->
-<!--
-
-# Del 3 Økonomisk vekst
-
-# Referanser
-
-<font color="white">Smith cited [@gartner2016macroeconomics]</font>

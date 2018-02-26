@@ -72,7 +72,7 @@ grid.arrange(gdg, grg, gdu, gru, top = 'USA' )
 ## Tre grunnleggende spørsmål blir forsøkt besvart
 
 1. Hva forårsaker konjunktursvingninger?
-1. Hva er forklaringen bak økonomisk vekst?
+1. Hva er forklaringene bak økonomisk vekst?
 1. Hvorfor oppstår økonomiske kriser?
 
 ## Og i den sammenheng, hvilken rolle bør offentlige myndigheter spille?

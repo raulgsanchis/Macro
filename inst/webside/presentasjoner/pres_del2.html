@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Innledning</title>
+  <title></title>
 
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -20,7 +20,6 @@
     var SLIDE_CONFIG = {
       // Slide settings
       settings: {
-                title: 'Innledning',
                         useBuilds: true,
         usePrettify: true,
         enableSlideAreas: true,
@@ -88,147 +87,50 @@
           </hgroup>
   </slide>
 
-<!--
----
-output: html_notebook
----
--->
+<slide class=""><hgroup><h2>Introduksjon til økonomisk vekst</h2></hgroup><article  id="introduksjon-til-konomisk-vekst">
 
-<slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Del 2: Økonomisk vekst</h2></hgroup><article  id="del-2-konomisk-vekst">
+<ul>
+<li><p>Vi er opptatt av økonomisk vekst i et land, fordi dette øker velstandsnivået blant landets innbyggere over tid</p></li>
+<li><p>Det er vanlig å måle et lands velstandsnivå ved å dele BNP \(Y\) på antall innbyggere i landet \(N\), dvs \(Y/N\)</p></li>
+<li><p>Målinger av dette finner for de fleste land i verden: <a href='https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(PPP)_per_capita' title=''>tabell fra Wikipedia</a></p></li>
+</ul>
 
-<p><img id='grere' src="bilder/poverty.jpg" height="75px" width="300px" /> <img id='grede' src="bilder/growth.jpg" height="75px" width="300px" /></p>
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
 
-<blockquote>
-<p>A society that puts equality before freedom will get neither. A society that puts freedom before equality will get a high degree of both.” ― Milton Friedman</p>
-</blockquote>
+<h3>Empiriske observasjoner over tid</h3>
 
-<!--
+<ul>
+<li>Rike land: Har vokst og BNP per innbygger mellom land har konvergert (dvs. mindre forskjeller).
 
-Geografi
-Kultur
-Institusjoner
-Extracting institusjoner
+<ul>
+<li>Prediksjonen er i tråd med Solow-modellen for økonomisk vekst</li>
+</ul></li>
+<li>Fattige land: Finner ingen slik klar sammenheng
 
-Bolsjevik freedom and eqaulity
-pluralist institusjoner
-Inkluderende 
+<ul>
+<li>Hypoteser: (1) Geografi, (2) Kultur, <strong>(3) Institusjoner</strong></li>
+</ul></li>
+</ul>
 
-Ekskuldernde institusjoner
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
 
-Tilfeldighet kan fort avgjøre hvorvidt et land har Inkluderende 
+<h3>Inkluderende og ekstraktive offentlige institusjoner (Acemoglu og Robinson, 2013)</h3>
 
-Ekskuldernde institusjoner
+<p>Institusjonene kan kalles <strong>ekstraktive</strong> ved at en elite benytter disse til å ekstrahere verdier fra flertallet,</p>
 
-Ekstrakting institusjoner
+<p>Institusjonene kan kalles <strong>inklusive”</strong> dersom de sørger for privat eiendomsrett, borgerrettigheter, upartisk rettsvesen, fri etableringsrett og karrierevalg</p>
 
-Instiusjoenr creates incentiver
+<p>Øvelse: Les artikkelen <a href='artikler/del2_venezuela.pdf' title=''>Venezuela Is Starving Its People</a> og noter ned de eksemplene du finner på ekstraktive institusjoner</p>
 
-Privat eiendomsrett
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
 
-Trend (Y). På lang sikt. Men da kan befolkningen også vokse:
-Y/N-- Levestandard  Lykke(?)
-Rike land i moderne tid: Vokser over tid. Konverger
-Fattige land: Ingen slik sammenheng. 
-Forklaringer: Institusjoner, Korrupsjon, sterk befolkningsvekst.
-Teoretisk: Hvordan forstå vekst?
-Tidligere
-Y=AN
-Nå
-Y=F(K, AL)
-Teknisk: Konstant skalutbytte mhp K og N
-2Y=F(2K,2AN)
-xY= F(xK,xAN)
-x=1/AN
-y=f(k) f’k>0,f’’k<0
-Kilder til vekst:
-(1) Kapital/AN (vedvarende)     -- Horisontalt.
-(2) Teknologi  (permanent)              -- Skrift utover i kurven.
-I tillegg forutsetter vi: Ingen offentlig sektor, fleksible priser : tilbudet  etterspørsel: På trend.
+</article></slide><slide class=""><hgroup><h2>Solow-modellen for økonomisk vekst</h2></hgroup><article  id="solow-modellen-for-konomisk-vekst">
 
-<!--
-A=1
-Sparing lik investering
-I=S+(T-G)
-Ingen offentlig sektor
-I=S
-S=sY
-I=sY
-Kapitalakkumulasjon
-Metafor: Badekar
-FK=(1-delta)K+I
-Setter inn
-FK=(1-delta)K+ sY
-FK-K=delta*K+ sY
-FK/N=(1-delta)K/N+ sf(k)
-Dynamikk
-FK/N-K= sf(k)-delta(K/N)
-dK= fk-k = sf(k)-delta(K/N) 
-Steady state
-sf(kss)/N=delta*kss
-Skiftanalyse (so til s1)
-S1f(k)>delta*k   vekst
-sf(ksss)/N=delta*ksss
-
-## Introduksjon
-Y/L↑⇒"Høyere levestendard ⇒" "Lykke(?)" 
-Empiriske observasjoner:
-Rike land: Har vokst og BNP per innbygger har konvergert. 
-Fattige land: Ingen slik klar sammenheng.
-    Forklaringer: 
-Institusjoner, korrupsjon, sterk befolkningsvekst etc.
-
-## Solow-modellen for økonomisk vekst
-Hvordan forstå vekst?  Benytte Solow modellen som består av tre komponenter:
-
-**(1) Produktfunksjonen på intensiv form**
-$$Y=F(K,AL)$$
-
-**(2) Sparing **
-$$y=f(k) \text{ hvor } f’k>0, f’’k<0$$
-
-**(3) Kapitalakkumulasjon (ekel utgave, uten teknologisk framgang og befolkningsvekst) **
-
-## Modellens prediksjon
-
-## Skiftanalyse 
-**Økt sparing**
-
-**Befolkningsvekst**
-
-
-<!--
-
-
-
-
-Y=F(K,AL)   F_k^'>0,F_kk^'<0,F_L^'>0, F_LL^'<0 
-Konstant skalautbytte 
-y=f(k) f’k>0,f’’k<0
-    (2) Sparing
-Lukket økonomi (uten offentlig sektor)
-I=S
-I=S=sY⇔I/N=sY/N=sf(k)
-    (3) Kapitalakkumulasjon
-Enkel utgave (uten teknologisk framgang og befolkningsvekst):
-ΔK=-δ K+I 
-ΔK/N=-δ K/N +I/N  
-Δk=sf(k)-δk
-Vanlig utgave (med teknologisk framgang, a, og befolkningsvekst, n,):
-Δk=sf(k)-(δ+n+a)k
-
-    Modellens prediksjon (bør også kunne vises grafisk):
-Uavhengig av det initiale kapitalnivået vil økonomien på sikt konvergere mot en steady state:
-sf(k^ss )=(δ+n+a) k^ss
-y^ss=f(k^ss)
-I den enkle versjonen vil veksten i produksjonen (BNP) våre lik null.
-I den vanlige versjonen vil veksten i produksjonen (BNP) våre lik befolkningsveksten pluss teknologiveksten. 
-
-Skiftanalyse (bør også kunne vises grafisk)
-Økt sparing vil gi en ny og høyere steady state.
-Befolkningsvekst (fødselsrater + nettoinnvandring)) vil gi en ny og lavere steady state.
-
-
---></article></slide>
+<p>Solow-modellen bygger på forutsetninger om sterk grad av <strong>inklusive</strong> institusjoner. <!--
+Mer konkret kan vi uttrykke disse som:
+- Abc
+- Def
+--></p></article></slide>
 
 
   <slide class="backdrop"></slide>
