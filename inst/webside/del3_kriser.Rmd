@@ -1,15 +1,42 @@
-<!--
 ---
 output: html_notebook
 ---
--->
 
+
+# Solow-modellen
+
+
+
+
+# Statsgjeldskrise
+
+- Offentlige myndigheter
+
+$$B^f_t= \underset{\text{a}}{(1+i_{t})B^{f}_{t-1}}+\underset{\text{primær-budsjettunderskudd}}{(G_t-T_t)} - \underset{Seniorage}{SNG_t}$$
+
+- Sentralbanken
+
+$$ B_{t-1}\cdot i_{t-1} + \Delta B_{t}^{m} = \Delta M_{t}$$
+
+- Konsolidert budsjettbetingelse for offentlig sektor
+
+
+
+
+
+- 
+
+
+
+
+
+
+
+<!--
 Statsgjeld
 Budsjettlikningen for offentlig sektor
 Sentralbanken:
 B^m_t -1 *i_t-1+(B^m_t- B^m_t -1)=(M0_t- M0_t-1)+ISB_t
-Offentlige finanser
-B^f_t= (1+t_t)B^f_t-1+(G_t-T_t)- ISB_t
 Konsolidert
 B=B^f-B^m
 B= B^sb-B^m 
@@ -31,3 +58,4 @@ Kutte i primærbudsjettet (øke T eller redusere G)
 Mislighold
 Inflasjon
 Fordelingskamp
+-->

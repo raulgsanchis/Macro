@@ -1,3 +1,7 @@
+---
+bibliography: pensum.bib
+---
+
 
 ```{r include=FALSE}
 library(MakroOEKB1115)

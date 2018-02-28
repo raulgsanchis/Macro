@@ -1,10 +1,17 @@
 ---
-title: ""
+title: "Forelesning ØKB1115 Makroøkonomi: Del 2 økonomisk vekst"
 output:
   ioslides_presentation: default
+bibliography: ../pensum.bib
+#    logo: logo.png
 ---
 
 
 ```{r plan, child = '../del2_vekst.Rmd'}
 #../del1_konjunkturer.Rmd
 ```
+
+---
+
+## Referanser
+

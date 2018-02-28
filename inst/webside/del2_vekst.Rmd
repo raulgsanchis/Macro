@@ -20,11 +20,15 @@ bibliography: pensum.bib
 - Fattige land: Finner ingen slik klar sammenheng
     + Hypoteser: (1) Geografi, (2) Kultur, **(3) Institusjoner**
 
+<figure>
+<img id='grere' src="bilder/northsouthchina.png" height="25px" width="200px" />
+</figure>
+
 ---
 
 ###  Inklusive og ekstraktive offentlige institusjoner [@acemoglu2013nations]
 
-Institusjonene kan kalles **ekstraktive** ved at en elite benytter disse til å ekstrahere verdier fra flertallet. 
+Institusjonene kan kalles **ekstraktive** dersom en elite (vanligvis i form av et totalitært regime) benytter disse til å ekstrahere verdier fra flertallet. 
 
 Institusjonene kan kalles **inklusive** dersom de sørger for privat eiendomsrett, borgerrettigheter, upartisk 
 rettsvesen, fri etableringsrett og karrierevalg
