@@ -47,14 +47,8 @@ $$B^f_t= \underset{\text{a}}{(1+i_{t})B^{f}_{t-1}}+\underset{\text{det primære 
 ### Dynamikken i statsgjelden over tid 
 Dynamikken i statsgjelden over tid
 
-
-
-
 ## Likviditetsfellen (IS-LM modellen med to husholdninger)
-
-
-
-
+Finne forelesninge fra Høgskulen
 
 
 
