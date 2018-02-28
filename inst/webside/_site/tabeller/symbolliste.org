@@ -55,7 +55,7 @@
 | a              | Teknologisk vekst                                                                    |
 | n              | Befolkningsvekst                                                                     |
 | B              | Nominelt nivå på statsobligasjoner eid av private aktører                            |
-| $B^{t}$        | Nominelt nivå på statsobligasjoner utstedt av finansmyndighetene                     |
+| $B^{f}$       | Nominelt nivå på statsobligasjoner utstedt av finansmyndighetene                     |
 | $B^{m}$        | Nominelt nivå på statsobligasjoner på sentralbankens regnskapsbalanse                |
 |----------------+--------------------------------------------------------------------------------------|
 

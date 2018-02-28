@@ -2,29 +2,55 @@
 output: html_notebook
 ---
 
+## Penger (innvendige og utvendige)
 
-# Solow-modellen
+## Banker, systemrisiko og kapitalkrav
+
+## Statsgjeldskrise
+
+<iframe src="http://www.usdebtclock.org/">
+  <p>Your browser does not support iframes.</p>
+</iframe>
 
 
+<iframe src="https://www.nbim.no/no//">
+  <p>Your browser does not support iframes.</p>
+</iframe>
 
 
-# Statsgjeldskrise
+<iframe src="https://www.nationaldebtclocks.org/">
+  <p>Your browser does not support iframes.</p>
+</iframe>
+
+<iframe src="https://www.nationaldebtclocks.org/">
+  <p>Your browser does not support iframes.</p>
+</iframe>
+
+### Budsjettbetingelsen for offentlig sektor
 
 - Offentlige myndigheter
 
-$$B^f_t= \underset{\text{a}}{(1+i_{t})B^{f}_{t-1}}+\underset{\text{primær-budsjettunderskudd}}{(G_t-T_t)} - \underset{Seniorage}{SNG_t}$$
+$$B^f_t= \underset{\text{a}}{(1+i_{t})B^{f}_{t-1}}+\underset{\text{det primære budsjettunderskudd}}{(G_t-T_t)} - \underset{Seniorage}{SNG_t}$$
 
 - Sentralbanken
 
 $$ B_{t-1}\cdot i_{t-1} + \Delta B_{t}^{m} = \Delta M_{t}$$
 
+- Gjeld
+
+$$B_{t} = B_{t}^{f} - B_{t}^{m}$$
+
 - Konsolidert budsjettbetingelse for offentlig sektor
 
+$$B^f_t= \underset{\text{a}}{(1+i_{t})B^{f}_{t-1}}+\underset{\text{det primære budsjettunderskudd}}{(G_t-T_t)} - \underset{Seniorage}{SNG_t}$$
+
+### Dynamikken i statsgjelden over tid 
+Dynamikken i statsgjelden over tid
 
 
 
 
-- 
+## Likviditetsfellen (IS-LM modellen med to husholdninger)
 
 
 
