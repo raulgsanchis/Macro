@@ -1,8 +1,10 @@
 ---
+output: html_notebook
 bibliography: pensum.bib
 ---
 
-## Introduksjon til økonomisk vekst
+## Introduksjoutput: html_notebook
+on til økonomisk vekst
 
 - Vi er opptatt av økonomisk vekst i et land,  fordi dette øker velstandsnivået blant landets innbyggere over tid
 
@@ -33,7 +35,7 @@ Institusjonene kan kalles **ekstraktive** dersom en elite (vanligvis i form av e
 Institusjonene kan kalles **inklusive** dersom de sørger for privat eiendomsrett, borgerrettigheter, upartisk 
 rettsvesen, fri etableringsrett og karrierevalg
 
-Øvelse: Les artikkelen [Venezuela Is Starving Its People](artikler/del2_venezuela.pdf) og noter ned de eksemplene du finner på ekstraktive institusjoner 
+**Øvelse**: Les artikkelen [Venezuela Is Starving Its People](artikler/del2_venezuela.pdf) og noter ned de eksemplene du finner på ekstraktive institusjoner 
 
 ---
 
@@ -41,25 +43,35 @@ rettsvesen, fri etableringsrett og karrierevalg
 
 Solow-modellen bygger på forutsetninger om sterk grad av **inklusive** institusjoner. 
 
+-  Lukket økonomi
+
+- Full konkurranse i kapital- og arbeidsmarkedet
+
+- Hele befolkningen er sysselsatt, $L=N$
+
+---
+
 ### Modellens tre komponenter
-1. 
 
-1.
-
-1.
+1. Produktfunksjonen
+$$Y=F(K,AL)$$
+1. Sparing
+$$I=S=sY$$
+1. Kapitalakkumalasjon
+$$K_{t+1}=(1-\delta)K_{t}$$
 
 ### Enkel utgave
 
+```{r echo=FALSE}
+abc <- eval(parse(text=expression('2*a')),list(a=123))
+```
 
 ### Normal utgave
 
+### Skiftanalyse
 
+- Økt sparing
 
+- Befolkningsvekst
 
-
-
-<!--
-Mer konkret kan vi uttrykke disse som:
-- Abc
-- Def
--->
+# Referanser

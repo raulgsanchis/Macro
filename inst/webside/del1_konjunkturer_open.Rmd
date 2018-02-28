@@ -709,7 +709,7 @@ Antar her at målet om ekstern balanse automatisk blir sikret gjennom endringer 
 
 > **The argument for a flexible exchange rate is, strange to say, very nearly identical with the argument for daylight savings time.** Isn't it absurd to change the clock in summer when exactly the same result could be achieved by having each individual change his habits? All that is required is that everyone decide to come to his office an hour earlier, have lunch an hour earlier, etc. But obviously **it is much simpler to change the clock that guides all than to have each individual separately change his pattern of reaction to the clock**, even though all want to do so. **The situation is exactly the same in the exchange market**. **It is far simpler to allow one price to change, namely, the price of foreign exchange, than to rely upon changes in the multitude of prices that together constitute the internal price structure.**
 
-- [@friedman1953case, page 173]
+- [@friedman1953case,  page 173]
 
 ---
 
