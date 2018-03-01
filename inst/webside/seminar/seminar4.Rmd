@@ -1,8 +1,120 @@
 ---
-output:
-  html_notebook:
-    css: seminarAV.css
+css: seminarPAA.css
+output: html_notebook
 ---
+
+```{r include=FALSE}
+library(MakroOEKB1115)
+library(dplyr)
+library(ggplot2)
+library(gridExtra)
+library(grid)
+library(latex2exp)
+## IS-LM åpen fast kurs
+#############################################################################################################
+iv <- list(i=2:7.5)
+openpar <- eopenpar <- sopenpar <- list(i_s=3.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+lukketpar <- elukketpar <- slukketpar <-  c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100, P=1, h = 10, k =1, Y = 130, m=1, t=0.4))
+
+fastislmo <- Makrofigur(modellnavn='islmo')
+
+# Samtidig
+fastislmo$numerisk(endvar=c('FastISC'), lukketpar=lukketpar, openpar=openpar, endrvar=iv, kat='init')
+fastislmotekst <- data.frame(kurve=c('IS','BoP'), farge=c('red', 'red'), x = c(2,openpar$i_s+openpar$rp+0.25), y = c(190, 190), xlim=100, ylim=2)
+fastislmo$grafisknum(samlikv=list(x=c(openpar$i_s+openpar$rp), y=c(172)), dftekst=fastislmotekst, manuell=1)
+fastislmo$ggtyper[[1]] + coord_flip()
+
+# Skift
+eopenpar$i_s <- 3
+fastislmo$numerisk(endvar=c('FastISC'), lukketpar=elukketpar, openpar=eopenpar, endrvar=iv, kat='endringP')
+efastislmotekst <-  data.frame(kurve=c("IS","BoP'"), farge=c('red', 'red'), x = c(2,eopenpar$i_s+openpar$rp+0.25), y = c(190, 190), xlim=100, ylim=2)
+fastislmo$grafisknumappend(samlikv=list(x=c(eopenpar$i_s+openpar$rp), y=c(179)), dftekst=efastislmotekst, manuell=1, tilstand='endringP')
+fastislmo$ggtyper[[2]] + coord_flip()
+
+# Stabilisering
+slukketpar$oG <- 44
+fastislmo$numerisk(endvar=c('FastISC'), lukketpar=slukketpar, openpar=eopenpar, endrvar=iv, kat='stabG')
+sfastislmotekst <-  data.frame(kurve=c("IS'","BoP'"), farge=c('red', 'red'), x = c(2,eopenpar$i_s+openpar$rp+0.25), y = c(190, 190), xlim=100, ylim=2)
+fastislmo$grafisknumappend(samlikv=list(x=c(eopenpar$i_s+openpar$rp), y=c(179)), dftekst=sfastislmotekst, manuell=1, tilstand='stabG')
+fastislmo$ggtyper[[3]] + coord_flip()
+
+# Styling
+fastislmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - fast kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+                         skaleringx=list(label=c(TeX('$i_{0}}$')), breaks=c(3.75)),
+                         skaleringy=list(label=c(TeX('$Y_{0}}$')), breaks=c(172)),
+                         figurnr=1)
+
+samtidigfastislm <- fastislmo$ggtyper[[4]]  + coord_flip() + geom_line(data=data.frame(x=openpar$i_s+openpar$rp, y=110:200), aes(x,y), color ='black', size=0.5)
+
+
+
+fastislmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - fast kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+                         skaleringx=list(label=c(TeX('$i_{0}}$'),TeX('$i_{1}}$')), breaks=c(openpar$i_s+openpar$rp, eopenpar$i_s+openpar$rp)),
+                         skaleringy=list(label=c(TeX('$Y_{0}}$'),TeX('$Y_{1}}$')), breaks=c(172, 179)),
+                         figurnr=2)
+
+skiftfastislm <- fastislmo$ggtyper[[5]]  + coord_flip() + geom_line(data=data.frame(x=openpar$i_s+openpar$rp, y=110:200), aes(x,y), color ='black', size=0.5) + geom_line(data=data.frame(x=eopenpar$i_s+openpar$rp, y=110:200), aes(x,y), color ='black', size=0.5)
+skiftfastislm
+
+fastislmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - fast kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+                       skaleringx=list(label=c(TeX('$i_{0,2}}$'),TeX('$i_{1}}$')), breaks=c(openpar$i_s+openpar$rp, eopenpar$i_s+openpar$rp)),
+                       skaleringy=list(label=c(TeX('$Y_{0,2}}$'),TeX('$Y_{1}}$')), breaks=c(172, 179)),
+                       figurnr=3)
+
+stabfastislm <- fastislmo$ggtyper[[6]]  + coord_flip() + geom_line(data=data.frame(x=openpar$i_s+openpar$rp, y=110:200), aes(x,y), color ='black', size=0.5) + geom_line(data=data.frame(x=eopenpar$i_s+openpar$rp, y=110:200), aes(x,y), color ='black', size=0.5)
+
+
+## IS-LM åpen flytende kurs
+#############################################################################################################
+iv <- list(i=2:7.5)
+openpar <- eopenpar <- sopenpar <- list(i_s=1.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
+lukketpar <- elukketpar <- slukketpar <-  c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50, M= 100, P=1, h = 10, k =1, Y = 130, m=1, t=0.4))
+flytislmo <- Makrofigur(modellnavn='islmo')
+
+# Samtidig
+flytislmo$numerisk(endvar=c('FlytISCBoP','FlytLMC'), lukketpar=lukketpar, openpar=openpar, endrvar=iv, kat='init')
+flytislmotekst <- data.frame(kurve=c('IS-BoP','LM'), farge=c('red', 'red'), x = c(2,7), y = c(200, 170), xlim=100, ylim=2)
+flytislmo$grafisknum(samlikv=list(x=c(4.4), y=c(144)), dftekst=flytislmotekst, manuell=1)
+flytislmo$ggtyper[[1]] + coord_flip()
+
+# Skift
+elukketpar$oG <- 75
+flytislmo$numerisk(endvar=c('FlytISCBoP','FlytLMC'), lukketpar=elukketpar, openpar=eopenpar, endrvar=iv, kat='endringG')
+eflytislmotekst <- data.frame(kurve=c("IS-BoP'",""), farge=c('red', 'red'), x = c(2,3), y = c(220, 220), xlim=100, ylim=2)
+flytislmo$grafisknumappend(samlikv=list(x=c(5.75), y=c(158)), dftekst=eflytislmotekst, manuell=1, tilstand='endringG')
+flytislmo$ggtyper[[2]] + coord_flip()
+
+# Stabilisering
+slukketpar$M <- 79
+flytislmo$numerisk(endvar=c('FlytISCBoP','FlytLMC'), lukketpar=slukketpar, openpar=sopenpar, endrvar=iv, kat='stabM')
+sflytislmotekst <- data.frame(kurve=c("IS-BoP'","LM'"), farge=c('red', 'red'), x = c(2,7), y = c(220, 150), xlim=100, ylim=0)
+flytislmo$grafisknumappend(samlikv=list(x=c(6.55), y=c(144)), dftekst=sflytislmotekst, manuell=1, tilstand='stabM')
+flytislmo$ggtyper[[3]] + coord_flip()
+
+# Styling
+flytislmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+                       skaleringx=list(label=c(TeX('$i_{0}}$')), breaks=c(4.4)),
+                       skaleringy=list(label=c(TeX('$Y_{0}}$')), breaks=c(144)),
+                       figurnr=1)
+
+samtidigflytislm <- flytislmo$ggtyper[[4]]  + coord_flip()
+samtidigflytislm
+
+flytislmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+                       skaleringx=list(label=c(TeX('$i_{0}}$'),TeX('$i_{1}}$')), breaks=c(4.4, 5.75)),
+                       skaleringy=list(label=c(TeX('$Y_{0}}$'),TeX('$Y_{1}}$')), breaks=c(144,158)),
+                       figurnr=2)
+
+skiftflytendeislm <- flytislmo$ggtyper[[5]]  + coord_flip()
+skiftflytendeislm
+
+flytislmo$grafiskstyle(labs=list(title='Mundell-Fleming modellen - flytende kurs',x='rentenivå (i)', y='produksjon, inntekt (Y)'),
+                       skaleringx=list(label=c(TeX('$i_{0=2}}$'),TeX('$i_{1}}$')), breaks=c(4.4, 5.75)),
+                       skaleringy=list(label=c(TeX('$Y_{0=2}}$'),TeX('$Y_{1}}$')), breaks=c(144,158)),
+                       figurnr=3)
+
+stabflytendeislm <- flytislmo$ggtyper[[6]]  + coord_flip()
+```
 
 # Seminar 4 (uke 10): Mundell-Fleming og AD ligningen under fast og flytende kurs 
 ## Åpen økonomi
@@ -14,7 +126,7 @@ output:
 
 2. Hva menes med intern og ekstern balanse?
 
-*Intern balanse: Produksjonsgapet er lukket $Y-Y^{*}=0$*
+*Intern balanse: Produksjonsgapet er lukket $(Y-Y^{u})=0$*
 
 *Ekstern balanse: Utenlandsgjelden er på et bærekraftig nivå (kan betjenes uten problemer)*
 
@@ -27,14 +139,18 @@ output:
 
 4. Vis at partietsbetingelsen kan omformuleres til:
 
+*Paritetsbetingelsen er gitt ved: $(1+i)=(1+i^{*})E^{e}/E$*
+
+*Her løser vi bare denne mhp på E (endogen):*
 $$E=\frac{(1+i^{*})}{(1+i)}E^{e}\text{ flytende kurs}$$
 
+*Starter her med å sette inn for at $E^e=E$ (troverdig kurs). Paritetsbetingelsen kan derfor forenkles til*
 
 $$i=i^{*} \text{ fast kurs (troverdig)}$$
 
 5. Gi en økonomisk tolkning på hva som skjer i de to regimene dersom denne betingelsen ikke holder med likhet?
 
-*Flytende kurs: $E>\frac{(1+i^{*})}{(1+i)}E^{e} \Leftrightarrow (1+i)>\frac{E^{e}}{E}(1+i^{*})$*
+*Flytende kurs: $E>\frac{(1+i^u)}{(1+i)}E^{e} \Leftrightarrow (1+i)>\frac{E^{e}}{E}(1+i^{*})$*
 
 *Høyere avkastning av å investere i innlandet sammenlignet med utlandet. Investorene vil derfor reallokere sine portefølje
 ved å plassere mer i norsk valuta. Dette vil øke etterspørselen etter norske kroner, og med det presse kronekursen oppover (appresiering) inntil betingelsen igjen er oppfylt med likhet. Resonnementet bli motsatt dersom ulikheten er gitt ved <.*
@@ -58,16 +174,40 @@ $$EX = x_{1}\cdot R + x_{2}\cdot Y^{*} \text{: eksport}$$
 
 ### Samtidig likevekt
 
-6. Løs for likevektsbetingelsen under hhv. fast og flytende kurs og vis grafisk den samtidige likevekten
+6. Løs for likevektsbetingelsene under hhv. fast og flytende kurs og vis grafisk den samtidige likevekten
 
-*Fast kurs:*
-*$$\text{IS}$$*
-*$$\text{BoP}$$*
+- Fast kurs
 
-*Flytende kursen:*
-*$$\text{IS}$$*
-*$$\text{LM}$$*
-*$$\text{BoP}$$*
+*$$Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX  + R^{2}\cdot m_{1} \right] \text{: godemarkedet}$$*
+
+*$$kY -hi = M/P \text{ :pengemarkedet  (passiv)}$$*
+
+*$$i = i^u + rp$$*
+
+
+
+
+
+```{r echo=FALSE}
+samtidigfastislm
+```
+
+
+- Flytende kurs
+IS-BoP ligningen kan vi finne ved å kombinere løsningen for valuta- og  godemarkedet:
+
+*$E=E(i,i^{u},E^{e}) \Rightarrow R = \frac{E(i,i^{u},E^{e})\cdot P^{u}}{P}=R(E(i,i^{u},E^{e}),P,P^{u}) = R(\cdot)$ Setter vi inn for $R(\cdot)$  godemarkedet får vi:*
+
+*$$Y = \frac{1}{1-c(1-t) + R(\cdot) m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX\Big( R(\cdot) \Big)  + R(\cdot)^{2}\cdot m_{1} \right] \text{: godemarkedet}$$*
+
+
+```{r echo=FALSE}
+samtidigflytislm
+```
+
+
+
+
 
 7. Hvor er helningen på IS-BoP ligningen (flytende kurs) slakere enn IS-kurven?
 
@@ -78,7 +218,13 @@ som gjør at kurven blir slakere*
 
 8. Under et flytende kurs regime, se for deg en situasjon med økte private realinvesteringer $\Delta I>0$ ('animal spirits') som etterhvert  motvirket av en kontraktiv pengepolitikk og illustrer dette grafisk et diagram ved bruk av Mundell-Fleming modellen.
 
-*Grafisk løsning kommer litt senere*
+```{r echo=FALSE}
+skiftflytendeislm
+```
+
+```{r echo=FALSE}
+stabflytendeislm
+```
 
 ## AD-AS modellen
 
@@ -99,5 +245,3 @@ realvalutakursen som gir en økningen i nettoeksporten (Marshall-Lerner betingel
 *(2) Økt realpengemengde (samme forklaring som under lukket økonomi): Reduserte produktpriser øker realpengemengden. I pengemarkedet fører dette til en redusert rentenivå. Den reduserte renta medfører økt etterspørsel pga lavere private realinvesteringer og konsum (merk: dette poenget er nytt, sammenlignet med den modellen som ble satt opp i forelesningen), som initierer en positiv multiplikatoreffekt siden økt  etterspørsel fører til mindre konsum som fører til redusert etterspørsel osv.*
 
 *Se forelesningsnotatene for grafisk løsning*
-
-
