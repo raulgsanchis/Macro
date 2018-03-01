@@ -283,8 +283,8 @@ $(document).ready(function () {
 </div>
 
 
-<div id="introduksjon-til-konomisk-vekst" class="section level2">
-<h2>Introduksjon til økonomisk vekst</h2>
+<div id="introdukson-til-konomisk-vekst" class="section level2">
+<h2>Introdukson til økonomisk vekst</h2>
 <ul>
 <li><p>Vi er opptatt av økonomisk vekst i et land, fordi dette øker velstandsnivået blant landets innbyggere over tid</p></li>
 <li><p>Det er vanlig å måle et lands velstandsnivå ved å dele BNP <span class="math inline">\(Y\)</span> på antall innbyggere i landet <span class="math inline">\(N\)</span>, dvs <span class="math inline">\(Y/N\)</span></p></li>
@@ -312,44 +312,88 @@ $(document).ready(function () {
 <h3>Inklusive og ekstraktive offentlige institusjoner <span class="citation">(Acemoglu and Robinson 2013)</span></h3>
 <p>Institusjonene kan kalles <strong>ekstraktive</strong> dersom en elite (vanligvis i form av et totalitært regime) benytter disse til å ekstrahere verdier fra flertallet.</p>
 <p>Institusjonene kan kalles <strong>inklusive</strong> dersom de sørger for privat eiendomsrett, borgerrettigheter, upartisk rettsvesen, fri etableringsrett og karrierevalg</p>
-<p>Øvelse: Les artikkelen <a href="artikler/del2_venezuela.pdf">Venezuela Is Starving Its People</a> og noter ned de eksemplene du finner på ekstraktive institusjoner</p>
-<hr />
+<p><strong>Øvelse</strong>: Les artikkelen <a href="artikler/del2_venezuela.pdf">Venezuela Is Starving Its People</a> og noter ned de eksemplene du finner på ekstraktive institusjoner</p>
 </div>
 </div>
 <div id="solow-modellen-for-konomisk-vekst" class="section level2">
 <h2>Solow-modellen for økonomisk vekst</h2>
-<p>Solow-modellen bygger på forutsetninger om sterk grad av <strong>inklusive</strong> institusjoner.</p>
+<p>Solow-modellen bygger på forutsetninger om sterk grad av <strong>inklusive</strong> institusjoner. I tillegg gjør følgende forutsetninger seg gjeldende</p>
 <ul>
-<li><p>Lukket økonomi</p></li>
-<li><p>Full konkurranse i kapital- og arbeidsmarkedet</p></li>
+<li><p>Lukket økonomi uten offentlig sektor, <span class="math inline">\(Y = C + I\)</span></p></li>
+<li><p>Full konkurranse i kapital- og arbeidsmarkedet (innsatsfaktoren avlønnes etter sin grenseproduktivitet)</p></li>
 <li><p>Hele befolkningen er sysselsatt, <span class="math inline">\(L=N\)</span></p></li>
+<li><p>Produktfunksjonen er homogen av grad én</p></li>
+<li><p>Homogen arbeidskraft (aller arbeiderne er like produktive)</p></li>
 </ul>
 <hr />
 <div id="modellens-tre-komponenter" class="section level3">
 <h3>Modellens tre komponenter</h3>
 <ol style="list-style-type: decimal">
-<li><p>Produktfunksjonen</p></li>
-<li><p>Sparing</p></li>
+<li>Produktfunksjonen</li>
 </ol>
-<p><span class="math inline">\(I=S=sY \LeftRightarrow\)</span></p>
-<ol style="list-style-type: decimal">
-<li>Kapitalakkumalasjon</li>
-</ol>
+<p><span class="math display">\[Y=F(K,AL) \text{ } F_{K}&gt;0, F_{KK}&lt;0, F_{L}&gt;0, F_{LL}&lt;0\]</span> - Produktfunksjon er homogen av grad én (konstant skalutbytte). Som betyr at en t-dobling av innsatsfaktorene medfører en t-dobling av produksjonen <span class="math display">\[tY=tF(K,L)=F(tK,tL)\]</span></p>
+<p>Som betyr at en t-dobling av innsatsfaktorene medfører en t-dobling av produksjonen</p>
+<hr />
+<ul>
+<li>Setter vi <span class="math inline">\(t=\frac{1}{AL}\)</span> får vi <span class="math inline">\(\frac{Y}{AL}=F(\frac{K}{AL},1)\)</span>. Definerer vi <span class="math inline">\(y \equiv \frac{1}{AL}\)</span> og <span class="math inline">\(F(K/AL,1) \equiv f(k)\)</span>, kan vi skrive produktfunksjone på intensiv form som</li>
+</ul>
+<p><span class="math display">\[y=f(k) \text{ } f&#39;{k}&gt;0, f&#39;&#39;{k}&lt;0\]</span></p>
+<p><span class="math inline">\(\text{2.}\)</span> Sparing</p>
+<p><span class="math display">\[S=sY=I\]</span> 3. Kapitalakkumalasjon</p>
+<p><span class="math display">\[\Delta K=-\delta K + I\]</span></p>
+<hr />
 </div>
-<div id="enkel-utgave" class="section level3">
-<h3>Enkel utgave</h3>
+<div id="forenklet-solow-modell" class="section level3">
+<h3>Forenklet Solow-modell</h3>
+<ul>
+<li><p>Ingen teknologisk framgang, <span class="math inline">\(A=1\)</span></p></li>
+<li><p>Uten befolkningsvekst, <span class="math inline">\(n=0\)</span></p></li>
+</ul>
+<p>Starter med å dele <span class="math inline">\((3)\)</span> på <span class="math inline">\(L\)</span></p>
+<p><span class="math display">\[\frac{\Delta{K}}{L} = -\delta K/L + \frac{I}{K}\]</span></p>
+<p>Setter vi inn for <span class="math inline">\(I\)</span> fra (2) og <span class="math inline">\(y\)</span> fra (1) og bruker at <span class="math inline">\(k\equiv \frac{K}{N}\)</span>, kan vi skrive</p>
+<p><span class="math display">\[\Delta{k} = -\delta k + sf(k)\]</span></p>
+<ul>
+<li><span class="math inline">\(sf(k)&gt; \delta k\)</span> vil BNP per capita vokse, og veksten vil være stærkere desto lavere nivået er på <span class="math inline">\(k\)</span></li>
+<li><span class="math inline">\(sf(k)&lt; \delta k\)</span> vil BNP per capita synke, og reduksjonen vil være stærkere desto lavere nivået er på <span class="math inline">\(k\)</span><br />
+</li>
+<li>På lang sikt og uavhengig av startverdiren for <span class="math inline">\(k_{0}\)</span>, vil økonomien konvergere mot en stasjonær-tilstand (steady-state) hvor produksjonen per innbygger er konstant.</li>
+</ul>
+<hr />
+<p>Denne prediksjonen er i tråd med hva vi beskrev innledningsvis: BNP per innbygger mellom land har konvergert (dvs. mindre forskjeller) for mange rike land.</p>
+<hr />
+<pre><code>##  [1] 1.000000 1.414214 1.732051 2.000000 2.236068 2.449490 2.645751
+##  [8] 2.828427 3.000000 3.162278</code></pre>
+<hr />
+<div id="skiftanalyse" class="section level4">
+<h4>Skiftanalyse</h4>
+<ul>
+<li>Økt sparerate</li>
+</ul>
+<hr />
 </div>
-<div id="normal-utgave" class="section level3">
-<h3>Normal utgave</h3>
+</div>
+<div id="vanlig-solow-modell" class="section level3">
+<h3>Vanlig Solow-modell</h3>
+<p>Modellen vil her være gitt ved (i neste seminar skal vi se nærmere på hvordan vi løser dette matematisk)</p>
+<p><span class="math display">\[\Delta{k} = sf(k)-(\delta+n) k\]</span></p>
+<ul>
+<li><span class="math inline">\(sf(k)&gt; \delta k\)</span> vil BNP per effektiv arbeidskraftenhet øke, og veksten vil være stærkere desto lavere nivået er på <span class="math inline">\(k\)</span></li>
+<li><span class="math inline">\(sf(k)&lt; \delta k\)</span> vil BNP per effektiv arbeidskraftenhet, og reduksjonen vil være stærkere desto lavere nivået er på <span class="math inline">\(k\)</span><br />
+</li>
+<li>På lang sikt og uavhengig av startverdiren for <span class="math inline">\(k_{0}\)</span>, vil økonomien konvergere mot en stasjonær-tilstand (steady-state) hvor produksjonen per innbygger vokser med en eksogen (bestemt utenfor modellen)r lik <span class="math inline">\(a\)</span></li>
+</ul>
+<hr />
+<div id="skiftanalyse-1" class="section level4">
+<h4>Skiftanalyse</h4>
+<ul>
+<li>Befolkningsvekst (økt fødselsrate pluss nettoinvandring)</li>
+</ul>
 </div>
 </div>
-<div id="referanser" class="section level1">
+</div>
+<div id="referanser" class="section level1 unnumbered">
 <h1>Referanser</h1>
-<!--
-Mer konkret kan vi uttrykke disse som:
-- Abc
-- Def
--->
 <div id="refs" class="references">
 <div id="ref-acemoglu2013nations">
 <p>Acemoglu, Daron, and James A Robinson. 2013. <em>Why Nations Fail: The Origins of Power, Prosperity, and Poverty</em>. Broadway Business.</p>

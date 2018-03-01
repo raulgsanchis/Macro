@@ -1,10 +1,8 @@
 ---
-output: html_notebook
 bibliography: pensum.bib
 ---
 
-## Introduksjoutput: html_notebook
-on til økonomisk vekst
+## Introdukson til økonomisk vekst
 
 - Vi er opptatt av økonomisk vekst i et land,  fordi dette øker velstandsnivået blant landets innbyggere over tid
 
@@ -37,8 +35,6 @@ rettsvesen, fri etableringsrett og karrierevalg
 
 **Øvelse**: Les artikkelen [Venezuela Is Starving Its People](artikler/del2_venezuela.pdf) og noter ned de eksemplene du finner på ekstraktive institusjoner 
 
----
-
 ## Solow-modellen for økonomisk vekst 
 
 Solow-modellen bygger på forutsetninger om sterk grad av **inklusive** institusjoner. I tillegg gjør følgende forutsetninger seg gjeldende
@@ -68,10 +64,17 @@ Som betyr at en t-dobling av innsatsfaktorene medfører en t-dobling av produksj
 - Setter vi $t=\frac{1}{AL}$ får vi $\frac{Y}{AL}=F(\frac{K}{AL},1)$. Definerer vi $y \equiv \frac{1}{AL}$ og $F(K/AL,1) \equiv f(k)$, kan vi skrive produktfunksjone på intensiv form som 
 
 $$y=f(k) \text{ } f'{k}>0, f''{k}<0$$
-2. Sparing
+
+---
+
+$\text{2.}$ Sparing
+
 $$S=sY=I$$
 3. Kapitalakkumalasjon
+
 $$\Delta K=-\delta K + I$$
+
+---
 
 ### Forenklet Solow-modell
 
@@ -87,19 +90,31 @@ Setter vi inn for $I$ fra (2) og $y$ fra (1) og bruker at $k\equiv \frac{K}{N}$,
 
 $$\Delta{k} = -\delta k + sf(k)$$
 
+---
+
+### Modellens prediksoner
 - $sf(k)> \delta k$ vil BNP per capita vokse, og veksten vil være stærkere desto lavere nivået er på $k$ 
 - $sf(k)< \delta k$ vil BNP per capita synke, og reduksjonen vil være stærkere desto lavere nivået er på $k$   
 - På lang sikt og uavhengig av startverdiren for $k_{0}$, vil økonomien konvergere mot en stasjonær-tilstand (steady-state) hvor
-produksjonen per innbygger er konstant
+produksjonen per innbygger er konstant.
+
+
+Disse resultatene er overens med hva vi beskrev innledningsvis: BNP per innbygger mellom land har konvergert (dvs. mindre forskjeller) for mange rike land.
+
+---
 
 ```{r echo=FALSE}
 abc <- eval(parse(text=expression('k^(0.5)')),list(k=1:10))
 abc
 ```
 
+---
+
 #### Skiftanalyse
 
 - Økt sparerate
+
+---
 
 ### Vanlig Solow-modell
 
@@ -112,8 +127,11 @@ $$\Delta{k} = sf(k)-(\delta+n) k$$
 - På lang sikt og uavhengig av startverdiren for $k_{0}$, vil økonomien konvergere mot en stasjonær-tilstand (steady-state) hvor
 produksjonen per innbygger vokser med en eksogen (bestemt utenfor modellen)r lik $a$ 
 
+---
+
 #### Skiftanalyse
 
 - Befolkningsvekst (økt fødselsrate pluss nettoinvandring)
+
 
 # Referanser
