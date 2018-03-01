@@ -41,37 +41,68 @@ rettsvesen, fri etableringsrett og karrierevalg
 
 ## Solow-modellen for økonomisk vekst 
 
-Solow-modellen bygger på forutsetninger om sterk grad av **inklusive** institusjoner. 
+Solow-modellen bygger på forutsetninger om sterk grad av **inklusive** institusjoner. I tillegg gjør følgende forutsetninger seg gjeldende
 
--  Lukket økonomi
+-  Lukket økonomi uten offentlig sektor, $Y = C + I$
 
-- Full konkurranse i kapital- og arbeidsmarkedet
+- Full konkurranse i kapital- og arbeidsmarkedet (innsatsfaktoren avlønnes etter sin grenseproduktivitet)
 
 - Hele befolkningen er sysselsatt, $L=N$
+
+- Produktfunksjonen er homogen av grad én
+
+- Homogen arbeidskraft (aller arbeiderne er like produktive)
 
 ---
 
 ### Modellens tre komponenter
 
 1. Produktfunksjonen
-$$Y=F(K,AL)$$
-1. Sparing
-$$I=S=sY$$
-1. Kapitalakkumalasjon
-$$K_{t+1}=(1-\delta)K_{t}$$
 
-### Enkel utgave
+$$Y=F(K,AL) \text{ } F_{K}>0, F_{KK}<0, F_{L}>0, F_{LL}<0$$
+- Produktfunksjon er homogen av grad én (konstant skalutbytte). Som betyr at en t-dobling av innsatsfaktorene medfører en t-dobling av produksjonen
+$$tY=tF(K,L)=F(tK,tL)$$ 
+
+Som betyr at en t-dobling av innsatsfaktorene medfører en t-dobling av produksjonen
+
+- Setter vi $t=\frac{1}{AL}$ får vi $\frac{Y}{AL}=F(\frac{K}{AL},1)$. Definerer vi $y \equiv \frac{1}{AL}$ og $F(K/AL,1) \equiv f(k)$, kan vi skrive produktfunksjone på intensiv form som 
+
+$$y=f(k) \text{ } f'{k}>0, f''{k}<0$$
+2. Sparing
+$$S=sY=I$$
+3. Kapitalakkumalasjon
+$$\Delta K=-\delta K + I$$
+
+### Enkel Solow-modell
+
+- Ingen teknologisk framgang, $A=1$
+
+- Uten befolkningsvekst, $n=0$
+
+Starter med å dele $(3)$ på $L$
+
+$$\frac{\Delta{K}}{L} = -\delta K/L + \frac{I}{K}$$
+
+Setter vi inn for $I$ fra (2) og $y$ fra (1) og bruker at $k\equiv \frac{K}{N}$, kan vi skrive
+
+$$\Delta{k} = -\delta k + sf(k)$$
+
+- $sf(k)> \delta k$ vil BNP per capita vokse, og veksten vil være stærkere desto lavere nivået er på $k$ 
+- $sf(k)< \delta k$ vil BNP per capita synke, og reduksjonen vil være stærkere desto lavere nivået er på $k$   
+- På lang sikt og uavhengig av startverdiren for $k_{0}$, vil økonomien konvergere mot en stasjonær-tilstand (steady-state) hvor
+produksjonen per innbygger er konstant
+
 
 ```{r echo=FALSE}
 abc <- eval(parse(text=expression('2*a')),list(a=123))
 ```
 
-### Normal utgave
+### Vanlig Solow-modell
 
 ### Skiftanalyse
 
 - Økt sparing
 
-- Befolkningsvekst
+- Befolkningsvekst (fødsler pluss nettoinvandring)
 
 # Referanser

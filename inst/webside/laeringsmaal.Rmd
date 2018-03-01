@@ -1,3 +1,7 @@
+---
+output: html_notebook
+---
+
 
 #Oversikt over faget
 - Tre hovedtemaer: 
@@ -184,6 +188,12 @@ Virkemidler: $G$, $T$ og $M/i$
 
 Fleksibilitet i P og korrekte prisforventninger Pe
  på mellomlang sikt, fører til at økonomien går tilbake til sitt naturlige produksjons- og ledighetsnivå.
+ 
+ 
+ # Del 2: Økonomisk vekst
+ 
+ # Del 3: Økonomiske kriser
+ 
  
  <!--
 
