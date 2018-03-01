@@ -333,11 +333,11 @@ $(document).ready(function () {
 </ol>
 <p><span class="math display">\[Y=F(K,AL) \text{ } F_{K}&gt;0, F_{KK}&lt;0, F_{L}&gt;0, F_{LL}&lt;0\]</span> - Produktfunksjon er homogen av grad én (konstant skalutbytte). Som betyr at en t-dobling av innsatsfaktorene medfører en t-dobling av produksjonen <span class="math display">\[tY=tF(K,L)=F(tK,tL)\]</span></p>
 <p>Som betyr at en t-dobling av innsatsfaktorene medfører en t-dobling av produksjonen</p>
-<hr />
 <ul>
 <li>Setter vi <span class="math inline">\(t=\frac{1}{AL}\)</span> får vi <span class="math inline">\(\frac{Y}{AL}=F(\frac{K}{AL},1)\)</span>. Definerer vi <span class="math inline">\(y \equiv \frac{1}{AL}\)</span> og <span class="math inline">\(F(K/AL,1) \equiv f(k)\)</span>, kan vi skrive produktfunksjone på intensiv form som</li>
 </ul>
 <p><span class="math display">\[y=f(k) \text{ } f&#39;{k}&gt;0, f&#39;&#39;{k}&lt;0\]</span></p>
+<hr />
 <p><span class="math inline">\(\text{2.}\)</span> Sparing</p>
 <p><span class="math display">\[S=sY=I\]</span> 3. Kapitalakkumalasjon</p>
 <p><span class="math display">\[\Delta K=-\delta K + I\]</span></p>
@@ -353,14 +353,17 @@ $(document).ready(function () {
 <p><span class="math display">\[\frac{\Delta{K}}{L} = -\delta K/L + \frac{I}{K}\]</span></p>
 <p>Setter vi inn for <span class="math inline">\(I\)</span> fra (2) og <span class="math inline">\(y\)</span> fra (1) og bruker at <span class="math inline">\(k\equiv \frac{K}{N}\)</span>, kan vi skrive</p>
 <p><span class="math display">\[\Delta{k} = -\delta k + sf(k)\]</span></p>
+<hr />
+</div>
+<div id="modellens-prediksoner" class="section level3">
+<h3>Modellens prediksoner</h3>
 <ul>
 <li><span class="math inline">\(sf(k)&gt; \delta k\)</span> vil BNP per capita vokse, og veksten vil være stærkere desto lavere nivået er på <span class="math inline">\(k\)</span></li>
 <li><span class="math inline">\(sf(k)&lt; \delta k\)</span> vil BNP per capita synke, og reduksjonen vil være stærkere desto lavere nivået er på <span class="math inline">\(k\)</span><br />
 </li>
 <li>På lang sikt og uavhengig av startverdiren for <span class="math inline">\(k_{0}\)</span>, vil økonomien konvergere mot en stasjonær-tilstand (steady-state) hvor produksjonen per innbygger er konstant.</li>
 </ul>
-<hr />
-<p>Denne prediksjonen er i tråd med hva vi beskrev innledningsvis: BNP per innbygger mellom land har konvergert (dvs. mindre forskjeller) for mange rike land.</p>
+<p>Disse resultatene er overens med hva vi beskrev innledningsvis: BNP per innbygger mellom land har konvergert (dvs. mindre forskjeller) for mange rike land.</p>
 <hr />
 <pre><code>##  [1] 1.000000 1.414214 1.732051 2.000000 2.236068 2.449490 2.645751
 ##  [8] 2.828427 3.000000 3.162278</code></pre>
