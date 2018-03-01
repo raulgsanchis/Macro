@@ -189,12 +189,11 @@ Virkemidler: $G$, $T$ og $M/i$
 Fleksibilitet i P og korrekte prisforventninger Pe
  på mellomlang sikt, fører til at økonomien går tilbake til sitt naturlige produksjons- og ledighetsnivå.
  
- 
  # Del 2: Økonomisk vekst
  
  # Del 3: Økonomiske kriser
  
- 
+
  <!--
 
 ### Mundell-Fleming modellen (IS-LM modellen for en åpen økonom)i: Gode-, penge- og valutakursmarkedet i likevekt

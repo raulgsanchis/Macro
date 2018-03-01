@@ -73,7 +73,7 @@ $$S=sY=I$$
 3. Kapitalakkumalasjon
 $$\Delta K=-\delta K + I$$
 
-### Enkel Solow-modell
+### Forenklet Solow-modell
 
 - Ingen teknologisk framgang, $A=1$
 
@@ -92,17 +92,28 @@ $$\Delta{k} = -\delta k + sf(k)$$
 - På lang sikt og uavhengig av startverdiren for $k_{0}$, vil økonomien konvergere mot en stasjonær-tilstand (steady-state) hvor
 produksjonen per innbygger er konstant
 
-
 ```{r echo=FALSE}
-abc <- eval(parse(text=expression('2*a')),list(a=123))
+abc <- eval(parse(text=expression('k^(0.5)')),list(k=1:10))
+abc
 ```
+
+#### Skiftanalyse
+
+- Økt sparerate
 
 ### Vanlig Solow-modell
 
-### Skiftanalyse
+Modellen vil her være gitt ved (i neste seminar skal vi se nærmere på hvordan vi løser dette matematisk)
 
-- Økt sparing
+$$\Delta{k} = sf(k)-(\delta+n) k$$
 
-- Befolkningsvekst (fødsler pluss nettoinvandring)
+- $sf(k)> \delta k$ vil BNP per effektiv arbeidskraftenhet øke, og veksten vil være stærkere desto lavere nivået er på $k$ 
+- $sf(k)< \delta k$ vil BNP per effektiv arbeidskraftenhet, og reduksjonen vil være stærkere desto lavere nivået er på $k$   
+- På lang sikt og uavhengig av startverdiren for $k_{0}$, vil økonomien konvergere mot en stasjonær-tilstand (steady-state) hvor
+produksjonen per innbygger vokser med en eksogen (bestemt utenfor modellen)r lik $a$ 
+
+#### Skiftanalyse
+
+- Befolkningsvekst (økt fødselsrate pluss nettoinvandring)
 
 # Referanser
