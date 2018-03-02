@@ -5,6 +5,38 @@ output:
 ---
 
 # Obligatorisk oppgave: 
+
+## Del 1:
+1. Keynes modell
+1.
+1.
+1.
+1.
+
+
+## Del 2  AD-AS lukket økonomi
+1. Stil opp modellen
+1. Skift i 
+
+1. Med teknologi
+1. Abc
+1.
+
+1. Uten teknologi
+1.
+1.
+
+## Del 3: Statsjeld
+1. Illustre utvikligne for statsgjelden under både høy og lav produktivitetsvekst
+1. Virkemidler for å komme seg ut av av statsjgeldskrise
+
+<!--
+
+
+
+
+
+# Obligatorisk oppgave: 
 ## Del 1
 1. I makroøkonomi antas produksjonen (BNP) på kort sikt å være bestemt av etterspørselen. Hvilken sentral forutsetning ligger til grunn for dette resultatet?
 Svar: Stive priser.

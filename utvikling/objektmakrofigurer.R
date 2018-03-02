@@ -5,10 +5,6 @@ library(gridExtra)
 library(grid)
 library(latex2exp)
 ####################################
-solowgrafikk <- Genfigur('solow')
-
-solowgrafikk$numerisk()
-solowgrafikk$optimering()
 
 
 reshape2::melt(id.vars = c("Iv"))
