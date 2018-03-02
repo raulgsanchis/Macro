@@ -84,7 +84,7 @@ Genfigur$methods(grafisknumappend=function(samlikvedf=data.frame(x=100, y=3, xen
 
 Genfigur$methods(grafiskstyle=function(labs=list(title='Solow-modellen', x='k', y='y'),
                                          skaleringx=list(label=NULL,breaks=NULL,limits=NULL),
-                                         skaleringy=NULL,
+                                         skaleringy=list(label=NULL,breaks=NULL,limits=NULL),
                                          fargelinje=c('black','black', 'black'),
                                          figurnr = 2){
 
