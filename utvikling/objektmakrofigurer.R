@@ -5,6 +5,33 @@ library(gridExtra)
 library(grid)
 library(latex2exp)
 ####################################
+solowgrafikk <- Genfigur('solow')
+
+solowgrafikk$numerisk()
+solowgrafikk$optimering()
+
+
+reshape2::melt(id.vars = c("Iv"))
+alpha <- 0.5
+savr <- 0.3
+depr <- 0.03
+kap <- c(1:200)
+solowd <- data.frame(sy=eval(parse(text=expression('savr*k^(alpha)')),list(k=kap)),y=eval(parse(text=expression('k^(alpha)')),list(k=kap)), k=c(kap), kapder = 0.03*kap)
+
+ggsolow <- reshape2::melt(solowd,id.vars = c("k"))
+
+ggplotsolow <- ggplot() + geom_line(data = ggsolow, aes(x = k, y = value, color = factor(variable))) + geom_point(aes(x=100,y=3)) +
+  geom_segment(aes(xend=100,x=100,yend=10,y=0),lty=2) +
+  geom_segment(aes(xend=100,x=0,yend=10,y=10),lty=2) + theme_classic() + geom_text(color='red') +
+  geom_text(aes(x=1, y=33, label='Solow-modellen')) +
+  geom_scale
+
+ggplotsolow
+
+
+#############################
+
+
 openpar <-list(i_s=3.5, rp=0.25, E=1, Ps=1, x1=20, x2=0.1, m1=15, m2=0.1, Ys=200, rp=0, Ee=1)
 lukketpar <- c(list(c_1 = 0.6, oC = 50, oG= 50, b = 10, oI = 10, T = 50,P=1, M= 100, h = 10, k =1, Y = 130, m=1, t=0.4,
                     Pe=1, mu = 0.3, l_1=-5,l_2=1, z=1, A= 5,Ac = 2,
