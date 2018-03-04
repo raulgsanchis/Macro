@@ -1,5 +1,6 @@
 ---
 bibliography: pensum.bib
+output: html_notebook
 ---
 
 ## Introdukson til økonomisk vekst
@@ -162,8 +163,7 @@ solowgrafikk$ggtyper[[length(solowgrafikk$ggtyper)]]
 
 ```{r include=FALSE}
 ### Vanlig Solow-modell
-solowgrafikk$ggtyper[[length(solowgrafikk$ggtyper)]]
-lowgrafikk <- Genfigur('solow')
+solowgrafikk <- Genfigur('solow')
 
 solowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.4, alpha=0.5, n=0, gamma=0.04), endvar=list(k=1:200) ,kat='solow')
 solowgrafikk$optimering(tovectorlabel=c('sy', 'depk'), startv=c(100,10))
