@@ -25,10 +25,12 @@ bibliography: pensum.bib
 ```{r child = 'del2_vekst.Rmd'}
 ```
 
+<!--
 # Del 3: Økonomiske kriser
 
 ```{r child = 'del3_kriser.Rmd'}
 ```
 
+.->
 # Referanser
 

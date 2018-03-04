@@ -1,6 +1,6 @@
 ---
 bibliography: pensum.bib
-#output: html_notebook
+output: html_notebook
 ---
 
 ## Introdukson til økonomisk vekst
@@ -73,7 +73,7 @@ $\text{2.}$ Sparing
 $$S=sY=I$$
 3. Kapitalakkumalasjon
 
-$$\Delta K=-\delta K + I$$
+$$\dot{K}=-\delta K + I$$
 
 ---
 
@@ -81,15 +81,14 @@ $$\Delta K=-\delta K + I$$
 
 - Ingen teknologisk framgang, $A=1$
 
-- Uten befolkningsvekst, $n=0$
+Starter med å dele $(3)$ på $K$ og setter inn for $I$ fra (2)
 
-Starter med å dele $(3)$ på $L$
+$$\frac{\dot{K}}{K} = -\delta  + \frac{sY}{K}=  -\delta  + \frac{sY/N}{K/N}= -\delta  + \frac{sy}{k} $$
 
-$$\frac{\Delta{K}}{L} = -\delta K/L + \frac{I}{K}$$
+Vi har at $\frac{\dot{k}}{k} =\frac{\dot{K}}{K}  - n$ [(lenke her til regneregler)](https://www.adasextended.com/formler.html), som gjør at vi, 
+ved innsetting for $\frac{\dot{K}}{K}$, kan skrive
 
-Setter vi inn for $I$ fra (2) og $y$ fra (1) og bruker at $k\equiv \frac{K}{N}$, kan vi skrive
-
-$$\Delta{k} = sf(k)  -\delta k$$
+$$ \frac{\dot{k}}{k} = sf(k)  -(\delta +n) k$$
 
 ---
 
@@ -135,12 +134,12 @@ solowgrafikk$ggtyper[[length(solowgrafikk$ggtyper)]]
 
 
 #### Modellens prediksoner
-- $sf(k)> \delta k$ vil *BNP per capita* vokse, og veksten vil være stærkere desto lavere nivået er på $k$ 
-- $sf(k)< \delta k$ vil *BNP per capita* synke, og reduksjonen vil være stærkere desto lavere nivået er på $k$   
+- $sf(k)> (\delta+n) k$ vil *BNP per capita* vokse, og veksten vil være stærkere desto lavere nivået er på $k$ 
+- $sf(k)< (\delta+n) k$ vil *BNP per capita* synke, og reduksjonen vil være stærkere desto lavere nivået er på $k$   
 - På lang sikt og uavhengig av startverdiren for $k_{0}$, vil økonomien konvergere mot en stasjonær-tilstand (steady-state) hvor
 produksjonen per innbygger er konstant, c.
     - Dette medfører at trendveksten (som har benyttet i konjunkturanalysen i del I) i stasjonærtilstanden er gitt ved: 
-    $$\frac{\overline{Y}}{N}=c \Rightarrow ln(Y) - ln(N) = ln(c) \Rightarrow \Delta Y_{t}/Y_{t} = 0$$
+    $$\frac{Y}{N}=c \Rightarrow ln(Y) - ln(N) = ln(c) \Rightarrow \dot{Y}/Y= n$$
 
 ---
 
@@ -166,7 +165,7 @@ solowgrafikk$ggtyper[[length(solowgrafikk$ggtyper)]]
 
 ---
 
-### Vanlig Solow-modell
+### Solow-modellen (normalversjonen)
 
 
 ```{r include=FALSE}
@@ -178,7 +177,7 @@ nsolowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.4, alpha=0.5
 
 #nsolowgrafikk$optimeringv
 ssamlikvedf <- data.frame(x=100, y=10, xend=100, yend=10)
-sdftekst <- data.frame(x=c(200 ,190, 200),y=c(15, 8.75, 6), kurve=c('f(k)', "(n+delta)k", 'sf(k)'), farge=c('red', 'red', 'red'))
+sdftekst <- data.frame(x=c(200 ,190, 200),y=c(15, 8.75, 6), kurve=c('f(k)', "(a+n+delta)k", 'sf(k)'), farge=c('red', 'red', 'red'))
 nsolowgrafikk$grafisknumappend(samlikve=ssamlikvedf, dftekst=sdftekst, tilstand='solow')
 nsolowgrafikk$ggtyper[[2]]
 
@@ -187,7 +186,7 @@ nkatv <- 'oktbefolkning'
 
 nsolowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.4, alpha=0.5, n=0.01, gamma=0.04), endvar=list(k=1:200) ,kat=nkatv)
 dssamlikvedf <- data.frame(x=62, y=7.7, xend=62, yend=7.7)
-dsdftekst <- data.frame(x=c(200 ,190, 200),y=c(15, 10.35, 6),kurve=c('f(k)', "(n'+delta)k", "sf(k)"), farge=c('red', 'red', 'red'))
+dsdftekst <- data.frame(x=c(200 ,190, 200),y=c(15, 10.35, 6),kurve=c('f(k)', "(n'+a+delta)k", "sf(k)"), farge=c('red', 'red', 'red'))
 nsolowgrafikk$grafisknumappend(samlikve=dssamlikvedf, dftekst=dsdftekst, tilstand=nkatv)
 nsolowgrafikk$ggtyper[[3]]
 ```
@@ -196,13 +195,13 @@ nsolowgrafikk$ggtyper[[3]]
 
 Modellen vil her være gitt ved (i neste seminar skal vi se nærmere på hvordan vi løser dette matematisk):
 
-$$\Delta{k} = sf(k)-(\delta+n) k$$
+$$\Delta{k} = sf(k)-(\delta+n+ a) k$$
 Avlønning til kapitalen:
 $$r = f'(k)- \delta$$
 
 
 Avlønning til arbeidskraften:
-$$w = f(k) - f'(k)k$$
+$$w = A\cdot (f(k) - f'(k)k)$$
 
 
 
@@ -222,12 +221,12 @@ nsolowgrafikk$ggtyper[[length(nsolowgrafikk$ggtyper)]]
 
 #### Modellens prediksoner
 
-- $sf(k)> \delta k$ vil BNP per *effektiv arbeidskraftenhet* øke, og veksten vil være stærkere desto lavere nivået er på $k$ 
-- $sf(k)< \delta k$ vil BNP per *effektiv arbeidskraftenhet*, reduseres, og reduksjonen vil være stærkere desto lavere nivået er på $k$   
+- $sf(k)> (\delta+n+ a)k$ vil BNP per *effektiv arbeidskraftenhet* øke, og veksten vil være stærkere desto lavere nivået er på $k$ 
+-$sf(k) < <(\delta+n + a) k$ vil BNP per *effektiv arbeidskraftenhet*, reduseres, og reduksjonen vil være stærkere desto lavere nivået er på $k$   
 - På lang sikt og uavhengig av startverdiren for $k_{0}$, vil økonomien konvergere mot en stasjonær-tilstand (steady-state) hvor
 produksjonen per innbygger vokser med en eksogen (bestemt utenfor modellen) rate lik **$a$** 
     - Dette medfører at trendveksten (som har benyttet i konjunkturanalysen i del I) i stasjonærtilstanden er gitt ved: 
-    $$\frac{\overline{Y}}{AN}=c \Rightarrow ln(Y) - ln(N) - ln(A) = ln(c) \Rightarrow \Delta Y_{t}/Y_{t} = n + a$$
+    $$\frac{Y}{AN}=c \Rightarrow ln(Y) - ln(N) - ln(A) = ln(c) \Rightarrow \dot{Y}/Y = n + a$$
     
 ---    
     

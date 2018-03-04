@@ -1,10 +1,47 @@
-
+---
+output: html_notebook
+---
 
 # Regneregler for differensialer
-$$\Delta (a\cdot f+b \cdot g) = a\Delta f + b\Delta g $$
+$$\Delta (a\cdot\dot{} f+b \cdot g) = a\Delta f + b\Delta g $$
 
 $$\Delta (f\cdot g) =  g \Delta f + f \Delta g   $$
 
 $$\Delta (\frac{f}{g}) = \frac{g \Delta f - f\Delta g }{g^2} $$
 
 Hvor $f$ og $g$ er deriverbare funksjoner og $a$ og $b$ er konstanter
+
+# Logaritmisk tidsderivasjon
+
+Vi ønsker her benytte regnereglen om at 
+
+$$\frac{d}{dt}(ln(X))= \frac{\dot{X}}{X} \equiv x \text{ hvor } x \text{ gir uttrykk for prosentvis vekst over tid}$$
+
+
+Vi starter med å definere:
+
+$$k=\frac{K}{L}$$
+
+Tar vi logaritmen av dette uttrykket får vi
+
+$$ln(k) = ln(K)- ln (N)$$
+
+Implisitt tidsderivasjon kan skrive som
+
+$$\frac{d}{dt}(ln(k) = \frac{d}{dt}\Big((ln(K)- ln (N))\Big)$$
+
+Utfører vi den derivasjone står
+
+$$\frac{\dot{k}}{k} = \frac{\dot{K}}{K} - \frac{\dot{N}}{N} = \frac{\dot{K}}{K}  - n $$
+
+Ved bruk av nøyakige de samme regnereglene,  kan man også vise at
+
+$$\frac{\dot{k}}{k} = \frac{\dot{K}}{K} - \frac{\dot{N}}{N} - \frac{\dot{A}}{A} = \frac{\dot{K}}{K} - n -a$$
+
+
+
+
+
+
+
+

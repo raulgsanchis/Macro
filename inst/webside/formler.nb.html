@@ -196,7 +196,7 @@ $(document).ready(function () {
 </style>
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("laeringsmaal.Rmd");
+  window.initializeSourceEmbed("formler.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>
@@ -228,9 +228,7 @@ $(document).ready(function () {
     <li>
       <a href="forelesningsplan.html">Forelesningsplan</a>
     </li>
-    <li>
-      <a href="laeringsmaal.html">Læringsmål</a>
-    </li>
+    <li class="dropdown-header">Læringsmål</li>
   </ul>
 </li>
 <li class="dropdown">
@@ -334,278 +332,31 @@ $(document).ready(function () {
 
 
 <!-- rnb-text-begin -->
-<div id="oversikt-over-faget" class="section level1">
-<h1>Oversikt over faget</h1>
-<ul>
-<li>Tre hovedtemaer:
-<ol style="list-style-type: decimal">
-<li>Konjunktursvingninger</li>
-<li>Økonomisk vekst</li>
-<li>Økonomiske kriser</li>
-</ol></li>
-<li>Tilknyttet dette ønsker vi å undersøke
-<ul>
-<li>Hva forårsaker konjunktursvingninger, økonomiske vekst og økonomiske kriser</li>
-<li>Hvilken rolle bør offentlige myndigheter spille</li>
-</ul></li>
-<li>Sentral økonomer i makroøkonomi som har gitt vesentlige bidrag til å besvare disse spørsmålene:
-<ul>
-<li>Keynes (1883-1946) / Krugman(1953-)</li>
-<li>Friedman (1912-2006)</li>
-<li>Minsky (1919-1996)</li>
-<li>Hayek (1899-1992)</li>
-</ul></li>
-<li>Aktørene i økonomien:
-<ul>
-<li>Husholdninger</li>
-<li>Bedrifter</li>
-<li>Finansinstitusjoner</li>
-<li>Sentralbanken</li>
-<li>Offentlige myndigheter</li>
-</ul></li>
-<li>Markedene:
-<ul>
-<li>Vare- og tjenestemarkedet</li>
-<li>Pengemarkedet</li>
-<li>Arbeidsmarkedet</li>
-<li>Finansinstitusjoner (investering- og forretningsbanker)</li>
-<li>Valutakursmarkedet.</li>
-</ul></li>
-<li>To typer økonomier:
-<ul>
-<li>Lukket (eller globalisert) økonomi</li>
-<li>Åpen økonomi</li>
-</ul></li>
-</ul>
+<div id="regneregler-for-differensialer" class="section level1">
+<h1>Regneregler for differensialer</h1>
+<p><span class="math display">\[\Delta (a\cdot\dot{} f+b \cdot g) = a\Delta f + b\Delta g \]</span></p>
+<p><span class="math display">\[\Delta (f\cdot g) =  g \Delta f + f \Delta g   \]</span></p>
+<p><span class="math display">\[\Delta (\frac{f}{g}) = \frac{g \Delta f - f\Delta g }{g^2} \]</span></p>
+<p>Hvor <span class="math inline">\(f\)</span> og <span class="math inline">\(g\)</span> er deriverbare funksjoner og <span class="math inline">\(a\)</span> og <span class="math inline">\(b\)</span> er konstanter</p>
 </div>
-<div id="del-1" class="section level1">
-<h1>Del 1</h1>
-<div id="grunnleggende-bakgrunnskunnskap" class="section level2">
-<h2>Grunnleggende bakgrunnskunnskap</h2>
-<ul>
-<li><p>Bruttonasjonalprodukt (GDP/BNP)</p></li>
-<li><p>Bruttonasjonalinntekt (GNP/BNI)</p></li>
-<li>Nominell BNP (<span class="math inline">\(LY\)</span>) <span class="math display">\[LY = PY\]</span></li>
-<li><p>Reel BNP <span class="math display">\[Y = \frac{LY}{P}\]</span></p></li>
-<li><p>Arbeidsledighetsrate:</p></li>
-</ul>
-<p><span class="math display">\[u = 1-\frac{L}{N}\]</span></p>
-<ul>
-<li>Inflasjon</li>
-</ul>
-<p><span class="math display">\[\pi = \frac{\Delta P}{P} =\frac{P_{t} - P_{t-1}}{P_{t-1}}\]</span></p>
-<ul>
-<li><p>Okuns lov: negativ korrelasjon mellom endring i arbeidsledighet og vekst BNP</p></li>
-<li><p>Phillips-kurven: negativ sammenheng mellom arbeidsledighet og endring i inflasjon</p></li>
-<li>Hvordan bestemmes BNP?
-<ul>
-<li>Kort sikt</li>
-<li>Mellomlang sikt</li>
-<li>Lang sikt</li>
-</ul></li>
-</ul>
-</div>
-<div id="lukket-konomi" class="section level2">
-<h2>Lukket økonomi</h2>
-<p>Aggregert etterspørsel (AE) i en lukket økonomi</p>
-<p><span class="math inline">\(AE \equiv C + I + G\)</span></p>
-<div id="likevekt-i-godemarkedet-varer-og-tjenester" class="section level3">
-<h3>Likevekt i godemarkedet (varer og tjenester)</h3>
-<p>Hvor vi postulerer følgene adferdlikginger</p>
-<ul>
-<li>Husholdningene: <span class="math display">\[C = \overline{C} + c(Y-T)\]</span></li>
-<li><p>Bedriftene: <span class="math display">\[I = \overline{I} - b\cdot i\]</span></p></li>
-<li><p>Sentralbanken <span class="math display">\[i = \overline{i}\]</span></p></li>
-<li><p>Offentlige myndigheter <span class="math display">\[G = \overline{G}\]</span><br />
-<span class="math display">\[T = t\cdot Y\]</span></p></li>
-</ul>
-<p>Løser denne modellen mhp. på Y gir oss IS-likningen (kombinasjoner av i og Y som er forenlig med likevekt i varemarkedet)</p>
-<p><span class="math display">\[Y = \frac{1}{1-c}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]\]</span></p>
-<p>Skiftanalyse (matematisk, figur, og verbalt): Eks. endring i <span class="math inline">\(\Delta Y\)</span> som følge av en økning i <span class="math inline">\(\Delta \overline{I}\)</span>:</p>
-<ul>
-<li>Matematisk:</li>
-</ul>
-<p><span class="math display">\[\Delta Y = \frac{1}{1-c}\Delta  \overline{I}&gt;0 \text{ eller } \frac{\Delta Y}{\Delta  \overline{I} } = \frac{1}{1-c}&gt;1\]</span></p>
-<ul>
-<li><p>Figur: (se notater)</p></li>
-<li><p>Verbalt (dynamisk forklaring utenfor modellen): Økte investeringer <span class="math inline">\(\rightarrow\)</span> økt produksjon <span class="math inline">\(\rightarrow\)</span> initierer en multiplikatoreffekt: <span class="math inline">\(\rightarrow\)</span> økt disponibel inntekt <span class="math inline">\(\rightarrow\)</span> økt konsum <span class="math inline">\(\rightarrow\)</span> økt produksjon osv.</p></li>
-</ul>
-<p>Stabiliseringspolitikk: <span class="math inline">\(\Delta G &lt;0\)</span></p>
-<p><span class="math display">\[\Delta Y = \frac{1}{1-c}  \left [ \Delta \overline{I} + \Delta \overline{G} \right ]\]</span></p>
-<p>Dersom vi lar <span class="math inline">\(\Delta \overline{I} = - \Delta \overline{G} &gt; 0 \Rightarrow \Delta Y = 0\)</span> (dvs. intern balanse)</p>
-</div>
-<div id="likevekt-i-pengemarkedet" class="section level3">
-<h3>Likevekt i pengemarkedet</h3>
-<ul>
-<li>Tilbudet av penger (<span class="math inline">\(M^{s}\)</span>)</li>
-</ul>
-<p>Ser foreløpig kun på utvendige penger: Sedler og mynt pluss reserver. Dette nivået blir bestemt av sentralbanken <span class="math inline">\(\overline{M}/P\)</span></p>
-<ul>
-<li><p>Etterspørsel etter penger: <span class="math display">\[L_{d} = \kappa Y -hi\]</span></p></li>
-<li><p>Likevekt i pengemarkedet: <span class="math display">\[M/P = L_{d}\]</span></p></li>
-</ul>
-<p>Sentralbanken bestemmer hva som skjer i pengemarkedet ved (1) Endre tilbudet av penger (vanlig tidligere) eller (2) å endre rentenivået (vanlig i dag).</p>
-</div>
-</div>
-<div id="is-lm-modellen-for-en-lukket-konomi-gode--og-pengemarkedet-i-likevekt" class="section level2">
-<h2>IS-LM modellen for en lukket økonomi: Gode- og pengemarkedet i likevekt</h2>
-<ul>
-<li>Varemarkedet</li>
-</ul>
-<p><span class="math display">\[Y = \frac{1}{1-c(1-t)}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]\]</span> <span class="math inline">\(\Rightarrow\)</span> IS-kurven</p>
-<p><span class="math display">\[\Delta Y =\left[\frac{-b}{1-c(1-t)}\right ]   \cdot \Delta \overline{i}&lt;0\]</span> - Pengemarkedet <span class="math display">\[kY -hi = \overline{M}/P\]</span> <span class="math inline">\(\Rightarrow\)</span> LM-kurven</p>
-<p><span class="math display">\[\Delta Y =\left[\frac{-b}{1-c(1-t)}\right ]   \cdot \Delta \overline{i}&lt;0\]</span></p>
-<ul>
-<li><p>Grafisk tegning bestemmer her <span class="math inline">\(i\)</span> og <span class="math inline">\(Y\)</span> samtidig</p></li>
-<li><p>Skiftanalyse (grafisk og verbalt) Merk: P gir AD-kurven</p></li>
-<li><p>Stabiliseringspolitikk (grafisk og verbalt) Virkemidler: <span class="math inline">\(G, T, M/i\)</span></p></li>
-</ul>
-<div id="ad-as-modellen-for-en-lukket-konomi-gode-penge-og-arbeidsmarkedet-i-likevekt" class="section level3">
-<h3>AD-AS modellen for en lukket økonomi: Gode, penge og arbeidsmarkedet i likevekt</h3>
-<ul>
-<li>Husholdningene: Tilbyr arbeid</li>
-</ul>
-<p><span class="math display">\[W=P^{e}F(\underset{(-)}{u}, \underset{(+)}{z})\]</span></p>
-<ul>
-<li>Bedrifter: Etterspør arbeidskraft og tilbyr produktet i et marked med monopolistisk konkurranse</li>
-</ul>
-<p><span class="math display">\[Y=AL\]</span></p>
-<p><span class="math display">\[P=(1+μ)W\]</span></p>
-<ul>
-<li>Ledighet</li>
-</ul>
-<p><span class="math display">\[u=\frac{U}{N}=\frac{N-L}{N}=1−\frac{L}{N}=1−\frac{Y/A}{N}=1 - \frac{Y}{AN}\]</span></p>
-<ul>
-<li>Kombinere dett gir oss AS-kurven (verdier av P og Y som gir likevekt i arbeidsmarkedet)</li>
-</ul>
-<p><span class="math display">\[P=(1+μ)P^{e}F(1 - \frac{Y}{AN},z)\]</span></p>
-<ul>
-<li>AD-AS-modellen</li>
-</ul>
-<p><span class="math display">\[Y = \frac{1}{1-c}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]\text{ :Godemarkedet}\]</span></p>
-<p><span class="math display">\[\frac{\overline{M}}{P}=\kappa Y - h\cdot i  \text{ :Pengemarkedet}\]</span></p>
-<p><span class="math display">\[P=(1+μ)P^{e}F(1−\frac{Y}{AN},z) \text{ :Arbeidsmarkedet}\]</span></p>
-<p>Merk: <span class="math inline">\(P=Pe⇒Y=Yn=u=un\)</span>: Naturlige produksjons- og ledighetsnivået,</p>
-<p>Grafisk tegning bestemmer her P, Y og i samtidig</p>
-<ul>
-<li>Skiftanalyse (grafisk og verbalt)</li>
-<li>Stabiliseringspolitikk (grafisk og verbalt)</li>
-</ul>
-<p>Virkemidler: <span class="math inline">\(G\)</span>, <span class="math inline">\(T\)</span> og <span class="math inline">\(M/i\)</span></p>
-<ul>
-<li>Sentral poeng med modellen – Selvkorrigerende mekanismer:</li>
-</ul>
-<p>Fleksibilitet i P og korrekte prisforventninger Pe på mellomlang sikt, fører til at økonomien går tilbake til sitt naturlige produksjons- og ledighetsnivå.</p>
-<p># Del 2: Økonomisk vekst</p>
-<p># Del 3: Økonomiske kriser</p>
-<p><!--
-
-### Mundell-Fleming modellen (IS-LM modellen for en åpen økonom)i: Gode-, penge- og valutakursmarkedet i likevekt
-
-- To stabiliseringsmål:
-
-1. Intern balanse (produksjon lik naturlig produksjonsnivå)
-
-1. Ekstern balanse (rimelig nivå på utenlandsgjelden)
-
-- Tre fundamentale endringer fra en lukket økonomi:
-
-1. Handel med utlandet
-
-- Handel med utlandet (avhenger blant annet av relative prisnivået mellom innenlandske og utenlandske varer)
-
-Realvalutakursen: $R=\frac{EP}{P}$
-
-- E: Pris (nominell) per enhet av utenlandsk (innenlandsk) valuta E  (1/E)
-
-
-$$AE = C+I+G+NX$$
-
-$$ NX=EX−R∗IM$$
-
-1. Fast eller flytende kurs
-
-1. Utenriksregnskapet
-
-$$ BP = CA + CP + OR=0 $$
-
-CU=Driftsregnskapet: Nettoeksport, Nettofinansinntekter(aksjer og obligasjoner), Nettoverføringer
-
-CA=Kapitalregnskapet: Nettoendringer i fordringer og gjeld ovenfor utlandet
-
-- Postulerer følgende adferdsligninger for handelsbalansen
-
-$$IM=X(\underset{(-)}{R}, \underset{(+)}{Y}) =  -m_{1}R + x_{2}Y $$
-$$EX=X(\underset{(+)}{R}, \underset{(+)}{Y^{*}}) = x_{1}R + x_{2}Y^{*}  $$
-
-Det betyr at
-
-- $$NX = EX - IM = x_{1}R + x_{2}Y^{*} + R(-m_{1}R + x_{2}Y)$$
-
-Legger til grunn (i praksis kan dette ta litt tid) i dette kurset at $\frac{\Delta NX}{\Delta R}>0$ (depresiering av realvalutakursen forbedrer nettoeksporten) 
-
-- internasjonale finansmarkeder (renteparitetsbetingelsen)
-
-$$(1+i_{t+1})=(1+i_{t+1}^{*})\frac{E_{t+1}^{e}}{E_{t}}$$
-
-- Myndighetene kan velge mellom fast eller flytende kurs
-
-Fast: 
-
-$$i =i^{*} + rp$$
-
-Troverdig kurs vil si at $E=E_{e} \Rightarrow rp=0$
-
-Flytende: 
-
-$$E=\frac{(1+i)}{(1+i)}E^{e}$$ 
-
-- Modellen
-1. $$Y = \frac{1}{1-c-R?}  \left [ \overline{C} -c\cdot \overline{T} - b\cdot \overline{i} + \overline{G}  \right ]$$
-1. $$\frac{M}{P}=\kappa\cdot Y + h\cdot i$$
-1. $$i = i^{*} + rp \text{ Fastkursregime}$$
-1. $$E = \frac{1+i^{*}}{1 + i} \text{ Flytende kursregime}$$
-
-- IS-kurven under fast og flytende kurs
-
-Generelt fører lavere rente til høyere produksjon.
-
-Men multiplikatoren blir mindre enn ved en lukket økonomi, grunnet importlekkasje.
-
-Helningen på kurven er slakere under flytende kurs (dersom en kombinerer denne med likevektsbetingelsen fra valutakursmarkedet) enn med fast kurs. Det skyldes at lavere rente under flytende kurs fører til en depresiering av den nominelle og realvalutakursen, noe som forbedrer landets konkurranse evne og dermed fører til økt etterspørsel gjennom økt nettoeksport.
-
-- LM modellen stigende under flytende og fast
-
-- Skiftanalyse (grafisk og verbalt)
-
-Merk: P gir AD-kurven.
-
-- Stabiliseringspolitikk (grafisk og verbalt)
-
-Virkemidler: $G$, $T$ og $M/i$
- (Flytende) og
-$G$,$T$ og($E$)
- (Fast kurs)
- 
-
-<!--
- 
-### AD-AS modellen for en åpen økonomi
-
-- AS-kurven samme som under en lukket økonomi.
-- AD-kurven er fallende ved at økt priser fører til lavere etterspørsel.
-- Sentral poeng med modellen – Selvkorrigerende mekanismer:
-
-Fleksibilitet i P og korrekte prisforventninger Pe
- på sikt, fører til at økonomien på sikt går tilbake til sin naturlige produksjons- og ledighetsnivå.
-
---></p>
+<div id="logaritmisk-tidsderivasjon" class="section level1">
+<h1>Logaritmisk tidsderivasjon</h1>
+<p>Vi ønsker her benytte regnereglen om at</p>
+<p><span class="math display">\[\frac{d}{dt}(ln(X))= \frac{\dot{X}}{X} \equiv x \text{ hvor } x \text{ gir uttrykk for prosentvis vekst over tid}\]</span></p>
+<p>Vi starter med å definere:</p>
+<p><span class="math display">\[k=\frac{K}{L}\]</span></p>
+<p>Tar vi logaritmen av dette uttrykket får vi</p>
+<p><span class="math display">\[ln(k) = ln(K)- ln (N)\]</span></p>
+<p>Implisitt tidsderivasjon kan skrive som</p>
+<p><span class="math display">\[\frac{d}{dt}(ln(k) = \frac{d}{dt}\Big((ln(K)- ln (N))\Big)\]</span></p>
+<p>Utfører vi den derivasjone står</p>
+<p><span class="math display">\[\frac{\dot{k}}{k} = \frac{\dot{K}}{K} - \frac{\dot{N}}{N} = \frac{\dot{K}}{K}  - n \]</span></p>
+<p>Ved bruk av nøyakige de samme regnereglene, kan man også vise at</p>
+<p><span class="math display">\[\frac{\dot{k}}{k} = \frac{\dot{K}}{K} - \frac{\dot{N}}{N} - \frac{\dot{A}}{A} = \frac{\dot{K}}{K} - n -a\]</span></p>
 <!-- rnb-text-end -->
 </div>
-</div>
-</div>
 
-<div id="rmd-source-code">LS0tCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCgojT3ZlcnNpa3Qgb3ZlciBmYWdldAotIFRyZSBob3ZlZHRlbWFlcjogCiAgICAxLiBLb25qdW5rdHVyc3ZpbmduaW5nZXIKICAgIDEuIMOYa29ub21pc2sgdmVrc3QKICAgIDEuIMOYa29ub21pc2tlIGtyaXNlcgoKLSBUaWxrbnl0dGV0IGRldHRlIMO4bnNrZXIgdmkgw6UgdW5kZXJzw7hrZQogICAgKyBIdmEgZm9yw6Vyc2FrZXIga29uanVua3R1cnN2aW5nbmluZ2VyLCDDuGtvbm9taXNrZSB2ZWtzdCBvZyDDuGtvbm9taXNrZSBrcmlzZXIKICAgICsgSHZpbGtlbiByb2xsZSBiw7hyIG9mZmVudGxpZ2UgbXluZGlnaGV0ZXIgc3BpbGxlCiAgICAKLSBTZW50cmFsIMO4a29ub21lciBpIG1ha3Jvw7hrb25vbWkgc29tIGhhciBnaXR0IHZlc2VudGxpZ2UgYmlkcmFnIHRpbCDDpSBiZXN2YXJlIGRpc3NlIHNww7hyc23DpWxlbmU6CiAgICArIEtleW5lcyAoMTg4My0xOTQ2KSAvIEtydWdtYW4oMTk1My0pCiAgICArIEZyaWVkbWFuICgxOTEyLTIwMDYpCiAgICArIE1pbnNreSAoMTkxOS0xOTk2KQogICAgKyBIYXllayAoMTg5OS0xOTkyKSAKICAgIAotIEFrdMO4cmVuZSBpIMO4a29ub21pZW46CiAgICArIEh1c2hvbGRuaW5nZXIgCiAgICArIEJlZHJpZnRlciAKICAgICsgRmluYW5zaW5zdGl0dXNqb25lciAKICAgICsgU2VudHJhbGJhbmtlbiAKICAgICsgT2ZmZW50bGlnZSBteW5kaWdoZXRlcgoKLSBNYXJrZWRlbmU6IAogICAgKyBWYXJlLSBvZyB0amVuZXN0ZW1hcmtlZGV0CiAgICArIFBlbmdlbWFya2VkZXQgCiAgICArIEFyYmVpZHNtYXJrZWRldAogICAgKyBGaW5hbnNpbnN0aXR1c2pvbmVyIChpbnZlc3RlcmluZy0gb2cgZm9ycmV0bmluZ3NiYW5rZXIpIAogICAgKyBWYWx1dGFrdXJzbWFya2VkZXQuCgotIFRvIHR5cGVyIMO4a29ub21pZXI6CiAgICArIEx1a2tldCAoZWxsZXIgZ2xvYmFsaXNlcnQpIMO4a29ub21pCiAgICArIMOFcGVuIMO4a29ub21pCiAgICAKI0RlbCAxCiMjR3J1bm5sZWdnZW5kZSBiYWtncnVubnNrdW5uc2thcAotIEJydXR0b25hc2pvbmFscHJvZHVrdCAoR0RQL0JOUCkKCi0gQnJ1dHRvbmFzam9uYWxpbm50ZWt0IChHTlAvQk5JKQoKLSBOb21pbmVsbCBCTlAgKCRMWSQpCiQkTFkgPSBQWSQkCi0gUmVlbCBCTlAKJCRZID0gXGZyYWN7TFl9e1B9JCQKCi0gQXJiZWlkc2xlZGlnaGV0c3JhdGU6CgokJHUgPSAxLVxmcmFje0x9e059JCQKCi0gSW5mbGFzam9uIAoKJCRccGkgPSBcZnJhY3tcRGVsdGEgUH17UH0gPVxmcmFje1Bfe3R9IC0gUF97dC0xfX17UF97dC0xfX0kJAoKLSBPa3VucyBsb3Y6Cm5lZ2F0aXYga29ycmVsYXNqb24gbWVsbG9tIGVuZHJpbmcgaSBhcmJlaWRzbGVkaWdoZXQgb2cgdmVrc3QgQk5QIAoKLSBQaGlsbGlwcy1rdXJ2ZW46Cm5lZ2F0aXYgc2FtbWVuaGVuZyBtZWxsb20gYXJiZWlkc2xlZGlnaGV0IG9nIGVuZHJpbmcgaSBpbmZsYXNqb24KCi0gSHZvcmRhbiBiZXN0ZW1tZXMgQk5QPwogICAgKyBLb3J0IHNpa3QKICAgICsgTWVsbG9tbGFuZyBzaWt0CiAgICArIExhbmcgc2lrdAoKIyMgTHVra2V0IMO4a29ub21pCkFnZ3JlZ2VydCBldHRlcnNww7hyc2VsIChBRSkgaSBlbiBsdWtrZXQgw7hrb25vbWkgICAgCgokQUUgXGVxdWl2IEMgKyBJICsgRyQKCiMjIyBMaWtldmVrdCBpIGdvZGVtYXJrZWRldCAodmFyZXIgb2cgdGplbmVzdGVyKQoKSHZvciB2aSBwb3N0dWxlcmVyIGbDuGxnZW5lIGFkZmVyZGxpa2dpbmdlcgoKLSBIdXNob2xkbmluZ2VuZToKJCRDID0gXG92ZXJsaW5le0N9ICsgYyhZLVQpJCQKLSBCZWRyaWZ0ZW5lOgokJEkgPSBcb3ZlcmxpbmV7SX0gLSBiXGNkb3QgaSQkCgotIFNlbnRyYWxiYW5rZW4KJCRpID0gXG92ZXJsaW5le2l9JCQKCi0gT2ZmZW50bGlnZSBteW5kaWdoZXRlcgokJEcgPSBcb3ZlcmxpbmV7R30kJCAgCiQkVCA9IHRcY2RvdCBZJCQgCgpMw7hzZXIgZGVubmUgbW9kZWxsZW4gbWhwLiBww6UgWSBnaXIgb3NzIElTLWxpa25pbmdlbiAoa29tYmluYXNqb25lciBhdiBpIG9nIFkgc29tIGVyIGZvcmVubGlnIG1lZCBsaWtldmVrdCBpIHZhcmVtYXJrZWRldCkKCiQkWSA9IFxmcmFjezF9ezEtY30gIFxsZWZ0IFsgXG92ZXJsaW5le0N9IC1jXGNkb3QgXG92ZXJsaW5le1R9IC0gYlxjZG90IFxvdmVybGluZXtpfSArIFxvdmVybGluZXtHfSAgXHJpZ2h0IF0kJAoKU2tpZnRhbmFseXNlIChtYXRlbWF0aXNrLCBmaWd1ciwgb2cgdmVyYmFsdCk6IEVrcy4gZW5kcmluZyBpICRcRGVsdGEgWSQgc29tIGbDuGxnZSBhdiBlbiDDuGtuaW5nIGkgJFxEZWx0YSBcb3ZlcmxpbmV7SX0kOgoKLSBNYXRlbWF0aXNrOgoKJCRcRGVsdGEgWSA9IFxmcmFjezF9ezEtY31cRGVsdGEgIFxvdmVybGluZXtJfT4wIFx0ZXh0eyBlbGxlciB9IFxmcmFje1xEZWx0YSBZfXtcRGVsdGEgIFxvdmVybGluZXtJfSB9ID0gXGZyYWN7MX17MS1jfT4xJCQKCi0gRmlndXI6IChzZSBub3RhdGVyKQoKLSBWZXJiYWx0ICAoZHluYW1pc2sgZm9ya2xhcmluZyB1dGVuZm9yIG1vZGVsbGVuKToKw5hrdGUgaW52ZXN0ZXJpbmdlciAkXHJpZ2h0YXJyb3ckIMO4a3QgcHJvZHVrc2pvbiAkXHJpZ2h0YXJyb3ckIGluaXRpZXJlciBlbiBtdWx0aXBsaWthdG9yZWZmZWt0OiAkXHJpZ2h0YXJyb3ckIMO4a3QgZGlzcG9uaWJlbCBpbm50ZWt0ICRccmlnaHRhcnJvdyQgw7hrdCBrb25zdW0gJFxyaWdodGFycm93JCDDuGt0IHByb2R1a3Nqb24gb3N2LgoKU3RhYmlsaXNlcmluZ3Nwb2xpdGlrazogJFxEZWx0YSBHIDwwJAoKJCRcRGVsdGEgWSA9IFxmcmFjezF9ezEtY30gIFxsZWZ0IFsgXERlbHRhIFxvdmVybGluZXtJfSArIFxEZWx0YSBcb3ZlcmxpbmV7R30gXHJpZ2h0IF0kJAoKRGVyc29tIHZpIGxhciAkXERlbHRhIFxvdmVybGluZXtJfSA9IC0gXERlbHRhIFxvdmVybGluZXtHfSA+IDAgXFJpZ2h0YXJyb3cgXERlbHRhIFkgPSAwJCAoZHZzLiBpbnRlcm4gYmFsYW5zZSkKCiMjIyBMaWtldmVrdCBpIHBlbmdlbWFya2VkZXQgCi0gVGlsYnVkZXQgYXYgcGVuZ2VyICgkTV57c30kKQoKU2VyIGZvcmVsw7hwaWcga3VuIHDDpSB1dHZlbmRpZ2UgcGVuZ2VyOiBTZWRsZXIgb2cgbXludCBwbHVzcyByZXNlcnZlci4gRGV0dGUgbml2w6VldCBibGlyIGJlc3RlbXQgYXYgc2VudHJhbGJhbmtlbgokXG92ZXJsaW5le019L1AkCgotIEV0dGVyc3DDuHJzZWwgZXR0ZXIgcGVuZ2VyOgokJExfe2R9ID0gXGthcHBhIFkgLWhpJCQKCi0gTGlrZXZla3QgaSBwZW5nZW1hcmtlZGV0OiAKJCRNL1AgPSBMX3tkfSQkICAKClNlbnRyYWxiYW5rZW4gYmVzdGVtbWVyIGh2YSBzb20gc2tqZXIgaSBwZW5nZW1hcmtlZGV0IHZlZAooMSkgRW5kcmUgdGlsYnVkZXQgYXYgcGVuZ2VyICh2YW5saWcgdGlkbGlnZXJlKSBlbGxlciAoMikgw6UgZW5kcmUgcmVudGVuaXbDpWV0ICh2YW5saWcgaSBkYWcpLgoKIyMgSVMtTE0gbW9kZWxsZW4gZm9yIGVuIGx1a2tldCDDuGtvbm9taTogR29kZS0gb2cgcGVuZ2VtYXJrZWRldCBpIGxpa2V2ZWt0CgotIFZhcmVtYXJrZWRldAoKJCRZID0gXGZyYWN7MX17MS1jKDEtdCl9ICBcbGVmdCBbIFxvdmVybGluZXtDfSAtY1xjZG90IFxvdmVybGluZXtUfSAtIGJcY2RvdCBcb3ZlcmxpbmV7aX0gKyBcb3ZlcmxpbmV7R30gIFxyaWdodCBdJCQKJFxSaWdodGFycm93JCBJUy1rdXJ2ZW4KCiQkXERlbHRhIFkgPVxsZWZ0W1xmcmFjey1ifXsxLWMoMS10KX1ccmlnaHQgXSAgIFxjZG90IFxEZWx0YSBcb3ZlcmxpbmV7aX08MCQkCi0gUGVuZ2VtYXJrZWRldAokJGtZIC1oaSA9IFxvdmVybGluZXtNfS9QJCQKJFxSaWdodGFycm93JCBMTS1rdXJ2ZW4KCiQkXERlbHRhIFkgPVxsZWZ0W1xmcmFjey1ifXsxLWMoMS10KX1ccmlnaHQgXSAgIFxjZG90IFxEZWx0YSBcb3ZlcmxpbmV7aX08MCQkCgotIEdyYWZpc2sgdGVnbmluZyBiZXN0ZW1tZXIgaGVyICRpJCBvZyAkWSQgc2FtdGlkaWcKCi0gU2tpZnRhbmFseXNlIChncmFmaXNrIG9nIHZlcmJhbHQpCk1lcms6IFAgZ2lyIEFELWt1cnZlbgoKLSBTdGFiaWxpc2VyaW5nc3BvbGl0aWtrIChncmFmaXNrIG9nIHZlcmJhbHQpClZpcmtlbWlkbGVyOiAkRywgVCwgTS9pJAoKIyMjIEFELUFTIG1vZGVsbGVuIGZvciBlbiBsdWtrZXQgw7hrb25vbWk6IEdvZGUsIHBlbmdlIG9nIGFyYmVpZHNtYXJrZWRldCBpIGxpa2V2ZWt0CgotIEh1c2hvbGRuaW5nZW5lOiBUaWxieXIgYXJiZWlkCgokJFc9UF57ZX1GKFx1bmRlcnNldHsoLSl9e3V9LCBcdW5kZXJzZXR7KCspfXt6fSkkJAoKLSBCZWRyaWZ0ZXI6IEV0dGVyc3DDuHIgYXJiZWlkc2tyYWZ0IG9nIHRpbGJ5ciBwcm9kdWt0ZXQgaSBldCBtYXJrZWQgbWVkIG1vbm9wb2xpc3Rpc2sga29ua3VycmFuc2UKCiQkWT1BTCQkCgokJFA9KDErzrwpVyQkCgotIExlZGlnaGV0CgokJHU9XGZyYWN7VX17Tn09XGZyYWN7Ti1MfXtOfT0x4oiSXGZyYWN7TH17Tn09MeKIklxmcmFje1kvQX17Tn09MSAtIFxmcmFje1l9e0FOfSQkCgotIEtvbWJpbmVyZSBkZXR0IGdpciBvc3MgQVMta3VydmVuICh2ZXJkaWVyIGF2IFAgb2cgWSBzb20gZ2lyIGxpa2V2ZWt0IGkgYXJiZWlkc21hcmtlZGV0KQoKJCRQPSgxK868KVBee2V9RigxIC0gXGZyYWN7WX17QU59LHopJCQKCi0gQUQtQVMtbW9kZWxsZW4KCiQkWSA9IFxmcmFjezF9ezEtY30gIFxsZWZ0IFsgXG92ZXJsaW5le0N9IC1jXGNkb3QgXG92ZXJsaW5le1R9IC0gYlxjZG90IFxvdmVybGluZXtpfSArIFxvdmVybGluZXtHfSAgXHJpZ2h0IF1cdGV4dHsgOkdvZGVtYXJrZWRldH0kJCAKCiQkXGZyYWN7XG92ZXJsaW5le019fXtQfT1ca2FwcGEgWSAtIGhcY2RvdCBpICBcdGV4dHsgOlBlbmdlbWFya2VkZXR9JCQKCiQkUD0oMSvOvClQXntlfUYoMeKIklxmcmFje1l9e0FOfSx6KSBcdGV4dHsgOkFyYmVpZHNtYXJrZWRldH0kJCAKCk1lcms6ICRQPVBl4oeSWT1Zbj11PXVuJDogTmF0dXJsaWdlIHByb2R1a3Nqb25zLSBvZyBsZWRpZ2hldHNuaXbDpWV0LAoKR3JhZmlzayB0ZWduaW5nIGJlc3RlbW1lciBoZXIgUCwgWQpvZyBpIHNhbXRpZGlnCgotIFNraWZ0YW5hbHlzZSAoZ3JhZmlzayBvZyB2ZXJiYWx0KQotIFN0YWJpbGlzZXJpbmdzcG9saXRpa2sgKGdyYWZpc2sgb2cgdmVyYmFsdCkKClZpcmtlbWlkbGVyOiAkRyQsICRUJCBvZyAkTS9pJAoKLSBTZW50cmFsIHBvZW5nIG1lZCBtb2RlbGxlbiDigJMgU2VsdmtvcnJpZ2VyZW5kZSBtZWthbmlzbWVyOgoKRmxla3NpYmlsaXRldCBpIFAgb2cga29ycmVrdGUgcHJpc2ZvcnZlbnRuaW5nZXIgUGUKIHDDpSBtZWxsb21sYW5nIHNpa3QsIGbDuHJlciB0aWwgYXQgw7hrb25vbWllbiBnw6VyIHRpbGJha2UgdGlsIHNpdHQgbmF0dXJsaWdlIHByb2R1a3Nqb25zLSBvZyBsZWRpZ2hldHNuaXbDpS4KIAogIyBEZWwgMjogw5hrb25vbWlzayB2ZWtzdAogCiAjIERlbCAzOiDDmGtvbm9taXNrZSBrcmlzZXIKIAoKIDwhLS0KCiMjIyBNdW5kZWxsLUZsZW1pbmcgbW9kZWxsZW4gKElTLUxNIG1vZGVsbGVuIGZvciBlbiDDpXBlbiDDuGtvbm9tKWk6IEdvZGUtLCBwZW5nZS0gb2cgdmFsdXRha3Vyc21hcmtlZGV0IGkgbGlrZXZla3QKCi0gVG8gc3RhYmlsaXNlcmluZ3Ntw6VsOgoKMS4gSW50ZXJuIGJhbGFuc2UgKHByb2R1a3Nqb24gbGlrIG5hdHVybGlnIHByb2R1a3Nqb25zbml2w6UpCgoxLiBFa3N0ZXJuIGJhbGFuc2UgKHJpbWVsaWcgbml2w6UgcMOlIHV0ZW5sYW5kc2dqZWxkZW4pCgotIFRyZSBmdW5kYW1lbnRhbGUgZW5kcmluZ2VyIGZyYSBlbiBsdWtrZXQgw7hrb25vbWk6CgoxLiBIYW5kZWwgbWVkIHV0bGFuZGV0CgotIEhhbmRlbCBtZWQgdXRsYW5kZXQgKGF2aGVuZ2VyIGJsYW50IGFubmV0IGF2IHJlbGF0aXZlIHByaXNuaXbDpWV0IG1lbGxvbSBpbm5lbmxhbmRza2Ugb2cgdXRlbmxhbmRza2UgdmFyZXIpCgpSZWFsdmFsdXRha3Vyc2VuOiAkUj1cZnJhY3tFUH17UH0kCgotIEU6IFByaXMgKG5vbWluZWxsKSBwZXIgZW5oZXQgYXYgdXRlbmxhbmRzayAoaW5uZW5sYW5kc2spIHZhbHV0YSBFICAoMS9FKQoKCiQkQUUgPSBDK0krRytOWCQkCgokJCBOWD1FWOKIklLiiJdJTSQkCgoxLiBGYXN0IGVsbGVyIGZseXRlbmRlIGt1cnMKCjEuIFV0ZW5yaWtzcmVnbnNrYXBldAoKJCQgQlAgPSBDQSArIENQICsgT1I9MCAkJAoKQ1U9RHJpZnRzcmVnbnNrYXBldDogTmV0dG9la3Nwb3J0LCBOZXR0b2ZpbmFuc2lubnRla3Rlcihha3NqZXIgb2cgb2JsaWdhc2pvbmVyKSwgTmV0dG92ZXJmw7hyaW5nZXIKCkNBPUthcGl0YWxyZWduc2thcGV0OiBOZXR0b2VuZHJpbmdlciBpIGZvcmRyaW5nZXIgb2cgZ2plbGQgb3ZlbmZvciB1dGxhbmRldAoKLSBQb3N0dWxlcmVyIGbDuGxnZW5kZSBhZGZlcmRzbGlnbmluZ2VyIGZvciBoYW5kZWxzYmFsYW5zZW4KCiQkSU09WChcdW5kZXJzZXR7KC0pfXtSfSwgXHVuZGVyc2V0eygrKX17WX0pID0gIC1tX3sxfVIgKyB4X3syfVkgJCQKJCRFWD1YKFx1bmRlcnNldHsoKyl9e1J9LCBcdW5kZXJzZXR7KCspfXtZXnsqfX0pID0geF97MX1SICsgeF97Mn1ZXnsqfSAgJCQKCkRldCBiZXR5ciBhdAoKLSAkJE5YID0gRVggLSBJTSA9IHhfezF9UiArIHhfezJ9WV57Kn0gKyBSKC1tX3sxfVIgKyB4X3syfVkpJCQKCkxlZ2dlciB0aWwgZ3J1bm4gKGkgcHJha3NpcyBrYW4gZGV0dGUgdGEgbGl0dCB0aWQpIGkgZGV0dGUga3Vyc2V0IGF0ICRcZnJhY3tcRGVsdGEgTlh9e1xEZWx0YSBSfT4wJCAoZGVwcmVzaWVyaW5nIGF2IHJlYWx2YWx1dGFrdXJzZW4gZm9yYmVkcmVyIG5ldHRvZWtzcG9ydGVuKSAKCi0gaW50ZXJuYXNqb25hbGUgZmluYW5zbWFya2VkZXIgKHJlbnRlcGFyaXRldHNiZXRpbmdlbHNlbikKCiQkKDEraV97dCsxfSk9KDEraV97dCsxfV57Kn0pXGZyYWN7RV97dCsxfV57ZX19e0Vfe3R9fSQkCgotIE15bmRpZ2hldGVuZSBrYW4gdmVsZ2UgbWVsbG9tIGZhc3QgZWxsZXIgZmx5dGVuZGUga3VycwoKRmFzdDogCgokJGkgPWleeyp9ICsgcnAkJAoKVHJvdmVyZGlnIGt1cnMgdmlsIHNpIGF0ICRFPUVfe2V9IFxSaWdodGFycm93IHJwPTAkCgpGbHl0ZW5kZTogCgokJEU9XGZyYWN7KDEraSl9eygxK2kpfUVee2V9JCQgCgotIE1vZGVsbGVuCjEuICQkWSA9IFxmcmFjezF9ezEtYy1SP30gIFxsZWZ0IFsgXG92ZXJsaW5le0N9IC1jXGNkb3QgXG92ZXJsaW5le1R9IC0gYlxjZG90IFxvdmVybGluZXtpfSArIFxvdmVybGluZXtHfSAgXHJpZ2h0IF0kJAoxLiAkJFxmcmFje019e1B9PVxrYXBwYVxjZG90IFkgKyBoXGNkb3QgaSQkCjEuICQkaSA9IGleeyp9ICsgcnAgXHRleHR7IEZhc3RrdXJzcmVnaW1lfSQkCjEuICQkRSA9IFxmcmFjezEraV57Kn19ezEgKyBpfSBcdGV4dHsgRmx5dGVuZGUga3Vyc3JlZ2ltZX0kJAoKLSBJUy1rdXJ2ZW4gdW5kZXIgZmFzdCBvZyBmbHl0ZW5kZSBrdXJzCgpHZW5lcmVsdCBmw7hyZXIgbGF2ZXJlIHJlbnRlIHRpbCBow7h5ZXJlIHByb2R1a3Nqb24uCgpNZW4gbXVsdGlwbGlrYXRvcmVuIGJsaXIgbWluZHJlIGVubiB2ZWQgZW4gbHVra2V0IMO4a29ub21pLCBncnVubmV0IGltcG9ydGxla2thc2plLgoKSGVsbmluZ2VuIHDDpSBrdXJ2ZW4gZXIgc2xha2VyZSB1bmRlciBmbHl0ZW5kZSBrdXJzIChkZXJzb20gZW4ga29tYmluZXJlciBkZW5uZSBtZWQgbGlrZXZla3RzYmV0aW5nZWxzZW4gZnJhIHZhbHV0YWt1cnNtYXJrZWRldCkgZW5uIG1lZCBmYXN0IGt1cnMuIERldCBza3lsZGVzIGF0IGxhdmVyZSByZW50ZSB1bmRlciBmbHl0ZW5kZSBrdXJzIGbDuHJlciB0aWwgZW4gZGVwcmVzaWVyaW5nIGF2IGRlbiBub21pbmVsbGUgb2cgcmVhbHZhbHV0YWt1cnNlbiwgbm9lIHNvbSBmb3JiZWRyZXIgbGFuZGV0cyBrb25rdXJyYW5zZSBldm5lIG9nIGRlcm1lZCBmw7hyZXIgdGlsIMO4a3QgZXR0ZXJzcMO4cnNlbCBnamVubm9tIMO4a3QgbmV0dG9la3Nwb3J0LgoKLSBMTSBtb2RlbGxlbiBzdGlnZW5kZSB1bmRlciBmbHl0ZW5kZSBvZyBmYXN0CgotIFNraWZ0YW5hbHlzZSAoZ3JhZmlzayBvZyB2ZXJiYWx0KQoKTWVyazogUCBnaXIgQUQta3VydmVuLgoKLSBTdGFiaWxpc2VyaW5nc3BvbGl0aWtrIChncmFmaXNrIG9nIHZlcmJhbHQpCgpWaXJrZW1pZGxlcjogJEckLCAkVCQgb2cgJE0vaSQKIChGbHl0ZW5kZSkgb2cKJEckLCRUJCBvZygkRSQpCiAoRmFzdCBrdXJzKQogCgo8IS0tCiAKIyMjIEFELUFTIG1vZGVsbGVuIGZvciBlbiDDpXBlbiDDuGtvbm9taQoKLSBBUy1rdXJ2ZW4gc2FtbWUgc29tIHVuZGVyIGVuIGx1a2tldCDDuGtvbm9taS4KLSBBRC1rdXJ2ZW4gZXIgZmFsbGVuZGUgdmVkIGF0IMO4a3QgcHJpc2VyIGbDuHJlciB0aWwgbGF2ZXJlIGV0dGVyc3DDuHJzZWwuCi0gU2VudHJhbCBwb2VuZyBtZWQgbW9kZWxsZW4g4oCTIFNlbHZrb3JyaWdlcmVuZGUgbWVrYW5pc21lcjoKCkZsZWtzaWJpbGl0ZXQgaSBQIG9nIGtvcnJla3RlIHByaXNmb3J2ZW50bmluZ2VyIFBlCiBww6Ugc2lrdCwgZsO4cmVyIHRpbCBhdCDDuGtvbm9taWVuIHDDpSBzaWt0IGfDpXIgdGlsYmFrZSB0aWwgc2luIG5hdHVybGlnZSBwcm9kdWtzam9ucy0gb2cgbGVkaWdoZXRzbml2w6UuCgotLT4K</div>
+<div id="rmd-source-code">LS0tCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCiMgUmVnbmVyZWdsZXIgZm9yIGRpZmZlcmVuc2lhbGVyCiQkXERlbHRhIChhXGNkb3RcZG90e30gZitiIFxjZG90IGcpID0gYVxEZWx0YSBmICsgYlxEZWx0YSBnICQkCgokJFxEZWx0YSAoZlxjZG90IGcpID0gIGcgXERlbHRhIGYgKyBmIFxEZWx0YSBnICAgJCQKCiQkXERlbHRhIChcZnJhY3tmfXtnfSkgPSBcZnJhY3tnIFxEZWx0YSBmIC0gZlxEZWx0YSBnIH17Z14yfSAkJAoKSHZvciAkZiQgb2cgJGckIGVyIGRlcml2ZXJiYXJlIGZ1bmtzam9uZXIgb2cgJGEkIG9nICRiJCBlciBrb25zdGFudGVyCgojIExvZ2FyaXRtaXNrIHRpZHNkZXJpdmFzam9uCgpWaSDDuG5za2VyIGhlciBiZW55dHRlIHJlZ25lcmVnbGVuIG9tIGF0IAoKJCRcZnJhY3tkfXtkdH0obG4oWCkpPSBcZnJhY3tcZG90e1h9fXtYfSBcZXF1aXYgeCBcdGV4dHsgaHZvciB9IHggXHRleHR7IGdpciB1dHRyeWtrIGZvciBwcm9zZW50dmlzIHZla3N0IG92ZXIgdGlkfSQkCgoKVmkgc3RhcnRlciBtZWQgw6UgZGVmaW5lcmU6CgokJGs9XGZyYWN7S317TH0kJAoKVGFyIHZpIGxvZ2FyaXRtZW4gYXYgZGV0dGUgdXR0cnlra2V0IGbDpXIgdmkKCiQkbG4oaykgPSBsbihLKS0gbG4gKE4pJCQKCkltcGxpc2l0dCB0aWRzZGVyaXZhc2pvbiBrYW4gc2tyaXZlIHNvbQoKJCRcZnJhY3tkfXtkdH0obG4oaykgPSBcZnJhY3tkfXtkdH1cQmlnKChsbihLKS0gbG4gKE4pKVxCaWcpJCQKClV0ZsO4cmVyIHZpIGRlbiBkZXJpdmFzam9uZSBzdMOlcgoKJCRcZnJhY3tcZG90e2t9fXtrfSA9IFxmcmFje1xkb3R7S319e0t9IC0gXGZyYWN7XGRvdHtOfX17Tn0gPSBcZnJhY3tcZG90e0t9fXtLfSAgLSBuICQkCgpWZWQgYnJ1ayBhdiBuw7h5YWtpZ2UgZGUgc2FtbWUgcmVnbmVyZWdsZW5lLCAga2FuIG1hbiBvZ3PDpSB2aXNlIGF0CgokJFxmcmFje1xkb3R7a319e2t9ID0gXGZyYWN7XGRvdHtLfX17S30gLSBcZnJhY3tcZG90e059fXtOfSAtIFxmcmFje1xkb3R7QX19e0F9ID0gXGZyYWN7XGRvdHtLfX17S30gLSBuIC1hJCQKCgoKCgoKCgo=</div>
 
 
 

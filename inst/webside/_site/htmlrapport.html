@@ -188,9 +188,7 @@ $(document).ready(function () {
     <li>
       <a href="forelesningsplan.html">Forelesningsplan</a>
     </li>
-    <li>
-      <a href="laeringsmaal.html">Læringsmål</a>
-    </li>
+    <li class="dropdown-header">Læringsmål</li>
   </ul>
 </li>
 <li class="dropdown">
@@ -432,26 +430,21 @@ $(document).ready(function () {
 </ul></li>
 <li><a href="#solow-modellen-for-konomisk-vekst">Solow-modellen for økonomisk vekst</a><ul>
 <li><a href="#modellens-tre-komponenter">Modellens tre komponenter</a></li>
-<li><a href="#forenklet-solow-modell">Forenklet Solow-modell</a></li>
-<li><a href="#modellens-prediksoner">Modellens prediksoner</a><ul>
+<li><a href="#forenklet-solow-modell">Forenklet Solow-modell</a><ul>
+<li><a href="#modellens-prediksoner">Modellens prediksoner</a></li>
 <li><a href="#skiftanalyse">Skiftanalyse</a></li>
 </ul></li>
 <li><a href="#vanlig-solow-modell">Vanlig Solow-modell</a><ul>
+<li><a href="#modellens-prediksoner-1">Modellens prediksoner</a></li>
 <li><a href="#skiftanalyse-1">Skiftanalyse</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
-<li><a href="#referanser">Referanser</a></li>
-<li><a href="#del-3-konomiske-kriser">Del 3: Økonomiske kriser</a><ul>
-<li><a href="#tema-1-penger-kreditt-og-bankadferd">Tema 1: Penger, kreditt og bankadferd</a></li>
-<li><a href="#banker-systemrisiko-og-kapitalkrav">Banker, systemrisiko og kapitalkrav</a></li>
-<li><a href="#tema-2-statsgjeldskrise">Tema 2: Statsgjeldskrise</a><ul>
+<li><a href="#referanser">Referanser</a><ul>
 <li><a href="#budsjettbetingelsen-for-offentlig-sektor">Budsjettbetingelsen for offentlig sektor</a></li>
 <li><a href="#dynamikken-i-statsgjelden-over-tid">Dynamikken i statsgjelden over tid</a></li>
-</ul></li>
 <li><a href="#tema-3-likviditetsfellen-is-lm-modellen-med-to-husholdninger">Tema 3: Likviditetsfellen (IS-LM modellen med to husholdninger)</a></li>
 </ul></li>
-<li><a href="#referanser-1">Referanser</a></li>
 </ul>
 </div>
 
@@ -1610,9 +1603,8 @@ Likvidering (bail-in)
 <hr />
 <p><img src="htmlrapport_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
 <hr />
-</div>
-<div id="modellens-prediksoner" class="section level3">
-<h3>Modellens prediksoner</h3>
+<div id="modellens-prediksoner" class="section level4">
+<h4>Modellens prediksoner</h4>
 <ul>
 <li><span class="math inline">\(sf(k)&gt; \delta k\)</span> vil <em>BNP per capita</em> vokse, og veksten vil være stærkere desto lavere nivået er på <span class="math inline">\(k\)</span></li>
 <li><span class="math inline">\(sf(k)&lt; \delta k\)</span> vil <em>BNP per capita</em> synke, og reduksjonen vil være stærkere desto lavere nivået er på <span class="math inline">\(k\)</span><br />
@@ -1625,7 +1617,7 @@ Likvidering (bail-in)
 <hr />
 <p>Disse resultatene er overens med hva som ble beskrevet innledningsvis: BNP per innbygger har vokst og konvergert (dvs. mindre forskjeller) mellom land med inklusive institusjoner.</p>
 <hr />
-<hr />
+</div>
 <div id="skiftanalyse" class="section level4">
 <h4>Skiftanalyse</h4>
 <ul>
@@ -1638,11 +1630,13 @@ Likvidering (bail-in)
 <div id="vanlig-solow-modell" class="section level3">
 <h3>Vanlig Solow-modell</h3>
 <p>Modellen vil her være gitt ved (i neste seminar skal vi se nærmere på hvordan vi løser dette matematisk):</p>
-<p><span class="math display">\[\Delta{k} = sf(k)-(\delta+n) k\]</span> Avlønning til arbeidskraften <span class="math display">\[w = f&#39;(k)\]</span></p>
-<p>Avlønning til kapitalen <span class="math display">\[r = f(k)- f&#39;(k)\]</span></p>
+<p><span class="math display">\[\Delta{k} = sf(k)-(\delta+n) k\]</span> Avlønning til kapitalen: <span class="math display">\[r = f&#39;(k)- \delta\]</span></p>
+<p>Avlønning til arbeidskraften: <span class="math display">\[w = f(k) - f&#39;(k)k\]</span></p>
 <hr />
 <p><img src="htmlrapport_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
 <hr />
+<div id="modellens-prediksoner-1" class="section level4">
+<h4>Modellens prediksoner</h4>
 <ul>
 <li><span class="math inline">\(sf(k)&gt; \delta k\)</span> vil BNP per <em>effektiv arbeidskraftenhet</em> øke, og veksten vil være stærkere desto lavere nivået er på <span class="math inline">\(k\)</span></li>
 <li><span class="math inline">\(sf(k)&lt; \delta k\)</span> vil BNP per <em>effektiv arbeidskraftenhet</em>, reduseres, og reduksjonen vil være stærkere desto lavere nivået er på <span class="math inline">\(k\)</span><br />
@@ -1655,6 +1649,7 @@ Likvidering (bail-in)
 <hr />
 <p><strong>Øvelse (blir også gitt til seminaret)</strong>: Les artikkelen <a href="artikler/del2_venezuela.pdf">Economists vs. Scientists on Long-Term Growth</a> og gi en kortfattet oversikt over hvilken faktorer som vil påvirke teknologiparameteren <span class="math inline">\(a\)</span> framover.</p>
 <hr />
+</div>
 <div id="skiftanalyse-1" class="section level4">
 <h4>Skiftanalyse</h4>
 <ul>
@@ -1667,9 +1662,11 @@ Likvidering (bail-in)
 </div>
 <div id="referanser" class="section level1">
 <h1>Referanser</h1>
-</div>
-<div id="del-3-konomiske-kriser" class="section level1">
-<h1>Del 3: Økonomiske kriser</h1>
+<!--
+# Del 3: Økonomiske kriser
+
+
+
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -1896,20 +1893,19 @@ for the JavaScript code in this tag.
 </div>
 </body>
 </html>
-<div id="tema-1-penger-kreditt-og-bankadferd" class="section level2">
-<h2>Tema 1: Penger, kreditt og bankadferd</h2>
-<p>Innvendige og utvendige penger <iframe width="200" height="200" src="https://www.youtube.com/embed/O7pnjzCuSv8"> </iframe></p>
-</div>
-<div id="banker-systemrisiko-og-kapitalkrav" class="section level2">
-<h2>Banker, systemrisiko og kapitalkrav</h2>
-</div>
-<div id="tema-2-statsgjeldskrise" class="section level2">
-<h2>Tema 2: Statsgjeldskrise</h2>
+
+## Tema 1: Penger, kreditt og bankadferd
+Innvendige og utvendige penger
+<iframe width="200" height="200" src="https://www.youtube.com/embed/O7pnjzCuSv8"> </iframe>
+
+## Banker, systemrisiko og kapitalkrav
+
+## Tema 2:  Statsgjeldskrise
+
 <iframe src="http://www.usdebtclock.org/" frameborder="0">
-<p>
-Your browser does not support iframes.
-</p>
+  <p>Your browser does not support iframes.</p>
 </iframe>
+
 <!--
 <iframe src="https://www.nbim.no/no//">
   <p>Your browser does not support iframes.</p>
@@ -1947,7 +1943,6 @@ Your browser does not support iframes.
 <h3>Dynamikken i statsgjelden over tid</h3>
 <p>Dynamikken i statsgjelden over tid</p>
 </div>
-</div>
 <div id="tema-3-likviditetsfellen-is-lm-modellen-med-to-husholdninger" class="section level2">
 <h2>Tema 3: Likviditetsfellen (IS-LM modellen med to husholdninger)</h2>
 <p>Finne forelesninge fra Høgskulen</p>
@@ -1978,10 +1973,7 @@ Mislighold
 Inflasjon
 Fordelingskamp
 -->
-</div>
-</div>
-<div id="referanser-1" class="section level1 unnumbered">
-<h1>Referanser</h1>
+<p>.-&gt; # Referanser</p>
 <div id="refs" class="references">
 <div id="ref-acemoglu2013nations">
 <p>Acemoglu, Daron, and James A Robinson. 2013. <em>Why Nations Fail: The Origins of Power, Prosperity, and Poverty</em>. Broadway Business.</p>
@@ -1991,6 +1983,7 @@ Fordelingskamp
 </div>
 <div id="ref-gartner2016macroeconomics">
 <p>Gärtner, Manfred. 2016. <em>Macroeconomics Under Flexible Exchange Rates</em>. Pearson.</p>
+</div>
 </div>
 </div>
 </div>
