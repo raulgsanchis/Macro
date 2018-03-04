@@ -426,26 +426,32 @@ $(document).ready(function () {
 </ul></li>
 </ul></li>
 <li><a href="#del-2-konomisk-vekst">Del 2: Økonomisk vekst</a><ul>
-<li><a href="#introduksjon-til-konomisk-vekst">Introduksjon til økonomisk vekst</a><ul>
+<li><a href="#introdukson-til-konomisk-vekst">Introdukson til økonomisk vekst</a><ul>
 <li><a href="#empiriske-observasjoner-over-tid">Empiriske observasjoner over tid</a></li>
 <li><a href="#inklusive-og-ekstraktive-offentlige-institusjoner-acemoglu2013nations">Inklusive og ekstraktive offentlige institusjoner <span class="citation">(Acemoglu and Robinson 2013)</span></a></li>
 </ul></li>
 <li><a href="#solow-modellen-for-konomisk-vekst">Solow-modellen for økonomisk vekst</a><ul>
 <li><a href="#modellens-tre-komponenter">Modellens tre komponenter</a></li>
-<li><a href="#enkel-utgave">Enkel utgave</a></li>
-<li><a href="#normal-utgave">Normal utgave</a></li>
+<li><a href="#forenklet-solow-modell">Forenklet Solow-modell</a></li>
+<li><a href="#modellens-prediksoner">Modellens prediksoner</a><ul>
+<li><a href="#skiftanalyse">Skiftanalyse</a></li>
+</ul></li>
+<li><a href="#vanlig-solow-modell">Vanlig Solow-modell</a><ul>
+<li><a href="#skiftanalyse-1">Skiftanalyse</a></li>
 </ul></li>
 </ul></li>
+</ul></li>
+<li><a href="#referanser">Referanser</a></li>
 <li><a href="#del-3-konomiske-kriser">Del 3: Økonomiske kriser</a><ul>
-<li><a href="#penger-innvendige-og-utvendige">Penger (innvendige og utvendige)</a></li>
+<li><a href="#tema-1-penger-kreditt-og-bankadferd">Tema 1: Penger, kreditt og bankadferd</a></li>
 <li><a href="#banker-systemrisiko-og-kapitalkrav">Banker, systemrisiko og kapitalkrav</a></li>
-<li><a href="#statsgjeldskrise">Statsgjeldskrise</a><ul>
+<li><a href="#tema-2-statsgjeldskrise">Tema 2: Statsgjeldskrise</a><ul>
 <li><a href="#budsjettbetingelsen-for-offentlig-sektor">Budsjettbetingelsen for offentlig sektor</a></li>
 <li><a href="#dynamikken-i-statsgjelden-over-tid">Dynamikken i statsgjelden over tid</a></li>
 </ul></li>
-<li><a href="#likviditetsfellen-is-lm-modellen-med-to-husholdninger">Likviditetsfellen (IS-LM modellen med to husholdninger)</a></li>
+<li><a href="#tema-3-likviditetsfellen-is-lm-modellen-med-to-husholdninger">Tema 3: Likviditetsfellen (IS-LM modellen med to husholdninger)</a></li>
 </ul></li>
-<li><a href="#referanser">Referanser</a></li>
+<li><a href="#referanser-1">Referanser</a></li>
 </ul>
 </div>
 
@@ -1531,8 +1537,8 @@ Likvidering (bail-in)
 </div>
 <div id="del-2-konomisk-vekst" class="section level1">
 <h1>Del 2: Økonomisk vekst</h1>
-<div id="introduksjon-til-konomisk-vekst" class="section level2">
-<h2>Introduksjon til økonomisk vekst</h2>
+<div id="introdukson-til-konomisk-vekst" class="section level2">
+<h2>Introdukson til økonomisk vekst</h2>
 <ul>
 <li><p>Vi er opptatt av økonomisk vekst i et land, fordi dette øker velstandsnivået blant landets innbyggere over tid</p></li>
 <li><p>Det er vanlig å måle et lands velstandsnivå ved å dele BNP <span class="math inline">\(Y\)</span> på antall innbyggere i landet <span class="math inline">\(N\)</span>, dvs <span class="math inline">\(Y/N\)</span></p></li>
@@ -1560,64 +1566,364 @@ Likvidering (bail-in)
 <h3>Inklusive og ekstraktive offentlige institusjoner <span class="citation">(Acemoglu and Robinson 2013)</span></h3>
 <p>Institusjonene kan kalles <strong>ekstraktive</strong> dersom en elite (vanligvis i form av et totalitært regime) benytter disse til å ekstrahere verdier fra flertallet.</p>
 <p>Institusjonene kan kalles <strong>inklusive</strong> dersom de sørger for privat eiendomsrett, borgerrettigheter, upartisk rettsvesen, fri etableringsrett og karrierevalg</p>
-<p>Øvelse: Les artikkelen <a href="artikler/del2_venezuela.pdf">Venezuela Is Starving Its People</a> og noter ned de eksemplene du finner på ekstraktive institusjoner</p>
-<hr />
+<p><strong>Øvelse</strong>: Les artikkelen <a href="artikler/del2_venezuela.pdf">Venezuela Is Starving Its People</a> og noter ned de eksemplene du finner på ekstraktive institusjoner</p>
 </div>
 </div>
 <div id="solow-modellen-for-konomisk-vekst" class="section level2">
 <h2>Solow-modellen for økonomisk vekst</h2>
-<p>Solow-modellen bygger på forutsetninger om sterk grad av <strong>inklusive</strong> institusjoner.</p>
+<p>Solow-modellen bygger på en forutsetning om en økonomi med <strong>inklusive</strong> institusjoner. I tillegg kan vi konkretisere følgende forutsetninger:</p>
+<ul>
+<li><p>Lukket økonomi uten offentlig sektor, <span class="math inline">\(Y = C + I\)</span></p></li>
+<li><p>Full konkurranse i kapital- og arbeidsmarkedet (innsatsfaktoren avlønnes etter sin grenseproduktivitet)</p></li>
+<li><p>Hele befolkningen er sysselsatt (ingen arbeidsledighet), <span class="math inline">\(L=N\)</span></p></li>
+<li><p>Produktfunksjonen er homogen av grad én (dobling av innsatsfaktorene fører til dobling av produksjonen)</p></li>
+<li><p>Homogen arbeidskraft (alle arbeiderne har like kvalifikasjoner)</p></li>
+</ul>
+<hr />
 <div id="modellens-tre-komponenter" class="section level3">
 <h3>Modellens tre komponenter</h3>
 <ol style="list-style-type: decimal">
-<li></li>
-<li></li>
-<li></li>
+<li>Produktfunksjonen</li>
 </ol>
+<p><span class="math display">\[Y=F(K,AL) \text{ } F_{K}&gt;0, F_{KK}&lt;0, F_{L}&gt;0, F_{LL}&lt;0\]</span> - Produktfunksjon er homogen av grad én (konstant skalutbytte). Som betyr at en t-dobling av innsatsfaktorene medfører en t-dobling av produksjonen <span class="math display">\[tY=tF(K,L)=F(tK,tL)\]</span></p>
+<p>Som betyr at en t-dobling av innsatsfaktorene medfører en t-dobling av produksjonen</p>
+<ul>
+<li>Setter vi <span class="math inline">\(t=\frac{1}{AL}\)</span> får vi <span class="math inline">\(\frac{Y}{AL}=F(\frac{K}{AL},1)\)</span>. Definerer vi <span class="math inline">\(y \equiv \frac{1}{AL}\)</span> og <span class="math inline">\(F(K/AL,1) \equiv f(k)\)</span>, kan vi skrive produktfunksjone på intensiv form som</li>
+</ul>
+<p><span class="math display">\[y=f(k) \text{ } f&#39;{k}&gt;0, f&#39;&#39;{k}&lt;0\]</span></p>
+<hr />
+<p><span class="math inline">\(\text{2.}\)</span> Sparing</p>
+<p><span class="math display">\[S=sY=I\]</span> 3. Kapitalakkumalasjon</p>
+<p><span class="math display">\[\Delta K=-\delta K + I\]</span></p>
+<hr />
 </div>
-<div id="enkel-utgave" class="section level3">
-<h3>Enkel utgave</h3>
+<div id="forenklet-solow-modell" class="section level3">
+<h3>Forenklet Solow-modell</h3>
+<ul>
+<li><p>Ingen teknologisk framgang, <span class="math inline">\(A=1\)</span></p></li>
+<li><p>Uten befolkningsvekst, <span class="math inline">\(n=0\)</span></p></li>
+</ul>
+<p>Starter med å dele <span class="math inline">\((3)\)</span> på <span class="math inline">\(L\)</span></p>
+<p><span class="math display">\[\frac{\Delta{K}}{L} = -\delta K/L + \frac{I}{K}\]</span></p>
+<p>Setter vi inn for <span class="math inline">\(I\)</span> fra (2) og <span class="math inline">\(y\)</span> fra (1) og bruker at <span class="math inline">\(k\equiv \frac{K}{N}\)</span>, kan vi skrive</p>
+<p><span class="math display">\[\Delta{k} = sf(k)  -\delta k\]</span></p>
+<hr />
+<p><img src="htmlrapport_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
+<hr />
 </div>
-<div id="normal-utgave" class="section level3">
-<h3>Normal utgave</h3>
-<!--
-Mer konkret kan vi uttrykke disse som:
-- Abc
-- Def
--->
+<div id="modellens-prediksoner" class="section level3">
+<h3>Modellens prediksoner</h3>
+<ul>
+<li><span class="math inline">\(sf(k)&gt; \delta k\)</span> vil <em>BNP per capita</em> vokse, og veksten vil være stærkere desto lavere nivået er på <span class="math inline">\(k\)</span></li>
+<li><span class="math inline">\(sf(k)&lt; \delta k\)</span> vil <em>BNP per capita</em> synke, og reduksjonen vil være stærkere desto lavere nivået er på <span class="math inline">\(k\)</span><br />
+</li>
+<li>På lang sikt og uavhengig av startverdiren for <span class="math inline">\(k_{0}\)</span>, vil økonomien konvergere mot en stasjonær-tilstand (steady-state) hvor produksjonen per innbygger er konstant, c.
+<ul>
+<li>Dette medfører at trendveksten (som har benyttet i konjunkturanalysen i del I) i stasjonærtilstanden er gitt ved: <span class="math display">\[\frac{\overline{Y}}{N}=c \Rightarrow ln(Y) - ln(N) = ln(c) \Rightarrow \Delta Y_{t}/Y_{t} = 0\]</span></li>
+</ul></li>
+</ul>
+<hr />
+<p>Disse resultatene er overens med hva som ble beskrevet innledningsvis: BNP per innbygger har vokst og konvergert (dvs. mindre forskjeller) mellom land med inklusive institusjoner.</p>
+<hr />
+<hr />
+<div id="skiftanalyse" class="section level4">
+<h4>Skiftanalyse</h4>
+<ul>
+<li>Økt sparerate</li>
+</ul>
+<p><img src="htmlrapport_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
+<hr />
 </div>
 </div>
+<div id="vanlig-solow-modell" class="section level3">
+<h3>Vanlig Solow-modell</h3>
+<p>Modellen vil her være gitt ved (i neste seminar skal vi se nærmere på hvordan vi løser dette matematisk):</p>
+<p><span class="math display">\[\Delta{k} = sf(k)-(\delta+n) k\]</span> Avlønning til arbeidskraften <span class="math display">\[w = f&#39;(k)\]</span></p>
+<p>Avlønning til kapitalen <span class="math display">\[r = f(k)- f&#39;(k)\]</span></p>
+<hr />
+<p><img src="htmlrapport_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
+<hr />
+<ul>
+<li><span class="math inline">\(sf(k)&gt; \delta k\)</span> vil BNP per <em>effektiv arbeidskraftenhet</em> øke, og veksten vil være stærkere desto lavere nivået er på <span class="math inline">\(k\)</span></li>
+<li><span class="math inline">\(sf(k)&lt; \delta k\)</span> vil BNP per <em>effektiv arbeidskraftenhet</em>, reduseres, og reduksjonen vil være stærkere desto lavere nivået er på <span class="math inline">\(k\)</span><br />
+</li>
+<li>På lang sikt og uavhengig av startverdiren for <span class="math inline">\(k_{0}\)</span>, vil økonomien konvergere mot en stasjonær-tilstand (steady-state) hvor produksjonen per innbygger vokser med en eksogen (bestemt utenfor modellen) rate lik <strong><span class="math inline">\(a\)</span></strong>
+<ul>
+<li>Dette medfører at trendveksten (som har benyttet i konjunkturanalysen i del I) i stasjonærtilstanden er gitt ved: <span class="math display">\[\frac{\overline{Y}}{AN}=c \Rightarrow ln(Y) - ln(N) - ln(A) = ln(c) \Rightarrow \Delta Y_{t}/Y_{t} = n + a\]</span></li>
+</ul></li>
+</ul>
+<hr />
+<p><strong>Øvelse (blir også gitt til seminaret)</strong>: Les artikkelen <a href="artikler/del2_venezuela.pdf">Economists vs. Scientists on Long-Term Growth</a> og gi en kortfattet oversikt over hvilken faktorer som vil påvirke teknologiparameteren <span class="math inline">\(a\)</span> framover.</p>
+<hr />
+<div id="skiftanalyse-1" class="section level4">
+<h4>Skiftanalyse</h4>
+<ul>
+<li>Befolkningsvekst (pga. økt fødselsrate og/eller nettoinvandring)</li>
+</ul>
+<p><img src="htmlrapport_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
+</div>
+</div>
+</div>
+</div>
+<div id="referanser" class="section level1">
+<h1>Referanser</h1>
 </div>
 <div id="del-3-konomiske-kriser" class="section level1">
 <h1>Del 3: Økonomiske kriser</h1>
-<div id="penger-innvendige-og-utvendige" class="section level2">
-<h2>Penger (innvendige og utvendige)</h2>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title></title>
+<!-- 2017-12-14 Thu 17:31 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Jørn I. Halvorsen" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js"></script>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title"></h1>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Modell</th>
+<th scope="col" class="left">Endogene variabler</th>
+<th scope="col" class="left">Eksogene endringer</th>
+<th scope="col" class="left">Endringer</th>
+<th scope="col" class="left">Stabilisteringspolitikk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">Enkel Keynes</td>
+<td class="left">\(\theta\)</td>
+<td class="left">G</td>
+<td class="left">\(\Delta M\)</td>
+<td class="left">\(\delta G\)</td>
+</tr>
+
+<tr>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>
+<div id="tema-1-penger-kreditt-og-bankadferd" class="section level2">
+<h2>Tema 1: Penger, kreditt og bankadferd</h2>
+<p>Innvendige og utvendige penger <iframe width="200" height="200" src="https://www.youtube.com/embed/O7pnjzCuSv8"> </iframe></p>
 </div>
 <div id="banker-systemrisiko-og-kapitalkrav" class="section level2">
 <h2>Banker, systemrisiko og kapitalkrav</h2>
 </div>
-<div id="statsgjeldskrise" class="section level2">
-<h2>Statsgjeldskrise</h2>
-<iframe src="http://www.usdebtclock.org/">
+<div id="tema-2-statsgjeldskrise" class="section level2">
+<h2>Tema 2: Statsgjeldskrise</h2>
+<iframe src="http://www.usdebtclock.org/" frameborder="0">
 <p>
 Your browser does not support iframes.
 </p>
 </iframe>
+<!--
 <iframe src="https://www.nbim.no/no//">
-<p>
-Your browser does not support iframes.
-</p>
+  <p>Your browser does not support iframes.</p>
 </iframe>
+
+
 <iframe src="https://www.nationaldebtclocks.org/">
-<p>
-Your browser does not support iframes.
-</p>
+  <p>Your browser does not support iframes.</p>
 </iframe>
+
 <iframe src="https://www.nationaldebtclocks.org/">
-<p>
-Your browser does not support iframes.
-</p>
+  <p>Your browser does not support iframes.</p>
 </iframe>
+-->
 <div id="budsjettbetingelsen-for-offentlig-sektor" class="section level3">
 <h3>Budsjettbetingelsen for offentlig sektor</h3>
 <ul>
@@ -1642,8 +1948,8 @@ Your browser does not support iframes.
 <p>Dynamikken i statsgjelden over tid</p>
 </div>
 </div>
-<div id="likviditetsfellen-is-lm-modellen-med-to-husholdninger" class="section level2">
-<h2>Likviditetsfellen (IS-LM modellen med to husholdninger)</h2>
+<div id="tema-3-likviditetsfellen-is-lm-modellen-med-to-husholdninger" class="section level2">
+<h2>Tema 3: Likviditetsfellen (IS-LM modellen med to husholdninger)</h2>
 <p>Finne forelesninge fra Høgskulen</p>
 <!--
 Statsgjeld
@@ -1674,7 +1980,7 @@ Fordelingskamp
 -->
 </div>
 </div>
-<div id="referanser" class="section level1 unnumbered">
+<div id="referanser-1" class="section level1 unnumbered">
 <h1>Referanser</h1>
 <div id="refs" class="references">
 <div id="ref-acemoglu2013nations">

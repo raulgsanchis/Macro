@@ -31,6 +31,7 @@ solowgrafikk$grafiskstyle(labs=list(title='Solow-modellen (enkel utgave)', x='k'
                           figurnr = 2)
 solowgrafikk$ggtyper[[length(solowgrafikk$ggtyper)]]
 
+
 solowgrafikk$grafiskstyle(labs=list(title='Solow-modellen (enkel utgave)', x='k', y='y=f(k)'),
                           skaleringx=list(label=c(TeX("$k^{ss}}$"),TeX("$k^{ss'}}$")), breaks=c(dssamlikvedf$x, ssamlikvedf$x),limits=NULL),
                           skaleringy=list(label=c(TeX("$y^{ss}}$"),TeX("$y'^{ss'}}$")), breaks=c(dssamlikvedf$y, ssamlikvedf$y),limits=NULL),

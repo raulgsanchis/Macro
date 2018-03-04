@@ -1,6 +1,6 @@
 ---
 bibliography: pensum.bib
-output: html_notebook
+#output: html_notebook
 ---
 
 ## Introdukson til økonomisk vekst
@@ -38,7 +38,7 @@ rettsvesen, fri etableringsrett og karrierevalg
 
 ## Solow-modellen for økonomisk vekst 
 
-Solow-modellen bygger på forutsetninger om sterk grad av **inklusive** institusjoner. I tillegg gjør følgende forutsetninger seg gjeldende
+Solow-modellen bygger på en forutsetning om en økonomi med **inklusive** institusjoner. I tillegg kan vi konkretisere følgende forutsetninger: 
 
 -  Lukket økonomi uten offentlig sektor, $Y = C + I$
 
@@ -46,7 +46,7 @@ Solow-modellen bygger på forutsetninger om sterk grad av **inklusive** institus
 
 - Hele befolkningen er sysselsatt (ingen arbeidsledighet), $L=N$
 
-- Produktfunksjonen er homogen av grad én
+- Produktfunksjonen er homogen av grad én (dobling av innsatsfaktorene fører til dobling av produksjonen)
 
 - Homogen arbeidskraft (alle arbeiderne har like kvalifikasjoner)
 
@@ -94,28 +94,32 @@ $$\Delta{k} = sf(k)  -\delta k$$
 ---
 
 ```{r message=FALSE, warning=FALSE, include=FALSE, paged.print=FALSE}
+library(dplyr)
+library(latex2exp)
+library(ggplot2)
+library(gridExtra)
+library(grid)
 library(ggplot2)
 library(MakroOEKB1115)
 library(dplyr)
-library(latex2exp)
+
 
 solowgrafikk <- Genfigur('solow')
-
 solowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.3, alpha=0.5, n=0, gamma=0.04), endvar=list(k=1:200) ,kat='solow')
 solowgrafikk$optimering(tovectorlabel=c('sy', 'depk'), startv=c(100,10))
 
 #solowgrafikk$optimeringv
-ssamlikvedf <- data.frame(x=55 ,y =2.2, xend=55, yend=2.2)
-sdftekst <- data.frame(x=c(200 ,200, 200),y=c(15, 8.75, 4.8), kurve=c('f(k)', 'gamma*k', 'sf(k)'), farge=c('red', 'red', 'red'))
+ssamlikvedf <- data.frame(x=55 ,y =7.3, xend=55, yend=7.3)
+sdftekst <- data.frame(x=c(200 ,200, 200),y=c(15, 8.75, 4.8), kurve=c('f(k)', 'delta*k', 'sf(k)'), farge=c('red', 'red', 'red'))
 solowgrafikk$grafisknumappend(samlikve=ssamlikvedf, dftekst=sdftekst, tilstand='solow')
 
 # Skfit
 katv <- 'oktsparing'
 solowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.4, alpha=0.5, n=0, gamma=0.04), endvar=list(k=1:200) ,kat=katv)
-dssamlikvedf <- data.frame(x=103, y=4, xend=103, yend=4)
-dsdftekst <- data.frame(x=c(200 ,200, 200),y=c(15, 8.75, 6),kurve=c('f(k)', 'gamma*k', "s'f(k)"), farge=c('red', 'red', 'red'))
+dssamlikvedf <- data.frame(x=103, y=10, xend=103, yend=10)
+dsdftekst <- data.frame(x=c(200 ,200, 200),y=c(15, 8.75, 6),kurve=c('f(k)', 'delta*k', "s'f(k)"), farge=c('red', 'red', 'red'))
 solowgrafikk$grafisknumappend(samlikve=dssamlikvedf, dftekst=dsdftekst, tilstand=katv)
-solowgrafikk$ggtyper[[2]]
+solowgrafikk$ggtyper[[3]]
 ```
 
 ```{r echo=FALSE}
@@ -130,14 +134,18 @@ solowgrafikk$ggtyper[[length(solowgrafikk$ggtyper)]]
 ---
 
 
-### Modellens prediksoner
+#### Modellens prediksoner
 - $sf(k)> \delta k$ vil *BNP per capita* vokse, og veksten vil være stærkere desto lavere nivået er på $k$ 
 - $sf(k)< \delta k$ vil *BNP per capita* synke, og reduksjonen vil være stærkere desto lavere nivået er på $k$   
 - På lang sikt og uavhengig av startverdiren for $k_{0}$, vil økonomien konvergere mot en stasjonær-tilstand (steady-state) hvor
-produksjonen per innbygger er konstant.
+produksjonen per innbygger er konstant, c.
+    - Dette medfører at trendveksten (som har benyttet i konjunkturanalysen i del I) i stasjonærtilstanden er gitt ved: 
+    $$\frac{\overline{Y}}{N}=c \Rightarrow ln(Y) - ln(N) = ln(c) \Rightarrow \Delta Y_{t}/Y_{t} = 0$$
 
+---
 
-Disse resultatene er overens med hva vi beskrev innledningsvis: BNP per innbygger mellom land har konvergert (dvs. mindre forskjeller) for mange rike land.
+Disse resultatene er overens med hva som ble beskrevet innledningsvis: BNP per innbygger har vokst og konvergert (dvs. mindre forskjeller) mellom land med
+inklusive institusjoner.
 
 ---
 
@@ -163,70 +171,84 @@ solowgrafikk$ggtyper[[length(solowgrafikk$ggtyper)]]
 
 ```{r include=FALSE}
 ### Vanlig Solow-modell
-solowgrafikk <- Genfigur('solow')
+nsolowgrafikk <- Genfigur('solow')
 
-solowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.4, alpha=0.5, n=0, gamma=0.04), endvar=list(k=1:200) ,kat='solow')
-solowgrafikk$optimering(tovectorlabel=c('sy', 'depk'), startv=c(100,10))
+nsolowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.4, alpha=0.5, n=0, gamma=0.04), endvar=list(k=1:200) ,kat='solow')
+#nsolowgrafikk$optimering(tovectorlabel=c('sy', 'depk'), startv=c(100,10))
 
-#solowgrafikk$optimeringv
-ssamlikvedf <- data.frame(x=100, y=4, xend=100, yend=4)
-sdftekst <- data.frame(x=c(200 ,190, 200),y=c(15, 8.75, 6), kurve=c('f(k)', "(n+gamma)k", 'sf(k)'), farge=c('red', 'red', 'red'))
-solowgrafikk$grafisknumappend(samlikve=ssamlikvedf, dftekst=sdftekst, tilstand='solow')
-solowgrafikk$ggtyper[[2]]
+#nsolowgrafikk$optimeringv
+ssamlikvedf <- data.frame(x=100, y=10, xend=100, yend=10)
+sdftekst <- data.frame(x=c(200 ,190, 200),y=c(15, 8.75, 6), kurve=c('f(k)', "(n+delta)k", 'sf(k)'), farge=c('red', 'red', 'red'))
+nsolowgrafikk$grafisknumappend(samlikve=ssamlikvedf, dftekst=sdftekst, tilstand='solow')
+nsolowgrafikk$ggtyper[[2]]
 
 # Skfit
-katv <- 'oktsparing'
-solowgrafikk$numerisk(vartegne=c('sy','y','depk+123'), par=list(savr=0.4, alpha=0.5, n=0.01, gamma=0.04), endvar=list(k=1:200) ,kat=katv)
-dssamlikvedf <- data.frame(x=62, y=3.2, xend=62, yend=3.2)
-dsdftekst <- data.frame(x=c(200 ,190, 200),y=c(15, 10.35, 6),kurve=c('f(k)', "(n'+gamma)k", "sf(k)"), farge=c('red', 'red', 'red'))
-solowgrafikk$grafisknumappend(samlikve=dssamlikvedf, dftekst=dsdftekst, tilstand=katv)
-solowgrafikk$ggtyper[[2]]
+nkatv <- 'oktbefolkning'
 
-solowgrafikk$grafiskstyle(labs=list(title='Solow-modellen', x='k', y='y=f(k)'),
+nsolowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.4, alpha=0.5, n=0.01, gamma=0.04), endvar=list(k=1:200) ,kat=nkatv)
+dssamlikvedf <- data.frame(x=62, y=7.7, xend=62, yend=7.7)
+dsdftekst <- data.frame(x=c(200 ,190, 200),y=c(15, 10.35, 6),kurve=c('f(k)', "(n'+delta)k", "sf(k)"), farge=c('red', 'red', 'red'))
+nsolowgrafikk$grafisknumappend(samlikve=dssamlikvedf, dftekst=dsdftekst, tilstand=nkatv)
+nsolowgrafikk$ggtyper[[3]]
+```
+
+
+
+Modellen vil her være gitt ved (i neste seminar skal vi se nærmere på hvordan vi løser dette matematisk):
+
+$$\Delta{k} = sf(k)-(\delta+n) k$$
+Avlønning til kapitalen:
+$$r = f'(k)- \delta$$
+
+
+Avlønning til arbeidskraften:
+$$w = f(k) - f'(k)k$$
+
+
+
+---
+
+```{r echo=FALSE}
+nsolowgrafikk$grafiskstyle(labs=list(title='Solow-modellen', x='k', y='y=f(k)'),
                           skaleringx=list(label=c(TeX("$k^{ss}}$")), breaks=ssamlikvedf$x,limits=NULL),
                           skaleringy=list(label=c(TeX('$y^{ss}}$')), breaks=ssamlikvedf$y,limits=NULL),
                           fargelinje=c('black','black', 'black'),
                           figurnr = 2)
+
+nsolowgrafikk$ggtyper[[length(nsolowgrafikk$ggtyper)]]
 ```
-
-
-```{r echo=FALSE}
-solowgrafikk$ggtyper[[length(solowgrafikk$ggtyper)]]
-```
-
-
-Modellen vil her være gitt ved (i neste seminar skal vi se nærmere på hvordan vi løser dette matematisk)
-
-$$\Delta{k} = sf(k)-(\delta+n) k$$
-Avlønning til arbeidskraften
-$$w = f'(k)$$
-
-Avlønning til kapitalen
-$$r = f(k)- f'(k)$$
 
 ---
 
+#### Modellens prediksoner
 
 - $sf(k)> \delta k$ vil BNP per *effektiv arbeidskraftenhet* øke, og veksten vil være stærkere desto lavere nivået er på $k$ 
 - $sf(k)< \delta k$ vil BNP per *effektiv arbeidskraftenhet*, reduseres, og reduksjonen vil være stærkere desto lavere nivået er på $k$   
 - På lang sikt og uavhengig av startverdiren for $k_{0}$, vil økonomien konvergere mot en stasjonær-tilstand (steady-state) hvor
 produksjonen per innbygger vokser med en eksogen (bestemt utenfor modellen) rate lik **$a$** 
+    - Dette medfører at trendveksten (som har benyttet i konjunkturanalysen i del I) i stasjonærtilstanden er gitt ved: 
+    $$\frac{\overline{Y}}{AN}=c \Rightarrow ln(Y) - ln(N) - ln(A) = ln(c) \Rightarrow \Delta Y_{t}/Y_{t} = n + a$$
+    
+---    
+    
+**Øvelse (blir også gitt til seminaret)**: Les artikkelen [Economists vs. Scientists on
+Long-Term Growth](artikler/del2_venezuela.pdf) og gi en kortfattet oversikt over hvilken faktorer som vil påvirke teknologiparameteren $a$ 
+framover.
 
 ---
 
 #### Skiftanalyse
 
-- Befolkningsvekst (økt fødselsrate pluss nettoinvandring)
+- Befolkningsvekst (pga. økt fødselsrate og/eller nettoinvandring)
 
 ```{r echo=FALSE}
-solowgrafikk$grafiskstyle(labs=list(title='Solow-modellen', x='k', y='y=f(k)'),
-                          skaleringx=list(label=c(TeX("$k^{ss}}$"),TeX("$k^{ss'}}$")), breaks=c(dssamlikvedf$x, ssamlikvedf$x),limits=NULL),
-                          skaleringy=list(label=c(TeX("$y^{ss}}$"),TeX("$y'^{ss'}}$")), breaks=c(dssamlikvedf$y, ssamlikvedf$y),limits=NULL),
-                          fargelinje=c('black','black', 'black'),
+nsolowgrafikk$grafiskstyle(labs=list(title='Solow-modellen', x='k', y='y=f(k)'),
+                          skaleringx=list(label=c(TeX("$k^{'ss}}$"),TeX("$k^{ss}}$")), breaks=c(dssamlikvedf$x, ssamlikvedf$x),limits=NULL),
+                          skaleringy=list(label=c(TeX("$y^{'ss}}$"),TeX("$y'^{ss}}$")), breaks=c(dssamlikvedf$y, ssamlikvedf$y),limits=NULL),
+                          fargelinje=c('black','black', 'black', 'black', 'black', 'black', 'black'),
                           figurnr = 3)
 
-solowgrafikk$ggtyper[[length(solowgrafikk$ggtyper)]]
-
+nsolowgrafikk$ggtyper[[length(nsolowgrafikk$ggtyper)]]
 ```
 
 

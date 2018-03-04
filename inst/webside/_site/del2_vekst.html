@@ -317,12 +317,12 @@ $(document).ready(function () {
 </div>
 <div id="solow-modellen-for-konomisk-vekst" class="section level2">
 <h2>Solow-modellen for økonomisk vekst</h2>
-<p>Solow-modellen bygger på forutsetninger om sterk grad av <strong>inklusive</strong> institusjoner. I tillegg gjør følgende forutsetninger seg gjeldende</p>
+<p>Solow-modellen bygger på en forutsetning om en økonomi med <strong>inklusive</strong> institusjoner. I tillegg kan vi konkretisere følgende forutsetninger:</p>
 <ul>
 <li><p>Lukket økonomi uten offentlig sektor, <span class="math inline">\(Y = C + I\)</span></p></li>
 <li><p>Full konkurranse i kapital- og arbeidsmarkedet (innsatsfaktoren avlønnes etter sin grenseproduktivitet)</p></li>
 <li><p>Hele befolkningen er sysselsatt (ingen arbeidsledighet), <span class="math inline">\(L=N\)</span></p></li>
-<li><p>Produktfunksjonen er homogen av grad én</p></li>
+<li><p>Produktfunksjonen er homogen av grad én (dobling av innsatsfaktorene fører til dobling av produksjonen)</p></li>
 <li><p>Homogen arbeidskraft (alle arbeiderne har like kvalifikasjoner)</p></li>
 </ul>
 <hr />
@@ -356,17 +356,21 @@ $(document).ready(function () {
 <hr />
 <p><img src="del2_vekst_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <hr />
-</div>
-<div id="modellens-prediksoner" class="section level3">
-<h3>Modellens prediksoner</h3>
+<div id="modellens-prediksoner" class="section level4">
+<h4>Modellens prediksoner</h4>
 <ul>
 <li><span class="math inline">\(sf(k)&gt; \delta k\)</span> vil <em>BNP per capita</em> vokse, og veksten vil være stærkere desto lavere nivået er på <span class="math inline">\(k\)</span></li>
 <li><span class="math inline">\(sf(k)&lt; \delta k\)</span> vil <em>BNP per capita</em> synke, og reduksjonen vil være stærkere desto lavere nivået er på <span class="math inline">\(k\)</span><br />
 </li>
-<li>På lang sikt og uavhengig av startverdiren for <span class="math inline">\(k_{0}\)</span>, vil økonomien konvergere mot en stasjonær-tilstand (steady-state) hvor produksjonen per innbygger er konstant.</li>
+<li>På lang sikt og uavhengig av startverdiren for <span class="math inline">\(k_{0}\)</span>, vil økonomien konvergere mot en stasjonær-tilstand (steady-state) hvor produksjonen per innbygger er konstant, c.
+<ul>
+<li>Dette medfører at trendveksten (som har benyttet i konjunkturanalysen i del I) i stasjonærtilstanden er gitt ved: <span class="math display">\[\frac{\overline{Y}}{N}=c \Rightarrow ln(Y) - ln(N) = ln(c) \Rightarrow \Delta Y_{t}/Y_{t} = 0\]</span></li>
+</ul></li>
 </ul>
-<p>Disse resultatene er overens med hva vi beskrev innledningsvis: BNP per innbygger mellom land har konvergert (dvs. mindre forskjeller) for mange rike land.</p>
 <hr />
+<p>Disse resultatene er overens med hva som ble beskrevet innledningsvis: BNP per innbygger har vokst og konvergert (dvs. mindre forskjeller) mellom land med inklusive institusjoner.</p>
+<hr />
+</div>
 <div id="skiftanalyse" class="section level4">
 <h4>Skiftanalyse</h4>
 <ul>
@@ -378,22 +382,31 @@ $(document).ready(function () {
 </div>
 <div id="vanlig-solow-modell" class="section level3">
 <h3>Vanlig Solow-modell</h3>
-<p><img src="del2_vekst_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<p>Modellen vil her være gitt ved (i neste seminar skal vi se nærmere på hvordan vi løser dette matematisk)</p>
-<p><span class="math display">\[\Delta{k} = sf(k)-(\delta+n) k\]</span> Avlønning til arbeidskraften <span class="math display">\[w = f&#39;(k)\]</span></p>
-<p>Avlønning til kapitalen <span class="math display">\[r = f(k)- f&#39;(k)\]</span></p>
+<p>Modellen vil her være gitt ved (i neste seminar skal vi se nærmere på hvordan vi løser dette matematisk):</p>
+<p><span class="math display">\[\Delta{k} = sf(k)-(\delta+n) k\]</span> Avlønning til kapitalen: <span class="math display">\[r = f&#39;(k)- \delta\]</span></p>
+<p>Avlønning til arbeidskraften: <span class="math display">\[w = f(k) - f&#39;(k)k\]</span></p>
 <hr />
+<p><img src="del2_vekst_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<hr />
+<div id="modellens-prediksoner-1" class="section level4">
+<h4>Modellens prediksoner</h4>
 <ul>
 <li><span class="math inline">\(sf(k)&gt; \delta k\)</span> vil BNP per <em>effektiv arbeidskraftenhet</em> øke, og veksten vil være stærkere desto lavere nivået er på <span class="math inline">\(k\)</span></li>
 <li><span class="math inline">\(sf(k)&lt; \delta k\)</span> vil BNP per <em>effektiv arbeidskraftenhet</em>, reduseres, og reduksjonen vil være stærkere desto lavere nivået er på <span class="math inline">\(k\)</span><br />
 </li>
-<li>På lang sikt og uavhengig av startverdiren for <span class="math inline">\(k_{0}\)</span>, vil økonomien konvergere mot en stasjonær-tilstand (steady-state) hvor produksjonen per innbygger vokser med en eksogen (bestemt utenfor modellen) rate lik <strong><span class="math inline">\(a\)</span></strong></li>
+<li>På lang sikt og uavhengig av startverdiren for <span class="math inline">\(k_{0}\)</span>, vil økonomien konvergere mot en stasjonær-tilstand (steady-state) hvor produksjonen per innbygger vokser med en eksogen (bestemt utenfor modellen) rate lik <strong><span class="math inline">\(a\)</span></strong>
+<ul>
+<li>Dette medfører at trendveksten (som har benyttet i konjunkturanalysen i del I) i stasjonærtilstanden er gitt ved: <span class="math display">\[\frac{\overline{Y}}{AN}=c \Rightarrow ln(Y) - ln(N) - ln(A) = ln(c) \Rightarrow \Delta Y_{t}/Y_{t} = n + a\]</span></li>
+</ul></li>
 </ul>
 <hr />
+<p><strong>Øvelse (blir også gitt til seminaret)</strong>: Les artikkelen <a href="artikler/del2_venezuela.pdf">Economists vs. Scientists on Long-Term Growth</a> og gi en kortfattet oversikt over hvilken faktorer som vil påvirke teknologiparameteren <span class="math inline">\(a\)</span> framover.</p>
+<hr />
+</div>
 <div id="skiftanalyse-1" class="section level4">
 <h4>Skiftanalyse</h4>
 <ul>
-<li>Befolkningsvekst (økt fødselsrate pluss nettoinvandring)</li>
+<li>Befolkningsvekst (pga. økt fødselsrate og/eller nettoinvandring)</li>
 </ul>
 <p><img src="del2_vekst_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
