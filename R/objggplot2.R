@@ -83,16 +83,19 @@ Genfigur$methods(grafisknumappend=function(samlikvedf=data.frame(x=100, y=3, xen
 })
 
 Genfigur$methods(grafiskstyle=function(labs=list(title='Solow-modellen', x='k', y='y'),
-                                         skaleringx=list(label=NULL,breaks=NULL,limits=NULL),
-                                         skaleringy=list(label=NULL,breaks=NULL,limits=NULL),
+                                         skaleringx=list(label=NULL, breaks=NULL, limits=NULL),
+                                         skaleringy=list(label=NULL, breaks=NULL, limits=NULL),
                                          fargelinje=c('black','black', 'black'),
                                          figurnr = 2){
+
+
+  #browser()
 
   nrfigur <- c(length(ggtyper), figurnr)[ifelse(is.null(figurnr)==TRUE,1,2)]
 
   ggobjsty <- ggtyper[[nrfigur]] + labs(title = labs$title, x = labs$x, y = labs$y) +
-    scale_y_continuous(labels = skaleringy$label) +
-    scale_x_continuous(labels = skaleringx$label) +
+    scale_x_continuous(labels = skaleringx$label, breaks=skaleringx$breaks) +
+    scale_y_continuous(labels = skaleringy$label, breaks=skaleringy$breaks) +
     scale_colour_manual(values =fargelinje) +
     theme_classic() + theme(legend.position="none")
 

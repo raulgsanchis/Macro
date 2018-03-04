@@ -27,8 +27,10 @@ output:
 1.
 
 ## Del 3: Statsjeld
-1. Illustre utvikligne for statsgjelden under både høy og lav produktivitetsvekst
-1. Virkemidler for å komme seg ut av av statsjgeldskrise
+1. Vis hvordan man kommer fra til den konsoliderte budsjettbetingelsen for offentlig sektor
+1. Figur vis fase-diagram lav produktivitet (g>r)
+1. Figur vis fase-diagram høy produktivitet (g<r)
+1. Diskuter kort virkemidler for å komme seg ut av av statsjgeldskrisen, meg og uten en uavhengig sentralbank 
 
 <!--
 

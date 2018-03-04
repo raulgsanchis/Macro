@@ -35,7 +35,7 @@ Form?let med notatet er ? belyse dette problemomr?det n?rmere ved ? gi en grov o
 M?ten vi g?r fram p?, er ? fors?ke gi klare svar p? fire sp?rsm?l som er knyttet til utformingen av det finansielle systemet.
 \begin{itemize}
 \item Hva er penger?
-\item Hvilken funksjoner og utforminger har bankvesenet for et land typisk hatt?
+\item Hvilke funksjoner og utforminger har bankvesenet for et land typisk hatt?
 \item Hvorfor trenger vi en sentralbank?
 \item Hvorfor kan banker ha ?nske om ? p?dra seg un?dvendig systemrisiko?
 \end{itemize}

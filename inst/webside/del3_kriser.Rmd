@@ -2,17 +2,23 @@
 output: html_notebook
 ---
 
-## Penger (innvendige og utvendige)
+```{r, echo=FALSE}
+htmltools::includeHTML("tabeller/kompstattabell.html")
+```
+
+## Tema 1: Penger, kreditt og bankadferd
+Innvendige og utvendige penger
+<iframe width="200" height="200" src="https://www.youtube.com/embed/O7pnjzCuSv8"> </iframe>
 
 ## Banker, systemrisiko og kapitalkrav
 
-## Statsgjeldskrise
+## Tema 2:  Statsgjeldskrise
 
-<iframe src="http://www.usdebtclock.org/">
+<iframe src="http://www.usdebtclock.org/" frameborder="0">
   <p>Your browser does not support iframes.</p>
 </iframe>
 
-
+<!--
 <iframe src="https://www.nbim.no/no//">
   <p>Your browser does not support iframes.</p>
 </iframe>
@@ -25,7 +31,7 @@ output: html_notebook
 <iframe src="https://www.nationaldebtclocks.org/">
   <p>Your browser does not support iframes.</p>
 </iframe>
-
+-->
 ### Budsjettbetingelsen for offentlig sektor
 
 - Offentlige myndigheter
@@ -47,7 +53,7 @@ $$B^f_t= \underset{\text{a}}{(1+i_{t})B^{f}_{t-1}}+\underset{\text{det primære 
 ### Dynamikken i statsgjelden over tid 
 Dynamikken i statsgjelden over tid
 
-## Likviditetsfellen (IS-LM modellen med to husholdninger)
+## Tema 3:  Likviditetsfellen (IS-LM modellen med to husholdninger)
 Finne forelesninge fra Høgskulen
 
 

@@ -96,29 +96,31 @@ $$\Delta{k} = sf(k)  -\delta k$$
 library(ggplot2)
 library(MakroOEKB1115)
 library(dplyr)
+library(latex2exp)
+
 solowgrafikk <- Genfigur('solow')
 
 solowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.3, alpha=0.5, n=0, gamma=0.04), endvar=list(k=1:200) ,kat='solow')
 solowgrafikk$optimering(tovectorlabel=c('sy', 'depk'), startv=c(100,10))
 
 #solowgrafikk$optimeringv
-ssamlikvedf <- data.frame(x=100, y=3, xend=100, yend=3)
+ssamlikvedf <- data.frame(x=55 ,y =2.2, xend=55, yend=2.2)
 sdftekst <- data.frame(x=c(200 ,200, 200),y=c(15, 8.75, 4.8), kurve=c('f(k)', 'gamma*k', 'sf(k)'), farge=c('red', 'red', 'red'))
 solowgrafikk$grafisknumappend(samlikve=ssamlikvedf, dftekst=sdftekst, tilstand='solow')
 
 # Skfit
 katv <- 'oktsparing'
 solowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.4, alpha=0.5, n=0, gamma=0.04), endvar=list(k=1:200) ,kat=katv)
-dssamlikvedf <- data.frame(x=175, y=5.25, xend=175, yend=5.25)
+dssamlikvedf <- data.frame(x=103, y=4, xend=103, yend=4)
 dsdftekst <- data.frame(x=c(200 ,200, 200),y=c(15, 8.75, 6),kurve=c('f(k)', 'gamma*k', "s'f(k)"), farge=c('red', 'red', 'red'))
 solowgrafikk$grafisknumappend(samlikve=dssamlikvedf, dftekst=dsdftekst, tilstand=katv)
-solowgrafikk$ggtyper[[3]]
+solowgrafikk$ggtyper[[2]]
 ```
 
 ```{r echo=FALSE}
-solowgrafikk$grafiskstyle(labs=list(title='Solow-modellen', x='k', y='y=f(k)'),
-                          skaleringx=list(label=NULL,breaks=NULL,limits=NULL),
-                          skaleringy=NULL,
+solowgrafikk$grafiskstyle(labs=list(title='Solow-modellen (enkel utgave)', x='k', y='y=f(k)'),
+                          skaleringx=list(label=c(TeX('$k^{ss}}$')),breaks=ssamlikvedf$x,limits=NULL),
+                          skaleringy=list(label=c(TeX('$y^{ss}}$')),breaks=ssamlikvedf$y,limits=NULL),
                           fargelinje=c('black','black', 'black'),
                           figurnr = 2)
 solowgrafikk$ggtyper[[length(solowgrafikk$ggtyper)]]
@@ -143,11 +145,12 @@ Disse resultatene er overens med hva vi beskrev innledningsvis: BNP per innbygge
 - Økt sparerate
 
 ```{r echo=FALSE}
-solowgrafikk$grafiskstyle(labs=list(title='Solow-modellen', x='k', y='y=f(k)'),
-                          skaleringx=list(label=NULL,breaks=NULL,limits=NULL),
-                          skaleringy=NULL,
+solowgrafikk$grafiskstyle(labs=list(title='Solow-modellen (enkel utgave)', x='k', y='y=f(k)'),
+                          skaleringx=list(label=c(TeX("$k^{ss}}$"),TeX("$k^{ss'}}$")), breaks=c(dssamlikvedf$x, ssamlikvedf$x),limits=NULL),
+                          skaleringy=list(label=c(TeX("$y^{ss}}$"),TeX("$y'^{ss'}}$")), breaks=c(dssamlikvedf$y, ssamlikvedf$y),limits=NULL),
                           fargelinje=c('black','black', 'black'),
                           figurnr = 3)
+
 solowgrafikk$ggtyper[[length(solowgrafikk$ggtyper)]]
 ```
 
@@ -158,7 +161,9 @@ solowgrafikk$ggtyper[[length(solowgrafikk$ggtyper)]]
 
 
 ```{r include=FALSE}
-solowgrafikk <- Genfigur('solow')
+### Vanlig Solow-modell
+solowgrafikk$ggtyper[[length(solowgrafikk$ggtyper)]]
+lowgrafikk <- Genfigur('solow')
 
 solowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.4, alpha=0.5, n=0, gamma=0.04), endvar=list(k=1:200) ,kat='solow')
 solowgrafikk$optimering(tovectorlabel=c('sy', 'depk'), startv=c(100,10))
@@ -167,23 +172,26 @@ solowgrafikk$optimering(tovectorlabel=c('sy', 'depk'), startv=c(100,10))
 ssamlikvedf <- data.frame(x=100, y=4, xend=100, yend=4)
 sdftekst <- data.frame(x=c(200 ,190, 200),y=c(15, 8.75, 6), kurve=c('f(k)', "(n+gamma)k", 'sf(k)'), farge=c('red', 'red', 'red'))
 solowgrafikk$grafisknumappend(samlikve=ssamlikvedf, dftekst=sdftekst, tilstand='solow')
+solowgrafikk$ggtyper[[2]]
 
 # Skfit
 katv <- 'oktsparing'
-solowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.4, alpha=0.5, n=0.01, gamma=0.04), endvar=list(k=1:200) ,kat=katv)
+solowgrafikk$numerisk(vartegne=c('sy','y','depk+123'), par=list(savr=0.4, alpha=0.5, n=0.01, gamma=0.04), endvar=list(k=1:200) ,kat=katv)
 dssamlikvedf <- data.frame(x=62, y=3.2, xend=62, yend=3.2)
 dsdftekst <- data.frame(x=c(200 ,190, 200),y=c(15, 10.35, 6),kurve=c('f(k)', "(n'+gamma)k", "sf(k)"), farge=c('red', 'red', 'red'))
 solowgrafikk$grafisknumappend(samlikve=dssamlikvedf, dftekst=dsdftekst, tilstand=katv)
-solowgrafikk$ggtyper[[3]]
-```
-```{r echo=FALSE}
+solowgrafikk$ggtyper[[2]]
+
 solowgrafikk$grafiskstyle(labs=list(title='Solow-modellen', x='k', y='y=f(k)'),
-                          skaleringx=list(label=NULL,breaks=NULL,limits=NULL),
-                          skaleringy=NULL,
+                          skaleringx=list(label=c(TeX("$k^{ss}}$")), breaks=ssamlikvedf$x,limits=NULL),
+                          skaleringy=list(label=c(TeX('$y^{ss}}$')), breaks=ssamlikvedf$y,limits=NULL),
                           fargelinje=c('black','black', 'black'),
                           figurnr = 2)
-solowgrafikk$ggtyper[[length(solowgrafikk$ggtyper)]]
+```
 
+
+```{r echo=FALSE}
+solowgrafikk$ggtyper[[length(solowgrafikk$ggtyper)]]
 ```
 
 
@@ -195,15 +203,6 @@ $$w = f'(k)$$
 
 Avlønning til kapitalen
 $$r = f(k)- f'(k)$$
-
-```{r eval=FALSE, include=FALSE}
-nsolowgrafikk$grafiskstyle(labs=list(title='Solow-modellen', x='k', y='y=f(k)'),
-                          skaleringx=list(label=NULL,breaks=NULL,limits=NULL),
-                          skaleringy=NULL,
-                          fargelinje=c('black','black', 'black'),
-                          figurnr = 2)
-nsolowgrafikk$ggtyper[[length(nsolowgrafikk$ggtyper)]]
-```
 
 ---
 
@@ -221,11 +220,13 @@ produksjonen per innbygger vokser med en eksogen (bestemt utenfor modellen) rate
 
 ```{r echo=FALSE}
 solowgrafikk$grafiskstyle(labs=list(title='Solow-modellen', x='k', y='y=f(k)'),
-                          skaleringx=list(label=NULL,breaks=NULL,limits=NULL),
-                          skaleringy=NULL,
+                          skaleringx=list(label=c(TeX("$k^{ss}}$"),TeX("$k^{ss'}}$")), breaks=c(dssamlikvedf$x, ssamlikvedf$x),limits=NULL),
+                          skaleringy=list(label=c(TeX("$y^{ss}}$"),TeX("$y'^{ss'}}$")), breaks=c(dssamlikvedf$y, ssamlikvedf$y),limits=NULL),
                           fargelinje=c('black','black', 'black'),
                           figurnr = 3)
+
 solowgrafikk$ggtyper[[length(solowgrafikk$ggtyper)]]
+
 ```
 
 

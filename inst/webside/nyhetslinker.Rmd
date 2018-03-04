@@ -1,6 +1,6 @@
 ## Artikler
 
-### Del 1: Konjunktursvingninger
+### Del I: Konjunktursvingninger
 
 [U.S. Economy Notches Solid 3 percent Growth,
 Despite Hurricane](artikler/del1_growthusa3.pdf)
@@ -17,10 +17,13 @@ Despite Hurricane](artikler/del1_growthusa3.pdf)
 
 [U.S. Consumer Prices Rose in January](artikler/del1_CPI_USA.pdf)
 
-### Del 2: Økonomisk vekst
+### Del II: Økonomisk vekst
 
 [Venezuela Is Starving Its People](artikler/del2_venezuela.pdf)
 
+[Robots could replace nearly a third of the U.S. workforce by 2030](artikler/del2_robots.pdf)
+
+[Economists vs. Scientists on Long-Term Growth](artikler/del2_growthlong.pdf)
 
 ## Videoer
 <iframe width="200" height="200" src="https://www.youtube.com/embed/qtAeINU3FKM">
