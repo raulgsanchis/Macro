@@ -188,7 +188,9 @@ $(document).ready(function () {
     <li>
       <a href="forelesningsplan.html">Forelesningsplan</a>
     </li>
-    <li class="dropdown-header">Læringsmål</li>
+    <li>
+      <a href="laeringsmaal.html">Læringsmål</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -286,7 +288,7 @@ $(document).ready(function () {
 <ul>
 <li><p>Vi er opptatt av økonomisk vekst i et land, fordi dette øker velstandsnivået blant landets innbyggere over tid</p></li>
 <li><p>Det er vanlig å måle et lands velstandsnivå ved å dele BNP <span class="math inline">\(Y\)</span> på antall innbyggere i landet <span class="math inline">\(N\)</span>, dvs <span class="math inline">\(Y/N\)</span></p></li>
-<li><p>Målinger av dette finner for de fleste land i verden: <a href="https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(PPP)_per_capita">tabell fra Wikipedia</a></p></li>
+<li><p>Målinger av dette finnes for de fleste land i verden: <a href="https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(PPP)_per_capita">tabell fra Wikipedia</a></p></li>
 </ul>
 <hr />
 <div id="empiriske-observasjoner-over-tid" class="section level3">
@@ -315,13 +317,14 @@ $(document).ready(function () {
 </div>
 <div id="solow-modellen-for-konomisk-vekst" class="section level2">
 <h2>Solow-modellen for økonomisk vekst</h2>
-<p>Solow-modellen bygger på en forutsetning om en økonomi med <strong>inklusive</strong> institusjoner. I tillegg kan vi konkretisere følgende forutsetninger:</p>
+<p>Solow-modellen har som bakteppe en økonomi med <strong>inklusive</strong> institusjoner. I tillegg kan vi konkretisere følgende forutsetninger:</p>
 <ul>
 <li><p>Lukket økonomi uten offentlig sektor, <span class="math inline">\(Y = C + I\)</span></p></li>
 <li><p>Full konkurranse i kapital- og arbeidsmarkedet (innsatsfaktoren avlønnes etter sin grenseproduktivitet)</p></li>
 <li><p>Hele befolkningen er sysselsatt (ingen arbeidsledighet), <span class="math inline">\(L=N\)</span></p></li>
 <li><p>Produktfunksjonen er homogen av grad én (dobling av innsatsfaktorene fører til dobling av produksjonen)</p></li>
 <li><p>Homogen arbeidskraft (alle arbeiderne har like kvalifikasjoner)</p></li>
+<li><p>Befolkningen i landet vokser med en konstant rate, <span class="math inline">\(\frac{\dot{N}}{N}=n\)</span></p></li>
 </ul>
 <hr />
 <div id="modellens-tre-komponenter" class="section level3">
@@ -338,31 +341,30 @@ $(document).ready(function () {
 <hr />
 <p><span class="math inline">\(\text{2.}\)</span> Sparing</p>
 <p><span class="math display">\[S=sY=I\]</span> 3. Kapitalakkumalasjon</p>
-<p><span class="math display">\[\Delta K=-\delta K + I\]</span></p>
+<p><span class="math display">\[\dot{K}=-\delta K + I\]</span></p>
 <hr />
 </div>
 <div id="forenklet-solow-modell" class="section level3">
 <h3>Forenklet Solow-modell</h3>
 <ul>
-<li><p>Ingen teknologisk framgang, <span class="math inline">\(A=1\)</span></p></li>
-<li><p>Uten befolkningsvekst, <span class="math inline">\(n=0\)</span></p></li>
+<li>Ingen teknologisk framgang, <span class="math inline">\(A=1\)</span></li>
 </ul>
-<p>Starter med å dele <span class="math inline">\((3)\)</span> på <span class="math inline">\(L\)</span></p>
-<p><span class="math display">\[\frac{\Delta{K}}{L} = -\delta K/L + \frac{I}{K}\]</span></p>
-<p>Setter vi inn for <span class="math inline">\(I\)</span> fra (2) og <span class="math inline">\(y\)</span> fra (1) og bruker at <span class="math inline">\(k\equiv \frac{K}{N}\)</span>, kan vi skrive</p>
-<p><span class="math display">\[\Delta{k} = sf(k)  -\delta k\]</span></p>
+<p>Starter med å dele <span class="math inline">\((3)\)</span> på <span class="math inline">\(K\)</span> og setter inn for <span class="math inline">\(I\)</span> fra (2)</p>
+<p><span class="math display">\[\frac{\dot{K}}{K} = -\delta  + \frac{sY}{K}=  -\delta  + \frac{sY/N}{K/N}= -\delta  + \frac{sy}{k} \]</span></p>
+<p>Vi har at <span class="math inline">\(\frac{\dot{k}}{k} =\frac{\dot{K}}{K} - n\)</span> <a href="formler.html">(lenke her til regneregler)</a>, som gjør at vi, ved innsetting for <span class="math inline">\(\frac{\dot{K}}{K}\)</span>, kan skrive</p>
+<p><span class="math display">\[ \frac{\dot{k}}{k} = sf(k)  -(\delta +n) k\]</span></p>
 <hr />
 <p><img src="del2_vekst_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <hr />
-<div id="modellens-prediksoner" class="section level4">
-<h4>Modellens prediksoner</h4>
+<div id="modellens-sentrale-prediksoner" class="section level4">
+<h4>Modellens sentrale prediksoner</h4>
 <ul>
-<li><span class="math inline">\(sf(k)&gt; \delta k\)</span> vil <em>BNP per capita</em> vokse, og veksten vil være stærkere desto lavere nivået er på <span class="math inline">\(k\)</span></li>
-<li><span class="math inline">\(sf(k)&lt; \delta k\)</span> vil <em>BNP per capita</em> synke, og reduksjonen vil være stærkere desto lavere nivået er på <span class="math inline">\(k\)</span><br />
+<li><span class="math inline">\(sf(k)&gt; (\delta+n) k\)</span> vil <em>BNP per capita</em> vokse, og veksten vil være stærkere desto lavere nivået er på <span class="math inline">\(k\)</span></li>
+<li><span class="math inline">\(sf(k)&lt; (\delta+n) k\)</span> vil <em>BNP per capita</em> synke, og reduksjonen vil være stærkere desto lavere nivået er på <span class="math inline">\(k\)</span><br />
 </li>
 <li>På lang sikt og uavhengig av startverdiren for <span class="math inline">\(k_{0}\)</span>, vil økonomien konvergere mot en stasjonær-tilstand (steady-state) hvor produksjonen per innbygger er konstant, c.
 <ul>
-<li>Dette medfører at trendveksten (som har benyttet i konjunkturanalysen i del I) i stasjonærtilstanden er gitt ved: <span class="math display">\[\frac{\overline{Y}}{N}=c \Rightarrow ln(Y) - ln(N) = ln(c) \Rightarrow \Delta Y_{t}/Y_{t} = 0\]</span></li>
+<li>Dette medfører at trendveksten (som har benyttet i konjunkturanalysen i del I) i stasjonærtilstanden er gitt ved: <span class="math display">\[\frac{Y}{N}=c \Rightarrow ln(Y) - ln(N) = ln(c) \Rightarrow \dot{Y}/Y= n\]</span></li>
 </ul></li>
 </ul>
 <hr />
@@ -372,7 +374,7 @@ $(document).ready(function () {
 <div id="skiftanalyse" class="section level4">
 <h4>Skiftanalyse</h4>
 <ul>
-<li>Økt sparerate</li>
+<li>Økt befolkningsvekst (pga. økt fødselsrate og/eller nettoinvandring)</li>
 </ul>
 <p><img src="del2_vekst_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <hr />
@@ -381,20 +383,19 @@ $(document).ready(function () {
 <div id="solow-modellen-normalversjonen" class="section level3">
 <h3>Solow-modellen (normalversjonen)</h3>
 <p>Modellen vil her være gitt ved (i neste seminar skal vi se nærmere på hvordan vi løser dette matematisk):</p>
-<p><span class="math display">\[\Delta{k} = sf(k)-(\delta+n) k\]</span> Avlønning til kapitalen: <span class="math display">\[r = f&#39;(k)- \delta\]</span></p>
-<p>Avlønning til arbeidskraften: <span class="math display">\[w = f(k) - f&#39;(k)k\]</span></p>
+<p><span class="math display">\[\Delta{k} = sf(k)-(\delta+n+ a) k\]</span> Avlønning til kapitalen: <span class="math display">\[r = f&#39;(k)- \delta\]</span></p>
+<p>Avlønning til arbeidskraften: <span class="math display">\[w = A\cdot (f(k) - f&#39;(k)k)\]</span></p>
 <hr />
 <p><img src="del2_vekst_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <hr />
-<div id="modellens-prediksoner-1" class="section level4">
-<h4>Modellens prediksoner</h4>
+<div id="modellens-sentrale-prediksjoner" class="section level4">
+<h4>Modellens sentrale prediksjoner</h4>
 <ul>
-<li><span class="math inline">\(sf(k)&gt; \delta k\)</span> vil BNP per <em>effektiv arbeidskraftenhet</em> øke, og veksten vil være stærkere desto lavere nivået er på <span class="math inline">\(k\)</span></li>
-<li><span class="math inline">\(sf(k)&lt; \delta k\)</span> vil BNP per <em>effektiv arbeidskraftenhet</em>, reduseres, og reduksjonen vil være stærkere desto lavere nivået er på <span class="math inline">\(k\)</span><br />
+<li><span class="math inline">\(sf(k)&gt; (\delta+n+ a)k\)</span> vil BNP per <em>effektiv arbeidskraftenhet</em> øke, og veksten vil være stærkere desto lavere nivået er på <span class="math inline">\(k\)</span> -<span class="math inline">\(sf(k) &lt; &lt;(\delta+n + a) k\)</span> vil BNP per <em>effektiv arbeidskraftenhet</em>, reduseres, og reduksjonen vil være stærkere desto lavere nivået er på <span class="math inline">\(k\)</span><br />
 </li>
 <li>På lang sikt og uavhengig av startverdiren for <span class="math inline">\(k_{0}\)</span>, vil økonomien konvergere mot en stasjonær-tilstand (steady-state) hvor produksjonen per innbygger vokser med en eksogen (bestemt utenfor modellen) rate lik <strong><span class="math inline">\(a\)</span></strong>
 <ul>
-<li>Dette medfører at trendveksten (som har benyttet i konjunkturanalysen i del I) i stasjonærtilstanden er gitt ved: <span class="math display">\[\frac{\overline{Y}}{AN}=c \Rightarrow ln(Y) - ln(N) - ln(A) = ln(c) \Rightarrow \Delta Y_{t}/Y_{t} = n + a\]</span></li>
+<li>Dette medfører at trendveksten (som har benyttet i konjunkturanalysen i del I) i stasjonærtilstanden er gitt ved: <span class="math display">\[\frac{Y}{AN}=c \Rightarrow ln(Y) - ln(N) - ln(A) = ln(c) \Rightarrow \dot{Y}/Y = n + a\]</span></li>
 </ul></li>
 </ul>
 <hr />
@@ -404,7 +405,7 @@ $(document).ready(function () {
 <div id="skiftanalyse-1" class="section level4">
 <h4>Skiftanalyse</h4>
 <ul>
-<li>Befolkningsvekst (pga. økt fødselsrate og/eller nettoinvandring)</li>
+<li>Økt sparerate</li>
 </ul>
 <p><img src="del2_vekst_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>

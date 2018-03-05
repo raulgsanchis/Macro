@@ -9,7 +9,7 @@ navbar:
     - text: Forelesningsplan
       href: forelesningsplan.html
     - text: Læringsmål
-#      href: laeringsmaal.html
+      href: laeringsmaal.html
   - text: Forelesninger
     menu:
     - text: Introduksjon

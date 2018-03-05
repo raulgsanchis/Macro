@@ -1,6 +1,6 @@
 ---
 bibliography: pensum.bib
-output: html_notebook
+#output: html_notebook
 ---
 
 ## Introdukson til økonomisk vekst
@@ -9,7 +9,7 @@ output: html_notebook
 
 - Det er vanlig å måle et lands velstandsnivå ved å dele BNP $Y$ på antall innbyggere i landet $N$, dvs $Y/N$
 
-- Målinger av dette finner for de fleste land i verden:  [tabell fra Wikipedia](https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(PPP)_per_capita)
+- Målinger av dette finnes for de fleste land i verden:  [tabell fra Wikipedia](https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(PPP)_per_capita)
 
 ---
 
@@ -38,7 +38,7 @@ rettsvesen, fri etableringsrett og karrierevalg
 
 ## Solow-modellen for økonomisk vekst 
 
-Solow-modellen bygger på en forutsetning om en økonomi med **inklusive** institusjoner. I tillegg kan vi konkretisere følgende forutsetninger: 
+Solow-modellen har som bakteppe en økonomi med **inklusive** institusjoner. I tillegg kan vi konkretisere følgende forutsetninger: 
 
 -  Lukket økonomi uten offentlig sektor, $Y = C + I$
 
@@ -49,6 +49,8 @@ Solow-modellen bygger på en forutsetning om en økonomi med **inklusive** insti
 - Produktfunksjonen er homogen av grad én (dobling av innsatsfaktorene fører til dobling av produksjonen)
 
 - Homogen arbeidskraft (alle arbeiderne har like kvalifikasjoner)
+
+- Befolkningen i landet vokser med en konstant rate, $\frac{\dot{N}}{N}=n$
 
 ---
 
@@ -85,7 +87,7 @@ Starter med å dele $(3)$ på $K$ og setter inn for $I$ fra (2)
 
 $$\frac{\dot{K}}{K} = -\delta  + \frac{sY}{K}=  -\delta  + \frac{sY/N}{K/N}= -\delta  + \frac{sy}{k} $$
 
-Vi har at $\frac{\dot{k}}{k} =\frac{\dot{K}}{K}  - n$ [(lenke her til regneregler)](https://www.adasextended.com/formler.html), som gjør at vi, 
+Vi har at $\frac{\dot{k}}{k} =\frac{\dot{K}}{K}  - n$ [(lenke her til regneregler)](formler.html), som gjør at vi, 
 ved innsetting for $\frac{\dot{K}}{K}$, kan skrive
 
 $$ \frac{\dot{k}}{k} = sf(k)  -(\delta +n) k$$
@@ -104,19 +106,19 @@ library(dplyr)
 
 
 solowgrafikk <- Genfigur('solow')
-solowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.3, alpha=0.5, n=0, gamma=0.04), endvar=list(k=1:200) ,kat='solow')
+solowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.5, alpha=0.5, n=0, gamma=0.04), endvar=list(k=1:200) ,kat='solow')
 solowgrafikk$optimering(tovectorlabel=c('sy', 'depk'), startv=c(100,10))
 
 #solowgrafikk$optimeringv
-ssamlikvedf <- data.frame(x=55 ,y =7.3, xend=55, yend=7.3)
-sdftekst <- data.frame(x=c(200 ,200, 200),y=c(15, 8.75, 4.8), kurve=c('f(k)', 'delta*k', 'sf(k)'), farge=c('red', 'red', 'red'))
+ssamlikvedf <- data.frame(x=160 ,y =12.5, xend=160, yend=12.5)
+sdftekst <- data.frame(x=c(200 ,200, 200),y=c(15, 8.75, 7.5), kurve=c('f(k)', '(delta+n)*k', 'sf(k)'), farge=c('red', 'red', 'red'))
 solowgrafikk$grafisknumappend(samlikve=ssamlikvedf, dftekst=sdftekst, tilstand='solow')
 
 # Skfit
 katv <- 'oktsparing'
-solowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.4, alpha=0.5, n=0, gamma=0.04), endvar=list(k=1:200) ,kat=katv)
-dssamlikvedf <- data.frame(x=103, y=10, xend=103, yend=10)
-dsdftekst <- data.frame(x=c(200 ,200, 200),y=c(15, 8.75, 6),kurve=c('f(k)', 'delta*k', "s'f(k)"), farge=c('red', 'red', 'red'))
+solowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.5, alpha=0.5, n=0.01, gamma=0.04), endvar=list(k=1:200) ,kat=katv)
+dssamlikvedf <- data.frame(x=103, y=10,1, xend=103, yend=10.1)
+dsdftekst <- data.frame(x=c(200 ,200, 200),y=c(15, 10.5, 7.5),kurve=c('f(k)', "(delta+n')*k", "sf(k)"), farge=c('red', 'red', 'red'))
 solowgrafikk$grafisknumappend(samlikve=dssamlikvedf, dftekst=dsdftekst, tilstand=katv)
 solowgrafikk$ggtyper[[3]]
 ```
@@ -133,7 +135,7 @@ solowgrafikk$ggtyper[[length(solowgrafikk$ggtyper)]]
 ---
 
 
-#### Modellens prediksoner
+#### Modellens sentrale prediksoner
 - $sf(k)> (\delta+n) k$ vil *BNP per capita* vokse, og veksten vil være stærkere desto lavere nivået er på $k$ 
 - $sf(k)< (\delta+n) k$ vil *BNP per capita* synke, og reduksjonen vil være stærkere desto lavere nivået er på $k$   
 - På lang sikt og uavhengig av startverdiren for $k_{0}$, vil økonomien konvergere mot en stasjonær-tilstand (steady-state) hvor
@@ -150,12 +152,12 @@ inklusive institusjoner.
 
 #### Skiftanalyse
 
-- Økt sparerate
+- Økt befolkningsvekst (pga. økt fødselsrate og/eller nettoinvandring)
 
 ```{r echo=FALSE}
 solowgrafikk$grafiskstyle(labs=list(title='Solow-modellen (enkel utgave)', x='k', y='y=f(k)'),
                           skaleringx=list(label=c(TeX("$k^{ss}}$"),TeX("$k^{ss'}}$")), breaks=c(dssamlikvedf$x, ssamlikvedf$x),limits=NULL),
-                          skaleringy=list(label=c(TeX("$y^{ss}}$"),TeX("$y'^{ss'}}$")), breaks=c(dssamlikvedf$y, ssamlikvedf$y),limits=NULL),
+                          skaleringy=list(label=c(TeX("$y^{ss}}$"),TeX("$y^{ss'}}$")), breaks=c(dssamlikvedf$y, ssamlikvedf$y),limits=NULL),
                           fargelinje=c('black','black', 'black'),
                           figurnr = 3)
 
@@ -172,21 +174,21 @@ solowgrafikk$ggtyper[[length(solowgrafikk$ggtyper)]]
 ### Vanlig Solow-modell
 nsolowgrafikk <- Genfigur('solow')
 
-nsolowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.4, alpha=0.5, n=0, gamma=0.04), endvar=list(k=1:200) ,kat='solow')
+nsolowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.4, alpha=0.5, n=0.01, gamma=0.04), endvar=list(k=1:200) ,kat='solow')
 #nsolowgrafikk$optimering(tovectorlabel=c('sy', 'depk'), startv=c(100,10))
 
 #nsolowgrafikk$optimeringv
-ssamlikvedf <- data.frame(x=100, y=10, xend=100, yend=10)
-sdftekst <- data.frame(x=c(200 ,190, 200),y=c(15, 8.75, 6), kurve=c('f(k)', "(a+n+delta)k", 'sf(k)'), farge=c('red', 'red', 'red'))
+ssamlikvedf <- data.frame(x=65, y=8, xend=65, yend=8)
+sdftekst <- data.frame(x=c(200 ,190, 200),y=c(15, 11, 6), kurve=c('f(k)', "(a+n+delta)k", 'sf(k)'), farge=c('red', 'red', 'red'))
 nsolowgrafikk$grafisknumappend(samlikve=ssamlikvedf, dftekst=sdftekst, tilstand='solow')
 nsolowgrafikk$ggtyper[[2]]
 
 # Skfit
 nkatv <- 'oktbefolkning'
 
-nsolowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.4, alpha=0.5, n=0.01, gamma=0.04), endvar=list(k=1:200) ,kat=nkatv)
-dssamlikvedf <- data.frame(x=62, y=7.7, xend=62, yend=7.7)
-dsdftekst <- data.frame(x=c(200 ,190, 200),y=c(15, 10.35, 6),kurve=c('f(k)', "(n'+a+delta)k", "sf(k)"), farge=c('red', 'red', 'red'))
+nsolowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.5, alpha=0.5, n=0.01, gamma=0.04), endvar=list(k=1:200) ,kat=nkatv)
+dssamlikvedf <- data.frame(x=100, y=10, xend=100, yend=10)
+dsdftekst <- data.frame(x=c(200 ,190, 200),y=c(15, 11, 8),kurve=c('f(k)', "(n+a+delta)k", "s'f(k)"), farge=c('red', 'red', 'red'))
 nsolowgrafikk$grafisknumappend(samlikve=dssamlikvedf, dftekst=dsdftekst, tilstand=nkatv)
 nsolowgrafikk$ggtyper[[3]]
 ```
@@ -219,7 +221,7 @@ nsolowgrafikk$ggtyper[[length(nsolowgrafikk$ggtyper)]]
 
 ---
 
-#### Modellens prediksoner
+#### Modellens sentrale prediksjoner
 
 - $sf(k)> (\delta+n+ a)k$ vil BNP per *effektiv arbeidskraftenhet* øke, og veksten vil være stærkere desto lavere nivået er på $k$ 
 -$sf(k) < <(\delta+n + a) k$ vil BNP per *effektiv arbeidskraftenhet*, reduseres, og reduksjonen vil være stærkere desto lavere nivået er på $k$   
@@ -227,8 +229,8 @@ nsolowgrafikk$ggtyper[[length(nsolowgrafikk$ggtyper)]]
 produksjonen per innbygger vokser med en eksogen (bestemt utenfor modellen) rate lik **$a$** 
     - Dette medfører at trendveksten (som har benyttet i konjunkturanalysen i del I) i stasjonærtilstanden er gitt ved: 
     $$\frac{Y}{AN}=c \Rightarrow ln(Y) - ln(N) - ln(A) = ln(c) \Rightarrow \dot{Y}/Y = n + a$$
-    
----    
+
+---
     
 **Øvelse (blir også gitt til seminaret)**: Les artikkelen [Economists vs. Scientists on
 Long-Term Growth](artikler/del2_venezuela.pdf) og gi en kortfattet oversikt over hvilken faktorer som vil påvirke teknologiparameteren $a$ 
@@ -238,12 +240,12 @@ framover.
 
 #### Skiftanalyse
 
-- Befolkningsvekst (pga. økt fødselsrate og/eller nettoinvandring)
+- Økt sparerate
 
 ```{r echo=FALSE}
 nsolowgrafikk$grafiskstyle(labs=list(title='Solow-modellen', x='k', y='y=f(k)'),
-                          skaleringx=list(label=c(TeX("$k^{'ss}}$"),TeX("$k^{ss}}$")), breaks=c(dssamlikvedf$x, ssamlikvedf$x),limits=NULL),
-                          skaleringy=list(label=c(TeX("$y^{'ss}}$"),TeX("$y'^{ss}}$")), breaks=c(dssamlikvedf$y, ssamlikvedf$y),limits=NULL),
+                          skaleringx=list(label=c(TeX("$k^{'ss}}$"),TeX("$k^{ss'}}$")), breaks=c(dssamlikvedf$x, ssamlikvedf$x),limits=NULL),
+                          skaleringy=list(label=c(TeX("$y^{'ss}}$"),TeX("$y'^{ss'}}$")), breaks=c(dssamlikvedf$y, ssamlikvedf$y),limits=NULL),
                           fargelinje=c('black','black', 'black', 'black', 'black', 'black', 'black'),
                           figurnr = 3)
 

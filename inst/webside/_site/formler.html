@@ -188,7 +188,9 @@ $(document).ready(function () {
     <li>
       <a href="forelesningsplan.html">Forelesningsplan</a>
     </li>
-    <li class="dropdown-header">Læringsmål</li>
+    <li>
+      <a href="laeringsmaal.html">Læringsmål</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -283,10 +285,26 @@ $(document).ready(function () {
 
 <div id="regneregler-for-differensialer" class="section level1">
 <h1>Regneregler for differensialer</h1>
-<p><span class="math display">\[\Delta (a\cdot f+b \cdot g) = a\Delta f + b\Delta g \]</span></p>
+<p><span class="math display">\[\Delta (a\cdot\dot{} f+b \cdot g) = a\Delta f + b\Delta g \]</span></p>
 <p><span class="math display">\[\Delta (f\cdot g) =  g \Delta f + f \Delta g   \]</span></p>
 <p><span class="math display">\[\Delta (\frac{f}{g}) = \frac{g \Delta f - f\Delta g }{g^2} \]</span></p>
 <p>Hvor <span class="math inline">\(f\)</span> og <span class="math inline">\(g\)</span> er deriverbare funksjoner og <span class="math inline">\(a\)</span> og <span class="math inline">\(b\)</span> er konstanter</p>
+</div>
+<div id="logaritmisk-tidsderivasjon" class="section level1">
+<h1>Logaritmisk tidsderivasjon</h1>
+<p>Vi ønsker her benytte regnereglen om at</p>
+<p><span class="math display">\[\frac{d}{dt}(ln(X))= \frac{\dot{X}}{X} \equiv x \text{ hvor } x \text{ gir uttrykk for prosentvis vekst over tid}\]</span></p>
+<p>Vi starter med å definere:</p>
+<p><span class="math display">\[k=\frac{K}{N}\]</span></p>
+<p>Tar vi logaritmen av dette uttrykket får vi</p>
+<p><span class="math display">\[ln(k) = ln(K)- ln (N)\]</span></p>
+<p>Implisitt tidsderivasjon av ligningen kan skrives som</p>
+<p><span class="math display">\[\frac{d}{dt}(ln(k) = \frac{d}{dt}\Big((ln(K)- ln (N))\Big)\]</span></p>
+<p>Utfører vi derivasjonen mhp. tid får vi</p>
+<p><span class="math display">\[\frac{\dot{k}}{k} = \frac{\dot{K}}{K} - \frac{\dot{N}}{N} = \frac{\dot{K}}{K}  - n \]</span></p>
+<p>Dersom vi istedet har å gjøre med <span class="math display">\[k=\frac{K}{AN}\]</span></p>
+<p>Kan man vise, ved bruk av nøyakige de samme regnereglene, at</p>
+<p><span class="math display">\[\frac{\dot{k}}{k} = \frac{\dot{K}}{K} - \frac{\dot{N}}{N} - \frac{\dot{A}}{A} = \frac{\dot{K}}{K} - n -a\]</span></p>
 </div>
 
 <html>

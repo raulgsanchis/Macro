@@ -1,6 +1,6 @@
 ---
 css: seminarPAA.css
-output: html_notebook
+#output: html_notebook
 ---
 
 ```{r include=FALSE}
@@ -126,7 +126,7 @@ stabflytendeislm <- flytislmo$ggtyper[[6]]  + coord_flip()
 
 2. Hva menes med intern og ekstern balanse?
 
-*Intern balanse: Produksjonsgapet er lukket $(Y-Y^{u})=0$*
+*Intern balanse: Produksjonsgapet er lukket $(Y-Y^{*})=0$*
 
 *Ekstern balanse: Utenlandsgjelden er på et bærekraftig nivå (kan betjenes uten problemer)*
 
@@ -159,9 +159,9 @@ ved å plassere mer i norsk valuta. Dette vil øke etterspørselen etter norske 
 
 *Her vil forventet avkastning av å investere i innlandet være høyere enn utlandet, men ingen aktør vil 
 selge til den oppgitte valutakursen (fordi det medfører tap) annet enn sentralbanken (som er forpliktet).
-Sentralbankens valutareserver vil derfor måtte øke, eller tømmes dersom fortegnet for ulikheten er motsatt (<).
-På litt sikt kan ikke denne ulikheten holde, og sentralbanken må enten foreta en oppskrivning (realappresiering) 
-eller nedskrivning (devaluering) av kronekursen, eller forlate hele fastkursregimet.*
+Sentralbankens valutareserver vil derfor tømmes. På litt sikt kan ikke denne ulikheten holde, og sentralbanken må enten foreta en nedskrivning (devaluering) av kronekursen (<)  eller forlate hele fastkursregimet. Ved motsatt fortegn,
+vil valutareservene øke og en oppskrivning (reappressiering) av kronekursen vil bli nødvendig.
+*
 
 ## Mundell-Fleming modellen
 
@@ -170,15 +170,21 @@ $$C = \overline{C} + c_{1}(Y-T) - c_{2}\cdot i \text{ :husholdningen}$$
 $$I = \overline{I} - b\cdot i \text{ :private realinvesteringer}$$
 $$G = \overline{G} \text{ og } T=\overline{T} \text{: offentlige myndigheter}$$ 
 $$EX = x_{1}\cdot R + x_{2}\cdot Y^{*} \text{: eksport}$$
-*$$IM= - m_{1}\cdot R + m_{2}\cdot Y \text{: import}$$
+$$IM= - m_{1}\cdot R + m_{2}\cdot Y \text{: import}$$
+
+$$NX = EX - R\cdot IM \text{: nettoeksport} $$
+$$kY -hi = \overline{M}/P \text{: fra pengemarkedet}$$
+I tillegg antar vi at udekket renteparitet holder:
+
+$$(1+i)=(1+i^{*})E^{e}/E$$
 
 ### Samtidig likevekt
 
 6. Løs for likevektsbetingelsene under hhv. fast og flytende kurs og vis grafisk den samtidige likevekten
 
-- Fast kurs
+- Fast kurs:
 
-*$$Y = \frac{1}{1-c(1-t) + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX  + R^{2}\cdot m_{1} \right] \text{: godemarkedet}$$*
+*$$Y = \frac{1}{1-c + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - \cdot \overline{i}(c_{2}+i^{*}) + \overline{G} + EX  + R^{2}\cdot m_{1} \right] \text{: godemarkedet}$$*
 
 *$$kY -hi = M/P \text{ :pengemarkedet  (passiv)}$$*
 
@@ -196,7 +202,7 @@ samtidigfastislm
 - Flytende kurs
 IS-BoP ligningen kan vi finne ved å kombinere løsningen for valuta- og  godemarkedet:
 
-*$E=E(i,i^{u},E^{e}) \Rightarrow R = \frac{E(i,i^{u},E^{e})\cdot P^{u}}{P}=R(E(i,i^{u},E^{e}),P,P^{u}) = R(\cdot)$ Setter vi inn for $R(\cdot)$  godemarkedet får vi:*
+*$E=E(i,i^{*},E^{e}) \Rightarrow R = \frac{E(i,i^{*},E^{e})\cdot P^{*}}{P}=R(E(i,i^{*},E^{e}),P,P^{*}) = R(\cdot)$ Setter vi inn for $R(\cdot)$  godemarkedet får vi:*
 
 *$$Y = \frac{1}{1-c(1-t) + R(\cdot) m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX\Big( R(\cdot) \Big)  + R(\cdot)^{2}\cdot m_{1} \right] \text{: godemarkedet}$$*
 
@@ -213,8 +219,7 @@ samtidigflytislm
 
 *Det skyldes at en lavere (høyere) rente gir en depresiering (appresiering) av valutakursen 
 som følge av udekke renteparitet (see oppgave). Økt depresiering bidrar til en svekkelse av 
-realvalutakursen som gir en økningen i nettoeksporten (Marshall-Lerner betingelsen). Det er denne etterspørselsøkningen
-som gjør at kurven blir slakere*
+realvalutakursen som gir en økningen i nettoeksporten (Marshall-Lerner betingelsen). Det er denne etterspørselsøkningen (som ikke er med i fast-kurs regimet) som gjør at kurven blir slakere*
 
 8. Under et flytende kurs regime, se for deg en situasjon med økte private realinvesteringer $\Delta I>0$ ('animal spirits') som etterhvert  motvirket av en kontraktiv pengepolitikk og illustrer dette grafisk et diagram ved bruk av Mundell-Fleming modellen.
 
@@ -232,15 +237,19 @@ stabflytendeislm
 
 9. Vis og forklar hvorfor AD-kurven er fallende under et fast og flytende kurs regime.
 
-*Fast kurs*
+*Fast kurs:*
 
 *(1) Økt nettoeksport: Lavere produktpriser fører til en en svekkelse (depresiering) av 
-realvalutakursen som gir en økningen i nettoeksporten (Marshall-Lerner betingelsen)*
+realvalutakursen som gir en etterspørselsøkning gjennom en  økningen i nettoeksporten 
+(Marshall-Lerner betingelsen). Den økte etterspørselen initierer en 
+positiv multiplikatoreffekt, ifølge mekanismene som gjelder for Keynes-modellen for en åpen økonomi.*
 
 *Flytende kurs:*
 
 *(1) Økt nettoeksport: Lavere produktpriser fører til en en svekkelse (depresiering) av 
-realvalutakursen som gir en økningen i nettoeksporten (Marshall-Lerner betingelsen)*
+realvalutakursen som gir en etterspørselsøkning gjennom en  økningen i nettoeksporten 
+(Marshall-Lerner betingelsen). Den økte etterspørselen initierer en 
+positiv multiplikatoreffekt, ifølge mekanismene som gjelder for Keynes-modellen for en åpen økonomi.*
 
 *(2) Økt realpengemengde (samme forklaring som under lukket økonomi): Reduserte produktpriser øker realpengemengden. I pengemarkedet fører dette til en redusert rentenivå. Den reduserte renta medfører økt etterspørsel pga lavere private realinvesteringer og konsum (merk: dette poenget er nytt, sammenlignet med den modellen som ble satt opp i forelesningen), som initierer en positiv multiplikatoreffekt siden økt  etterspørsel fører til mindre konsum som fører til redusert etterspørsel osv.*
 

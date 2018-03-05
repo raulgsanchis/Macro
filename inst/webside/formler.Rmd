@@ -1,6 +1,3 @@
----
-output: html_notebook
----
 
 # Regneregler for differensialer
 $$\Delta (a\cdot\dot{} f+b \cdot g) = a\Delta f + b\Delta g $$
@@ -20,21 +17,25 @@ $$\frac{d}{dt}(ln(X))= \frac{\dot{X}}{X} \equiv x \text{ hvor } x \text{ gir utt
 
 Vi starter med å definere:
 
-$$k=\frac{K}{L}$$
+$$k=\frac{K}{N}$$
 
 Tar vi logaritmen av dette uttrykket får vi
 
 $$ln(k) = ln(K)- ln (N)$$
 
-Implisitt tidsderivasjon kan skrive som
+Implisitt tidsderivasjon av ligningen kan skrives som
 
 $$\frac{d}{dt}(ln(k) = \frac{d}{dt}\Big((ln(K)- ln (N))\Big)$$
 
-Utfører vi den derivasjone står
+Utfører vi derivasjonen mhp. tid får vi
 
 $$\frac{\dot{k}}{k} = \frac{\dot{K}}{K} - \frac{\dot{N}}{N} = \frac{\dot{K}}{K}  - n $$
 
-Ved bruk av nøyakige de samme regnereglene,  kan man også vise at
+
+Dersom vi istedet har å gjøre med
+$$k=\frac{K}{AN}$$
+
+Kan man vise, ved bruk av nøyakige de samme regnereglene, at
 
 $$\frac{\dot{k}}{k} = \frac{\dot{K}}{K} - \frac{\dot{N}}{N} - \frac{\dot{A}}{A} = \frac{\dot{K}}{K} - n -a$$
 
