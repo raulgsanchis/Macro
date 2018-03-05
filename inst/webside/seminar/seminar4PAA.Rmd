@@ -150,7 +150,7 @@ $$i=i^{*} \text{ fast kurs (troverdig)}$$
 
 5. Gi en økonomisk tolkning på hva som skjer i de to regimene dersom denne betingelsen ikke holder med likhet?
 
-*Flytende kurs: $E>\frac{(1+i^u)}{(1+i)}E^{e} \Leftrightarrow (1+i)>\frac{E^{e}}{E}(1+i^{*})$*
+*Flytende kurs: $E>\frac{(1+i^{*})}{(1+i)}E^{e} \Leftrightarrow (1+i)>\frac{E^{e}}{E}(1+i^{*})$*
 
 *Høyere avkastning av å investere i innlandet sammenlignet med utlandet. Investorene vil derfor reallokere sine portefølje
 ved å plassere mer i norsk valuta. Dette vil øke etterspørselen etter norske kroner, og med det presse kronekursen oppover (appresiering) inntil betingelsen igjen er oppfylt med likhet. Resonnementet bli motsatt dersom ulikheten er gitt ved <.*
@@ -188,7 +188,7 @@ $$(1+i)=(1+i^{*})E^{e}/E$$
 
 *$$kY -hi = M/P \text{ :pengemarkedet  (passiv)}$$*
 
-*$$i = i^u + rp$$*
+*$$i = i^{*} + rp$$*
 
 
 

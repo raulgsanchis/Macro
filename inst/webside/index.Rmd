@@ -36,7 +36,7 @@ output:
 <span style="color:red">
 <p> Merk: Neste gang (uke 10) starter forelesnigen opp én time senere (13:15)</p>
 <p>Forelesningsnotater uke 10 er nå lagt ut</p>
-<p>Seminaroppgaver uke 10 er lagt ut</p>
+<p>Seminaroppgaver uke 10 er lagt ut med fasit</p>
 </span>
 
 <p style="color:black">Siste gang oppdatert ``r base::Sys.time()`` </p>

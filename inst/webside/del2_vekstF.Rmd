@@ -12,7 +12,7 @@ output: html_notebook
 
 [Forelesning uke 9: Stiliserte fakta om økonomisk vekst](presentasjoner/pres_del2.html)
 
-[Forelesning uke 10: Solow modellen](presentasjoner/pres_del2.html#5)
+[Forelesning uke 10: Solow-modellen for økonomisk vekst](presentasjoner/pres_del2.html#5)
 
 <!--
 

@@ -1,6 +1,6 @@
 ---
 css: seminarPAA.css
-#output: html_notebook
+output: html_notebook
 ---
 
 ```{r include=FALSE}
@@ -184,7 +184,7 @@ $$(1+i)=(1+i^{*})E^{e}/E$$
 
 - Fast kurs:
 
-*$$Y = \frac{1}{1-c + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - \cdot \overline{i}(c_{2}+i^{*}) + \overline{G} + EX  + R^{2}\cdot m_{1} \right] \text{: godemarkedet}$$*
+*$$Y = \frac{1}{1-c + R\cdot m_{2}}  \left [ \overline{C} - c_{1}\overline{T} + \overline{I} - \cdot \overline{i}(c_{2}+i^{*}) + \overline{G} + EX  + R^{2}\cdot m_{1} \right] \text{: godemarkedet}$$*
 
 *$$kY -hi = M/P \text{ :pengemarkedet  (passiv)}$$*
 
@@ -204,7 +204,7 @@ IS-BoP ligningen kan vi finne ved å kombinere løsningen for valuta- og  godema
 
 *$E=E(i,i^{*},E^{e}) \Rightarrow R = \frac{E(i,i^{*},E^{e})\cdot P^{*}}{P}=R(E(i,i^{*},E^{e}),P,P^{*}) = R(\cdot)$ Setter vi inn for $R(\cdot)$  godemarkedet får vi:*
 
-*$$Y = \frac{1}{1-c(1-t) + R(\cdot) m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX\Big( R(\cdot) \Big)  + R(\cdot)^{2}\cdot m_{1} \right] \text{: godemarkedet}$$*
+*$$Y = \frac{1}{1-c(1-t) + R(\cdot) m_{2}}  \left [ \overline{C} } - c_{1}\overline{T} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX\Big( R(\cdot) \Big)  + R(\cdot)^{2}\cdot m_{1} \right] \text{: godemarkedet}$$*
 
 
 ```{r echo=FALSE}

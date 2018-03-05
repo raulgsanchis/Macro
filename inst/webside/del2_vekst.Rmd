@@ -256,10 +256,12 @@ nsolowgrafikk$ggtyper[[length(nsolowgrafikk$ggtyper)]]
 ```
 
 
+---
 
-## Sammenhengen mellom Solow-modellen og trendveksten (vekst i potensiell produksjon) slik den ble forklart i del 1
+### Sammenhengen mellom Solow-modellen og trendveksten (vekst i potensiell produksjon) slik den ble forklart i del 1
 
 I stasjonærtilstanden er BNP per effektiv arbeidskraftenhet konstant og gitt ved
+
 
 $$\frac{Y}{AN}=y^{ss}$$
 
@@ -267,6 +269,7 @@ Dersom $Y=\overline{Y}$ i steady state, har vi at
 
 $$ln(\overline{Y}) - ln(N) - ln(A) = ln(y^{ss}) \Rightarrow \dot{\overline{Y}}/\overline{Y} - n - a = 0$$
 
+---
 
 Som betyr at 
 
