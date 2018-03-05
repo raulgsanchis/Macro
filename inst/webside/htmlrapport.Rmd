@@ -25,9 +25,9 @@ bibliography: pensum.bib
 ```{r child = 'del2_vekst.Rmd'}
 ```
 
-<!--
 # Del 3: Økonomiske kriser
-del3_kriser.Rmd
-.->
+
+<!--del3_kriser.Rmd-->
+
 # Referanser
 

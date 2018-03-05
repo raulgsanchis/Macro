@@ -3,7 +3,7 @@ bibliography: pensum.bib
 #output: html_notebook
 ---
 
-## Introdukson til økonomisk vekst
+## Introduksjon til økonomisk vekst
 
 - Vi er opptatt av økonomisk vekst i et land,  fordi dette øker velstandsnivået blant landets innbyggere over tid
 
@@ -59,12 +59,12 @@ Solow-modellen har som bakteppe en økonomi med **inklusive** institusjoner. I t
 1. Produktfunksjonen
 
 $$Y=F(K,AL) \text{ } F_{K}>0, F_{KK}<0, F_{L}>0, F_{LL}<0$$
-- Produktfunksjon er homogen av grad én (konstant skalutbytte). Som betyr at en t-dobling av innsatsfaktorene medfører en t-dobling av produksjonen
+- Produktfunksjon er homogen av grad én (konstant skalautbytte). Som betyr at en t-dobling av innsatsfaktorene medfører en t-dobling av produksjonen
 $$tY=tF(K,L)=F(tK,tL)$$ 
 
 Som betyr at en t-dobling av innsatsfaktorene medfører en t-dobling av produksjonen
 
-- Setter vi $t=\frac{1}{AL}$ får vi $\frac{Y}{AL}=F(\frac{K}{AL},1)$. Definerer vi $y \equiv \frac{1}{AL}$ og $F(K/AL,1) \equiv f(k)$, kan vi skrive produktfunksjone på intensiv form som 
+- Setter vi $t=\frac{1}{AL}$ får vi $\frac{Y}{AL}=F(\frac{K}{AL},1)$. Definerer vi $y \equiv \frac{1}{AL}$ og $F(K/AL,1) \equiv f(k)$, kan vi skrive produktfunksjonen på intensiv form som 
 
 $$y=f(k) \text{ } f'{k}>0, f''{k}<0$$
 
@@ -73,7 +73,7 @@ $$y=f(k) \text{ } f'{k}>0, f''{k}<0$$
 $\text{2.}$ Sparing
 
 $$S=sY=I$$
-3. Kapitalakkumalasjon
+3. Kapitalakkumulasjon
 
 $$\dot{K}=-\delta K + I$$
 
@@ -87,10 +87,26 @@ Starter med å dele $(3)$ på $K$ og setter inn for $I$ fra (2)
 
 $$\frac{\dot{K}}{K} = -\delta  + \frac{sY}{K}=  -\delta  + \frac{sY/N}{K/N}= -\delta  + \frac{sy}{k} $$
 
-Vi har at $\frac{\dot{k}}{k} =\frac{\dot{K}}{K}  - n$ [(lenke her til regneregler)](formler.html), som gjør at vi, 
-ved innsetting for $\frac{\dot{K}}{K}$, kan skrive
+Vi har at $\frac{\dot{k}}{k} =\frac{\dot{K}}{K}  - n$ [(lenke her til regneregler)](formler.html), som gjør at vi 
+ved innsetting for $\frac{\dot{K}}{K}$ kan skrive
 
-$$ \frac{\dot{k}}{k} = sf(k)  -(\delta +n) k$$
+$$\frac{\dot{k}}{k} + n =  -\delta  + \frac{sy}{k} $$
+
+Multipliserer vi uttrykket for $k$ har vi kapitaldynamikkligningen for modellen
+
+---
+
+#### Modellen
+
+Kapitaldynamikken
+$$ \dot{k} = sf(k)  -(\delta +n) k$$
+
+Avlønning til kapitalen (viser dette på neste seminar):
+$$r = f'(k)- \delta$$
+
+
+Avlønning til arbeidskraften (viser dette på neste seminar):
+$$w = (f(k) - f'(k)k)$$
 
 ---
 
@@ -134,14 +150,10 @@ solowgrafikk$ggtyper[[length(solowgrafikk$ggtyper)]]
 
 ---
 
-
-#### Modellens sentrale prediksoner
-- $sf(k)> (\delta+n) k$ vil *BNP per capita* vokse, og veksten vil være stærkere desto lavere nivået er på $k$ 
-- $sf(k)< (\delta+n) k$ vil *BNP per capita* synke, og reduksjonen vil være stærkere desto lavere nivået er på $k$   
-- På lang sikt og uavhengig av startverdiren for $k_{0}$, vil økonomien konvergere mot en stasjonær-tilstand (steady-state) hvor
-produksjonen per innbygger er konstant, c.
-    - Dette medfører at trendveksten (som har benyttet i konjunkturanalysen i del I) i stasjonærtilstanden er gitt ved: 
-    $$\frac{Y}{N}=c \Rightarrow ln(Y) - ln(N) = ln(c) \Rightarrow \dot{Y}/Y= n$$
+#### Modellens sentrale prediksjoner
+- $sf(k)> (\delta+n) k$ vil  **BNP per arbeidskraftenhet** vokse, og veksten vil være stærkere desto lavere nivået er på $k$
+- $sf(k)< (\delta+n) k$ vil **BNP perarbeidskraftenhet** synke, og reduksjonen vil være stærkere desto lavere nivået er på $k$   
+- På lang sikt og uavhengig av startverdien for $k_{0}$, vil økonomien konvergere mot en stasjonær-tilstand (steady-state) hvor produksjonen per innbygger er konstant, c.
 
 ---
 
@@ -188,7 +200,7 @@ nkatv <- 'oktbefolkning'
 
 nsolowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.5, alpha=0.5, n=0.01, gamma=0.04), endvar=list(k=1:200) ,kat=nkatv)
 dssamlikvedf <- data.frame(x=100, y=10, xend=100, yend=10)
-dsdftekst <- data.frame(x=c(200 ,190, 200),y=c(15, 11, 8),kurve=c('f(k)', "(n+a+delta)k", "s'f(k)"), farge=c('red', 'red', 'red'))
+dsdftekst <- data.frame(x=c(200 ,190, 200),y=c(15, 11, 8),kurve=c('f(k)', "(a+n+delta)k", "s'f(k)"), farge=c('red', 'red', 'red'))
 nsolowgrafikk$grafisknumappend(samlikve=dssamlikvedf, dftekst=dsdftekst, tilstand=nkatv)
 nsolowgrafikk$ggtyper[[3]]
 ```
@@ -197,7 +209,7 @@ nsolowgrafikk$ggtyper[[3]]
 
 Modellen vil her være gitt ved (i neste seminar skal vi se nærmere på hvordan vi løser dette matematisk):
 
-$$\Delta{k} = sf(k)-(\delta+n+ a) k$$
+$$\dot{k} = sf(k)-(\delta+n+ a) k$$
 Avlønning til kapitalen:
 $$r = f'(k)- \delta$$
 
@@ -223,18 +235,9 @@ nsolowgrafikk$ggtyper[[length(nsolowgrafikk$ggtyper)]]
 
 #### Modellens sentrale prediksjoner
 
-- $sf(k)> (\delta+n+ a)k$ vil BNP per *effektiv arbeidskraftenhet* øke, og veksten vil være stærkere desto lavere nivået er på $k$ 
--$sf(k) < <(\delta+n + a) k$ vil BNP per *effektiv arbeidskraftenhet*, reduseres, og reduksjonen vil være stærkere desto lavere nivået er på $k$   
-- På lang sikt og uavhengig av startverdiren for $k_{0}$, vil økonomien konvergere mot en stasjonær-tilstand (steady-state) hvor
-produksjonen per innbygger vokser med en eksogen (bestemt utenfor modellen) rate lik **$a$** 
-    - Dette medfører at trendveksten (som har benyttet i konjunkturanalysen i del I) i stasjonærtilstanden er gitt ved: 
-    $$\frac{Y}{AN}=c \Rightarrow ln(Y) - ln(N) - ln(A) = ln(c) \Rightarrow \dot{Y}/Y = n + a$$
-
----
-    
-**Øvelse (blir også gitt til seminaret)**: Les artikkelen [Economists vs. Scientists on
-Long-Term Growth](artikler/del2_venezuela.pdf) og gi en kortfattet oversikt over hvilken faktorer som vil påvirke teknologiparameteren $a$ 
-framover.
+- $sf(k)> (\delta+n+ a)k$ vil **BNP per effektiv arbeidskraftenhet** øke, og veksten vil være stærkere desto lavere nivået er på $k$
+- $sf(k) < <(\delta+n + a) k$ vil **BNP per effektiv arbeidskraftenhet** reduseres, og reduksjonen vil være stærkere desto lavere nivået er på $k$   
+- På lang sikt og uavhengig av startverdien for $k_{0}$, vil økonomien konvergere mot en stasjonær-tilstand (steady-state) hvor produksjonen per innbygger vokser med en eksogen (bestemt utenfor modellen) rate lik **$a$** 
 
 ---
 
@@ -253,4 +256,25 @@ nsolowgrafikk$ggtyper[[length(nsolowgrafikk$ggtyper)]]
 ```
 
 
-# Referanser
+
+## Sammenhengen mellom Solow-modellen og trendveksten (vekst i potensiell produksjon) slik den ble forklart i del 1
+
+I stasjonærtilstanden er BNP per effektiv arbeidskraftenhet konstant og gitt ved
+
+$$\frac{Y}{AN}=y^{ss}$$
+
+Dersom $Y=\overline{Y}$ i steady state, har vi at 
+
+$$ln(\overline{Y}) - ln(N) - ln(A) = ln(y^{ss}) \Rightarrow \dot{\overline{Y}}/\overline{Y} - n - a = 0$$
+
+
+Som betyr at 
+
+$$ \dot{\overline{Y}}/\overline{Y} = n + a $$
+
+Dvs. trendveksten vokser med en rate som er lik summen av befolknings- og teknologivekst.
+
+---
+
+**Øvelse (blir også gitt til seminaret)** : Les artikkelen [Economists vs. Scientists on
+Long-Term Growth](artikler/del2_growthlong.pdf) og gi en kortfattet oversikt over hvilken faktorer som vil påvirke teknologiparameteren $a$  framover.

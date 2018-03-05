@@ -1,3 +1,7 @@
+---
+output: html_notebook
+---
+
 
 # Regneregler for differensialer
 $$\Delta (a\cdot\dot{} f+b \cdot g) = a\Delta f + b\Delta g $$
@@ -8,11 +12,11 @@ $$\Delta (\frac{f}{g}) = \frac{g \Delta f - f\Delta g }{g^2} $$
 
 Hvor $f$ og $g$ er deriverbare funksjoner og $a$ og $b$ er konstanter
 
-# Logaritmisk tidsderivasjon
+# Logaritmisk tidsderivasjon 
 
 Vi ønsker her benytte regnereglen om at 
 
-$$\frac{d}{dt}(ln(X))= \frac{\dot{X}}{X} \equiv x \text{ hvor } x \text{ gir uttrykk for prosentvis vekst over tid}$$
+$$\frac{d}{dt}ln(X)= \frac{\dot{X}}{X} \equiv x \text{ hvor } x \text{ gir uttrykk for prosentvis vekst over tid}$$
 
 
 Vi starter med å definere:

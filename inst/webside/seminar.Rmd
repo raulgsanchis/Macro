@@ -11,7 +11,9 @@
 
 [- Med fasit](seminar/seminar3_fasit.nb.html)
 
-[Seminar 4 (uke 10): Mundell-Fleming og AD-ligningen under fast og flytende kurs](seminar/seminar4.nb.html)
+[Seminar 4 (uke 10): Mundell-Fleming og AD-ligningen under fast og flytende kurs](seminar/seminar4AV.html)
+
+[- Med fasit](seminar/seminar4PAA.html)
 
 # Eksamensoppgaver
 
