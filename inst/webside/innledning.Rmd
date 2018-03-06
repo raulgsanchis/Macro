@@ -55,7 +55,7 @@ grid.arrange(hpg, hpu , nrow = 2, top = 'USA' )
 grid.arrange(mpg, mpu , nrow = 2, top = 'USA' )
 ```
 
-- Sentralt poeng: Makroøkonmien innehar selvkorrigerende mekanismer
+- Sentralt poeng: Makroøkonomien innehar selvkorrigerende mekanismer
 
 ---
 
@@ -67,7 +67,7 @@ grid.arrange(gdg, grg, gdu, gru, top = 'USA' )
 
 ---
 
-- Sentralt poeng: Makroøkonmiens selvkorrigerende mekanismer er satt ut av spill
+- Sentralt poeng: Makroøkonomiens selvkorrigerende mekanismer er satt ut av spill
 
 ## Tre grunnleggende spørsmål blir forsøkt besvart
 
