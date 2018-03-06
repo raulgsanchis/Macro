@@ -1,6 +1,5 @@
 ---
-css: seminarPAA.css
-#output: html_notebook
+css: seminarAV.css
 ---
 
 ```{r include=FALSE}
@@ -150,7 +149,7 @@ $$i=i^{*} \text{ fast kurs (troverdig)}$$
 
 5. Gi en økonomisk tolkning på hva som skjer i de to regimene dersom denne betingelsen ikke holder med likhet?
 
-*Flytende kurs: $E>\frac{(1+i^u)}{(1+i)}E^{e} \Leftrightarrow (1+i)>\frac{E^{e}}{E}(1+i^{*})$*
+*Flytende kurs: $E>\frac{(1+i^{*})}{(1+i)}E^{e} \Leftrightarrow (1+i)>\frac{E^{e}}{E}(1+i^{*})$*
 
 *Høyere avkastning av å investere i innlandet sammenlignet med utlandet. Investorene vil derfor reallokere sine portefølje
 ved å plassere mer i norsk valuta. Dette vil øke etterspørselen etter norske kroner, og med det presse kronekursen oppover (appresiering) inntil betingelsen igjen er oppfylt med likhet. Resonnementet bli motsatt dersom ulikheten er gitt ved <.*
@@ -184,11 +183,11 @@ $$(1+i)=(1+i^{*})E^{e}/E$$
 
 - Fast kurs:
 
-*$$Y = \frac{1}{1-c + R\cdot m_{2}}  \left [ \overline{C} + \overline{I} - \cdot \overline{i}(c_{2}+i^{*}) + \overline{G} + EX  + R^{2}\cdot m_{1} \right] \text{: godemarkedet}$$*
+*$$Y = \frac{1}{1-c + R\cdot m_{2}}  \left [ \overline{C} - c_{1}\overline{T} + \overline{I} - \cdot \overline{i}(c_{2}+i^{*}) + \overline{G} + EX  + R^{2}\cdot m_{1} \right] \text{: godemarkedet}$$*
 
 *$$kY -hi = M/P \text{ :pengemarkedet  (passiv)}$$*
 
-*$$i = i^u + rp$$*
+*$$i = i^{*} + rp$$*
 
 
 
@@ -204,7 +203,7 @@ IS-BoP ligningen kan vi finne ved å kombinere løsningen for valuta- og  godema
 
 *$E=E(i,i^{*},E^{e}) \Rightarrow R = \frac{E(i,i^{*},E^{e})\cdot P^{*}}{P}=R(E(i,i^{*},E^{e}),P,P^{*}) = R(\cdot)$ Setter vi inn for $R(\cdot)$  godemarkedet får vi:*
 
-*$$Y = \frac{1}{1-c(1-t) + R(\cdot) m_{2}}  \left [ \overline{C} + \overline{I} - b\cdot \overline{i} + \overline{G} + EX\Big( R(\cdot) \Big)  + R(\cdot)^{2}\cdot m_{1} \right] \text{: godemarkedet}$$*
+*$$Y = \frac{1}{1-c_{1} + R(\cdot) m_{2}}  \left [ \overline{C} - c_{1}\overline{T} + \overline{I} - i\cdot(b+c_{2})  + \overline{G} + EX\Big( R(\cdot) \Big)  + R(\cdot)^{2}\cdot m_{1} \right] \text{: godemarkedet}$$*
 
 
 ```{r echo=FALSE}

@@ -1,6 +1,6 @@
 ---
 bibliography: pensum.bib
-#output: html_notebook
+output: html_notebook
 ---
 
 ## Introduksjon til økonomisk vekst
@@ -60,9 +60,7 @@ Solow-modellen har som bakteppe en økonomi med **inklusive** institusjoner. I t
 
 $$Y=F(K,AL) \text{ } F_{K}>0, F_{KK}<0, F_{L}>0, F_{LL}<0$$
 - Produktfunksjon er homogen av grad én (konstant skalautbytte). Som betyr at en t-dobling av innsatsfaktorene medfører en t-dobling av produksjonen
-$$tY=tF(K,L)=F(tK,tL)$$ 
-
-Som betyr at en t-dobling av innsatsfaktorene medfører en t-dobling av produksjonen
+$$tY=tF(K,AL)=F(tK,tAL)$$ 
 
 - Setter vi $t=\frac{1}{AL}$ får vi $\frac{Y}{AL}=F(\frac{K}{AL},1)$. Definerer vi $y \equiv \frac{1}{AL}$ og $F(K/AL,1) \equiv f(k)$, kan vi skrive produktfunksjonen på intensiv form som 
 
