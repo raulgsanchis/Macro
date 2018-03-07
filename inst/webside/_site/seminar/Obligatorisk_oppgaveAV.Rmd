@@ -5,24 +5,24 @@ output:
 ---
 
 # Obligatorisk oppgave: 
-Modellen er gitt ved
-
+Keynes modell åpen økonomi
+*abc*
 
 ## Del 1:
-1. Hva mente Keynes med begrepet 'Animal spirits'? 
-1. Hvorfor ønsket Milton Friedman en pengepolitisk regel som innebærer en konstant vekst i pengemengden?
-1. Hvilken to stabiliseringsmål gjelder for en liten åpen økonomi og hvorfor tar det vanligvis lengre tid oppnå disse to målende i et fastkursregime vs. flytende kurs-regime?
-1. Hvilke markeder er operasjonelle for AD-AS modellen for en åpen økonomi under flytende kurs?
-1. En liten åpen økonomi har et prisnivå som oppfyller inflasjonsmålet, men så plutselig blir inflasjonsmålet senket og sentralbankens mandat tilsier at de med dette må øke etterspørselen i økonomien. Hvordan påvirker dette rente og valutakursen på kort sikt (hint: ta utgangspunkt i likevektsløsningen som gjelder for penge- og valutkursmarkedet)?
-1. Sett opp løsningen for en Keynes modell i en liten åpen økonomi hvor det er satt en tollsats  ($\tau$) på
-prisen fra utlandet. Anta videre at tollen på importvarer ($\tau$) fra utlandet øker. Forklar verbalt hvordan dette påvirker produksjonen og inntekten i økonomien. 
-#E. Tror du etterspørselseffekten endres dersom vi har med en åpen økonomi og hvorfir ikke
+1. Animal spirits 
+1. Pengepolitikk
+1. Keynes-modell forklar multiplikatoren åpen økonomi Økt toll (eks.), hva skjer med nettoeksporten og etterspørselen til landet
+1. Fast kurs og priser
+1. Hvilken markeder er operasjonelle 
+1. Et land har et prisnivå lik inflasjonsmålet, men så blir inflasjonsmålet senket og sentralbanken blir bedt om å øke
+etterspørselen i økonomien. Hvordan påvirker dette rente og valutakursen
 
 ## Del 2:  AD-AS lukket økonomi
 Tar utgangspunkt i følgende modell
 
 1. Stil opp modellen
 1. Skift i både G og T
+
 1. Uten teknologi
 1. Abc
 1. Def
@@ -30,30 +30,12 @@ Tar utgangspunkt i følgende modell
 1. Ghi
 1. Jhi
 
-## Del 3: Statsgjeld
-1. Vis ved utregning hvordan man kommer frem til den konsoliderte budsjettbetingelsen for offentlig sektor. I 
-utgangspunktet har vi
-(@abc) 
-$$B^f_t= \underset{\text{a}}{(1+i_{t})B^{f}_{t-1}}+\underset{\text{det primære budsjettunderskudd}}{(G_t-T_t)} - \underset{Seniorage}{SNG_t}$$
-
-(@def)
-$$ B_{t-1}\cdot i_{t-1} + \Delta B_{t}^{m} = \Delta M_{t}$$
-(@ghi)
-$$B_{t} = B_{t}^{f} - B_{t}^{m}$$
-
-*Starter med*
-
-*B^f_t= (1+i_{t})B^{f}_{t-1}+{(G_t-T_t)} - SNG_t*
-
-*$$B^f_t= \underset{\text{a}}{(1+i_{t})B^{f}_{t-1}}+\underset{\text{det primære budsjettunderskudd}}{(G_t-T_t)} - \underset{Seniorage}{SNG_t}$$*
-
-
-
+## Del 3: Statsjeld
+1. Vis hvordan man kommer fra til den konsoliderte budsjettbetingelsen for offentlig sektor
 1. Figur vis fase-diagram lav produktivitet (g>r) og forklar dynamikken
 1. Figur vis fase-diagram høy produktivitet (g<r) og forklar dynamikken
-1. Diskuter kort virkemidler for å komme seg ut av av statsjgeldskrise, både i en situasjon med og uten en uavhengig sentralbank
-
-Ligning @abc
+1. Diskuter kort virkemidler for å komme seg ut av av statsjgeldskrisen, både i en situasjon med og uten en uavhengig
+sentralbank
 
 <!--
 

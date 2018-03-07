@@ -1,15 +1,15 @@
 ---
 bibliography: pensum.bib
-#output: html_notebook
+output: html_notebook
 ---
 
 ## Introduksjon til økonomisk vekst
 
-- Vi er opptatt av økonomisk vekst i et land,  fordi dette øker velstandsnivået blant landets innbyggere over tid
+- Vi er opptatt av økonomisk vekst i et land, fordi dette øker velstandsnivået blant landets innbyggere over tid
 
 - Det er vanlig å måle et lands velstandsnivå ved å dele BNP $Y$ på antall innbyggere i landet $N$, dvs $Y/N$
 
-- Målinger av dette finnes for de fleste land i verden:  [tabell fra Wikipedia](https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(PPP)_per_capita)
+- Målinger av dette finnes for de fleste land i verden: [tabell fra Wikipedia](https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(PPP)_per_capita)
 
 ---
 
@@ -29,7 +29,7 @@ bibliography: pensum.bib
 
 ###  Inklusive og ekstraktive offentlige institusjoner [@acemoglu2013nations]
 
-Institusjonene kan kalles **ekstraktive** dersom en elite (vanligvis i form av et totalitært regime) benytter disse til å ekstrahere verdier fra flertallet. 
+Institusjonene kan kalles **ekstraktive** dersom en elite (vanligvis i form av et totalitært regime) benytter disse til å ekstrahere verdier fra flertallet.
 
 Institusjonene kan kalles **inklusive** dersom de sørger for privat eiendomsrett, borgerrettigheter, upartisk 
 rettsvesen, fri etableringsrett og karrierevalg
@@ -245,8 +245,8 @@ nsolowgrafikk$ggtyper[[length(nsolowgrafikk$ggtyper)]]
 
 ```{r echo=FALSE}
 nsolowgrafikk$grafiskstyle(labs=list(title='Solow-modellen', x='k', y='y=f(k)'),
-                          skaleringx=list(label=c(TeX("$k^{'ss}}$"),TeX("$k^{ss'}}$")), breaks=c(dssamlikvedf$x, ssamlikvedf$x),limits=NULL),
-                          skaleringy=list(label=c(TeX("$y^{'ss}}$"),TeX("$y'^{ss'}}$")), breaks=c(dssamlikvedf$y, ssamlikvedf$y),limits=NULL),
+                          skaleringx=list(label=c(TeX("$k^{'ss'}}$"),TeX("$k^{ss}}$")), breaks=c(dssamlikvedf$x, ssamlikvedf$x),limits=NULL),
+                          skaleringy=list(label=c(TeX("$y^{'ss'}}$"),TeX("$y'^{ss}}$")), breaks=c(dssamlikvedf$y, ssamlikvedf$y),limits=NULL),
                           fargelinje=c('black','black', 'black', 'black', 'black', 'black', 'black'),
                           figurnr = 3)
 

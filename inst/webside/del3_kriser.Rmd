@@ -48,16 +48,39 @@ $$B_{t} = B_{t}^{f} - B_{t}^{m}$$
 
 - Som til sammen kan uttrykkes som den konsoliderte budsjettbetingelse for offentlig sektor (dere vil bli bedt om å løse for denne i den obligatoriske øvelsesoppgaven)
 
-$$B^f_t= \underset{\text{a}}{(1+i_{t})B^{f}_{t-1}}+\underset{\text{det primære budsjettunderskuddet}}{(G_t-T_t)} - \underset{seigniorage}{SNG_t}$$
+$$\Delta B_t = i_{t}B_{t-1}+{(G_t-T_t)}  + \Delta M_{t}$$
 
 ### Dynamikken i statsgjelden over tid 
 Dynamikken i statsgjelden over tid kan skrives som (også denne vil dere bli bedt om å vise i den obligatoriske semesteroppgaven)
 
-$$B^f_t= \underset{\text{a}}{(1+i_{t})B^{f}_{t-1}}+\underset{\text{det primære budsjettunderskudd}}{(G_t-T_t)} - \underset{Seniorage}{SNG_t}$$
+$$\frac{\Delta B_t}{Y_{t}} = \frac{i_{t}B_{t-1}}{Y_{t}}+\frac{(G_t-T_t)}{Y_{t}}$$
 
 ---
 
+
+
+```{r}
+### Statsgjeldsdynamikk
+gjeldsdynamikk <- Genfigur('konsbudsj')
+
+
+gjeldsdynamikk$numerisk(vartegne=c('bb'), par=c(list(Y=10,r=4,g=3,G=10,T=5)),
+                                                           endvar=list(Lb=44:50), kat='budsjett')
+
+gjeldsdynamikk$grafiskstyle(grafisknumappend=function(samlikvedf=data.frame(x=100, y=3, xend=100, yend=3), dftekst=data.frame(x=10,y=10,kurve='abc',farge='red'), tilstand='konsbudsj'))
+
+
+
+
+```
+
+
+----
+
 ### Konklusjoner
+
+- Kutt i det primære budsjettunderskuddet (redusere $G$ eller øke $G$)
+- Mislighold
 
 
 

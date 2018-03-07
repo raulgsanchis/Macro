@@ -7,6 +7,19 @@ library(ggplot2)
 library(MakroOEKB1115)
 library(dplyr)
 
+### Statsgjeldsdynamikk
+gjeldsdynamikk <- Genfigur('konsbudsj')
+gjeldsdynamikk$numerisk(vartegne=c('bb'), par=c(list(Y=10,r=4,g=3,G=10,T=5)),
+                        endvar=list(Lb=44:50), kat='budsjett')
+
+gjeldsdynamikk$grafisknumappend(samlikvedf=data.frame(x=100, y=3, xend=100, yend=3),
+                                                      dftekst=data.frame(x=10,y=10,kurve='abc',farge='red'),
+                                                      tilstand='budsjett')
+
+gjeldsdynamikk$ggtyper[[1]]
+
+
+
 solowgrafikk <- Genfigur('solow')
 solowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.3, alpha=0.5, n=0, gamma=0.04), endvar=list(k=1:200) ,kat='solow')
 solowgrafikk$optimering(tovectorlabel=c('sy', 'depk'), startv=c(100,10))

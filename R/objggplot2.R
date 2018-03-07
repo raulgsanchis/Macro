@@ -11,11 +11,13 @@ Genfigur <- setRefClass("Genfigur", fields = list(modell='character',
                                                   optimeringv='list',
                                                   ggtyper='list'))
 
-Genfigur$methods(initialize=function(modellnavn='solow'){
+Genfigur$methods(initialize=function(modellnavn=c('solow','konsbudsj')[2]){
 
   solowd <- list(sy=expression('savr*k^(alpha)'), y=expression(k^(alpha)), depk=expression(k*(n+gamma)))
 
-  modellatr <<- list(solow=solowd)
+  konsbudsj <- list(bb=expression('(1+r-g)*Lb+(G-T)/Y'))
+
+  modellatr <<- list(solow=solowd, konsbudsj=konsbudsj)[modellnavn]
 
   ggtyper[[1]] <<- ggplot()
 
@@ -23,14 +25,14 @@ Genfigur$methods(initialize=function(modellnavn='solow'){
 
 })
 
-Genfigur$methods(numerisk=function(vartegne=c('sy','y','depk'),
-                                   par=list(savr=0.3, alpha=0.5, n=0, gamma=0.03), endvar=list(k=1:200) ,kat='solow'){
+Genfigur$methods(numerisk=function(vartegne=c('bb'), par=c(list(Y=10,r=4,g=3,G=10,T=5)),
+                                                           endvar=list(Lb=44:50), kat='solow'){
 
   exoparval <<- c(par,endvar)
 
   plotvectorend <<- list()
   for(mvar in vartegne){
-    # mvar <- vardraw[3]
+    # mvar <- vartegne[1]
     #print(paste0(mvar))
     endv <- list(eval(parse(text=  modellatr[[modell]][[mvar]]), exoparval))
     plotvectorend <<- append(plotvectorend, endv)
