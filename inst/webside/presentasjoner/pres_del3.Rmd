@@ -1,10 +1,10 @@
 ---
-title: "Innledning"
+title: "Del 3: Økonomiske kriser"
 output:
   ioslides_presentation: default
 ---
 
 
-```{r plan, child = '../abc.Rmd'}
+```{r plan, child = '../del3_kriser.Rmd'}
 
 ```

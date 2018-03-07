@@ -10,23 +10,20 @@ output: html_notebook
 
 Vi tenker oss at økonomien som vi seer er i samtidig likevekt og at målene om intern og ekstern balanse er oppfylt.
 
-1. Illustrer i et AD-AS diagram effekten av en renteøkning i utlandet (tenk USA)
+1. Illustrer i et AD-AS diagram effekten av en renteøkning i utlandet (eks. situasjonen USA vs. Norge)
 
-2. Stabiliseringspolitikk
+2. Under AD-AS modellen for fast-kurs, har det blitt vist i forelesningen at etter en oppgangkonjunktur kan bli ledsaget av en nedgangskonjunkturfor å nå de to målene om intern og ekstern balanse. Forklar hvilken mekanisme som forhindrer en slik utvikling under flytende kurs
 
-3. Under AD-AS modellen for fast-kurs, har det blitt vist i forelesningen at etter en oppgangkonjunktur kan bli ledsaget av en nedgangskonjunktur
-for å nå de to målene om intern og ekstern balanse. Pek på hvilken mekanisme som forhindrer en slik utvikling under flytende kurs
+3. Stabiliseringspolitikk i form av rente
 
 ## Solow modellen for økonomisk vekst
 
-1. Cobb-Dogulas t
+1. Løs modellen normal utgave
 
-1. Løs modellen 
+2. Faktoravlønninger
 
-2. Faktoravlønning
+3. Skiftanalyse
 
-2. Økt befolkningsvekst pga økt innvandring. 
+4. Hvorfor forutsetnign gjør at  modellen uegnet til å studere pensjonspolitikk
 
-3. Hvorfor forutsetnign gjør at  modellen uegnet til å studere pensjonspolitikk
-
-3. Solow-modellen er uten noen forklaring på hva som skaper teknologisk framgang (parameteren a er bestemt utenfor modellen). Hva mener du kan gjøres for å øke veksten i denne parameteren?
+5. Solow-modellen er uten noen forklaring på hva som skaper teknologisk framgang (parameteren a er bestemt utenfor modellen). Hva mener du kan gjøres for å øke veksten i denne parameteren?

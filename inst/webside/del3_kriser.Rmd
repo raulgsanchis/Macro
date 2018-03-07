@@ -1,37 +1,35 @@
 ---
-#output: html_notebook
+output: html_notebook
 ---
 
-```{r, echo=FALSE}
-htmltools::includeHTML("tabeller/kompstattabell.html")
-```
-
 ## Tema 1: Penger, kreditt og bankadferd
-Innvendige og utvendige penger
+<!--
 <iframe width="200" height="200" src="https://www.youtube.com/embed/O7pnjzCuSv8"> </iframe>
+Starter med dette i uke
+-->
 
 ## Banker, systemrisiko og kapitalkrav
 
 ## Tema 2:  Statsgjeldskrise
 
-<iframe src="http://www.usdebtclock.org/" frameborder="0">
+<iframe src="https://www.nationaldebtclocks.org/debtclock/unitedstates" frameborder="0"  height="600" width="225">
   <p>Your browser does not support iframes.</p>
 </iframe>
 
-<!--
-<iframe src="https://www.nbim.no/no//">
+---
+
+<iframe src="https://www.nationaldebtclocks.org/debtclock/greece" frameborder="0"  height="600" width="225">
   <p>Your browser does not support iframes.</p>
 </iframe>
 
+---
 
-<iframe src="https://www.nationaldebtclocks.org/">
+<iframe src="https://www.nationaldebtclocks.org/debtclock/japan" frameborder="0"  height="600" width="225">
   <p>Your browser does not support iframes.</p>
 </iframe>
 
-<iframe src="https://www.nationaldebtclocks.org/">
-  <p>Your browser does not support iframes.</p>
-</iframe>
--->
+---
+
 ### Budsjettbetingelsen for offentlig sektor
 
 - Offentlige myndigheter
@@ -40,23 +38,31 @@ $$B^f_t= \underset{\text{a}}{(1+i_{t})B^{f}_{t-1}}+\underset{\text{det primære 
 
 - Sentralbanken
 
-$$ B_{t-1}\cdot i_{t-1} + \Delta B_{t}^{m} = \Delta M_{t}$$
+$$ B_{t-1}\cdot i_{t-1} + \Delta B_{t}^{m} = \Delta M_{t} + SNG_{t}$$
 
 - Gjeld
 
 $$B_{t} = B_{t}^{f} - B_{t}^{m}$$
 
-- Konsolidert budsjettbetingelse for offentlig sektor
+---
+
+- Som til sammen kan uttrykkes som den konsoliderte budsjettbetingelse for offentlig sektor (dere vil bli bedt om å løse for denne i den obligatoriske øvelsesoppgaven)
+
+$$B^f_t= \underset{\text{a}}{(1+i_{t})B^{f}_{t-1}}+\underset{\text{det primære budsjettunderskuddet}}{(G_t-T_t)} - \underset{seigniorage}{SNG_t}$$
+
+### Dynamikken i statsgjelden over tid 
+Dynamikken i statsgjelden over tid kan skrives som (også denne vil dere bli bedt om å vise i den obligatoriske semesteroppgaven)
 
 $$B^f_t= \underset{\text{a}}{(1+i_{t})B^{f}_{t-1}}+\underset{\text{det primære budsjettunderskudd}}{(G_t-T_t)} - \underset{Seniorage}{SNG_t}$$
 
-### Dynamikken i statsgjelden over tid 
-Dynamikken i statsgjelden over tid
+---
+
+### Konklusjoner
+
+
 
 ## Tema 3:  Likviditetsfellen (IS-LM modellen med to husholdninger)
-Finne forelesninge fra Høgskulen
-
-
+Finne forelesninger fra Høgskulen
 
 <!--
 Statsgjeld
@@ -85,3 +91,7 @@ Mislighold
 Inflasjon
 Fordelingskamp
 -->
+
+```{r eval=FALSE, include=FALSE}
+##htmltools::includeHTML("tabeller/kompstattabell.html")
+```
