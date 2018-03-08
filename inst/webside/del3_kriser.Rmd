@@ -61,8 +61,7 @@ Som vi kan omformulere til
 
 $$\frac{B_t}{Y_t} = (1+r-g)\frac{B_{t-1}}{Y_{t-1}} + \frac{G_{t}-T_{t}}{Y_{t}} + \Delta M_{t}$$
 
-$$\frac{B_t}{Y_t}- \frac{B_{t-1}}{Y_{t-1}} = (r-g)\frac{B_{t-1}}{Y_{t-1}} + \frac{G_{t}-T_{t}}{Y_{t}}$$
-
+$$\underset{\Delta b_{t}}{\frac{B_t}{Y_t}- \frac{B_{t-1}}{Y_{t-1}}}= (r-g)\underset{b_{t}}{\frac{B_{t-1}}{Y_{t-1}}} + \underset{g_{t}-t_{t}}{\frac{G_{t}-T_{t}}{Y_{t}}}$$
 
 ---
 

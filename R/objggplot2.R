@@ -15,7 +15,7 @@ Genfigur$methods(initialize=function(modellnavn=c('solow','konsbudsj')[2]){
 
   solowd <- list(sy=expression('savr*k^(alpha)'), y=expression(k^(alpha)), depk=expression(k*(n+gamma)))
 
-  konsbudsj <- list(bb=expression('(r-g)*Lb+(G-T)/Y'))
+  konsbudsj <- list(bb=expression('(r-g)*Lb+(G-T)/Y'), x='0*Lb')
 
   modellatr <<- list(solow=solowd, konsbudsj=konsbudsj)[modellnavn]
 
@@ -28,22 +28,23 @@ Genfigur$methods(initialize=function(modellnavn=c('solow','konsbudsj')[2]){
 Genfigur$methods(numerisk=function(vartegne=c('bb'), par=c(list(Y=10,r=4,g=3,G=10,T=5)),
                                                            endvar=list(Lb=44:50), kat='solow'){
 
+  #browser()
+
+
+
   exoparval <<- c(par,endvar)
 
   plotvectorend <<- list()
   for(mvar in vartegne){
-    # mvar <- vartegne[1]
-    #print(paste0(mvar))
+    # mvar <- vartegne[2]
     endv <- list(eval(parse(text=  modellatr[[modell]][[mvar]]), exoparval))
     plotvectorend <<- append(plotvectorend, endv)
   }
 
-  #browser()
-
-
   names(plotvectorend) <<- vartegne
 
-  DFmodellres <- data.frame(Iv= endvar[[1]], plotvectorend) %>% reshape2::melt(id.vars = c("Iv"))
+  DFmodellres <- data.frame(Iv= endvar[[1]], plotvectorend) %>% reshape2::melt(id.vars = c("Iv")) %>%
+    base::rbind(list(NULL,data.frame(Iv=0, variable='y', value=endvar[[1]]))[[2]])
 
   dfmodellres[[kat]] <<- DFmodellres
 
@@ -74,7 +75,7 @@ Genfigur$methods(grafisknumappend=function(samlikvedf=data.frame(x=100, y=3, xen
   #samlikvedf <- data.frame(x=100, y=3, xend=100, yend=3)
   #dftekst <- data.frame(x=10,y=10,kurve='abc',farge='red')
 
-  #browser()
+  browser()
 
   ggobjnumapp <- ggtyper[[length(ggtyper)]] +
     geom_line(data = dfmodellres[[tilstand]] , aes(x = Iv, y = value, color = factor(variable))) +

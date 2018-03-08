@@ -1,27 +1,95 @@
+#library(MakroOEKB1115)
 library(dplyr)
 library(latex2exp)
 library(ggplot2)
 library(gridExtra)
 library(grid)
 library(ggplot2)
-#library(MakroOEKB1115)
 library(dplyr)
 
 ### Statsgjeldsdynamikk
-gjeldsdynamikk <- Genfigur('konsbudsj')
+igjeldsdynamikk <- Genfigur('konsbudsj')
+iigjeldsdynamikk <- Genfigur('konsbudsj')
+iiigjeldsdynamikk <- Genfigur('konsbudsj')
+ivgjeldsdynamikk <- Genfigur('konsbudsj')
 
 valgi <- c('budsjettI')
-valgii <- c('budsjettI')
+valgii <- c('budsjettII')
 valgiii <- c('budsjettIII')
 valgiv <- c('budsjettIV')
 
-gjeldsdynamikk$numerisk(vartegne=c('bb'), par=c(list(Y=100,r=0.02,g=0.03,G=75,T=50)), endvar=list(Lb=25:300), kat= valgi)
-gjeldsdynamikk$dfmodellres$budsjett
+igjeldsdynamikk$numerisk(vartegne=c('bb','x'), par=c(list(Y=100,r=0.035,g=0.04,G=20,T=10)),
+                         endvar=list(Lb=-25:50), kat= valgi)
 
-gjeldsdynamikk$grafisknumappend(samlikvedf=data.frame(x=0, y=0, xend=0, yend=0),
-                                dftekst=data.frame(x=0,y=0,kurve='abc',farge='red'), tilstand=valgi)
-gjeldsdynamikk$ggtyper[[2]]
 
+
+
+igjeldsdynamikk$grafisknumappend(samlikvedf=data.frame(x=20, y=0, xend=20, yend=0),
+                                dftekst=data.frame(x=20,y=0,kurve='abc',farge='red'), tilstand=valgi)
+
+
+
+igjeldsdynamikk$grafiskstyle(labs=list(title='Gjeldsdynamikk', x='db', y='b'),
+                      skaleringx=list(label=c('','',''), breaks=c(-25,0,50), limits=NULL),
+                      skaleringy=list(label=c('','',''), breaks=c(-25/100,0,50/100), breaks=NULL, limits=NULL),
+                      fargelinje=c('black','black', 'black'),
+                      figurnr = 2)
+
+igjeldsdynamikk$ggtyper[[2]]
+
+
+## ii
+iigjeldsdynamikk$numerisk(vartegne=c('bb'), par=c(list(Y=100,r=0.02,g=0.03,G=75,T=50)), endvar=list(Lb=25:300), kat= valgii)
+
+
+iigjeldsdynamikk$grafisknumappend(samlikvedf=data.frame(x=0, y=0, xend=0, yend=0),
+                                 dftekst=data.frame(x=0,y=0,kurve='abc',farge='red'), tilstand=valgii)
+
+iigjeldsdynamikk$grafiskstyle(labs=list(title='Solow-modellen', x='k', y='y'),
+                             skaleringx=list(label=NULL, breaks=NULL, limits=NULL),
+                             skaleringy=list(label=NULL, breaks=NULL, limits=NULL),
+                             fargelinje=c('black','black', 'black'),
+                             figurnr = 2)
+
+iigjeldsdynamikk$ggtyper[[2]]
+
+## iii
+iiigjeldsdynamikk$numerisk(vartegne=c('bb'), par=c(list(Y=100,r=0.02,g=0.03,G=75,T=50)), endvar=list(Lb=25:300), kat= valgiii)
+
+
+iiigjeldsdynamikk$grafisknumappend(samlikvedf=data.frame(x=0, y=0, xend=0, yend=0),
+                                  dftekst=data.frame(x=0,y=0,kurve='abc',farge='red'), tilstand=valgiii)
+
+iiigjeldsdynamikk$grafiskstyle(labs=list(title='Solow-modellen', x='k', y='y'),
+                              skaleringx=list(label=NULL, breaks=NULL, limits=NULL),
+                              skaleringy=list(label=NULL, breaks=NULL, limits=NULL),
+                              fargelinje=c('black','black', 'black'),
+                              figurnr = 2)
+
+
+iiigjeldsdynamikk$ggtyper[[2]]
+
+## iv
+ivgjeldsdynamikk$numerisk(vartegne=c('bb'), par=c(list(Y=100,r=0.02,g=0.03,G=75,T=50)), endvar=list(Lb=25:300), kat= valgiv)
+
+
+ivgjeldsdynamikk$grafisknumappend(samlikvedf=data.frame(x=0, y=0, xend=0, yend=0),
+                                   dftekst=data.frame(x=0,y=0,kurve='abc',farge='red'), tilstand=valgiv)
+
+ivgjeldsdynamikk$grafiskstyle(labs=list(title='Solow-modellen', x='k', y='y'),
+                               skaleringx=list(label=NULL, breaks=NULL, limits=NULL),
+                               skaleringy=list(label=NULL, breaks=NULL, limits=NULL),
+                               fargelinje=c('black','black', 'black'),
+                               figurnr = 2)
+
+ivgjeldsdynamikk$ggtyper[[2]]
+
+
+grid.arrange(igjeldsdynamikk$ggtyper[[2]], iigjeldsdynamikk$ggtyper[[2]],
+             iiigjeldsdynamikk$ggtyper[[2]],ivgjeldsdynamikk$ggtyper[[2]])
+
+grid.arrange(igjeldsdynamikk$ggtyper[[3]], iigjeldsdynamikk$ggtyper[[3]],
+             iiigjeldsdynamikk$ggtyper[[3]],ivgjeldsdynamikk$ggtyper[[3]])
 
 ###################################
 

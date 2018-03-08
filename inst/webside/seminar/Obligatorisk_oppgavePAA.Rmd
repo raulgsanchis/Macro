@@ -64,8 +64,6 @@ som er
 
 $$\frac{B_t}{Y_t}- \frac{B_{t-1}}{Y_{t-1}} = (r-g)\frac{B_{t-1}}{Y_{t-1}} + \frac{G_{t}-T_{t}}{Y_{t}}$$
 
-
-
 1. Figur vis fase-diagram lav produktivitet (g>r) og forklar dynamikken
 1. Figur vis fase-diagram høy produktivitet (g<r) og forklar dynamikken
 1. Diskuter kort virkemidler for å komme seg ut av av statsjgeldskrise, både i en situasjon med og uten en uavhengig sentralbank
