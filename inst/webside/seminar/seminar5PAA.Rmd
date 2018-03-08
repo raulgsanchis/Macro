@@ -1,0 +1,84 @@
+---
+css: seminarPAA.css
+output: html_notebook
+---
+
+# Seminar 5:
+
+## AD-AS modellen under flytende kurs
+
+Vi tenker oss at økonomien som vi seer er i samtidig likevekt og at målene om intern og ekstern balanse er oppfylt.
+
+1. Illustrer i et AD-AS diagram effekten av en renteøkning i utlandet (eks. situasjonen USA vs. Norge) på
+kort og mellomlang sikt
+
+2. Under AD-AS modellen for fast-kurs, har det blitt vist i forelesningen at etter en oppgangkonjunktur kan bli ledsaget av en nedgangskonjunkturfor å nå de to målene om intern og ekstern balanse. Forklar hvilken mekanisme som kan forhindre en slik utvikling under flytende kurs
+*Valutakursforventningen endres*
+
+3. Hvordan bør pengepolitkken endres dersom den skal nøytralisere effekten av den utenlandske renteøkningen? 
+*Pengemengen bør øke slik at renta går ned, men ikke like mye som i utlandet. Illustreres best ved IS-LM diagram*
+
+## Solow-modellen for økonomisk vekst
+
+1. Løs modellen normal utgave for kapitaldynamikkligningen
+
+*$$\frac{\dot{K}}{K} = I -\delta = \frac{sY}{K} -\delta = \frac{sY/N}{K/N} -\delta= \frac{sy}{k} -\delta $$*
+
+*Vi har at $\frac{\dot{k}}{k} =\frac{\dot{K}}{K}  - n - a$ [(lenke her til regneregler)](formler.html), som gjør at vi ved innsetting for $\frac{\dot{K}}{K}$ kan skrive*
+
+*$$\frac{\dot{k}}{k} + n + a=  -\delta  + \frac{sy}{k} \Leftrightarrow \\
+\dot{k} = sf(k)-(\delta+n+ a) k$$*
+
+2. Vis i en figur hva som skjer i økonomien dersom fødselsraten går ned?
+
+```{r include=FALSE}
+### Vanlig Solow-modell
+nsolowgrafikk <- Genfigur('solow')
+
+nsolowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.4, alpha=0.5, n=0.02, gamma=0.04), endvar=list(k=1:200) ,kat='solow')
+#nsolowgrafikk$optimering(tovectorlabel=c('sy', 'depk'), startv=c(100,10))
+
+#nsolowgrafikk$optimeringv
+ssamlikvedf <- data.frame(x=48, y=7, xend=48, yend=7)
+sdftekst <- data.frame(x=c(200 ,190, 200),y=c(15, 11, 6), kurve=c('f(k)', "(a+n+delta)k", 'sf(k)'), farge=c('red', 'red', 'red'))
+nsolowgrafikk$grafisknumappend(samlikve=ssamlikvedf, dftekst=sdftekst, tilstand='solow')
+nsolowgrafikk$ggtyper[[2]]
+
+# Skfit
+nkatv <- 'oktbefolkning'
+
+nsolowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.4, alpha=0.5, n=0.00, gamma=0.04), endvar=list(k=1:200) ,kat=nkatv)
+dssamlikvedf <- data.frame(x=100, y=10, xend=100, yend=10)
+dsdftekst <- data.frame(x=c(200 ,190, 200),y=c(15, 11, 8),kurve=c('f(k)', "(a+n+delta)k", "(a+n'+delta)k"), farge=c('red', 'red', 'red'))
+nsolowgrafikk$grafisknumappend(samlikve=dssamlikvedf, dftekst=dsdftekst, tilstand=nkatv)
+nsolowgrafikk$ggtyper[[3]]
+```
+
+```{r echo=FALSE}
+nsolowgrafikk$grafiskstyle(labs=list(title='Solow-modellen', x='k', y='y=f(k)'),
+                          skaleringx=list(label=c(TeX("$k^{ss}}$")), breaks=ssamlikvedf$x,limits=NULL),
+                          skaleringy=list(label=c(TeX('$y^{ss}}$')), breaks=ssamlikvedf$y,limits=NULL),
+                          fargelinje=c('black','black', 'black'),
+                          figurnr = 2)
+
+#nsolowgrafikk$ggtyper[[length(nsolowgrafikk$ggtyper)]]
+
+nsolowgrafikk$grafiskstyle(labs=list(title='Solow-modellen', x='k', y='y=f(k)'),
+                          skaleringx=list(label=c(TeX("$k^{'ss'}}$"),TeX("$k^{ss}}$")), breaks=c(dssamlikvedf$x, ssamlikvedf$x),limits=NULL),
+                          skaleringy=list(label=c(TeX("$y^{'ss'}}$"),TeX("$y'^{ss}}$")), breaks=c(dssamlikvedf$y, ssamlikvedf$y),limits=NULL),
+                          fargelinje=c('black','black', 'black', 'black', 'black', 'black', 'black'),
+                          figurnr = 3)
+
+nsolowgrafikk$ggtyper[[length(nsolowgrafikk$ggtyper)]]
+```
+
+
+*Går mot ny stasjonærtilstand med høyere BNP per effektiv arbeider*
+
+3. Hvilken forutsetning  gjør modellen uegnet til å studere pensjonspolitikk
+
+*Hele befolkningen i økonomien er i arbeid, $N=L$*
+
+4. Solow-modellen er uten noen forklaring på hva som skaper teknologisk framgang (parameteren a er bestemt utenfor modellen). Hva mener du kan gjøres for å øke veksten i denne parameteren?
+
+*FoU, utdanning, mer effektive lover og regler, IKT, forbedret offentlig institusjoner*
