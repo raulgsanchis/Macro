@@ -4,21 +4,26 @@ library(ggplot2)
 library(gridExtra)
 library(grid)
 library(ggplot2)
-library(MakroOEKB1115)
+#library(MakroOEKB1115)
 library(dplyr)
 
 ### Statsgjeldsdynamikk
 gjeldsdynamikk <- Genfigur('konsbudsj')
-gjeldsdynamikk$numerisk(vartegne=c('bb'), par=c(list(Y=10,r=4,g=3,G=10,T=5)),
-                        endvar=list(Lb=44:50), kat='budsjett')
 
-gjeldsdynamikk$grafisknumappend(samlikvedf=data.frame(x=100, y=3, xend=100, yend=3),
-                                                      dftekst=data.frame(x=10,y=10,kurve='abc',farge='red'),
-                                                      tilstand='budsjett')
+valgi <- c('budsjettI')
+valgii <- c('budsjettI')
+valgiii <- c('budsjettIII')
+valgiv <- c('budsjettIV')
 
+gjeldsdynamikk$numerisk(vartegne=c('bb'), par=c(list(Y=100,r=0.02,g=0.03,G=75,T=50)), endvar=list(Lb=25:300), kat= valgi)
+gjeldsdynamikk$dfmodellres$budsjett
+
+gjeldsdynamikk$grafisknumappend(samlikvedf=data.frame(x=0, y=0, xend=0, yend=0),
+                                dftekst=data.frame(x=0,y=0,kurve='abc',farge='red'), tilstand=valgi)
 gjeldsdynamikk$ggtyper[[2]]
 
 
+###################################
 
 solowgrafikk <- Genfigur('solow')
 solowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.3, alpha=0.5, n=0, gamma=0.04), endvar=list(k=1:200) ,kat='solow')

@@ -55,23 +55,61 @@ $$\Delta B_t = i_{t}B_{t-1}+{(G_t-T_t)}  + \Delta M_{t}$$
 ### Dynamikken i statsgjelden over tid 
 Dynamikken i statsgjelden over tid kan skrives som (også denne vil dere bli bedt om å vise i den obligatoriske semesteroppgaven)
 
-$$\frac{\Delta B_t}{Y_{t}} = \frac{i_{t}B_{t-1}}{Y_{t}}+\frac{(G_t-T_t)}{Y_{t}}$$
+$$\frac{B_t}{Y_t} = (1+r-g)\frac{B_{t-1}}{Y_{t-1}} + \frac{G_{t}-T_{t}}{Y_{t}} + \Delta M_{t}$$
+
+Som vi kan omformulere til
+
+$$\frac{B_t}{Y_t} = (1+r-g)\frac{B_{t-1}}{Y_{t-1}} + \frac{G_{t}-T_{t}}{Y_{t}} + \Delta M_{t}$$
+
+$$\frac{B_t}{Y_t}- \frac{B_{t-1}}{Y_{t-1}} = (r-g)\frac{B_{t-1}}{Y_{t-1}} + \frac{G_{t}-T_{t}}{Y_{t}}$$
+
 
 ---
 
 
 
 ```{r}
-### Statsgjeldsdynamikk
-gjeldsdynamikk <- Genfigur('konsbudsj')
-
-
-gjeldsdynamikk$numerisk(vartegne=c('bb'), par=c(list(Y=10,r=4,g=3,G=10,T=5)),
-                                                           endvar=list(Lb=44:50), kat='budsjett')
-
-gjeldsdynamikk$grafiskstyle(grafisknumappend=function(samlikvedf=data.frame(x=100, y=3, xend=100, yend=3), dftekst=data.frame(x=10,y=10,kurve='abc',farge='red'), tilstand='konsbudsj'))
-
-
+# gjeldsdynamikk <- Genfigur('konsbudsj')
+# gjeldsdynamikk$numerisk(vartegne=c('bb'), par=c(list(Y=100,r=4,g=4,G=100,T=100)),
+#                         endvar=list(Lb=1:300), kat='budsjett')
+# 
+# valgi <- c('budsjettI')
+# valgii <- c('budsjettI')
+# valgiii <- c('budsjettIII')
+# valgiv <- c('budsjettIV')
+# 
+# gjeldsdynamikk$numerisk(vartegne=c('sy','y','depk'), par=c(list(Y=10,r=4,g=4,G=10,T=5)), endvar=list(Lb=44:50) ,kat=valgi)
+# 
+# 
+# gjeldsdynamikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.5, alpha=0.5, n=0.01, gamma=0.04), endvar=list(k=1:200) ,kat=valgii)
+# gjeldsdynamikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.5, alpha=0.5, n=0.01, gamma=0.04), endvar=list(k=1:200) ,kat=valgiii)
+# gjeldsdynamikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.5, alpha=0.5, n=0.01, gamma=0.04), endvar=list(k=1:200) ,kat=valgiv)
+# 
+# 
+# 
+# 
+# gjeldsdynamikk$grafisknumappend(samlikvedf=data.frame(x=100, y=3, xend=100, yend=3),
+#                                                       dftekst=data.frame(x=10,y=10,kurve='abc',farge='red'),
+#                                                       tilstand=valgiii)
+# valgii <- c('budsjettII')
+# gjeldsdynamikk$grafisknumappend(samlikvedf=data.frame(x=100, y=3, xend=100, yend=3),
+#                                                       dftekst=data.frame(x=10,y=10,kurve='abc',farge='red'),
+#                                                       tilstand=valgiii)
+# 
+# gjeldsdynamikk$grafisknumappend(samlikvedf=data.frame(x=100, y=3, xend=100, yend=3),
+#                                                       dftekst=data.frame(x=10,y=10,kurve='abc',farge='red'),
+#                                                       tilstand=valgiii)
+# gjeldsdynamikk$grafisknumappend(samlikvedf=data.frame(x=100, y=3, xend=100, yend=3),
+#                                                       dftekst=data.frame(x=10,y=10,kurve='abc',farge='red'),
+#                                                       tilstand=valgiv)
+# 
+# gjeldsdynamikk$grafiskstyle(labs=list(title='Gjeldsdynamikk', x='k', y='y'),
+#                             skaleringx=list(label=NULL, breaks=NULL, limits=NULL),
+#                             skaleringy=list(label=NULL, breaks=NULL, limits=NULL),
+#                             fargelinje=c('black','black', 'black'),
+#                             figurnr = 2)
+# 
+# gjeldsdynamikk$ggtyper[[3]]
 ```
 
 
@@ -79,10 +117,8 @@ gjeldsdynamikk$grafiskstyle(grafisknumappend=function(samlikvedf=data.frame(x=10
 
 ### Konklusjoner
 
-- Kutt i det primære budsjettunderskuddet (redusere $G$ eller øke $G$)
+- Kutt i det primære budsjettunderskuddet (redusere $G$ eller øke $T$)
 - Mislighold
-
-
 
 ## Tema 3:  Likviditetsfellen (IS-LM modellen med to husholdninger)
 Finne forelesninger fra Høgskulen

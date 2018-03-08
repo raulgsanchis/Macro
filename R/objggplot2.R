@@ -15,7 +15,7 @@ Genfigur$methods(initialize=function(modellnavn=c('solow','konsbudsj')[2]){
 
   solowd <- list(sy=expression('savr*k^(alpha)'), y=expression(k^(alpha)), depk=expression(k*(n+gamma)))
 
-  konsbudsj <- list(bb=expression('(1+r-g)*Lb+(G-T)/Y'))
+  konsbudsj <- list(bb=expression('(r-g)*Lb+(G-T)/Y'))
 
   modellatr <<- list(solow=solowd, konsbudsj=konsbudsj)[modellnavn]
 
@@ -37,6 +37,9 @@ Genfigur$methods(numerisk=function(vartegne=c('bb'), par=c(list(Y=10,r=4,g=3,G=1
     endv <- list(eval(parse(text=  modellatr[[modell]][[mvar]]), exoparval))
     plotvectorend <<- append(plotvectorend, endv)
   }
+
+  #browser()
+
 
   names(plotvectorend) <<- vartegne
 
