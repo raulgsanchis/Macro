@@ -28,10 +28,6 @@ Genfigur$methods(initialize=function(modellnavn=c('solow','konsbudsj')[2]){
 Genfigur$methods(numerisk=function(vartegne=c('bb'), par=c(list(Y=10,r=4,g=3,G=10,T=5)),
                                                            endvar=list(Lb=44:50), kat='solow'){
 
-  #browser()
-
-
-
   exoparval <<- c(par,endvar)
 
   plotvectorend <<- list()
@@ -43,8 +39,8 @@ Genfigur$methods(numerisk=function(vartegne=c('bb'), par=c(list(Y=10,r=4,g=3,G=1
 
   names(plotvectorend) <<- vartegne
 
-  DFmodellres <- data.frame(Iv= endvar[[1]], plotvectorend) %>% reshape2::melt(id.vars = c("Iv")) %>%
-    base::rbind(list(NULL,data.frame(Iv=0, variable='y', value=endvar[[1]]))[[2]])
+  DFmodellres <- data.frame(Iv= endvar[[1]], plotvectorend) %>% reshape2::melt(id.vars = c("Iv"))
+  #%>%base::rbind(list(NULL,data.frame(Iv=0, variable='y', value=endvar[[1]]))[[2]])
 
   dfmodellres[[kat]] <<- DFmodellres
 
@@ -75,7 +71,7 @@ Genfigur$methods(grafisknumappend=function(samlikvedf=data.frame(x=100, y=3, xen
   #samlikvedf <- data.frame(x=100, y=3, xend=100, yend=3)
   #dftekst <- data.frame(x=10,y=10,kurve='abc',farge='red')
 
-  browser()
+  #browser()
 
   ggobjnumapp <- ggtyper[[length(ggtyper)]] +
     geom_line(data = dfmodellres[[tilstand]] , aes(x = Iv, y = value, color = factor(variable))) +

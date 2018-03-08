@@ -21,21 +21,18 @@ valgiv <- c('budsjettIV')
 igjeldsdynamikk$numerisk(vartegne=c('bb','x'), par=c(list(Y=100,r=0.035,g=0.04,G=20,T=10)),
                          endvar=list(Lb=-25:50), kat= valgi)
 
+igjeldsdynamikk$grafisknumappend(samlikvedf=data.frame(x=20, y=0, xend=0, yend=0),
+                                dftekst=data.frame(x=-10,y=0.2,kurve='Gjeldsdynamikk',farge='red'), tilstand=valgi)
 
+igjeldsdynamikk$ggtyper[[2]]
 
-
-igjeldsdynamikk$grafisknumappend(samlikvedf=data.frame(x=20, y=0, xend=20, yend=0),
-                                dftekst=data.frame(x=20,y=0,kurve='abc',farge='red'), tilstand=valgi)
-
-
-
-igjeldsdynamikk$grafiskstyle(labs=list(title='Gjeldsdynamikk', x='db', y='b'),
-                      skaleringx=list(label=c('','',''), breaks=c(-25,0,50), limits=NULL),
-                      skaleringy=list(label=c('','',''), breaks=c(-25/100,0,50/100), breaks=NULL, limits=NULL),
+igjeldsdynamikk$grafiskstyle(labs=list(title='Gjeldsdynamikk', x=TeX('$b$'), y=TeX('$\\Delta b$')),
+                      #skaleringx=list(label=NULL, breaks=c(-25,0,50), limits=NULL),
+                      #skaleringy=list(label=NULL, breaks=c(-25/100,0,50/100), breaks=NULL, limits=NULL),
                       fargelinje=c('black','black', 'black'),
                       figurnr = 2)
 
-igjeldsdynamikk$ggtyper[[2]]
+igjeldsdynamikk$ggtyper[[3]] + geom_line(aes(y=seq(-1,1, 0.1),x=0)) +  annotate(geom='text', x=0, y=0, label=TeX("$\\hat{Y} = B_0 + B_1X_1", output='character'), parse=TRUE, color='red')
 
 
 ## ii
