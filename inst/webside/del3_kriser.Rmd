@@ -36,6 +36,8 @@ Starter med dette i uke
 
 $$B^f_t= \underset{\text{a}}{(1+i_{t})B^{f}_{t-1}}+\underset{\text{det primære budsjettunderskudd}}{(G_t-T_t)} - \underset{Seniorage}{SNG_t}$$
 
+
+
 - Sentralbanken
 
 $$ B_{t-1}\cdot i_{t-1} + \Delta B_{t}^{m} = \Delta M_{t} + SNG_{t}$$
@@ -68,8 +70,6 @@ gjeldsdynamikk$numerisk(vartegne=c('bb'), par=c(list(Y=10,r=4,g=3,G=10,T=5)),
                                                            endvar=list(Lb=44:50), kat='budsjett')
 
 gjeldsdynamikk$grafiskstyle(grafisknumappend=function(samlikvedf=data.frame(x=100, y=3, xend=100, yend=3), dftekst=data.frame(x=10,y=10,kurve='abc',farge='red'), tilstand='konsbudsj'))
-
-
 
 
 ```

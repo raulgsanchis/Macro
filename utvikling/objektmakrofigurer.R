@@ -16,7 +16,7 @@ gjeldsdynamikk$grafisknumappend(samlikvedf=data.frame(x=100, y=3, xend=100, yend
                                                       dftekst=data.frame(x=10,y=10,kurve='abc',farge='red'),
                                                       tilstand='budsjett')
 
-gjeldsdynamikk$ggtyper[[1]]
+gjeldsdynamikk$ggtyper[[2]]
 
 
 

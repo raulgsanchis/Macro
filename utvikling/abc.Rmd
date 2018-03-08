@@ -1,6 +1,11 @@
+---
+output: html_notebook
+---
 
+- Intern og ekstern devaluering
 
-# Test Rmarkdown notebook
+# Test RMarkdown notebook
+
 
 
 
