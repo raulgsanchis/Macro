@@ -1,6 +1,6 @@
 ---
 bibliography: pensum.bib
-output: html_notebook
+#output: html_notebook
 ---
 
 ## Introduksjon til økonomisk vekst

@@ -17,149 +17,135 @@ valgi <- c('budsjettI')
 valgii <- c('budsjettII')
 valgiii <- c('budsjettIII')
 valgiv <- c('budsjettIV')
+igjeldsdynamikk$numerisk(vartegne=c('bb','x'), par=c(list(Y=100,r=0.035,g=0.04,G=20,T=10)),endvar=list(Lb=-25:50), kat= valgi)
+iigjeldsdynamikk$numerisk(vartegne=c('bb','x'), par=c(list(Y=100,r=0.035,g=0.04,G=20,T=10)),endvar=list(Lb=-25:50), kat= valgii)
+iiigjeldsdynamikk$numerisk(vartegne=c('bb','x'), par=c(list(Y=100,r=0.035,g=0.04,G=20,T=10)),endvar=list(Lb=-25:50), kat= valgiii)
+ivgjeldsdynamikk$numerisk(vartegne=c('bb','x'), par=c(list(Y=100,r=0.035,g=0.04,G=20,T=10)),endvar=list(Lb=-25:50), kat= valgiv)
 
-igjeldsdynamikk$numerisk(vartegne=c('bb','x'), par=c(list(Y=100,r=0.035,g=0.04,G=20,T=10)),
-                         endvar=list(Lb=-25:50), kat= valgi)
-
-igjeldsdynamikk$grafisknumappend(samlikvedf=data.frame(x=20, y=0, xend=0, yend=0),dftekst=data.frame(x=-10,y=0.2,kurve='',farge='red'), tilstand=valgi)
-
+igjeldsdynamikk$grafisknumappend(samlikvedf=data.frame(x=20, y=0, xend=0, yend=0), dftekst=data.frame(x=-10,y=0.2,kurve='',farge='red'), tilstand=valgi)
 igjeldsdynamikk$ggtyper[[2]]
+iigjeldsdynamikk$grafisknumappend(samlikvedf=data.frame(x=20, y=0, xend=0, yend=0), dftekst=data.frame(x=-10,y=0.2,kurve='',farge='red'), tilstand=valgii)
+iigjeldsdynamikk$ggtyper[[2]]
+iiigjeldsdynamikk$grafisknumappend(samlikvedf=data.frame(x=0, y=0, xend=0, yend=0), dftekst=data.frame(x=0,y=0,kurve='abc',farge='red'), tilstand=valgiii)
+iiigjeldsdynamikk$ggtyper[[2]]
+ivgjeldsdynamikk$grafisknumappend(samlikvedf=data.frame(x=0, y=0, xend=0, yend=0), dftekst=data.frame(x=0,y=0,kurve='abc',farge='red'), tilstand=valgiv)
+ivgjeldsdynamikk$ggtyper[[2]]
 
+#
 igjeldsdynamikk$grafiskstyle(labs=list(title='', x=TeX('$b$'), y=TeX('$\\Delta b$')),
-                      #skaleringx=list(label=NULL, breaks=c(-25,0,50), limits=NULL),
-                      #skaleringy=list(label=NULL, breaks=c(-25/100,0,50/100), breaks=NULL, limits=NULL),
-                      fargelinje=c('black','black', 'black'),
-                      figurnr = 2)
-
-igjeldsdynamikk$ggtyper[[3]] + geom_line(aes(y=seq(-1,1, 0.1),x=0)) +  annotate(geom='text', x=-15, y=0.3, label=TeX("db= (r-g)b_{t}+(g_{t}-t_{t})", output='character'), parse=TRUE, color='red')
-
-
-## ii
-iigjeldsdynamikk$numerisk(vartegne=c('bb'), par=c(list(Y=100,r=0.02,g=0.03,G=75,T=50)), endvar=list(Lb=25:300), kat= valgii)
-
-
-iigjeldsdynamikk$grafisknumappend(samlikvedf=data.frame(x=0, y=0, xend=0, yend=0),
-                                 dftekst=data.frame(x=0,y=0,kurve='abc',farge='red'), tilstand=valgii)
-
-iigjeldsdynamikk$grafiskstyle(labs=list(title='Solow-modellen', x='k', y='y'),
-                             skaleringx=list(label=NULL, breaks=NULL, limits=NULL),
-                             skaleringy=list(label=NULL, breaks=NULL, limits=NULL),
+                             #skaleringx=list(label=NULL, breaks=c(-25,0,50), limits=NULL),
+                             #skaleringy=list(label=NULL, breaks=c(-25/100,0,50/100), breaks=NULL, limits=NULL),
                              fargelinje=c('black','black', 'black'),
                              figurnr = 2)
 
-iigjeldsdynamikk$ggtyper[[2]]
-
-## iii
-iiigjeldsdynamikk$numerisk(vartegne=c('bb'), par=c(list(Y=100,r=0.02,g=0.03,G=75,T=50)), endvar=list(Lb=25:300), kat= valgiii)
+idbgg <- igjeldsdynamikk$ggtyper[[3]] + geom_line(aes(y=seq(-1,1, 0.1),x=0)) +  annotate(geom='text', x=-15, y=0.3, label=TeX("db= (r-g)b_{t}+(g_{t}-t_{t})", output='character'), parse=TRUE, color='red')
 
 
-iiigjeldsdynamikk$grafisknumappend(samlikvedf=data.frame(x=0, y=0, xend=0, yend=0),
-                                  dftekst=data.frame(x=0,y=0,kurve='abc',farge='red'), tilstand=valgiii)
-
-iiigjeldsdynamikk$grafiskstyle(labs=list(title='Solow-modellen', x='k', y='y'),
-                              skaleringx=list(label=NULL, breaks=NULL, limits=NULL),
-                              skaleringy=list(label=NULL, breaks=NULL, limits=NULL),
+## ii
+iigjeldsdynamikk$grafiskstyle(labs=list(title='', x=TeX('$b$'), y=TeX('$\\Delta b$')),
+                              #skaleringx=list(label=NULL, breaks=c(-25,0,50), limits=NULL),
+                              #skaleringy=list(label=NULL, breaks=c(-25/100,0,50/100), breaks=NULL, limits=NULL),
                               fargelinje=c('black','black', 'black'),
                               figurnr = 2)
 
-
-iiigjeldsdynamikk$ggtyper[[2]]
-
-## iv
-ivgjeldsdynamikk$numerisk(vartegne=c('bb'), par=c(list(Y=100,r=0.02,g=0.03,G=75,T=50)), endvar=list(Lb=25:300), kat= valgiv)
+iidbgg <- iigjeldsdynamikk$ggtyper[[3]] + geom_line(aes(y=seq(-1,1, 0.1),x=0)) +  annotate(geom='text', x=-15, y=0.3, label=TeX("db= (r-g)b_{t}+(g_{t}-t_{t})", output='character'), parse=TRUE, color='red')
 
 
-ivgjeldsdynamikk$grafisknumappend(samlikvedf=data.frame(x=0, y=0, xend=0, yend=0),
-                                   dftekst=data.frame(x=0,y=0,kurve='abc',farge='red'), tilstand=valgiv)
-
-ivgjeldsdynamikk$grafiskstyle(labs=list(title='Solow-modellen', x='k', y='y'),
-                               skaleringx=list(label=NULL, breaks=NULL, limits=NULL),
-                               skaleringy=list(label=NULL, breaks=NULL, limits=NULL),
+## iii
+iiigjeldsdynamikk$grafiskstyle(labs=list(title='', x=TeX('$b$'), y=TeX('$\\Delta b$')),
+                               #skaleringx=list(label=NULL, breaks=c(-25,0,50), limits=NULL),
+                               #skaleringy=list(label=NULL, breaks=c(-25/100,0,50/100), breaks=NULL, limits=NULL),
                                fargelinje=c('black','black', 'black'),
                                figurnr = 2)
 
-ivgjeldsdynamikk$ggtyper[[2]]
+
+iiidbgg <- iiigjeldsdynamikk$ggtyper[[3]] + geom_line(aes(y=seq(-1,1, 0.1),x=0)) +  annotate(geom='text', x=-15, y=0.3, label=TeX("db= (r-g)b_{t}+(g_{t}-t_{t})", output='character'), parse=TRUE, color='red')
+
+## iv
+ivgjeldsdynamikk$grafiskstyle(labs=list(title='', x=TeX('$b$'), y=TeX('$\\Delta b$')),
+                              #skaleringx=list(label=NULL, breaks=c(-25,0,50), limits=NULL),
+                              #skaleringy=list(label=NULL, breaks=c(-25/100,0,50/100), breaks=NULL, limits=NULL),
+                              fargelinje=c('black','black', 'black'),
+                              figurnr = 2)
+
+ivdbgg <- ivgjeldsdynamikk$ggtyper[[3]] + geom_line(aes(y=seq(-1,1, 0.1),x=0)) +  annotate(geom='text', x=-15, y=0.3, label=TeX("db= (r-g)b_{t}+(g_{t}-t_{t})", output='character'), parse=TRUE, color='red')
+
+grid.arrange(idbgg, iidbgg, iiidbgg, ivdbgg)
 
 
-grid.arrange(igjeldsdynamikk$ggtyper[[2]], iigjeldsdynamikk$ggtyper[[2]],
-             iiigjeldsdynamikk$ggtyper[[2]],ivgjeldsdynamikk$ggtyper[[2]])
 
-grid.arrange(igjeldsdynamikk$ggtyper[[3]], iigjeldsdynamikk$ggtyper[[3]],
-             iiigjeldsdynamikk$ggtyper[[3]],ivgjeldsdynamikk$ggtyper[[3]])
-
-###################################
-
-solowgrafikk <- Genfigur('solow')
-solowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.3, alpha=0.5, n=0, gamma=0.04), endvar=list(k=1:200) ,kat='solow')
-solowgrafikk$optimering(tovectorlabel=c('sy', 'depk'), startv=c(100,10))
-
-#solowgrafikk$optimeringv
-ssamlikvedf <- data.frame(x=55 ,y =2.2, xend=55, yend=2.2)
-sdftekst <- data.frame(x=c(200 ,200, 200),y=c(15, 8.75, 4.8), kurve=c('f(k)', 'gamma*k', 'sf(k)'), farge=c('red', 'red', 'red'))
-solowgrafikk$grafisknumappend(samlikve=ssamlikvedf, dftekst=sdftekst, tilstand='solow')
-
-# Skfit
-katv <- 'oktsparing'
-solowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.4, alpha=0.5, n=0, gamma=0.04), endvar=list(k=1:200) ,kat=katv)
-dssamlikvedf <- data.frame(x=103, y=4, xend=103, yend=4)
-dsdftekst <- data.frame(x=c(200 ,200, 200),y=c(15, 8.75, 6),kurve=c('f(k)', 'gamma*k', "s'f(k)"), farge=c('red', 'red', 'red'))
-solowgrafikk$grafisknumappend(samlikve=dssamlikvedf, dftekst=dsdftekst, tilstand=katv)
-solowgrafikk$ggtyper[[2]]
-
-solowgrafikk$grafiskstyle(labs=list(title='Solow-modellen (enkel utgave)', x='k', y='y=f(k)'),
-                          skaleringx=list(label=c(TeX('$k^{ss}}$')),breaks=ssamlikvedf$x,limits=NULL),
-                          skaleringy=list(label=c(TeX('$y^{ss}}$')),breaks=ssamlikvedf$y,limits=NULL),
-                          fargelinje=c('black','black', 'black'),
-                          figurnr = 2)
-solowgrafikk$ggtyper[[length(solowgrafikk$ggtyper)]]
-
-
-solowgrafikk$grafiskstyle(labs=list(title='Solow-modellen (enkel utgave)', x='k', y='y=f(k)'),
-                          skaleringx=list(label=c(TeX("$k^{ss}}$"),TeX("$k^{ss'}}$")), breaks=c(dssamlikvedf$x, ssamlikvedf$x),limits=NULL),
-                          skaleringy=list(label=c(TeX("$y^{ss}}$"),TeX("$y'^{ss'}}$")), breaks=c(dssamlikvedf$y, ssamlikvedf$y),limits=NULL),
-                          fargelinje=c('black','black', 'black'),
-                          figurnr = 3)
-
-solowgrafikk$ggtyper[[length(solowgrafikk$ggtyper)]]
-
-############
-### Vanlig Solow-modell
-nsolowgrafikk <- Genfigur('solow')
-
-nsolowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.4, alpha=0.5, n=0, gamma=0.04), endvar=list(k=1:200) ,kat='solow')
-#nsolowgrafikk$optimering(tovectorlabel=c('sy', 'depk'), startv=c(100,10))
-
-#nsolowgrafikk$optimeringv
-ssamlikvedf <- data.frame(x=100, y=4, xend=100, yend=4)
-sdftekst <- data.frame(x=c(200 ,190, 200),y=c(15, 8.75, 6), kurve=c('f(k)', "(n+gamma)k", 'sf(k)'), farge=c('red', 'red', 'red'))
-nsolowgrafikk$grafisknumappend(samlikve=ssamlikvedf, dftekst=sdftekst, tilstand='solow')
-nsolowgrafikk$ggtyper[[2]]
-
-# Skfit
-nkatv <- 'oktbefolkning'
-
-nsolowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.4, alpha=0.5, n=0.01, gamma=0.04), endvar=list(k=1:200) ,kat=nkatv)
-dssamlikvedf <- data.frame(x=62, y=3.2, xend=62, yend=3.2)
-dsdftekst <- data.frame(x=c(200 ,190, 200),y=c(15, 10.35, 6),kurve=c('f(k)', "(n'+gamma)k", "sf(k)"), farge=c('red', 'red', 'red'))
-nsolowgrafikk$grafisknumappend(samlikve=dssamlikvedf, dftekst=dsdftekst, tilstand=nkatv)
-nsolowgrafikk$ggtyper[[3]]
-
-nsolowgrafikk$grafiskstyle(labs=list(title='Solow-modellen', x='k', y='y=f(k)'),
-                          skaleringx=list(label=c(TeX("$k^{ss}}$")), breaks=ssamlikvedf$x,limits=NULL),
-                          skaleringy=list(label=c(TeX('$y^{ss}}$')), breaks=ssamlikvedf$y,limits=NULL),
-                          fargelinje=c('black','black', 'black'),
-                          figurnr = 2)
-
-nsolowgrafikk$ggtyper[[length(nsolowgrafikk$ggtyper)]]
-
-nsolowgrafikk$grafiskstyle(labs=list(title='Solow-modellen', x='k', y='y=f(k)'),
-                          skaleringx=list(label=c(TeX("$k^{ss}}$"),TeX("$k^{ss'}}$")), breaks=c(dssamlikvedf$x, ssamlikvedf$x),limits=NULL),
-                          skaleringy=list(label=c(TeX("$y^{ss}}$"),TeX("$y'^{ss'}}$")), breaks=c(dssamlikvedf$y, ssamlikvedf$y),limits=NULL),
-                          fargelinje=c('black','black', 'black', 'black', 'black', 'black', 'black'),
-                          figurnr = 3)
-
-nsolowgrafikk$ggtyper[[length(nsolowgrafikk$ggtyper)]]
-#########################################################################################################################################################
+# ###################################
+# solowgrafikk <- Genfigur('solow')
+# solowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.3, alpha=0.5, n=0, gamma=0.04), endvar=list(k=1:200) ,kat='solow')
+# solowgrafikk$optimering(tovectorlabel=c('sy', 'depk'), startv=c(100,10))
+#
+# #solowgrafikk$optimeringv
+# ssamlikvedf <- data.frame(x=55 ,y =2.2, xend=55, yend=2.2)
+# sdftekst <- data.frame(x=c(200 ,200, 200),y=c(15, 8.75, 4.8), kurve=c('f(k)', 'gamma*k', 'sf(k)'), farge=c('red', 'red', 'red'))
+# solowgrafikk$grafisknumappend(samlikve=ssamlikvedf, dftekst=sdftekst, tilstand='solow')
+#
+# # Skfit
+# katv <- 'oktsparing'
+# solowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.4, alpha=0.5, n=0, gamma=0.04), endvar=list(k=1:200) ,kat=katv)
+# dssamlikvedf <- data.frame(x=103, y=4, xend=103, yend=4)
+# dsdftekst <- data.frame(x=c(200 ,200, 200),y=c(15, 8.75, 6),kurve=c('f(k)', 'gamma*k', "s'f(k)"), farge=c('red', 'red', 'red'))
+# solowgrafikk$grafisknumappend(samlikve=dssamlikvedf, dftekst=dsdftekst, tilstand=katv)
+# solowgrafikk$ggtyper[[2]]
+#
+# solowgrafikk$grafiskstyle(labs=list(title='Solow-modellen (enkel utgave)', x='k', y='y=f(k)'),
+#                           skaleringx=list(label=c(TeX('$k^{ss}}$')),breaks=ssamlikvedf$x,limits=NULL),
+#                           skaleringy=list(label=c(TeX('$y^{ss}}$')),breaks=ssamlikvedf$y,limits=NULL),
+#                           fargelinje=c('black','black', 'black'),
+#                           figurnr = 2)
+# solowgrafikk$ggtyper[[length(solowgrafikk$ggtyper)]]
+#
+#
+# solowgrafikk$grafiskstyle(labs=list(title='Solow-modellen (enkel utgave)', x='k', y='y=f(k)'),
+#                           skaleringx=list(label=c(TeX("$k^{ss}}$"),TeX("$k^{ss'}}$")), breaks=c(dssamlikvedf$x, ssamlikvedf$x),limits=NULL),
+#                           skaleringy=list(label=c(TeX("$y^{ss}}$"),TeX("$y'^{ss'}}$")), breaks=c(dssamlikvedf$y, ssamlikvedf$y),limits=NULL),
+#                           fargelinje=c('black','black', 'black'),
+#                           figurnr = 3)
+#
+# solowgrafikk$ggtyper[[length(solowgrafikk$ggtyper)]]
+#
+# ############
+# ### Vanlig Solow-modell
+# nsolowgrafikk <- Genfigur('solow')
+#
+# nsolowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.4, alpha=0.5, n=0, gamma=0.04), endvar=list(k=1:200) ,kat='solow')
+# #nsolowgrafikk$optimering(tovectorlabel=c('sy', 'depk'), startv=c(100,10))
+#
+# #nsolowgrafikk$optimeringv
+# ssamlikvedf <- data.frame(x=100, y=4, xend=100, yend=4)
+# sdftekst <- data.frame(x=c(200 ,190, 200),y=c(15, 8.75, 6), kurve=c('f(k)', "(n+gamma)k", 'sf(k)'), farge=c('red', 'red', 'red'))
+# nsolowgrafikk$grafisknumappend(samlikve=ssamlikvedf, dftekst=sdftekst, tilstand='solow')
+# nsolowgrafikk$ggtyper[[2]]
+#
+# # Skfit
+# nkatv <- 'oktbefolkning'
+#
+# nsolowgrafikk$numerisk(vartegne=c('sy','y','depk'), par=list(savr=0.4, alpha=0.5, n=0.01, gamma=0.04), endvar=list(k=1:200) ,kat=nkatv)
+# dssamlikvedf <- data.frame(x=62, y=3.2, xend=62, yend=3.2)
+# dsdftekst <- data.frame(x=c(200 ,190, 200),y=c(15, 10.35, 6),kurve=c('f(k)', "(n'+gamma)k", "sf(k)"), farge=c('red', 'red', 'red'))
+# nsolowgrafikk$grafisknumappend(samlikve=dssamlikvedf, dftekst=dsdftekst, tilstand=nkatv)
+# nsolowgrafikk$ggtyper[[3]]
+#
+# nsolowgrafikk$grafiskstyle(labs=list(title='Solow-modellen', x='k', y='y=f(k)'),
+#                           skaleringx=list(label=c(TeX("$k^{ss}}$")), breaks=ssamlikvedf$x,limits=NULL),
+#                           skaleringy=list(label=c(TeX('$y^{ss}}$')), breaks=ssamlikvedf$y,limits=NULL),
+#                           fargelinje=c('black','black', 'black'),
+#                           figurnr = 2)
+#
+# nsolowgrafikk$ggtyper[[length(nsolowgrafikk$ggtyper)]]
+#
+# nsolowgrafikk$grafiskstyle(labs=list(title='Solow-modellen', x='k', y='y=f(k)'),
+#                           skaleringx=list(label=c(TeX("$k^{ss}}$"),TeX("$k^{ss'}}$")), breaks=c(dssamlikvedf$x, ssamlikvedf$x),limits=NULL),
+#                           skaleringy=list(label=c(TeX("$y^{ss}}$"),TeX("$y'^{ss'}}$")), breaks=c(dssamlikvedf$y, ssamlikvedf$y),limits=NULL),
+#                           fargelinje=c('black','black', 'black', 'black', 'black', 'black', 'black'),
+#                           figurnr = 3)
+#
+# nsolowgrafikk$ggtyper[[length(nsolowgrafikk$ggtyper)]]
+# #########################################################################################################################################################
 #########################################################################################################################################################
 #########################################################################################################################################################
 

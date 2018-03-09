@@ -19,7 +19,7 @@ bibliography: pensum.bib
 # Del 1: liten åpen økonomi
 ```{r child = 'del1_konjunkturer_open.Rmd'}
 ```
-
+del3_kriser.Rmd
 # Del 2: Økonomisk vekst
 
 ```{r child = 'del2_vekst.Rmd'}
@@ -27,7 +27,7 @@ bibliography: pensum.bib
 
 # Del 3: Økonomiske kriser
 
-<!--del3_kriser.Rmd-->
+```{r child = 'del3_kriser.Rmd'}
+```
 
 # Referanser
-

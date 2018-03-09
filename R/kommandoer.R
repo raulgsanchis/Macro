@@ -19,7 +19,7 @@ inst <- function(){
 
 publisering <- function(){
 #  scp -r /home/joernih/R/x86_64-pc-linux-gnu-library/3.4/MakroOEKB1115/webside/_site adasextended@login.domeneshop.no:www/
-  #attom-46-langt-Lagge-anode#
+    #attom-46-langt-Lagge-anode#
   #ssh adasextended@login.domeneshop.no
 }
 

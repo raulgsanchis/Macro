@@ -1,5 +1,5 @@
 ---
-output: html_notebook
+#output: html_notebook
 ---
 
 ## Tema 1: Penger, kreditt og bankadferd
@@ -8,159 +8,18 @@ output: html_notebook
 Starter med dette i uke
 -->
 
-## Banker, systemrisiko og kapitalkrav
-
 ## Tema 2:  Statsgjeldskrise
 
-<iframe src="https://www.nationaldebtclocks.org/debtclock/unitedstates" frameborder="0"  height="600" width="200">
+<iframe src="https://www.nationaldebtclocks.org/debtclock/unitedstates" frameborder="0"  height="600" width="33%">
   <p>Your browser does not support iframes.</p>
 </iframe>
 
-<iframe src="https://www.nationaldebtclocks.org/debtclock/greece" frameborder="0"  height="600" width="200">
+<iframe src="https://www.nationaldebtclocks.org/debtclock/greece" frameborder="0"  height="600" width=="33%">
   <p>Your browser does not support iframes.</p>
 </iframe>
 
-<iframe src="https://www.nationaldebtclocks.org/debtclock/japan" frameborder="0"  height="600" width="200">
+<iframe src="https://www.nationaldebtclocks.org/debtclock/japan" frameborder="0"  height="600" width=="33%">
   <p>Your browser does not support iframes.</p>
 </iframe>
 
----
-
-### Budsjettbetingelsen for offentlig sektor
-
-- Offentlige myndigheter
-
-$$B^f_t= \underset{\text{a}}{(1+i_{t})B^{f}_{t-1}}+\underset{\text{det primære budsjettunderskudd}}{(G_t-T_t)} - \underset{Seniorage}{SNG_t}$$
-
-
-
-- Sentralbanken
-
-$$ B_{t-1}\cdot i_{t-1} + \Delta B_{t}^{m} = \Delta M_{t} + SNG_{t}$$
-
-- Gjeld
-
-$$B_{t} = B_{t}^{f} - B_{t}^{m}$$
-
----
-
-- Som til sammen kan uttrykkes som den konsoliderte budsjettbetingelse for offentlig sektor (dere vil bli bedt om å løse for denne i den obligatoriske øvelsesoppgaven)
-
-$$\Delta B_t = i_{t}B_{t-1}+{(G_t-T_t)}  + \Delta M_{t}$$
-
-
-
-### Dynamikken i statsgjelden over tid 
-#### Formelt
-
-$$\frac{B_t}{Y_t} = (1+r-g)\frac{B_{t-1}}{Y_{t-1}} + \frac{G_{t}-T_{t}}{Y_{t}} + \Delta M_{t}$$
-
-
-Definere $g_{t} \equiv\frac{G_{t}}{Y_{t}}$, $\Delta b_{t}\equiv \frac{B_t}{Y_t}- \frac{B_{t-1}}{Y_{t-1}}$ og $g_{t}\equiv\frac{G_{t}}{Y_{t}}$. Tar likningen form av en første ordens lineær differansialigning:
-
-$$\Delta b_{t} = (r-g)b_{t}+(g_{t}-t_{t})$$
-
----
-
-#### Grafisk
-
-```{r echo=FALSE}
-#library(MakroOEKB1115)
-library(dplyr)
-library(latex2exp)
-library(ggplot2)
-library(gridExtra)
-library(grid)
-library(ggplot2)
-library(dplyr)
-
-### Statsgjeldsdynamikk
-igjeldsdynamikk <- Genfigur('konsbudsj')
-iigjeldsdynamikk <- Genfigur('konsbudsj')
-iiigjeldsdynamikk <- Genfigur('konsbudsj')
-ivgjeldsdynamikk <- Genfigur('konsbudsj')
-
-valgi <- c('budsjettI')
-valgii <- c('budsjettII')
-valgiii <- c('budsjettIII')
-valgiv <- c('budsjettIV')
-
-igjeldsdynamikk$numerisk(vartegne=c('bb','x'), par=c(list(Y=100,r=0.035,g=0.04,G=20,T=10)),
-                         endvar=list(Lb=-25:50), kat= valgi)
-
-igjeldsdynamikk$grafisknumappend(samlikvedf=data.frame(x=20, y=0, xend=0, yend=0),
-                                dftekst=data.frame(x=-10,y=0.2,kurve='Gjeldsdynamikk',farge='red'), tilstand=valgi)
-
-igjeldsdynamikk$ggtyper[[2]]
-
-igjeldsdynamikk$grafiskstyle(labs=list(title='Gjeldsdynamikk', x=TeX('$b$'), y=TeX('$\\Delta b$')),
-                      #skaleringx=list(label=NULL, breaks=c(-25,0,50), limits=NULL),
-                      #skaleringy=list(label=NULL, breaks=c(-25/100,0,50/100), breaks=NULL, limits=NULL),
-                      fargelinje=c('black','black', 'black'),
-                      figurnr = 2)
-
-igjeldsdynamikk$ggtyper[[3]] + geom_line(aes(y=seq(-1,1, 0.1),x=0)) +  annotate(geom='text', x=0, y=0, label=TeX("$\\hat{Y} = B_0 + B_1X_1", output='character'), parse=TRUE, color='red')
-
-
-## ii
-iigjeldsdynamikk$numerisk(vartegne=c('bb'), par=c(list(Y=100,r=0.02,g=0.03,G=75,T=50)), endvar=list(Lb=25:300), kat= valgii)
-
-
-iigjeldsdynamikk$grafisknumappend(samlikvedf=data.frame(x=0, y=0, xend=0, yend=0),
-                                 dftekst=data.frame(x=0,y=0,kurve='abc',farge='red'), tilstand=valgii)
-
-iigjeldsdynamikk$grafiskstyle(labs=list(title='Solow-modellen', x='k', y='y'),
-                             skaleringx=list(label=NULL, breaks=NULL, limits=NULL),
-                             skaleringy=list(label=NULL, breaks=NULL, limits=NULL),
-                             fargelinje=c('black','black', 'black'),
-                             figurnr = 2)
-
-iigjeldsdynamikk$ggtyper[[2]]
-
-## iii
-iiigjeldsdynamikk$numerisk(vartegne=c('bb'), par=c(list(Y=100,r=0.02,g=0.03,G=75,T=50)), endvar=list(Lb=25:300), kat= valgiii)
-
-
-iiigjeldsdynamikk$grafisknumappend(samlikvedf=data.frame(x=0, y=0, xend=0, yend=0),
-                                  dftekst=data.frame(x=0,y=0,kurve='abc',farge='red'), tilstand=valgiii)
-
-iiigjeldsdynamikk$grafiskstyle(labs=list(title='Solow-modellen', x='k', y='y'),
-                              skaleringx=list(label=NULL, breaks=NULL, limits=NULL),
-                              skaleringy=list(label=NULL, breaks=NULL, limits=NULL),
-                              fargelinje=c('black','black', 'black'),
-                              figurnr = 2)
-
-
-iiigjeldsdynamikk$ggtyper[[2]]
-
-## iv
-ivgjeldsdynamikk$numerisk(vartegne=c('bb'), par=c(list(Y=100,r=0.02,g=0.03,G=75,T=50)), endvar=list(Lb=25:300), kat= valgiv)
-
-
-ivgjeldsdynamikk$grafisknumappend(samlikvedf=data.frame(x=0, y=0, xend=0, yend=0),
-                                   dftekst=data.frame(x=0,y=0,kurve='abc',farge='red'), tilstand=valgiv)
-
-ivgjeldsdynamikk$grafiskstyle(labs=list(title='Solow-modellen', x='k', y='y'),
-                               skaleringx=list(label=NULL, breaks=NULL, limits=NULL),
-                               skaleringy=list(label=NULL, breaks=NULL, limits=NULL),
-                               fargelinje=c('black','black', 'black'),
-                               figurnr = 2)
-
-ivgjeldsdynamikk$ggtyper[[2]]
-
-
-grid.arrange(igjeldsdynamikk$ggtyper[[2]], iigjeldsdynamikk$ggtyper[[2]],
-             iiigjeldsdynamikk$ggtyper[[2]],ivgjeldsdynamikk$ggtyper[[2]])
-
-grid.arrange(igjeldsdynamikk$ggtyper[[3]], iigjeldsdynamikk$ggtyper[[3]],
-             iiigjeldsdynamikk$ggtyper[[3]],ivgjeldsdynamikk$ggtyper[[3]])
-
-```
-
-
-----
-
-### Konklusjoner
-
-- Kutt i det primære budsjettunderskuddet (redusere $G$ eller øke $T$)
-- Mislighold
+## Tema 3:  Likviditetsfellen

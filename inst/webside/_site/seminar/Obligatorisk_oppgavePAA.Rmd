@@ -60,6 +60,9 @@ Vi har at $g=\frac{Y_{t}-Y_{t-1}}{Y_{t}} \Leftrightarrow g+1 = \frac{Y_{t}}{Y_{t
 $\frac{1+r}{1+g} \approx 1+r-g$
 
 $$\frac{B_t}{Y_t} = (1+r-g)\frac{B_{t-1}}{Y_{t-1}} + \frac{G_{t}-T_{t}}{Y_{t}}$$
+som er
+
+$$\frac{B_t}{Y_t}- \frac{B_{t-1}}{Y_{t-1}} = (r-g)\frac{B_{t-1}}{Y_{t-1}} + \frac{G_{t}-T_{t}}{Y_{t}}$$
 
 1. Figur vis fase-diagram lav produktivitet (g>r) og forklar dynamikken
 1. Figur vis fase-diagram høy produktivitet (g<r) og forklar dynamikken

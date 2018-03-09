@@ -34,7 +34,6 @@ output:
 **Studentassistent:** Susanna Murati (susanna-007@hotmail.com)
 
 <span style="color:red">
-<p>Forelesningsnotater uke 10 er nå lagt ut</p>
 <p>Seminaroppgaver uke 10 er lagt ut med fasit</p>
 </span>
 
